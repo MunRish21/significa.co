@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Button, FloatingInput } from '@significa/svelte-ui';
+  import { Button, FloatingInput } from '@techyor/svelte-ui';
   import { t } from '$lib/i18n';
   import ProposalNavigation from '$components/proposals/proposal-navigation.svelte';
 

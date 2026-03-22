@@ -259,7 +259,7 @@ export async function fetchPage(options: {
   // Index pages (blog, projects) have their own route but they need to be able to be rendered in the drawer as well
   if (
     data.story.content.component === 'page' &&
-    data.story.content.page.length > 0 &&
+    data.story.content.page?.length > 0 &&
     data.story.content.page?.[0].component === 'blog-index'
   ) {
     return {
@@ -270,7 +270,7 @@ export async function fetchPage(options: {
 
   if (
     data.story.content.component === 'page' &&
-    data.story.content.page.length > 0 &&
+    data.story.content.page?.length > 0 &&
     data.story.content.page?.[0].component === 'projects-index'
   ) {
     return {
@@ -282,7 +282,7 @@ export async function fetchPage(options: {
   // home page data
   if (
     data.story.content.component === 'page' &&
-    data.story.content.page.length > 0 &&
+    data.story.content.page?.length > 0 &&
     data.story.content.page?.[0].component === 'home-page'
   ) {
     return {
@@ -355,7 +355,7 @@ export async function fetchPage(options: {
   // Careers canvas needs access to team members in order to fill "Team" component
   if (
     data.story.content.component === 'page' &&
-    data.story.content.page.length > 0 &&
+    data.story.content.page?.length > 0 &&
     data.story.content.page?.[0].component === 'careers-page'
   ) {
     return {

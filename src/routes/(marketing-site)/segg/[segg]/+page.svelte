@@ -1,7 +1,7 @@
 <script lang="ts">
   import DrawYourSegg from '$components/draw-your-segg/draw-your-segg.svelte';
   import { t } from '$lib/i18n';
-  import { Button } from '@significa/svelte-ui';
+  import { Button } from '@techyor/svelte-ui';
 
   export let data;
 </script>

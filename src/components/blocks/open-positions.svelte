@@ -2,7 +2,7 @@
   import { page } from '$app/stores';
   import type { OpenPositionsStoryblok } from '$types/bloks';
 
-  import { Button, Link } from '@significa/svelte-ui';
+  import { Button, Link } from '@techyor/svelte-ui';
 
   import { t } from '$lib/i18n';
   import { theme } from '$lib/stores/theme';

@@ -3,7 +3,7 @@
   import IllustrationEmply from '../illustrations/assets/illustration-emply.webp';
   import IllustrationEmplyLight from '../illustrations/assets/illustration-emply-light.webp';
   import { theme } from '$lib/stores/theme';
-  import { CheckboxGroup, Radio } from '@significa/svelte-ui';
+  import { CheckboxGroup, Radio } from '@techyor/svelte-ui';
   import clsx from 'clsx';
   import ContactForm from '$components/contact-form.svelte';
   import { estimations, estimationsCheckbox } from '$lib/estimations';

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://significa.co/sitemap.xml
+Sitemap: https://techyor.com/sitemap.xml

@@ -1,6 +1,6 @@
 <script lang="ts">
   import { device } from '$lib/stores/device';
-  import { Button } from '@significa/svelte-ui';
+  import { Button } from '@techyor/svelte-ui';
   import { onMount } from 'svelte';
   import { fade, scale } from 'svelte/transition';
 

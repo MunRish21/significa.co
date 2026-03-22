@@ -2,7 +2,7 @@
   import { richTextBlockWidths } from '$lib/constants';
   import { getAnchorFromCmsLink, getImageAttributes } from '$lib/utils/cms';
   import { formatDate } from '$lib/utils/dates';
-  import { Button, Tag } from '@significa/svelte-ui';
+  import { Button, Tag } from '@techyor/svelte-ui';
   import RichText from '$components/rich-text.svelte';
   import { drawerLinks } from '$lib/actions/drawer-links';
   import Person from '$components/person.svelte';

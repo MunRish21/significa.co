@@ -1,7 +1,7 @@
 <script lang="ts">
   import { getAnchorFromCmsLink } from '$lib/utils/cms';
   import type { ConfigurationStoryblok } from '$types/bloks';
-  import { Button, Icon, Input, Link, Logo } from '@significa/svelte-ui';
+  import { Button, Icon, Input, Link, Logo } from '@techyor/svelte-ui';
   import clsx from 'clsx';
   import AnHandAndABook from './an-hand-and-a-book.svelte';
   import { sanitizeSlug } from '$lib/utils/paths';

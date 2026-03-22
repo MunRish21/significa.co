@@ -1,6 +1,6 @@
 <script lang="ts">
   import clsx from 'clsx';
-  import { Button, toast } from '@significa/svelte-ui';
+  import { Button, toast } from '@techyor/svelte-ui';
   import { t } from '$lib/i18n/index.js';
   import { fly } from 'svelte/transition';
   import { circOut } from 'svelte/easing';
@@ -125,7 +125,7 @@
           class="mt-6 md:mt-0"
           as="a"
           href="mailto:{proposal?.created_by.content
-            .email}?subject={proposal?.title}. Discussion about Significa proposal"
+            .email}?subject={proposal?.title}. Discussion about Techyor proposal"
           >{t('proposals.accept.contact.button', {
             name: proposal?.created_by.name.split(' ')[0]
           })}</Button

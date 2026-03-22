@@ -1,6 +1,6 @@
 <script lang="ts">
   import clsx from 'clsx';
-  import { Button } from '@significa/svelte-ui';
+  import { Button } from '@techyor/svelte-ui';
   import Grid from './tictactoe/grid.svelte';
   import Stroke from './tictactoe/stroke.svelte';
   import { t } from '$lib/i18n';

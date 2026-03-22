@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { escapeKey, clickOutside, bodyLock } from '@significa/svelte-ui/actions';
-  import { Button, Link, Logo, Select } from '@significa/svelte-ui';
+  import { escapeKey, clickOutside, bodyLock } from '@techyor/svelte-ui/actions';
+  import { Button, Link, Logo, Select } from '@techyor/svelte-ui';
   import { page } from '$app/stores';
   import clsx from 'clsx';
   import { fade, fly } from 'svelte/transition';

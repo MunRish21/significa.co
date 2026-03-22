@@ -5,8 +5,8 @@
   import { browser } from '$app/environment';
   import { fade, fly } from 'svelte/transition';
 
-  import { Button, Spinner } from '@significa/svelte-ui';
-  import { bodyLock, escapeKey } from '@significa/svelte-ui/actions';
+  import { Button, Spinner } from '@techyor/svelte-ui';
+  import { bodyLock, escapeKey } from '@techyor/svelte-ui/actions';
 
   import { t } from '$lib/i18n';
   import { fetchPage } from '$lib/content';

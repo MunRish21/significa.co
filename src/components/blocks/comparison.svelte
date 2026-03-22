@@ -1,10 +1,10 @@
 <script lang="ts">
   import { tweened } from 'svelte/motion';
 
-  import { intersectionObserver } from '@significa/svelte-ui/actions';
+  import { intersectionObserver } from '@techyor/svelte-ui/actions';
   import { getImageAttributes } from '$lib/utils/cms';
   import type { ComparisonStoryblok } from '$types/bloks';
-  import { CircleButton } from '@significa/svelte-ui';
+  import { CircleButton } from '@techyor/svelte-ui';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import clsx from 'clsx';
 

@@ -4,7 +4,7 @@
   import type { RichtextBoxStoryblok } from '$types/bloks';
   import clsx from 'clsx';
   import { drawerLinks } from '$lib/actions/drawer-links';
-  import { Icon } from '@significa/svelte-ui';
+  import { Icon } from '@techyor/svelte-ui';
   import Video from './video.svelte';
 
   export let block: RichtextBoxStoryblok;

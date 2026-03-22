@@ -6,7 +6,7 @@
   import { t } from '$lib/i18n';
   import { getStoryblok } from '$lib/storyblok';
   import type { BlogPostStoryblok } from '$types/bloks';
-  import { Badge, Button, Tag, TextButton } from '@significa/svelte-ui';
+  import { Badge, Button, Tag, TextButton } from '@techyor/svelte-ui';
   import type { ISbResult, ISbStoryData } from '@storyblok/js';
   import clsx from 'clsx';
   import { onMount } from 'svelte';

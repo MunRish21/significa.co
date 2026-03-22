@@ -7,7 +7,7 @@
   import Seo from '$components/seo.svelte';
 
   import type { HandbookLevelStoryblok } from '$types/bloks';
-  import { Button, Input } from '@significa/svelte-ui';
+  import { Button, Input } from '@techyor/svelte-ui';
   import { structureDataMarkup } from './structure-data-markup';
 
   import { createBreakpointMediaQueryStore } from '$lib/stores/media';
@@ -27,13 +27,13 @@
 </script>
 
 <Seo
-  title="Handbook by Significa"
-  description="Our handbook: the ultimate source of truth for everything about Significa—our culture, values, and the way we work."
+  title="Handbook by Techyor"
+  description="Our handbook: the ultimate source of truth for everything about Techyor—our culture, values, and the way we work."
   image={handbookOG}
   {structureDataMarkup}
 />
 <div class="container mx-auto px-container">
-  <h1 class="sr-only">Handbook by Significa</h1>
+  <h1 class="sr-only">Handbook by Techyor</h1>
   <!--
     NOTE: Tirar bonecada
     <img alt="Handbook" src={handbook} class="mx-auto mb-20 mt-28 w-80" />

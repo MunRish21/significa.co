@@ -13,8 +13,8 @@ export default defineConfig({
     sveltekit(),
     sentrySvelteKit({
       sourceMapsUploadOptions: {
-        org: 'significa',
-        project: 'significa-website'
+        org: 'techyor',
+        project: 'techyor-website'
       }
     }),
     ...extraPlugins
@@ -31,6 +31,6 @@ export default defineConfig({
     }
   },
   optimizeDeps: {
-    exclude: process.env.NODE_ENV === 'development' ? ['@significa/svelte-ui'] : []
+    exclude: process.env.NODE_ENV === 'development' ? ['@techyor/svelte-ui'] : []
   }
 });

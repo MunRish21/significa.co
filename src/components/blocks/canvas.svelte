@@ -3,8 +3,8 @@
   import type { CanvasStoryblok } from '$types/bloks';
   import Canvas from '../pages/careers/canvas.svelte';
   import { device } from '$lib/stores/device';
-  import { Button } from '@significa/svelte-ui';
-  import { bodyLock } from '@significa/svelte-ui/actions';
+  import { Button } from '@techyor/svelte-ui';
+  import { bodyLock } from '@techyor/svelte-ui/actions';
   import { fade } from 'svelte/transition';
   import { page } from '$app/stores';
 

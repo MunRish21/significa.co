@@ -2,7 +2,7 @@
   import clsx from 'clsx';
   import { t } from '$lib/i18n';
   import type { ProposalScopeEntryStoryblok } from '$types/bloks';
-  import { Button, Tag } from '@significa/svelte-ui';
+  import { Button, Tag } from '@techyor/svelte-ui';
   import { fade, slide } from 'svelte/transition';
   import { circOut } from 'svelte/easing';
 

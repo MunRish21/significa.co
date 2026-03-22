@@ -10,7 +10,7 @@
 
   import { drawerLinks } from '$lib/actions/drawer-links';
   import { formatter } from '$lib/utils/currency';
-  import { Link } from '@significa/svelte-ui';
+  import { Link } from '@techyor/svelte-ui';
 
   export let data: ProposalTeamEntryStoryblok[] | ProposalPackageTeamEntryStoryblok[];
   export let type: string;

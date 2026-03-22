@@ -2,7 +2,7 @@
   import { t } from '$lib/i18n';
   import { getImageAttributes } from '$lib/utils/cms';
   import type { AssetStoryblok } from '$types/bloks';
-  import { Avatar } from '@significa/svelte-ui';
+  import { Avatar } from '@techyor/svelte-ui';
   import clsx from 'clsx';
 
   let className: string | undefined = undefined;

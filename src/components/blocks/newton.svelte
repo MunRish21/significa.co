@@ -5,7 +5,7 @@
   import ServicesIllustrationDark from '../pages/home/assets/pendulum-static-dark.webp';
   import ServicesIllustrationLight from '../pages/home/assets/pendulum-static-light.webp';
   import Newton from '../pages/home/newton.svelte';
-  import { Button } from '@significa/svelte-ui';
+  import { Button } from '@techyor/svelte-ui';
   import { getAnchorFromCmsLink } from '$lib/utils/cms';
 
   export let block: NewtonStoryblok;

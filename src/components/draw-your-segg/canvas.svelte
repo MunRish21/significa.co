@@ -12,7 +12,7 @@
   import { debounced } from '$lib/stores/debounced';
   import type { Point, Tool, Stroke, DrawingContent } from './types';
   import { page } from '$app/stores';
-  import { toast } from '@significa/svelte-ui';
+  import { toast } from '@techyor/svelte-ui';
   import { t } from '$lib/i18n';
 
   // 2x scale for a higher resolution render ("High DPI displays")

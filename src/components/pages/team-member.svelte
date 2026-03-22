@@ -9,7 +9,7 @@
   import type { ISbStoryData } from '@storyblok/js';
   import clsx from 'clsx';
   import { theme } from '$lib/stores/theme';
-  import { Button } from '@significa/svelte-ui';
+  import { Button } from '@techyor/svelte-ui';
 
   export let story: ISbStoryData<TeamMemberStoryblok>;
   export let posts: BlogPostPage[];

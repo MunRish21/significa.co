@@ -3,7 +3,7 @@
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import { getAnchorFromCmsLink } from '$lib/utils/cms';
   import type { AboutGridStoryblok } from '$types/bloks';
-  import { Button } from '@significa/svelte-ui';
+  import { Button } from '@techyor/svelte-ui';
 
   export let block: AboutGridStoryblok;
 </script>

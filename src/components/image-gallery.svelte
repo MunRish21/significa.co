@@ -20,8 +20,8 @@
 </script>
 
 <script lang="ts">
-  import { CircleButton } from '@significa/svelte-ui';
-  import { bodyLock, escapeKey } from '@significa/svelte-ui/actions';
+  import { CircleButton } from '@techyor/svelte-ui';
+  import { bodyLock, escapeKey } from '@techyor/svelte-ui/actions';
 
   const prev = (e: MouseEvent | KeyboardEvent) => {
     e.stopPropagation();

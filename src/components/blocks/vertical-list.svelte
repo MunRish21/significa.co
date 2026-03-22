@@ -5,7 +5,7 @@
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import { intersectionObserver } from '$lib/actions/instersection-observer';
   import { getAnchorFromCmsLink } from '$lib/utils/cms';
-  import { Button } from '@significa/svelte-ui';
+  import { Button } from '@techyor/svelte-ui';
 
   export let block: VerticalListStoryblok;
   let visibleElement: HTMLDivElement;

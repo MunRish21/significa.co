@@ -5,27 +5,27 @@ const parseAlphaColor = (color) => color?.replace('<alpha-value>', '1');
 module.exports = {
   content: [
     './src/**/*.{html,js,svelte,ts}',
-    path.join(path.dirname(require.resolve('@significa/svelte-ui')), '**/*.{html,js,svelte,ts}')
+    path.join(path.dirname(require.resolve('@techyor/svelte-ui')), '**/*.{html,js,svelte,ts}')
   ],
   presets: [
-    require('@significa/svelte-ui/tailwind-preset')({
+    require('@techyor/svelte-ui/tailwind-preset')({
       fonts: {
         sans: {
-          name: 'Significa Sans',
+          name: 'Techyor Sans',
           fontFaces: [
             {
               fontWeight: '400',
-              src: `url('/fonts/significa-regular.woff2') format('woff2')`,
+              src: `url('/fonts/techyor-regular.woff2') format('woff2')`,
               ascentOverride: '95%'
             },
             {
               fontWeight: '500',
-              src: `url('/fonts/significa-medium.woff2') format('woff2')`,
+              src: `url('/fonts/techyor-medium.woff2') format('woff2')`,
               ascentOverride: '95%'
             },
             {
               fontWeight: '600',
-              src: `url('/fonts/significa-semibold.woff2') format('woff2')`,
+              src: `url('/fonts/techyor-semibold.woff2') format('woff2')`,
               ascentOverride: '95%'
             }
           ]

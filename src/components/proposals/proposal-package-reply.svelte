@@ -9,7 +9,7 @@
     ProposalPackageTeamEntryStoryblok,
     ProposalTeamEntryStoryblok
   } from '$types/bloks';
-  import { Button } from '@significa/svelte-ui';
+  import { Button } from '@techyor/svelte-ui';
   import clsx from 'clsx';
   import Popover from './popover.svelte';
 
