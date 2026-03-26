@@ -1,0 +1,11 @@
+TypeError: Cannot read properties of undefined (reading 'split')
+    at getStoryblokImageSize (C:\work\techyor\src\lib\utils\cms.ts:42:33)
+    at Module.getImageAttributes (C:\work\techyor\src\lib\utils\cms.ts:145:23)
+    at C:\work\techyor\src\components\physics-section.svelte:438:47
+    at eval (C:/work/techyor/src/components/physics-section.svelte:332:11)
+    at Module.each (C:\work\techyor\node_modules\svelte\src\runtime\internal\ssr.js:92:10)
+    at eval (C:/work/techyor/src/components/physics-section.svelte:277:30)
+    at Object.$$render (C:\work\techyor\node_modules\svelte\src\runtime\internal\ssr.js:134:16)
+    at eval (C:/work/techyor/src/components/blocks/physics.svelte:53:97)
+    at Object.$$render (C:\work\techyor\node_modules\svelte\src\runtime\internal\ssr.js:134:16)
+    at C:\work\techyor\src\components\blocks\dynamic-block.svelte:121:36

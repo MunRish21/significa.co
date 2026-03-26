@@ -20,6 +20,7 @@ export const getStoryblok = (
     ...options,
     apiOptions: {
       https: true,
+      region: 'eu',
       ...apiOptions
     }
   });

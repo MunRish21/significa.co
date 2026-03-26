@@ -1,4 +1,4 @@
-import { getStoryblok } from '$lib/storyblok';
+import { getStoryblok, handleStoryblokError } from '$lib/storyblok';
 import type { ConfigurationStoryblok } from '$types/bloks';
 import type { ISbStoryData } from '@storyblok/js';
 import {
@@ -13,14 +13,20 @@ export const load = async ({ locals, fetch }) => {
   const version = locals.version;
   const storyblok = getStoryblok({ fetch });
 
-  const res = await storyblok.get('cdn/stories/configuration', {
-    version,
-    resolve_relations:
-      'configuration.primary_navigation,configuration.secondary_navigation,footer-column-internal.links'
-  });
+  let configuration;
+  try {
+    const res = await storyblok.get('cdn/stories/configuration', {
+      version,
+      resolve_relations:
+        'configuration.primary_navigation,configuration.secondary_navigation,footer-column-internal.links'
+    });
+    configuration = res.data.story as ISbStoryData<ConfigurationStoryblok>;
+  } catch (err) {
+    throw handleStoryblokError(err);
+  }
 
   return {
-    configuration: res.data.story as ISbStoryData<ConfigurationStoryblok>,
+    configuration,
     careers: await fetchCareers({ version, fetch }),
     awards: await fetchAwards({ version, fetch }),
     awardsTypes: await fetchAwardsTypes({ version, fetch }),

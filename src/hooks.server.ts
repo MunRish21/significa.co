@@ -27,4 +27,14 @@ const validateDraftMode: Handle = async ({ event, resolve }) => {
 
 export const handle = sequence(validateDraftMode, Sentry.sentryHandle());
 
-export const handleError = Sentry.handleErrorWithSentry();
+import * as fs from 'fs';
+const sentryHandler = Sentry.handleErrorWithSentry();
+export const handleError = ({ error, event, status, message }) => {
+  try {
+    fs.writeFileSync('c:/work/techyor/server_error.log', error?.stack || String(error));
+  } catch(e) {
+    console.error("Failed to write log", e);
+  }
+  // @ts-ignore
+  return sentryHandler({ error, event, status, message });
+};
