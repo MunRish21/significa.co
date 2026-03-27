@@ -38,7 +38,8 @@
     <div class="container mx-auto flex items-center justify-between px-container py-4">
       <div class="flex items-center gap-2">
         <a aria-label="Go to homepage" href="/">
-          <Logo class="mt-1" variant="wordmark" />
+          <!-- <Logo class="mt-1" variant="wordmark" /> -->
+          <img src="/techyor.png" alt="Techyor" class="h-6" />
         </a>
       </div>
 
