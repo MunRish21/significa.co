@@ -1,7 +1,7 @@
 <script lang="ts">
   import { t } from '$lib/i18n';
   import type { PhysicsInputStoryblok } from '$types/bloks';
-  import { Button, Input } from '@significa/svelte-ui';
+  import { Button, Input } from '@techyor/svelte-ui';
 
   export let block: PhysicsInputStoryblok;
   export let ref: HTMLElement;

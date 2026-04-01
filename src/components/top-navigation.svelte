@@ -1,11 +1,11 @@
 <script lang="ts">
   import { afterNavigate } from '$app/navigation';
   import { page } from '$app/stores';
-  import { escapeKey, clickOutside, bodyLock } from '@significa/svelte-ui/actions';
+  import { escapeKey, clickOutside, bodyLock } from '@techyor/svelte-ui/actions';
   import { getAnchorFromCmsLink } from '$lib/utils/cms';
   import { sanitizeSlug } from '$lib/utils/paths';
   import type { ConfigurationStoryblok } from '$types/bloks';
-  import { Badge, Button, Link, Logo } from '@significa/svelte-ui';
+  import { Badge, Button, Link, Logo } from '@techyor/svelte-ui';
   import clsx from 'clsx';
   import { fade, fly } from 'svelte/transition';
   import { createTopNavScrollStatus } from '$lib/stores/topnav-scroll-status';

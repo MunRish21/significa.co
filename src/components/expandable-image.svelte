@@ -1,7 +1,7 @@
 <script lang="ts">
   import { getImageAttributes } from '$lib/utils/cms';
   import type { AssetStoryblok, MultiassetStoryblok } from '$types/bloks';
-  import { CircleButton } from '@significa/svelte-ui';
+  import { CircleButton } from '@techyor/svelte-ui';
   import clsx from 'clsx';
   import { createEventDispatcher } from 'svelte';
 

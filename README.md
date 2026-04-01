@@ -1,8 +1,8 @@
-![readme banner with significa's illustrations](./docs/banner.png)
+![readme banner with techyor's illustrations](./docs/banner.png)
 
-# Significa website
+# Techyor website
 
-This is the repository with the source code for [Significa's website](https://significa.co/),
+This is the repository with the source code for [Techyor's website](https://techyor.com/),
 our very own nest on the web. We find it a work of art, but of course we are biased.
 
 If you find it interesting, inspiring or learn something from it, make sure to leave a star ⭐️
@@ -10,8 +10,8 @@ If you find it interesting, inspiring or learn something from it, make sure to l
 ## Architecture
 
 We developed this website using **Svelte** + **SvelteKit**, and a custom UI library
-`@significa/svelte-ui` published under
-[significa/significa-svelte-ui](https://github.com/significa/significa-svelte-ui)
+`@techyor/svelte-ui` published under
+[techyor/techyor-svelte-ui](https://github.com/techyor/techyor-svelte-ui)
 
 To accomplish all features, we leverage a few external services:
 
@@ -37,7 +37,7 @@ databases, etc.
 
 Here's how everything is connected (arrows represent the request initiator):
 
-<!-- Source: https://www.figma.com/design/FGnb9qYhXJo8w0tuHPveVF/Significa-Site-%E2%80%93-Design?node-id=4280-23782&p=f&t=ZAotyfyhPfWLmRnn-0 -->
+<!-- Source: https://www.figma.com/design/FGnb9qYhXJo8w0tuHPveVF/Techyor-Site-%E2%80%93-Design?node-id=4280-23782&p=f&t=ZAotyfyhPfWLmRnn-0 -->
 
 ![infrastructure diagram](./docs/architecture-diagram.jpg)
 
@@ -52,7 +52,7 @@ improvements and bug-fixes that do not have big impact in the features or projec
   (using your favourite node version manager).
 
 - Get the local development `.env` using
-  [1password-secrets](https://github.com/significa/1password-secrets/):
+  [1password-secrets](https://github.com/techyor/1password-secrets/):
   `1password-secrets local pull`.
   Or create one with based on the example in `.env.example`.
 

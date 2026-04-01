@@ -4,7 +4,7 @@
   import { getAnchorFromCmsLink, getImageAttributes } from '$lib/utils/cms';
   import { getFileExtension } from '$lib/utils/strings';
   import type { TextWithMediaStoryblok } from '$types/bloks';
-  import { Button } from '@significa/svelte-ui';
+  import { Button } from '@techyor/svelte-ui';
   import clsx from 'clsx';
 
   export let block: TextWithMediaStoryblok;

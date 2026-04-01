@@ -1,5 +1,5 @@
 import createClient from 'openapi-fetch';
-import { toast } from '@significa/svelte-ui';
+import { toast } from '@techyor/svelte-ui';
 import type { paths } from '$types/seggs-api.js';
 import { PUBLIC_SEGGS_BACKEND_BASE_API_URL } from '$env/static/public';
 import { error as svelteError } from '@sveltejs/kit';

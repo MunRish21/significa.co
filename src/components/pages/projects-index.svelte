@@ -3,7 +3,7 @@
   import Seo from '$components/seo.svelte';
   import { t } from '$lib/i18n';
   import type { ProjectStoryblok } from '$types/bloks';
-  import { Badge, Tag, TextButton } from '@significa/svelte-ui';
+  import { Badge, Tag, TextButton } from '@techyor/svelte-ui';
   import type { ISbStoryData } from '@storyblok/js';
   import clsx from 'clsx';
   import { slide } from 'svelte/transition';

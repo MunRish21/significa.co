@@ -20,7 +20,7 @@
     Link,
     Radio,
     toast
-  } from '@significa/svelte-ui';
+  } from '@techyor/svelte-ui';
   import type { ISbStoryData } from '@storyblok/js';
   import clsx from 'clsx';
   import { createEventDispatcher } from 'svelte';

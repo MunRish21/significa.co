@@ -1,7 +1,7 @@
 <script lang="ts">
   import { dev } from '$app/environment';
   import { page } from '$app/stores';
-  import { Button, Icon } from '@significa/svelte-ui';
+  import { Button, Icon } from '@techyor/svelte-ui';
 
   let dismissed = false;
   const isDraft = $page.data.version === 'draft';

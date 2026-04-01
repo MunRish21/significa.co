@@ -6,7 +6,7 @@
     ProposalPackageTeamEntryStoryblok,
     ProposalTeamEntryStoryblok
   } from '$types/bloks';
-  import { Button } from '@significa/svelte-ui';
+  import { Button } from '@techyor/svelte-ui';
   import { formatter } from '$lib/utils/currency';
   import { slide } from 'svelte/transition';
 

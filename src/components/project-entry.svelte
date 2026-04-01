@@ -4,7 +4,7 @@
   import { getImageAttributes } from '$lib/utils/cms';
   import { getFileExtension } from '$lib/utils/strings';
   import type { ProjectStoryblok } from '$types/bloks';
-  import { Button, CircleButton } from '@significa/svelte-ui';
+  import { Button, CircleButton } from '@techyor/svelte-ui';
   import type { ISbStoryData } from '@storyblok/js';
   import clsx from 'clsx';
   import Recognitions from './recognitions.svelte';

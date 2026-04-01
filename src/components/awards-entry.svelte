@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Button } from '@significa/svelte-ui';
+  import { Button } from '@techyor/svelte-ui';
   import { getImageAttributes } from '$lib/utils/cms';
   import type { AssetStoryblok } from '$types/bloks';
   import { t } from '$lib/i18n';

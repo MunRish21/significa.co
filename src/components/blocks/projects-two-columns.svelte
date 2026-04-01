@@ -7,7 +7,7 @@
 
   import RichTextTestimonial from './rich-text-testimonial.svelte';
   import { getAnchorFromCmsLink, getImageAttributes } from '$lib/utils/cms';
-  import { Button } from '@significa/svelte-ui';
+  import { Button } from '@techyor/svelte-ui';
   import Popover from '$components/proposals/popover.svelte';
 </script>
 

@@ -2,7 +2,7 @@
   import { t } from '$lib/i18n';
   import { getAnchorFromCmsLink, getImageAttributes } from '$lib/utils/cms';
   import type { ProjectDetailedEntryStoryblok } from '$types/bloks';
-  import { Button, CircleButton } from '@significa/svelte-ui';
+  import { Button, CircleButton } from '@techyor/svelte-ui';
   import clsx from 'clsx';
 
   export let project: ProjectDetailedEntryStoryblok;

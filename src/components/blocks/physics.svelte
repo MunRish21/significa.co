@@ -3,7 +3,7 @@
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import { getAnchorFromCmsLink } from '$lib/utils/cms';
   import type { PhysicsStoryblok } from '$types/bloks';
-  import { Button } from '@significa/svelte-ui';
+  import { Button } from '@techyor/svelte-ui';
   import clsx from 'clsx';
 
   export let block: PhysicsStoryblok;

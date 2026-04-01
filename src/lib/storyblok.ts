@@ -20,6 +20,7 @@ export const getStoryblok = (
     ...options,
     apiOptions: {
       https: true,
+      region: 'eu',
       ...apiOptions
     }
   });
@@ -53,6 +54,7 @@ export const isStatusError = (err: unknown): err is { status: number } => {
  * @returns The original error if it is not a Storyblok error, or a SvelteKit 404 error.
  */
 export const handleStoryblokError = <T>(err: T): T | HttpError => {
+  console.error('[Storyblok Error]', err);
   if (isStatusError(err) && err.status === 404) {
     return error(404, 'Storyblok 404 error');
   }

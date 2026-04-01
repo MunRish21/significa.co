@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { FaqsStoryblok } from '$types/bloks';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
-  import { Icon } from '@significa/svelte-ui';
+  import { Icon } from '@techyor/svelte-ui';
   import { slide } from 'svelte/transition';
   import RichText from '$components/rich-text.svelte';
   import { drawerLinks } from '$lib/actions/drawer-links';

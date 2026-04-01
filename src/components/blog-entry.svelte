@@ -1,7 +1,7 @@
 <script lang="ts">
   import { formatDate } from '$lib/utils/dates';
   import type { BlogPostStoryblok, TeamMemberStoryblok } from '$types/bloks';
-  import { Button, Link, Tag } from '@significa/svelte-ui';
+  import { Button, Link, Tag } from '@techyor/svelte-ui';
   import type { ISbStoryData } from '@storyblok/js';
   import Person from './person.svelte';
   import { t } from '$lib/i18n';

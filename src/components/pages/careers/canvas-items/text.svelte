@@ -1,7 +1,7 @@
 <script lang="ts">
   import { getAnchorFromCmsLink } from '$lib/utils/cms';
   import type { TimelineTextStoryblok } from '$types/bloks';
-  import { Button } from '@significa/svelte-ui';
+  import { Button } from '@techyor/svelte-ui';
 
   export let item: TimelineTextStoryblok;
 </script>

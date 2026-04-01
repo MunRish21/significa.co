@@ -2,7 +2,7 @@
   import { richTextBlockWidths, VIDEO_EXTENSIONS } from '$lib/constants';
   import RichText from '$components/rich-text.svelte';
   import { getAnchorFromCmsLink, getImageAttributes } from '$lib/utils/cms';
-  import { Avatar, Icon, Link } from '@significa/svelte-ui';
+  import { Avatar, Icon, Link } from '@techyor/svelte-ui';
   import { drawerLinks } from '$lib/actions/drawer-links';
   import { t } from '$lib/i18n';
   import Recognitions from '$components/recognitions.svelte';

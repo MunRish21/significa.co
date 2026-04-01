@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Confetti } from 'svelte-confetti';
   import clsx from 'clsx';
-  import { CheckboxGroup } from '@significa/svelte-ui';
+  import { CheckboxGroup } from '@techyor/svelte-ui';
   import { CONFETTI_COLOR_ARRAY } from '$lib/constants';
   import type { CanvasChecklistStoryblok } from '$types/bloks';
 

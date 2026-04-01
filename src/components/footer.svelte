@@ -3,9 +3,9 @@
   import { getAnchorFromCmsLink, getImageAttributes } from '$lib/utils/cms';
   import { sanitizeSlug } from '$lib/utils/paths';
   import type { ConfigurationStoryblok } from '$types/bloks';
-  import { Badge, Link, Logo } from '@significa/svelte-ui';
+  import { Badge, Link, Logo } from '@techyor/svelte-ui';
   import Slogan from './slogan.svelte';
-  import { intersectionObserver } from '@significa/svelte-ui/actions';
+  import { intersectionObserver } from '@techyor/svelte-ui/actions';
   import clsx from 'clsx';
 
   export let configuration: ConfigurationStoryblok;
@@ -154,7 +154,7 @@
     <div
       class="container mx-auto flex flex-col items-start justify-between px-container py-4 text-sm text-foreground-secondary xs:flex-row xs:items-center"
     >
-      <span>Significa &mdash; Digital Product Design & Development Agency</span>
+      <span>Techyor &mdash; Digital Product Design & Development Agency</span>
       <Link href="/legal">Legal</Link>
     </div>
   </div>

@@ -1,10 +1,10 @@
 <script lang="ts">
   import { page as pageStore } from '$app/stores';
   import clsx from 'clsx';
-  import { Icon, Link, TextButton } from '@significa/svelte-ui';
+  import { Icon, Link, TextButton } from '@techyor/svelte-ui';
   import plus from '$assets/plus.svg?raw';
   import { slide } from 'svelte/transition';
-  import { bodyLock } from '@significa/svelte-ui/actions';
+  import { bodyLock } from '@techyor/svelte-ui/actions';
   import { writable } from 'svelte/store';
   import { afterNavigate } from '$app/navigation';
   import { t } from '$lib/i18n';
