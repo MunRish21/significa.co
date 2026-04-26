@@ -25,33 +25,15 @@
     about_links: [
       {
         title: 'Mission and values.',
-        description: 'It\'s not just what we do. It\'s the why and the how we go about doing things. That\'s what matters.',
-        link_label: 'Go to Mission',
-        link: {
-          cached_url: '/handbook/mission-and-values',
-          linktype: 'story',
-          story: undefined
-        }
+        description: 'It\'s not just what we do. It\'s the why and the how we go about doing things. That\'s what matters.'
       },
       {
         title: 'Perks and benefits.',
-        description: 'We love nice things. This is the good stuff. And it\'s getting bigger and bigger.',
-        link_label: 'Go to P&B',
-        link: {
-          cached_url: '/handbook/money-matters/perks-and-benefits',
-          linktype: 'story',
-          story: undefined
-        }
+        description: 'We love nice things. This is the good stuff. And it\'s getting bigger and bigger.'
       },
       {
         title: 'Career plan.',
-        description: 'Your goals, your career. We\'re here to help you grow. Together.',
-        link_label: 'Go to Career Plan',
-        link: {
-          cached_url: '/handbook/career',
-          linktype: 'story',
-          story: undefined
-        }
+        description: 'Your goals, your career. We\'re here to help you grow. Together.'
       }
     ]
   };

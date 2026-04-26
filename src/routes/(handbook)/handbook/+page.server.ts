@@ -1,14 +1,12 @@
-import { getStoryblok } from '$lib/storyblok';
 import { error } from '@sveltejs/kit';
 
 import { getHandbookHierarchyConfig } from '$components/pages/handbook/common/data.js';
 
-export const load = async ({ locals, fetch }) => {
+export const load = async ({ locals }) => {
   const version = locals.version;
-  const storyblok = getStoryblok({ fetch });
 
   try {
-    const config = await getHandbookHierarchyConfig(storyblok, version);
+    const config = await getHandbookHierarchyConfig(null, version);
 
     return {
       hierarchy: config.content.hierarchy

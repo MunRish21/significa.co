@@ -33,14 +33,19 @@
   async function handleSearch() {
     isLoading = true;
 
-    const response = await fetchEntries<HandbookPage>(
-      { version: $page.data.version || 'published' },
-      { starts_with: 'handbook', search_term: searchInputValue }
-    );
+    try {
+      const response = await fetchEntries<HandbookPage>(
+        { version: $page.data.version || 'published' },
+        { starts_with: 'handbook', search_term: searchInputValue }
+      );
 
-    searchResults = response;
+      searchResults = response;
+    } catch (err) {
+      console.error('Search error:', err);
+      searchResults = [];
+    }
+
     submittedTerm = searchInputValue;
-
     isLoading = false;
   }
 </script>

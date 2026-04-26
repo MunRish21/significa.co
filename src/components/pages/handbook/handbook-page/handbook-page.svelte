@@ -40,7 +40,11 @@
       <h1 class="[&:first-of-type]:mt-0">{story.name}</h1>
     </div>
 
-    {#if story.content.body}
+    {#if story.content.html}
+      <div class="my-10 md:my-14 lg:my-20">
+        {@html story.content.html}
+      </div>
+    {:else if story.content.body}
       <RichText
         class="my-10 md:my-14 lg:my-20"
         doc={story.content.body}

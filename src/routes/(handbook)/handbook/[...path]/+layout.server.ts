@@ -1,11 +1,9 @@
-import { getStoryblok } from '$lib/storyblok';
 import { getHandbookHierarchyConfig } from '$components/pages/handbook/common/data.js';
 
-export const load = async ({ locals, fetch }) => {
+export const load = async ({ locals }) => {
   const version = locals.version;
-  const storyblok = getStoryblok({ fetch });
 
-  const config = await getHandbookHierarchyConfig(storyblok, version, 'sidebar');
+  const config = await getHandbookHierarchyConfig(null, version, 'sidebar');
 
   return { hierarchy: config.content.hierarchy };
 };
