@@ -72,6 +72,13 @@
         </div>
       {:then page}
         <DynamicPage {page} />
+      {:catch error}
+        <div class="flex flex-col items-center justify-center gap-4 p-10">
+          <p class="text-center text-sm text-foreground-secondary">
+            {error?.message || 'Failed to load page'}
+          </p>
+          <Button variant="ghost" on:click={drawer.close}>Close</Button>
+        </div>
       {/await}
     </div>
   </div>

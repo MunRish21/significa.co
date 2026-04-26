@@ -2,172 +2,89 @@
   import { page } from '$app/stores';
   import BlogEntry from '$components/blog-entry.svelte';
   import Seo from '$components/seo.svelte';
-  import { BLOG_PARAMS } from '$lib/content';
   import { t } from '$lib/i18n';
-  import { getStoryblok } from '$lib/storyblok';
-  import type { BlogPostStoryblok } from '$types/bloks';
   import { Badge, Button, Tag, TextButton } from '@techyor/svelte-ui';
-  import type { ISbResult, ISbStoryData } from '@storyblok/js';
   import clsx from 'clsx';
-  import { onMount } from 'svelte';
   import { writable } from 'svelte/store';
   import { slide } from 'svelte/transition';
 
-  export let data: ISbResult;
+  export let data: { data: { stories: any[] }; total: number };
 
-  const storyblok = getStoryblok();
   const isFetching = writable(false);
   const total = writable(data.total);
-  const posts = writable<ISbStoryData<BlogPostStoryblok>[]>([]);
+  const posts = writable<any[]>([]);
 
   let allTags: string[] = [];
   let filters: string[] = [];
   let filtersOpen: boolean;
 
-  // sync load function with local store (that will store "load more" posts)
   $: posts.set(data.data.stories);
   $: total.set(data.total);
   $: version = $page.data.version || 'published';
-  $: paramsTags = $page.url.searchParams.getAll('t');
 
-  const fetchStories = async (page: number) => {
-    isFetching.set(true);
-    const queryTags = paramsTags.length > 0 ? paramsTags.join(',') : filters.join(',');
-    const res = await storyblok.get('cdn/stories', {
-      version,
-      with_tag: queryTags,
-      page,
-      ...BLOG_PARAMS
-    });
-    isFetching.set(false);
-
-    if (page === 1) {
-      posts.set(res.data.stories);
+  const toggleFilter = (tag: string) => {
+    if (filters.includes(tag)) {
+      filters = filters.filter((t) => t !== tag);
     } else {
-      posts.update((n) => [...n, ...res.data.stories]);
+      filters = [...filters, tag];
     }
-
-    total.set(res.total);
   };
 
-  const getPageTitle = (tags: string[]): string => {
-    if (tags.length === 0) {
-      return $page.data.page?.story?.content?.seo_title;
-    }
-
-    const titlePrefix = ($page.data.page?.story?.content?.seo_title || '').replace(
-      /\s[-–]\s.*/,
-      ''
-    );
-
-    return `${titlePrefix} - ${tags.join(', ')}`;
+  const toggleAllTags = () => {
+    filters = filters.length === allTags.length ? [] : [...allTags];
   };
 
-  onMount(async () => {
-    const blogTags = await storyblok.get('cdn/tags', {
-      version,
-      cv: Date.now(),
-      starts_with: 'blog/',
-      per_page: 100
-    });
-
-    allTags = blogTags.data.tags.map((tag: { name: string }) => tag.name);
+  $: filteredPosts = $posts.filter((post) => {
+    if (filters.length === 0) return true;
+    return filters.some((filter) => post.tag_list?.includes(filter));
   });
 </script>
 
-<Seo
-  title={getPageTitle(paramsTags)}
-  description={paramsTags.length
-    ? t('blog.tag-meta-description', { tags: paramsTags.join(', ') })
-    : $page.data.page?.story?.content?.seo_description}
-  structureDataMarkup={$page.data.page?.story?.content?.structure_data_markup}
-/>
+<Seo title={t('BlogIndex')} />
 
-<main>
-  <div class="container mx-auto px-container">
-    <h1 class="mt-10 text-7xl md:mt-14 lg:mt-20">
-      {#if paramsTags.length}
-        <a class="text-foreground-tertiary transition-colors hover:text-foreground" href="/blog"
-          >{t('blog.title')}</a
-        >
-        <span class="text-foreground-tertiary">/</span>
-        <span>{paramsTags.join(', ')}</span>
-      {:else}
-        <span>{t('blog.title')}</span>
-      {/if}
-    </h1>
-  </div>
+<div class="container mx-auto px-container pb-20 pt-10 md:pb-40 md:pt-20">
+  <header class="mx-auto mb-8 max-w-4xl md:mb-12">
+    <h1 class="mb-2 text-5xl font-bold md:text-6xl">{t('blog')}</h1>
+    <p class="text-lg text-foreground-secondary md:text-xl">
+      {t('BlogSubtitle')}
+    </p>
+  </header>
 
-  <div class="mt-10 md:mt-14 lg:mt-20">
-    {#if paramsTags.length == 0}
-      <!-- Filters -->
-      <div
-        class="lg:mt-18 container mx-auto mb-3 mt-8 flex items-center justify-between px-container md:mt-12"
-      >
-        <div class="flex items-center gap-2">
-          <TextButton iconLeft="configuration" on:click={() => (filtersOpen = !filtersOpen)}
-            >{t(filtersOpen ? 'close' : 'filters')}</TextButton
-          >
-          {#if filters.length}
-            <Badge>{filters.length}</Badge>
-          {/if}
+  <div class="mx-auto max-w-4xl">
+    {#if allTags.length > 0}
+      <div class="mb-8 flex flex-col gap-4">
+        <div class="flex items-center justify-between">
+          <TextButton on:click={toggleAllTags}>
+            {filters.length === allTags.length ? 'Clear all' : 'Select all'}
+          </TextButton>
         </div>
-        {#if filters.length}
-          <TextButton on:click={() => (filters = [])}>{t('clear-all')}</TextButton>
-        {/if}
-      </div>
-      <div class="border-t">
-        {#if filtersOpen}
-          <div transition:slide|local={{ duration: 300 }} class="border-b">
-            <div class="container mx-auto px-container py-4 md:flex md:py-0">
-              <div class={clsx('py-4 md:py-10')}>
-                <div class="mt-2 flex flex-wrap gap-2">
-                  {#each allTags as tag}
-                    <Tag
-                      label={tag}
-                      active={filters.some((f) => f === tag)}
-                      on:click={() => {
-                        const rest = filters.filter((f) => f !== tag);
-
-                        if (filters.some((f) => f === tag)) {
-                          filters = rest;
-                        } else {
-                          filters = [...rest, tag];
-                        }
-
-                        fetchStories(1);
-                      }}
-                    />
-                  {/each}
-                </div>
-              </div>
-            </div>
-          </div>
-        {/if}
+        <div class="flex flex-wrap gap-2">
+          {#each allTags as tag}
+            <Tag
+              selected={filters.includes(tag)}
+              on:click={() => toggleFilter(tag)}
+            >
+              {tag}
+            </Tag>
+          {/each}
+        </div>
       </div>
     {/if}
 
-    {#each $posts as post}
-      <BlogEntry {post} />
-    {/each}
-  </div>
-
-  <div class="container mx-auto mb-10 px-container">
-    {#if $posts.length < $total}
-      <Button
-        class="mt-10"
-        variant="secondary"
-        on:click={() => {
-          fetchStories($posts.length / BLOG_PARAMS.per_page + 1);
-        }}
-        loading={$isFetching}
-      >
-        {t('blog.load-more')}
-      </Button>
+    {#if filteredPosts.length > 0}
+      <div class="flex flex-col gap-4">
+        {#each filteredPosts as post (post.id)}
+          <BlogEntry {post} />
+        {/each}
+      </div>
+    {:else}
+      <p class="text-center text-foreground-secondary">{t('NoPostsFound')}</p>
     {/if}
 
-    {#if $posts.length === 0}
-      <p class="py-8 text-5xl">{t('blog.no-results')}</p>
+    {#if $isFetching}
+      <div class="mt-8 text-center">
+        <p class="text-sm text-foreground-secondary">{t('Loading')}</p>
+      </div>
     {/if}
   </div>
-</main>
+</div>
