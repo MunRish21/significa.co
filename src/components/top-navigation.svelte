@@ -111,35 +111,48 @@
       </div>
 
       <div class="flex-1">
-        {#each configuration.footer || [] as column}
-          <div class="mt-8">
-            <p class="mb-2 text-xs font-medium uppercase tracking-wider text-foreground-secondary">
-              {column.title}
-            </p>
-            <ul class="text-lg font-medium">
-              {#each column.links || [] as link}
-                {#if column.component === 'footer-column-internal'}
-                  <li class="mb-1 flex items-center gap-1.5">
-                    <Link class="inline-block" href={sanitizeSlug(link.full_slug)}>{link.name}</Link
-                    >
-                    {#if sanitizeSlug(link.full_slug) === '/careers'}
-                      {#if $page.data.careers.length}
-                        <div aria-hidden="true">
-                          <Badge class="text-xs">{$page.data.careers.length}</Badge>
-                        </div>
-                      {/if}
-                    {/if}
-                  </li>
-                {:else if column.component === 'footer-column-external'}
-                  {@const { href, target, rel } = getAnchorFromCmsLink(link.link)}
-                  <li class="mb-1">
-                    <Link class="inline-block" {href} {target} {rel}>{link.label}</Link>
-                  </li>
-                {/if}
-              {/each}
-            </ul>
-          </div>
-        {/each}
+        <div class="mt-8">
+          <p class="mb-4 text-xs font-medium uppercase tracking-wider text-foreground-secondary">
+            Navigation
+          </p>
+          <ul class="text-lg font-medium">
+            <li class="mb-3">
+              <Link class="inline-block" href="/">Home</Link>
+            </li>
+            <li class="mb-3">
+              <Link class="inline-block" href="/projects">Projects</Link>
+            </li>
+            <li class="mb-3">
+              <Link class="inline-block" href="/services">Services</Link>
+            </li>
+            <li class="mb-3">
+              <Link class="inline-block" href="/about">About</Link>
+            </li>
+            <li class="mb-3">
+              <Link class="inline-block" href="/blog">Blog</Link>
+            </li>
+            <li class="mb-3">
+              <Link class="inline-block" href="/get-a-quote">Get a quote</Link>
+            </li>
+            <li class="mb-3">
+              <Link class="inline-block" href="/contact">Contact us</Link>
+            </li>
+          </ul>
+        </div>
+
+        <div class="mt-10">
+          <p class="mb-4 text-xs font-medium uppercase tracking-wider text-foreground-secondary">
+            Follow us
+          </p>
+          <ul class="text-lg font-medium">
+            <li class="mb-3">
+              <Link class="inline-block" href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</Link>
+            </li>
+            <li class="mb-3">
+              <Link class="inline-block" href="https://github.com" target="_blank" rel="noopener noreferrer">Github</Link>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   {/if}

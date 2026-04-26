@@ -26,11 +26,11 @@
           options: { threshold: [1] }
         }}
       >
-        <Slogan {animate} class="hidden font-bold md:block" />
+        <Slogan {animate} class="mt-8 mb-4 hidden font-bold md:block" />
       </span>
 
       {#if !!configuration.footer_partners?.length}
-        <div class="-ml-2 hidden h-20 items-center gap-3 md:flex lg:gap-7">
+        <div class="-ml-2 hidden h-20 items-center gap-3 md:flex lg:gap-7 ">
           {#each configuration.footer_partners as partner, i}
             {#if partner.light_mode?.filename}
               {@const { src, alt, width, height } = getImageAttributes(partner.light_mode, {
@@ -42,9 +42,9 @@
                 {width}
                 {height}
                 class={clsx(
-                  i === 0 && 'mt-[7px] h-auto max-h-24 w-auto object-contain dark:hidden',
-                  i === 1 && 'h-auto max-h-12 w-auto object-contain dark:hidden',
-                  i === 2 && 'mb-1 h-auto max-h-[72px] w-auto object-contain dark:hidden'
+                  i === 0 && 'mt-[7px] h-auto max-h-[60px] w-auto object-contain dark:hidden',
+                  i === 1 && 'h-auto max-h-[60px] w-auto object-contain dark:hidden',
+                  i === 2 && 'mb-1 h-auto max-h-[60px] w-auto object-contain dark:hidden'
                 )}
               />
             {/if}
@@ -58,9 +58,9 @@
                 {width}
                 {height}
                 class={clsx(
-                  i === 0 && 'mt-[7px] hidden h-auto max-h-24 w-auto object-contain dark:block',
-                  i === 1 && 'hidden h-auto max-h-12 w-auto object-contain dark:block',
-                  i === 2 && 'mb-1 hidden h-auto max-h-[72px] w-auto object-contain dark:block'
+                  i === 0 && 'mt-[7px] hidden h-auto  w-auto object-contain dark:block',
+                  i === 1 && 'hidden h-auto  w-auto object-contain dark:block',
+                  i === 2 && 'mb-1 hidden h-auto  w-auto object-contain dark:block'
                 )}
               />
             {/if}
@@ -70,48 +70,46 @@
     </div>
 
     <div class="col-span-8 flex flex-col gap-8 xs:flex-row md:col-span-5 lg:col-span-4">
-      {#each configuration.footer || [] as column}
-        <div class="flex-1">
-          <p class="mb-4 text-xs font-medium uppercase tracking-wider text-foreground-secondary">
-            {column.title}
-          </p>
-          <ul class="text-lg leading-normal">
-            {#each column.links || [] as link}
-              {#if column.component === 'footer-column-internal'}
-                <li class="mb-2">
-                  <Link
-                    class="relative"
-                    active={$page.url.pathname === sanitizeSlug(link.full_slug)}
-                    href={sanitizeSlug(link.full_slug)}
-                  >
-                    {link.name}
-                    {#if sanitizeSlug(link.full_slug) === '/careers'}
-                      {#if $page.data.careers.length}
-                        <span aria-hidden="true">
-                          <Badge
-                            class="absolute -right-6 top-1/2 -translate-y-1/2 text-xs leading-none"
-                          >
-                            {$page.data.careers.length}
-                          </Badge>
-                        </span>
-                      {/if}
-                    {/if}
-                  </Link>
-                </li>
-              {:else if column.component === 'footer-column-external'}
-                {@const { href, target, rel } = getAnchorFromCmsLink(link.link)}
-                <li class="mb-2">
-                  <Link {href} {target} {rel}>{link.label}</Link>
-                </li>
-              {/if}
-            {/each}
-          </ul>
-        </div>
-      {/each}
+      <!-- Menu 1: Navigation -->
+      <div class="flex-1">
+        <p class="mb-4 text-xs font-medium uppercase tracking-wider text-foreground-secondary">
+          Techyor
+        </p>
+        <ul class="text-lg leading-normal">
+          <li class="mb-2"><Link href="/">Home</Link></li>
+          <li class="mb-2"><Link href="/about">About</Link></li>
+          <li class="mb-2"><Link href="/projects">Projects</Link></li>
+          <li class="mb-2"><Link href="/services">Services</Link></li>
+          <li class="mb-2"><Link href="/blog">Blog</Link></li>
+        </ul>
+      </div>
+
+      <!-- Menu 2: Company -->
+      <div class="flex-1">
+        <p class="mb-4 text-xs font-medium uppercase tracking-wider text-foreground-secondary">
+          Company
+        </p>
+        <ul class="text-lg leading-normal">
+          <li class="mb-2"><Link href="/get-a-quote">Get a quote</Link></li>
+          <li class="mb-2"><Link href="/contact">Contact us</Link></li>
+          <li class="mb-2"><Link href="#careers">Careers</Link></li>
+        </ul>
+      </div>
+
+      <!-- Menu 3: Follow us -->
+      <div class="flex-1">
+        <p class="mb-4 text-xs font-medium uppercase tracking-wider text-foreground-secondary">
+          Follow us
+        </p>
+        <ul class="text-lg leading-normal">
+          <li class="mb-2"><Link href="#linkedin">LinkedIn</Link></li>
+          <li class="mb-2"><Link href="#github">Github</Link></li>
+        </ul>
+      </div>
     </div>
 
     {#if !!configuration.footer_partners?.length}
-      <div class="col-span-3 -ml-2 flex h-20 items-center gap-7 md:hidden">
+      <div class="col-span-3 -ml-2 flex h-20 items-center gap-7 md:hidden ">
         {#each configuration.footer_partners as partner, i}
           {#if partner.light_mode?.filename}
             {@const { src, alt, width, height } = getImageAttributes(partner.light_mode, {
@@ -123,9 +121,9 @@
               {width}
               {height}
               class={clsx(
-                i === 0 && 'mt-[7px] h-auto max-h-24 w-auto object-contain dark:hidden',
-                i === 1 && 'h-auto max-h-12 w-auto object-contain dark:hidden',
-                i === 2 && 'mb-1 h-auto max-h-[72px] w-auto object-contain dark:hidden'
+                i === 0 && 'mt-[7px] h-auto  w-auto object-contain dark:hidden',
+                i === 1 && 'h-auto  w-auto object-contain dark:hidden',
+                i === 2 && 'mb-1 h-auto  w-auto object-contain dark:hidden'
               )}
             />
           {/if}
@@ -139,9 +137,9 @@
               {width}
               {height}
               class={clsx(
-                i === 0 && 'mt-[7px] hidden h-auto max-h-24 w-auto object-contain dark:block',
-                i === 1 && 'hidden h-auto max-h-12 w-auto object-contain dark:block',
-                i === 2 && 'mb-1 hidden h-auto max-h-[72px] w-auto object-contain dark:block'
+                i === 0 && 'mt-[7px] hidden h-auto  w-auto object-contain dark:block',
+                i === 1 && 'hidden h-auto  w-auto object-contain dark:block',
+                i === 2 && 'mb-1 hidden h-auto  w-auto object-contain dark:block'
               )}
             />
           {/if}
@@ -155,7 +153,7 @@
       class="container mx-auto flex flex-col items-start justify-between px-container py-4 text-sm text-foreground-secondary xs:flex-row xs:items-center"
     >
       <span>Techyor &mdash; Digital Product Design & Development Agency</span>
-      <Link href="/legal">Legal</Link>
+      <Link href="#legal">Legal</Link>
     </div>
   </div>
 </footer>
