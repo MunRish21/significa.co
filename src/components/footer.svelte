@@ -92,7 +92,7 @@
         <ul class="text-lg leading-normal">
           <li class="mb-2"><Link href="/get-a-quote">Get a quote</Link></li>
           <li class="mb-2"><Link href="/contact">Contact us</Link></li>
-          <li class="mb-2"><Link href="#careers">Careers</Link></li>
+          <li class="mb-2"><Link href="/careers">Careers</Link></li>
         </ul>
       </div>
 

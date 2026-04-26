@@ -132,6 +132,9 @@
               <Link class="inline-block" href="/blog">Blog</Link>
             </li>
             <li class="mb-3">
+              <Link class="inline-block" href="/careers">Careers</Link>
+            </li>
+            <li class="mb-3">
               <Link class="inline-block" href="/get-a-quote">Get a quote</Link>
             </li>
             <li class="mb-3">
