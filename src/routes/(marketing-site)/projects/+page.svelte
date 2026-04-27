@@ -6,6 +6,8 @@
 
   let showFilters = false;
   let selectedFilters: string[] = [];
+  let projectsToShow = 8;
+  const PROJECTS_PER_LOAD = 8;
 
   const allServices = [...new Set(projects.flatMap(p => p.services))].sort();
   const allDeliverables = [...new Set(projects.flatMap(p => p.deliverables))].sort();
@@ -18,16 +20,25 @@
         )
       );
 
+  $: visibleProjects = filteredProjects.slice(0, projectsToShow);
+  $: hasMore = filteredProjects.length > projectsToShow;
+
   function toggleFilter(filter: string) {
     if (selectedFilters.includes(filter)) {
       selectedFilters = selectedFilters.filter(f => f !== filter);
     } else {
       selectedFilters = [...selectedFilters, filter];
     }
+    projectsToShow = 8;
   }
 
   function clearFilters() {
     selectedFilters = [];
+    projectsToShow = 8;
+  }
+
+  function loadMore() {
+    projectsToShow += PROJECTS_PER_LOAD;
   }
 </script>
 
@@ -130,7 +141,7 @@
 
   <!-- Projects List -->
   <section>
-    {#each filteredProjects as project, index (project.id)}
+    {#each visibleProjects as project, index (project.id)}
       {#if index === 0}
         <!-- First Project - Simple Design -->
         <div class="group border-b py-12 transition-colors elevated-links @container first:border-t hover:bg-foreground-tertiary/10">
@@ -243,4 +254,16 @@
       {/if}
     {/each}
   </section>
+
+  <!-- Load More Button -->
+  {#if hasMore}
+    <div class="container mx-auto flex justify-center px-container py-12 md:py-16 lg:py-20">
+      <button
+        on:click={loadMore}
+        class="group relative inline-flex items-center justify-center gap-1.5 overflow-hidden whitespace-nowrap text-md font-medium leading-none outline-none transition-all hover:ring-4 focus-visible:ring-4 active:scale-[0.98] active:ring-2 disabled:pointer-events-none disabled:opacity-60 text-foreground border-border hover:border-border-active focus-visible:border-border-active active:border-border-active border h-11 rounded-md px-8"
+      >
+        <span>Load more</span>
+      </button>
+    </div>
+  {/if}
 </main>
