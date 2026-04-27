@@ -21,7 +21,7 @@
   <Footer configuration={data.configuration.content} />
 {/if}
 
-<HandbookModal isOpen={showMissionModal} title="Mission and values" lastUpdated="6 September 2024" image="https://a.storyblok.com/f/198185/4500x2250/69085659de/mission-and-values.webp/m/1024x0/" expandUrl="/handbook/mission-and-values">
+<HandbookModal isOpen={showMissionModal} title="Mission and values" lastUpdated="6 September 2024" image="/assets/storyblok/mission-and-values.webp" expandUrl="/handbook/mission-and-values">
   <h3>We're on a mission to deliver <b>the best digital products. Period.</b></h3>
   <hr>
 

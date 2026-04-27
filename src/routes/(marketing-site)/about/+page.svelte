@@ -21,7 +21,7 @@
         _uid: '2',
         component: 'physics-sticker',
         photo: {
-          filename: 'https://a.storyblok.com/f/198185/271x352/1a58bf0e7e/physics-sereno.png',
+          filename: '/assets/storyblok/physics-sereno.png',
           alt: 'Sereno illustration'
         }
       },
@@ -35,7 +35,7 @@
         _uid: '4',
         component: 'physics-sticker',
         photo: {
-          filename: 'https://a.storyblok.com/f/198185/289x352/1b519cc752/physics-manel.png',
+          filename: '/assets/storyblok/physics-manel.png',
           alt: 'Manel illustration'
         }
       },
@@ -43,7 +43,7 @@
         _uid: '5',
         component: 'physics-sticker',
         photo: {
-          filename: 'https://a.storyblok.com/f/198185/340x350/90ad6097b6/physics-design.png',
+          filename: '/assets/storyblok/physics-design.png',
           alt: 'Design illustration'
         }
       },
@@ -62,7 +62,7 @@
         _uid: '8',
         component: 'physics-sticker',
         photo: {
-          filename: 'https://a.storyblok.com/f/198185/400x316/fd675bb564/physics-development.png',
+          filename: '/assets/storyblok/physics-development.png',
           alt: 'Development illustration'
         }
       },
@@ -82,7 +82,7 @@
         _uid: '11',
         component: 'physics-sticker',
         photo: {
-          filename: 'https://a.storyblok.com/f/198185/400x400/463c1ffd8a/physics-hatch.png',
+          filename: '/assets/storyblok/physics-hatch.png',
           alt: 'Hatch illustration'
         }
       }
@@ -127,14 +127,14 @@
       {
         component: 'photo_card' as const,
         photo: {
-          filename: 'https://a.storyblok.com/f/198185/481x643/a07f2ad743/office3.png',
+          filename: '/assets/storyblok/office3.png',
           alt: 'Office image 1'
         }
       },
       {
         component: 'photo_card' as const,
         photo: {
-          filename: 'https://a.storyblok.com/f/198185/481x643/3e966cb641/office5.png',
+          filename: '/assets/storyblok/office5.png',
           alt: 'Office image 2'
         }
       },
@@ -145,21 +145,21 @@
       {
         component: 'photo_card' as const,
         photo: {
-          filename: 'https://a.storyblok.com/f/198185/481x643/121b51a6eb/office4.png',
+          filename: '/assets/storyblok/office4.png',
           alt: 'Office image 3'
         }
       },
       {
         component: 'photo_card' as const,
         photo: {
-          filename: 'https://a.storyblok.com/f/198185/481x643/6696f35186/office1.png',
+          filename: '/assets/storyblok/office1.png',
           alt: 'Office image 4'
         }
       },
       {
         component: 'photo_card' as const,
         photo: {
-          filename: 'https://a.storyblok.com/f/198185/481x643/3ca27b4f9b/office2.png',
+          filename: '/assets/storyblok/office2.png',
           alt: 'Office image 5'
         }
       }
@@ -172,51 +172,51 @@
     clients: [
       {
         light_mode: {
-          filename: 'https://a.storyblok.com/f/198185/326x84/fafe7547ba/light-fcp-final.png',
+          filename: '/assets/storyblok/light-fcp-final.png',
           alt: ''
         },
         dark_mode: {
-          filename: 'https://a.storyblok.com/f/198185/326x84/3a6318eff4/dark-fcp-final.png',
+          filename: '/assets/storyblok/dark-fcp-final.png',
           alt: ''
         }
       },
       {
         light_mode: {
-          filename: 'https://a.storyblok.com/f/198185/2976x520/60a2856d4d/backercamp-light.png',
+          filename: '/assets/storyblok/backercamp-light.png',
           alt: 'Backercamp Logo'
         },
         dark_mode: {
-          filename: 'https://a.storyblok.com/f/198185/2976x520/e5f43f5d10/backercamp-dark.png',
+          filename: '/assets/storyblok/backercamp-dark.png',
           alt: 'Backercamp Logo'
         }
       },
       {
         light_mode: {
-          filename: 'https://a.storyblok.com/f/198185/928x520/efbbe25cf4/allo-light.png',
+          filename: '/assets/storyblok/allo-light.png',
           alt: 'allO Logo'
         },
         dark_mode: {
-          filename: 'https://a.storyblok.com/f/198185/928x520/a63160331b/allo-dark.png',
+          filename: '/assets/storyblok/allo-dark.png',
           alt: 'allO Logo'
         }
       },
       {
         light_mode: {
-          filename: 'https://a.storyblok.com/f/198185/1980x520/c27ec6fd0d/heyharper-light.png',
+          filename: '/assets/storyblok/heyharper-light.png',
           alt: ''
         },
         dark_mode: {
-          filename: 'https://a.storyblok.com/f/198185/1980x520/eadca83872/heyharper-dark.png',
+          filename: '/assets/storyblok/heyharper-dark.png',
           alt: ''
         }
       },
       {
         light_mode: {
-          filename: 'https://a.storyblok.com/f/198185/1055x282/e097310607/mishmash_lightmode.png',
+          filename: '/assets/storyblok/mishmash_lightmode.png',
           alt: ''
         },
         dark_mode: {
-          filename: 'https://a.storyblok.com/f/198185/1054x281/44144e3c56/mishmash_darkmode.png',
+          filename: '/assets/storyblok/mishmash_darkmode.png',
           alt: ''
         }
       }

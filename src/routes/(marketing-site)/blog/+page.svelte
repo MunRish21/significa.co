@@ -37,7 +37,7 @@
                 name: 'sarah',
                 focus: '',
                 title: 'Sarah Johnson',
-                filename: 'https://a.storyblok.com/f/198185/300x300/placeholder-author.jpg'
+                filename: '/assets/storyblok/placeholder-author.jpg'
               },
               is_active: true
             },
@@ -77,7 +77,7 @@
                 name: 'michael',
                 focus: '',
                 title: 'Michael Chen',
-                filename: 'https://a.storyblok.com/f/198185/300x300/placeholder-author.jpg'
+                filename: '/assets/storyblok/placeholder-author.jpg'
               },
               is_active: true
             },
@@ -117,7 +117,7 @@
                 name: 'emma',
                 focus: '',
                 title: 'Emma Williams',
-                filename: 'https://a.storyblok.com/f/198185/300x300/placeholder-author.jpg'
+                filename: '/assets/storyblok/placeholder-author.jpg'
               },
               is_active: true
             },
@@ -157,7 +157,7 @@
                 name: 'david',
                 focus: '',
                 title: 'David Martinez',
-                filename: 'https://a.storyblok.com/f/198185/300x300/placeholder-author.jpg'
+                filename: '/assets/storyblok/placeholder-author.jpg'
               },
               is_active: true
             },
@@ -197,7 +197,7 @@
                 name: 'jessica',
                 focus: '',
                 title: 'Jessica Lee',
-                filename: 'https://a.storyblok.com/f/198185/300x300/placeholder-author.jpg'
+                filename: '/assets/storyblok/placeholder-author.jpg'
               },
               is_active: true
             },
@@ -237,7 +237,7 @@
                 name: 'james',
                 focus: '',
                 title: 'James Wilson',
-                filename: 'https://a.storyblok.com/f/198185/300x300/placeholder-author.jpg'
+                filename: '/assets/storyblok/placeholder-author.jpg'
               },
               is_active: true
             },

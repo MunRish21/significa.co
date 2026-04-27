@@ -126,7 +126,7 @@
       },
       {
         icon: {
-          filename: 'https://a.storyblok.com/f/198185/102x96/ed8f9a721b/browser.webp',
+          filename: '/assets/storyblok/browser.webp',
           alt: 'Browser icon'
         },
         deliverable: 'Website',
@@ -134,7 +134,7 @@
       },
       {
         icon: {
-          filename: 'https://a.storyblok.com/f/198185/106x96/272fa8c3f1/laptop.webp',
+          filename: '/assets/storyblok/laptop.webp',
           alt: 'Laptop icon'
         },
         deliverable: 'Desktop App',
@@ -142,7 +142,7 @@
       },
       {
         icon: {
-          filename: 'https://a.storyblok.com/f/198185/96x96/87e501e667/web.webp',
+          filename: '/assets/storyblok/web.webp',
           alt: 'Globe icon'
         },
         deliverable: 'Web App',
@@ -150,7 +150,7 @@
       },
       {
         icon: {
-          filename: 'https://a.storyblok.com/f/198185/96x101/bf007cf6c5/iosapp.webp',
+          filename: '/assets/storyblok/iosapp.webp',
           alt: 'iOS smartphone icon'
         },
         deliverable: 'Mobile App',
@@ -158,7 +158,7 @@
       },
       {
         icon: {
-          filename: 'https://a.storyblok.com/f/198185/107x96/1e622317f0/cms.webp',
+          filename: '/assets/storyblok/cms.webp',
           alt: 'Folder icon'
         },
         deliverable: 'CMS',
@@ -166,7 +166,7 @@
       },
       {
         icon: {
-          filename: 'https://a.storyblok.com/f/198185/96x108/e855fedbf7/watch.webp',
+          filename: '/assets/storyblok/watch.webp',
           alt: 'Watch icon'
         },
         deliverable: 'Watch and TV App',
@@ -182,21 +182,21 @@
     clients: [
       {
         light_mode: {
-          filename: 'https://a.storyblok.com/f/198185/1000x286/21c30918c1/shopify-mono-black.png',
+          filename: '/assets/storyblok/shopify-mono-black.png',
           alt: 'Shopify'
         },
         dark_mode: {
-          filename: 'https://a.storyblok.com/f/198185/1000x286/baf5d2158b/shopify-mono-white.png',
+          filename: '/assets/storyblok/shopify-mono-white.png',
           alt: 'Shopify'
         }
       },
       {
         light_mode: {
-          filename: 'https://a.storyblok.com/f/198185/412x85/f367bd68b7/sb_lighttheme.png',
+          filename: '/assets/storyblok/sb_lighttheme.png',
           alt: 'Storyblok'
         },
         dark_mode: {
-          filename: 'https://a.storyblok.com/f/198185/412x85/07d26b069d/sb_darktheme.png',
+          filename: '/assets/storyblok/sb_darktheme.png',
           alt: 'Storyblok'
         }
       }
@@ -210,61 +210,61 @@
     clients: [
       {
         light_mode: {
-          filename: 'https://a.storyblok.com/f/198185/326x84/fafe7547ba/light-fcp-final.png',
+          filename: '/assets/storyblok/light-fcp-final.png',
           alt: 'FCP'
         },
         dark_mode: {
-          filename: 'https://a.storyblok.com/f/198185/326x84/3a6318eff4/dark-fcp-final.png',
+          filename: '/assets/storyblok/dark-fcp-final.png',
           alt: 'FCP'
         }
       },
       {
         light_mode: {
-          filename: 'https://a.storyblok.com/f/198185/1662x520/a25d1bd00c/emma-light.png',
+          filename: '/assets/storyblok/emma-light.png',
           alt: 'Emma Logo'
         },
         dark_mode: {
-          filename: 'https://a.storyblok.com/f/198185/1662x434/236b3b709a/emma-dark.png',
+          filename: '/assets/storyblok/emma-dark.png',
           alt: 'Emma Logo'
         }
       },
       {
         light_mode: {
-          filename: 'https://a.storyblok.com/f/198185/1528x520/94195c7875/tfp-light.png',
+          filename: '/assets/storyblok/tfp-light.png',
           alt: 'TFP Logo'
         },
         dark_mode: {
-          filename: 'https://a.storyblok.com/f/198185/1528x520/0b12947dc8/tfp-dark.png',
+          filename: '/assets/storyblok/tfp-dark.png',
           alt: 'TFP Logo'
         }
       },
       {
         light_mode: {
-          filename: 'https://a.storyblok.com/f/198185/1980x520/c27ec6fd0d/heyharper-light.png',
+          filename: '/assets/storyblok/heyharper-light.png',
           alt: 'HeyHarper'
         },
         dark_mode: {
-          filename: 'https://a.storyblok.com/f/198185/1980x520/eadca83872/heyharper-dark.png',
+          filename: '/assets/storyblok/heyharper-dark.png',
           alt: 'HeyHarper'
         }
       },
       {
         light_mode: {
-          filename: 'https://a.storyblok.com/f/198185/928x520/efbbe25cf4/allo-light.png',
+          filename: '/assets/storyblok/allo-light.png',
           alt: 'allO Logo'
         },
         dark_mode: {
-          filename: 'https://a.storyblok.com/f/198185/928x520/a63160331b/allo-dark.png',
+          filename: '/assets/storyblok/allo-dark.png',
           alt: 'allO Logo'
         }
       },
       {
         light_mode: {
-          filename: 'https://a.storyblok.com/f/198185/1055x282/e097310607/mishmash_lightmode.png',
+          filename: '/assets/storyblok/mishmash_lightmode.png',
           alt: 'mishmash'
         },
         dark_mode: {
-          filename: 'https://a.storyblok.com/f/198185/1054x281/44144e3c56/mishmash_darkmode.png',
+          filename: '/assets/storyblok/mishmash_darkmode.png',
           alt: 'mishmash'
         }
       }
@@ -284,18 +284,18 @@
               {
                 label: 'Discovery',
                 left_offset: 0,
-                before_light: { filename: 'https://a.storyblok.com/f/198185/166x54/724e0ac2da/purple1-before-light.svg', alt: 'Purple box' },
-                before_dark: { filename: 'https://a.storyblok.com/f/198185/166x54/724e0ac2da/purple1-before-light.svg', alt: 'Purple box' },
-                after_light: { filename: 'https://a.storyblok.com/f/198185/168x56/f39e354834/purple1-after-light.svg', alt: 'Grey box' },
-                after_dark: { filename: 'https://a.storyblok.com/f/198185/168x56/f39e354834/purple1-after-light.svg', alt: 'Grey box' }
+                before_light: { filename: '/assets/storyblok/purple1-before-light.svg', alt: 'Purple box' },
+                before_dark: { filename: '/assets/storyblok/purple1-before-light.svg', alt: 'Purple box' },
+                after_light: { filename: '/assets/storyblok/purple1-after-light.svg', alt: 'Grey box' },
+                after_dark: { filename: '/assets/storyblok/purple1-after-light.svg', alt: 'Grey box' }
               },
               {
                 label: 'Definition',
                 left_offset: 0,
-                before_light: { filename: 'https://a.storyblok.com/f/198185/166x54/724e0ac2da/purple1-before-light.svg', alt: 'Purple box' },
-                before_dark: { filename: 'https://a.storyblok.com/f/198185/166x54/724e0ac2da/purple1-before-light.svg', alt: 'Purple box' },
-                after_light: { filename: 'https://a.storyblok.com/f/198185/168x56/f39e354834/purple1-after-light.svg', alt: 'Grey box' },
-                after_dark: { filename: 'https://a.storyblok.com/f/198185/168x56/f39e354834/purple1-after-light.svg', alt: 'Grey box' }
+                before_light: { filename: '/assets/storyblok/purple1-before-light.svg', alt: 'Purple box' },
+                before_dark: { filename: '/assets/storyblok/purple1-before-light.svg', alt: 'Purple box' },
+                after_light: { filename: '/assets/storyblok/purple1-after-light.svg', alt: 'Grey box' },
+                after_dark: { filename: '/assets/storyblok/purple1-after-light.svg', alt: 'Grey box' }
               }
             ]
           },
@@ -304,10 +304,10 @@
               {
                 label: 'UX Research',
                 left_offset: 114,
-                before_light: { filename: 'https://a.storyblok.com/f/198185/113x53/b67a7b92f9/purple2-before-light.svg', alt: 'Purple box' },
-                before_dark: { filename: 'https://a.storyblok.com/f/198185/113x53/b67a7b92f9/purple2-before-light.svg', alt: 'Purple box' },
-                after_light: { filename: 'https://a.storyblok.com/f/198185/116x56/05b99bb279/purple2-after-light.svg', alt: 'Grey box' },
-                after_dark: { filename: 'https://a.storyblok.com/f/198185/116x56/05b99bb279/purple2-after-light.svg', alt: 'Grey box' }
+                before_light: { filename: '/assets/storyblok/purple2-before-light.svg', alt: 'Purple box' },
+                before_dark: { filename: '/assets/storyblok/purple2-before-light.svg', alt: 'Purple box' },
+                after_light: { filename: '/assets/storyblok/purple2-after-light.svg', alt: 'Grey box' },
+                after_dark: { filename: '/assets/storyblok/purple2-after-light.svg', alt: 'Grey box' }
               }
             ]
           }
@@ -321,42 +321,42 @@
               {
                 label: 'Wireframes',
                 left_offset: 300,
-                before_light: { filename: 'https://a.storyblok.com/f/198185/133x56/c4e52feaf4/orange1-before-light.svg', alt: 'Orange box' },
-                before_dark: { filename: 'https://a.storyblok.com/f/198185/133x56/c4e52feaf4/orange1-before-light.svg', alt: 'Orange box' },
-                after_light: { filename: 'https://a.storyblok.com/f/198185/138x56/dc96961154/orange1-after-light.svg', alt: 'Grey box' },
-                after_dark: { filename: 'https://a.storyblok.com/f/198185/138x56/dc96961154/orange1-after-light.svg', alt: 'Grey box' }
+                before_light: { filename: '/assets/storyblok/orange1-before-light.svg', alt: 'Orange box' },
+                before_dark: { filename: '/assets/storyblok/orange1-before-light.svg', alt: 'Orange box' },
+                after_light: { filename: '/assets/storyblok/orange1-after-light.svg', alt: 'Grey box' },
+                after_dark: { filename: '/assets/storyblok/orange1-after-light.svg', alt: 'Grey box' }
               },
               {
                 label: 'User Testing',
                 left_offset: 0,
-                before_light: { filename: 'https://a.storyblok.com/f/198185/112x55/918ea4b7e8/gray1-before-light.svg', alt: 'Dark grey box' },
-                before_dark: { filename: 'https://a.storyblok.com/f/198185/112x55/918ea4b7e8/gray1-before-light.svg', alt: 'Dark grey box' },
-                after_light: { filename: 'https://a.storyblok.com/f/198185/118x56/1b08c3f92c/gray1-after-light.svg', alt: 'Grey box' },
-                after_dark: { filename: 'https://a.storyblok.com/f/198185/118x56/1b08c3f92c/gray1-after-light.svg', alt: 'Grey box' }
+                before_light: { filename: '/assets/storyblok/gray1-before-light.svg', alt: 'Dark grey box' },
+                before_dark: { filename: '/assets/storyblok/gray1-before-light.svg', alt: 'Dark grey box' },
+                after_light: { filename: '/assets/storyblok/gray1-after-light.svg', alt: 'Grey box' },
+                after_dark: { filename: '/assets/storyblok/gray1-after-light.svg', alt: 'Grey box' }
               },
               {
                 label: 'Look & Feel',
                 left_offset: 0,
-                before_light: { filename: 'https://a.storyblok.com/f/198185/133x56/c4e52feaf4/orange1-before-light.svg', alt: 'Orange box' },
-                before_dark: { filename: 'https://a.storyblok.com/f/198185/133x56/c4e52feaf4/orange1-before-light.svg', alt: 'Orange box' },
-                after_light: { filename: 'https://a.storyblok.com/f/198185/138x56/dc96961154/orange1-after-light.svg', alt: 'Grey box' },
-                after_dark: { filename: 'https://a.storyblok.com/f/198185/138x56/dc96961154/orange1-after-light.svg', alt: 'Grey box' }
+                before_light: { filename: '/assets/storyblok/orange1-before-light.svg', alt: 'Orange box' },
+                before_dark: { filename: '/assets/storyblok/orange1-before-light.svg', alt: 'Orange box' },
+                after_light: { filename: '/assets/storyblok/orange1-after-light.svg', alt: 'Grey box' },
+                after_dark: { filename: '/assets/storyblok/orange1-after-light.svg', alt: 'Grey box' }
               },
               {
                 label: 'Final Design',
                 left_offset: 0,
-                before_light: { filename: 'https://a.storyblok.com/f/198185/165x55/753c100215/orange2-before-light.svg', alt: 'Orange box' },
-                before_dark: { filename: 'https://a.storyblok.com/f/198185/165x55/753c100215/orange2-before-light.svg', alt: 'Orange box' },
-                after_light: { filename: 'https://a.storyblok.com/f/198185/169x56/64fc39f2f9/orange2-after-light.svg', alt: 'Grey box' },
-                after_dark: { filename: 'https://a.storyblok.com/f/198185/169x56/64fc39f2f9/orange2-after-light.svg', alt: 'Grey box' }
+                before_light: { filename: '/assets/storyblok/orange2-before-light.svg', alt: 'Orange box' },
+                before_dark: { filename: '/assets/storyblok/orange2-before-light.svg', alt: 'Orange box' },
+                after_light: { filename: '/assets/storyblok/orange2-after-light.svg', alt: 'Grey box' },
+                after_dark: { filename: '/assets/storyblok/orange2-after-light.svg', alt: 'Grey box' }
               },
               {
                 label: 'User Testing',
                 left_offset: 0,
-                before_light: { filename: 'https://a.storyblok.com/f/198185/112x55/918ea4b7e8/gray1-before-light.svg', alt: 'Dark grey box' },
-                before_dark: { filename: 'https://a.storyblok.com/f/198185/112x55/918ea4b7e8/gray1-before-light.svg', alt: 'Dark grey box' },
-                after_light: { filename: 'https://a.storyblok.com/f/198185/118x56/1b08c3f92c/gray1-after-light.svg', alt: 'Grey box' },
-                after_dark: { filename: 'https://a.storyblok.com/f/198185/118x56/1b08c3f92c/gray1-after-light.svg', alt: 'Grey box' }
+                before_light: { filename: '/assets/storyblok/gray1-before-light.svg', alt: 'Dark grey box' },
+                before_dark: { filename: '/assets/storyblok/gray1-before-light.svg', alt: 'Dark grey box' },
+                after_light: { filename: '/assets/storyblok/gray1-after-light.svg', alt: 'Grey box' },
+                after_dark: { filename: '/assets/storyblok/gray1-after-light.svg', alt: 'Grey box' }
               }
             ]
           },
@@ -365,10 +365,10 @@
               {
                 label: 'Design System',
                 left_offset: 835,
-                before_light: { filename: 'https://a.storyblok.com/f/198185/133x56/c4e52feaf4/orange1-before-light.svg', alt: 'Orange box' },
-                before_dark: { filename: 'https://a.storyblok.com/f/198185/133x56/c4e52feaf4/orange1-before-light.svg', alt: 'Orange box' },
-                after_light: { filename: 'https://a.storyblok.com/f/198185/138x56/dc96961154/orange1-after-light.svg', alt: 'Grey box' },
-                after_dark: { filename: 'https://a.storyblok.com/f/198185/138x56/dc96961154/orange1-after-light.svg', alt: 'Grey box' }
+                before_light: { filename: '/assets/storyblok/orange1-before-light.svg', alt: 'Orange box' },
+                before_dark: { filename: '/assets/storyblok/orange1-before-light.svg', alt: 'Orange box' },
+                after_light: { filename: '/assets/storyblok/orange1-after-light.svg', alt: 'Grey box' },
+                after_dark: { filename: '/assets/storyblok/orange1-after-light.svg', alt: 'Grey box' }
               }
             ]
           }
@@ -382,29 +382,29 @@
               {
                 label: 'Software Architecture',
                 left_offset: 300,
-                before_light: { filename: 'https://a.storyblok.com/f/198185/172x57/388326e12c/blue1-before-light.svg', alt: 'Blue box' },
-                before_dark: { filename: 'https://a.storyblok.com/f/198185/172x57/388326e12c/blue1-before-light.svg', alt: 'Blue box' },
-                after_light: { filename: 'https://a.storyblok.com/f/198185/173x56/32dd84cca8/blue1-after-light.svg', alt: 'Grey box' },
-                after_dark: { filename: 'https://a.storyblok.com/f/198185/173x56/32dd84cca8/blue1-after-light.svg', alt: 'Grey box' }
+                before_light: { filename: '/assets/storyblok/blue1-before-light.svg', alt: 'Blue box' },
+                before_dark: { filename: '/assets/storyblok/blue1-before-light.svg', alt: 'Blue box' },
+                after_light: { filename: '/assets/storyblok/blue1-after-light.svg', alt: 'Grey box' },
+                after_dark: { filename: '/assets/storyblok/blue1-after-light.svg', alt: 'Grey box' }
               },
               {
                 label: 'Development',
                 left_offset: 236,
-                before_light: { filename: 'https://a.storyblok.com/f/198185/428x55/38c49e7502/blue2-before-light.svg', alt: 'Blue box' },
-                before_dark: { filename: 'https://a.storyblok.com/f/198185/428x55/38c49e7502/blue2-before-light.svg', alt: 'Blue box' },
-                after_light: { filename: 'https://a.storyblok.com/f/198185/434x56/3e399cde93/blue2-after-light.svg', alt: 'Grey box' },
-                after_dark: { filename: 'https://a.storyblok.com/f/198185/434x56/3e399cde93/blue2-after-light.svg', alt: 'Grey box' },
+                before_light: { filename: '/assets/storyblok/blue2-before-light.svg', alt: 'Blue box' },
+                before_dark: { filename: '/assets/storyblok/blue2-before-light.svg', alt: 'Blue box' },
+                after_light: { filename: '/assets/storyblok/blue2-after-light.svg', alt: 'Grey box' },
+                after_dark: { filename: '/assets/storyblok/blue2-after-light.svg', alt: 'Grey box' },
                 throw_confetti: true,
-                decoration_light: { filename: 'https://a.storyblok.com/f/198185/152x81/2b2b555241/decorations-dark.svg', alt: '' },
-                decoration_dark: { filename: 'https://a.storyblok.com/f/198185/152x81/2b2b555241/decorations-dark.svg', alt: '' }
+                decoration_light: { filename: '/assets/storyblok/decorations-dark.svg', alt: '' },
+                decoration_dark: { filename: '/assets/storyblok/decorations-dark.svg', alt: '' }
               },
               {
                 label: 'Launch',
                 left_offset: 0,
-                before_light: { filename: 'https://a.storyblok.com/f/198185/114x55/4ffdf8b668/golden-before-light.svg', alt: 'Golden box' },
-                before_dark: { filename: 'https://a.storyblok.com/f/198185/114x55/4ffdf8b668/golden-before-light.svg', alt: 'Golden box' },
-                after_light: { filename: 'https://a.storyblok.com/f/198185/118x56/afcb76874e/golden-after-light.svg', alt: 'Grey box' },
-                after_dark: { filename: 'https://a.storyblok.com/f/198185/118x56/afcb76874e/golden-after-light.svg', alt: 'Grey box' }
+                before_light: { filename: '/assets/storyblok/golden-before-light.svg', alt: 'Golden box' },
+                before_dark: { filename: '/assets/storyblok/golden-before-light.svg', alt: 'Golden box' },
+                after_light: { filename: '/assets/storyblok/golden-after-light.svg', alt: 'Grey box' },
+                after_dark: { filename: '/assets/storyblok/golden-after-light.svg', alt: 'Grey box' }
               }
             ]
           },
@@ -413,26 +413,26 @@
               {
                 label: 'QA',
                 left_offset: 927,
-                before_light: { filename: 'https://a.storyblok.com/f/198185/65x53/236f5ae3e9/gray2-before-light.svg', alt: 'Dark grey box' },
-                before_dark: { filename: 'https://a.storyblok.com/f/198185/65x53/236f5ae3e9/gray2-before-light.svg', alt: 'Dark grey box' },
-                after_light: { filename: 'https://a.storyblok.com/f/198185/70x56/60ed33cf7f/gray2-after-light.svg', alt: 'Grey box' },
-                after_dark: { filename: 'https://a.storyblok.com/f/198185/70x56/60ed33cf7f/gray2-after-light.svg', alt: 'Grey box' }
+                before_light: { filename: '/assets/storyblok/gray2-before-light.svg', alt: 'Dark grey box' },
+                before_dark: { filename: '/assets/storyblok/gray2-before-light.svg', alt: 'Dark grey box' },
+                after_light: { filename: '/assets/storyblok/gray2-after-light.svg', alt: 'Grey box' },
+                after_dark: { filename: '/assets/storyblok/gray2-after-light.svg', alt: 'Grey box' }
               },
               {
                 label: 'QA',
                 left_offset: 0,
-                before_light: { filename: 'https://a.storyblok.com/f/198185/65x53/236f5ae3e9/gray2-before-light.svg', alt: 'Dark grey box' },
-                before_dark: { filename: 'https://a.storyblok.com/f/198185/65x53/236f5ae3e9/gray2-before-light.svg', alt: 'Dark grey box' },
-                after_light: { filename: 'https://a.storyblok.com/f/198185/70x56/60ed33cf7f/gray2-after-light.svg', alt: 'Grey box' },
-                after_dark: { filename: 'https://a.storyblok.com/f/198185/70x56/60ed33cf7f/gray2-after-light.svg', alt: 'Grey box' }
+                before_light: { filename: '/assets/storyblok/gray2-before-light.svg', alt: 'Dark grey box' },
+                before_dark: { filename: '/assets/storyblok/gray2-before-light.svg', alt: 'Dark grey box' },
+                after_light: { filename: '/assets/storyblok/gray2-after-light.svg', alt: 'Grey box' },
+                after_dark: { filename: '/assets/storyblok/gray2-after-light.svg', alt: 'Grey box' }
               },
               {
                 label: 'QA',
                 left_offset: 0,
-                before_light: { filename: 'https://a.storyblok.com/f/198185/65x53/236f5ae3e9/gray2-before-light.svg', alt: 'Dark grey box' },
-                before_dark: { filename: 'https://a.storyblok.com/f/198185/65x53/236f5ae3e9/gray2-before-light.svg', alt: 'Dark grey box' },
-                after_light: { filename: 'https://a.storyblok.com/f/198185/70x56/60ed33cf7f/gray2-after-light.svg', alt: 'Grey box' },
-                after_dark: { filename: 'https://a.storyblok.com/f/198185/70x56/60ed33cf7f/gray2-after-light.svg', alt: 'Grey box' }
+                before_light: { filename: '/assets/storyblok/gray2-before-light.svg', alt: 'Dark grey box' },
+                before_dark: { filename: '/assets/storyblok/gray2-before-light.svg', alt: 'Dark grey box' },
+                after_light: { filename: '/assets/storyblok/gray2-after-light.svg', alt: 'Grey box' },
+                after_dark: { filename: '/assets/storyblok/gray2-after-light.svg', alt: 'Grey box' }
               }
             ]
           }
@@ -464,7 +464,7 @@
           id: 1,
           name: 'avatar-1',
           alt: 'Sarah Johnson',
-          filename: 'https://a.storyblok.com/f/198185/150x150/default-avatar-1.jpg',
+          filename: '/assets/storyblok/default-avatar-1.jpg',
           focus: null,
           source: null,
           title: null,
@@ -481,7 +481,7 @@
           id: 2,
           name: 'avatar-2',
           alt: 'Michael Chen',
-          filename: 'https://a.storyblok.com/f/198185/150x150/default-avatar-2.jpg',
+          filename: '/assets/storyblok/default-avatar-2.jpg',
           focus: null,
           source: null,
           title: null,
@@ -498,7 +498,7 @@
           id: 3,
           name: 'avatar-3',
           alt: 'Emma Williams',
-          filename: 'https://a.storyblok.com/f/198185/150x150/default-avatar-3.jpg',
+          filename: '/assets/storyblok/default-avatar-3.jpg',
           focus: null,
           source: null,
           title: null,
@@ -515,7 +515,7 @@
           id: 4,
           name: 'avatar-4',
           alt: 'David Martinez',
-          filename: 'https://a.storyblok.com/f/198185/150x150/default-avatar-4.jpg',
+          filename: '/assets/storyblok/default-avatar-4.jpg',
           focus: null,
           source: null,
           title: null,
@@ -532,7 +532,7 @@
           id: 5,
           name: 'avatar-5',
           alt: 'Jessica Lee',
-          filename: 'https://a.storyblok.com/f/198185/150x150/default-avatar-5.jpg',
+          filename: '/assets/storyblok/default-avatar-5.jpg',
           focus: null,
           source: null,
           title: null,
@@ -570,11 +570,11 @@
         <div class="w-full flex-1">
           <ul>
             {#each [
-              { href: '/projects/hey-harper', label: 'Best Of The Year', award: 'eCommerce Awards 2025', project: 'Hey Harper.', image: 'https://a.storyblok.com/f/198185/366x264/4d91c9dc63/ecomawards.png' },
-              { href: '/projects/mishmash', label: 'Award', award: 'Red Dot 2025', project: 'mishmash.', image: 'https://a.storyblok.com/f/198185/168x132/696778595b/reddot.webp' },
-              { href: '/projects/significa', label: 'Awwwards', award: 'Distinction 2023', project: 'Significa.', image: 'https://a.storyblok.com/f/198185/122x88/84389cd1be/awwwardshm.png' },
-              { href: '/projects/mishmash', label: 'Awwwards', award: 'Distinction 2020', project: 'mishmash.', image: 'https://a.storyblok.com/f/198185/122x88/84389cd1be/awwwardshm.png' },
-              { href: '/projects/vertbase', label: 'Awwwards', award: 'Distinction 2019', project: 'Vertbase.', image: 'https://a.storyblok.com/f/198185/122x88/84389cd1be/awwwardshm.png' }
+              { href: '/projects/hey-harper', label: 'Best Of The Year', award: 'eCommerce Awards 2025', project: 'Hey Harper.', image: '/assets/storyblok/ecomawards.png' },
+              { href: '/projects/mishmash', label: 'Award', award: 'Red Dot 2025', project: 'mishmash.', image: '/assets/storyblok/reddot.webp' },
+              { href: '/projects/significa', label: 'Awwwards', award: 'Distinction 2023', project: 'Significa.', image: '/assets/storyblok/awwwardshm.png' },
+              { href: '/projects/mishmash', label: 'Awwwards', award: 'Distinction 2020', project: 'mishmash.', image: '/assets/storyblok/awwwardshm.png' },
+              { href: '/projects/vertbase', label: 'Awwwards', award: 'Distinction 2019', project: 'Vertbase.', image: '/assets/storyblok/awwwardshm.png' }
             ] as award, i}
               {#if i < visibleAwards}
                 <li class="block border-b first:border-t transition-colors hover:bg-foreground-tertiary/10">

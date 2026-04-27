@@ -13,7 +13,7 @@
         <div class="flex items-center gap-1.5">
           <img
             class="max-h-1.5"
-            src="https://a.storyblok.com/f/198185/26x20/d61f3e4068/polygon.png/m/0x0/"
+            src="/assets/storyblok/polygon.png"
             alt={isPositive ? 'increase' : 'decrease'}
           />
           <p class="text-lg font-semibold md:text-2xl">{value}</p>

@@ -9,14 +9,14 @@
     {
       component: 'photo_card' as const,
       photo: {
-        filename: 'https://a.storyblok.com/f/198185/480x642/a9691bbea9/contact1.png',
+        filename: '/assets/storyblok/contact1.png',
         alt: 'Contact image 1'
       }
     },
     {
       component: 'photo_card' as const,
       photo: {
-        filename: 'https://a.storyblok.com/f/198185/480x642/94604269c6/contact2.png',
+        filename: '/assets/storyblok/contact2.png',
         alt: 'Contact image 2'
       }
     },
@@ -27,21 +27,21 @@
     {
       component: 'photo_card' as const,
       photo: {
-        filename: 'https://a.storyblok.com/f/198185/480x643/2ae0447d30/contact3.png',
+        filename: '/assets/storyblok/contact3.png',
         alt: 'Contact image 3'
       }
     },
     {
       component: 'photo_card' as const,
       photo: {
-        filename: 'https://a.storyblok.com/f/198185/481x642/9e41380f2d/contact4.png',
+        filename: '/assets/storyblok/contact4.png',
         alt: 'Contact image 4'
       }
     },
     {
       component: 'photo_card' as const,
       photo: {
-        filename: 'https://a.storyblok.com/f/198185/480x642/3b1da65bf4/contact5.png',
+        filename: '/assets/storyblok/contact5.png',
         alt: 'Contact image 5'
       }
     }

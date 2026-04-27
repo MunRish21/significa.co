@@ -9,7 +9,7 @@ const config = {
 
   kit: {
     adapter: adapter({
-      runtime: 'nodejs25.x'
+      runtime: 'nodejs20.x'
     }),
     alias: {
       $assets: './src/assets',

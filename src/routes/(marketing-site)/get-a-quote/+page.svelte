@@ -9,23 +9,23 @@
     component: 'slideshow',
     images: [
       {
-        filename: 'https://a.storyblok.com/f/198185/528x296/326459166f/pn_timeline.png',
+        filename: '/assets/storyblok/pn_timeline.png',
         alt: 'Passaporte Natura 2000 screens'
       },
       {
-        filename: 'https://a.storyblok.com/f/198185/6000x4000/0184c60246/tagg-mockup-shot.jpg',
+        filename: '/assets/storyblok/tagg-mockup-shot.jpg',
         alt: 'Tagg mockup'
       },
       {
-        filename: 'https://a.storyblok.com/f/198185/3840x2880/746c872a60/zoko-thumb-02.jpg',
+        filename: '/assets/storyblok/zoko-thumb-02.jpg',
         alt: 'Zoko panels'
       },
       {
-        filename: 'https://a.storyblok.com/f/198185/1638x1023/446240b59f/get-a-quote-curationist.png',
+        filename: '/assets/storyblok/get-a-quote-curationist.png',
         alt: 'Curationist Homepage'
       },
       {
-        filename: 'https://a.storyblok.com/f/198185/528x296/51e01a0ab6/dia2-timeline.png',
+        filename: '/assets/storyblok/dia2-timeline.png',
         alt: 'Dia screens'
       }
     ]
