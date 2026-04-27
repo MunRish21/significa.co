@@ -4,13 +4,32 @@
 
   const projects = projectsData;
 
-  let showFilters = false;
+  let showFilters = true;
   let selectedFilters: string[] = [];
   let projectsToShow = 8;
   const PROJECTS_PER_LOAD = 8;
 
-  const allServices = [...new Set(projects.flatMap(p => p.services))].sort();
-  const allDeliverables = [...new Set(projects.flatMap(p => p.deliverables))].sort();
+  // Count services and sort by frequency (descending)
+  const serviceCount = new Map<string, number>();
+  projects.forEach(p => {
+    p.services.forEach(service => {
+      serviceCount.set(service, (serviceCount.get(service) || 0) + 1);
+    });
+  });
+  const allServices = Array.from(serviceCount.entries())
+    .sort((a, b) => b[1] - a[1])
+    .map(([service]) => service);
+
+  // Count deliverables and sort by frequency (descending)
+  const deliverableCount = new Map<string, number>();
+  projects.forEach(p => {
+    p.deliverables.forEach(deliverable => {
+      deliverableCount.set(deliverable, (deliverableCount.get(deliverable) || 0) + 1);
+    });
+  });
+  const allDeliverables = Array.from(deliverableCount.entries())
+    .sort((a, b) => b[1] - a[1])
+    .map(([deliverable]) => deliverable);
 
   $: filteredProjects = selectedFilters.length === 0
     ? projects
@@ -20,7 +39,10 @@
         )
       );
 
-  $: visibleProjects = filteredProjects.slice(0, projectsToShow);
+  $: visibleProjects = filteredProjects.slice(0, projectsToShow).map(p => ({
+    ...p,
+    category: p.deliverables?.[0] || 'Project'
+  }));
   $: hasMore = filteredProjects.length > projectsToShow;
 
   function toggleFilter(filter: string) {

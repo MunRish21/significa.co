@@ -277,42 +277,6 @@
     }
   ];
 
-  // Get unique platforms and one project per platform
-  const projectsByPlatform = Array.from(
-    projectsData.reduce((map, project) => {
-      project.deliverables.forEach(deliverable => {
-        if (!map.has(deliverable)) {
-          map.set(deliverable, { project, category: deliverable });
-        }
-      });
-      return map;
-    }, new Map<string, { project: typeof projectsData[0]; category: string }>()).values()
-  );
-
-  const categoryProjects = projectsByPlatform.map(({ project, category }) => ({
-    id: project.id,
-    uuid: `uuid-${project.id}`,
-    name: project.name,
-    slug: project.slug,
-    full_slug: `/projects/${project.slug}`,
-    category,
-    content: {
-      component: 'project',
-      tagline: project.tagline,
-      thumbnail: [
-        {
-          id: project.id,
-          alt: project.name,
-          name: project.slug,
-          focus: '',
-          title: project.name,
-          filename: project.image
-        }
-      ],
-      cover: undefined
-    }
-  }));
-
 </script>
 
 <svelte:head>
@@ -360,7 +324,8 @@
     </div>
     <div class="mt-4 md:mt-6 lg:mt-8">
       {#each smallHighlights.filter(h => h.content.component === 'project').slice(0, 12) as project}
-        <ProjectEntry {project} variant="default" />
+        {@const projectData = projectsData.find(p => p.slug === project.slug)}
+        <ProjectEntry project={{...project, category: projectData?.deliverables?.[0]}} variant="default" />
       {/each}
     </div>
   </section>
@@ -398,47 +363,6 @@
         <img src={client.lightLogo} alt={client.name} width={client.width} height={client.height} class="h-auto max-h-9 w-auto object-contain dark:hidden" />
         <img src={client.darkLogo} alt={client.name} width={client.width} height={client.height} class="hidden h-auto max-h-9 w-auto object-contain dark:block" />
       {/each}
-    </div>
-  </section>
-
-
-  <!-- By Category Section -->
-  <section class="mt-10 md:mt-14 lg:mt-20">
-    <div class="container mx-auto px-container">
-      <h2 class="text-5xl">By category.</h2>
-      <p class="text-foreground-secondary mt-2">Explore our work organized by platform and technology.</p>
-    </div>
-    <div class="mt-8 md:mt-12">
-      <div class="relative -mx-2 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4 px-container">
-        {#each categoryProjects as project}
-          <a
-            href={`/projects/${project.slug}`}
-            class="group flex flex-col rounded-xl p-4 hover:bg-foreground-tertiary/10 transition-colors border border-border hover:border-foreground-secondary"
-          >
-            {#if project.content.thumbnail?.length && project.content.thumbnail[0]?.filename}
-              {@const { src, alt, width, height } = getImageAttributes(project.content.thumbnail[0], { size: [200, 160] })}
-              <img
-                class="h-40 w-full rounded-lg bg-foreground-tertiary/10 object-cover object-center mb-4"
-                {src}
-                {alt}
-                {width}
-                {height}
-              />
-            {/if}
-            <div class="flex flex-col flex-1">
-              <p class="text-xs uppercase tracking-wider text-foreground-secondary font-medium mb-2">
-                {project.category}
-              </p>
-              <p class="line-clamp-2 text-lg font-medium group-hover:text-foreground-secondary transition-colors">
-                {project.name}
-              </p>
-              <p class="text-sm text-foreground-secondary mt-2 line-clamp-2">
-                {project.content.tagline}
-              </p>
-            </div>
-          </a>
-        {/each}
-      </div>
     </div>
   </section>
 

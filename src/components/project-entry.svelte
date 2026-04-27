@@ -52,6 +52,11 @@
     >
       <div class="mr-6">
         <a class="elevated-link" href={`/projects/${project.slug}`}>
+          {#if project.category}
+            <p class="text-xs uppercase tracking-wider text-foreground-secondary font-medium mb-3">
+              {project.category}
+            </p>
+          {/if}
           <svelte:element this={as} class="text-5xl text-foreground-secondary">
             {project.name}
           </svelte:element>
