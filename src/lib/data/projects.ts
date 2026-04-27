@@ -273,18 +273,22 @@ export const projectsData = [
     id: 5,
     slug: 'simpletalk-ai',
     name: 'SimpleTalk AI',
-    tagline: 'AI-powered sales system combining Next.js technology with intelligent automation',
+    tagline: 'Enterprise AI voice sales platform handling 147K+ calls across 12 languages, with multi-channel agents, white-label tenancy, and deep CRM integrations.',
     image: '/assets/projects/simpletalk-ai/cover.png',
     coverImage: '/assets/projects/simpletalk-ai/cover.png',
     publishedYear: 2023,
-    services: ['AI & Machine Learning', 'Sales Platform', 'Web Development & Design'],
-    deliverables: ['React & Next.js', 'SaaS Platform'],
+    services: ['AI & Machine Learning', 'Voice AI Engineering', 'SaaS Platform Development', 'Multi-Tenant Architecture', 'CRM Integration'],
+    deliverables: ['AI Voice Sales Platform', 'Multi-Channel Agent Dashboard', 'White-Label Reseller System', 'CRM & Telephony Integrations'],
     links: [
       { label: 'Website', url: 'https://www.simpletalk.ai' }
     ],
     team: [],
-    metrics: [],
-    intro: 'SimpleTalk AI is an innovative sales platform leveraging artificial intelligence and Next.js technology to revolutionize sales processes. The platform automates customer interactions, provides intelligent insights, and streamlines sales workflows. With advanced AI capabilities integrated seamlessly into a user-friendly interface, SimpleTalk AI helps sales teams close more deals and improve customer engagement.',
+    metrics: [
+      { label: 'Total Calls', value: '147K+', tooltip: 'Calls handled by the platform', isPositive: true },
+      { label: 'Concurrent', value: '1,800', tooltip: 'Simultaneous conversations supported', isPositive: true },
+      { label: 'Languages', value: '12', tooltip: 'Languages supported natively', isPositive: true }
+    ],
+    intro: 'SimpleTalk AI is an enterprise-grade AI voice sales platform that handles inbound and outbound calls, texts, emails, and chat 24/7—sounding genuinely human while performing at AI scale. We engineered the full system end-to-end: a Python-powered voice AI engine trained on millions of real sales calls, a React-based multi-agent dashboard, a white-label sub-client architecture for agencies and resellers, and native integrations with Salesforce, Pipedrive, Zoho, HighLevel, and Close.io. To date the platform has processed over 147,000 calls and 127,000 minutes of live conversation across 12 languages.',
     awards: []
   },
   {

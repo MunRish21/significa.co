@@ -274,35 +274,67 @@
 
           <h2 class="mx-auto max-w-2xl"><b>Architecting six specialized practice areas with clarity.</b></h2>
           <p class="mx-auto max-w-2xl">
-            One of the largest information design challenges was the breadth of services offered. Navjot Kaur PLLC covers six distinct, technically complex practice areas, each with its own audience and search intent. We mapped a content hierarchy that lets visitors find the right service in two clicks or less, regardless of whether they arrive looking for a will, a green card, or guardianship for a special needs child.
+            One of the largest information design challenges was the breadth of services offered. Navjot Kaur PLLC covers six distinct, technically complex practice areas, each with its own audience and search intent. We built a dedicated Practice Areas page anchored by a marble-column hero ("WHAT WE ARE EXPERT AT / Legal Practice Areas") and a clean three-column icon grid that lets visitors find the right service in two clicks or less—whether they arrive looking for a will, a green card, or guardianship for a special needs child.
           </p>
 
           <p class="mx-auto max-w-2xl">
             Estate Planning helps clients secure their legacy and protect their family's future through personalized plans and legal directives. Wills & Trusts covers revocable and irrevocable trust structures along with tax-efficient strategies for everyday families—not only the ultra-wealthy. Immigration Law guides clients from green cards through naturalization. Guardianship & Special Needs Planning protects minors and individuals with disabilities through legally sound structures. International Estate Planning addresses cross-border inheritance, NRI succession, and dual-jurisdiction asset planning between the U.S. and India. Humanitarian Relief & Survivor Support delivers trauma-informed representation for VAWA self-petitions, Special Immigrant Juvenile Status (SIJS), and T and U visas for survivors of abuse, trafficking, and serious crime. Each practice area is presented in its own dedicated section with plain-language explanations, the categories of clients it serves, and a direct path to consultation booking.
           </p>
 
+          <ImageSection
+            src="/assets/projects/navjot-kaur-pllc/practice-areas.png"
+            alt="Navjot Kaur PLLC Practice Areas page with marble-column hero, top navigation, and three-column icon grid showing Estate Planning, Immigration Law, and Wills and Trusts"
+            width={2880}
+            height={1800}
+          />
+
           <h2 class="mx-auto max-w-2xl"><b>Bridging two legal systems and three languages.</b></h2>
           <p class="mx-auto max-w-2xl">
-            Navjot's most distinctive credential is her dual licensure in both New York and India—a combination that very few attorneys in the United States hold. We made this the structural backbone of the entire site rather than a footnote on her bio page. The attorney section leads with the cross-border story, and the International Estate Planning practice area is positioned to capture searches around NRI estate planning, India-to-U.S. inheritance, and dual-jurisdiction wills, an underserved niche in the New York legal market.
+            Navjot's most distinctive credential is her dual licensure in both New York and India—a combination that very few attorneys in the United States hold. We made this the structural backbone of the entire site rather than a footnote on her bio page. The About Us page pairs a warm, professional portrait with a long-form bio that leads with the cross-border story: "licensed to practice law in both New York and India," "experience in both U.S. and Indian legal systems," and a clear statement of why that combination matters for multicultural families navigating immigration, inheritance, and family protection across two jurisdictions.
           </p>
 
           <p class="mx-auto max-w-2xl">
-            We also surfaced multilingual access in English, Hindi, and Punjabi prominently across the homepage and contact flows. For South Asian families navigating sensitive conversations about inheritance, immigration status, or family protection, being able to consult with an attorney in their first language is often the deciding factor in choosing representation. Treating language as a first-class brand element—not a small line in the footer—turned a credential into a real competitive advantage.
+            We also surfaced multilingual access in English, Hindi, and Punjabi prominently across the homepage, About page, and contact flows, alongside a clear "free initial consultations" promise. For South Asian families navigating sensitive conversations about inheritance, immigration status, or family protection, being able to consult with an attorney in their first language is often the deciding factor in choosing representation. Treating language and dual-system fluency as first-class brand elements—not footnotes—turned credentials into a real competitive advantage.
           </p>
+
+          <ImageSection
+            src="/assets/projects/navjot-kaur-pllc/about-attorney.png"
+            alt="About Us page featuring a portrait of Navjot Kaur alongside a bio highlighting dual licensing in New York and India, fluency in English, Hindi, and Punjabi, and free initial consultations"
+            width={2880}
+            height={1398}
+          />
 
           <h2 class="mx-auto max-w-2xl"><b>Reducing the barrier to legal help.</b></h2>
           <p class="mx-auto max-w-2xl">
-            Many people who need an estate plan, an immigration filing, or survivor relief never make the call—because legal services feel inaccessible, expensive, or intimidating. We engineered the entire conversion path to lower that barrier. Every page funnels toward a free 30-minute consultation booked directly through an integrated Calendly flow, with no phone tag, no gatekeeping forms, and no obligation. Clients can also reach the practice via direct phone line, email, and social channels, with the Midtown Manhattan office address (43 West 43rd Street, Suite 230) prominently displayed for in-person consultations.
+            Many people who need an estate plan, an immigration filing, or survivor relief never make the call—because legal services feel inaccessible, expensive, or intimidating. We engineered the entire conversion path to lower that barrier. Every page funnels toward a free 30-minute consultation booked directly through an integrated Calendly flow or a simple Get In Touch form ("Law is a complicated matter. It can cause you a big problem if you ignore it. Let us help you!") with only four fields—name, email, subject, message—and a clear orange Submit Now CTA. No phone tag, no gatekeeping, no obligation.
           </p>
 
           <p class="mx-auto max-w-2xl">
             The site is fully responsive across desktop, tablet, and mobile, with performance-optimized custom HTML and CSS layered on top of a WordPress CMS so that Navjot can update content, blog posts, and practice details without developer involvement. Every contact entry point was tested to ensure that a client landing on a practice area page on their phone is at most one tap away from a real human conversation.
           </p>
 
+          <ImageSection
+            src="/assets/projects/navjot-kaur-pllc/contact-form.png"
+            alt="Get In Touch contact form with Full Name, Email, Subject, and Message fields and a prominent orange Submit Now button, set against a marble-column background"
+            width={2880}
+            height={1398}
+          />
+
           <h2 class="mx-auto max-w-2xl"><b>Establishing professional credibility at first glance.</b></h2>
           <p class="mx-auto max-w-2xl">
             For a new independent practice competing with century-old firms, social proof and credentialing are everything. We highlighted Navjot's affiliations with four major bar associations—the NYC Bar Association, the New York State Bar Association, the Sikh National Bar Association, and the South Asian Bar Association—directly on the homepage and attorney bio, signalling both her professional standing and her active engagement in the multicultural legal community she serves. Her dual New York and India licensure, multilingual capabilities, and specialized practice focus are surfaced in the first viewport, so a visitor can validate her expertise within seconds of landing.
           </p>
+
+          <p class="mx-auto max-w-2xl">
+            We carried that credibility through to every page closing. The site footer pairs a persistent "Are You Looking For Someone To Help? Let us help you! Call Now: (+1)646-453-4550" CTA banner with a comprehensive footer that lists every practice area, the Midtown Manhattan office address (43 West 43rd Street, Suite 230, New York, NY 10036), all contact channels, and social links—so even a visitor scrolling to the bottom of the page leaves with the firm's full professional footprint visible at a glance.
+          </p>
+
+          <ImageSection
+            src="/assets/projects/navjot-kaur-pllc/footer-contact.png"
+            alt="Site-wide CTA banner and footer listing all practice areas, the Midtown Manhattan office address, phone, email, and social channels"
+            width={2880}
+            height={1800}
+          />
 
           <h2 class="mx-auto max-w-2xl"><b>Educating clients through thought leadership.</b></h2>
           <p class="mx-auto max-w-2xl">
@@ -316,6 +348,105 @@
 
           <p class="mx-auto max-w-2xl">
             More importantly, the website successfully translates Navjot's real-world value—warmth, cultural fluency, dual-jurisdiction expertise, and a refusal to hide behind legal jargon—into a digital experience that feels exactly like working with her in person. The professional online presence has become the central hub for client inquiries, service discovery, and trust-building, differentiating the practice from traditional law firm websites while remaining unmistakably approachable to the multicultural families and individuals who need her expertise most.
+          </p>
+        {/if}
+
+        <!-- SimpleTalk AI Content -->
+        {#if project.slug === 'simpletalk-ai'}
+          <h2 class="mx-auto max-w-2xl"><b>The challenge.</b></h2>
+          <p class="mx-auto max-w-2xl">
+            Sales teams lose roughly $1,200 every time a call goes unanswered and tens of thousands of dollars a year to slow lead follow-up, yet the off-the-shelf alternatives—generic chatbots, IVR menus, outsourced receptionists—either sound robotic, can't qualify leads, or can't actually close the loop by booking an appointment on the rep's calendar. SimpleTalk needed a true voice AI sales system: human-sounding, available 24/7, capable of handling objections, scaling to thousands of simultaneous conversations, and plugged directly into the CRMs and calendars sales teams already run on. Not another chatbot bolted onto a website—a full replacement for missed calls, slow follow-up, and a $30K-a-year receptionist.
+          </p>
+
+          <h2 class="mx-auto max-w-2xl"><b>Engineering the AI voice engine.</b></h2>
+          <p class="mx-auto max-w-2xl">
+            We built the core voice system on a Python backend, trained on millions of real sales call transcripts so the AI handles qualifying questions, objections, and natural conversational pacing the way a senior closer would. The engine handles both inbound and outbound calling, recovers gracefully from interruptions, switches between 12 languages mid-conversation, and routes hot leads to a live human via round-robin transfer when intent crosses a confidence threshold. Every call is recorded, transcribed, and rolled up into a single command center where operators can see exactly how the platform is performing in real time.
+          </p>
+
+          <ImageSection
+            src="/assets/projects/simpletalk-ai/overview-dashboard.png"
+            alt="SimpleTalk AI overview dashboard with KPI tiles for total calls, minutes used, inbound and outbound volume, and per-minute pricing"
+            width={2880}
+            height={1398}
+          />
+
+          <h2 class="mx-auto max-w-2xl"><b>A multi-agent dashboard for every channel.</b></h2>
+          <p class="mx-auto max-w-2xl">
+            We designed and built the full React dashboard that lets clients spin up Voice, Text, Email, and Chatbot agents from a single workspace. Agents are organized into folders (Production, Follow-Up, internal test agents) so teams can ship, iterate, and roleplay safely without breaking live traffic. Each agent card surfaces its phone number, type (inbound or outbound), and the most common operator actions—edit, test, training mode, assign number, make a call—so launching a new persona or tuning an existing one takes seconds, not engineering tickets.
+          </p>
+
+          <ImageSection
+            src="/assets/projects/simpletalk-ai/agent-library.png"
+            alt="Saved Agents library showing voice and text agents organized into Production and Follow-Up folders, each with edit, test, training, and call actions"
+            width={2880}
+            height={1800}
+          />
+
+          <h2 class="mx-auto max-w-2xl"><b>Configuring agents without writing code.</b></h2>
+          <p class="mx-auto max-w-2xl">
+            Each agent type has its own configuration surface designed for non-technical operators. The Text Agent builder lets clients define an initial message, a webhook for downstream automation, an AI Creativity slider for tuning response variability, calendar-booking toggles, advanced behavior options, and a long-form prompt with pre-built templates for common verticals like real estate qualifying. A shared AI Prompt Generator helps users write effective agent instructions in minutes instead of hours, and Training Mode lets them roleplay against the agent before pushing it to production traffic.
+          </p>
+
+          <ImageSection
+            src="/assets/projects/simpletalk-ai/text-agent-builder.png"
+            alt="Text Agent builder showing initial message, webhook URL, AI Creativity slider, calendar booking, advanced options, and a long-form prompt with pre-made templates"
+            width={2880}
+            height={1800}
+          />
+
+          <h2 class="mx-auto max-w-2xl"><b>White-label and multi-tenant architecture.</b></h2>
+          <p class="mx-auto max-w-2xl">
+            A first-class Sub Clients system lets agencies and resellers run their own branded SimpleTalk instance with isolated phone numbers, agents, billing, and analytics. The architecture supports unlimited tenants beneath a parent client, with per-tenant minute pools, configurable inbound and outbound pricing (currently $0.2/min), and full call recordings and transcripts surfaced at every level of the hierarchy—turning the platform from a single-tenant SaaS into an infrastructure layer that other AI agencies can resell under their own brand.
+          </p>
+
+          <h2 class="mx-auto max-w-2xl"><b>CRM, calendar, and telephony integrations.</b></h2>
+          <p class="mx-auto max-w-2xl">
+            We built native integrations for the CRMs sales teams actually run on—Salesforce, Pipedrive, Zoho, HighLevel, and Close.io—so qualified leads, transcripts, and appointment data sync automatically with no manual export. Calendar booking flows write directly into Google, Outlook, and Apple Calendar without double-booking, and the in-dashboard phone-number provisioning module lets clients buy, port, and assign numbers to specific agents and campaigns without leaving the platform.
+          </p>
+
+          <h2 class="mx-auto max-w-2xl"><b>Campaigns, analytics, and live operations.</b></h2>
+          <p class="mx-auto max-w-2xl">
+            The Campaigns module powers outbound dialing with pacing controls and retry logic, alongside a daily analytics view that tracks spend, minutes used, total calls, answers, no-answers, did-not-connect, transfers, and appointments booked—everything sales ops teams need to evaluate ROI without piping data into a separate BI tool. Operators can switch between Total, Percentage, and Cost views, drill into individual days, and toggle between CRM and Dashboard tabs to compare campaign performance side by side.
+          </p>
+
+          <ImageSection
+            src="/assets/projects/simpletalk-ai/campaigns-analytics.png"
+            alt="Campaigns analytics view with daily breakdown of spend, minutes used, calls, answers, no-answers, transfers, and appointments booked across multiple campaigns"
+            width={2880}
+            height={1800}
+          />
+
+          <p class="mx-auto max-w-2xl">
+            For individual call review, the Call Logs &amp; Recordings view exposes every interaction the platform has ever placed: filterable by client ID, contact name, agent, outcome, direction, duration, and campaign, with playback for the audio recording, a one-click transcript, and copy-to-clipboard for the agent ID and the exact prompt that was running when the call happened. That last detail matters—it lets operators tune prompts based on real outcomes instead of guessing.
+          </p>
+
+          <ImageSection
+            src="/assets/projects/simpletalk-ai/call-logs.png"
+            alt="Call Logs and Recordings view with filterable table of inbound and outbound calls, outcome, duration, recording playback, and transcript access for every conversation"
+            width={2880}
+            height={1800}
+          />
+
+          <h2 class="mx-auto max-w-2xl"><b>Pulse Demo: experience the AI before signing up.</b></h2>
+          <p class="mx-auto max-w-2xl">
+            The biggest objection to AI voice is "it can't possibly sound human." We solved that with Pulse Demo—a built-in, customer-facing experience prospects can launch directly from the platform. They pick a voice (Zuri or Chris), choose a language from a list of 12 including English, Spanish, and French, and start a real, live conversation with the AI in seconds. Pulse Demo became the single most effective conversion tool in the funnel: instead of explaining what the platform does, prospects experience it firsthand.
+          </p>
+
+          <ImageSection
+            src="/assets/projects/simpletalk-ai/pulse-demo.png"
+            alt="Pulse Demo customer-facing experience with voice picker, language selector, and Start Conversation button to talk live with the AI"
+            width={2880}
+            height={1800}
+          />
+
+          <h2 class="mx-auto max-w-2xl"><b>Built for scale across industries.</b></h2>
+          <p class="mx-auto max-w-2xl">
+            The platform is tuned for vertical-specific use cases—Real Estate, Solar, Health Insurance, Tech Support, Credit Repair, and AI agencies—with industry-tailored audio demos and prompt templates clients can spin up before launching their first agent. Under the hood, the system scales to up to 1,800 simultaneous conversations, handling spikes in inbound volume and concurrent outbound campaigns without degradation, and supports 12 languages for businesses serving multilingual markets.
+          </p>
+
+          <h2 class="mx-auto max-w-2xl"><b>Results and impact.</b></h2>
+          <p class="mx-auto max-w-2xl">
+            Since launch, the platform has handled over 147,000 total calls and 127,000 minutes of live conversation, split across 133K+ outbound and 13K+ inbound calls, with hundreds of thousands of minutes still active in client minute pools. The combination of a human-sounding voice engine, four agent channels, a no-code agent builder, white-label tenancy, deep CRM and calendar integration, full call analytics, and a Pulse Demo that converts skeptics into paying customers has positioned SimpleTalk AI as a complete sales-system replacement—not a chatbot—for businesses tired of losing $1,200 every time a call goes unanswered and $90,000 a year to slow follow-up.
           </p>
         {/if}
       </div>
