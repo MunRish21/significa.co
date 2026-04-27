@@ -7,8 +7,8 @@ export const projectsData = [
     image: '/assets/projects/monster-fairings/cover.jpg',
     coverImage: '/assets/projects/monster-fairings/cover.jpg',
     publishedYear: 2021,
-    services: ['Web Design', 'E-commerce', 'Development', 'Strategy', 'AI Integration'],
-    deliverables: ['Website', 'E-commerce Platform'],
+    services: ['AI & Machine Learning', 'E-commerce', 'Web Development & Design'],
+    deliverables: ['E-commerce Platform', 'Website'],
     links: [
       { label: 'Website', url: 'https://monsterfairings.com' }
     ],
@@ -28,8 +28,8 @@ export const projectsData = [
     image: '/assets/projects/firmable/cover.jpg',
     coverImage: '/assets/projects/firmable/cover.jpg',
     publishedYear: 2023,
-    services: ['AI-driven Sales Platform', 'Buying Signals', 'Sales Intelligence'],
-    deliverables: ['WordPress Website', 'SaaS Platform'],
+    services: ['AI & Machine Learning', 'Business Services', 'Financial Services'],
+    deliverables: ['SaaS Platform', 'WordPress'],
     links: [
       { label: 'Website', url: 'https://firmable.com/' },
       { label: 'Design', url: 'https://www.figma.com/proto/5e98ec1z8Ox4vWlSzO5sOA/Page-1?type=design&node-id=130-369' }
@@ -47,8 +47,8 @@ export const projectsData = [
     image: '/assets/projects/gisteo/cover.jpg',
     coverImage: '/assets/projects/gisteo/cover.jpg',
     publishedYear: 2023,
-    services: ['Web Development', 'SaaS Platform', 'Content Management'],
-    deliverables: ['WordPress Website', 'SaaS Platform'],
+    services: ['SaaS Platforms', 'Web Development & Design'],
+    deliverables: ['SaaS Platform', 'WordPress'],
     links: [
       { label: 'Website', url: 'https://gisteo.com/' },
       { label: 'Design', url: 'https://www.figma.com/proto/MGQA1j3iha7lJRaQkjqG69/gisteo?node-id=1-2&scaling=scale-down-width&mode=design' }
@@ -66,8 +66,8 @@ export const projectsData = [
     image: '/assets/projects/navjot-kaur-pllc/cover.jpg',
     coverImage: '/assets/projects/navjot-kaur-pllc/cover.jpg',
     publishedYear: 2023,
-    services: ['Web Design', 'Business Website', 'Legal Services Portal'],
-    deliverables: ['Custom HTML/CSS Website', 'Legal Services Portal'],
+    services: ['Business Services', 'Specialized Services', 'Web Development & Design'],
+    deliverables: ['Legal Services Portal', 'Website'],
     links: [
       { label: 'Website', url: 'https://navjotkaurpllc.us/' }
     ],
@@ -84,8 +84,8 @@ export const projectsData = [
     image: '/assets/projects/hilink-travel/cover.jpg',
     coverImage: '/assets/projects/hilink-travel/cover.jpg',
     publishedYear: 2023,
-    services: ['Web Development', 'SaaS Platform', 'Travel Services'],
-    deliverables: ['React Application', 'Travel Booking Platform'],
+    services: ['SaaS Platforms', 'Specialized Services', 'Web Development & Design'],
+    deliverables: ['React & Next.js', 'Travel Booking Platform'],
     links: [
       { label: 'Website', url: 'https://travel-ui-ux-three.vercel.app/' }
     ],
@@ -102,8 +102,8 @@ export const projectsData = [
     image: '/assets/projects/simpletalk-ai/cover.jpg',
     coverImage: '/assets/projects/simpletalk-ai/cover.jpg',
     publishedYear: 2023,
-    services: ['Web Development', 'AI Integration', 'Sales Platform'],
-    deliverables: ['Next.js Application', 'SaaS Platform'],
+    services: ['AI & Machine Learning', 'Sales Platform', 'Web Development & Design'],
+    deliverables: ['React & Next.js', 'SaaS Platform'],
     links: [
       { label: 'Website', url: 'https://www.simpletalk.ai' }
     ],
@@ -120,8 +120,8 @@ export const projectsData = [
     image: '/assets/projects/convertbankstatement/cover.jpg',
     coverImage: '/assets/projects/convertbankstatement/cover.jpg',
     publishedYear: 2023,
-    services: ['Web Development', 'Financial Tool', 'Data Conversion'],
-    deliverables: ['Next.js Application', 'Financial Tool'],
+    services: ['Data Conversion', 'Financial Services', 'Web Development & Design'],
+    deliverables: ['Financial Tool', 'React & Next.js'],
     links: [
       { label: 'Website', url: 'https://www.convertbankstatement.io/' }
     ],
@@ -138,8 +138,8 @@ export const projectsData = [
     image: '/assets/projects/lineleader/cover.jpg',
     coverImage: '/assets/projects/lineleader/cover.jpg',
     publishedYear: 2023,
-    services: ['Web Development', 'SaaS Platform', 'Childcare CRM'],
-    deliverables: ['Next.js Application', 'Childcare Management System'],
+    services: ['SaaS Platforms', 'Web Development & Design'],
+    deliverables: ['Childcare Management System', 'React & Next.js'],
     links: [
       { label: 'Website', url: 'https://lineleader.com/' }
     ],
@@ -156,8 +156,8 @@ export const projectsData = [
     image: '/assets/projects/arbys-android/cover.jpg',
     coverImage: '/assets/projects/arbys-android/cover.jpg',
     publishedYear: 2023,
-    services: ['Mobile App Development', 'React Native'],
-    deliverables: ['Android Application'],
+    services: ['Mobile App Development'],
+    deliverables: ['Mobile Apps'],
     links: [
       { label: 'Play Store', url: 'https://play.google.com/store/apps/details?id=com.arbys.android.arbysapp' }
     ],
@@ -174,8 +174,8 @@ export const projectsData = [
     image: '/assets/projects/arbys-ios/cover.jpg',
     coverImage: '/assets/projects/arbys-ios/cover.jpg',
     publishedYear: 2023,
-    services: ['Mobile App Development', 'React Native'],
-    deliverables: ['iOS Application'],
+    services: ['Mobile App Development'],
+    deliverables: ['Mobile Apps'],
     links: [
       { label: 'App Store', url: 'https://apps.apple.com/us/app/arbys-fast-food-sandwiches/id1348507359' }
     ],
@@ -192,8 +192,8 @@ export const projectsData = [
     image: '/assets/projects/bww-android/cover.jpg',
     coverImage: '/assets/projects/bww-android/cover.jpg',
     publishedYear: 2023,
-    services: ['Mobile App Development', 'React Native'],
-    deliverables: ['Android Application'],
+    services: ['Mobile App Development'],
+    deliverables: ['Mobile Apps'],
     links: [
       { label: 'Play Store', url: 'https://play.google.com/store/apps/details?id=com.buffalowildwings.blazinrewards' }
     ],
@@ -210,8 +210,8 @@ export const projectsData = [
     image: '/assets/projects/bww-ios/cover.jpg',
     coverImage: '/assets/projects/bww-ios/cover.jpg',
     publishedYear: 2023,
-    services: ['Mobile App Development', 'React Native'],
-    deliverables: ['iOS Application'],
+    services: ['Mobile App Development'],
+    deliverables: ['Mobile Apps'],
     links: [
       { label: 'App Store', url: 'https://apps.apple.com/us/app/buffalo-wild-wings/id1031364004' }
     ],
@@ -228,8 +228,8 @@ export const projectsData = [
     image: '/assets/projects/adt-ios/cover.jpg',
     coverImage: '/assets/projects/adt-ios/cover.jpg',
     publishedYear: 2023,
-    services: ['Mobile App Development', 'React Native'],
-    deliverables: ['iOS Application'],
+    services: ['Mobile App Development'],
+    deliverables: ['Mobile Apps'],
     links: [
       { label: 'App Store', url: 'https://apps.apple.com/us/app/adt-control/id1423831457' }
     ],
@@ -246,8 +246,8 @@ export const projectsData = [
     image: '/assets/projects/adt-android/cover.jpg',
     coverImage: '/assets/projects/adt-android/cover.jpg',
     publishedYear: 2023,
-    services: ['Mobile App Development', 'React Native'],
-    deliverables: ['Android Application'],
+    services: ['Mobile App Development'],
+    deliverables: ['Mobile Apps'],
     links: [
       { label: 'Play Store', url: 'https://play.google.com/store/apps/details?id=com.adt.adtplus.prod' }
     ],
@@ -264,8 +264,8 @@ export const projectsData = [
     image: '/assets/projects/medela-family-android/cover.jpg',
     coverImage: '/assets/projects/medela-family-android/cover.jpg',
     publishedYear: 2023,
-    services: ['Mobile App Development', 'React Native', 'Healthcare'],
-    deliverables: ['Android Application'],
+    services: ['Health & Wellness', 'Mobile App Development'],
+    deliverables: ['Mobile Apps'],
     links: [
       { label: 'Play Store', url: 'https://play.google.com/store/apps/details?id=com.medela.mymedela.live' }
     ],
@@ -282,8 +282,8 @@ export const projectsData = [
     image: '/assets/projects/medela-family-ios/cover.jpg',
     coverImage: '/assets/projects/medela-family-ios/cover.jpg',
     publishedYear: 2023,
-    services: ['Mobile App Development', 'React Native', 'Healthcare'],
-    deliverables: ['iOS Application'],
+    services: ['Health & Wellness', 'Mobile App Development'],
+    deliverables: ['Mobile Apps'],
     links: [
       { label: 'App Store', url: 'https://apps.apple.com/us/app/medela-family-breast-feeding/id909275386' }
     ],
@@ -300,8 +300,8 @@ export const projectsData = [
     image: '/assets/projects/surfboard-central-android/cover.jpg',
     coverImage: '/assets/projects/surfboard-central-android/cover.jpg',
     publishedYear: 2023,
-    services: ['Mobile App Development', 'React Native'],
-    deliverables: ['Android Application'],
+    services: ['Mobile App Development'],
+    deliverables: ['Mobile Apps'],
     links: [
       { label: 'Play Store', url: 'https://play.google.com/store/apps/details?id=com.arris.sbc' }
     ],
@@ -318,8 +318,8 @@ export const projectsData = [
     image: '/assets/projects/surfboard-central-ios/cover.jpg',
     coverImage: '/assets/projects/surfboard-central-ios/cover.jpg',
     publishedYear: 2023,
-    services: ['Mobile App Development', 'React Native'],
-    deliverables: ['iOS Application'],
+    services: ['Mobile App Development'],
+    deliverables: ['Mobile Apps'],
     links: [
       { label: 'App Store', url: 'https://apps.apple.com/us/app/surfboard-central/id1478418148' }
     ],
@@ -336,8 +336,8 @@ export const projectsData = [
     image: '/assets/projects/allbirds/cover.jpg',
     coverImage: '/assets/projects/allbirds/cover.jpg',
     publishedYear: 2023,
-    services: ['E-commerce Platform', 'Product Catalog', 'Online Store'],
-    deliverables: ['Shopify Store', 'E-commerce Platform'],
+    services: ['E-commerce'],
+    deliverables: ['E-commerce Platform'],
     links: [
       { label: 'Website', url: 'https://www.allbirds.com/' }
     ],
@@ -354,8 +354,8 @@ export const projectsData = [
     image: '/assets/projects/260-sample-sale/cover.jpg',
     coverImage: '/assets/projects/260-sample-sale/cover.jpg',
     publishedYear: 2023,
-    services: ['E-commerce', 'Sample Sales', 'Product Showcase'],
-    deliverables: ['Shopify Store', 'E-commerce Platform'],
+    services: ['E-commerce'],
+    deliverables: ['E-commerce Platform'],
     links: [
       { label: 'Website', url: 'https://260samplesale.com' }
     ],
@@ -372,8 +372,8 @@ export const projectsData = [
     image: '/assets/projects/karen-lazar-design/cover.jpg',
     coverImage: '/assets/projects/karen-lazar-design/cover.jpg',
     publishedYear: 2023,
-    services: ['E-commerce', 'Product Sales', 'Jewelry Catalog'],
-    deliverables: ['Shopify Store', 'E-commerce Platform'],
+    services: ['E-commerce', 'Fashion & Retail'],
+    deliverables: ['E-commerce Platform'],
     links: [
       { label: 'Website', url: 'https://karenlazardesign.com' }
     ],
@@ -390,8 +390,8 @@ export const projectsData = [
     image: '/assets/projects/indigenous-treats/cover.jpg',
     coverImage: '/assets/projects/indigenous-treats/cover.jpg',
     publishedYear: 2023,
-    services: ['E-commerce', 'Food Sales', 'Online Store'],
-    deliverables: ['Shopify Store', 'E-commerce Platform'],
+    services: ['E-commerce', 'Food & Beverage'],
+    deliverables: ['E-commerce Platform'],
     links: [
       { label: 'Website', url: 'https://indigenoustreats.ca' }
     ],
@@ -408,8 +408,8 @@ export const projectsData = [
     image: '/assets/projects/b2-hookah/cover.jpg',
     coverImage: '/assets/projects/b2-hookah/cover.jpg',
     publishedYear: 2023,
-    services: ['E-commerce', 'Product Sales', 'Online Store'],
-    deliverables: ['Shopify Store', 'E-commerce Platform'],
+    services: ['E-commerce'],
+    deliverables: ['E-commerce Platform'],
     links: [
       { label: 'Website', url: 'https://b2hookah.com' }
     ],
@@ -426,8 +426,8 @@ export const projectsData = [
     image: '/assets/projects/aimusicservice/cover.jpg',
     coverImage: '/assets/projects/aimusicservice/cover.jpg',
     publishedYear: 2023,
-    services: ['E-commerce', 'AI Integration', 'Service Platform'],
-    deliverables: ['Shopify Store', 'AI-powered Platform'],
+    services: ['AI & Machine Learning', 'E-commerce', 'Service Platform'],
+    deliverables: ['AI-powered Platform', 'E-commerce Platform'],
     links: [
       { label: 'Website', url: 'https://aimusicservice.com/' }
     ],
@@ -444,8 +444,8 @@ export const projectsData = [
     image: '/assets/projects/guard-dog-security/cover.jpg',
     coverImage: '/assets/projects/guard-dog-security/cover.jpg',
     publishedYear: 2023,
-    services: ['E-commerce', 'Product Sales', 'Security Services'],
-    deliverables: ['Shopify Store', 'E-commerce Platform'],
+    services: ['E-commerce', 'Specialized Services'],
+    deliverables: ['E-commerce Platform'],
     links: [
       { label: 'Website', url: 'https://guarddog-security.com/' }
     ],
@@ -462,8 +462,8 @@ export const projectsData = [
     image: '/assets/projects/havalink/cover.jpg',
     coverImage: '/assets/projects/havalink/cover.jpg',
     publishedYear: 2023,
-    services: ['E-commerce', 'Product Sales', 'Tech Products'],
-    deliverables: ['Shopify Store', 'E-commerce Platform'],
+    services: ['E-commerce', 'Specialized Services'],
+    deliverables: ['E-commerce Platform'],
     links: [
       { label: 'Website', url: 'https://www.havalink.com/' }
     ],
@@ -480,8 +480,8 @@ export const projectsData = [
     image: '/assets/projects/honey-by-kait/cover.jpg',
     coverImage: '/assets/projects/honey-by-kait/cover.jpg',
     publishedYear: 2023,
-    services: ['E-commerce', 'Product Sales', 'Online Store'],
-    deliverables: ['Shopify Store', 'E-commerce Platform'],
+    services: ['E-commerce'],
+    deliverables: ['E-commerce Platform'],
     links: [
       { label: 'Website', url: 'https://honeybykait.com/' }
     ],
@@ -498,8 +498,8 @@ export const projectsData = [
     image: '/assets/projects/rea-power/cover.jpg',
     coverImage: '/assets/projects/rea-power/cover.jpg',
     publishedYear: 2023,
-    services: ['E-commerce', 'Product Sales', 'Automotive Parts'],
-    deliverables: ['Shopify Store', 'E-commerce Platform'],
+    services: ['E-commerce', 'Specialized Services'],
+    deliverables: ['E-commerce Platform'],
     links: [
       { label: 'Website', url: 'https://reapower.com.au/' }
     ],
@@ -516,8 +516,8 @@ export const projectsData = [
     image: '/assets/projects/thecodewiz/cover.jpg',
     coverImage: '/assets/projects/thecodewiz/cover.jpg',
     publishedYear: 2023,
-    services: ['Web Design', 'Web Development', 'Portfolio Showcase'],
-    deliverables: ['WordPress Website', 'Portfolio'],
+    services: ['Design & Creative', 'Web Development & Design'],
+    deliverables: ['Portfolio', 'WordPress'],
     links: [
       { label: 'Website', url: 'https://thecodewiz.com' }
     ],
@@ -534,8 +534,8 @@ export const projectsData = [
     image: '/assets/projects/howdo/cover.jpg',
     coverImage: '/assets/projects/howdo/cover.jpg',
     publishedYear: 2023,
-    services: ['Web Application', 'SaaS Platform', 'Team Collaboration'],
-    deliverables: ['WordPress Website', 'SaaS Platform'],
+    services: ['Business Services', 'SaaS Platforms', 'Web Development & Design'],
+    deliverables: ['SaaS Platform', 'WordPress'],
     links: [
       { label: 'Website', url: 'https://howdo.com/' }
     ],
@@ -552,8 +552,8 @@ export const projectsData = [
     image: '/assets/projects/podologie-praxis-zug/cover.jpg',
     coverImage: '/assets/projects/podologie-praxis-zug/cover.jpg',
     publishedYear: 2023,
-    services: ['Web Design', 'Business Website', 'Service Booking'],
-    deliverables: ['WordPress Website', 'Service Portal'],
+    services: ['Business Services', 'Service Booking', 'Web Development & Design'],
+    deliverables: ['Service Portal', 'WordPress'],
     links: [
       { label: 'Website', url: 'https://podologiepraxiszug.ch/en/' }
     ],
@@ -570,8 +570,8 @@ export const projectsData = [
     image: '/assets/projects/mirai-homes/cover.jpg',
     coverImage: '/assets/projects/mirai-homes/cover.jpg',
     publishedYear: 2023,
-    services: ['Web Design', 'Real Estate Portal', 'Property Showcase'],
-    deliverables: ['WordPress Website', 'Real Estate Platform'],
+    services: ['Real Estate & Property', 'Web Development & Design'],
+    deliverables: ['Real Estate Platform', 'WordPress'],
     links: [
       { label: 'Website', url: 'https://www.mirai-homes.eco/' }
     ],
@@ -588,8 +588,8 @@ export const projectsData = [
     image: '/assets/projects/meintrade/cover.jpg',
     coverImage: '/assets/projects/meintrade/cover.jpg',
     publishedYear: 2023,
-    services: ['Web Development', 'Trading Platform', 'Financial Services'],
-    deliverables: ['WordPress Website', 'Trading Platform'],
+    services: ['Financial Services', 'Web Development & Design'],
+    deliverables: ['Trading Platform', 'WordPress'],
     links: [
       { label: 'Website', url: 'https://www.meintrade.ch/' }
     ],
@@ -606,8 +606,8 @@ export const projectsData = [
     image: '/assets/projects/dave-holloway/cover.jpg',
     coverImage: '/assets/projects/dave-holloway/cover.jpg',
     publishedYear: 2023,
-    services: ['Web Design', 'Portfolio', 'Creative Showcase'],
-    deliverables: ['WordPress Website', 'Portfolio'],
+    services: ['Design & Creative', 'Web Development & Design'],
+    deliverables: ['Portfolio', 'WordPress'],
     links: [
       { label: 'Website', url: 'https://daveholloway.uk' }
     ],
@@ -624,8 +624,8 @@ export const projectsData = [
     image: '/assets/projects/oona-home/cover.jpg',
     coverImage: '/assets/projects/oona-home/cover.jpg',
     publishedYear: 2023,
-    services: ['Web Design', 'Portfolio', 'Service Showcase'],
-    deliverables: ['WordPress Website', 'Portfolio'],
+    services: ['Design & Creative', 'Service Showcase', 'Web Development & Design'],
+    deliverables: ['Portfolio', 'WordPress'],
     links: [
       { label: 'Website', url: 'https://oona-home.ch/' }
     ],
@@ -642,8 +642,8 @@ export const projectsData = [
     image: '/assets/projects/emaths-world/cover.jpg',
     coverImage: '/assets/projects/emaths-world/cover.jpg',
     publishedYear: 2023,
-    services: ['Web Development', 'Educational Platform', 'Content Management'],
-    deliverables: ['WordPress Website', 'Learning Platform'],
+    services: ['Education & Training', 'SaaS Platforms', 'Web Development & Design'],
+    deliverables: ['Learning Platform', 'WordPress'],
     links: [
       { label: 'Website', url: 'https://emathsworld.com/' }
     ],
@@ -660,8 +660,8 @@ export const projectsData = [
     image: '/assets/projects/shin-jewelers/cover.jpg',
     coverImage: '/assets/projects/shin-jewelers/cover.jpg',
     publishedYear: 2023,
-    services: ['E-commerce', 'Jewelry Sales', 'Product Showcase'],
-    deliverables: ['BigCommerce Store', 'E-commerce Platform'],
+    services: ['E-commerce', 'Fashion & Retail'],
+    deliverables: ['E-commerce Platform'],
     links: [
       { label: 'Website', url: 'https://shinjewelers.com/' }
     ],
@@ -678,8 +678,8 @@ export const projectsData = [
     image: '/assets/projects/christmas-loft/cover.jpg',
     coverImage: '/assets/projects/christmas-loft/cover.jpg',
     publishedYear: 2023,
-    services: ['E-commerce', 'Seasonal Products', 'Online Store'],
-    deliverables: ['BigCommerce Store', 'E-commerce Platform'],
+    services: ['E-commerce'],
+    deliverables: ['E-commerce Platform'],
     links: [
       { label: 'Website', url: 'https://christmasloft.com/' }
     ],
@@ -696,8 +696,8 @@ export const projectsData = [
     image: '/assets/projects/design-essentials/cover.jpg',
     coverImage: '/assets/projects/design-essentials/cover.jpg',
     publishedYear: 2023,
-    services: ['E-commerce', 'Product Sales', 'Beauty Products'],
-    deliverables: ['BigCommerce Store', 'E-commerce Platform'],
+    services: ['E-commerce', 'Health & Wellness'],
+    deliverables: ['E-commerce Platform'],
     links: [
       { label: 'Website', url: 'https://designessentials.com/' }
     ],
@@ -714,8 +714,8 @@ export const projectsData = [
     image: '/assets/projects/ichor-bio/cover.jpg',
     coverImage: '/assets/projects/ichor-bio/cover.jpg',
     publishedYear: 2023,
-    services: ['E-commerce', 'Bio Products', 'Online Store'],
-    deliverables: ['BigCommerce Store', 'E-commerce Platform'],
+    services: ['E-commerce', 'Specialized Services'],
+    deliverables: ['E-commerce Platform'],
     links: [
       { label: 'Website', url: 'https://ichor.bio/' }
     ],
@@ -732,8 +732,8 @@ export const projectsData = [
     image: '/assets/projects/jacob-alexander/cover.jpg',
     coverImage: '/assets/projects/jacob-alexander/cover.jpg',
     publishedYear: 2023,
-    services: ['E-commerce', 'Product Sales', 'Fashion Store'],
-    deliverables: ['BigCommerce Store', 'E-commerce Platform'],
+    services: ['E-commerce', 'Fashion & Retail'],
+    deliverables: ['E-commerce Platform'],
     links: [
       { label: 'Website', url: 'http://jacobalexander.com/' }
     ],
@@ -750,8 +750,8 @@ export const projectsData = [
     image: '/assets/projects/jb-tools/cover.jpg',
     coverImage: '/assets/projects/jb-tools/cover.jpg',
     publishedYear: 2023,
-    services: ['E-commerce', 'Product Sales', 'Industrial Tools'],
-    deliverables: ['BigCommerce Store', 'E-commerce Platform'],
+    services: ['E-commerce', 'Industrial Tools'],
+    deliverables: ['E-commerce Platform'],
     links: [
       { label: 'Website', url: 'https://in.jbtools.com/' }
     ],
@@ -768,8 +768,8 @@ export const projectsData = [
     image: '/assets/projects/shark-leathers/cover.jpg',
     coverImage: '/assets/projects/shark-leathers/cover.jpg',
     publishedYear: 2023,
-    services: ['E-commerce', 'Product Sales', 'Leather Products'],
-    deliverables: ['Maropost Store', 'E-commerce Platform'],
+    services: ['E-commerce', 'Fashion & Retail'],
+    deliverables: ['E-commerce Platform'],
     links: [
       { label: 'Website', url: 'https://sharkleathers.com.au/' }
     ],
@@ -786,8 +786,8 @@ export const projectsData = [
     image: '/assets/projects/hornsby-beekeeping/cover.jpg',
     coverImage: '/assets/projects/hornsby-beekeeping/cover.jpg',
     publishedYear: 2023,
-    services: ['E-commerce', 'Product Sales', 'Beekeeping Supplies'],
-    deliverables: ['Maropost Store', 'E-commerce Platform'],
+    services: ['E-commerce', 'Specialized Services'],
+    deliverables: ['E-commerce Platform'],
     links: [
       { label: 'Website', url: 'https://www.hornsby-beekeeping.com/' }
     ],
@@ -804,8 +804,8 @@ export const projectsData = [
     image: '/assets/projects/plant-doctor/cover.jpg',
     coverImage: '/assets/projects/plant-doctor/cover.jpg',
     publishedYear: 2023,
-    services: ['E-commerce', 'Plant Products', 'Online Store'],
-    deliverables: ['Maropost Store', 'E-commerce Platform'],
+    services: ['E-commerce', 'Specialized Services'],
+    deliverables: ['E-commerce Platform'],
     links: [
       { label: 'Website', url: 'https://www.plantdoctor.com.au/' }
     ],
@@ -822,8 +822,8 @@ export const projectsData = [
     image: '/assets/projects/coore/cover.jpg',
     coverImage: '/assets/projects/coore/cover.jpg',
     publishedYear: 2023,
-    services: ['E-commerce', 'Product Sales', 'Lifestyle Store'],
-    deliverables: ['Maropost Store', 'E-commerce Platform'],
+    services: ['E-commerce', 'Lifestyle Store'],
+    deliverables: ['E-commerce Platform'],
     links: [
       { label: 'Website', url: 'https://www.coore.com.au/' }
     ],
@@ -840,8 +840,8 @@ export const projectsData = [
     image: '/assets/projects/guitar-templates/cover.jpg',
     coverImage: '/assets/projects/guitar-templates/cover.jpg',
     publishedYear: 2023,
-    services: ['E-commerce', 'Music Products', 'Template Sales'],
-    deliverables: ['Maropost Store', 'E-commerce Platform'],
+    services: ['E-commerce', 'Specialized Services'],
+    deliverables: ['E-commerce Platform'],
     links: [
       { label: 'Website', url: 'https://www.guitartemplates.com.au/' }
     ],
@@ -858,8 +858,8 @@ export const projectsData = [
     image: '/assets/projects/american-trucks/cover.jpg',
     coverImage: '/assets/projects/american-trucks/cover.jpg',
     publishedYear: 2023,
-    services: ['E-commerce', 'Truck Parts & Accessories', 'Auto Products'],
-    deliverables: ['Maropost Store', 'E-commerce Platform'],
+    services: ['E-commerce', 'Specialized Services', 'Truck Parts & Accessories'],
+    deliverables: ['E-commerce Platform'],
     links: [
       { label: 'Website', url: 'https://www.americantrucks.com/' }
     ],
@@ -876,8 +876,8 @@ export const projectsData = [
     image: '/assets/projects/woolf-university/cover.jpg',
     coverImage: '/assets/projects/woolf-university/cover.jpg',
     publishedYear: 2023,
-    services: ['Web Development', 'Educational Platform', 'Course Management'],
-    deliverables: ['Webflow Website', 'Learning Platform'],
+    services: ['Education & Training', 'Web Development & Design'],
+    deliverables: ['Learning Platform', 'Webflow'],
     links: [
       { label: 'Website', url: 'https://woolf.university/' }
     ],
@@ -894,8 +894,8 @@ export const projectsData = [
     image: '/assets/projects/mirror-media-marketing/cover.jpg',
     coverImage: '/assets/projects/mirror-media-marketing/cover.jpg',
     publishedYear: 2023,
-    services: ['Web Design', 'Marketing Services', 'Agency Website'],
-    deliverables: ['Webflow Website', 'Agency Portal'],
+    services: ['Business Services', 'Web Development & Design'],
+    deliverables: ['Agency Portal', 'Webflow'],
     links: [
       { label: 'Website', url: 'https://www.mirrormediamarketing.com/' }
     ],
@@ -912,8 +912,8 @@ export const projectsData = [
     image: '/assets/projects/dakwala/cover.jpg',
     coverImage: '/assets/projects/dakwala/cover.jpg',
     publishedYear: 2023,
-    services: ['Web Design', 'Restaurant Website', 'Food Services'],
-    deliverables: ['Webflow Website', 'Restaurant Portal'],
+    services: ['Food & Beverage', 'Web Development & Design'],
+    deliverables: ['Restaurant Portal', 'Webflow'],
     links: [
       { label: 'Website', url: 'https://dakwala.co.uk/' }
     ],
@@ -930,8 +930,8 @@ export const projectsData = [
     image: '/assets/projects/vaisakhhi-haria/cover.jpg',
     coverImage: '/assets/projects/vaisakhhi-haria/cover.jpg',
     publishedYear: 2023,
-    services: ['Web Design', 'Portfolio Showcase', 'Creative Services'],
-    deliverables: ['Webflow Website', 'Portfolio'],
+    services: ['Design & Creative', 'Web Development & Design'],
+    deliverables: ['Portfolio', 'Webflow'],
     links: [
       { label: 'Website', url: 'https://www.vaishakhiharia.com/' }
     ],
@@ -948,8 +948,8 @@ export const projectsData = [
     image: '/assets/projects/lynn-milo-pilates/cover.jpg',
     coverImage: '/assets/projects/lynn-milo-pilates/cover.jpg',
     publishedYear: 2023,
-    services: ['Web Design', 'Service Booking', 'Fitness Services'],
-    deliverables: ['Squarespace Website', 'Service Portal'],
+    services: ['Health & Wellness', 'Service Booking', 'Web Development & Design'],
+    deliverables: ['Service Portal', 'Squarespace'],
     links: [
       { label: 'Website', url: 'https://www.lynnmilyopilates.com/' }
     ],
@@ -966,8 +966,8 @@ export const projectsData = [
     image: '/assets/projects/dopple-press/cover.jpg',
     coverImage: '/assets/projects/dopple-press/cover.jpg',
     publishedYear: 2023,
-    services: ['Web Design', 'Publishing Platform', 'Creative Services'],
-    deliverables: ['Wix Website', 'Publishing Portal'],
+    services: ['Design & Creative', 'Publishing Platform', 'Web Development & Design'],
+    deliverables: ['Publishing Portal', 'Wix'],
     links: [
       { label: 'Website', url: 'https://www.dopplepress.com/' }
     ],
@@ -984,8 +984,8 @@ export const projectsData = [
     image: '/assets/projects/salty-donut/cover.jpg',
     coverImage: '/assets/projects/salty-donut/cover.jpg',
     publishedYear: 2023,
-    services: ['Web Design', 'E-commerce', 'Bakery Website'],
-    deliverables: ['Wix Website', 'Bakery Platform'],
+    services: ['E-commerce', 'Food & Beverage', 'Web Development & Design'],
+    deliverables: ['Bakery Platform', 'Wix'],
     links: [
       { label: 'Website', url: 'https://www.saltydonut.com/' }
     ],
@@ -1002,8 +1002,8 @@ export const projectsData = [
     image: '/assets/projects/mane-ethical/cover.jpg',
     coverImage: '/assets/projects/mane-ethical/cover.jpg',
     publishedYear: 2023,
-    services: ['Web Design', 'E-commerce', 'Beauty Products'],
-    deliverables: ['Wix Website', 'E-commerce Platform'],
+    services: ['E-commerce', 'Health & Wellness', 'Web Development & Design'],
+    deliverables: ['E-commerce Platform', 'Wix'],
     links: [
       { label: 'Website', url: 'https://www.maneethical.com/' }
     ],
@@ -1020,8 +1020,8 @@ export const projectsData = [
     image: '/assets/projects/evolve-clothing-gallery/cover.jpg',
     coverImage: '/assets/projects/evolve-clothing-gallery/cover.jpg',
     publishedYear: 2023,
-    services: ['Web Design', 'E-commerce', 'Fashion Boutique'],
-    deliverables: ['Wix Website', 'E-commerce Platform'],
+    services: ['E-commerce', 'Fashion & Retail', 'Web Development & Design'],
+    deliverables: ['E-commerce Platform', 'Wix'],
     links: [
       { label: 'Website', url: 'https://www.evolveclothinggallery.com/' }
     ],
@@ -1038,8 +1038,8 @@ export const projectsData = [
     image: '/assets/projects/taste-hub/cover.jpg',
     coverImage: '/assets/projects/taste-hub/cover.jpg',
     publishedYear: 2023,
-    services: ['Web Design', 'Restaurant Website', 'Reservation System'],
-    deliverables: ['Framer Website', 'Restaurant Portal'],
+    services: ['Food & Beverage', 'Reservation System', 'Web Development & Design'],
+    deliverables: ['Framer', 'Restaurant Portal'],
     links: [
       { label: 'Website', url: 'https://tastehub.framer.website' }
     ],
@@ -1056,8 +1056,8 @@ export const projectsData = [
     image: '/assets/projects/agensip-styleest/cover.jpg',
     coverImage: '/assets/projects/agensip-styleest/cover.jpg',
     publishedYear: 2023,
-    services: ['Web Design', 'E-commerce', 'Fashion Catalog'],
-    deliverables: ['Framer Website', 'E-commerce Platform'],
+    services: ['E-commerce', 'Fashion & Retail', 'Web Development & Design'],
+    deliverables: ['E-commerce Platform', 'Framer'],
     links: [
       { label: 'Website', url: 'https://agensip-styleest.framer.website' }
     ],
@@ -1074,8 +1074,8 @@ export const projectsData = [
     image: '/assets/projects/beauty-products/cover.jpg',
     coverImage: '/assets/projects/beauty-products/cover.jpg',
     publishedYear: 2023,
-    services: ['Web Design', 'E-commerce', 'Beauty Products'],
-    deliverables: ['Framer Website', 'E-commerce Platform'],
+    services: ['E-commerce', 'Health & Wellness', 'Web Development & Design'],
+    deliverables: ['E-commerce Platform', 'Framer'],
     links: [
       { label: 'Website', url: 'https://beauty-products.framer.website' }
     ],
@@ -1092,8 +1092,8 @@ export const projectsData = [
     image: '/assets/projects/rayna-site/cover.jpg',
     coverImage: '/assets/projects/rayna-site/cover.jpg',
     publishedYear: 2023,
-    services: ['Web Design', 'Portfolio', 'Beauty Services'],
-    deliverables: ['Framer Website', 'Service Portfolio'],
+    services: ['Design & Creative', 'Health & Wellness', 'Web Development & Design'],
+    deliverables: ['Framer', 'Service Portfolio'],
     links: [
       { label: 'Website', url: 'https://rayna-site.framer.website' }
     ],
@@ -1110,7 +1110,7 @@ export const projectsData = [
     image: '/assets/projects/beauty-design/cover.jpg',
     coverImage: '/assets/projects/beauty-design/cover.jpg',
     publishedYear: 2023,
-    services: ['Figma Design', 'Design Showcase'],
+    services: ['Design & Creative', 'Figma Design'],
     deliverables: ['Figma Design'],
     links: [
       { label: 'Design', url: 'https://www.figma.com/proto/PHYTS03aMqVQRU3ItRanxw/beauty?page-id=0%3A1&node-id=0-1324' }
