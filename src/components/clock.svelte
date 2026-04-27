@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
   import clsx from 'clsx';
 
   let className: undefined | string = undefined;
@@ -7,10 +8,14 @@
   let date = new Date();
   let portugal = new Date(new Date().toLocaleString('en', { timeZone: 'Europe/Lisbon' }));
 
-  setInterval(() => {
-    date = new Date();
-    portugal = new Date(portugal.getTime() + 1000);
-  }, 1000);
+  onMount(() => {
+    const interval = setInterval(() => {
+      date = new Date();
+      portugal = new Date(portugal.getTime() + 1000);
+    }, 1000);
+
+    return () => clearInterval(interval);
+  });
 
   $: secondsAngle = (portugal.getSeconds() * 360) / 60;
   $: minutesAngle = (portugal.getMinutes() * 360) / 60;

@@ -304,7 +304,7 @@
       <!-- Featured Projects & Blog -->
       <section class="mb-8 mt-10 md:mt-14 lg:mt-20">
         <SmallHighlights highlights={smallHighlights.slice(0, 12)} />
-      </section>
+        </section>
 
       <!-- Showreel Video -->
       <section class="relative overflow-hidden rounded-lg">
@@ -318,15 +318,20 @@
   </div>
 
   <!-- Selected Work Section -->
-  <section class="mt-10 md:mt-14 lg:mt-20">
+  <section class="mt-10 md:mt-14 lg:mt-20 mb-12 md:mb-16 lg:mb-20">
     <div class="container mx-auto px-container">
       <h2 class="text-5xl">Selected work.</h2>
     </div>
     <div class="mt-4 md:mt-6 lg:mt-8">
-      {#each smallHighlights.filter(h => h.content.component === 'project').slice(0, 12) as project}
+      {#each smallHighlights.filter(h => h.content.component === 'project').slice(0, 4) as project}
         {@const projectData = projectsData.find(p => p.slug === project.slug)}
         <ProjectEntry project={{...project, category: projectData?.deliverables?.[0]}} variant="default" />
       {/each}
+    </div>
+    <div class="mt-8 flex justify-center md:mt-10 lg:mt-12">
+      <a href="/projects" class="group relative inline-flex items-center justify-center gap-1.5 overflow-hidden whitespace-nowrap text-md font-medium leading-none outline-none transition-all hover:ring-4 focus-visible:ring-4 active:scale-[0.98] active:ring-2 disabled:pointer-events-none disabled:opacity-60 h-11 rounded-md px-5 bg-foreground text-background">
+        View all projects
+      </a>
     </div>
   </section>
 

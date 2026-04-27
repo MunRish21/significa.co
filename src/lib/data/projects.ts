@@ -62,18 +62,193 @@ export const projectsData = [
     id: 3,
     slug: 'navjot-kaur-pllc',
     name: 'Navjot Kaur PLLC',
-    tagline: 'Professional legal services portal for comprehensive law firm solutions',
+    tagline: 'Professional legal services portal for compassionate estate planning and immigration law in New York',
     image: '/assets/projects/navjot-kaur-pllc/cover.png',
     coverImage: '/assets/projects/navjot-kaur-pllc/cover.png',
     publishedYear: 2023,
-    services: ['Business Services', 'Specialized Services', 'Web Development & Design'],
-    deliverables: ['Legal Services Portal', 'Website'],
+    services: ['Brand Identity', 'Web Development & Design', 'Legal Services Portal'],
+    deliverables: ['Legal Services Website', 'Custom Logo Design', 'WordPress CMS'],
     links: [
-      { label: 'Website', url: 'https://navjotkaurpllc.us/' }
+      { label: 'Website', url: 'https://navjotkaurpllc.us/' },
+      { label: 'Contact', url: 'https://navjotkaurpllc.us/contact/' }
     ],
     team: [],
-    metrics: [],
-    intro: 'Navjot Kaur PLLC is a professional legal services website built with custom HTML and CSS, showcasing a comprehensive law practice. The site provides clients with essential information about legal services, case consultations, and professional expertise. Designed to build trust and credibility, the portal features an intuitive interface for potential clients to understand available legal services and connect with the firm.',
+    metrics: [
+      { label: 'Practice Areas', value: '6+', tooltip: 'Specialized Legal Services', isPositive: true },
+      { label: 'Bar Associations', value: '4', tooltip: 'Professional Affiliations', isPositive: true },
+      { label: 'Languages', value: '3', tooltip: 'English, Hindi, Punjabi', isPositive: true }
+    ],
+    intro: 'Navjot Kaur PLLC is a boutique New York City law practice specializing in estate planning, immigration, and cross-border NRI legal services for multicultural families. We designed and built a complete brand identity and WordPress-powered website from the ground up—custom logo, typography, and color system that translate complex legal services into clear, compassionate guidance without the legalese. The site organizes six specialized practice areas, integrated Calendly consultation booking, and multilingual access in English, Hindi, and Punjabi—positioning the practice as a trusted, culturally aware resource in New York\'s competitive legal market.',
+    body: {
+      type: 'doc',
+      content: [
+        {
+          type: 'heading',
+          attrs: { level: 2 },
+          content: [{ type: 'text', text: 'The Challenge' }]
+        },
+        {
+          type: 'paragraph',
+          content: [{ type: 'text', text: 'Navjot Kaur, a dual-licensed attorney in New York and India, was establishing her independent law practice serving multicultural families. She needed a professional online presence that would not only showcase her expertise but also build trust with potential clients unfamiliar with her practice. The website needed to clearly communicate her specialized services in estate planning and immigration law while reflecting her compassionate, accessible approach to legal guidance.' }]
+        },
+        {
+          type: 'heading',
+          attrs: { level: 2 },
+          content: [{ type: 'text', text: 'Our Approach' }]
+        },
+        {
+          type: 'paragraph',
+          content: [{ type: 'text', text: 'We took a comprehensive, design-led approach to building Navjot Kaur PLLC\'s complete brand and digital presence:' }]
+        },
+        {
+          type: 'heading',
+          attrs: { level: 3 },
+          content: [{ type: 'text', text: 'Brand Foundation & Identity' }]
+        },
+        {
+          type: 'bullet_list',
+          content: [
+            {
+              type: 'list_item',
+              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Designed custom logo and visual identity system from the ground up' }] }]
+            },
+            {
+              type: 'list_item',
+              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Created a professional color palette and typography that conveys trust and approachability' }] }]
+            },
+            {
+              type: 'list_item',
+              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Established brand guidelines reflecting her multicultural practice philosophy' }] }]
+            }
+          ]
+        },
+        {
+          type: 'heading',
+          attrs: { level: 3 },
+          content: [{ type: 'text', text: 'Strategic Architecture' }]
+        },
+        {
+          type: 'bullet_list',
+          content: [
+            {
+              type: 'list_item',
+              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Mapped complete information hierarchy for complex legal services' }] }]
+            },
+            {
+              type: 'list_item',
+              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Designed user journey guiding potential clients from discovery to consultation booking' }] }]
+            },
+            {
+              type: 'list_item',
+              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Structured content to simplify legal terminology without sacrificing accuracy' }] }]
+            }
+          ]
+        },
+        {
+          type: 'heading',
+          attrs: { level: 3 },
+          content: [{ type: 'text', text: 'Design & Development' }]
+        },
+        {
+          type: 'bullet_list',
+          content: [
+            {
+              type: 'list_item',
+              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Crafted a clean, modern website design that makes legal information accessible' }] }]
+            },
+            {
+              type: 'list_item',
+              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Built on WordPress CMS for flexibility and ease of updates' }] }]
+            },
+            {
+              type: 'list_item',
+              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Implemented custom HTML/CSS for precise design control and performance' }] }]
+            },
+            {
+              type: 'list_item',
+              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Created intuitive navigation for six distinct practice areas' }] }]
+            },
+            {
+              type: 'list_item',
+              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Developed responsive design serving desktop, tablet, and mobile users' }] }]
+            }
+          ]
+        },
+        {
+          type: 'heading',
+          attrs: { level: 3 },
+          content: [{ type: 'text', text: 'Post-Launch Optimization' }]
+        },
+        {
+          type: 'bullet_list',
+          content: [
+            {
+              type: 'list_item',
+              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Implemented comprehensive SEO strategy to improve search visibility' }] }]
+            },
+            {
+              type: 'list_item',
+              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Optimized for local New York search terms and legal service keywords' }] }]
+            },
+            {
+              type: 'list_item',
+              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Set up analytics and performance tracking' }] }]
+            }
+          ]
+        },
+        {
+          type: 'heading',
+          attrs: { level: 2 },
+          content: [{ type: 'text', text: 'Key Features' }]
+        },
+        {
+          type: 'bullet_list',
+          content: [
+            {
+              type: 'list_item',
+              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Attorney Bio Section - Highlights dual licensing in New York and India, multilingual capabilities (English, Hindi, Punjabi), and unique multicultural perspective' }] }]
+            },
+            {
+              type: 'list_item',
+              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Practice Areas - Six specialized services clearly explained: Estate Planning, Immigration Law, Wills & Trusts, Guardianship & Special Needs Planning, International Estate Planning, and Humanitarian Relief' }] }]
+            },
+            {
+              type: 'list_item',
+              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Professional Credibility - Featured affiliations with NYC Bar Association, New York State Bar Association, Sikh National Bar Association, and South Asian Bar Association' }] }]
+            },
+            {
+              type: 'list_item',
+              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Easy Consultation Booking - Integrated Calendly for seamless appointment scheduling' }] }]
+            },
+            {
+              type: 'list_item',
+              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Multiple Contact Channels - Phone, email, and social media integration for accessibility' }] }]
+            },
+            {
+              type: 'list_item',
+              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Legal Blog - Thought leadership articles establishing expertise and providing client education' }] }]
+            },
+            {
+              type: 'list_item',
+              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Professional Design - Modern, trustworthy aesthetic that differentiates from traditional law firm websites' }] }]
+            }
+          ]
+        },
+        {
+          type: 'heading',
+          attrs: { level: 2 },
+          content: [{ type: 'text', text: 'Results & Impact' }]
+        },
+        {
+          type: 'paragraph',
+          content: [{ type: 'text', text: 'The website successfully established Navjot Kaur\'s professional brand in the competitive New York legal market. By combining strategic design with clear, accessible legal information, the site positions her practice as modern, client-focused, and genuinely accessible to diverse communities. The professional online presence has become a central hub for client inquiries, service discovery, and legal guidance—effectively differentiating her practice in a crowded legal landscape while maintaining the warmth and approachability that define her client relationships.' }]
+        },
+        {
+          type: 'paragraph',
+          content: [{ type: 'text', text: 'The clean design, coupled with strong SEO implementation, has improved visibility for estate planning and immigration law services, helping her reach the multicultural families and individuals who need her expertise most.' }]
+        }
+      ]
+    },
     awards: []
   },
   {
@@ -81,8 +256,8 @@ export const projectsData = [
     slug: 'hilink-travel-platform',
     name: 'Hilink Travel Platform',
     tagline: 'Modern travel and tourism SaaS platform for seamless booking experiences',
-    image: '/assets/projects/hilink-travel/cover.png',
-    coverImage: '/assets/projects/hilink-travel/cover.png',
+    image: '/assets/projects/hilink-travel-platform/cover.png',
+    coverImage: '/assets/projects/hilink-travel-platform/cover.png',
     publishedYear: 2023,
     services: ['SaaS Platforms', 'Specialized Services', 'Web Development & Design'],
     deliverables: ['React & Next.js', 'Travel Booking Platform'],
@@ -1071,8 +1246,8 @@ export const projectsData = [
     slug: 'beauty-products-framer',
     name: 'Beauty Products',
     tagline: 'E-commerce platform for beauty and cosmetic products',
-    image: '/assets/projects/beauty-products/cover.png',
-    coverImage: '/assets/projects/beauty-products/cover.png',
+    image: '/assets/projects/beauty-products-framer/cover.png',
+    coverImage: '/assets/projects/beauty-products-framer/cover.png',
     publishedYear: 2023,
     services: ['E-commerce', 'Health & Wellness', 'Web Development & Design'],
     deliverables: ['E-commerce Platform', 'Framer'],

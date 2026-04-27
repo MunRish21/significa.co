@@ -251,6 +251,73 @@
           </p>
 
         {/if}
+
+        <!-- Navjot Kaur PLLC Content -->
+        {#if project.slug === 'navjot-kaur-pllc'}
+          <h2 class="mx-auto max-w-2xl"><b>The challenge.</b></h2>
+          <p class="mx-auto max-w-2xl">
+            Navjot Kaur, a dual-licensed attorney in New York and India, was launching an independent law practice in one of the most saturated legal markets in the United States. New York City alone is home to tens of thousands of attorneys, and the estate planning and immigration spaces are dominated by long-established firms with decades of name recognition. To stand out, the practice needed more than a generic law-firm website. It needed a complete brand—one that reflected Navjot's distinct value proposition: a culturally aware, multilingual, cross-jurisdictionally licensed attorney serving multicultural families, blended households, and Non-Resident Indian (NRI) clients with clear, compassionate guidance instead of intimidating legalese.
+          </p>
+
+          <p class="mx-auto max-w-2xl">
+            The existing options on the market either felt cold and corporate or visually outdated, and none communicated the warmth, accessibility, and dual-system expertise that defined her client relationships. The task was to build a brand and digital presence from zero that would establish trust instantly, simplify complex legal services for a non-specialist audience, and rank for highly competitive New York legal search terms.
+          </p>
+
+          <h2 class="mx-auto max-w-2xl"><b>Building a complete brand identity from the ground up.</b></h2>
+          <p class="mx-auto max-w-2xl">
+            We took a fully design-led approach, treating Navjot Kaur PLLC as a brand-building project rather than a website assignment. We started with discovery: positioning, audience archetypes, tone-of-voice exploration, and competitive analysis of leading estate planning and immigration firms across the New York City and South Asian diaspora markets. From there we designed a custom logo, a refined typography system pairing a serif for authority with a clean sans-serif for accessibility, and a calm, trust-forward color palette that intentionally departs from the heavy navy-and-gold conventions of traditional law firm branding.
+          </p>
+
+          <p class="mx-auto max-w-2xl">
+            The voice of the brand was equally deliberate. Every line of copy was written to translate technical legal concepts—revocable trusts, special needs planning, humanitarian visas, cross-border inheritance—into language that an immigrant parent, a young professional starting a family, or a survivor seeking protection could read in under a minute and understand. The result is a brand system that feels modern, multicultural, and genuinely human while still signalling the professional credibility expected of a New York attorney.
+          </p>
+
+          <h2 class="mx-auto max-w-2xl"><b>Architecting six specialized practice areas with clarity.</b></h2>
+          <p class="mx-auto max-w-2xl">
+            One of the largest information design challenges was the breadth of services offered. Navjot Kaur PLLC covers six distinct, technically complex practice areas, each with its own audience and search intent. We mapped a content hierarchy that lets visitors find the right service in two clicks or less, regardless of whether they arrive looking for a will, a green card, or guardianship for a special needs child.
+          </p>
+
+          <p class="mx-auto max-w-2xl">
+            Estate Planning helps clients secure their legacy and protect their family's future through personalized plans and legal directives. Wills & Trusts covers revocable and irrevocable trust structures along with tax-efficient strategies for everyday families—not only the ultra-wealthy. Immigration Law guides clients from green cards through naturalization. Guardianship & Special Needs Planning protects minors and individuals with disabilities through legally sound structures. International Estate Planning addresses cross-border inheritance, NRI succession, and dual-jurisdiction asset planning between the U.S. and India. Humanitarian Relief & Survivor Support delivers trauma-informed representation for VAWA self-petitions, Special Immigrant Juvenile Status (SIJS), and T and U visas for survivors of abuse, trafficking, and serious crime. Each practice area is presented in its own dedicated section with plain-language explanations, the categories of clients it serves, and a direct path to consultation booking.
+          </p>
+
+          <h2 class="mx-auto max-w-2xl"><b>Bridging two legal systems and three languages.</b></h2>
+          <p class="mx-auto max-w-2xl">
+            Navjot's most distinctive credential is her dual licensure in both New York and India—a combination that very few attorneys in the United States hold. We made this the structural backbone of the entire site rather than a footnote on her bio page. The attorney section leads with the cross-border story, and the International Estate Planning practice area is positioned to capture searches around NRI estate planning, India-to-U.S. inheritance, and dual-jurisdiction wills, an underserved niche in the New York legal market.
+          </p>
+
+          <p class="mx-auto max-w-2xl">
+            We also surfaced multilingual access in English, Hindi, and Punjabi prominently across the homepage and contact flows. For South Asian families navigating sensitive conversations about inheritance, immigration status, or family protection, being able to consult with an attorney in their first language is often the deciding factor in choosing representation. Treating language as a first-class brand element—not a small line in the footer—turned a credential into a real competitive advantage.
+          </p>
+
+          <h2 class="mx-auto max-w-2xl"><b>Reducing the barrier to legal help.</b></h2>
+          <p class="mx-auto max-w-2xl">
+            Many people who need an estate plan, an immigration filing, or survivor relief never make the call—because legal services feel inaccessible, expensive, or intimidating. We engineered the entire conversion path to lower that barrier. Every page funnels toward a free 30-minute consultation booked directly through an integrated Calendly flow, with no phone tag, no gatekeeping forms, and no obligation. Clients can also reach the practice via direct phone line, email, and social channels, with the Midtown Manhattan office address (43 West 43rd Street, Suite 230) prominently displayed for in-person consultations.
+          </p>
+
+          <p class="mx-auto max-w-2xl">
+            The site is fully responsive across desktop, tablet, and mobile, with performance-optimized custom HTML and CSS layered on top of a WordPress CMS so that Navjot can update content, blog posts, and practice details without developer involvement. Every contact entry point was tested to ensure that a client landing on a practice area page on their phone is at most one tap away from a real human conversation.
+          </p>
+
+          <h2 class="mx-auto max-w-2xl"><b>Establishing professional credibility at first glance.</b></h2>
+          <p class="mx-auto max-w-2xl">
+            For a new independent practice competing with century-old firms, social proof and credentialing are everything. We highlighted Navjot's affiliations with four major bar associations—the NYC Bar Association, the New York State Bar Association, the Sikh National Bar Association, and the South Asian Bar Association—directly on the homepage and attorney bio, signalling both her professional standing and her active engagement in the multicultural legal community she serves. Her dual New York and India licensure, multilingual capabilities, and specialized practice focus are surfaced in the first viewport, so a visitor can validate her expertise within seconds of landing.
+          </p>
+
+          <h2 class="mx-auto max-w-2xl"><b>Educating clients through thought leadership.</b></h2>
+          <p class="mx-auto max-w-2xl">
+            The integrated legal blog serves a dual purpose: client education and organic search visibility. Articles cover the questions her ideal clients are actually typing into Google—why trusts make sense for non-wealthy families, why young families should write a will before it feels urgent, and how probate works for blended families in New York. Each post is written in the same plain-language voice as the rest of the site, building topical authority around estate planning, immigration, and NRI legal services while giving Navjot a content asset she can share with prospective clients during consultations.
+          </p>
+
+          <h2 class="mx-auto max-w-2xl"><b>Results and impact.</b></h2>
+          <p class="mx-auto max-w-2xl">
+            The launch established Navjot Kaur PLLC as a modern, client-focused practice in one of the most competitive legal markets in the world. The brand system, content architecture, and SEO foundation have positioned the firm to capture an underserved intersection of estate planning, immigration, and cross-border NRI services that larger generalist firms do not specialize in. Six practice areas are clearly mapped, four bar association affiliations are surfaced for credibility, three languages are supported across client journeys, and a single seamless Calendly flow converts visitors into booked consultations.
+          </p>
+
+          <p class="mx-auto max-w-2xl">
+            More importantly, the website successfully translates Navjot's real-world value—warmth, cultural fluency, dual-jurisdiction expertise, and a refusal to hide behind legal jargon—into a digital experience that feels exactly like working with her in person. The professional online presence has become the central hub for client inquiries, service discovery, and trust-building, differentiating the practice from traditional law firm websites while remaining unmistakably approachable to the multicultural families and individuals who need her expertise most.
+          </p>
+        {/if}
       </div>
 
       <!-- Contact CTA Section -->
