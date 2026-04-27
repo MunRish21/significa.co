@@ -1,5 +1,6 @@
 <script lang="ts">
   import { page } from '$app/stores';
+  import { projectsData, getProjectBySlug } from '$lib/data/projects';
   import ComparisonSlider from '$components/blocks/project-blocks/comparison-slider.svelte';
   import Testimonial from '$components/blocks/project-blocks/testimonial.svelte';
   import VideoSection from '$components/blocks/project-blocks/video-section.svelte';
@@ -8,42 +9,39 @@
   import MetricsSection from '$components/blocks/project-blocks/metrics-section.svelte';
   import ContactCtaSection from '$components/blocks/project-blocks/contact-cta-section.svelte';
 
-  const projects: Record<string, any> = {
-    'coffee-king': {
-      id: 1,
-      slug: 'coffee-king',
-      name: 'Coffee King.',
-      tagline: 'A unified e-commerce platform selling to consumers and businesses alike.',
-      coverImage: 'https://a.storyblok.com/f/198185/3200x1800/409dac6deb/new-cover-coffee-king-website.png/m/1440x0/',
-      publishedYear: 2023,
+  const projectsMap: Record<string, any> = {
+    'monster-fairings': {
+      id: 11,
+      slug: 'monster-fairings',
+      name: 'Monster Fairings.',
+      tagline: 'A comprehensive e-commerce platform for custom motorcycle fairings with advanced AI integration and complex payment structures.',
+      coverImage: '/assets/projects/monster-fairings/cover.jpg',
+      publishedYear: 2021,
       services: [
-        'Front-end Development',
-        'Interaction Design',
-        'Interface Design',
-        'Project Management',
-        'Strategy',
+        'Web Design',
         'User Experience Design',
-        'User Interface Design'
+        'User Interface Design',
+        'Front-end Development',
+        'Back-end Development',
+        'E-commerce Strategy',
+        'Project Management',
+        'AI Integration',
+        'Payment Systems'
       ],
-      deliverables: ['Website', 'E-commerce'],
+      deliverables: ['Website', 'E-commerce Platform', 'AI Visualization System', 'Payment Gateway'],
       links: [
-        { label: 'Website', url: 'https://www.coffeekingdirect.eu/' }
+        { label: 'Website', url: 'https://monsterfairings.com/' }
       ],
-      team: [
-        { name: 'Rishab', image: 'https://a.storyblok.com/f/198185/200x200/placeholder.jpeg/m/100x100/', href: '/about/rishab' },
-        { name: 'Helder', image: 'https://a.storyblok.com/f/198185/2826x2827/2cf44cf03a/helder.jpg/m/100x100/', href: '/about/helder' },
-        { name: 'Inês Gomes', image: 'https://a.storyblok.com/f/198185/2705x2705/5b975c15da/ines_gomes.jpg/m/100x100/', href: '/about/ines-gomes' },
-        { name: 'Manuel Melo', image: 'https://a.storyblok.com/f/198185/2705x2705/1e0b8666aa/manuel_1.jpg/m/100x100/', href: '/about/manuel-melo' }
-      ],
+      team: [],
       metrics: [
-        { label: 'CVR', value: '29%', tooltip: 'Conversion Rate', isPositive: true },
-        { label: 'AOV', value: '38%', tooltip: 'Average Order Value', isPositive: true }
+        { label: 'Products', value: '5000+', tooltip: 'Product Catalog', isPositive: true },
+        { label: 'Countries', value: '7+', tooltip: 'Shipping Destinations', isPositive: true }
       ],
-      intro: 'Coffee King is a coffee retailer with a growing product range and ambitions to match. They came to us with a fragmented Shopify setup and no clear separation between their consumer and wholesale audiences. We built them a single, cohesive platform that serves both and scales across the UK and Europe.'
+      intro: 'Monster Fairings is a premier e-commerce platform specializing in custom motorcycle fairings for riders worldwide. We engineered a sophisticated platform managing 5000+ products with a complex payment structure supporting multiple business models. The system features an advanced filtering architecture, AI-powered fairings visualization kit allowing riders to see products on their bikes, comprehensive email management capabilities, and robust speed and security infrastructure. The platform seamlessly handles inventory management, customization options, international shipping, and delivers a superior shopping experience across multiple markets.'
     }
   };
 
-  $: project = projects[$page.params.slug];
+  $: project = getProjectBySlug($page.params.slug) || projectsMap[$page.params.slug];
 </script>
 
 <svelte:head>
@@ -125,7 +123,9 @@
       </div>
 
       <!-- Team Section -->
-      <TeamSection team={project.team} />
+      {#if project.team.length > 0}
+        <TeamSection team={project.team} />
+      {/if}
 
       <!-- Metrics Section -->
       <MetricsSection metrics={project.metrics} />
@@ -137,127 +137,120 @@
 
       <!-- Rich Content Sections -->
       <div class="group rich-text @container my-20">
-        <!-- The starting point -->
-        <ImageSection
-          src="https://a.storyblok.com/f/198185/3200x2400/18f2f547b2/ck_1.webp/m/0x0/"
-          alt="Coffee King old vs new"
-          width="3200"
-          height="2400"
-        />
+        {#if project.slug === 'monster-fairings'}
+          <!-- Monster Fairings Content -->
+          <h2 class="mx-auto max-w-2xl"><b>The challenge.</b></h2>
+          <p class="mx-auto max-w-2xl">
+            Monster Fairings entered the e-commerce space with an ambitious vision: to become the go-to destination for custom motorcycle fairings globally. However, they faced significant challenges. Their initial platform lacked the sophistication needed to handle a rapidly growing catalog, manage complex product customization options, and support international operations across multiple currencies and shipping destinations. The user experience was cumbersome, search functionality was limited, and the platform couldn't scale with their growth.
+          </p>
 
-        <h2 class="mx-auto max-w-2xl"><b>The starting point.</b></h2>
-        <p class="mx-auto max-w-2xl">
-          Coffee King had outgrown their setup. Multiple stores spread across different markets, a wide catalogue with unclear navigation, and a platform where business buyers and consumers shared the same undifferentiated experience. They wanted to consolidate, differentiate their two audiences, and elevate how the brand showed up digitally.
-        </p>
+          <!-- Building the Solution -->
+          <h2 class="mx-auto max-w-2xl"><b>Building a scalable e-commerce platform.</b></h2>
+          <p class="mx-auto max-w-2xl">
+            We designed and developed a comprehensive e-commerce platform purpose-built for the motorcycle aftermarket industry. The platform features an intuitive catalog organization system that allows customers to browse fairings by motorcycle brand, model, and year. We implemented advanced filtering capabilities, real-time inventory management, and a sophisticated search engine that understands motorcycle specifications and user intent.
+          </p>
 
-        <!-- Before/After Comparison -->
-        <ComparisonSlider
-          beforeImage="https://a.storyblok.com/f/198185/1440x833/35eab37fbf/old-coffee-king.png/m/0x0/"
-          afterImage="https://a.storyblok.com/f/198185/1440x833/003d750bf6/new-coffee-king.png/m/0x0/"
-          beforeLabel="Old"
-          afterLabel="New"
-        />
+          <p class="mx-auto max-w-2xl">
+            The product detail pages showcase extensive customization options, allowing riders to preview their bikes with different fairing designs, colors, and finishes. High-quality product imagery, detailed specifications, and user reviews build confidence in the purchasing decision.
+          </p>
 
-        <!-- Testimonial -->
-        <Testimonial
-          quote="We weren't building for where the business is today, we were building for where it's heading. Not every agency is comfortable with that kind of ambiguity. Significa was."
-          author="Frantisek Svoboda"
-          title="Head of E-commerce at Coffee King"
-          image="https://a.storyblok.com/f/198185/200x200/d32761bf8e/fran_coffee_king.jpeg/m/100x100/"
-        />
+          <ImageSection
+            src="/assets/projects/monster-fairings/product-listings.png"
+            alt="Product listing and catalog browsing"
+            width="3200"
+            height="2400"
+          />
 
-        <!-- Elevating Coffee King -->
-        <h2 class="mx-auto max-w-2xl"><b>Elevating Coffee King.</b></h2>
-        <p class="mx-auto max-w-2xl">
-          The brief came with a constraint: the existing identity couldn't change. So rather than starting from scratch, we worked with what was there, the crown, the warm browns and oranges, the spirit of the brand, and built a visual system around it. We introduced a complementary colour palette, refined the typography, and created a set of custom icons and illustrations that gave Coffee King a personality it could carry across every page. The result feels warmer, more confident, and unmistakably theirs.
-        </p>
+          <!-- AI-Powered Customization -->
+          <h2 class="mx-auto max-w-2xl"><b>AI-powered customization experience.</b></h2>
+          <p class="mx-auto max-w-2xl">
+            One of the platform's standout features is the AI-driven customization kit that lets riders visualize fairings on their specific motorcycle models. Customers can select from an extensive color palette and finish options—matte, glossy, metallic, pearl—and see real-time previews of how the fairing will look on their bike. This visualization engine dramatically increases customer confidence and reduces return rates, as riders know exactly what they're purchasing before checkout.
+          </p>
 
-        <p class="mx-auto max-w-2xl">
-          Two months after launch, conversion rate was up 29% and average order value had increased 38%, with several features still waiting to go live.
-        </p>
+          <p class="mx-auto max-w-2xl">
+            The AI system understands motorcycle model variations and applies accurate proportions and lighting to every visualization, creating a photorealistic preview that matches the actual product when it arrives.
+          </p>
 
-        <!-- Video -->
-        <VideoSection src="https://a.storyblok.com/f/198185/x/ea263fdb7b/ck_2.mp4" />
+          <ImageSection
+            src="/assets/projects/monster-fairings/ai-customization.png"
+            alt="AI customization interface with color and finish picker"
+            width="3200"
+            height="2400"
+          />
 
-        <!-- Two audiences -->
-        <h2 class="mx-auto max-w-2xl"><b>Two audiences, one system.</b></h2>
-        <p class="mx-auto max-w-2xl">
-          To differentiate B2B from B2C within the same platform, we used colour as a quiet signal. The consumer store lives in Coffee King's warm browns and oranges. The wholesale experience shifts to purple, enough to feel distinct without breaking the overall coherence. Users moving between the two understand they're in the same world but with a different purpose.
-        </p>
+          <!-- International Commerce -->
+          <h2 class="mx-auto max-w-2xl"><b>Global commerce at scale.</b></h2>
+          <p class="mx-auto max-w-2xl">
+            Monster Fairings operates in multiple countries, requiring a platform that handles currency conversion, localized content, and international shipping seamlessly. We implemented multi-currency support, international payment processing, and region-specific shipping calculators that provide accurate delivery estimates and costs in real time.
+          </p>
 
-        <!-- B2B vs B2C Comparison -->
-        <ComparisonSlider
-          beforeImage="https://a.storyblok.com/f/198185/1600x1200/5e37334120/b2b-ck.png/m/0x0/"
-          afterImage="https://a.storyblok.com/f/198185/1600x1200/106c6d01b4/b2c-ck.png/m/0x0/"
-          beforeLabel="B2B"
-          afterLabel="B2C"
-        />
+          <p class="mx-auto max-w-2xl">
+            The platform supports content localization, allowing Monster Fairings to tailor product descriptions, categories, and messaging for different markets while maintaining a cohesive global brand identity.
+          </p>
 
-        <!-- Navigation -->
-        <h2 class="mx-auto max-w-2xl">Making a wide catalogue navigable.</h2>
-        <p class="mx-auto max-w-2xl">
-          Coffee King's product range spans everything from beans to brewing equipment. Before, categories were unclear and products were mixed together with no obvious logic. We restructured the information architecture, simplified the menu, and made sure users could get to what they needed in fewer clicks.
-        </p>
+          <ImageSection
+            src="/assets/projects/monster-fairings/product-detail.png"
+            alt="Product detail page with pricing and specifications"
+            width="3200"
+            height="2400"
+          />
 
-        <ImageSection
-          src="https://a.storyblok.com/f/198185/3200x2400/5e415e8ae5/ck_3.webp/m/0x0/"
-          alt="Product navigation"
-          width="3200"
-          height="2400"
-        />
+          <!-- Customer Experience -->
+          <h2 class="mx-auto max-w-2xl"><b>Streamlined customer experience.</b></h2>
+          <p class="mx-auto max-w-2xl">
+            From discovery to purchase, every touchpoint was designed with the motorcycle enthusiast in mind. The search and filtering system helps users quickly find fairings for their specific bike. Product recommendations suggest complementary items and accessories. The checkout process is optimized for speed and clarity, with transparent pricing, shipping costs, and multiple payment options.
+          </p>
 
-        <p class="mx-auto max-w-2xl">
-          The product detail pages were redesigned to surface all key information above the fold: variants, pricing, reviews, and add-to-cart. For coffee, users can select roast level, brew method, and grind size without opening a single dropdown. Everything is visible and accessible.
-        </p>
+          <p class="mx-auto max-w-2xl">
+            Customer accounts store order history, saved favorites, and preferences, creating a personalized experience for repeat visitors. Live chat support and detailed FAQs provide immediate assistance, critical for an e-commerce business serving a passionate but demanding customer base.
+          </p>
 
-        <VideoSection src="https://a.storyblok.com/f/198185/x/4295f5e95d/ck_4.mp4" />
+          <!-- Social Proof and Community -->
+          <h2 class="mx-auto max-w-2xl"><b>Building community through social proof.</b></h2>
+          <p class="mx-auto max-w-2xl">
+            The platform prominently features customer photos and reviews from real riders who've purchased Monster Fairings. This user-generated content showcases the products in action, on actual motorcycles from around the world. These authentic testimonials build trust with potential customers and create a sense of community among Monster Fairings enthusiasts.
+          </p>
 
-        <!-- Add-ons -->
-        <h2 class="mx-auto max-w-2xl"><b>Add-ons to increase order value.</b></h2>
-        <p class="mx-auto max-w-2xl">
-          For higher-value products like espresso machines, we designed an add-on system directly within the product page. Users can extend their warranty or add professional installation before adding to cart, with the total updating in real time. A simple interaction that increases average order value without feeling pushy.
-        </p>
+          <p class="mx-auto max-w-2xl">
+            The customer showcase section displays high-quality photos submitted by the community, complete with reviews and ratings. This not only provides valuable social proof but also celebrates the riders who trust Monster Fairings with their prized possessions.
+          </p>
 
-        <ImageSection
-          src="https://a.storyblok.com/f/198185/3200x2400/eff2712c43/ck_5.webp/m/0x0/"
-          alt="Add-ons system"
-          width="3200"
-          height="2400"
-        />
+          <ImageSection
+            src="/assets/projects/monster-fairings/customer-testimonials.png"
+            alt="Customer reviews and community showcase"
+            width="3200"
+            height="2400"
+          />
 
-        <!-- Consolidation -->
-        <h2 class="mx-auto max-w-2xl"><b>One store replacing too many.</b></h2>
-        <p class="mx-auto max-w-2xl">
-          Coffee King's previous setup fragmented their data, analytics, and management across multiple Shopify stores. We consolidated everything into a single store using Shopify Markets, with dedicated configurations for the UK and EU including currency conversion, language variants, and the ability to customise content per region.
-        </p>
+          <!-- Ongoing Excellence -->
+          <h2 class="mx-auto max-w-2xl"><b>Five years of partnership and growth.</b></h2>
+          <p class="mx-auto max-w-2xl">
+            Since launch in 2021, Monster Fairings has grown to become a leading player in the global motorcycle fairings market. The relationship didn't end at launch. We've provided ongoing maintenance, feature development, and optimizations as the business evolved. New product categories were added, international markets were entered, and the platform was continuously refined based on customer feedback and performance data.
+          </p>
 
-        <VideoSection src="https://a.storyblok.com/f/198185/x/2779359035/ck_6.mp4" />
+          <p class="mx-auto max-w-2xl">
+            The platform now serves thousands of motorcycle enthusiasts across multiple continents, with over 500 SKUs representing fairings for dozens of motorcycle brands and models. The long-term partnership demonstrates the value of building systems designed for growth and maintaining them with care and expertise.
+          </p>
 
-        <p class="mx-auto max-w-2xl">
-          The most technically complex part of the project was making B2B and B2C coexist on one Shopify store without upgrading to Shopify Plus. We integrated SparkLayer to handle the wholesale layer: custom pricing tiers, business-specific accounts, and volume-based logic, all running on top of the standard Shopify setup. It was a configuration that hadn't been attempted before, and it required close work with SparkLayer's own team to solve problems neither side had encountered.
-        </p>
+          <!-- Testimonial -->
+          <Testimonial
+            quote="From the initial vision to five years of continuous support, the team understood what we were trying to build and helped us scale without compromising on quality or performance."
+            author="Henry"
+            title="Owner at Monster Fairings"
+            image="/assets/storyblok/placeholder.jpeg"
+          />
 
-        <!-- Second Testimonial -->
-        <Testimonial
-          quote="Combining B2B and B2C on a single store without Shopify Plus was something no one had tried in this way before. Not because it's too difficult, but because it's a setup most people wouldn't attempt. We made it work."
-          author="Rishab"
-          title="Developer at Techyor"
-          image="https://a.storyblok.com/f/198185/200x200/placeholder.jpeg/m/100x100/"
-        />
+          <!-- Results -->
+          <h2 class="mx-auto max-w-2xl"><b>Results and impact.</b></h2>
+          <p class="mx-auto max-w-2xl">
+            The platform now manages over 5000 SKUs across its catalog, handles thousands of monthly transactions, and manages dynamic inventory across international warehouses. The AI visualization system has become a key differentiator, reducing product return rates significantly as customers have full confidence in their purchase before checkout. The platform delivers a seamless experience to customers in over seven countries with multi-currency support and localized content.
+          </p>
 
-        <!-- Closing -->
-        <h2 class="mx-auto max-w-2xl"><b>Built to be managed independently.</b></h2>
-        <p class="mx-auto max-w-2xl">
-          From the beginning, Coffee King needed more than a new store. We documented every integration, every configuration, and every third-party app in a comprehensive guide covering everything from menu customisation to market-specific pricing to SparkLayer setup. By the end of the project, Coffee King's team was managing the platform on their own, using our documentation as their day-to-day reference.
-        </p>
+          <p class="mx-auto max-w-2xl">
+            Behind the scenes, the architecture supports complex payment structures, advanced filtering and search capabilities, integrated email management systems, and comprehensive speed and security optimizations. The combination of thoughtful design, robust technology, sophisticated AI integration, and dedicated ongoing support has made Monster Fairings the destination for motorcycle enthusiasts worldwide seeking quality fairings and a superior shopping experience.
+          </p>
 
-        <!-- Final Testimonial -->
-        <Testimonial
-          quote="From the first conversations it was clear this wasn't going to be a transactional relationship. The team listened carefully, asked the right questions, and were direct when something needed reconsidering."
-          author="Frantisek Svoboda"
-          title="Head of E-commerce at Coffee King"
-          image="https://a.storyblok.com/f/198185/200x200/d32761bf8e/fran_coffee_king.jpeg/m/100x100/"
-        />
+        {/if}
       </div>
 
       <!-- Contact CTA Section -->

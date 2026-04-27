@@ -1,6 +1,7 @@
 <script lang="ts">
   import { page } from '$app/stores';
   import { onMount } from 'svelte';
+  import { projectsData } from '$lib/data/projects';
   import SmallHighlights from '$components/pages/home/small-highlights.svelte';
   import Newton from '$components/blocks/newton.svelte';
   import TextWithMedia from '$components/blocks/text-with-media.svelte';
@@ -93,43 +94,43 @@
   const clients = [
     {
       name: 'FCP',
-      lightLogo: 'https://a.storyblok.com/f/198185/326x84/fafe7547ba/light-fcp-final.png/m/0x0/',
-      darkLogo: 'https://a.storyblok.com/f/198185/326x84/3a6318eff4/dark-fcp-final.png/m/0x0/',
+      lightLogo: '/assets/storyblok/light-fcp-final.png',
+      darkLogo: '/assets/storyblok/dark-fcp-final.png',
       width: 326,
       height: 84
     },
     {
       name: 'Emma',
-      lightLogo: 'https://a.storyblok.com/f/198185/1662x520/a25d1bd00c/emma-light.png/m/0x0/',
-      darkLogo: 'https://a.storyblok.com/f/198185/1662x434/236b3b709a/emma-dark.png/m/0x0/',
+      lightLogo: '/assets/storyblok/emma-light.png',
+      darkLogo: '/assets/storyblok/emma-dark.png',
       width: 1662,
       height: 520
     },
     {
       name: 'TFP',
-      lightLogo: 'https://a.storyblok.com/f/198185/1528x520/94195c7875/tfp-light.png/m/0x0/',
-      darkLogo: 'https://a.storyblok.com/f/198185/1528x520/0b12947dc8/tfp-dark.png/m/0x0/',
+      lightLogo: '/assets/storyblok/tfp-light.png',
+      darkLogo: '/assets/storyblok/tfp-dark.png',
       width: 1528,
       height: 520
     },
     {
       name: 'Hey Harper',
-      lightLogo: 'https://a.storyblok.com/f/198185/1980x520/c27ec6fd0d/heyharper-light.png/m/0x0/',
-      darkLogo: 'https://a.storyblok.com/f/198185/1980x520/eadca83872/heyharper-dark.png/m/0x0/',
+      lightLogo: '/assets/storyblok/heyharper-light.png',
+      darkLogo: '/assets/storyblok/heyharper-dark.png',
       width: 1980,
       height: 520
     },
     {
       name: 'allO',
-      lightLogo: 'https://a.storyblok.com/f/198185/928x520/efbbe25cf4/allo-light.png/m/0x0/',
-      darkLogo: 'https://a.storyblok.com/f/198185/928x520/a63160331b/allo-dark.png/m/0x0/',
+      lightLogo: '/assets/storyblok/allo-light.png',
+      darkLogo: '/assets/storyblok/allo-dark.png',
       width: 928,
       height: 520
     },
     {
       name: 'Mishmash',
-      lightLogo: 'https://a.storyblok.com/f/198185/1055x282/e097310607/mishmash_lightmode.png/m/0x0/',
-      darkLogo: 'https://a.storyblok.com/f/198185/1054x281/44144e3c56/mishmash_darkmode.png/m/0x0/',
+      lightLogo: '/assets/storyblok/mishmash_lightmode.png',
+      darkLogo: '/assets/storyblok/mishmash_darkmode.png',
       width: 1055,
       height: 282
     }
@@ -200,50 +201,28 @@
   };
 
   const smallHighlights: HomePageStoryblok['small_highlights'] = [
-    {
-      id: 1,
-      uuid: 'uuid-1',
-      name: 'Coffee King.',
-      slug: 'coffee-king',
-      full_slug: '/projects/coffee-king',
+    ...projectsData.map(project => ({
+      id: project.id,
+      uuid: `uuid-${project.id}`,
+      name: project.name,
+      slug: project.slug,
+      full_slug: `/projects/${project.slug}`,
       content: {
         component: 'project',
-        tagline: 'A unified e-commerce platform selling to consumers and businesses alike.',
+        tagline: project.tagline,
         thumbnail: [
           {
-            id: 1,
-            alt: 'Coffee King',
-            name: 'coffee-king',
+            id: project.id,
+            alt: project.name,
+            name: project.slug,
             focus: '',
-            title: 'Coffee King',
-            filename: 'https://a.storyblok.com/f/198185/3200x2400/5e415e8ae5/ck_3.webp'
+            title: project.name,
+            filename: project.image
           }
         ],
         cover: undefined
       }
-    },
-    {
-      id: 2,
-      uuid: 'uuid-2',
-      name: 'Mishmash.',
-      slug: 'mishmash',
-      full_slug: '/projects/mishmash',
-      content: {
-        component: 'project',
-        tagline: 'Unique e-commerce design for the ultimate product experience.',
-        thumbnail: [
-          {
-            id: 2,
-            alt: 'Mishmash',
-            name: 'mishmash',
-            focus: '',
-            title: 'Mishmash',
-            filename: 'https://a.storyblok.com/f/198185/1600x1200/d6164a5867/mishmash3.jpg'
-          }
-        ],
-        cover: undefined
-      }
-    },
+    })),
     {
       id: 3,
       uuid: 'uuid-3',
@@ -264,7 +243,7 @@
           name: 'blog',
           focus: '',
           title: 'Blog',
-          filename: 'https://a.storyblok.com/f/198185/1920x960/0043a9e166/allo_article_cover.png'
+          filename: '/assets/storyblok/allo_article_cover.png'
         },
         authors: [
           {
@@ -281,7 +260,7 @@
                 name: 'sarah',
                 focus: '',
                 title: 'Sarah Johnson',
-                filename: 'https://a.storyblok.com/f/198185/300x300/placeholder-author.jpg'
+                filename: '/assets/storyblok/placeholder-author.jpg'
               },
               is_active: true
             },
@@ -293,28 +272,6 @@
         ],
         external_authors: [],
         reading_time: 8
-      }
-    },
-    {
-      id: 4,
-      uuid: 'uuid-4',
-      name: 'Dia.',
-      slug: 'dia',
-      full_slug: '/projects/dia',
-      content: {
-        component: 'project',
-        tagline: 'A fertility journey app helping users track and understand their wellness.',
-        thumbnail: [
-          {
-            id: 4,
-            alt: 'Dia',
-            name: 'dia',
-            focus: '',
-            title: 'Dia',
-            filename: 'https://a.storyblok.com/f/198185/3200x2400/8028cc1a7f/diesta_thumbnail.webp'
-          }
-        ],
-        cover: undefined
       }
     }
   ];
@@ -350,8 +307,8 @@
       <!-- Showreel Video -->
       <section class="relative overflow-hidden rounded-lg">
         <div class="pointer-events-none absolute left-0 top-0 z-10 flex h-full w-full items-center justify-center bg-black/10"></div>
-        <video poster="https://a.storyblok.com/f/198185/2688x1514/19ebaabf98/new-showreel-cover.jpg/m/0x0/" class="aspect-video h-auto w-full bg-background-offset [&[poster]]:h-full [&[poster]]:w-full [&[poster]]:bg-background [&[poster]]:object-cover" playsinline="">
-          <source type="video/mp4" src="https://a.storyblok.com/f/198185/x/4e08a6ae0f/significareel.mp4" />
+        <video poster="/assets/storyblok/new-showreel-cover.jpg" class="aspect-video h-auto w-full bg-background-offset [&[poster]]:h-full [&[poster]]:w-full [&[poster]]:bg-background [&[poster]]:object-cover" playsinline="">
+          <source type="video/mp4" src="/assets/storyblok/significareel.mp4" />
           <track kind="captions" srclang="en" label="English" />
         </video>
       </section>
