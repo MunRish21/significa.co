@@ -3,6 +3,7 @@
   import OpenPositions from '$components/blocks/open-positions.svelte';
   import ImageSlider from '$components/blocks/image-slider.svelte';
   import BenefitsSection from '$components/blocks/benefits-section.svelte';
+  import RandomizedHoverableGallery from '$components/randomized-hoverable-gallery.svelte';
   import type { OpenPositionsStoryblok } from '$types/bloks';
 
   const openPositionsBlock: OpenPositionsStoryblok = {
@@ -126,6 +127,48 @@
       height: 826
     }
   ];
+
+  const galleryCards = [
+    {
+      component: 'photo_card' as const,
+      photo: {
+        filename: '/assets/storyblok/office-interior-03.jpg',
+        alt: 'Office image 1'
+      }
+    },
+    {
+      component: 'photo_card' as const,
+      photo: {
+        filename: '/assets/storyblok/office-interior-05.jpg',
+        alt: 'Office image 2'
+      }
+    },
+    {
+      component: 'notepad_card' as const,
+      text: 'Chandigarh, India\ninfo@techyor.com\n+91 9915002625'
+    },
+    {
+      component: 'photo_card' as const,
+      photo: {
+        filename: '/assets/storyblok/office-interior-04.jpg',
+        alt: 'Office image 3'
+      }
+    },
+    {
+      component: 'photo_card' as const,
+      photo: {
+        filename: '/assets/storyblok/office-interior-01.jpg',
+        alt: 'Office image 4'
+      }
+    },
+    {
+      component: 'photo_card' as const,
+      photo: {
+        filename: '/assets/storyblok/office-interior-02.jpg',
+        alt: 'Office image 5'
+      }
+    }
+  ];
 </script>
 
 <svelte:head>
@@ -153,4 +196,9 @@
 
   <!-- Benefits Section -->
   <BenefitsSection {benefits} />
+
+  <!-- Office Gallery Section -->
+  <section class="container mx-auto px-container py-12 lg:py-20">
+    <RandomizedHoverableGallery cards={galleryCards} />
+  </section>
 </main>
