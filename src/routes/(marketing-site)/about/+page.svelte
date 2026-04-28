@@ -15,36 +15,30 @@
         _uid: '1',
         component: 'physics-balloon-card',
         theme: 'yellow',
-        text: 'What is the meaning of Techyor?'
+        text: 'Top Rated on Upwork ⭐'
       },
       {
         _uid: '2',
         component: 'physics-sticker',
         photo: {
-          filename: '/assets/storyblok/physics-sereno.png',
-          alt: 'Sereno illustration'
+          filename: '/assets/storyblok/upwork-certified.webp',
+          alt: 'Top Rated on Upwork'
         }
-      },
-      {
-        _uid: '3',
-        component: 'physics-rectangle-card',
-        theme: 'dark',
-        text: 'What is meant by innovation, design thinking, and purposeful development.'
       },
       {
         _uid: '4',
         component: 'physics-sticker',
         photo: {
-          filename: '/assets/storyblok/physics-manel.png',
-          alt: 'Manel illustration'
+          filename: '/assets/storyblok/experience-badge.webp',
+          alt: '8 Years of Experience'
         }
       },
       {
         _uid: '5',
         component: 'physics-sticker',
         photo: {
-          filename: '/assets/storyblok/physics-design.png',
-          alt: 'Design illustration'
+          filename: '/assets/storyblok/design-services.webp',
+          alt: 'Design Services'
         }
       },
       {
@@ -54,36 +48,30 @@
       },
       {
         _uid: '7',
-        component: 'physics-balloon-card',
-        theme: 'yellow',
-        text: 'Click around.'
+        component: 'physics-rectangle-card',
+        theme: 'dark',
+        text: '8 Years of Experience'
       },
       {
         _uid: '8',
         component: 'physics-sticker',
         photo: {
-          filename: '/assets/storyblok/physics-development.png',
-          alt: 'Development illustration'
+          filename: '/assets/storyblok/development-services.webp',
+          alt: 'Development Services'
         }
-      },
-      {
-        _uid: '9',
-        component: 'physics-rectangle-card',
-        theme: 'dark',
-        text: 'Toss me.'
       },
       {
         _uid: '10',
         component: 'physics-balloon-card',
         theme: 'yellow',
-        text: 'Eggcellent!'
+        text: '95% International Clients'
       },
       {
         _uid: '11',
         component: 'physics-sticker',
         photo: {
-          filename: '/assets/storyblok/physics-hatch.png',
-          alt: 'Hatch illustration'
+          filename: '/assets/storyblok/growth-milestone.webp',
+          alt: 'Growth & Milestone'
         }
       }
     ]
@@ -127,39 +115,39 @@
       {
         component: 'photo_card' as const,
         photo: {
-          filename: '/assets/storyblok/office3.png',
+          filename: '/assets/storyblok/office-interior-03.jpg',
           alt: 'Office image 1'
         }
       },
       {
         component: 'photo_card' as const,
         photo: {
-          filename: '/assets/storyblok/office5.png',
+          filename: '/assets/storyblok/office-interior-05.jpg',
           alt: 'Office image 2'
         }
       },
       {
         component: 'notepad_card' as const,
-        text: 'Rua da Torrinha 154\n4050–609 Porto, Portugal\n(+351) 226 001 751'
+        text: 'Chandigarh, India\ninfo@techyor.com\n+91 9915002625'
       },
       {
         component: 'photo_card' as const,
         photo: {
-          filename: '/assets/storyblok/office4.png',
+          filename: '/assets/storyblok/office-interior-04.jpg',
           alt: 'Office image 3'
         }
       },
       {
         component: 'photo_card' as const,
         photo: {
-          filename: '/assets/storyblok/office1.png',
+          filename: '/assets/storyblok/office-interior-01.jpg',
           alt: 'Office image 4'
         }
       },
       {
         component: 'photo_card' as const,
         photo: {
-          filename: '/assets/storyblok/office2.png',
+          filename: '/assets/storyblok/office-interior-02.jpg',
           alt: 'Office image 5'
         }
       }

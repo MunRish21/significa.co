@@ -496,40 +496,40 @@
     "size_kb": 208.97,
     "format": ".jpg"
   },
-  "office1.png": {
-    "path": "/assets/storyblok/office1.png",
-    "width": 481,
-    "height": 643,
-    "size_kb": 137.78,
-    "format": ".png"
+  "office-interior-01.jpg": {
+    "path": "/assets/storyblok/office-interior-01.jpg",
+    "width": 896,
+    "height": 1120,
+    "size_kb": 400,
+    "format": ".jpg"
   },
-  "office2.png": {
-    "path": "/assets/storyblok/office2.png",
-    "width": 481,
-    "height": 643,
-    "size_kb": 158.95,
-    "format": ".png"
+  "office-interior-02.jpg": {
+    "path": "/assets/storyblok/office-interior-02.jpg",
+    "width": 896,
+    "height": 1195,
+    "size_kb": 528,
+    "format": ".jpg"
   },
-  "office3.png": {
-    "path": "/assets/storyblok/office3.png",
-    "width": 481,
-    "height": 643,
-    "size_kb": 168.66,
-    "format": ".png"
+  "office-interior-03.jpg": {
+    "path": "/assets/storyblok/office-interior-03.jpg",
+    "width": 896,
+    "height": 1195,
+    "size_kb": 304,
+    "format": ".jpg"
   },
-  "office4.png": {
-    "path": "/assets/storyblok/office4.png",
-    "width": 481,
-    "height": 643,
-    "size_kb": 150.6,
-    "format": ".png"
+  "office-interior-04.jpg": {
+    "path": "/assets/storyblok/office-interior-04.jpg",
+    "width": 832,
+    "height": 1195,
+    "size_kb": 344,
+    "format": ".jpg"
   },
-  "office5.png": {
-    "path": "/assets/storyblok/office5.png",
-    "width": 481,
-    "height": 643,
-    "size_kb": 171.42,
-    "format": ".png"
+  "office-interior-05.jpg": {
+    "path": "/assets/storyblok/office-interior-05.jpg",
+    "width": 896,
+    "height": 1121,
+    "size_kb": 428,
+    "format": ".jpg"
   },
   "old-coffee-king.png": {
     "path": "/assets/storyblok/old-coffee-king.png",
@@ -566,40 +566,40 @@
     "size_kb": 9.59,
     "format": ".svg"
   },
-  "physics-design.png": {
-    "path": "/assets/storyblok/physics-design.png",
+  "design-services.webp": {
+    "path": "/assets/storyblok/design-services.webp",
     "width": 340,
     "height": 350,
     "size_kb": 25.71,
-    "format": ".png"
+    "format": ".webp"
   },
-  "physics-development.png": {
-    "path": "/assets/storyblok/physics-development.png",
+  "development-services.webp": {
+    "path": "/assets/storyblok/development-services.webp",
     "width": 400,
     "height": 316,
     "size_kb": 19.77,
-    "format": ".png"
+    "format": ".webp"
   },
-  "physics-hatch.png": {
-    "path": "/assets/storyblok/physics-hatch.png",
+  "growth-milestone.webp": {
+    "path": "/assets/storyblok/growth-milestone.webp",
     "width": 400,
     "height": 400,
     "size_kb": 14.43,
-    "format": ".png"
+    "format": ".webp"
   },
-  "physics-manel.png": {
-    "path": "/assets/storyblok/physics-manel.png",
+  "experience-badge.webp": {
+    "path": "/assets/storyblok/experience-badge.webp",
     "width": 289,
     "height": 352,
-    "size_kb": 65.53,
-    "format": ".png"
+    "size_kb": 170,
+    "format": ".webp"
   },
-  "physics-sereno.png": {
-    "path": "/assets/storyblok/physics-sereno.png",
+  "upwork-certified.webp": {
+    "path": "/assets/storyblok/upwork-certified.webp",
     "width": 271,
     "height": 352,
-    "size_kb": 58.39,
-    "format": ".png"
+    "size_kb": 272,
+    "format": ".webp"
   },
   "placeholder-author.jpg": {
     "path": "/assets/storyblok/placeholder-author.jpg",
