@@ -22,7 +22,7 @@
     },
     {
       component: 'notepad_card' as const,
-      text: 'Rua da Torrinha 154\n4050–609 Porto, Portugal\n(+351) 226 001 751'
+      text: 'Chandigarh, India\ninfo@techyor.com\n+91 9915002625'
     },
     {
       component: 'photo_card' as const,
@@ -49,17 +49,20 @@
 </script>
 
 <svelte:head>
-  <title>Contact Us</title>
-  <meta name="description" content="Get in touch with us" />
+  <title>Contact Us — Techyor</title>
+  <meta name="description" content="Got a project in mind? Drop us a message and we'll get back within 24 hours. No lengthy briefs needed — just tell us what you're thinking." />
 </svelte:head>
 
 <div class="overflow-hidden">
   <div class="container relative mx-auto px-container">
     <section class="pb-5 pt-10 lg:pb-12 lg:pt-20 lg:text-center">
-      <h1 class="mx-auto text-7xl text-foreground-secondary lg:max-w-xl">
-        Get in
+      <h1 class="mx-auto text-7xl text-foreground-secondary lg:max-w-2xl">
+        Contact us.
       </h1>
-      <span class="mx-auto text-7xl lg:max-w-xl">Touch</span>
+      <span class="mx-auto block text-7xl lg:max-w-2xl">Tell us what you're building.</span>
+      <p class="mx-auto mt-6 max-w-xl text-lg text-foreground-secondary lg:mt-8">
+        Got a project in mind? We'd love to hear it. Drop us a message and we'll get back within 24 hours. No lengthy briefs needed — just tell us what you're thinking.
+      </p>
     </section>
 
     <section class="mx-auto lg:max-w-xl lg:pt-5">

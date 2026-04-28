@@ -33,21 +33,21 @@
 
   const stepsBlock = {
     component: 'steps',
-    steps_title: "What's next.",
-    steps_subtitle: 'Fourth base on a first date?',
+    steps_title: 'What happens next.',
+    steps_subtitle: 'Ready to build something great?',
     steps: [
-      { title: 'Send us a message.', description: 'This is like our first date, and we appreciate you are taking the first step.' },
-      { title: 'We will get back to you soon.', description: 'We have a few elves helping out with correspondence, so we usually respond to inquiries very fast. Unless, you know, the elves are busy.' },
-      { title: 'Meet and proposal.', description: 'We meet. We scope. We issue a proposal. We negotiate. We discuss. We agree. We get started. Simple as that!' },
-      { title: "Let's collaborate!", description: '"I think this is the beginning of a beautiful friendship". We, too, believe the best is yet to come.' }
+      { title: 'Tell us about your project.', description: "Drop us a message with what you're building, what problem you're solving, and what you're looking for." },
+      { title: "We'll get back within 24 hours.", description: "A real person on our team reads every inquiry and responds fast. We'll ask a few smart questions to understand your goals better." },
+      { title: 'Discovery call & proposal.', description: "We jump on a quick call, understand the full scope, and send you a clear proposal — timeline, deliverables, and pricing. No surprises." },
+      { title: 'We get to work.', description: "Once aligned, we kick off immediately. You'll have a dedicated team, regular updates, and full transparency throughout the project." }
     ]
   };
 
 </script>
 
 <svelte:head>
-  <title>Get a Quote</title>
-  <meta name="description" content="Get a quote from Significa. It all starts here." />
+  <title>Get a Quote — Techyor</title>
+  <meta name="description" content="Tell us what you're building. We'll get back within 24 hours with a clear proposal — timeline, deliverables, and pricing. No surprises." />
 </svelte:head>
 
 <div class="overflow-hidden">
@@ -61,9 +61,9 @@
         It all starts here.
       </p>
       <div class="mt-8">
-        <p class="text-foreground-secondary mb-2">Prefer email?</p>
-        <a href="mailto:newbusiness@significa.co" class="font-medium hover:underline">
-          newbusiness@significa.co
+        <p class="mb-2 text-foreground-secondary">Prefer email?</p>
+        <a href="mailto:info@techyor.com" class="font-medium hover:underline">
+          info@techyor.com
         </a>
       </div>
     </div>

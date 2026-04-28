@@ -10,7 +10,8 @@
   import FaqsListBlock from '$components/blocks/faqs-list.svelte';
   import BlogEntry from '$components/blog-entry.svelte';
   import ProjectEntry from '$components/project-entry.svelte';
-  import type { HomePageStoryblok, NewtonStoryblok, TextWithMediaStoryblok, AboutGridStoryblok, CareersListStoryblok, FaqsStoryblok } from '$types/bloks';
+  import { commonFaqsBlock } from '$lib/data/faqs';
+  import type { HomePageStoryblok, NewtonStoryblok, TextWithMediaStoryblok, AboutGridStoryblok, CareersListStoryblok } from '$types/bloks';
   import { getImageAttributes } from '$lib/utils/cms';
 
   let textElements: HTMLElement[] = [];
@@ -164,42 +165,6 @@
     }
   ];
 
-  const faqBlock: FaqsStoryblok = {
-    component: 'faqs',
-    title: 'Frequently Asked Questions',
-    questions: [
-      {
-        component: 'faq',
-        question: 'Why should I work with Significa?',
-        body: { type: 'doc', content: [{ type: 'paragraph', content: [{ type: 'text', text: 'We combine strategic thinking with creative excellence to deliver design-led digital products that truly matter. Our approach is thorough, collaborative, and focused on achieving your goals.' }] }] }
-      },
-      {
-        component: 'faq',
-        question: 'What is it like to collaborate with Significa?',
-        body: { type: 'doc', content: [{ type: 'paragraph', content: [{ type: 'text', text: 'We believe in transparent communication and partnership. You\'ll be involved throughout the process, with regular updates and opportunities to provide feedback at every stage.' }] }] }
-      },
-      {
-        component: 'faq',
-        question: 'How long does a project take from start until launch?',
-        body: { type: 'doc', content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Project timelines vary depending on scope and complexity. A typical project can range from 3-6 months, but we\'ll provide a clear timeline during our initial conversation.' }] }] }
-      },
-      {
-        component: 'faq',
-        question: 'Which projects do you usually take on?',
-        body: { type: 'doc', content: [{ type: 'paragraph', content: [{ type: 'text', text: 'We work on design-led digital products across various industries. From e-commerce platforms to mobile apps, we focus on projects where design and strategy are critical to success.' }] }] }
-      },
-      {
-        component: 'faq',
-        question: 'Why do I need a design and development agency if I have AI?',
-        body: { type: 'doc', content: [{ type: 'paragraph', content: [{ type: 'text', text: 'AI is a powerful tool, but it requires human expertise, creativity, and strategic thinking to deliver results that truly resonate with your users. We use AI alongside our skills to create better solutions faster.' }] }] }
-      },
-      {
-        component: 'faq',
-        question: 'What if I don\'t like the final results?',
-        body: { type: 'doc', content: [{ type: 'paragraph', content: [{ type: 'text', text: 'We have revision rounds built into every project. We won\'t consider the project complete until you\'re satisfied with the results. Your feedback is essential to our process.' }] }] }
-      }
-    ]
-  };
 
   const smallHighlights: HomePageStoryblok['small_highlights'] = [
     ...projectsData.map(project => ({
@@ -372,5 +337,5 @@
   </section>
 
   <!-- FAQ Section -->
-  <FaqsListBlock block={faqBlock} />
+  <FaqsListBlock block={commonFaqsBlock} />
 </main>

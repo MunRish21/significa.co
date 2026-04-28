@@ -177,8 +177,8 @@
 
             <div class="text-sm">
               <p class="leading-none text-foreground-secondary">Hate contact forms?</p>
-              <a class="underline hover:no-underline mt-0.5 inline-flex" href="mailto:newbusiness@significa.co">
-                newbusiness@significa.co
+              <a class="underline hover:no-underline mt-0.5 inline-flex" href="mailto:info@techyor.com">
+                info@techyor.com
               </a>
             </div>
           </div>
