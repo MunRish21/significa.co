@@ -1,141 +1,141 @@
 {
   "allo-dark.png": {
     "path": "/assets/storyblok/allo-dark.png",
-    "width": 0,
-    "height": 0,
+    "width": 928,
+    "height": 520,
     "size_kb": 15.46,
     "format": ".png"
   },
   "allo-light.png": {
     "path": "/assets/storyblok/allo-light.png",
-    "width": 0,
-    "height": 0,
+    "width": 928,
+    "height": 520,
     "size_kb": 16.47,
     "format": ".png"
   },
   "allo-thumbnail-01.png": {
     "path": "/assets/storyblok/allo-thumbnail-01.png",
-    "width": 0,
-    "height": 0,
+    "width": 2016,
+    "height": 1512,
     "size_kb": 727.2,
     "format": ".png"
   },
   "allo_article_cover.png": {
     "path": "/assets/storyblok/allo_article_cover.png",
-    "width": 0,
-    "height": 0,
+    "width": 1920,
+    "height": 960,
     "size_kb": 286.07,
     "format": ".png"
   },
   "awwwardshm.png": {
     "path": "/assets/storyblok/awwwardshm.png",
-    "width": 0,
-    "height": 0,
+    "width": 122,
+    "height": 88,
     "size_kb": 1.04,
     "format": ".png"
   },
   "b2b-ck.png": {
     "path": "/assets/storyblok/b2b-ck.png",
-    "width": 0,
-    "height": 0,
+    "width": 1600,
+    "height": 1200,
     "size_kb": 1547.25,
     "format": ".png"
   },
   "b2c-ck.png": {
     "path": "/assets/storyblok/b2c-ck.png",
-    "width": 0,
-    "height": 0,
+    "width": 1600,
+    "height": 1200,
     "size_kb": 1547.21,
     "format": ".png"
   },
   "backercamp-dark.png": {
     "path": "/assets/storyblok/backercamp-dark.png",
-    "width": 0,
-    "height": 0,
+    "width": 2976,
+    "height": 520,
     "size_kb": 39.57,
     "format": ".png"
   },
   "backercamp-light.png": {
     "path": "/assets/storyblok/backercamp-light.png",
-    "width": 0,
-    "height": 0,
+    "width": 2976,
+    "height": 520,
     "size_kb": 41.67,
     "format": ".png"
   },
   "blue1-after-light.svg": {
     "path": "/assets/storyblok/blue1-after-light.svg",
-    "width": 0,
-    "height": 0,
+    "width": 173,
+    "height": 56,
     "size_kb": 5.41,
     "format": ".svg"
   },
   "blue1-before-light.svg": {
     "path": "/assets/storyblok/blue1-before-light.svg",
-    "width": 0,
-    "height": 0,
+    "width": 172,
+    "height": 57,
     "size_kb": 9.56,
     "format": ".svg"
   },
   "blue2-after-light.svg": {
     "path": "/assets/storyblok/blue2-after-light.svg",
-    "width": 0,
-    "height": 0,
+    "width": 434,
+    "height": 56,
     "size_kb": 10.3,
     "format": ".svg"
   },
   "blue2-before-light.svg": {
     "path": "/assets/storyblok/blue2-before-light.svg",
-    "width": 0,
-    "height": 0,
+    "width": 428,
+    "height": 55,
     "size_kb": 14.42,
     "format": ".svg"
   },
   "browser.webp": {
     "path": "/assets/storyblok/browser.webp",
-    "width": 0,
-    "height": 0,
+    "width": 102,
+    "height": 96,
     "size_kb": 1.02,
     "format": ".webp"
   },
   "careers1.png": {
     "path": "/assets/storyblok/careers1.png",
-    "width": 0,
-    "height": 0,
+    "width": 1320,
+    "height": 826,
     "size_kb": 540.33,
     "format": ".png"
   },
   "careers2.png": {
     "path": "/assets/storyblok/careers2.png",
-    "width": 0,
-    "height": 0,
+    "width": 1320,
+    "height": 826,
     "size_kb": 611.1,
     "format": ".png"
   },
   "careers3.png": {
     "path": "/assets/storyblok/careers3.png",
-    "width": 0,
-    "height": 0,
+    "width": 1320,
+    "height": 826,
     "size_kb": 724.15,
     "format": ".png"
   },
   "careers4.png": {
     "path": "/assets/storyblok/careers4.png",
-    "width": 0,
-    "height": 0,
+    "width": 1320,
+    "height": 826,
     "size_kb": 585.05,
     "format": ".png"
   },
   "careers5.png": {
     "path": "/assets/storyblok/careers5.png",
-    "width": 0,
-    "height": 0,
+    "width": 1320,
+    "height": 826,
     "size_kb": 697.86,
     "format": ".png"
   },
   "ck_1.webp": {
     "path": "/assets/storyblok/ck_1.webp",
-    "width": 0,
-    "height": 0,
+    "width": 3200,
+    "height": 2400,
     "size_kb": 182.72,
     "format": ".webp"
   },
@@ -148,8 +148,8 @@
   },
   "ck_3.webp": {
     "path": "/assets/storyblok/ck_3.webp",
-    "width": 0,
-    "height": 0,
+    "width": 3200,
+    "height": 2400,
     "size_kb": 186.66,
     "format": ".webp"
   },
@@ -162,8 +162,8 @@
   },
   "ck_5.webp": {
     "path": "/assets/storyblok/ck_5.webp",
-    "width": 0,
-    "height": 0,
+    "width": 3200,
+    "height": 2400,
     "size_kb": 160.49,
     "format": ".webp"
   },
@@ -176,64 +176,64 @@
   },
   "cms.webp": {
     "path": "/assets/storyblok/cms.webp",
-    "width": 0,
-    "height": 0,
+    "width": 107,
+    "height": 96,
     "size_kb": 1.14,
     "format": ".webp"
   },
   "contact1.png": {
     "path": "/assets/storyblok/contact1.png",
-    "width": 0,
-    "height": 0,
+    "width": 480,
+    "height": 642,
     "size_kb": 406.41,
     "format": ".png"
   },
   "contact2.png": {
     "path": "/assets/storyblok/contact2.png",
-    "width": 0,
-    "height": 0,
+    "width": 480,
+    "height": 642,
     "size_kb": 388.46,
     "format": ".png"
   },
   "contact3.png": {
     "path": "/assets/storyblok/contact3.png",
-    "width": 0,
-    "height": 0,
+    "width": 480,
+    "height": 643,
     "size_kb": 358.51,
     "format": ".png"
   },
   "contact4.png": {
     "path": "/assets/storyblok/contact4.png",
-    "width": 0,
-    "height": 0,
+    "width": 481,
+    "height": 642,
     "size_kb": 386.74,
     "format": ".png"
   },
   "contact5.png": {
     "path": "/assets/storyblok/contact5.png",
-    "width": 0,
-    "height": 0,
+    "width": 480,
+    "height": 642,
     "size_kb": 569.34,
     "format": ".png"
   },
   "curationist-thumb-01.jpg": {
     "path": "/assets/storyblok/curationist-thumb-01.jpg",
-    "width": 0,
-    "height": 0,
+    "width": 3200,
+    "height": 2400,
     "size_kb": 2906.7,
     "format": ".jpg"
   },
   "dark-fcp-final.png": {
     "path": "/assets/storyblok/dark-fcp-final.png",
-    "width": 0,
-    "height": 0,
+    "width": 326,
+    "height": 84,
     "size_kb": 3.3,
     "format": ".png"
   },
   "decorations-dark.svg": {
     "path": "/assets/storyblok/decorations-dark.svg",
-    "width": 0,
-    "height": 0,
+    "width": 152,
+    "height": 81,
     "size_kb": 4.72,
     "format": ".svg"
   },
@@ -274,330 +274,330 @@
   },
   "dia2-timeline.png": {
     "path": "/assets/storyblok/dia2-timeline.png",
-    "width": 0,
-    "height": 0,
+    "width": 528,
+    "height": 296,
     "size_kb": 32.76,
     "format": ".png"
   },
   "diesta_thumbnail.webp": {
     "path": "/assets/storyblok/diesta_thumbnail.webp",
-    "width": 0,
-    "height": 0,
+    "width": 3200,
+    "height": 2400,
     "size_kb": 147.61,
     "format": ".webp"
   },
   "ecomawards.png": {
     "path": "/assets/storyblok/ecomawards.png",
-    "width": 0,
-    "height": 0,
+    "width": 366,
+    "height": 264,
     "size_kb": 38.27,
     "format": ".png"
   },
   "emma-dark.png": {
     "path": "/assets/storyblok/emma-dark.png",
-    "width": 0,
-    "height": 0,
+    "width": 1662,
+    "height": 434,
     "size_kb": 67.09,
     "format": ".png"
   },
   "emma-light.png": {
     "path": "/assets/storyblok/emma-light.png",
-    "width": 0,
-    "height": 0,
+    "width": 1662,
+    "height": 520,
     "size_kb": 67.46,
     "format": ".png"
   },
   "european-design-nominee-gold.png": {
     "path": "/assets/storyblok/european-design-nominee-gold.png",
-    "width": 0,
-    "height": 0,
+    "width": 112,
+    "height": 88,
     "size_kb": 2,
     "format": ".png"
   },
   "fran_coffee_king.jpeg": {
     "path": "/assets/storyblok/fran_coffee_king.jpeg",
-    "width": 0,
-    "height": 0,
+    "width": 200,
+    "height": 200,
     "size_kb": 6.97,
     "format": ".jpeg"
   },
   "gda-badge.png": {
     "path": "/assets/storyblok/gda-badge.png",
-    "width": 0,
-    "height": 0,
+    "width": 168,
+    "height": 132,
     "size_kb": 3.51,
     "format": ".png"
   },
   "get-a-quote-curationist.png": {
     "path": "/assets/storyblok/get-a-quote-curationist.png",
-    "width": 0,
-    "height": 0,
+    "width": 1638,
+    "height": 1023,
     "size_kb": 579.42,
     "format": ".png"
   },
   "golden-after-light.svg": {
     "path": "/assets/storyblok/golden-after-light.svg",
-    "width": 0,
-    "height": 0,
+    "width": 118,
+    "height": 56,
     "size_kb": 5.4,
     "format": ".svg"
   },
   "golden-before-light.svg": {
     "path": "/assets/storyblok/golden-before-light.svg",
-    "width": 0,
-    "height": 0,
+    "width": 114,
+    "height": 55,
     "size_kb": 6.62,
     "format": ".svg"
   },
   "gray1-after-light.svg": {
     "path": "/assets/storyblok/gray1-after-light.svg",
-    "width": 0,
-    "height": 0,
+    "width": 118,
+    "height": 56,
     "size_kb": 5.4,
     "format": ".svg"
   },
   "gray1-before-light.svg": {
     "path": "/assets/storyblok/gray1-before-light.svg",
-    "width": 0,
-    "height": 0,
+    "width": 112,
+    "height": 55,
     "size_kb": 6.66,
     "format": ".svg"
   },
   "gray2-after-light.svg": {
     "path": "/assets/storyblok/gray2-after-light.svg",
-    "width": 0,
-    "height": 0,
+    "width": 70,
+    "height": 56,
     "size_kb": 5.42,
     "format": ".svg"
   },
   "gray2-before-light.svg": {
     "path": "/assets/storyblok/gray2-before-light.svg",
-    "width": 0,
-    "height": 0,
+    "width": 65,
+    "height": 53,
     "size_kb": 3.7,
     "format": ".svg"
   },
   "helder.jpg": {
     "path": "/assets/storyblok/helder.jpg",
-    "width": 0,
-    "height": 0,
+    "width": 2826,
+    "height": 2827,
     "size_kb": 132.26,
     "format": ".jpg"
   },
   "heyharper-dark.png": {
     "path": "/assets/storyblok/heyharper-dark.png",
-    "width": 0,
-    "height": 0,
+    "width": 1980,
+    "height": 520,
     "size_kb": 31.06,
     "format": ".png"
   },
   "heyharper-light.png": {
     "path": "/assets/storyblok/heyharper-light.png",
-    "width": 0,
-    "height": 0,
+    "width": 1980,
+    "height": 520,
     "size_kb": 30.56,
     "format": ".png"
   },
   "heythumb2.jpg": {
     "path": "/assets/storyblok/heythumb2.jpg",
-    "width": 0,
-    "height": 0,
+    "width": 3200,
+    "height": 2400,
     "size_kb": 247.59,
     "format": ".jpg"
   },
   "ifdesign.webp": {
     "path": "/assets/storyblok/ifdesign.webp",
-    "width": 0,
-    "height": 0,
+    "width": 168,
+    "height": 132,
     "size_kb": 0.73,
     "format": ".webp"
   },
   "ines_gomes.jpg": {
     "path": "/assets/storyblok/ines_gomes.jpg",
-    "width": 0,
-    "height": 0,
+    "width": 2705,
+    "height": 2705,
     "size_kb": 186.81,
     "format": ".jpg"
   },
   "iosapp.webp": {
     "path": "/assets/storyblok/iosapp.webp",
-    "width": 0,
-    "height": 0,
+    "width": 96,
+    "height": 101,
     "size_kb": 1.06,
     "format": ".webp"
   },
   "laptop.webp": {
     "path": "/assets/storyblok/laptop.webp",
-    "width": 0,
-    "height": 0,
+    "width": 106,
+    "height": 96,
     "size_kb": 1.02,
     "format": ".webp"
   },
   "light-fcp-final.png": {
     "path": "/assets/storyblok/light-fcp-final.png",
-    "width": 0,
-    "height": 0,
+    "width": 326,
+    "height": 84,
     "size_kb": 3.03,
     "format": ".png"
   },
   "manuel_1.jpg": {
     "path": "/assets/storyblok/manuel_1.jpg",
-    "width": 0,
-    "height": 0,
+    "width": 2813,
+    "height": 2813,
     "size_kb": 279.96,
     "format": ".jpg"
   },
   "mishmash3.jpg": {
     "path": "/assets/storyblok/mishmash3.jpg",
-    "width": 0,
-    "height": 0,
+    "width": 1600,
+    "height": 1200,
     "size_kb": 82.24,
     "format": ".jpg"
   },
   "mishmash_darkmode.png": {
     "path": "/assets/storyblok/mishmash_darkmode.png",
-    "width": 0,
-    "height": 0,
+    "width": 1054,
+    "height": 281,
     "size_kb": 5.34,
     "format": ".png"
   },
   "mishmash_lightmode.png": {
     "path": "/assets/storyblok/mishmash_lightmode.png",
-    "width": 0,
-    "height": 0,
+    "width": 1055,
+    "height": 282,
     "size_kb": 5.32,
     "format": ".png"
   },
   "mission-and-values.webp": {
     "path": "/assets/storyblok/mission-and-values.webp",
-    "width": 0,
-    "height": 0,
+    "width": 4500,
+    "height": 2250,
     "size_kb": 56.58,
     "format": ".webp"
   },
   "new-coffee-king.png": {
     "path": "/assets/storyblok/new-coffee-king.png",
-    "width": 0,
-    "height": 0,
+    "width": 1440,
+    "height": 833,
     "size_kb": 1478.34,
     "format": ".png"
   },
   "new-cover-coffee-king-website.png": {
     "path": "/assets/storyblok/new-cover-coffee-king-website.png",
-    "width": 0,
-    "height": 0,
+    "width": 3200,
+    "height": 1800,
     "size_kb": 1563.5,
     "format": ".png"
   },
   "new-showreel-cover.jpg": {
     "path": "/assets/storyblok/new-showreel-cover.jpg",
-    "width": 0,
-    "height": 0,
+    "width": 2688,
+    "height": 1514,
     "size_kb": 208.97,
     "format": ".jpg"
   },
   "office1.png": {
     "path": "/assets/storyblok/office1.png",
-    "width": 0,
-    "height": 0,
+    "width": 481,
+    "height": 643,
     "size_kb": 137.78,
     "format": ".png"
   },
   "office2.png": {
     "path": "/assets/storyblok/office2.png",
-    "width": 0,
-    "height": 0,
+    "width": 481,
+    "height": 643,
     "size_kb": 158.95,
     "format": ".png"
   },
   "office3.png": {
     "path": "/assets/storyblok/office3.png",
-    "width": 0,
-    "height": 0,
+    "width": 481,
+    "height": 643,
     "size_kb": 168.66,
     "format": ".png"
   },
   "office4.png": {
     "path": "/assets/storyblok/office4.png",
-    "width": 0,
-    "height": 0,
+    "width": 481,
+    "height": 643,
     "size_kb": 150.6,
     "format": ".png"
   },
   "office5.png": {
     "path": "/assets/storyblok/office5.png",
-    "width": 0,
-    "height": 0,
+    "width": 481,
+    "height": 643,
     "size_kb": 171.42,
     "format": ".png"
   },
   "old-coffee-king.png": {
     "path": "/assets/storyblok/old-coffee-king.png",
-    "width": 0,
-    "height": 0,
+    "width": 1440,
+    "height": 833,
     "size_kb": 1137.01,
     "format": ".png"
   },
   "orange1-after-light.svg": {
     "path": "/assets/storyblok/orange1-after-light.svg",
-    "width": 0,
-    "height": 0,
+    "width": 138,
+    "height": 56,
     "size_kb": 5.43,
     "format": ".svg"
   },
   "orange1-before-light.svg": {
     "path": "/assets/storyblok/orange1-before-light.svg",
-    "width": 0,
-    "height": 0,
+    "width": 133,
+    "height": 56,
     "size_kb": 8.95,
     "format": ".svg"
   },
   "orange2-after-light.svg": {
     "path": "/assets/storyblok/orange2-after-light.svg",
-    "width": 0,
-    "height": 0,
+    "width": 169,
+    "height": 56,
     "size_kb": 5.42,
     "format": ".svg"
   },
   "orange2-before-light.svg": {
     "path": "/assets/storyblok/orange2-before-light.svg",
-    "width": 0,
-    "height": 0,
+    "width": 165,
+    "height": 55,
     "size_kb": 9.59,
     "format": ".svg"
   },
   "physics-design.png": {
     "path": "/assets/storyblok/physics-design.png",
-    "width": 0,
-    "height": 0,
+    "width": 340,
+    "height": 350,
     "size_kb": 25.71,
     "format": ".png"
   },
   "physics-development.png": {
     "path": "/assets/storyblok/physics-development.png",
-    "width": 0,
-    "height": 0,
+    "width": 400,
+    "height": 316,
     "size_kb": 19.77,
     "format": ".png"
   },
   "physics-hatch.png": {
     "path": "/assets/storyblok/physics-hatch.png",
-    "width": 0,
-    "height": 0,
+    "width": 400,
+    "height": 400,
     "size_kb": 14.43,
     "format": ".png"
   },
   "physics-manel.png": {
     "path": "/assets/storyblok/physics-manel.png",
-    "width": 0,
-    "height": 0,
+    "width": 289,
+    "height": 352,
     "size_kb": 65.53,
     "format": ".png"
   },
   "physics-sereno.png": {
     "path": "/assets/storyblok/physics-sereno.png",
-    "width": 0,
-    "height": 0,
+    "width": 271,
+    "height": 352,
     "size_kb": 58.39,
     "format": ".png"
   },
@@ -617,85 +617,85 @@
   },
   "pn_timeline.png": {
     "path": "/assets/storyblok/pn_timeline.png",
-    "width": 0,
-    "height": 0,
+    "width": 528,
+    "height": 296,
     "size_kb": 61.19,
     "format": ".png"
   },
   "pnthumb1.jpg": {
     "path": "/assets/storyblok/pnthumb1.jpg",
-    "width": 0,
-    "height": 0,
+    "width": 1344,
+    "height": 1008,
     "size_kb": 937.97,
     "format": ".jpg"
   },
   "polygon.png": {
     "path": "/assets/storyblok/polygon.png",
-    "width": 0,
-    "height": 0,
+    "width": 26,
+    "height": 20,
     "size_kb": 0.44,
     "format": ".png"
   },
   "purple1-after-light.svg": {
     "path": "/assets/storyblok/purple1-after-light.svg",
-    "width": 0,
-    "height": 0,
+    "width": 168,
+    "height": 56,
     "size_kb": 5.42,
     "format": ".svg"
   },
   "purple1-before-light.svg": {
     "path": "/assets/storyblok/purple1-before-light.svg",
-    "width": 0,
-    "height": 0,
+    "width": 166,
+    "height": 54,
     "size_kb": 9.6,
     "format": ".svg"
   },
   "purple2-after-light.svg": {
     "path": "/assets/storyblok/purple2-after-light.svg",
-    "width": 0,
-    "height": 0,
+    "width": 116,
+    "height": 56,
     "size_kb": 5.41,
     "format": ".svg"
   },
   "purple2-before-light.svg": {
     "path": "/assets/storyblok/purple2-before-light.svg",
-    "width": 0,
-    "height": 0,
+    "width": 113,
+    "height": 53,
     "size_kb": 6.61,
     "format": ".svg"
   },
   "reddot.webp": {
     "path": "/assets/storyblok/reddot.webp",
-    "width": 0,
-    "height": 0,
+    "width": 168,
+    "height": 132,
     "size_kb": 4.87,
     "format": ".webp"
   },
   "sb_darktheme.png": {
     "path": "/assets/storyblok/sb_darktheme.png",
-    "width": 0,
-    "height": 0,
+    "width": 412,
+    "height": 85,
     "size_kb": 4.54,
     "format": ".png"
   },
   "sb_lighttheme.png": {
     "path": "/assets/storyblok/sb_lighttheme.png",
-    "width": 0,
-    "height": 0,
+    "width": 412,
+    "height": 85,
     "size_kb": 4.99,
     "format": ".png"
   },
   "shopify-mono-black.png": {
     "path": "/assets/storyblok/shopify-mono-black.png",
-    "width": 0,
-    "height": 0,
+    "width": 1000,
+    "height": 286,
     "size_kb": 8.65,
     "format": ".png"
   },
   "shopify-mono-white.png": {
     "path": "/assets/storyblok/shopify-mono-white.png",
-    "width": 0,
-    "height": 0,
+    "width": 1000,
+    "height": 286,
     "size_kb": 16.17,
     "format": ".png"
   },
@@ -708,176 +708,176 @@
   },
   "tagg-mockup-shot.jpg": {
     "path": "/assets/storyblok/tagg-mockup-shot.jpg",
-    "width": 0,
-    "height": 0,
+    "width": 6000,
+    "height": 4000,
     "size_kb": 602.46,
     "format": ".jpg"
   },
   "tfp-dark.png": {
     "path": "/assets/storyblok/tfp-dark.png",
-    "width": 0,
-    "height": 0,
+    "width": 1528,
+    "height": 520,
     "size_kb": 20.51,
     "format": ".png"
   },
   "tfp-light.png": {
     "path": "/assets/storyblok/tfp-light.png",
-    "width": 0,
-    "height": 0,
+    "width": 1528,
+    "height": 520,
     "size_kb": 22.19,
     "format": ".png"
   },
   "thumbnail-significa.jpg": {
     "path": "/assets/storyblok/thumbnail-significa.jpg",
-    "width": 0,
-    "height": 0,
+    "width": 1600,
+    "height": 1200,
     "size_kb": 574.1,
     "format": ".jpg"
   },
   "vertabasethumb.png": {
     "path": "/assets/storyblok/vertabasethumb.png",
-    "width": 0,
-    "height": 0,
+    "width": 800,
+    "height": 600,
     "size_kb": 65,
     "format": ".png"
   },
   "watch.webp": {
     "path": "/assets/storyblok/watch.webp",
-    "width": 0,
-    "height": 0,
+    "width": 96,
+    "height": 108,
     "size_kb": 1.43,
     "format": ".webp"
   },
   "web.webp": {
     "path": "/assets/storyblok/web.webp",
-    "width": 0,
-    "height": 0,
+    "width": 96,
+    "height": 96,
     "size_kb": 2,
     "format": ".webp"
   },
   "xxs_baby.webp": {
     "path": "/assets/storyblok/xxs_baby.webp",
-    "width": 0,
-    "height": 0,
+    "width": 96,
+    "height": 101,
     "size_kb": 1.49,
     "format": ".webp"
   },
   "xxs_backpack.webp": {
     "path": "/assets/storyblok/xxs_backpack.webp",
-    "width": 0,
-    "height": 0,
+    "width": 96,
+    "height": 101,
     "size_kb": 1.23,
     "format": ".webp"
   },
   "xxs_bus.webp": {
     "path": "/assets/storyblok/xxs_bus.webp",
-    "width": 0,
-    "height": 0,
+    "width": 96,
+    "height": 97,
     "size_kb": 1.25,
     "format": ".webp"
   },
   "xxs_calendar.webp": {
     "path": "/assets/storyblok/xxs_calendar.webp",
-    "width": 0,
-    "height": 0,
+    "width": 96,
+    "height": 101,
     "size_kb": 1.48,
     "format": ".webp"
   },
   "xxs_growth.webp": {
     "path": "/assets/storyblok/xxs_growth.webp",
-    "width": 0,
-    "height": 0,
+    "width": 100,
+    "height": 100,
     "size_kb": 1.55,
     "format": ".webp"
   },
   "xxs_gym.webp": {
     "path": "/assets/storyblok/xxs_gym.webp",
-    "width": 0,
-    "height": 0,
+    "width": 100,
+    "height": 97,
     "size_kb": 1.49,
     "format": ".webp"
   },
   "xxs_health.webp": {
     "path": "/assets/storyblok/xxs_health.webp",
-    "width": 0,
-    "height": 0,
+    "width": 96,
+    "height": 97,
     "size_kb": 1.08,
     "format": ".webp"
   },
   "xxs_heart.webp": {
     "path": "/assets/storyblok/xxs_heart.webp",
-    "width": 0,
-    "height": 0,
+    "width": 96,
+    "height": 97,
     "size_kb": 1.5,
     "format": ".webp"
   },
   "xxs_laptop.webp": {
     "path": "/assets/storyblok/xxs_laptop.webp",
-    "width": 0,
-    "height": 0,
+    "width": 106,
+    "height": 97,
     "size_kb": 1.02,
     "format": ".webp"
   },
   "xxs_learning.webp": {
     "path": "/assets/storyblok/xxs_learning.webp",
-    "width": 0,
-    "height": 0,
+    "width": 100,
+    "height": 98,
     "size_kb": 1.71,
     "format": ".webp"
   },
   "xxs_period-leave.webp": {
     "path": "/assets/storyblok/xxs_period-leave.webp",
-    "width": 0,
-    "height": 0,
+    "width": 96,
+    "height": 97,
     "size_kb": 1.38,
     "format": ".webp"
   },
   "xxs_referral.webp": {
     "path": "/assets/storyblok/xxs_referral.webp",
-    "width": 0,
-    "height": 0,
+    "width": 109,
+    "height": 107,
     "size_kb": 1.73,
     "format": ".webp"
   },
   "xxs_retreat.webp": {
     "path": "/assets/storyblok/xxs_retreat.webp",
-    "width": 0,
-    "height": 0,
+    "width": 96,
+    "height": 97,
     "size_kb": 1.56,
     "format": ".webp"
   },
   "xxs_sun.webp": {
     "path": "/assets/storyblok/xxs_sun.webp",
-    "width": 0,
-    "height": 0,
+    "width": 108,
+    "height": 109,
     "size_kb": 1.76,
     "format": ".webp"
   },
   "xxs_support.webp": {
     "path": "/assets/storyblok/xxs_support.webp",
-    "width": 0,
-    "height": 0,
+    "width": 96,
+    "height": 101,
     "size_kb": 1.88,
     "format": ".webp"
   },
   "xxs_watch.webp": {
     "path": "/assets/storyblok/xxs_watch.webp",
-    "width": 0,
-    "height": 0,
+    "width": 98,
+    "height": 106,
     "size_kb": 1.75,
     "format": ".webp"
   },
   "zoko-thumb-02.jpg": {
     "path": "/assets/storyblok/zoko-thumb-02.jpg",
-    "width": 0,
-    "height": 0,
+    "width": 3840,
+    "height": 2880,
     "size_kb": 1558.83,
     "format": ".jpg"
   },
   "zokothumb-1.jpg": {
     "path": "/assets/storyblok/zokothumb-1.jpg",
-    "width": 0,
-    "height": 0,
+    "width": 1601,
+    "height": 1201,
     "size_kb": 104.02,
     "format": ".jpg"
   }
