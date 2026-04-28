@@ -351,6 +351,120 @@
           </p>
         {/if}
 
+        <!-- Karen Lazar Design Content -->
+        {#if project.slug === 'karen-lazar-design'}
+          <h2 class="mx-auto max-w-2xl"><b>The challenge.</b></h2>
+          <p class="mx-auto max-w-2xl">
+            Karen Lazar Design had built a cult following around its 14k gold-filled signature pieces — anti-tarnish, layerable, and editorial enough to land in InStyle, Town &amp; Country, and Elle. But the catalogue had outgrown its storefront. Dozens of variants per piece, ten size options, a growing gemstone and diamond range, curated stacks, gift cards across multiple price tiers, an active showroom in Brentwood, and a steadily growing international audience were all competing for the same attention on the homepage. The brief was clear: design and build a Shopify storefront from scratch that could carry an editorial fashion-brand aesthetic while quietly handling the operational complexity of a multi-collection, multi-currency jewelry business.
+          </p>
+
+          <p class="mx-auto max-w-2xl">
+            The hardest part was content choreography. The product range crosses Signature, Gemstone, Diamond, Fine, and Kids, with overlapping use cases — birthstone gifts, bridal stacks, everyday layering, statement pieces — and a customer who often arrives looking for a feeling ("a delicate stack for spring") rather than a specific SKU. The site had to make that journey feel intuitive without burying the brand's quiet, refined visual tone under filters and merchandising widgets.
+          </p>
+
+          <h2 class="mx-auto max-w-2xl"><b>Designing the storefront from scratch.</b></h2>
+          <p class="mx-auto max-w-2xl">
+            We started in design, not in code. Over the first phase of the four-month engagement we mapped the full information architecture, drafted the page system, and designed every key template against the brand's existing photography and tone of voice — soft neutrals, generous whitespace, restrained typography, and product imagery that reads more like an editorial spread than a typical e-commerce grid. The hero sequence centers a single emotional cue ("Find Your Spring Stack") above a large lifestyle image, with navigation pared down to four entry points: Shop, New, Special Promotions, and Style Guide. Everything else — filters, badges, promotional ribbons — is hidden until it earns its place on the screen.
+          </p>
+
+          <ImageSection
+            src="/assets/projects/karen-lazar-design/homepage-hero.png"
+            alt="Karen Lazar Design homepage hero featuring layered gold necklaces and a pared-back four-link primary navigation"
+            width={2880}
+            height={1800}
+          />
+
+          <h2 class="mx-auto max-w-2xl"><b>Engineering a Shopify build that disappears behind the brand.</b></h2>
+          <p class="mx-auto max-w-2xl">
+            With the design system locked, we built the storefront on Shopify from the ground up — custom theme, custom templates, custom merchandising logic. The goal was for the platform to be invisible: no off-the-shelf theme tropes, no app-stitched UI, no jarring shifts between marketing pages and product pages. Every collection, product, and content template shares the same restrained type system, the same rhythm of imagery and whitespace, and the same interaction patterns, so a customer moving from a press feature to a Style Guide to a product variant page never feels handed off between systems.
+          </p>
+
+          <p class="mx-auto max-w-2xl">
+            Behind the scenes, the build was structured around the operational realities of the brand: a fast-growing catalogue, frequent collection drops, recurring promotional moments (gift guides, seasonal stacks, holiday capsules), and a need to merchandise the same products across multiple narratives without duplicating content. The CMS structure makes it easy for the team to spin up a new edit — a "Spring Stack," a press wall update, a featured collection — without touching code.
+          </p>
+
+          <h2 class="mx-auto max-w-2xl"><b>A custom filtration system built around how customers actually shop.</b></h2>
+          <p class="mx-auto max-w-2xl">
+            The Signature collection alone runs to nearly fifty products, and the wider catalogue multiplies that across gemstones, diamonds, fine pieces, and kids. We built a custom filtration system that lets shoppers slice the catalogue the way they actually think about jewelry — by color (yellow gold, rose, silver, mixed), by category (Signature, Gemstone, Diamond, Fine, New In, Special Promotions, Kids), by price, and by sale state — with sticky filter chips, a clear active-state for the current selection, and a "Price, low to high" sort that reorders the grid instantly. Filter combinations resolve fast, persist across navigation, and feed cleanly into the analytics layer so the brand can see which entry points are converting on which collections.
+          </p>
+
+          <ImageSection
+            src="/assets/projects/karen-lazar-design/product-listing.png"
+            alt="Signature collection listing page showing 47 products, color and category filters in the left rail, sale badges, and a low-to-high price sort"
+            width={2880}
+            height={1800}
+          />
+
+          <h2 class="mx-auto max-w-2xl"><b>Variant logic that survives ten sizes and three styles.</b></h2>
+          <p class="mx-auto max-w-2xl">
+            Most pieces in the catalogue ship in up to ten ring sizes and three style finishes (Yellow Gold, Rose, Silver), which on a default Shopify setup would explode into a confusing variant matrix. We rebuilt the product page around a clean, two-step variant picker: size as a row of compact, tappable chips, style as color swatches, with availability, pricing, and the gallery thumbnails updating in real time as the customer moves between options. Trust cues — 14k Gold Filled, Non-Tarnishable, Free Shipping On All Orders Over $100 — sit immediately under the buy box, where they can do the work of converting a hesitant first-time buyer without dominating the page.
+          </p>
+
+          <ImageSection
+            src="/assets/projects/karen-lazar-design/product-detail.png"
+            alt="2MM Signature Ring product detail page with ten size options, three style swatches, Add to Cart and Buy It Now buttons, and trust cues for 14k gold filled, non-tarnishable, and free shipping"
+            width={2880}
+            height={1800}
+          />
+
+          <h2 class="mx-auto max-w-2xl"><b>Stack-based shopping and a Style Guide that doubles as discovery.</b></h2>
+          <p class="mx-auto max-w-2xl">
+            Karen Lazar customers rarely buy a single piece — they buy stacks. We built a dedicated Style Guide experience ("Shop According to Your Personal Style") that organizes the catalogue around aesthetic intent rather than SKU: The Pearl Collection, Timeless, and Statements, each anchored by a full-bleed lifestyle image and a curated edit underneath. The same surface is reusable for seasonal stories — Spring Stack, Birthstone Stack, the Karen Stack — so the brand can launch a new merchandising narrative in hours, not weeks, and customers always have a clear path from "I want a look" to a buyable bundle.
+          </p>
+
+          <ImageSection
+            src="/assets/projects/karen-lazar-design/style-guide.png"
+            alt="KLD Style Guide page with three lifestyle tiles labeled The Pearl Collection, Timeless, and Statements"
+            width={2880}
+            height={1800}
+          />
+
+          <h2 class="mx-auto max-w-2xl"><b>A multi-tier gift card flow.</b></h2>
+          <p class="mx-auto max-w-2xl">
+            Gift cards are a meaningful share of the brand's revenue, especially around the holidays, so we treated them as a first-class product rather than a checkout afterthought. The gift card page mirrors the design language of the rest of the catalogue — same buy box, same trust cues, same typography — but exposes nine fixed denominations from $50 to $500 in a single tap-to-select grid, with quantity, Add to Cart, and Buy It Now flowing through the standard checkout. The result is a gift purchase that feels considered and on-brand, not transactional.
+          </p>
+
+          <ImageSection
+            src="/assets/projects/karen-lazar-design/gift-card.png"
+            alt="Gift Card product page with nine selectable denominations from $50 to $500 and the same buy box pattern as the main product pages"
+            width={2880}
+            height={1800}
+          />
+
+          <h2 class="mx-auto max-w-2xl"><b>Custom shipping and international scale.</b></h2>
+          <p class="mx-auto max-w-2xl">
+            The brand ships internationally and runs a free-shipping threshold ($100+) that's prominently featured in the announcement bar at the top of every page. We configured custom shipping rates that reflect real-world fulfillment economics — different bands for different destinations, a clean interaction with the free-shipping promotion, and accurate, predictable totals at checkout. Combined with multi-currency support across USD, EUR, GBP, and other key markets, the storefront handles a meaningful share of international orders without surprising customers at the final step.
+          </p>
+
+          <h2 class="mx-auto max-w-2xl"><b>Press, social proof, and community.</b></h2>
+          <p class="mx-auto max-w-2xl">
+            Below the fold on the homepage, we built a tightly merchandised social-proof block that does a lot of the brand-trust work in a single screen: an Instagram-tagged UGC strip pulling real customers wearing the pieces, a press wall surfacing InStyle, Town &amp; Country, and Elle, and a returning entry point to best sellers. The block was built to be editable from the CMS so the team can rotate UGC, swap press logos, and refresh the featured edit without engineering involvement.
+          </p>
+
+          <ImageSection
+            src="/assets/projects/karen-lazar-design/instagram-press.png"
+            alt="Homepage section showing a four-tile Instagram UGC strip under the hashtag karenlazardesign and a press logo wall featuring InStyle, Town and Country, and Elle"
+            width={2880}
+            height={1800}
+          />
+
+          <Testimonial
+            quote="The team understood the brand from the first conversation. They built the entire Shopify store from scratch around how our customers actually shop — stacks, style guides, gift cards, sizes — and the storefront has carried us through a steady jump in traffic without us having to rethink the foundation."
+            author="Sydney"
+            title="Client at Karen Lazar Design"
+            image="/assets/storyblok/placeholder.jpeg"
+          />
+
+          <h2 class="mx-auto max-w-2xl"><b>Results &amp; impact.</b></h2>
+          <p class="mx-auto max-w-2xl">
+            The storefront went live as a fully custom Shopify build inside the four-month window. The signature catalogue now scales cleanly across collections, color and category filters resolve in a single interaction, ten-size variant logic and three-style finishes work without UI clutter, the multi-tier gift card flow handles the brand's seasonal gifting volume, and custom shipping rates support international orders alongside the free-shipping threshold. The Style Guide and Spring Stack surfaces let the brand merchandise the catalogue around feeling and occasion, not SKU lists, while the press wall and Instagram UGC strip do the trust-building work below the fold.
+          </p>
+
+          <p class="mx-auto max-w-2xl">
+            The site has carried steady, growing traffic since launch and continues to be the central commerce surface for the brand — alongside the Brentwood showroom and the brand's editorial press footprint. More importantly, the platform was built so the team can keep merchandising, dropping new collections, and running seasonal stories without the storefront becoming a bottleneck. That was the real brief: a Shopify build sophisticated enough to disappear behind the brand, and structured enough to carry it as it grows.
+          </p>
+        {/if}
+
         <!-- SimpleTalk AI Content -->
         {#if project.slug === 'simpletalk-ai'}
           <h2 class="mx-auto max-w-2xl"><b>The challenge.</b></h2>

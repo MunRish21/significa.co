@@ -4,8 +4,8 @@ export const projectsData = [
     slug: 'monster-fairings',
     name: 'Monster Fairings',
     tagline: 'A global e-commerce platform with AI-powered visualization, managing 5000+ fairings and serving riders across seven countries.',
-    image: '/assets/projects/monster-fairings/cover.png',
-    coverImage: '/assets/projects/monster-fairings/cover.png',
+    image: '/assets/projects/monster-fairings/cover.jpg',
+    coverImage: '/assets/projects/monster-fairings/cover.jpg',
     publishedYear: 2021,
     services: ['AI & Machine Learning', 'E-commerce', 'Web Development & Design'],
     deliverables: ['E-commerce Platform', 'Website'],
@@ -553,18 +553,36 @@ export const projectsData = [
     id: 20,
     slug: 'karen-lazar-design',
     name: 'Karen Lazar Design',
-    tagline: 'Luxury jewelry e-commerce platform showcasing handcrafted designs',
+    tagline: 'A custom-built Shopify storefront for a fast-growing 14k gold-filled jewelry brand — designed from scratch, engineered for stack-based shopping, and tuned for international scale.',
     image: '/assets/projects/karen-lazar-design/cover.png',
     coverImage: '/assets/projects/karen-lazar-design/cover.png',
     publishedYear: 2023,
-    services: ['E-commerce', 'Fashion & Retail'],
-    deliverables: ['E-commerce Platform'],
+    services: [
+      'E-commerce Strategy',
+      'UX & UI Design',
+      'Shopify Theme Development',
+      'Custom Filtration System',
+      'Custom Shipping Configuration',
+      'Performance Optimization',
+      'Brand-led Web Design'
+    ],
+    deliverables: [
+      'Shopify E-commerce Platform',
+      'Custom Theme',
+      'Bundled Stack Builder',
+      'Multi-tier Gift Card System',
+      'Style Guide Experience'
+    ],
     links: [
       { label: 'Website', url: 'https://karenlazardesign.com' }
     ],
     team: [],
-    metrics: [],
-    intro: 'Karen Lazar Design is a luxury jewelry e-commerce platform built on Shopify, showcasing handcrafted, high-quality jewelry pieces. The platform highlights unique designs and artisan craftsmanship with beautiful product photography and detailed descriptions. Customers experience a premium shopping journey that reflects the quality and exclusivity of the jewelry collection.',
+    metrics: [
+      { label: 'Build Time', value: '4 mo', tooltip: 'End-to-end Shopify build', isPositive: true },
+      { label: 'Bracelets Sold', value: '50k+', tooltip: 'Lifetime sales of the 3MM Signature Bracelet', isPositive: true },
+      { label: 'Press Features', value: '3', tooltip: 'InStyle, Town & Country, Elle', isPositive: true }
+    ],
+    intro: 'Karen Lazar Design is a luxury 14k gold-filled jewelry brand known for its anti-tarnish signature bracelets, curated stacks, and editorial-grade product photography. We designed and built the entire Shopify storefront from scratch over a four-month engagement — from the brand-led visual system and information architecture to the custom filtration engine, bundled stack experience, multi-tier gift card flow, and custom shipping configuration. The result is a fast, beautifully restrained shopping experience that lets customers move effortlessly from inspiration (style guides, Instagram UGC, press) to a precisely sized, multi-variant purchase, while giving the brand the operational headroom to handle a high-traffic, internationally shipping catalogue without compromising on the aesthetic.',
     awards: []
   },
   {
