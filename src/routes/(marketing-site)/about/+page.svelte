@@ -243,5 +243,5 @@
   <FaqsList block={commonFaqsBlock} />
 
   <!-- Office Section -->
-  <OfficeCards block={officeCardsBlock} />
+  <OfficeCards block={officeCardsBlock} randomize={true} />
 </div>

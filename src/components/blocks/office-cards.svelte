@@ -1,12 +1,14 @@
 <script lang="ts">
   import type { OfficeCardsStoryblok } from '$types/bloks';
   import HoverableGallery from '$components/hoverable-gallery.svelte';
+  import RandomizedHoverableGallery from '$components/randomized-hoverable-gallery.svelte';
   import clsx from 'clsx';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import { getAnchorFromCmsLink } from '$lib/utils/cms';
   import { Button } from '@techyor/svelte-ui';
 
   export let block: OfficeCardsStoryblok;
+  export let randomize = false;
 </script>
 
 <section
@@ -34,21 +36,37 @@
       </div>
 
       {#if !!block.office_cards?.length}
-        <HoverableGallery
-          cards={block.office_cards}
-          class={clsx(
-            block.office_title1 && block.office_title2 && block.office_description
-              ? 'lg:-mt-10'
-              : 'lg:-mt-5',
-            'mt-12'
-          )}
-        />
+        {#if randomize}
+          <RandomizedHoverableGallery
+            cards={block.office_cards}
+            class={clsx(
+              block.office_title1 && block.office_title2 && block.office_description
+                ? 'lg:-mt-10'
+                : 'lg:-mt-5',
+              'mt-12'
+            )}
+          />
+        {:else}
+          <HoverableGallery
+            cards={block.office_cards}
+            class={clsx(
+              block.office_title1 && block.office_title2 && block.office_description
+                ? 'lg:-mt-10'
+                : 'lg:-mt-5',
+              'mt-12'
+            )}
+          />
+        {/if}
       {/if}
     </div>
   {:else if !!block.office_cards?.length}
     <section class="border-b">
       <div class="container mx-auto px-container">
-        <HoverableGallery cards={block.office_cards} class="mt-12 lg:mt-4" />
+        {#if randomize}
+          <RandomizedHoverableGallery cards={block.office_cards} class="mt-12 lg:mt-4" />
+        {:else}
+          <HoverableGallery cards={block.office_cards} class="mt-12 lg:mt-4" />
+        {/if}
       </div>
     </section>
   {/if}

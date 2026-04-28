@@ -3,21 +3,21 @@
   import Segg1 from '$components/pages/contact/illustrations/segg1.svelte';
   import Segg2 from '$components/pages/contact/illustrations/segg2.svelte';
   import PanWithEggs from '$components/pages/contact/pan-with-eggs.svelte';
-  import HoverableGallery from '$components/hoverable-gallery.svelte';
+  import RandomizedHoverableGallery from '$components/randomized-hoverable-gallery.svelte';
 
   const galleryCards = [
     {
       component: 'photo_card' as const,
       photo: {
-        filename: '/assets/storyblok/contact1.png',
-        alt: 'Contact image 1'
+        filename: '/assets/storyblok/office-interior-03.jpg',
+        alt: 'Office image 1'
       }
     },
     {
       component: 'photo_card' as const,
       photo: {
-        filename: '/assets/storyblok/contact2.png',
-        alt: 'Contact image 2'
+        filename: '/assets/storyblok/office-interior-05.jpg',
+        alt: 'Office image 2'
       }
     },
     {
@@ -27,22 +27,22 @@
     {
       component: 'photo_card' as const,
       photo: {
-        filename: '/assets/storyblok/contact3.png',
-        alt: 'Contact image 3'
+        filename: '/assets/storyblok/office-interior-04.jpg',
+        alt: 'Office image 3'
       }
     },
     {
       component: 'photo_card' as const,
       photo: {
-        filename: '/assets/storyblok/contact4.png',
-        alt: 'Contact image 4'
+        filename: '/assets/storyblok/office-interior-01.jpg',
+        alt: 'Office image 4'
       }
     },
     {
       component: 'photo_card' as const,
       photo: {
-        filename: '/assets/storyblok/contact5.png',
-        alt: 'Contact image 5'
+        filename: '/assets/storyblok/office-interior-02.jpg',
+        alt: 'Office image 5'
       }
     }
   ];
@@ -75,6 +75,6 @@
   </div>
 
   <div class="container mx-auto px-container py-12 lg:py-20">
-    <HoverableGallery cards={galleryCards} />
+    <RandomizedHoverableGallery cards={galleryCards} />
   </div>
 </div>
