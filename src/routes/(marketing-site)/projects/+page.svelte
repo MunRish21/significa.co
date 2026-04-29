@@ -5,7 +5,6 @@
   const projects = projectsData;
 
   let showFilters = true;
-  let selectedFilters: string[] = [];
   let projectsToShow = 8;
   const PROJECTS_PER_LOAD = 8;
 
@@ -31,32 +30,14 @@
     .sort((a, b) => b[1] - a[1])
     .map(([deliverable]) => deliverable);
 
-  $: filteredProjects = selectedFilters.length === 0
-    ? projects
-    : projects.filter(p =>
-        selectedFilters.some(f =>
-          p.services.includes(f) || p.deliverables.includes(f)
-        )
-      );
-
-  $: visibleProjects = filteredProjects.slice(0, projectsToShow).map(p => ({
+  $: visibleProjects = projects.slice(0, projectsToShow).map(p => ({
     ...p,
     category: p.deliverables?.[0] || 'Project'
   }));
-  $: hasMore = filteredProjects.length > projectsToShow;
+  $: hasMore = projects.length > projectsToShow;
 
-  function toggleFilter(filter: string) {
-    if (selectedFilters.includes(filter)) {
-      selectedFilters = selectedFilters.filter(f => f !== filter);
-    } else {
-      selectedFilters = [...selectedFilters, filter];
-    }
-    projectsToShow = 8;
-  }
-
-  function clearFilters() {
-    selectedFilters = [];
-    projectsToShow = 8;
+  function getFilterUrl(filter: string): string {
+    return `/projects/${filter.toLowerCase().replace(/\s+/g, '-')}`;
   }
 
   function loadMore() {
@@ -99,20 +80,7 @@
         </i>
         <span>{showFilters ? 'Close' : 'Filters'}</span>
       </button>
-      {#if selectedFilters.length > 0}
-        <span class="inline-flex items-center justify-center h-6 w-6 rounded-full bg-foreground text-background text-xs font-medium">
-          {selectedFilters.length}
-        </span>
-      {/if}
     </div>
-    {#if selectedFilters.length > 0}
-      <button
-        class="text-sm font-medium hover:opacity-80 transition-opacity"
-        on:click={clearFilters}
-      >
-        Clear all
-      </button>
-    {/if}
   </div>
 
   <!-- Filter Panel -->
@@ -124,16 +92,12 @@
             <p class="text-xs uppercase tracking-wider text-foreground-secondary mb-4">Services</p>
             <div class="flex flex-wrap gap-2">
               {#each allServices as service}
-                <button
-                  on:click={() => toggleFilter(service)}
-                  class={`px-3 py-1.5 text-sm rounded transition-all ${
-                    selectedFilters.includes(service)
-                      ? 'bg-foreground text-background'
-                      : 'border border-border hover:border-foreground'
-                  }`}
+                <a
+                  href={getFilterUrl(service)}
+                  class="px-3 py-1.5 text-sm rounded transition-all border border-border hover:border-foreground hover:bg-foreground-tertiary/5"
                 >
                   {service}
-                </button>
+                </a>
               {/each}
             </div>
           </div>
@@ -143,16 +107,12 @@
             <p class="text-xs uppercase tracking-wider text-foreground-secondary mb-4">Deliverables</p>
             <div class="flex flex-wrap gap-2">
               {#each allDeliverables as deliverable}
-                <button
-                  on:click={() => toggleFilter(deliverable)}
-                  class={`px-3 py-1.5 text-sm rounded transition-all ${
-                    selectedFilters.includes(deliverable)
-                      ? 'bg-foreground text-background'
-                      : 'border border-border hover:border-foreground'
-                  }`}
+                <a
+                  href={getFilterUrl(deliverable)}
+                  class="px-3 py-1.5 text-sm rounded transition-all border border-border hover:border-foreground hover:bg-foreground-tertiary/5"
                 >
                   {deliverable}
-                </button>
+                </a>
               {/each}
             </div>
           </div>
