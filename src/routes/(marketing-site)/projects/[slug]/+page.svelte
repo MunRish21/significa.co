@@ -71,7 +71,7 @@
     const allServices = new Set<string>();
     const allDeliverables = new Set<string>();
 
-    data.filteredProjects.forEach(p => {
+    projectsData.forEach(p => {
       p.services.forEach(s => allServices.add(s));
       p.deliverables.forEach(d => allDeliverables.add(d));
     });

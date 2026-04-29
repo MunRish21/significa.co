@@ -121,43 +121,6 @@
               <p class="mt-2 text-right text-sm text-foreground-secondary">0/2000</p>
             </div>
 
-            <!-- Budget Range -->
-            <div class="relative w-full">
-              <select
-                id="budget-select"
-                class="appearance-none outline-none bg-foreground/2 border border-foreground/10 hover:border-border-active hover:ring-2 focus:border-border-active focus:ring-4 focus:ring-outline focus:outline-none peer-focus:border-border-active peer-focus:ring-4 peer-focus:ring-outline peer-focus:outline-none checked:bg-outline disabled:opacity-60 disabled:pointer-events-none transition-all w-full placeholder:text-base placeholder:text-foreground-secondary placeholder:antialiased leading-snug py-4 rounded-lg px-5 peer text-transparent"
-                required
-                name="budget"
-              >
-                <option value="" class="text-foreground">Select budget</option>
-                <option value="50.000€ to 75.000€" class="text-foreground">50.000€ to 75.000€</option>
-                <option value="75.000€ to 150.000€" class="text-foreground">75.000€ to 150.000€</option>
-                <option value="150.000€ to 250.000€" class="text-foreground">150.000€ to 250.000€</option>
-                <option value="250.000€ to 500.000€" class="text-foreground">250.000€ to 500.000€</option>
-                <option value="500.000€ to 1.000.000€" class="text-foreground">500.000€ to 1.000.000€</option>
-                <option value="1.000.000€ and above" class="text-foreground">1.000.000€ and above</option>
-              </select>
-              <label for="budget-select" class="absolute pointer-events-none transition-all ease-motion left-5 text-foreground-secondary top-4 text-base">
-                Budget range
-              </label>
-            </div>
-
-            <!-- File Upload -->
-            <div>
-              <label>
-                <input class="peer sr-only" type="file" multiple />
-                <div class="appearance-none outline-none bg-foreground/2 border border-foreground/10 hover:border-border-active hover:ring-2 focus:border-border-active focus:ring-4 focus:ring-outline focus:outline-none peer-focus:border-border-active peer-focus:ring-4 peer-focus:ring-outline peer-focus:outline-none checked:bg-outline disabled:opacity-60 disabled:pointer-events-none transition-all w-full placeholder:text-base placeholder:text-foreground-secondary placeholder:antialiased text-foreground leading-snug py-4 rounded-lg px-5 cursor-pointer">
-                  <div class="flex items-center gap-2 text-foreground-secondary">
-                    <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M12.6 8.6c-.2 0-.4.5-.5.6l-.7.7c-.5.5-.8 1.3-1.2 1.9a10 10 0 0 1-2.2 2c-.4.3-1 .7-1.4.8l-.6.2h-.6c-.3 0-.5-.2-.7-.3l-.8-.5-1-1.4a4 4 0 0 1-.3-1.6c0-1.2.8-2 1.3-3l1.5-1.7 1.2-1.4 1.5-1.5c.4-.5.8-.7 1.4-.9l.7-.2h.9l1.3.1c.2 0 .5.3.6.6.5 1 .3 1.8-.2 2.3l-1 1c-.8.6-1.4 1.2-1.9 2-.6 1-1.4 1.7-2.2 2.5-.7.7-1.3 1.3-2.2 1.3-1 0-.6-1.4-.4-1.9l1.1-1.5c.4-.4.8-.9 1.3-1.2l1.3-1c.1-.3.5-.7.7-.8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" />
-                    </svg>
-                    <span>Relevant documents</span>
-                  </div>
-                </div>
-              </label>
-            </div>
-
-            <input type="hidden" name="attachments" value="" />
           </div>
 
           <!-- Submit Section -->
