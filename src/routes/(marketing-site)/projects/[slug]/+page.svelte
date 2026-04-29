@@ -482,10 +482,10 @@
           </p>
 
           <ComparisonSlider
-            beforeImage="/assets/projects/indigenous-treats/before-homepage.png"
-            afterImage="/assets/projects/indigenous-treats/homepage-proteins.png"
-            beforeLabel="Legacy homepage"
-            afterLabel="Redesigned homepage"
+            beforeImage="/assets/projects/indigenous-treats/cover.png"
+            afterImage="/assets/projects/indigenous-treats/before-homepage.png"
+            beforeLabel="Redesigned homepage"
+            afterLabel="Legacy homepage"
           />
 
           <h2 class="mx-auto max-w-2xl"><b>An icon-led single-protein navigation system.</b></h2>
@@ -494,10 +494,10 @@
           </p>
 
           <ComparisonSlider
-            beforeImage="/assets/projects/indigenous-treats/before-product-listing.png"
-            afterImage="/assets/projects/indigenous-treats/product-listing.png"
-            beforeLabel="Legacy All Products page"
-            afterLabel="Redesigned All Products page"
+            beforeImage="/assets/projects/indigenous-treats/product-listing.png"
+            afterImage="/assets/projects/indigenous-treats/before-product-listing.png"
+            beforeLabel="Redesigned All Products page"
+            afterLabel="Legacy All Products page"
           />
 
           <h2 class="mx-auto max-w-2xl"><b>A custom B2B wholesale portal.</b></h2>

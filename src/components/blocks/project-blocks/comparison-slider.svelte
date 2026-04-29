@@ -8,48 +8,62 @@
 
   let visibility = 50;
   let isDragging = false;
+  let containerEl: HTMLDivElement;
+
+  function handleMouseDown(e: MouseEvent) {
+    isDragging = true;
+    e.preventDefault();
+  }
+
+  function handleTouchStart(e: TouchEvent) {
+    isDragging = true;
+    updateFromClientX(e.touches[0].clientX);
+  }
+
+  function updateFromClientX(clientX: number) {
+    if (!containerEl) return;
+    const rect = containerEl.getBoundingClientRect();
+    const x = clientX - rect.left;
+    visibility = Math.max(0, Math.min(100, (x / rect.width) * 100));
+  }
 
   onMount(() => {
-    const handler = document.querySelector('.comparison-handler');
-    if (!handler) return;
-
-    const handleMouseDown = () => {
-      isDragging = true;
-    };
-
     const handleMouseUp = () => {
       isDragging = false;
     };
 
     const handleMouseMove = (e: MouseEvent) => {
       if (!isDragging) return;
-      const container = handler.parentElement;
-      if (!container) return;
-
-      const rect = container.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      visibility = Math.max(0, Math.min(100, (x / rect.width) * 100));
+      updateFromClientX(e.clientX);
     };
 
-    handler.addEventListener('mousedown', handleMouseDown);
+    const handleTouchMove = (e: TouchEvent) => {
+      if (!isDragging) return;
+      updateFromClientX(e.touches[0].clientX);
+    };
+
     document.addEventListener('mouseup', handleMouseUp);
     document.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener('touchend', handleMouseUp);
+    document.addEventListener('touchmove', handleTouchMove);
 
     return () => {
-      handler.removeEventListener('mousedown', handleMouseDown);
       document.removeEventListener('mouseup', handleMouseUp);
       document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('touchend', handleMouseUp);
+      document.removeEventListener('touchmove', handleTouchMove);
     };
   });
 </script>
 
-<div class="relative my-8 overflow-hidden rounded-md md:my-14 block block-comparison mx-auto max-w-4xl" style="--comparison-visibility: {visibility}%;">
+<div bind:this={containerEl} class="relative my-8 overflow-hidden rounded-md md:my-14 block block-comparison mx-auto max-w-4xl" style="--comparison-visibility: {visibility}%;">
   <div class="absolute left-[calc(var(--comparison-visibility)-2px)] top-0 z-10 h-full w-1 bg-black"></div>
   <button
-    role="button"
-    tabindex="0"
-    class="flex items-center justify-center rounded-full outline-none focus-visible:ring-4 active:scale-95 h-10 w-10 comparison-handler absolute left-[var(--comparison-visibility)] top-1/2 z-20 -translate-x-1/2 -translate-y-1/2 cursor-ew-resize bg-black text-white transition-none hover:opacity-100"
-    aria-hidden="true"
+    type="button"
+    on:mousedown={handleMouseDown}
+    on:touchstart={handleTouchStart}
+    class="flex items-center justify-center rounded-full outline-none focus-visible:ring-4 active:scale-95 h-10 w-10 absolute left-[var(--comparison-visibility)] top-1/2 z-20 -translate-x-1/2 -translate-y-1/2 cursor-ew-resize bg-black text-white transition-none hover:opacity-100"
+    aria-label="Drag to compare"
   >
     <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path fill-rule="evenodd" clip-rule="evenodd" d="m14 8.4-2.7 2.9-.9-.9 1.8-1.8H3.8l1.8 1.8-.9.9L2 8.4 1.5 8l.4-.4 2.8-2.9.9.9-1.8 1.8h8.4l-1.8-1.8.9-.9L14 7.6l.4.4-.4.4Z" fill="currentColor"></path>
