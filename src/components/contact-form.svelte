@@ -11,9 +11,7 @@
   import { page } from '$app/stores';
   import { t } from '$lib/i18n';
   import {
-    type FileUploadItem,
     Button,
-    FileUpload,
     FloatingInput,
     FloatingSelect,
     FloatingTextarea,
@@ -24,7 +22,6 @@
   import type { ISbStoryData } from '@storyblok/js';
   import clsx from 'clsx';
   import { createEventDispatcher } from 'svelte';
-  import { budgetRange } from './pages/get-a-quote/budgetRange';
 
   export let variant: undefined | FormType = undefined;
   export let disclaimer: string | undefined = undefined;
@@ -50,21 +47,10 @@
 
   const DEFAULT_POSITION = t('contact.position.default');
 
-  let files: FileUploadItem[] = [];
   export let name = '';
   export let email = '';
-  export let budget = '';
   export let position = DEFAULT_POSITION;
   export let message = '';
-  export let attachments = '';
-  $: if (files.length > 0) {
-    attachments = files
-      .filter((f) => f.status === 'success')
-      .map((f) => f.url)
-      .join(',');
-  } else {
-    attachments = '';
-  }
 
   const dispatch = createEventDispatcher<{
     focus: string;
@@ -73,8 +59,6 @@
     error: string;
     input: string;
   }>();
-
-  const budgetOptions = budgetRange;
 
   const careers = [
     DEFAULT_POSITION,
@@ -236,52 +220,6 @@
       </p>
     </div>
 
-    {#if type === 'quote' && budgetOptions}
-      <FloatingSelect
-        required
-        name="budget"
-        class="w-full"
-        label={t('contact.label.budget')}
-        bind:value={budget}
-        on:focus={() => dispatch('focus', 'budget')}
-        on:blur={() => dispatch('blur', 'budget')}
-        on:change={() => dispatch('input', 'budget')}
-      >
-        <option value="" class="text-foreground">Select budget</option>
-        {#each budgetOptions as option}
-          <option value={option} class="text-foreground">{option}</option>
-        {/each}
-      </FloatingSelect>
-    {/if}
-    {#if type !== 'contact'}
-      <FileUpload
-        bind:files
-        on:focus={() => dispatch('focus', 'attachments')}
-        on:blur={() => dispatch('blur', 'attachments')}
-        on:change={() => dispatch('input', 'attachments')}
-        on:error={() =>
-          toast.error({
-            message: t('file.upload.error.title'),
-            description: t('file.upload.error.description')
-          })}
-        placeholder={type === 'quote' || type === 'estimations'
-          ? t('contact.label.attachment.quote')
-          : t('contact.label.attachment.position')}
-        size="lg"
-        getSignedUrl={async (file) => {
-          const res = await fetch(
-            `/get-signed-url?${new URLSearchParams({
-              name: file.name,
-              type: file.type,
-              size: file.size.toString()
-            }).toString()}`
-          );
-
-          return res.text();
-        }}
-      />
-      <input type="hidden" name="attachments" bind:value={attachments} />
-    {/if}
     {#if disclaimer}
       <p class="my-3 text-base text-foreground-secondary">{disclaimer}</p>
       <hr />

@@ -7,16 +7,9 @@
   import { Confetti } from 'svelte-confetti';
   import { CONFETTI_COLOR_ARRAY } from '$lib/constants';
   import { truncateText } from '$lib/utils/strings';
-  import { budgetRange } from './budgetRange';
 
   type Eggs =
-    | 'attach-multiple'
-    | 'attach'
     | 'error'
-    | 'budget10'
-    | 'budget25'
-    | 'budget50'
-    | 'budget100'
     | 'idle'
     | 'success'
     | 't-shirt'
@@ -35,10 +28,8 @@
 
   let name = '';
   let email = '';
-  let budget = '';
   let message = '';
-  let attachments = '';
-  $: dirty = name || email || budget || message || attachments;
+  $: dirty = name || email || message;
 
   let visible = false;
   let error = false;
@@ -58,26 +49,6 @@
     character = 'error';
   } else if (success) {
     character = 'success';
-  } else if (lastChangedInput === 'attachments') {
-    if (attachments.split(',').length > 1) {
-      character = 'attach-multiple';
-    } else {
-      character = 'attach';
-    }
-  } else if (lastChangedInput === 'budget') {
-    if (budgetRange[0].includes(budget)) {
-      character = 'budget10';
-    } else if (budgetRange[1].includes(budget)) {
-      character = 'budget25';
-    } else if (budgetRange[2].includes(budget)) {
-      character = 'budget25';
-    } else if (budgetRange[3].includes(budget)) {
-      character = 'budget50';
-    } else if (budgetRange[4].includes(budget)) {
-      character = 'budget50';
-    } else if (budgetRange[5].includes(budget)) {
-      character = 'budget100';
-    }
   } else if (
     (lastChangedInput === 'name' ||
       lastChangedInput === 'email' ||
@@ -128,8 +99,6 @@
         <ContactForm
           variant="quote"
           bind:name
-          bind:budget
-          bind:attachments
           bind:message
           on:focus={() => {
             visible = true;
