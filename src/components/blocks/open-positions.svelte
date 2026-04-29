@@ -6,8 +6,6 @@
 
   import { t } from '$lib/i18n';
   import { theme } from '$lib/stores/theme';
-  import { sanitizeSlug } from '$lib/utils/paths';
-  import { drawerLinks } from '$lib/actions/drawer-links';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
 
   import CareersAssetLight from '$components/illustrations/assets/careers-light.webp';
@@ -32,17 +30,17 @@
     <div class="container mx-auto justify-between gap-12 px-container lg:flex">
       <div class="flex flex-1 flex-col items-start">
         <div class="w-full flex-1">
-          <ul use:drawerLinks>
+          <ul>
             {#each $page.data.careers as career}
-              {@const href = sanitizeSlug(career.full_slug)}
               <li class="border-b first:border-t">
-                <a
-                  class="flex w-full items-center justify-between py-7 text-2xl font-semibold transition-colors hover:text-foreground-secondary"
-                  {href}
-                >
-                  <span>{career.name}</span>
-                  <Button size="sm" variant="secondary" arrow />
-                </a>
+                <div class="flex w-full flex-col gap-1 py-7 sm:flex-row sm:items-center sm:justify-between">
+                  <span class="text-2xl font-semibold">{career.name}</span>
+                  {#if career.content?.location || career.content?.employment_type}
+                    <span class="text-base text-foreground-secondary">
+                      {[career.content?.employment_type, career.content?.location].filter(Boolean).join(' · ')}
+                    </span>
+                  {/if}
+                </div>
               </li>
             {/each}
           </ul>

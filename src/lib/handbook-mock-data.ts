@@ -55,12 +55,12 @@ export const mockHandbookHierarchy: HandbookLevelStoryblok[] = [
     },
     children: [
       {
-        name: 'Welcome to Significa',
+        name: 'Welcome to Techyor',
         highlight: true,
         _uid: 'welcome',
         component: 'handbook-level',
         homepage: {
-          name: 'Welcome to Significa',
+          name: 'Welcome to Techyor',
           full_slug: 'handbook/getting-started/welcome',
           content: {
             cover: 'https://via.placeholder.com/300x200?text=Welcome',

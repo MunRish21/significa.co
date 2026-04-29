@@ -8,6 +8,7 @@
   import AboutGrid from '$components/blocks/about-grid.svelte';
   import CareersListBlock from '$components/blocks/careers-list.svelte';
   import FaqsListBlock from '$components/blocks/faqs-list.svelte';
+  import ClientsSection from '$components/sections/clients-section.svelte';
   import BlogEntry from '$components/blog-entry.svelte';
   import ProjectEntry from '$components/project-entry.svelte';
   import { commonFaqsBlock } from '$lib/data/faqs';
@@ -28,27 +29,27 @@
     about_links: [
       {
         title: 'Mission and values.',
-        description: 'It\'s not just what we do. It\'s the why and the how we go about doing things. That\'s what matters.'
+        description: 'Building digital products that solve real problems for real people. It\'s the why behind every line of code and every pixel we ship.'
       },
       {
         title: 'Perks and benefits.',
-        description: 'We love nice things. This is the good stuff. And it\'s getting bigger and bigger.'
+        description: 'Flexible hours, remote-friendly, unlimited learning stipend, health cover, and an annual team retreat. The good stuff, and growing.'
       },
       {
         title: 'Career plan.',
-        description: 'Your goals, your career. We\'re here to help you grow. Together.'
+        description: 'Your goals shape your path. We pair you with mentors, OKRs, and the room to grow at your own pace.'
       }
     ]
   };
 
   const aboutBlock: TextWithMediaStoryblok = {
     component: 'text-with-media',
-    eyebrow: 'About ourselves.',
-    title: 'Perfectionism freaks.',
-    description: 'We don\'t take ourselves too seriously, but we\'re definitely serious about what we do. Yes, we love our egg puns and go all in, in our random, quirky creativity. All that while striving to deliver excellence in everything we do.',
+    eyebrow: 'About Techyor.',
+    title: 'A digital product studio that ships.',
+    description: 'For 8+ years, we\'ve been building websites, web apps, and mobile products for ambitious teams across the US, UK, Switzerland, and Australia. Strategy-led, design-driven, engineered to last — we partner with founders and product teams who care about the craft as much as we do.',
     cta: [
       {
-        label: 'Go to about us',
+        label: 'About us',
         link: {
           cached_url: '/about',
           linktype: 'story',
@@ -63,9 +64,9 @@
   const newtonBlock: NewtonStoryblok = {
     component: 'newton',
     title1: 'Our services.',
-    title2: 'Design-led digital products.',
-    description: 'There is no room for shortcuts when building a great digital experience. Everything starts with thorough research and iterative experimentation. No stone is left unturned to make data-minded decisions. Then we build from scratch, designing and developing, tailored to what users need.',
-    cta_label: 'Go to services',
+    title2: 'End-to-end digital product development.',
+    description: 'Custom websites, web and mobile apps, e-commerce stores, AI-powered tools, automation workflows, and robotics interfaces — all built from scratch by a single team. We take products from research and strategy through design and into production code, so nothing gets lost in handoff.',
+    cta_label: 'Explore services',
     cta_link: {
       cached_url: '/services',
       linktype: 'story',
@@ -83,7 +84,7 @@
       story: undefined
     },
     handbook_title: 'Making it happen, with(out) chaos.',
-    handbook_description: 'We know time is scarce and life is hectic, so the bottom line is – we think, design, develop, and launch digital products.\n\nStill, if you\'re not pressed for time and are looking for an interesting read while you savour your morning coffee, here\'s our Handbook.',
+    handbook_description: 'We think, design, develop, and launch digital products — that\'s the bottom line.\n\nIf you\'d like to know how we actually work day to day, our Handbook is the long read. Make a coffee first.',
     handbook_cta_text: 'Read Handbook',
     handbook_cta_link: {
       cached_url: '/handbook',
@@ -93,50 +94,28 @@
     handbook_image: undefined
   };
 
-  const clients = [
+  const stats = [
+    { value: '8+', label: 'Years building digital products' },
+    { value: '80+', label: 'Websites and apps shipped' },
+    { value: '4', label: 'Continents served' },
+    { value: '100%', label: 'Built in-house, end to end' }
+  ];
+
+  const capabilities = [
     {
-      name: 'FCP',
-      lightLogo: '/assets/storyblok/light-fcp-final.png',
-      darkLogo: '/assets/storyblok/dark-fcp-final.png',
-      width: 326,
-      height: 84
+      title: 'Strategy.',
+      description: 'Discovery, product definition, user research, and growth planning — the groundwork that turns ideas into products people use.'
     },
     {
-      name: 'Emma',
-      lightLogo: '/assets/storyblok/emma-light.png',
-      darkLogo: '/assets/storyblok/emma-dark.png',
-      width: 1662,
-      height: 520
+      title: 'Design.',
+      description: 'UX and UI design, brand identity, design systems, and motion. Interfaces that look the part and feel right at every step.'
     },
     {
-      name: 'TFP',
-      lightLogo: '/assets/storyblok/tfp-light.png',
-      darkLogo: '/assets/storyblok/tfp-dark.png',
-      width: 1528,
-      height: 520
-    },
-    {
-      name: 'Hey Harper',
-      lightLogo: '/assets/storyblok/heyharper-light.png',
-      darkLogo: '/assets/storyblok/heyharper-dark.png',
-      width: 1980,
-      height: 520
-    },
-    {
-      name: 'allO',
-      lightLogo: '/assets/storyblok/allo-light.png',
-      darkLogo: '/assets/storyblok/allo-dark.png',
-      width: 928,
-      height: 520
-    },
-    {
-      name: 'Mishmash',
-      lightLogo: '/assets/storyblok/mishmash_lightmode.png',
-      darkLogo: '/assets/storyblok/mishmash_darkmode.png',
-      width: 1055,
-      height: 282
+      title: 'Development.',
+      description: 'Modern front-end, scalable back-end, mobile, AI integrations, and automation. Engineered to be fast, secure, and built to last.'
     }
   ];
+
 
   const sampleCareers = [
     {
@@ -245,8 +224,13 @@
 </script>
 
 <svelte:head>
-  <title>Home - Techyor</title>
-  <meta name="description" content="Digital product design and development agency." />
+  <title>Techyor — Custom Web, App & AI Product Development Agency</title>
+  <meta name="description" content="Techyor is a digital product agency in Chandigarh, India, building custom websites, web apps, mobile apps, e-commerce, AI tools, and automation for clients across the US, UK, Switzerland, and Australia. 8+ years. 80+ products shipped." />
+  <meta name="keywords" content="digital product agency, web development Chandigarh, custom software development India, mobile app development, AI development agency, e-commerce development, website design India, automation development" />
+  <meta property="og:title" content="Techyor — Custom Digital Product Development" />
+  <meta property="og:description" content="Strategy-led, design-driven digital products. 8+ years. 80+ shipped. Trusted by global teams." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
 </svelte:head>
 
 <main class="overflow-hidden">
@@ -261,7 +245,40 @@
       <br />
       <span bind:this={textElements[4]} class="mr-1 inline-block transition-all duration-500 ease-[cubic-bezier(0.34, 1.56, 0.64, 1)] text-foreground-secondary" style="opacity: 1; transform: translateY(0);">Scale.</span>
     </h1>
+    <p class="mt-6 max-w-3xl text-2xl text-foreground-secondary md:mt-8 lg:mt-10 lg:text-3xl">
+      Techyor is a digital product studio building custom websites, apps, AI tools, and automation for ambitious teams across the US, UK, Switzerland, and Australia.
+    </p>
   </div>
+
+  <!-- Stats Strip -->
+  <section class="mt-10 md:mt-14 lg:mt-20">
+    <div class="container mx-auto px-container">
+      <div class="grid grid-cols-2 gap-6 border-y py-10 md:grid-cols-4 md:gap-8 md:py-14">
+        {#each stats as stat}
+          <div class="flex flex-col">
+            <p class="text-5xl font-bold lg:text-6xl">{stat.value}</p>
+            <p class="mt-2 text-base text-foreground-secondary md:text-lg">{stat.label}</p>
+          </div>
+        {/each}
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Us / Capabilities Strip -->
+  <section class="mt-10 md:mt-14 lg:mt-20">
+    <div class="container mx-auto px-container">
+      <h2 class="text-5xl text-foreground-secondary">What we do.</h2>
+      <p class="text-5xl">Strategy. Design. Development.</p>
+      <div class="mt-8 grid grid-cols-1 gap-8 md:mt-12 md:grid-cols-3 md:gap-10">
+        {#each capabilities as cap}
+          <div class="flex flex-col">
+            <h3 class="text-3xl font-semibold">{cap.title}</h3>
+            <p class="mt-3 text-xl text-foreground-secondary">{cap.description}</p>
+          </div>
+        {/each}
+      </div>
+    </div>
+  </section>
 
   <!-- Featured Content Section -->
   <div class="transition-all duration-700 ease-[cubic-bezier(0.34, 1.56, 0.64, 1)] opacity-100 translate-y-0">
@@ -285,7 +302,8 @@
   <!-- Selected Work Section -->
   <section class="mt-10 md:mt-14 lg:mt-20 mb-12 md:mb-16 lg:mb-20">
     <div class="container mx-auto px-container">
-      <h2 class="text-5xl">Selected work.</h2>
+      <h2 class="text-5xl text-foreground-secondary">Selected work.</h2>
+      <p class="text-5xl">Products we're proud of.</p>
     </div>
     <div class="mt-4 md:mt-6 lg:mt-8">
       {#each smallHighlights.filter(h => h.content.component === 'project').slice(0, 4) as project}
@@ -315,8 +333,8 @@
   <!-- Blog Section -->
   <section class="mt-10 md:mt-14 lg:mt-20">
     <div class="container mx-auto px-container">
-      <h2 class="text-5xl text-foreground-secondary">Blog.</h2>
-      <p class="text-5xl">Our very own meggazine.</p>
+      <h2 class="text-5xl text-foreground-secondary">Insights.</h2>
+      <p class="text-5xl">Notes from the studio.</p>
     </div>
     <div class="mt-4 md:mt-6 lg:mt-8">
       {#each smallHighlights.filter(h => h.content.component === 'blog-post').slice(0, 12) as post}
@@ -326,15 +344,7 @@
   </section>
 
   <!-- Clients Section -->
-  <section class="container mx-auto mb-16 mt-20 px-container lg:my-20">
-    <h3 class="text-center text-lg text-foreground-secondary">Proud to have worked with</h3>
-    <div class="flex flex-wrap justify-center gap-12 p-6">
-      {#each clients as client}
-        <img src={client.lightLogo} alt={client.name} width={client.width} height={client.height} class="h-auto max-h-9 w-auto object-contain dark:hidden" />
-        <img src={client.darkLogo} alt={client.name} width={client.width} height={client.height} class="hidden h-auto max-h-9 w-auto object-contain dark:block" />
-      {/each}
-    </div>
-  </section>
+  <ClientsSection title="Trusted by teams in the US, UK, Switzerland, and Australia." />
 
   <!-- FAQ Section -->
   <FaqsListBlock block={commonFaqsBlock} />

@@ -2,13 +2,12 @@
   import TimelineServices from '$components/blocks/timeline-services.svelte';
   import Services from '$components/blocks/services.svelte';
   import Clients from '$components/blocks/clients.svelte';
+  import ClientsSection from '$components/sections/clients-section.svelte';
   import List from '$components/blocks/list.svelte';
   import Testimonials from '$components/blocks/testimonials.svelte';
   import ContactForm from '$components/contact-form.svelte';
   import FaqsList from '$components/blocks/faqs-list.svelte';
   import { commonFaqsBlock } from '$lib/data/faqs';
-
-  let visibleAwards = 3;
 
   const servicesBlock = {
     component: 'services',
@@ -116,11 +115,11 @@
     component: 'list',
     type: 'deliverables',
     title: 'Deliverables.',
-    subtitle: 'Including but not limited to.',
+    subtitle: 'Including, but not limited to.',
     blocks: [
       {
         deliverable: 'E-commerce',
-        description: 'The online shop where you can sell your products.',
+        description: 'Online stores crafted to turn browsers into loyal buyers.',
         link_title: 'See more',
         link: { url: '/e-commerce' }
       },
@@ -130,15 +129,15 @@
           alt: 'Browser icon'
         },
         deliverable: 'Website',
-        description: 'Things like your corporate or marketing website.'
+        description: 'Corporate, marketing, and brand sites that tell your story with clarity.'
       },
       {
         icon: {
           filename: '/assets/storyblok/laptop.webp',
           alt: 'Laptop icon'
         },
-        deliverable: 'Desktop App',
-        description: 'The apps that run natively on your computer.'
+        deliverable: 'Software',
+        description: 'Custom software and internal tools tailored to the way your team actually works.'
       },
       {
         icon: {
@@ -146,7 +145,7 @@
           alt: 'Globe icon'
         },
         deliverable: 'Web App',
-        description: 'The apps that run in your web browser.'
+        description: 'Powerful tools that live in the browser — no installs, no friction.'
       },
       {
         icon: {
@@ -154,7 +153,7 @@
           alt: 'iOS smartphone icon'
         },
         deliverable: 'Mobile App',
-        description: 'Apps that run natively on your Android and iOS phones.'
+        description: 'Native iOS and Android experiences built for the way people use their phones.'
       },
       {
         icon: {
@@ -162,119 +161,28 @@
           alt: 'Folder icon'
         },
         deliverable: 'CMS',
-        description: 'Content Management System. The system where content gets managed.'
+        description: 'Content systems your team will actually enjoy using day to day.'
       },
       {
-        icon: {
-          filename: '/assets/storyblok/watch.webp',
-          alt: 'Watch icon'
-        },
-        deliverable: 'Watch and TV App',
-        description: 'Apps that run natively on your watch or your TV.'
+        deliverable: 'AI Solutions',
+        description: 'Intelligent products, copilots, and integrations that put modern AI to work for your business.'
+      },
+      {
+        deliverable: 'Automation',
+        description: 'Workflows and integrations that quietly handle the busywork, so your team can focus on what matters.'
+      },
+      {
+        deliverable: 'Robotics',
+        description: 'Physical-meets-digital experiences — control software, firmware, and interfaces for robotic systems.'
       }
     ]
   };
 
-  const certifiedPartnersBlock = {
-    _uid: 'certified-partners-1',
-    component: 'clients' as const,
-    clients_title: 'Certified Partners',
-    clients: [
-      {
-        light_mode: {
-          filename: '/assets/storyblok/shopify-mono-black.png',
-          alt: 'Shopify'
-        },
-        dark_mode: {
-          filename: '/assets/storyblok/shopify-mono-white.png',
-          alt: 'Shopify'
-        }
-      },
-      {
-        light_mode: {
-          filename: '/assets/storyblok/sb_lighttheme.png',
-          alt: 'Storyblok'
-        },
-        dark_mode: {
-          filename: '/assets/storyblok/sb_darktheme.png',
-          alt: 'Storyblok'
-        }
-      }
-    ]
-  };
-
-  const prouldClientsBlock = {
-    _uid: 'proud-clients-1',
-    component: 'clients' as const,
-    clients_title: 'Proud to have worked with',
-    clients: [
-      {
-        light_mode: {
-          filename: '/assets/storyblok/light-fcp-final.png',
-          alt: 'FCP'
-        },
-        dark_mode: {
-          filename: '/assets/storyblok/dark-fcp-final.png',
-          alt: 'FCP'
-        }
-      },
-      {
-        light_mode: {
-          filename: '/assets/storyblok/emma-light.png',
-          alt: 'Emma Logo'
-        },
-        dark_mode: {
-          filename: '/assets/storyblok/emma-dark.png',
-          alt: 'Emma Logo'
-        }
-      },
-      {
-        light_mode: {
-          filename: '/assets/storyblok/tfp-light.png',
-          alt: 'TFP Logo'
-        },
-        dark_mode: {
-          filename: '/assets/storyblok/tfp-dark.png',
-          alt: 'TFP Logo'
-        }
-      },
-      {
-        light_mode: {
-          filename: '/assets/storyblok/heyharper-light.png',
-          alt: 'HeyHarper'
-        },
-        dark_mode: {
-          filename: '/assets/storyblok/heyharper-dark.png',
-          alt: 'HeyHarper'
-        }
-      },
-      {
-        light_mode: {
-          filename: '/assets/storyblok/allo-light.png',
-          alt: 'allO Logo'
-        },
-        dark_mode: {
-          filename: '/assets/storyblok/allo-dark.png',
-          alt: 'allO Logo'
-        }
-      },
-      {
-        light_mode: {
-          filename: '/assets/storyblok/mishmash_lightmode.png',
-          alt: 'mishmash'
-        },
-        dark_mode: {
-          filename: '/assets/storyblok/mishmash_darkmode.png',
-          alt: 'mishmash'
-        }
-      }
-    ]
-  };
 
   const timelineServicesBlock = {
     component: 'timeline-services',
-    title: 'Custom digital products built to grow with your business.',
-    description: 'Strategy-led. Design-driven.',
+    title: 'End-to-end digital products, built to grow with your business.',
+    description: 'Strategy-led. Design-driven. Engineered to last.',
     timeline: [
       {
         title: 'Strategy',
@@ -457,7 +365,7 @@
       {
         _uid: 'testimonial-1',
         component: 'richtext-testimonial' as const,
-        testimonial: 'Significa listened to our needs and delivered a solution that exceeded our expectations. Their attention to detail and creative thinking truly set them apart.',
+        testimonial: 'Techyor listened to our needs and delivered a solution that exceeded our expectations. Their attention to detail and creative thinking truly set them apart.',
         name: 'Sarah Johnson',
         position: 'CEO, Digital Innovations',
         photo: {
@@ -474,7 +382,7 @@
       {
         _uid: 'testimonial-2',
         component: 'richtext-testimonial' as const,
-        testimonial: 'Working with Significa was a game-changer for our business. They understood our vision and brought it to life with remarkable precision and creativity.',
+        testimonial: 'Working with Techyor was a game-changer for our business. They understood our vision and brought it to life with remarkable precision and creativity.',
         name: 'Michael Chen',
         position: 'Founder, Creative Studios',
         photo: {
@@ -491,7 +399,7 @@
       {
         _uid: 'testimonial-3',
         component: 'richtext-testimonial' as const,
-        testimonial: 'The team at Significa is not just talented—they\'re collaborative, responsive, and genuinely passionate about their work. Highly recommended!',
+        testimonial: 'The team at Techyor is not just talented—they\'re collaborative, responsive, and genuinely passionate about their work. Highly recommended!',
         name: 'Emma Williams',
         position: 'Product Manager, Tech Solutions',
         photo: {
@@ -508,7 +416,7 @@
       {
         _uid: 'testimonial-4',
         component: 'richtext-testimonial' as const,
-        testimonial: 'From strategy to execution, Significa handled every aspect with professionalism and excellence. Our product is better because of their expertise.',
+        testimonial: 'From strategy to execution, Techyor handled every aspect with professionalism and excellence. Our product is better because of their expertise.',
         name: 'David Martinez',
         position: 'CTO, Growth Ventures',
         photo: {
@@ -544,76 +452,13 @@
 </script>
 
 <svelte:head>
-  <title>Services</title>
-  <meta name="description" content="Our services in digital product design and development." />
+  <title>Services — Techyor</title>
+  <meta name="description" content="End-to-end digital product services — strategy, design, and development. We partner with ambitious teams to ship products people genuinely love using." />
 </svelte:head>
 
 <div class="overflow-hidden">
   <TimelineServices block={timelineServicesBlock} />
   <Services block={servicesBlock} />
-  <Clients block={certifiedPartnersBlock} />
-
-  <!-- Awards Section -->
-  <section class="mt-10 md:mt-14">
-    <div class="container mx-auto flex px-container">
-      <div class="xl:max-w-3xl">
-        <h3 class="text-5xl text-foreground-secondary">Awards.</h3>
-        <p class="text-5xl">Celebrating outstanding work.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Awards List -->
-  <section class="mt-10 md:mt-14 lg:mt-20">
-    <div class="justify-between gap-12 lg:flex">
-      <div class="flex flex-1 flex-col items-start">
-        <div class="w-full flex-1">
-          <ul>
-            {#each [
-              { href: '/projects/hey-harper', label: 'Best Of The Year', award: 'eCommerce Awards 2025', project: 'Hey Harper.', image: '/assets/storyblok/ecomawards.png' },
-              { href: '/projects/mishmash', label: 'Award', award: 'Red Dot 2025', project: 'mishmash.', image: '/assets/storyblok/reddot.webp' },
-              { href: '/projects/significa', label: 'Awwwards', award: 'Distinction 2023', project: 'Significa.', image: '/assets/storyblok/awwwardshm.png' },
-              { href: '/projects/mishmash', label: 'Awwwards', award: 'Distinction 2020', project: 'mishmash.', image: '/assets/storyblok/awwwardshm.png' },
-              { href: '/projects/vertbase', label: 'Awwwards', award: 'Distinction 2019', project: 'Vertbase.', image: '/assets/storyblok/awwwardshm.png' }
-            ] as award, i}
-              {#if i < visibleAwards}
-                <li class="block border-b first:border-t transition-colors hover:bg-foreground-tertiary/10">
-                  <a href={award.href} class="container mx-auto flex flex-col justify-between px-container py-5 lg:flex-row">
-                    <div class="flex w-full flex-col-reverse items-center lg:flex-row">
-                      <div class="mb-4 flex w-full items-center lg:mb-0">
-                        <img class="mr-2 h-auto w-14 rounded-xs bg-background-offset" src={award.image} alt={award.award} width="122" height="88">
-                        <div class="ml-4 flex-col">
-                          <p class="text-base font-semibold text-foreground-secondary">{award.label}</p>
-                          <p class="text-base font-semibold">{award.award}</p>
-                        </div>
-                      </div>
-                      <div class="mb-4 w-full lg:mb-0">
-                        <p class="text-3xl font-semibold">{award.project}</p>
-                      </div>
-                    </div>
-                    <div class="w-1/3">
-                      <div class="flex-1 justify-end text-foreground-tertiary xl:flex">
-                        <button class="group relative inline-flex items-center justify-center gap-1.5 overflow-hidden whitespace-nowrap text-md font-medium leading-none outline-none transition-all hover:ring-4 focus-visible:ring-4 active:scale-[0.98] active:ring-2 disabled:pointer-events-none disabled:opacity-60 text-foreground border-border hover:border-border-active focus-visible:border-border-active active:border-border-active border h-11 rounded-md px-5">
-                          <span>View project</span>
-                        </button>
-                      </div>
-                    </div>
-                  </a>
-                </li>
-              {/if}
-            {/each}
-          </ul>
-        </div>
-      </div>
-    </div>
-    {#if visibleAwards < 5}
-      <div class="container mx-auto flex px-container">
-        <button on:click={() => visibleAwards = 5} class="group relative inline-flex items-center justify-center gap-1.5 overflow-hidden whitespace-nowrap text-md font-medium leading-none outline-none transition-all hover:ring-4 focus-visible:ring-4 active:scale-[0.98] active:ring-2 disabled:pointer-events-none disabled:opacity-60 text-foreground border-border hover:border-border-active focus-visible:border-border-active active:border-border-active border h-11 rounded-md px-5 mt-10">
-          <span>Load more</span>
-        </button>
-      </div>
-    {/if}
-  </section>
 
   <!-- Deliverables Section -->
   <List block={deliverablesBlock} />
@@ -622,15 +467,15 @@
   <Testimonials block={testimonialsBlock} />
 
   <!-- Proud Clients Section -->
-  <Clients block={prouldClientsBlock} />
+  <ClientsSection title="Trusted by ambitious teams." />
 
   <!-- Contact Form Section -->
   <section class="container mx-auto mt-10 px-container @container lg:mt-20">
     <div class="grid grid-cols-3 overflow-hidden rounded-lg border">
       <div class="col-span-1 hidden flex-col bg-background-panel @5xl:flex">
         <div class="p-8">
-          <h3 class="text-4xl">How can we help?<br> Let's work together.</h3>
-          <p class="mt-4 text-xl text-foreground-secondary">Working together takes some practice to get in sync, but once we find our rhythm, the result can be magical!</p>
+          <h3 class="text-4xl">Have a project in mind?<br> Let's make it happen.</h3>
+          <p class="mt-4 text-xl text-foreground-secondary">Tell us about your goals, your timeline, and the problem you're solving. We'll get back within a business day with thoughts, questions, and next steps.</p>
         </div>
       </div>
       <div class="col-span-3 bg-background-panel p-4 pt-8 @5xl:col-span-2 @5xl:border-l @5xl:p-8">

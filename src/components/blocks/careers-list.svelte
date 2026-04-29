@@ -4,8 +4,6 @@
 
   import { Button } from '@techyor/svelte-ui';
 
-  import { t } from '$lib/i18n';
-  import { sanitizeSlug } from '$lib/utils/paths';
   import { getAnchorFromCmsLink } from '$lib/utils/cms';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
 
@@ -20,22 +18,15 @@
         {#if $page.data.careers?.length}
           <ul class="mt-10">
             {#each $page.data.careers as career}
-              {@const href = sanitizeSlug(career.full_slug)}
               <li class="border-b first:border-t">
-                <a
-                  class="flex w-full items-center justify-between py-4 text-xl transition-colors hover:text-foreground-secondary"
-                  {href}
-                >
-                  <span>{career.name}</span>
-                  <Button
-                    as="a"
-                    {href}
-                    variant="secondary"
-                    arrow
-                    size="sm"
-                    aria-label={t('a11y.see-career')}
-                  />
-                </a>
+                <div class="flex w-full flex-col gap-1 py-4 sm:flex-row sm:items-center sm:justify-between">
+                  <span class="text-xl">{career.name}</span>
+                  {#if career.content?.location || career.content?.employment_type}
+                    <span class="text-sm text-foreground-secondary">
+                      {[career.content?.employment_type, career.content?.location].filter(Boolean).join(' · ')}
+                    </span>
+                  {/if}
+                </div>
               </li>
             {/each}
           </ul>

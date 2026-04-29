@@ -9,23 +9,25 @@
 <section use:storyblokEditable={block} class="container mx-auto mb-16 mt-20 px-container lg:my-20">
   <h3 class="text-center text-lg text-foreground-secondary">{block.clients_title}</h3>
   {#if block.clients}
-    <div class="flex flex-wrap justify-center gap-12 p-6">
+    <div class="flex flex-wrap justify-center gap-6 p-6">
       {#each block.clients as client, i}
         {#if client.light_mode?.filename}
           {@const { src, alt, width, height } = getImageAttributes(client.light_mode)}
           {#if block.links && block.links[i]?.link}
             {@const { href, target, rel } = getAnchorFromCmsLink(block.links[i].link)}
-            <a {href} {target} {rel} class="dark:hidden">
-              <img {src} {alt} {width} {height} class="h-auto max-h-9 w-auto object-contain" />
+            <a {href} {target} {rel} class="group transition-all duration-300 dark:hidden">
+              <img {src} {alt} {width} {height} class="h-auto max-h-16 w-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-300" />
             </a>
           {:else}
-            <img
-              {src}
-              {alt}
-              {width}
-              {height}
-              class="h-auto max-h-9 w-auto object-contain dark:hidden"
-            />
+            <div class="group">
+              <img
+                {src}
+                {alt}
+                {width}
+                {height}
+                class="h-auto max-h-16 w-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-300 dark:hidden"
+              />
+            </div>
           {/if}
         {/if}
 
@@ -33,17 +35,19 @@
           {@const { src, alt, width, height } = getImageAttributes(client.dark_mode)}
           {#if block.links && block.links[i]?.link}
             {@const { href, target, rel } = getAnchorFromCmsLink(block.links[i].link)}
-            <a {rel} {href} {target} class="hidden dark:block">
-              <img {src} {alt} {width} {height} class="h-auto max-h-9 w-auto object-contain" />
+            <a {rel} {href} {target} class="group transition-all duration-300 hidden dark:block">
+              <img {src} {alt} {width} {height} class="h-auto max-h-16 w-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-300" />
             </a>
           {:else}
-            <img
-              {src}
-              {alt}
-              {width}
-              {height}
-              class="hidden h-auto max-h-9 w-auto object-contain dark:block"
-            />
+            <div class="group">
+              <img
+                {src}
+                {alt}
+                {width}
+                {height}
+                class="hidden h-auto max-h-16 w-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-300 dark:block"
+              />
+            </div>
           {/if}
         {/if}
       {/each}

@@ -2,8 +2,9 @@
   import clsx from 'clsx';
   import { Confetti } from 'svelte-confetti';
   import TimelineCell from './timeline-cell.svelte';
-  import NeedleHead from './illustrations/needle-head.webp';
   import Needle from './needle.svelte';
+
+  const NeedleHead = '/assets/storyblok/experience-badge.webp';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import { CONFETTI_COLOR_ARRAY } from '$lib/constants';
   import type { ServiceTimelineRowStoryblok } from '$types/bloks';
@@ -117,7 +118,7 @@
           width="69"
           height="85"
           draggable="false"
-          class="handler z-20 hidden min-w-[69px] animate-shake cursor-ew-resize select-none transition-all hover:rotate-6 lg:flex"
+          class="handler z-20 hidden min-w-[69px] -scale-x-100 animate-shake cursor-ew-resize select-none transition-all hover:rotate-6 lg:flex"
         />
         <div bind:this={needle} class="-mt-6 hidden h-full animate-shake lg:block">
           <Needle class="h-full" />
@@ -147,7 +148,7 @@
         width="69"
         height="85"
         draggable="false"
-        class="absolute -top-3 z-20 -translate-x-1/2 select-none lg:hidden"
+        class="absolute -top-3 z-20 -translate-x-1/2 -scale-x-100 select-none lg:hidden"
         style="left:{drag ? drag + 'px' : '50%'}"
       />
       <div

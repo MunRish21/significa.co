@@ -39,7 +39,26 @@ export async function fetchEntries<T>(): Promise<T[]> {
   return [];
 }
 
-export const fetchCareers = async () => [];
+export const fetchCareers = async () => [
+  {
+    id: 1,
+    uuid: 'career-social-media-executive',
+    name: 'Social Media Executive',
+    slug: 'social-media-executive',
+    full_slug: 'careers/social-media-executive',
+    created_at: '2026-04-29T00:00:00.000Z',
+    published_at: '2026-04-29T00:00:00.000Z',
+    first_published_at: '2026-04-29T00:00:00.000Z',
+    tag_list: ['Marketing', 'Social Media', 'Full-time'],
+    content: {
+      component: 'career',
+      location: 'Remote',
+      employment_type: 'Full-time',
+      summary:
+        'Own our LinkedIn presence and social media platforms — craft posts, grow our audience, and tell the Techyor story to the world.'
+    }
+  }
+];
 export const fetchAwards = async () => [];
 export const getAwards = async () => ({ data: { stories: [] } });
 export const fetchAwardsTypes = async () => [];
