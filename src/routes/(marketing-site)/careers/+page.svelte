@@ -176,7 +176,7 @@
   <meta name="description" content="Join our team. We're looking for talented designers and developers." />
 </svelte:head>
 
-<main>
+<main class="overflow-hidden">
   <!-- Hero Section -->
   <section class="container mx-auto px-container pb-16 md:pb-20 lg:pb-24">
     <h1 class="mt-10 text-7xl font-bold md:mt-14 lg:mt-20">Careers.</h1>
