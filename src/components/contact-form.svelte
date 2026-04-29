@@ -152,7 +152,6 @@
 
     return async ({ update, result }) => {
       loading = false;
-      files = [];
 
       await applyAction(result);
       await update();
@@ -231,7 +230,7 @@
       size="lg"
       arrow
       {loading}
-      disabled={loading || files.some((f) => f.status === 'uploading')}
+      disabled={loading}
       >{t('contact.submit')}</Button
     >
     <div class="text-sm">
