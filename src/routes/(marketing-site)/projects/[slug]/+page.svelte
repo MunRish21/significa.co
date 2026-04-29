@@ -465,6 +465,111 @@
           </p>
         {/if}
 
+        <!-- Shades of Gray Indigenous Pet Treats Content -->
+        {#if project.slug === 'indigenous-treats'}
+          <h2 class="mx-auto max-w-2xl"><b>The challenge.</b></h2>
+          <p class="mx-auto max-w-2xl">
+            Shades of Gray is a family-owned, Indigenous-founded premium pet treats brand built on a single, uncompromising idea: dogs and cats deserve the same single-ingredient, ethically sourced proteins their wild ancestors thrived on. The catalogue is anchored by five proteins almost no other pet brand carries — rabbit, beaver, bison, elk, and venison — sourced ethically and finished into rolls, strips, ears, feet, tenderloins, and meal toppers, all gluten-, antibiotic-, and preservative-free. The brand had earned real traction (a CBC feature, a finalist run on Bears\' Lair, write-ups in Pet Food Industry, Canadian Dogs, and Animal Wellness), but the legacy storefront couldn\'t carry that story or the operational reality of the business: a fast-growing direct-to-consumer subscription audience, a meaningful retail wholesale channel, an Indigenous heritage narrative that needed real space, and a steady drumbeat of new product launches across two species and five proteins.
+          </p>
+
+          <p class="mx-auto max-w-2xl">
+            The brief was a full replatform: take everything that made the brand resonate — the founder\'s story, the editorial outdoor photography, the clarity of single-protein nutrition, the press credibility — and rebuild the storefront from scratch on Shopify in a window that left no time for off-the-shelf compromises. The hard part was that the rebuild had to do three different jobs at once: convert a first-time pet owner who landed via a CBC link, retain a returning subscriber who just wanted to refill rabbit rolls in two clicks, and onboard a wholesale buyer who needed access to bulk pricing behind a separate login.
+          </p>
+
+          <h2 class="mx-auto max-w-2xl"><b>Replatforming to Shopify in two months.</b></h2>
+          <p class="mx-auto max-w-2xl">
+            We built the entire storefront from scratch on Shopify across an eight-week engagement — custom theme, custom templates, full content migration from the legacy site, and a redesigned visual system anchored on the brand\'s warm, earthy palette and outdoor lifestyle photography. The home page was rebuilt around two emotional cues that mattered most to the customer: the protein, and the promise of never running out of it. The before-and-after below tells the story in a single drag — the legacy hero stacked a paragraph of copy, two competing CTA buttons, and a press wall above the fold; the new homepage reduces that to five hand-drawn animal silhouettes (Rabbit, Beaver, Bison, Elk, Venison) acting as a single-tap gateway into protein-specific collections, with a Subscribe &amp; Save block carrying the lifetime-value side of the business with a clear value exchange (10% off every month, free shipping at $50+ for subscribers vs $100+ regular, never run out).
+          </p>
+
+          <ComparisonSlider
+            beforeImage="/assets/projects/indigenous-treats/before-homepage.png"
+            afterImage="/assets/projects/indigenous-treats/homepage-proteins.png"
+            beforeLabel="Legacy homepage"
+            afterLabel="Redesigned homepage"
+          />
+
+          <h2 class="mx-auto max-w-2xl"><b>An icon-led single-protein navigation system.</b></h2>
+          <p class="mx-auto max-w-2xl">
+            Most pet brands force customers to filter by species first, then sift through a generic catalogue. Shades of Gray inverts that: the protein is the brand, so the protein is the navigation. We built a custom homepage navigation strip and matching collection-template pattern where each animal silhouette deep-links into a curated protein collection (every rabbit format across dogs and cats; every elk SKU side-by-side; bundles and meal toppers grouped by protein). On the catalogue page, the same logic resurfaces as a Protein Options filter alongside Availability and Price, with a sticky filter rail, an in-stock count, and a clean four-up product grid that reads more like an editorial than a typical Shopify collection. Drag the slider below to compare the legacy All Products page (28 SKUs, two-up grid, generic Shopify chrome) against the redesigned catalogue (40 SKUs, four-up editorial grid, custom filter rail, four-tile collection header).
+          </p>
+
+          <ComparisonSlider
+            beforeImage="/assets/projects/indigenous-treats/before-product-listing.png"
+            afterImage="/assets/projects/indigenous-treats/product-listing.png"
+            beforeLabel="Legacy All Products page"
+            afterLabel="Redesigned All Products page"
+          />
+
+          <h2 class="mx-auto max-w-2xl"><b>A custom B2B wholesale portal.</b></h2>
+          <p class="mx-auto max-w-2xl">
+            The largest piece of custom engineering on the project was the wholesale channel. Retailers need an entirely different storefront experience from end consumers: tiered bulk pricing, minimum order quantities, account-locked catalogues, and a registration flow that includes business verification before any pricing is exposed. We built a fully custom B2B portal sitting alongside the consumer storefront — its own login surface, its own product catalogue, and its own approval-based registration flow — so wholesale buyers see prices and SKUs the retail visitor never does, while the brand can manage both audiences from a single Shopify backend. The wholesale entry sits in the primary navigation as a first-class destination, signalling to retailers that the channel is real and supported, not a back-door form.
+          </p>
+
+          <ImageSection
+            src="/assets/projects/indigenous-treats/wholesale-login.png"
+            alt="Wholesale Login page with email and password fields, a Sign Up Here link for new wholesale accounts, and a forgot password link"
+            width={2880}
+            height={1800}
+          />
+
+          <h2 class="mx-auto max-w-2xl"><b>A Subscribe &amp; Save engine built into the buying flow.</b></h2>
+          <p class="mx-auto max-w-2xl">
+            Pet treats are the perfect subscription category — predictable consumption, strong brand affinity, and a real cost to running out — so we treated subscriptions as a first-class buying mode, not an upsell tab. Shoppers can choose a one-time purchase or a recurring delivery on every product page; subscribers unlock a 10% recurring discount, the lower $50 free-shipping threshold, and customizable order frequencies tied to how fast their pet actually goes through a bag. The subscriber promise — "Never Run Out of Your Pet\'s Favourite Single-Protein Treats" — runs through the homepage, the product page, and the post-purchase flow, with the operational engine handling scheduling, payment retries, and frequency changes from the customer account area.
+          </p>
+
+          <h2 class="mx-auto max-w-2xl"><b>Dual customer login with Shop integration.</b></h2>
+          <p class="mx-auto max-w-2xl">
+            The retail customer login was rebuilt to support two parallel paths: a standard email-and-password sign-in for direct customers managing subscriptions, and a one-tap "Sign in with Shop" flow for the meaningful share of buyers already logged into Shop Pay across the wider Shopify ecosystem. The design borrows the same restrained type system as the rest of the site, surfaces a "Get Early Access to Subscriber-Only Promotions &amp; Exclusive Releases" hook below the fold to convert account creation into list growth, and is intentionally clean — no upsells, no discounts banners, no dark-pattern frequency traps.
+          </p>
+
+          <ImageSection
+            src="/assets/projects/indigenous-treats/customer-login.png"
+            alt="Customer Login page with a Sign in with Shop button, an email and password sign-in fallback, and a subscriber-only promotions promise below the fold"
+            width={2880}
+            height={1800}
+          />
+
+          <h2 class="mx-auto max-w-2xl"><b>The founder\'s story, given real space.</b></h2>
+          <p class="mx-auto max-w-2xl">
+            Shades of Gray is a family-owned business, founded by an Indigenous woman, with a manufacturing footprint in Roseneath, Ontario. The brand exists because of that story, not in spite of it — and the legacy site never had room to tell it well. We rebuilt the About surface around a full-bleed lifestyle hero (founder and dog in a snow-blanketed Ontario forest), an "Organic Canadian Goodness — Our Story" long-form section, and a dedicated content cluster across About Us, Indigenous Heritage, Healthy Treats &amp; Proteins, and Natural Pet Diets. The result is a brand site that earns the press attention it has already received, and gives a CBC reader landing on the homepage the depth they came looking for.
+          </p>
+
+          <ImageSection
+            src="/assets/projects/indigenous-treats/about-us.png"
+            alt="About Us page hero with a full-bleed lifestyle photo of the founder walking a dog through a snow-blanketed forest, with the headline About Us and a subhead about being a family-owned Canadian business making high-quality all-natural pet treats"
+            width={2880}
+            height={1800}
+          />
+
+          <h2 class="mx-auto max-w-2xl"><b>Reviews as a first-class trust layer.</b></h2>
+          <p class="mx-auto max-w-2xl">
+            With 186-plus verified product reviews and a 4.81-out-of-5 aggregate rating, social proof was already one of the brand\'s strongest assets — it just wasn\'t doing any work on the legacy site. We built a dedicated Reviews page that surfaces a five-star distribution chart, the verified-buyer badge on every review, named reviewers attached to specific products (Rabbit Pet Treats, Freeze Dried Rabbit, Pearl), and a one-tap "Write a Store Review" CTA. Review snippets also resurface across product pages and the homepage, so a first-time visitor sees real customers vouching for the same SKU they\'re considering, and an SEO crawler sees structured social proof on every commerce surface.
+          </p>
+
+          <ImageSection
+            src="/assets/projects/indigenous-treats/reviews.png"
+            alt="Reviews page showing three verified five-star customer reviews with named reviewers and product attributions, an aggregate score of 4.81 out of 5 based on 186 reviews, and a Write a Store Review call to action"
+            width={2880}
+            height={1800}
+          />
+
+          <Testimonial
+            quote="The team rebuilt the entire storefront from scratch on Shopify in two months and gave us something the legacy site never could — a real home for our heritage story, a wholesale channel that actually works for our retailers, and a subscription experience that keeps customers coming back. The site finally matches the quality of the product."
+            author="Founder"
+            title="Shades of Gray Indigenous Pet Treats"
+            image="/assets/storyblok/placeholder.jpeg"
+          />
+
+          <h2 class="mx-auto max-w-2xl"><b>Results &amp; impact.</b></h2>
+          <p class="mx-auto max-w-2xl">
+            The replatform shipped inside the two-month window as a fully custom Shopify build. Five single-protein collections are now navigable in a single tap from the homepage, the catalogue surfaces 40 active SKUs across dogs, cats, bundles, and gift cards with sticky protein and price filters, the Subscribe &amp; Save engine handles the brand\'s recurring revenue with frequency control and a 10% subscriber discount, and the custom B2B wholesale portal supports the retail channel with its own login, registration, and pricing — all from a single Shopify backend. The storefront carries 186-plus verified reviews at a 4.81-star average, surfaces the brand\'s CBC, Bears\' Lair, and trade-press coverage as trust signals, and gives the founder\'s Indigenous heritage story the editorial space it deserves.
+          </p>
+
+          <p class="mx-auto max-w-2xl">
+            More importantly, the platform was built so the team can keep launching new proteins, new bundles, new educational content, and new retail relationships without the storefront becoming the bottleneck. That was the real brief: take a brand whose product, story, and press were already strong, and build it a digital home that finally matches.
+          </p>
+        {/if}
+
         <!-- SimpleTalk AI Content -->
         {#if project.slug === 'simpletalk-ai'}
           <h2 class="mx-auto max-w-2xl"><b>The challenge.</b></h2>

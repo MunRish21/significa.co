@@ -588,19 +588,39 @@ export const projectsData = [
   {
     id: 21,
     slug: 'indigenous-treats',
-    name: 'Indigenous Treats',
-    tagline: 'E-commerce platform for indigenous food and beverage products',
+    name: 'Shades of Gray Indigenous Pet Treats',
+    tagline: 'A from-scratch Shopify replatform for an Indigenous-founded premium pet treats brand — single-protein storytelling, a custom B2B wholesale portal, and a Subscribe & Save engine, shipped in two months.',
     image: '/assets/projects/indigenous-treats/cover.png',
     coverImage: '/assets/projects/indigenous-treats/cover.png',
     publishedYear: 2023,
-    services: ['E-commerce', 'Food & Beverage'],
-    deliverables: ['E-commerce Platform'],
+    services: [
+      'E-commerce Strategy',
+      'UX & UI Design',
+      'Shopify Theme Development',
+      'B2B Wholesale Portal',
+      'Subscribe & Save Configuration',
+      'Content Migration',
+      'Brand-led Web Design'
+    ],
+    deliverables: [
+      'Shopify Storefront',
+      'Custom Wholesale B2B Login & Catalogue',
+      'Single-Protein Navigation System',
+      'Subscription Engine',
+      'Reviews & Press Surfaces',
+      'Educational Content Hub'
+    ],
     links: [
       { label: 'Website', url: 'https://indigenoustreats.ca' }
     ],
     team: [],
-    metrics: [],
-    intro: 'Indigenous Treats is an e-commerce platform built on Shopify celebrating indigenous food and beverage traditions. The platform features authentic products while supporting indigenous communities and cultural preservation. With detailed product information and storytelling around cultural significance, Indigenous Treats connects consumers with authentic indigenous products.',
+    metrics: [
+      { label: 'Build Time', value: '2 mo', tooltip: 'End-to-end Shopify replatform', isPositive: true },
+      { label: 'Reviews', value: '186+', tooltip: 'Verified customer reviews on the storefront', isPositive: true },
+      { label: 'Avg Rating', value: '4.81/5', tooltip: 'Aggregate review score across the catalogue', isPositive: true },
+      { label: 'Single Proteins', value: '5', tooltip: 'Rabbit, Beaver, Bison, Elk, Venison', isPositive: true }
+    ],
+    intro: 'Shades of Gray Indigenous Pet Treats is a family-owned, Indigenous-founded premium pet treats brand based in Roseneath, Ontario, known for single-protein, gluten-, antibiotic- and preservative-free dog and cat treats sourced from rabbit, beaver, bison, elk, and venison. We replatformed the brand from its legacy storefront onto Shopify in a two-month engagement — designing and building the entire experience from scratch around the brand\'s Indigenous heritage story, an icon-led single-protein navigation system, a Subscribe & Save subscription engine, and a fully custom B2B wholesale portal with its own login, registration, and product catalogue. The result is a storefront that carries the founder\'s heritage and editorial photography with the operational depth needed to run direct-to-consumer subscriptions, retail wholesale, and a press- and review-driven trust layer in parallel.',
     awards: []
   },
   {
