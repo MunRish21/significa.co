@@ -1,6 +1,7 @@
 <script lang="ts">
   import { slide } from 'svelte/transition';
   import { projectsData } from '$lib/data/projects';
+  import { generateBreadcrumbSchema, generateProjectSchema } from '$lib/utils/schema';
 
   const projects = projectsData;
 
@@ -46,8 +47,28 @@
 </script>
 
 <svelte:head>
-  <title>Projects - Techyor</title>
-  <meta name="description" content="Explore our portfolio of digital product design and development projects." />
+  <title>Projects — Digital Product Design & Development Portfolio | Techyor</title>
+  <meta name="description" content="Explore Techyor's portfolio of 80+ digital products. Custom websites, web apps, mobile apps, e-commerce platforms, AI tools, and automation solutions built for ambitious teams." />
+  <script type="application/ld+json">{generateBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Projects', url: '/projects' }
+  ])}</script>
+  <script type="application/ld+json">
+    {JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      name: 'Techyor Projects',
+      description: 'Portfolio of digital products including websites, apps, and custom solutions',
+      url: 'https://www.techyor.com/projects',
+      mainEntity: projectsData.slice(0, 5).map(project => ({
+        '@type': 'CreativeWork',
+        name: project.name,
+        description: project.tagline,
+        image: 'https://www.techyor.com' + project.image,
+        url: 'https://www.techyor.com/projects/' + project.slug
+      }))
+    })}
+  </script>
 </svelte:head>
 
 <main class="overflow-hidden">

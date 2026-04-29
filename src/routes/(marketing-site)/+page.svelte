@@ -14,6 +14,7 @@
   import { commonFaqsBlock } from '$lib/data/faqs';
   import type { HomePageStoryblok, NewtonStoryblok, TextWithMediaStoryblok, AboutGridStoryblok, CareersListStoryblok } from '$types/bloks';
   import { getImageAttributes } from '$lib/utils/cms';
+  import { generateOrganizationSchema, generateFAQSchema } from '$lib/utils/schema';
 
   let textElements: HTMLElement[] = [];
 
@@ -231,6 +232,11 @@
   <meta property="og:description" content="Strategy-led, design-driven digital products. 8+ years. 80+ shipped. Trusted by global teams." />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">{generateOrganizationSchema()}</script>
+  <script type="application/ld+json">{generateFAQSchema(commonFaqsBlock.faqs_items.map(item => ({
+    question: item.question,
+    answer: item.answer
+  })))}</script>
 </svelte:head>
 
 <main class="overflow-hidden">

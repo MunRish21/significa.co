@@ -3,6 +3,7 @@
   import BlogEntry from '$components/blog-entry.svelte';
   import type { ISbStoryData } from '@storyblok/js';
   import type { BlogPostStoryblok, TeamMemberStoryblok } from '$types/bloks';
+  import { generateBreadcrumbSchema } from '$lib/utils/schema';
 
   type Post = ISbStoryData<
     Omit<BlogPostStoryblok, 'author'> & {
@@ -281,8 +282,25 @@
 </script>
 
 <svelte:head>
-  <title>Blog - Techyor</title>
-  <meta name="description" content="Read our latest articles on design, development, and digital innovation." />
+  <title>Blog — Insights on Design, Development & Digital Innovation | Techyor</title>
+  <meta name="description" content="Read articles and insights on web design, software development, AI, e-commerce, and digital product innovation from the Techyor team." />
+  <script type="application/ld+json">{generateBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Blog', url: '/blog' }
+  ])}</script>
+  <script type="application/ld+json">
+    {JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Blog',
+      name: 'Techyor Blog',
+      description: 'Articles on web design, development, AI, and digital innovation',
+      url: 'https://www.techyor.com/blog',
+      publisher: {
+        '@type': 'Organization',
+        name: 'Techyor'
+      }
+    })}
+  </script>
 </svelte:head>
 
 <main class="overflow-hidden">

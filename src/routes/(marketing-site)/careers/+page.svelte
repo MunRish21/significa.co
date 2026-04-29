@@ -5,6 +5,7 @@
   import BenefitsSection from '$components/blocks/benefits-section.svelte';
   import RandomizedHoverableGallery from '$components/randomized-hoverable-gallery.svelte';
   import type { OpenPositionsStoryblok } from '$types/bloks';
+  import { generateOrganizationSchema, generateBreadcrumbSchema, generateJobPostingSchema } from '$lib/utils/schema';
 
   const openPositionsBlock: OpenPositionsStoryblok = {
     component: 'open-positions',
@@ -102,6 +103,13 @@
   <meta property="og:title" content="Careers at Techyor — Join Our Team" />
   <meta property="og:description" content="Open positions at Techyor in Chandigarh, India. Remote-friendly, full-time roles. Build digital products for global clients." />
   <meta property="og:type" content="website" />
+  <script type="application/ld+json">{generateOrganizationSchema()}</script>
+  <script type="application/ld+json">{generateBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Careers', url: '/careers' }
+  ])}</script>
+  <script type="application/ld+json">{generateJobPostingSchema('Digital Product Designer', 'Join Techyor as a Digital Product Designer. Build beautiful and functional digital products.')}</script>
+  <script type="application/ld+json">{generateJobPostingSchema('Full Stack Developer', 'Join Techyor as a Full Stack Developer. Work on cutting-edge web and mobile applications.')}</script>
 </svelte:head>
 
 <main class="overflow-hidden">

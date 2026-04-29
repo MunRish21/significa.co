@@ -5,6 +5,7 @@
   import ClientsSection from '$components/sections/clients-section.svelte';
   import OfficeCards from '$components/blocks/office-cards.svelte';
   import { commonFaqsBlock } from '$lib/data/faqs';
+  import { generateOrganizationSchema, generateFAQSchema, generateBreadcrumbSchema } from '$lib/utils/schema';
 
   const physicsBlock = {
     component: 'physics',
@@ -118,8 +119,17 @@
 </script>
 
 <svelte:head>
-  <title>About Techyor</title>
-  <meta name="description" content="Learn about Techyor - our mission, values, and team." />
+  <title>About Techyor — Our Mission, Values & Team</title>
+  <meta name="description" content="Learn about Techyor - a digital product studio with 8+ years of experience building websites, web apps, and mobile products. Discover our mission, values, and remote-first approach." />
+  <script type="application/ld+json">{generateOrganizationSchema()}</script>
+  <script type="application/ld+json">{generateBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'About', url: '/about' }
+  ])}</script>
+  <script type="application/ld+json">{generateFAQSchema(commonFaqsBlock.faqs_items.map(item => ({
+    question: item.question,
+    answer: item.answer
+  })))}</script>
 </svelte:head>
 
 <div class="overflow-hidden">

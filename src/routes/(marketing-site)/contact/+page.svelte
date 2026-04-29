@@ -4,6 +4,7 @@
   import Segg2 from '$components/pages/contact/illustrations/segg2.svelte';
   import PanWithEggs from '$components/pages/contact/pan-with-eggs.svelte';
   import RandomizedHoverableGallery from '$components/randomized-hoverable-gallery.svelte';
+  import { generateOrganizationSchema, generateBreadcrumbSchema } from '$lib/utils/schema';
 
   const galleryCards = [
     {
@@ -49,8 +50,13 @@
 </script>
 
 <svelte:head>
-  <title>Contact Us — Techyor</title>
-  <meta name="description" content="Got a project in mind? Drop us a message and we'll get back within 24 hours. No lengthy briefs needed — just tell us what you're thinking." />
+  <title>Contact Techyor — Get a Quote for Your Digital Product</title>
+  <meta name="description" content="Got a project in mind? Drop us a message and we'll get back within 24 hours. No lengthy briefs needed — just tell us what you're thinking. Email: info@techyor.com | Phone: +91 9915002625" />
+  <script type="application/ld+json">{generateOrganizationSchema()}</script>
+  <script type="application/ld+json">{generateBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Contact', url: '/contact' }
+  ])}</script>
 </svelte:head>
 
 <div class="overflow-hidden">

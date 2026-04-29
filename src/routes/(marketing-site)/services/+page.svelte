@@ -8,6 +8,7 @@
   import ContactForm from '$components/contact-form.svelte';
   import FaqsList from '$components/blocks/faqs-list.svelte';
   import { commonFaqsBlock } from '$lib/data/faqs';
+  import { generateOrganizationSchema, generateBreadcrumbSchema, generateServiceSchema, generateFAQSchema } from '$lib/utils/schema';
 
   const servicesBlock = {
     component: 'services',
@@ -452,8 +453,18 @@
 </script>
 
 <svelte:head>
-  <title>Services — Techyor</title>
-  <meta name="description" content="End-to-end digital product services — strategy, design, and development. We partner with ambitious teams to ship products people genuinely love using." />
+  <title>Services — Strategy, Design & Development | Techyor</title>
+  <meta name="description" content="End-to-end digital product services — strategy, design, and development. Custom websites, web apps, mobile apps, AI tools, and automation. We partner with ambitious teams to ship products people genuinely love." />
+  <script type="application/ld+json">{generateOrganizationSchema()}</script>
+  <script type="application/ld+json">{generateBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Services', url: '/services' }
+  ])}</script>
+  <script type="application/ld+json">{generateServiceSchema('Digital Product Services', 'End-to-end digital product development including strategy, design, development, and deployment.')}</script>
+  <script type="application/ld+json">{generateFAQSchema(commonFaqsBlock.faqs_items.map(item => ({
+    question: item.question,
+    answer: item.answer
+  })))}</script>
 </svelte:head>
 
 <div class="overflow-hidden">
