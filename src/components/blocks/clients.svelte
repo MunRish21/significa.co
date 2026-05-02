@@ -9,7 +9,7 @@
 <section use:storyblokEditable={block} class="container mx-auto mb-16 mt-20 px-container lg:my-20">
   <h3 class="text-center text-lg text-foreground-secondary">{block.clients_title}</h3>
   {#if block.clients}
-    <div class="flex flex-wrap justify-center gap-6 p-6">
+    <div class="flex flex-wrap justify-center gap-9 p-6">
       {#each block.clients as client, i}
         {#if client.light_mode?.filename}
           {@const { src, alt, width, height } = getImageAttributes(client.light_mode)}
