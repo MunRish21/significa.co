@@ -5,7 +5,7 @@
   import ImageGallery from '$components/image-gallery.svelte';
   import PageDrawer from '$components/page-drawer.svelte';
   import { toast, Toaster, ToastNotification } from '@techyor/svelte-ui';
-  import { beforeNavigate } from '$app/navigation';
+  import { afterNavigate, beforeNavigate } from '$app/navigation';
   import { browser } from '$app/environment';
 
   import {
@@ -27,6 +27,16 @@
 
   beforeNavigate(() => {
     toast.clearAll();
+  });
+
+  afterNavigate(({ to }) => {
+    if (!browser || !to) return;
+    const w = window as unknown as { gtag?: (...args: unknown[]) => void };
+    w.gtag?.('event', 'page_view', {
+      page_path: to.url.pathname + to.url.search,
+      page_location: to.url.href,
+      page_title: document.title
+    });
   });
 
   const queryClient = new QueryClient();
