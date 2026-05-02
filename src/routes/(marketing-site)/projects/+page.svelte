@@ -2,6 +2,7 @@
   import { slide } from 'svelte/transition';
   import { projectsData } from '$lib/data/projects';
   import { generateBreadcrumbSchema, generateProjectSchema } from '$lib/utils/schema';
+  import OptimizedImage from '$components/optimized-image.svelte';
 
   const projects = projectsData;
 
@@ -178,7 +179,7 @@
                 </i>
               </a>
             </div>
-            <img
+            <OptimizedImage
               class="mt-8 h-auto w-full rounded-md bg-background-offset"
               src={project.image}
               alt={project.name}
@@ -244,7 +245,7 @@
               </a>
             </div>
             <div class="pointer-events-none relative mt-8 aspect-[4/3] flex-1 @5xl:mt-0">
-              <img
+              <OptimizedImage
                 class="h-full w-full rounded-md bg-background-offset object-cover"
                 src={project.image}
                 alt={project.name}

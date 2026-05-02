@@ -1,4 +1,6 @@
 <script lang="ts">
+  import OptimizedImage from '$components/optimized-image.svelte';
+
   export let label: string;
   export let value: string;
   export let tooltip: string;
@@ -11,7 +13,7 @@
       <div>
         <p class="text-xs font-medium uppercase">{label}</p>
         <div class="flex items-center gap-1.5">
-          <img
+          <OptimizedImage
             class="max-h-1.5"
             src="/assets/storyblok/polygon.png"
             alt={isPositive ? 'increase' : 'decrease'}

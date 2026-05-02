@@ -9,6 +9,7 @@
   import TeamSection from '$components/blocks/project-blocks/team-section.svelte';
   import MetricsSection from '$components/blocks/project-blocks/metrics-section.svelte';
   import ContactCtaSection from '$components/blocks/project-blocks/contact-cta-section.svelte';
+  import OptimizedImage from '$components/optimized-image.svelte';
 
   export let data;
 
@@ -209,7 +210,7 @@
                   </i>
                 </a>
               </div>
-              <img
+              <OptimizedImage
                 class="mt-8 h-auto w-full rounded-md bg-background-offset"
                 src={project.image}
                 alt={project.name}
@@ -275,7 +276,7 @@
                 </a>
               </div>
               <div class="pointer-events-none relative mt-8 aspect-[4/3] flex-1 @5xl:mt-0">
-                <img
+                <OptimizedImage
                   class="h-full w-full rounded-md bg-background-offset object-cover"
                   src={project.image}
                   alt={project.name}
@@ -306,12 +307,13 @@
     <!-- Cover Image -->
     <section class="relative overflow-hidden">
       <div class="container mx-auto px-container">
-        <img
+        <OptimizedImage
           src={project.coverImage}
           alt={project.name}
           class="h-auto w-full rounded-md bg-background-offset"
           width="3200"
           height="1800"
+          loading="eager"
         />
       </div>
     </section>
