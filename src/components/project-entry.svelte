@@ -10,6 +10,7 @@
   import Recognitions from './recognitions.svelte';
   import type { ProjectPage } from '$lib/content';
   import { page } from '$app/stores';
+  import OptimizedImage from '$components/OptimizedImage.svelte';
 
   export let project: ISbStoryData<ProjectStoryblok> | ProjectPage;
   export let variant: 'featured' | 'default' = 'default';
@@ -93,15 +94,14 @@
           src={reelSrc}
         />
       {:else if showCover && project.content.cover?.filename}
-        {@const { src, alt, width, height } = getImageAttributes(project.content.cover, {
+        {@const { src, alt } = getImageAttributes(project.content.cover, {
           size: [1440 * 2, 0]
         })}
-        <img
+        <OptimizedImage
           class="mt-8 h-auto w-full rounded-md bg-background-offset"
           {src}
           {alt}
-          {width}
-          {height}
+          sizes="(min-width: 1440px) 1440px, 100vw"
         />
       {/if}
     {/if}
@@ -109,17 +109,17 @@
     {#if variant === 'default' && project.content.thumbnail.length}
       {@const image = project.content.thumbnail[index]}
       {#if image?.filename}
-        {@const { src, alt, width, height } = getImageAttributes(image, {
+        {@const { src, alt } = getImageAttributes(image, {
           size: [720 * 2, 540 * 2]
         })}
         <div class="pointer-events-none relative mt-8 aspect-[4/3] flex-1 @5xl:mt-0">
-          <img
+          <OptimizedImage
             class="h-full w-full rounded-md bg-background-offset object-cover"
             {src}
             {alt}
-            {width}
-            {height}
+            sizes="(min-width: 1280px) 720px, (min-width: 768px) 50vw, 100vw"
           />
+
           {#if project.content.thumbnail.length > 1}
             <CircleButton
               alt="Previous image"

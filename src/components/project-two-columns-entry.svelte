@@ -4,6 +4,7 @@
   import type { ProjectDetailedEntryStoryblok } from '$types/bloks';
   import { Button, CircleButton } from '@techyor/svelte-ui';
   import clsx from 'clsx';
+  import OptimizedImage from '$components/OptimizedImage.svelte';
 
   export let project: ProjectDetailedEntryStoryblok;
   export let as: 'h2' | 'h3' = 'h3';
@@ -15,15 +16,15 @@
   {#if project.thumbnail.length}
     {@const image = project.thumbnail[index]}
     {#if image?.filename}
-      {@const { src, alt, width, height } = getImageAttributes(image, { size: [720 * 2, 540 * 2] })}
+      {@const { src, alt } = getImageAttributes(image, { size: [720 * 2, 540 * 2] })}
       <div class="pointer-events-none relative aspect-[4/3] flex-1 @5xl:mt-0">
-        <img
+        <OptimizedImage
           class="h-full w-full rounded-md bg-background-offset object-cover"
           {src}
           {alt}
-          {width}
-          {height}
+          sizes="(min-width: 1280px) 50vw, 100vw"
         />
+
         {#if project.thumbnail.length > 1}
           <CircleButton
             alt="Previous image"

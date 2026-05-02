@@ -3,10 +3,14 @@
 
   export let src: string;
   export let alt: string;
-  export let className: string = '';
   export let sizes: string = '100vw';
   export let loading: 'lazy' | 'eager' = 'lazy';
   export let fetchpriority: 'high' | 'low' | 'auto' = 'auto';
+  export let width: string | number | undefined = undefined;
+  export let height: string | number | undefined = undefined;
+
+  let className: string = '';
+  export { className as class };
 
   type ImageManifest = Record<
     string,
@@ -21,10 +25,12 @@
   const manifest = imageManifest as ImageManifest;
   const imageMeta = manifest[src];
 
-  // Get the largest version as fallback src
   const fallbackSrc = imageMeta
     ? imageMeta.srcset.original[imageMeta.srcset.original.length - 1].split(' ')[0]
     : src;
+
+  $: resolvedWidth = width ?? imageMeta?.width;
+  $: resolvedHeight = height ?? imageMeta?.height;
 </script>
 
 {#if imageMeta}
@@ -38,13 +44,21 @@
       {alt}
       {loading}
       {fetchpriority}
-      width={imageMeta.width}
-      height={imageMeta.height}
+      width={resolvedWidth}
+      height={resolvedHeight}
       class={className}
     />
   </picture>
 {:else}
-  <img {src} {alt} {loading} {fetchpriority} class={className} />
+  <img
+    {src}
+    {alt}
+    {loading}
+    {fetchpriority}
+    width={resolvedWidth}
+    height={resolvedHeight}
+    class={className}
+  />
 {/if}
 
 <style>
