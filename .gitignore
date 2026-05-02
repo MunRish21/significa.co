@@ -1,5 +1,6 @@
 .DS_Store
 node_modules
+.claude/
 /build
 /.svelte-kit
 /package
@@ -12,6 +13,9 @@ vite.config.ts.timestamp-*
 .vercel
 
 static/sitemap.xml
+
+# Optimized images (generated at build time)
+static/_optimized/
 
 # Handbook data
 static/handbook/*

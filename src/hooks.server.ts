@@ -4,6 +4,7 @@ import type { Handle } from '@sveltejs/kit';
 import { dev } from '$app/environment';
 import * as Sentry from '@sentry/sveltekit';
 import { PUBLIC_SENTRY_DNS, PUBLIC_SENTRY_ENVIRONMENT } from '$env/static/public';
+import imageManifest from '$lib/data/image-manifest.json';
 
 if (!dev) {
   Sentry.init({
@@ -20,7 +21,36 @@ const validateDraftMode: Handle = async ({ event, resolve }) => {
   return response;
 };
 
-export const handle = sequence(validateDraftMode, Sentry.sentryHandle());
+type ManifestEntry = {
+  srcset: { webp: string[]; avif: string[]; original: string[] };
+  width: number;
+  height: number;
+};
+const manifest = imageManifest as Record<string, ManifestEntry>;
+
+// Rewrite <img src="/assets/..."> to <picture> with srcset for responsive optimized images
+const optimizeImageTags: Handle = async ({ event, resolve }) => {
+  return resolve(event, {
+    transformPageChunk: ({ html }) => {
+      return html.replace(
+        /<img\b([^>]*?)\ssrc=["'](\/assets\/[^"']+\.(?:png|jpg|jpeg))["']([^>]*?)\/?>/gi,
+        (match, before, src, after) => {
+          const meta = manifest[src];
+          if (!meta) return match;
+
+          const attrs = (before + ' ' + after).trim();
+          const hasSizes = /\bsizes=/i.test(attrs);
+          const sizesAttr = hasSizes ? '' : ' sizes="(max-width: 768px) 100vw, 50vw"';
+          const fallback = meta.srcset.original[meta.srcset.original.length - 1].split(' ')[0];
+
+          return `<picture><source type="image/avif" srcset="${meta.srcset.avif.join(', ')}"${sizesAttr ? ' sizes="(max-width: 768px) 100vw, 50vw"' : ''}><source type="image/webp" srcset="${meta.srcset.webp.join(', ')}"${sizesAttr ? ' sizes="(max-width: 768px) 100vw, 50vw"' : ''}><img ${attrs} src="${fallback}" srcset="${meta.srcset.original.join(', ')}"${sizesAttr}></picture>`;
+        }
+      );
+    }
+  });
+};
+
+export const handle = sequence(validateDraftMode, optimizeImageTags, Sentry.sentryHandle());
 
 import * as fs from 'fs';
 import * as os from 'os';

@@ -7,7 +7,8 @@
   },
   "scripts": {
     "dev": "vite dev",
-    "build": "vite build",
+    "optimize-images": "node scripts/optimize-images.js",
+    "build": "npm run optimize-images && vite build",
     "preview": "vite preview",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
@@ -40,6 +41,7 @@
     "prettier-plugin-svelte": "3.4.0",
     "prettier-plugin-tailwindcss": "^0.6.9",
     "prismjs": "^1.29.0",
+    "sharp": "^0.34.5",
     "svelte": "^4.2.19",
     "svelte-check": "^4.1.6",
     "tailwind-merge": "^1.14.0",
