@@ -363,7 +363,7 @@
           class="pointer-events-none absolute left-0 top-0 z-10 flex h-full w-full items-center justify-center bg-black/10"
         ></div>
         <video
-          poster="/assets/storyblok/new-showreel-cover.jpg"
+          poster="/_optimized/assets/storyblok/new-showreel-cover-w1280.jpg"
           class="aspect-video h-auto w-full bg-background-offset [&[poster]]:h-full [&[poster]]:w-full [&[poster]]:bg-background [&[poster]]:object-cover"
           playsinline=""
         >
