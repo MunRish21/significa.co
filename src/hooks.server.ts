@@ -1,18 +1,7 @@
 import { PREVIEW_COOKIE_KEY } from '$lib/constants';
 import { sequence } from '@sveltejs/kit/hooks';
 import type { Handle } from '@sveltejs/kit';
-import { dev } from '$app/environment';
-import * as Sentry from '@sentry/sveltekit';
-import { PUBLIC_SENTRY_DNS, PUBLIC_SENTRY_ENVIRONMENT } from '$env/static/public';
 import imageManifest from '$lib/data/image-manifest.json';
-
-if (!dev) {
-  Sentry.init({
-    environment: PUBLIC_SENTRY_ENVIRONMENT || 'unknown-environment',
-    dsn: PUBLIC_SENTRY_DNS,
-    tracesSampleRate: 0.0
-  });
-}
 
 const validateDraftMode: Handle = async ({ event, resolve }) => {
   event.locals.version = event.cookies.get(PREVIEW_COOKIE_KEY) ? 'draft' : 'published';
@@ -50,20 +39,17 @@ const optimizeImageTags: Handle = async ({ event, resolve }) => {
   });
 };
 
-export const handle = sequence(validateDraftMode, optimizeImageTags, Sentry.sentryHandle());
+export const handle = sequence(validateDraftMode, optimizeImageTags);
 
 import * as fs from 'fs';
 import * as os from 'os';
 import * as path from 'path';
 
-const sentryHandler = Sentry.handleErrorWithSentry();
-export const handleError = ({ error, event, status, message }) => {
+export const handleError = ({ error }) => {
   try {
     const logPath = path.join(os.tmpdir(), 'server_error.log');
     fs.writeFileSync(logPath, error?.stack || String(error));
-  } catch(e) {
-    console.error("Failed to write log", e);
+  } catch (e) {
+    console.error('Failed to write log', e);
   }
-  // @ts-ignore
-  return sentryHandler({ error, event, status, message });
 };
