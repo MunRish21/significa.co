@@ -1,6 +1,6 @@
 <script lang="ts">
   import clsx from 'clsx';
-  import { Button, toast } from '@techyor/svelte-ui';
+  import { Button } from '@techyor/svelte-ui';
   import { t } from '$lib/i18n/index.js';
   import { fly } from 'svelte/transition';
   import { circOut } from 'svelte/easing';
@@ -18,26 +18,8 @@
 
   const proposal = data?.story?.content;
 
-  async function approveProposal() {
-    try {
-      const response = await fetch('/proposal', {
-        method: 'POST',
-        body: JSON.stringify({ client: proposal?.client, title: proposal?.title }),
-        headers: {
-          'content-type': 'application/json'
-        }
-      });
-
-      if (response.ok) {
-        result = 'success';
-      }
-    } catch (error) {
-      console.error(error);
-
-      toast.error({
-        message: t('proposals.accept.error')
-      });
-    }
+  function approveProposal() {
+    result = 'success';
   }
 </script>
 
