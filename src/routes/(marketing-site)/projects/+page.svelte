@@ -40,7 +40,12 @@
   $: hasMore = projects.length > projectsToShow;
 
   function getFilterUrl(filter: string): string {
-    return `/projects/${filter.toLowerCase().replace(/\s+/g, '-')}`;
+    const slug = filter
+      .toLowerCase()
+      .replace(/&/g, '')  // Remove ampersand
+      .replace(/\s+/g, '-')  // Replace spaces with dashes
+      .replace(/[^\w-]/g, '');  // Remove special characters
+    return `/projects/${slug}`;
   }
 
   function isActiveFilter(filter: string): boolean {

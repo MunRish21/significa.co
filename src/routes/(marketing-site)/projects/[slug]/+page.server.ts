@@ -4,8 +4,9 @@ import { error } from '@sveltejs/kit';
 function slugify(name: string): string {
   return name
     .toLowerCase()
-    .replace(/\s+/g, '-')
-    .replace(/&/g, 'and')
+    .replace(/&/g, '')  // Remove ampersand
+    .replace(/\s+/g, '-')  // Replace spaces (including those from ampersand removal) with dashes
+    .replace(/--+/g, '-')  // Clean up any double dashes
     .replace(/[^\w-]/g, '');
 }
 
@@ -52,9 +53,11 @@ export function load({ params }) {
   if (matchedFilter && filterType) {
     const filteredProjects = projectsData.filter(p => {
       if (filterType === 'service') {
-        return p.services.includes(matchedFilter);
+        // Use case-insensitive comparison to ensure matches work correctly
+        return p.services.some(s => s.toLowerCase() === matchedFilter!.toLowerCase());
       } else {
-        return p.deliverables.includes(matchedFilter);
+        // Use case-insensitive comparison for deliverables too
+        return p.deliverables.some(d => d.toLowerCase() === matchedFilter!.toLowerCase());
       }
     });
 

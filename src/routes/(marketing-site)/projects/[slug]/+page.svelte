@@ -71,7 +71,12 @@
   $: hasMore = filteredProjects.length > projectsToShow;
 
   function getFilterUrl(filter: string): string {
-    return `/projects/${filter.toLowerCase().replace(/\s+/g, '-')}`;
+    const slug = filter
+      .toLowerCase()
+      .replace(/&/g, '')  // Remove ampersand
+      .replace(/\s+/g, '-')  // Replace spaces with dashes
+      .replace(/[^\w-]/g, '');  // Remove special characters
+    return `/projects/${slug}`;
   }
 
   function loadMore() {
@@ -83,16 +88,27 @@
   }
 
   $: if (data.isFilter) {
-    const allServices = new Set<string>();
-    const allDeliverables = new Set<string>();
-
+    // Count services and sort by frequency (descending)
+    const serviceCount = new Map<string, number>();
     projectsData.forEach((p) => {
-      p.services.forEach((s) => allServices.add(s));
-      p.deliverables.forEach((d) => allDeliverables.add(d));
+      p.services.forEach((s) => {
+        serviceCount.set(s, (serviceCount.get(s) || 0) + 1);
+      });
     });
+    filterServices = Array.from(serviceCount.entries())
+      .sort((a, b) => b[1] - a[1])
+      .map(([service]) => service);
 
-    filterServices = Array.from(allServices).sort();
-    filterDeliverables = Array.from(allDeliverables).sort();
+    // Count deliverables and sort by frequency (descending)
+    const deliverableCount = new Map<string, number>();
+    projectsData.forEach((p) => {
+      p.deliverables.forEach((d) => {
+        deliverableCount.set(d, (deliverableCount.get(d) || 0) + 1);
+      });
+    });
+    filterDeliverables = Array.from(deliverableCount.entries())
+      .sort((a, b) => b[1] - a[1])
+      .map(([deliverable]) => deliverable);
   }
 
   let filterServices: string[] = [];

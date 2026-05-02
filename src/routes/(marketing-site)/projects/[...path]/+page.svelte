@@ -24,34 +24,34 @@
 
     // Mapping of URL slugs to proper names
     const mapping: Record<string, string> = {
-      'ai-and-machine-learning': 'AI & Machine Learning',
+      'ai-machine-learning': 'AI & Machine Learning',
       'backend-engineering': 'Backend Engineering',
       'business-services': 'Business Services',
-      'design-and-creative': 'Design & Creative',
-      'education-and-training': 'Education & Training',
+      'design-creative': 'Design & Creative',
+      'education-training': 'Education & Training',
       'e-commerce': 'E-commerce',
       'financial-services': 'Financial Services',
-      'food-and-beverage': 'Food & Beverage',
-      'health-and-wellness': 'Health & Wellness',
+      'food-beverage': 'Food & Beverage',
+      'health-wellness': 'Health & Wellness',
       'mobile-app-development': 'Mobile App Development',
       'python-backend-engineering': 'Python Backend Engineering',
-      'react-and-nextjs-development': 'React & Next.js Development',
-      'real-estate-and-property': 'Real Estate & Property',
+      'react-nextjs-development': 'React & Next.js Development',
+      'real-estate-property': 'Real Estate & Property',
       'saas-platforms': 'SaaS Platforms',
       'subscription-platforms': 'Subscription Platforms',
       'voice-ai-engineering': 'Voice AI Engineering',
-      'web-development-and-design': 'Web Development & Design',
-      'ux-and-ui-design': 'UX & UI Design',
+      'web-development-design': 'Web Development & Design',
+      'ux-ui-design': 'UX & UI Design',
       'website': 'Website',
       'e-commerce-platforms': 'E-Commerce Platforms',
       'web-applications': 'Web Applications',
       'mobile-applications': 'Mobile Applications',
-      'apis-and-backend-services': 'APIs & Backend Services',
-      'design-and-branding': 'Design & Branding',
+      'apis-backend-services': 'APIs & Backend Services',
+      'design-branding': 'Design & Branding',
       'content-management-systems': 'Content Management Systems',
       'business-management-platforms': 'Business Management Platforms',
       'single-protein-navigation-system': 'Single-Protein Navigation System',
-      'reviews-and-press-surfaces': 'Reviews & Press Surfaces'
+      'reviews-press-surfaces': 'Reviews & Press Surfaces'
     };
 
     const result = mapping[slug] || slug.replace(/-/g, ' ');
@@ -81,9 +81,9 @@
   function getFilterUrl(filter: string): string {
     const slug = filter
       .toLowerCase()
-      .replace(/\s+/g, '-')
-      .replace(/&/g, 'and')
-      .replace(/[^\w-]/g, '');
+      .replace(/&/g, '')  // Remove ampersand
+      .replace(/\s+/g, '-')  // Replace spaces with dashes
+      .replace(/[^\w-]/g, '');  // Remove special characters
     return `/projects/${slug}`;
   }
 
@@ -101,13 +101,15 @@
 
   // Extract unique services from all projects
   $: uniqueServices = (() => {
-    const services = new Set<string>();
+    const serviceCount = new Map<string, number>();
     projectsData.forEach((p) => {
       p.services.forEach((s) => {
-        services.add(s);
+        serviceCount.set(s, (serviceCount.get(s) || 0) + 1);
       });
     });
-    return Array.from(services).sort();
+    return Array.from(serviceCount.entries())
+      .sort((a, b) => b[1] - a[1])
+      .map(([service]) => service);
   })();
 
   // Debug logging
