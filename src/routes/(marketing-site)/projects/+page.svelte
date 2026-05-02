@@ -1,5 +1,6 @@
 <script lang="ts">
   import { slide } from 'svelte/transition';
+  import { page } from '$app/stores';
   import { projectsData } from '$lib/data/projects';
   import { generateBreadcrumbSchema, generateProjectSchema } from '$lib/utils/schema';
   import OptimizedImage from '$components/optimized-image.svelte';
@@ -40,6 +41,20 @@
 
   function getFilterUrl(filter: string): string {
     return `/projects/${filter.toLowerCase().replace(/\s+/g, '-')}`;
+  }
+
+  function isActiveFilter(filter: string): boolean {
+    const filterUrl = getFilterUrl(filter);
+    const isActive = $page.url.pathname === filterUrl;
+    if (isActive) {
+      console.log('Active filter found:', {
+        filter,
+        filterUrl,
+        currentPath: $page.url.pathname,
+        isActive
+      });
+    }
+    return isActive;
   }
 
   function loadMore() {
@@ -157,7 +172,9 @@
               {#each allServices as service}
                 <a
                   href={getFilterUrl(service)}
-                  class="rounded border border-border px-3 py-1.5 text-sm transition-all hover:border-foreground hover:bg-foreground-tertiary/5"
+                  class="rounded border px-3 py-1.5 text-sm transition-all {isActiveFilter(service)
+                    ? 'border-foreground bg-foreground text-background'
+                    : 'border-border hover:border-foreground hover:bg-foreground-tertiary/5'}"
                 >
                   {service}
                 </a>
@@ -174,7 +191,9 @@
               {#each allDeliverables as deliverable}
                 <a
                   href={getFilterUrl(deliverable)}
-                  class="rounded border border-border px-3 py-1.5 text-sm transition-all hover:border-foreground hover:bg-foreground-tertiary/5"
+                  class="rounded border px-3 py-1.5 text-sm transition-all {isActiveFilter(deliverable)
+                    ? 'border-foreground bg-foreground text-background'
+                    : 'border-border hover:border-foreground hover:bg-foreground-tertiary/5'}"
                 >
                   {deliverable}
                 </a>

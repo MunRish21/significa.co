@@ -2,6 +2,7 @@
   import { page } from '$app/stores';
   import { slide } from 'svelte/transition';
   import { projectsData, getProjectBySlug } from '$lib/data/projects';
+  import { getServiceDescription } from '$lib/data/service-descriptions';
   import ComparisonSlider from '$components/blocks/project-blocks/comparison-slider.svelte';
   import Testimonial from '$components/blocks/project-blocks/testimonial.svelte';
   import VideoSection from '$components/blocks/project-blocks/video-section.svelte';
@@ -10,6 +11,7 @@
   import MetricsSection from '$components/blocks/project-blocks/metrics-section.svelte';
   import ContactCtaSection from '$components/blocks/project-blocks/contact-cta-section.svelte';
   import OptimizedImage from '$components/optimized-image.svelte';
+  import ContactForm from '$components/contact-form.svelte';
   import { generateBreadcrumbSchema, generateProjectSchema, BASE_URL } from '$lib/utils/schema';
 
   export let data;
@@ -74,6 +76,10 @@
 
   function loadMore() {
     projectsToShow += PROJECTS_PER_LOAD;
+  }
+
+  function isActiveFilter(filter: string): boolean {
+    return data.filterName === filter;
   }
 
   $: if (data.isFilter) {
@@ -172,7 +178,7 @@
 
 {#if data.isFilter}
   <main class="overflow-hidden">
-    <!-- Filter Page Header -->
+    <!-- Hero Section -->
     <div class="container mx-auto mt-10 px-container md:mt-14 lg:mt-20">
       <div class="mb-6 flex items-center gap-3">
         <a
@@ -182,10 +188,34 @@
         <span class="text-foreground-secondary">/</span>
         <h1 class="text-5xl capitalize md:text-6xl lg:text-7xl">{data.filterName}</h1>
       </div>
-      <p class="max-w-2xl text-foreground-secondary">
-        Explore our {filteredProjects.length}
-        {filteredProjects.length === 1 ? 'project' : 'projects'} related to {data.filterName}
+
+      <!-- Intro Paragraph -->
+      <p class="max-w-3xl text-base leading-relaxed text-foreground-secondary md:text-lg">
+        {getServiceDescription(data.filterName)}
       </p>
+
+      <!-- Action Buttons -->
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a
+          href="#projects-section"
+          class="inline-flex items-center justify-center gap-2 rounded-md border border-border px-6 py-3 font-medium text-foreground transition-all hover:border-border-active hover:ring-4 focus-visible:border-border-active focus-visible:ring-4"
+        >
+          <span>View Our Work</span>
+          <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 3v10M3.5 8.5l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </a>
+
+        <a
+          href="#testimonials-section"
+          class="inline-flex items-center justify-center gap-2 rounded-md border border-border px-6 py-3 font-medium text-foreground-secondary transition-all hover:text-foreground hover:border-border-active focus-visible:border-border-active focus-visible:ring-4"
+        >
+          <span>See What Clients Say</span>
+          <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 4h12M2 8h12M2 12h8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" />
+          </svg>
+        </a>
+      </div>
     </div>
 
     <!-- Filters Button -->
@@ -243,7 +273,9 @@
                 {#each filterServices as service}
                   <a
                     href={getFilterUrl(service)}
-                    class="rounded border border-border px-3 py-1.5 text-sm transition-all hover:border-foreground hover:bg-foreground-tertiary/5"
+                    class="rounded border px-3 py-1.5 text-sm transition-all {isActiveFilter(service)
+                      ? 'border-foreground bg-foreground text-background'
+                      : 'border-border hover:border-foreground hover:bg-foreground-tertiary/5'}"
                   >
                     {service}
                   </a>
@@ -260,7 +292,9 @@
                 {#each filterDeliverables as deliverable}
                   <a
                     href={getFilterUrl(deliverable)}
-                    class="rounded border border-border px-3 py-1.5 text-sm transition-all hover:border-foreground hover:bg-foreground-tertiary/5"
+                    class="rounded border px-3 py-1.5 text-sm transition-all {isActiveFilter(deliverable)
+                      ? 'border-foreground bg-foreground text-background'
+                      : 'border-border hover:border-foreground hover:bg-foreground-tertiary/5'}"
                   >
                     {deliverable}
                   </a>
@@ -273,7 +307,7 @@
     {/if}
 
     <!-- Projects List -->
-    <section class="mt-12">
+    <section id="projects-section" class="mt-12">
       {#each visibleProjects as project, index (project.id)}
         {#if index === 0}
           <!-- First Project - Simple Design -->
@@ -411,6 +445,57 @@
         </button>
       </div>
     {/if}
+
+    <!-- Client Testimonials Section -->
+    <section id="testimonials-section" class="container mx-auto px-container py-12 md:py-16 lg:py-20">
+      <h2 class="text-4xl font-semibold md:text-5xl">What Our Clients Say</h2>
+      <p class="mt-4 max-w-2xl text-lg text-foreground-secondary">
+        Real feedback from teams who've built {data.filterName.toLowerCase()} with us
+      </p>
+
+      <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <!-- Placeholder Testimonials -->
+        {#each [1, 2, 3] as i}
+          <div class="rounded-lg border border-border bg-background-offset p-8">
+            <div class="flex gap-1">
+              {#each [1, 2, 3, 4, 5] as _}
+                <svg width="16" height="16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="text-yellow-500">
+                  <path d="M8 1l2.5 5h5.5l-4.5 3.5 1.5 5-5.5-4-5.5 4 1.5-5-4.5-3.5h5.5z" />
+                </svg>
+              {/each}
+            </div>
+            <p class="mt-4 text-foreground">
+              "Working with this team transformed how we think about our digital product. The quality and attention to detail exceeded our expectations."
+            </p>
+            <div class="mt-6 flex items-center gap-3">
+              <div class="h-10 w-10 rounded-full bg-gradient-to-br from-blue-400 to-blue-600"></div>
+              <div>
+                <p class="font-medium">Client Name</p>
+                <p class="text-sm text-foreground-secondary">Company Title</p>
+              </div>
+            </div>
+          </div>
+        {/each}
+      </div>
+    </section>
+
+    <!-- Footer CTA Section -->
+    <section class="border-t">
+      <div class="container mx-auto px-container py-12 md:py-16 lg:py-20">
+        <div class="grid gap-12 lg:grid-cols-2">
+          <div>
+            <h2 class="text-4xl font-semibold md:text-5xl">Ready to Get Started?</h2>
+            <p class="mt-4 text-lg text-foreground-secondary">
+              Let's discuss how we can build the perfect {data.filterName.toLowerCase()} for your business.
+            </p>
+          </div>
+
+          <div>
+            <ContactForm variant="quote" />
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 {:else if project}
   <main>
