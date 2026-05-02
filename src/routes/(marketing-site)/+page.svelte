@@ -253,7 +253,7 @@
     property="og:description"
     content="Strategy, design, and development under one roof. 8+ years. 80+ products shipped for teams across the US, UK, Switzerland, and Australia."
   />
-  <meta property="og:image" content="https://www.techyor.com/og.png" />
+  <meta property="og:image" content="https://www.techyor.com/og.png?v=2" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="Techyor — digital product studio" />
@@ -266,7 +266,7 @@
     name="twitter:description"
     content="Strategy, design, and development under one roof. 8+ years. 80+ products shipped."
   />
-  <meta name="twitter:image" content="https://www.techyor.com/og.png" />
+  <meta name="twitter:image" content="https://www.techyor.com/og.png?v=2" />
 
   <script type="application/ld+json">
 {generateOrganizationSchema()}
