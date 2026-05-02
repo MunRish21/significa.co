@@ -1,6 +1,5 @@
 <script lang="ts">
   import type { PhysicsBalloonCardStoryblok } from '$types/bloks';
-  import { theme } from '$lib/stores/theme';
   import clsx from 'clsx';
   import SplitWords from '$components/split-words.svelte';
 
@@ -9,8 +8,7 @@
 
   const parseTheme = (variant: PhysicsBalloonCardStoryblok['theme']) => {
     if (variant === 'inverted') {
-      if ($theme === 'light') return 'dark';
-      else if ($theme === 'dark') return 'light';
+      return 'dark';
     } else if (variant === 'yellow') {
       return 'yellow';
     } else return;

@@ -1,6 +1,5 @@
 <script lang="ts">
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
-  import { theme } from '$lib/stores/theme';
   import { getImageAttributes } from '$lib/utils/cms';
   import type { ServiceTimelineCellStoryblok } from '$types/bloks';
 
@@ -36,9 +35,8 @@
   style="margin-left: {cell.left_offset || 0}px;"
   use:storyblokEditable={cell}
 >
-  {#if cell.before_dark?.filename && cell.before_light?.filename}
-    {@const img = $theme === 'light' ? cell.before_light : cell.before_dark}
-    {@const { width, height, src, alt } = getImageAttributes(img)}
+  {#if cell.before_light?.filename}
+    {@const { width, height, src, alt } = getImageAttributes(cell.before_light)}
     <div>
       <img
         {width}
@@ -55,9 +53,8 @@
       >
         {cell.label}
       </p>
-      {#if cell.decoration_dark?.filename && cell.decoration_dark.filename}
-        {@const deco = $theme === 'light' ? cell.decoration_dark : cell.decoration_dark}
-        {@const { width, height, src, alt } = getImageAttributes(deco)}
+      {#if cell.decoration_dark?.filename}
+        {@const { width, height, src, alt } = getImageAttributes(cell.decoration_dark)}
         <img
           {width}
           {height}
@@ -70,9 +67,8 @@
     </div>
   {/if}
 
-  {#if cell.after_dark?.filename && cell.after_light?.filename}
-    {@const img = $theme === 'light' ? cell.after_light : cell.after_dark}
-    {@const { width, height, src, alt } = getImageAttributes(img)}
+  {#if cell.after_light?.filename}
+    {@const { width, height, src, alt } = getImageAttributes(cell.after_light)}
     <div class="absolute inset-0" style="clip-path: polygon(0% 0, {p}% 0, {p}% 100%, 0% 100%)">
       <img {width} {height} {src} {alt} draggable="false" class="select-none" />
       <p

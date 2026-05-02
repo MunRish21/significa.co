@@ -27,22 +27,7 @@
     </script>
 
     <script>
-      function setTheme(theme) {
-        document.documentElement.setAttribute('data-theme', theme);
-        if (typeof document.documentElement.styled === 'object') {
-          document.documentElement.styled.colorScheme = theme;
-        }
-        localStorage.setItem('theme', theme);
-        window.dispatchEvent(new CustomEvent('theme-change', { detail: theme }));
-      }
-
-      (() => {
-        const s = localStorage.getItem('theme');
-        const q = window.matchMedia('(prefers-color-scheme: dark)');
-
-        setTheme(s ? s : q.matches ? 'dark' : 'light');
-        q.addEventListener('change', (event) => setTheme(event.matches ? 'dark' : 'light'));
-      })();
+      document.documentElement.setAttribute('data-theme', 'light');
     </script>
     %sveltekit.head%
   </head>

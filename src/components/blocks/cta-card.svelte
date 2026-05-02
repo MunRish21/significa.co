@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { theme } from '$lib/stores/theme';
   import { getAnchorFromCmsLink } from '$lib/utils/cms';
   import type { CtaCardStoryblok } from '$types/bloks';
   import { Button } from '@techyor/svelte-ui';
@@ -7,16 +6,6 @@
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
 
   export let block: CtaCardStoryblok;
-
-  // NOTE: Tirar bonecada
-  // $: src =
-  //   $theme === 'dark'
-  //     ? block.theme === 'in-theme'
-  //       ? CtaLight
-  //       : CtaDark
-  //     : block.theme === 'contrast'
-  //       ? CtaLight
-  //       : CtaDark;
 </script>
 
 <section
@@ -24,13 +13,7 @@
   class="container mx-auto my-16 px-container @container md:mt-10 lg:my-24"
 >
   <div
-    data-theme={$theme === 'dark'
-      ? block.theme === 'in-theme'
-        ? 'dark'
-        : 'light'
-      : block.theme === 'contrast'
-        ? 'dark'
-        : 'light'}
+    data-theme={block.theme === 'contrast' ? 'dark' : 'light'}
     class="flex overflow-hidden rounded-lg border bg-background"
     style="background-image: url({block.bg_image
       ?.filename}); background-size: cover; background-position: center; background-repeat: no-repeat;"
@@ -71,12 +54,5 @@
         {/if}
       </div>
     </div>
-    <!-- 
-        NOTE: Tirar bonecada
-        <div
-          class="ml-16 hidden flex-1 flex-col justify-end bg-cover bg-center bg-no-repeat lg:flex"
-          style="background-image: url({src});"
-        />
-     -->
   </div>
 </section>

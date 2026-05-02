@@ -8,9 +8,7 @@
   import type { ISbStoryData } from '@storyblok/js';
   import EggChicken from '../illustrations/assets/egg-chicken.webp';
   import SeggChicken from '../illustrations/assets/segg-chicken.webp';
-  import BG from '../illustrations/assets/bg-work-recognitions.webp';
   import BGWhite from '../illustrations/assets/bg-work-recognitions-white.webp';
-  import { theme } from '$lib/stores/theme';
 
   export let block: WorkRecognitionsStoryblok;
 
@@ -27,11 +25,9 @@
       {}
     )
   );
-
-  $: src = $theme === 'dark' ? BG : BGWhite;
 </script>
 
-<div style="background-image: url({src});">
+<div style="background-image: url({BGWhite});">
   <section
     class="container relative mx-auto flex max-w-[1056px] flex-col px-container pt-16 @container xl:pt-32"
   >

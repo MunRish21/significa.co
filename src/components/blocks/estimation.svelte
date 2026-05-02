@@ -1,8 +1,6 @@
 <script lang="ts">
   import type { EstimationStoryblok } from '$types/bloks';
-  import IllustrationEmply from '../illustrations/assets/illustration-emply.webp';
   import IllustrationEmplyLight from '../illustrations/assets/illustration-emply-light.webp';
-  import { theme } from '$lib/stores/theme';
   import { CheckboxGroup, Radio } from '@techyor/svelte-ui';
   import clsx from 'clsx';
   import ContactForm from '$components/contact-form.svelte';
@@ -15,7 +13,6 @@
   export let block: EstimationStoryblok;
 
   let open = false;
-  $: src = $theme === 'dark' ? IllustrationEmply : IllustrationEmplyLight;
 
   let selectedRadio: Array<string> = [];
   let selectedCheckbox: Array<string> = [];
@@ -198,7 +195,7 @@
             open ? 'xl:hidden xl:opacity-0' : 'right-0 opacity-100'
           )}
         >
-          <img class="pointer-events-none max-w-[710px]" {src} alt="" />
+          <img class="pointer-events-none max-w-[710px]" src={IllustrationEmplyLight} alt="" />
         </div>
       </div>
     </div>

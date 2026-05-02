@@ -2,7 +2,6 @@
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import { device } from '$lib/stores/device';
   import type { NewtonStoryblok } from '$types/bloks';
-  import ServicesIllustrationDark from '../pages/home/assets/pendulum-static-dark.webp';
   import ServicesIllustrationLight from '../pages/home/assets/pendulum-static-light.webp';
   import Newton from '../pages/home/newton.svelte';
   import { Button } from '@techyor/svelte-ui';
@@ -22,12 +21,7 @@
       <img
         src={ServicesIllustrationLight}
         alt=""
-        class="mb-12 max-h-[400px] object-contain object-top dark:hidden lg:mb-0"
-      />
-      <img
-        src={ServicesIllustrationDark}
-        alt=""
-        class="mb-12 max-h-[400px] object-contain object-top light:hidden lg:mb-0"
+        class="mb-12 max-h-[400px] object-contain object-top lg:mb-0"
       />
     {:else}
       <Newton />

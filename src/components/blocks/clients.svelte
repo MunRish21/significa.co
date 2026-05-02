@@ -15,7 +15,7 @@
           {@const { src, alt, width, height } = getImageAttributes(client.light_mode)}
           {#if block.links && block.links[i]?.link}
             {@const { href, target, rel } = getAnchorFromCmsLink(block.links[i].link)}
-            <a {href} {target} {rel} class="group transition-all duration-300 dark:hidden">
+            <a {href} {target} {rel} class="group transition-all duration-300">
               <img {src} {alt} {width} {height} class="h-auto max-h-16 w-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-300" />
             </a>
           {:else}
@@ -25,27 +25,7 @@
                 {alt}
                 {width}
                 {height}
-                class="h-auto max-h-16 w-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-300 dark:hidden"
-              />
-            </div>
-          {/if}
-        {/if}
-
-        {#if client.dark_mode?.filename}
-          {@const { src, alt, width, height } = getImageAttributes(client.dark_mode)}
-          {#if block.links && block.links[i]?.link}
-            {@const { href, target, rel } = getAnchorFromCmsLink(block.links[i].link)}
-            <a {rel} {href} {target} class="group transition-all duration-300 hidden dark:block">
-              <img {src} {alt} {width} {height} class="h-auto max-h-16 w-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-300" />
-            </a>
-          {:else}
-            <div class="group">
-              <img
-                {src}
-                {alt}
-                {width}
-                {height}
-                class="hidden h-auto max-h-16 w-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-300 dark:block"
+                class="h-auto max-h-16 w-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
               />
             </div>
           {/if}

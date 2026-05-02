@@ -42,25 +42,9 @@
                 {width}
                 {height}
                 class={clsx(
-                  i === 0 && 'mt-[7px] h-auto max-h-[60px] w-auto object-contain dark:hidden',
-                  i === 1 && 'h-auto max-h-[60px] w-auto object-contain dark:hidden',
-                  i === 2 && 'mb-1 h-auto max-h-[60px] w-auto object-contain dark:hidden'
-                )}
-              />
-            {/if}
-            {#if partner.dark_mode?.filename}
-              {@const { src, alt, width, height } = getImageAttributes(partner.dark_mode, {
-                size: [0, 720]
-              })}
-              <img
-                {src}
-                {alt}
-                {width}
-                {height}
-                class={clsx(
-                  i === 0 && 'mt-[7px] hidden h-auto  w-auto object-contain dark:block',
-                  i === 1 && 'hidden h-auto  w-auto object-contain dark:block',
-                  i === 2 && 'mb-1 hidden h-auto  w-auto object-contain dark:block'
+                  i === 0 && 'mt-[7px] h-auto max-h-[60px] w-auto object-contain',
+                  i === 1 && 'h-auto max-h-[60px] w-auto object-contain',
+                  i === 2 && 'mb-1 h-auto max-h-[60px] w-auto object-contain'
                 )}
               />
             {/if}
@@ -121,25 +105,9 @@
               {width}
               {height}
               class={clsx(
-                i === 0 && 'mt-[7px] h-auto  w-auto object-contain dark:hidden',
-                i === 1 && 'h-auto  w-auto object-contain dark:hidden',
-                i === 2 && 'mb-1 h-auto  w-auto object-contain dark:hidden'
-              )}
-            />
-          {/if}
-          {#if partner.dark_mode?.filename}
-            {@const { src, alt, width, height } = getImageAttributes(partner.dark_mode, {
-              size: [0, 720]
-            })}
-            <img
-              {src}
-              {alt}
-              {width}
-              {height}
-              class={clsx(
-                i === 0 && 'mt-[7px] hidden h-auto  w-auto object-contain dark:block',
-                i === 1 && 'hidden h-auto  w-auto object-contain dark:block',
-                i === 2 && 'mb-1 hidden h-auto  w-auto object-contain dark:block'
+                i === 0 && 'mt-[7px] h-auto  w-auto object-contain',
+                i === 1 && 'h-auto  w-auto object-contain',
+                i === 2 && 'mb-1 h-auto  w-auto object-contain'
               )}
             />
           {/if}

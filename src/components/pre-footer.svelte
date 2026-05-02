@@ -18,10 +18,6 @@
           {t('prefooter.description')}
         </p>
       </div>
-      <!-- NOTE: Tirar bonecada -->
-      <!-- <div class="flex flex-1 flex-col justify-end">
-        <img src={$theme === 'dark' ? PreFooterAsset : PreFooterAssetLight} alt="" />
-      </div> -->
     </div>
     <div class="col-span-3 bg-background-panel p-4 pt-8 @5xl:col-span-2 @5xl:border-l @5xl:p-8">
       <ContactForm {variant} />

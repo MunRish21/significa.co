@@ -9,8 +9,7 @@
   <div class="flex flex-wrap justify-center gap-6 p-6">
     {#each clientsData as client}
       <a href={client.url} target="_blank" rel="noopener noreferrer" class="group transition-all duration-300">
-        <img src={client.lightLogo} alt={client.name} width={client.width} height={client.height} class="h-auto max-h-16 w-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-300 dark:hidden" />
-        <img src={client.darkLogo} alt={client.name} width={client.width} height={client.height} class="hidden h-auto max-h-16 w-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-300 dark:block" />
+        <img src={client.lightLogo} alt={client.name} width={client.width} height={client.height} class="h-auto max-h-16 w-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-300" />
       </a>
     {/each}
   </div>

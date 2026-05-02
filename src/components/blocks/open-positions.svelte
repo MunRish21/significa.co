@@ -5,15 +5,11 @@
   import { Button, Link } from '@techyor/svelte-ui';
 
   import { t } from '$lib/i18n';
-  import { theme } from '$lib/stores/theme';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
 
   import CareersAssetLight from '$components/illustrations/assets/careers-light.webp';
-  import CareersAssetDark from '$components/illustrations/assets/careers-dark.webp';
 
   export let block: OpenPositionsStoryblok;
-
-  $: src = $theme === 'dark' ? CareersAssetDark : CareersAssetLight;
 </script>
 
 <section use:storyblokEditable={block} class="mt-10 border-t md:mt-14 lg:mt-20">
@@ -69,7 +65,7 @@
       </div>
       <div
         class="ml-16 hidden flex-1 flex-col justify-end bg-cover bg-center bg-no-repeat lg:flex"
-        style="background-image: url({src});"
+        style="background-image: url({CareersAssetLight});"
       />
     </div>
   </section>

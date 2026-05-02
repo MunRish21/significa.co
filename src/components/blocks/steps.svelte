@@ -1,6 +1,5 @@
 <script lang="ts">
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
-  import { theme } from '$lib/stores/theme';
   import type { GetAQuotePageStoryblok, StepsStoryblok } from '$types/bloks';
   import clsx from 'clsx';
 
@@ -31,7 +30,7 @@
       <div
         class={clsx(
           'absolute -left-px -top-32 hidden h-32 border-l lg:block',
-          block.variant === 'block' ? ($theme === 'light' ? 'light-fade' : 'dark-fade') : ''
+          block.variant === 'block' ? 'light-fade' : ''
         )}
       />
       <div>

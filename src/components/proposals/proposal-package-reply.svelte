@@ -106,7 +106,7 @@
   <div
     class={clsx(
       'flex flex-col items-start p-6 lg:flex-row lg:items-center lg:justify-between',
-      'rounded-b-lg border bg-foreground text-foreground dark:bg-background-offset'
+      'rounded-b-lg border bg-foreground text-foreground'
     )}
   >
     <h3 class="w-2/3 text-xl font-semibold text-white lg:w-full">

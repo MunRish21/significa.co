@@ -8,7 +8,6 @@
   import type { TeamButtonsStoryblok, TeamMemberStoryblok } from '$types/bloks';
   import type { ISbStoryData } from '@storyblok/js';
   import clsx from 'clsx';
-  import { theme } from '$lib/stores/theme';
   import { Button } from '@techyor/svelte-ui';
 
   export let story: ISbStoryData<TeamMemberStoryblok>;
@@ -83,10 +82,8 @@
         </div>
       {/if}
     </div>
-    {#if story.content.cover_image_light && story.content.cover_image_dark && story.content.is_active}
-      {@const img =
-        $theme === 'light' ? story.content.cover_image_light : story.content.cover_image_dark}
-      {@const { src, alt } = getImageAttributes(img, { size: [720 * 2, 0] })}
+    {#if story.content.cover_image_light && story.content.is_active}
+      {@const { src, alt } = getImageAttributes(story.content.cover_image_light, { size: [720 * 2, 0] })}
       <div>
         <img {src} {alt} class="block flex-[0_0_50%] object-contain" />
       </div>
