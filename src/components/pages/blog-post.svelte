@@ -10,16 +10,41 @@
   import { t } from '$lib/i18n';
   import TwoEggs from '$components/illustrations/two-eggs.svelte';
   import Seo from '$components/seo.svelte';
+  import { generateArticleSchema, generateBreadcrumbSchema } from '$lib/utils/schema';
   import type { BlogPostPage } from '$lib/content';
 
   export let story: BlogPostPage;
   export let related: BlogPostPage[];
+
+  $: publishedAt = story.first_published_at || story.published_at || story.created_at;
+  $: modifiedAt = story.published_at || story.first_published_at || story.created_at;
+  $: primaryAuthor = story.content.authors?.[0]?.name || story.content.external_authors?.[0]?.name;
+  $: articleSchema = generateArticleSchema({
+    title: story.content.seo_title || story.name || story.content.tagline || '',
+    description:
+      story.content.seo_description || story.content.intro || story.content.tagline || '',
+    url: `/blog/${story.slug}`,
+    image: story.content.cover?.filename,
+    datePublished: publishedAt,
+    dateModified: modifiedAt,
+    authorName: primaryAuthor
+  });
+  $: breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Blog', url: '/blog' },
+    { name: story.name, url: `/blog/${story.slug}` }
+  ]);
 </script>
 
 <Seo
   title={story.content.seo_title || story.content.tagline}
   description={story.content.seo_description || story.content.intro}
   image={story.content.seo_og_image || story.content.cover}
+  type="article"
+  publishedTime={publishedAt}
+  modifiedTime={modifiedAt}
+  author={primaryAuthor}
+  tags={story.tag_list}
   structureDataMarkup={story.content.structure_data_markup}
   twitterExtraFields={story?.content?.reading_time
     ? [
@@ -30,6 +55,11 @@
       ]
     : []}
 />
+
+<svelte:head>
+  {@html `<${'script'} type="application/ld+json">${articleSchema}</${'script'}>`}
+  {@html `<${'script'} type="application/ld+json">${breadcrumbSchema}</${'script'}>`}
+</svelte:head>
 <div class="container mx-auto px-container">
   <header class="mx-auto mb-10 mt-10 max-w-2xl md:mt-14 lg:mt-20">
     <div class="flex gap-2">

@@ -1,6 +1,5 @@
 import { env } from '$env/dynamic/private';
-import { sesClient } from '$lib/aws.server';
-import { SendEmailCommand, type SendEmailCommandInput } from '@aws-sdk/client-ses';
+import { Resend } from 'resend';
 import { getTextTemplate } from './template';
 import { getTextTemplate as getMinimalTextTemplate } from './template-minimal';
 import emailTemplate from './template.html?raw';
@@ -20,13 +19,44 @@ const escapeHTML = (unsafeContent: string | undefined | null): string => {
     .replaceAll(`'`, '&#39;');
 };
 
-export const sendEmail = async (input: Omit<SendEmailCommandInput, 'Source'>) => {
-  await sesClient.send(
-    new SendEmailCommand({
-      ...input,
-      Source: env.AWS_SES_FROM_ADDRESS
-    })
-  );
+let resendClient: Resend | null = null;
+const getResend = () => {
+  if (!env.RESEND_API_KEY) {
+    throw new Error('RESEND_API_KEY is not configured');
+  }
+  if (!resendClient) {
+    resendClient = new Resend(env.RESEND_API_KEY);
+  }
+  return resendClient;
+};
+
+type SendEmailInput = {
+  to: string[];
+  subject: string;
+  html?: string;
+  text?: string;
+  replyTo?: string;
+};
+
+export const sendEmail = async ({ to, subject, html, text, replyTo }: SendEmailInput) => {
+  const from = env.RESEND_FROM_ADDRESS;
+  if (!from) {
+    throw new Error('RESEND_FROM_ADDRESS is not configured');
+  }
+
+  const resend = getResend();
+  const { error } = await resend.emails.send({
+    from,
+    to,
+    subject,
+    ...(html ? { html } : {}),
+    ...(text ? { text } : {}),
+    ...(replyTo ? { replyTo } : {})
+  } as Parameters<typeof resend.emails.send>[0]);
+
+  if (error) {
+    throw new Error(`Resend error: ${error.message || 'unknown'}`);
+  }
 };
 
 export const sendTransactionalEmail = async ({
@@ -40,33 +70,16 @@ export const sendTransactionalEmail = async ({
   subject: string;
   template?: 'default' | 'minimal';
 }) => {
-  name = escapeHTML(name);
-  email = escapeHTML(email);
-  subject = escapeHTML(subject);
+  const safeName = escapeHTML(name);
 
   await sendEmail({
-    Destination: {
-      ToAddresses: [email]
-    },
-    Message: {
-      Body: {
-        Html: {
-          Charset: 'UTF-8',
-          Data:
-            template === 'minimal'
-              ? minimalEmailTemplate.replace('{{name}}', name)
-              : emailTemplate.replace('{{name}}', name)
-        },
-        Text: {
-          Charset: 'UTF-8',
-          Data: template === 'minimal' ? getMinimalTextTemplate(name) : getTextTemplate(name)
-        }
-      },
-      Subject: {
-        Charset: 'UTF-8',
-        Data: subject
-      }
-    }
+    to: [email],
+    subject,
+    html:
+      template === 'minimal'
+        ? minimalEmailTemplate.replaceAll('{{name}}', safeName)
+        : emailTemplate.replaceAll('{{name}}', safeName),
+    text: template === 'minimal' ? getMinimalTextTemplate(safeName) : getTextTemplate(safeName)
   });
 };
 
@@ -85,10 +98,6 @@ export const sendEmailNotification = async ({
   notionLink?: string;
   notionErrorMessage?: string;
 }) => {
-  name = escapeHTML(name);
-  email = escapeHTML(email);
-  message = escapeHTML(message);
-
   const formTypeToDestinationEmail: Record<FormType, string | undefined> = {
     quote: env.NOTIFICATION_EMAIL_ADDRESS_QUOTE,
     career: env.NOTIFICATION_EMAIL_ADDRESS_CAREER,
@@ -105,35 +114,31 @@ export const sendEmailNotification = async ({
     return;
   }
 
-  let errorMessage: string = '';
-  if (notionErrorMessage) {
-    errorMessage = `⚠️ Failed to store submission to Notion ⚠️\n'${escapeHTML(
-      notionErrorMessage
-    )}'\n`;
-  }
+  const recipientEmails = destinationEmail
+    .split(',')
+    .map((e) => e.trim())
+    .filter(Boolean);
+
+  const errorMessage = notionErrorMessage
+    ? `Note: failed to store submission to Notion: '${notionErrorMessage}'\n`
+    : '';
 
   await sendEmail({
-    Destination: {
-      ToAddresses: [destinationEmail]
-    },
-    Message: {
-      Body: {
-        Text: {
-          Charset: 'UTF-8',
-          Data: [
-            errorMessage,
-            `New website submission.\n`,
-            notionLink && `Notion Link: ${notionLink}`,
-            `name: ${name}`,
-            `email: ${email}`,
-            `message: ${message}`
-          ].join('\n')
-        }
-      },
-      Subject: {
-        Charset: 'UTF-8',
-        Data: 'New website submission'
-      }
-    }
+    to: recipientEmails,
+    subject: `New ${formType} submission from ${name}`,
+    replyTo: email,
+    text: [
+      errorMessage,
+      `New website submission.\n`,
+      notionLink && `Notion Link: ${notionLink}`,
+      `Form: ${formType}`,
+      `Name: ${name}`,
+      `Email: ${email}`,
+      ``,
+      `Message:`,
+      message
+    ]
+      .filter(Boolean)
+      .join('\n')
   });
 };

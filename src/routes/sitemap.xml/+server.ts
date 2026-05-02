@@ -2,24 +2,26 @@ import { projectsData } from '$lib/data/projects';
 
 const BASE_URL = 'https://www.techyor.com';
 
-// Static pages with priority
+const today = new Date().toISOString().split('T')[0];
+
+// Static pages with priority and lastmod
 const staticPages = [
-  { path: '/', priority: 1.0, changefreq: 'weekly' },
-  { path: '/about', priority: 0.8, changefreq: 'monthly' },
-  { path: '/services', priority: 0.9, changefreq: 'monthly' },
-  { path: '/careers', priority: 0.8, changefreq: 'weekly' },
-  { path: '/projects', priority: 0.9, changefreq: 'weekly' },
-  { path: '/blog', priority: 0.7, changefreq: 'daily' },
-  { path: '/contact', priority: 0.7, changefreq: 'monthly' },
-  { path: '/get-a-quote', priority: 0.7, changefreq: 'monthly' }
+  { path: '/', priority: 1.0, changefreq: 'weekly', lastmod: today },
+  { path: '/about', priority: 0.8, changefreq: 'monthly', lastmod: today },
+  { path: '/services', priority: 0.9, changefreq: 'monthly', lastmod: today },
+  { path: '/careers', priority: 0.8, changefreq: 'weekly', lastmod: today },
+  { path: '/projects', priority: 0.9, changefreq: 'weekly', lastmod: today },
+  { path: '/blog', priority: 0.7, changefreq: 'weekly', lastmod: today },
+  { path: '/contact', priority: 0.7, changefreq: 'monthly', lastmod: today },
+  { path: '/get-a-quote', priority: 0.7, changefreq: 'monthly', lastmod: today }
 ];
 
-// Dynamic project pages
+// Dynamic project pages — use end-of-year of publishedYear so newer projects rank above older
 const projectPages = projectsData.map((project) => ({
   path: `/projects/${project.slug}`,
   priority: 0.8,
-  changefreq: 'monthly',
-  lastmod: new Date(project.publishedYear, 0, 1).toISOString().split('T')[0]
+  changefreq: 'yearly',
+  lastmod: `${project.publishedYear}-12-31`
 }));
 
 const allPages = [...staticPages, ...projectPages];
@@ -30,10 +32,9 @@ ${allPages
   .map(
     (page) => `  <url>
     <loc>${BASE_URL}${page.path}</loc>
+    <lastmod>${page.lastmod}</lastmod>
     <changefreq>${page.changefreq}</changefreq>
-    <priority>${page.priority}</priority>${
-      page.lastmod ? `\n    <lastmod>${page.lastmod}</lastmod>` : ''
-    }
+    <priority>${page.priority}</priority>
   </url>`
   )
   .join('\n')}
@@ -42,7 +43,8 @@ ${allPages
 export const GET = async () => {
   return new Response(sitemap, {
     headers: {
-      'Content-Type': 'application/xml'
+      'Content-Type': 'application/xml',
+      'Cache-Control': 'public, max-age=3600, s-maxage=3600'
     }
   });
 };

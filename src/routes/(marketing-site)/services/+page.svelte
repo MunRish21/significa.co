@@ -8,13 +8,19 @@
   import ContactForm from '$components/contact-form.svelte';
   import FaqsList from '$components/blocks/faqs-list.svelte';
   import { commonFaqsBlock } from '$lib/data/faqs';
-  import { generateOrganizationSchema, generateBreadcrumbSchema, generateServiceSchema, generateFAQSchema } from '$lib/utils/schema';
+  import {
+    generateOrganizationSchema,
+    generateBreadcrumbSchema,
+    generateServiceSchema,
+    generateFAQSchema
+  } from '$lib/utils/schema';
 
   const servicesBlock = {
     component: 'services',
     services_title: 'Our services.',
     services_subtitle: 'The full list!',
-    services_description: 'Each delivery moves through cycles of strategy, design and development. It is the blend of all these elements that creates interfaces that people will love.',
+    services_description:
+      'Each delivery moves through cycles of strategy, design and development. It is the blend of all these elements that creates interfaces that people will love.',
     services: [
       {
         title: 'Strategy',
@@ -40,10 +46,7 @@
           },
           {
             title: 'Operations',
-            list: [
-              { label: 'Product management' },
-              { label: 'Project management' }
-            ]
+            list: [{ label: 'Product management' }, { label: 'Project management' }]
           }
         ]
       },
@@ -71,10 +74,7 @@
           },
           {
             title: 'Multimedia',
-            list: [
-              { label: 'Illustration' },
-              { label: 'Video and motion design' }
-            ]
+            list: [{ label: 'Illustration' }, { label: 'Video and motion design' }]
           }
         ]
       },
@@ -94,18 +94,11 @@
           },
           {
             title: 'Back-end',
-            list: [
-              { label: 'Elixir' },
-              { label: 'Python' },
-              { label: 'Node' }
-            ]
+            list: [{ label: 'Elixir' }, { label: 'Python' }, { label: 'Node' }]
           },
           {
             title: 'DevOps',
-            list: [
-              { label: 'Hosting and maintenance' },
-              { label: 'Infrastructure setup' }
-            ]
+            list: [{ label: 'Hosting and maintenance' }, { label: 'Infrastructure setup' }]
           }
         ]
       }
@@ -138,7 +131,8 @@
           alt: 'Laptop icon'
         },
         deliverable: 'Software',
-        description: 'Custom software and internal tools tailored to the way your team actually works.'
+        description:
+          'Custom software and internal tools tailored to the way your team actually works.'
       },
       {
         icon: {
@@ -166,19 +160,21 @@
       },
       {
         deliverable: 'AI Solutions',
-        description: 'Intelligent products, copilots, and integrations that put modern AI to work for your business.'
+        description:
+          'Intelligent products, copilots, and integrations that put modern AI to work for your business.'
       },
       {
         deliverable: 'Automation',
-        description: 'Workflows and integrations that quietly handle the busywork, so your team can focus on what matters.'
+        description:
+          'Workflows and integrations that quietly handle the busywork, so your team can focus on what matters.'
       },
       {
         deliverable: 'Robotics',
-        description: 'Physical-meets-digital experiences — control software, firmware, and interfaces for robotic systems.'
+        description:
+          'Physical-meets-digital experiences — control software, firmware, and interfaces for robotic systems.'
       }
     ]
   };
-
 
   const timelineServicesBlock = {
     component: 'timeline-services',
@@ -193,18 +189,42 @@
               {
                 label: 'Discovery',
                 left_offset: 0,
-                before_light: { filename: '/assets/storyblok/purple1-before-light.svg', alt: 'Purple box' },
-                before_dark: { filename: '/assets/storyblok/purple1-before-light.svg', alt: 'Purple box' },
-                after_light: { filename: '/assets/storyblok/purple1-after-light.svg', alt: 'Grey box' },
-                after_dark: { filename: '/assets/storyblok/purple1-after-light.svg', alt: 'Grey box' }
+                before_light: {
+                  filename: '/assets/storyblok/purple1-before-light.svg',
+                  alt: 'Purple box'
+                },
+                before_dark: {
+                  filename: '/assets/storyblok/purple1-before-light.svg',
+                  alt: 'Purple box'
+                },
+                after_light: {
+                  filename: '/assets/storyblok/purple1-after-light.svg',
+                  alt: 'Grey box'
+                },
+                after_dark: {
+                  filename: '/assets/storyblok/purple1-after-light.svg',
+                  alt: 'Grey box'
+                }
               },
               {
                 label: 'Definition',
                 left_offset: 0,
-                before_light: { filename: '/assets/storyblok/purple1-before-light.svg', alt: 'Purple box' },
-                before_dark: { filename: '/assets/storyblok/purple1-before-light.svg', alt: 'Purple box' },
-                after_light: { filename: '/assets/storyblok/purple1-after-light.svg', alt: 'Grey box' },
-                after_dark: { filename: '/assets/storyblok/purple1-after-light.svg', alt: 'Grey box' }
+                before_light: {
+                  filename: '/assets/storyblok/purple1-before-light.svg',
+                  alt: 'Purple box'
+                },
+                before_dark: {
+                  filename: '/assets/storyblok/purple1-before-light.svg',
+                  alt: 'Purple box'
+                },
+                after_light: {
+                  filename: '/assets/storyblok/purple1-after-light.svg',
+                  alt: 'Grey box'
+                },
+                after_dark: {
+                  filename: '/assets/storyblok/purple1-after-light.svg',
+                  alt: 'Grey box'
+                }
               }
             ]
           },
@@ -213,10 +233,22 @@
               {
                 label: 'UX Research',
                 left_offset: 114,
-                before_light: { filename: '/assets/storyblok/purple2-before-light.svg', alt: 'Purple box' },
-                before_dark: { filename: '/assets/storyblok/purple2-before-light.svg', alt: 'Purple box' },
-                after_light: { filename: '/assets/storyblok/purple2-after-light.svg', alt: 'Grey box' },
-                after_dark: { filename: '/assets/storyblok/purple2-after-light.svg', alt: 'Grey box' }
+                before_light: {
+                  filename: '/assets/storyblok/purple2-before-light.svg',
+                  alt: 'Purple box'
+                },
+                before_dark: {
+                  filename: '/assets/storyblok/purple2-before-light.svg',
+                  alt: 'Purple box'
+                },
+                after_light: {
+                  filename: '/assets/storyblok/purple2-after-light.svg',
+                  alt: 'Grey box'
+                },
+                after_dark: {
+                  filename: '/assets/storyblok/purple2-after-light.svg',
+                  alt: 'Grey box'
+                }
               }
             ]
           }
@@ -230,41 +262,95 @@
               {
                 label: 'Wireframes',
                 left_offset: 300,
-                before_light: { filename: '/assets/storyblok/orange1-before-light.svg', alt: 'Orange box' },
-                before_dark: { filename: '/assets/storyblok/orange1-before-light.svg', alt: 'Orange box' },
-                after_light: { filename: '/assets/storyblok/orange1-after-light.svg', alt: 'Grey box' },
-                after_dark: { filename: '/assets/storyblok/orange1-after-light.svg', alt: 'Grey box' }
+                before_light: {
+                  filename: '/assets/storyblok/orange1-before-light.svg',
+                  alt: 'Orange box'
+                },
+                before_dark: {
+                  filename: '/assets/storyblok/orange1-before-light.svg',
+                  alt: 'Orange box'
+                },
+                after_light: {
+                  filename: '/assets/storyblok/orange1-after-light.svg',
+                  alt: 'Grey box'
+                },
+                after_dark: {
+                  filename: '/assets/storyblok/orange1-after-light.svg',
+                  alt: 'Grey box'
+                }
               },
               {
                 label: 'User Testing',
                 left_offset: 0,
-                before_light: { filename: '/assets/storyblok/gray1-before-light.svg', alt: 'Dark grey box' },
-                before_dark: { filename: '/assets/storyblok/gray1-before-light.svg', alt: 'Dark grey box' },
-                after_light: { filename: '/assets/storyblok/gray1-after-light.svg', alt: 'Grey box' },
+                before_light: {
+                  filename: '/assets/storyblok/gray1-before-light.svg',
+                  alt: 'Dark grey box'
+                },
+                before_dark: {
+                  filename: '/assets/storyblok/gray1-before-light.svg',
+                  alt: 'Dark grey box'
+                },
+                after_light: {
+                  filename: '/assets/storyblok/gray1-after-light.svg',
+                  alt: 'Grey box'
+                },
                 after_dark: { filename: '/assets/storyblok/gray1-after-light.svg', alt: 'Grey box' }
               },
               {
                 label: 'Look & Feel',
                 left_offset: 0,
-                before_light: { filename: '/assets/storyblok/orange1-before-light.svg', alt: 'Orange box' },
-                before_dark: { filename: '/assets/storyblok/orange1-before-light.svg', alt: 'Orange box' },
-                after_light: { filename: '/assets/storyblok/orange1-after-light.svg', alt: 'Grey box' },
-                after_dark: { filename: '/assets/storyblok/orange1-after-light.svg', alt: 'Grey box' }
+                before_light: {
+                  filename: '/assets/storyblok/orange1-before-light.svg',
+                  alt: 'Orange box'
+                },
+                before_dark: {
+                  filename: '/assets/storyblok/orange1-before-light.svg',
+                  alt: 'Orange box'
+                },
+                after_light: {
+                  filename: '/assets/storyblok/orange1-after-light.svg',
+                  alt: 'Grey box'
+                },
+                after_dark: {
+                  filename: '/assets/storyblok/orange1-after-light.svg',
+                  alt: 'Grey box'
+                }
               },
               {
                 label: 'Final Design',
                 left_offset: 0,
-                before_light: { filename: '/assets/storyblok/orange2-before-light.svg', alt: 'Orange box' },
-                before_dark: { filename: '/assets/storyblok/orange2-before-light.svg', alt: 'Orange box' },
-                after_light: { filename: '/assets/storyblok/orange2-after-light.svg', alt: 'Grey box' },
-                after_dark: { filename: '/assets/storyblok/orange2-after-light.svg', alt: 'Grey box' }
+                before_light: {
+                  filename: '/assets/storyblok/orange2-before-light.svg',
+                  alt: 'Orange box'
+                },
+                before_dark: {
+                  filename: '/assets/storyblok/orange2-before-light.svg',
+                  alt: 'Orange box'
+                },
+                after_light: {
+                  filename: '/assets/storyblok/orange2-after-light.svg',
+                  alt: 'Grey box'
+                },
+                after_dark: {
+                  filename: '/assets/storyblok/orange2-after-light.svg',
+                  alt: 'Grey box'
+                }
               },
               {
                 label: 'User Testing',
                 left_offset: 0,
-                before_light: { filename: '/assets/storyblok/gray1-before-light.svg', alt: 'Dark grey box' },
-                before_dark: { filename: '/assets/storyblok/gray1-before-light.svg', alt: 'Dark grey box' },
-                after_light: { filename: '/assets/storyblok/gray1-after-light.svg', alt: 'Grey box' },
+                before_light: {
+                  filename: '/assets/storyblok/gray1-before-light.svg',
+                  alt: 'Dark grey box'
+                },
+                before_dark: {
+                  filename: '/assets/storyblok/gray1-before-light.svg',
+                  alt: 'Dark grey box'
+                },
+                after_light: {
+                  filename: '/assets/storyblok/gray1-after-light.svg',
+                  alt: 'Grey box'
+                },
                 after_dark: { filename: '/assets/storyblok/gray1-after-light.svg', alt: 'Grey box' }
               }
             ]
@@ -274,10 +360,22 @@
               {
                 label: 'Design System',
                 left_offset: 835,
-                before_light: { filename: '/assets/storyblok/orange1-before-light.svg', alt: 'Orange box' },
-                before_dark: { filename: '/assets/storyblok/orange1-before-light.svg', alt: 'Orange box' },
-                after_light: { filename: '/assets/storyblok/orange1-after-light.svg', alt: 'Grey box' },
-                after_dark: { filename: '/assets/storyblok/orange1-after-light.svg', alt: 'Grey box' }
+                before_light: {
+                  filename: '/assets/storyblok/orange1-before-light.svg',
+                  alt: 'Orange box'
+                },
+                before_dark: {
+                  filename: '/assets/storyblok/orange1-before-light.svg',
+                  alt: 'Orange box'
+                },
+                after_light: {
+                  filename: '/assets/storyblok/orange1-after-light.svg',
+                  alt: 'Grey box'
+                },
+                after_dark: {
+                  filename: '/assets/storyblok/orange1-after-light.svg',
+                  alt: 'Grey box'
+                }
               }
             ]
           }
@@ -291,18 +389,39 @@
               {
                 label: 'Software Architecture',
                 left_offset: 300,
-                before_light: { filename: '/assets/storyblok/blue1-before-light.svg', alt: 'Blue box' },
-                before_dark: { filename: '/assets/storyblok/blue1-before-light.svg', alt: 'Blue box' },
-                after_light: { filename: '/assets/storyblok/blue1-after-light.svg', alt: 'Grey box' },
+                before_light: {
+                  filename: '/assets/storyblok/blue1-before-light.svg',
+                  alt: 'Blue box'
+                },
+                before_dark: {
+                  filename: '/assets/storyblok/blue1-before-light.svg',
+                  alt: 'Blue box'
+                },
+                after_light: {
+                  filename: '/assets/storyblok/blue1-after-light.svg',
+                  alt: 'Grey box'
+                },
                 after_dark: { filename: '/assets/storyblok/blue1-after-light.svg', alt: 'Grey box' }
               },
               {
                 label: 'Development',
                 left_offset: 236,
-                before_light: { filename: '/assets/storyblok/blue2-before-light.svg', alt: 'Blue box' },
-                before_dark: { filename: '/assets/storyblok/blue2-before-light.svg', alt: 'Blue box' },
-                after_light: { filename: '/assets/storyblok/blue2-after-light.svg', alt: 'Grey box' },
-                after_dark: { filename: '/assets/storyblok/blue2-after-light.svg', alt: 'Grey box' },
+                before_light: {
+                  filename: '/assets/storyblok/blue2-before-light.svg',
+                  alt: 'Blue box'
+                },
+                before_dark: {
+                  filename: '/assets/storyblok/blue2-before-light.svg',
+                  alt: 'Blue box'
+                },
+                after_light: {
+                  filename: '/assets/storyblok/blue2-after-light.svg',
+                  alt: 'Grey box'
+                },
+                after_dark: {
+                  filename: '/assets/storyblok/blue2-after-light.svg',
+                  alt: 'Grey box'
+                },
                 throw_confetti: true,
                 decoration_light: { filename: '/assets/storyblok/decorations-dark.svg', alt: '' },
                 decoration_dark: { filename: '/assets/storyblok/decorations-dark.svg', alt: '' }
@@ -310,10 +429,22 @@
               {
                 label: 'Launch',
                 left_offset: 0,
-                before_light: { filename: '/assets/storyblok/golden-before-light.svg', alt: 'Golden box' },
-                before_dark: { filename: '/assets/storyblok/golden-before-light.svg', alt: 'Golden box' },
-                after_light: { filename: '/assets/storyblok/golden-after-light.svg', alt: 'Grey box' },
-                after_dark: { filename: '/assets/storyblok/golden-after-light.svg', alt: 'Grey box' }
+                before_light: {
+                  filename: '/assets/storyblok/golden-before-light.svg',
+                  alt: 'Golden box'
+                },
+                before_dark: {
+                  filename: '/assets/storyblok/golden-before-light.svg',
+                  alt: 'Golden box'
+                },
+                after_light: {
+                  filename: '/assets/storyblok/golden-after-light.svg',
+                  alt: 'Grey box'
+                },
+                after_dark: {
+                  filename: '/assets/storyblok/golden-after-light.svg',
+                  alt: 'Grey box'
+                }
               }
             ]
           },
@@ -322,25 +453,52 @@
               {
                 label: 'QA',
                 left_offset: 927,
-                before_light: { filename: '/assets/storyblok/gray2-before-light.svg', alt: 'Dark grey box' },
-                before_dark: { filename: '/assets/storyblok/gray2-before-light.svg', alt: 'Dark grey box' },
-                after_light: { filename: '/assets/storyblok/gray2-after-light.svg', alt: 'Grey box' },
+                before_light: {
+                  filename: '/assets/storyblok/gray2-before-light.svg',
+                  alt: 'Dark grey box'
+                },
+                before_dark: {
+                  filename: '/assets/storyblok/gray2-before-light.svg',
+                  alt: 'Dark grey box'
+                },
+                after_light: {
+                  filename: '/assets/storyblok/gray2-after-light.svg',
+                  alt: 'Grey box'
+                },
                 after_dark: { filename: '/assets/storyblok/gray2-after-light.svg', alt: 'Grey box' }
               },
               {
                 label: 'QA',
                 left_offset: 0,
-                before_light: { filename: '/assets/storyblok/gray2-before-light.svg', alt: 'Dark grey box' },
-                before_dark: { filename: '/assets/storyblok/gray2-before-light.svg', alt: 'Dark grey box' },
-                after_light: { filename: '/assets/storyblok/gray2-after-light.svg', alt: 'Grey box' },
+                before_light: {
+                  filename: '/assets/storyblok/gray2-before-light.svg',
+                  alt: 'Dark grey box'
+                },
+                before_dark: {
+                  filename: '/assets/storyblok/gray2-before-light.svg',
+                  alt: 'Dark grey box'
+                },
+                after_light: {
+                  filename: '/assets/storyblok/gray2-after-light.svg',
+                  alt: 'Grey box'
+                },
                 after_dark: { filename: '/assets/storyblok/gray2-after-light.svg', alt: 'Grey box' }
               },
               {
                 label: 'QA',
                 left_offset: 0,
-                before_light: { filename: '/assets/storyblok/gray2-before-light.svg', alt: 'Dark grey box' },
-                before_dark: { filename: '/assets/storyblok/gray2-before-light.svg', alt: 'Dark grey box' },
-                after_light: { filename: '/assets/storyblok/gray2-after-light.svg', alt: 'Grey box' },
+                before_light: {
+                  filename: '/assets/storyblok/gray2-before-light.svg',
+                  alt: 'Dark grey box'
+                },
+                before_dark: {
+                  filename: '/assets/storyblok/gray2-before-light.svg',
+                  alt: 'Dark grey box'
+                },
+                after_light: {
+                  filename: '/assets/storyblok/gray2-after-light.svg',
+                  alt: 'Grey box'
+                },
                 after_dark: { filename: '/assets/storyblok/gray2-after-light.svg', alt: 'Grey box' }
               }
             ]
@@ -366,7 +524,8 @@
       {
         _uid: 'testimonial-1',
         component: 'richtext-testimonial' as const,
-        testimonial: 'Techyor listened to our needs and delivered a solution that exceeded our expectations. Their attention to detail and creative thinking truly set them apart.',
+        testimonial:
+          'Techyor listened to our needs and delivered a solution that exceeded our expectations. Their attention to detail and creative thinking truly set them apart.',
         name: 'Sarah Johnson',
         position: 'CEO, Digital Innovations',
         photo: {
@@ -383,7 +542,8 @@
       {
         _uid: 'testimonial-2',
         component: 'richtext-testimonial' as const,
-        testimonial: 'Working with Techyor was a game-changer for our business. They understood our vision and brought it to life with remarkable precision and creativity.',
+        testimonial:
+          'Working with Techyor was a game-changer for our business. They understood our vision and brought it to life with remarkable precision and creativity.',
         name: 'Michael Chen',
         position: 'Founder, Creative Studios',
         photo: {
@@ -400,7 +560,8 @@
       {
         _uid: 'testimonial-3',
         component: 'richtext-testimonial' as const,
-        testimonial: 'The team at Techyor is not just talented—they\'re collaborative, responsive, and genuinely passionate about their work. Highly recommended!',
+        testimonial:
+          "The team at Techyor is not just talented—they're collaborative, responsive, and genuinely passionate about their work. Highly recommended!",
         name: 'Emma Williams',
         position: 'Product Manager, Tech Solutions',
         photo: {
@@ -417,7 +578,8 @@
       {
         _uid: 'testimonial-4',
         component: 'richtext-testimonial' as const,
-        testimonial: 'From strategy to execution, Techyor handled every aspect with professionalism and excellence. Our product is better because of their expertise.',
+        testimonial:
+          'From strategy to execution, Techyor handled every aspect with professionalism and excellence. Our product is better because of their expertise.',
         name: 'David Martinez',
         position: 'CTO, Growth Ventures',
         photo: {
@@ -434,7 +596,8 @@
       {
         _uid: 'testimonial-5',
         component: 'richtext-testimonial' as const,
-        testimonial: 'A truly exceptional partner. They don\'t just build products; they build experiences. Our users love what they created for us.',
+        testimonial:
+          "A truly exceptional partner. They don't just build products; they build experiences. Our users love what they created for us.",
         name: 'Jessica Lee',
         position: 'Director, Brand Agency',
         photo: {
@@ -453,18 +616,50 @@
 </script>
 
 <svelte:head>
-  <title>Services — Strategy, Design & Development | Techyor</title>
-  <meta name="description" content="End-to-end digital product services — strategy, design, and development. Custom websites, web apps, mobile apps, AI tools, and automation. We partner with ambitious teams to ship products people genuinely love." />
-  <script type="application/ld+json">{generateOrganizationSchema()}</script>
-  <script type="application/ld+json">{generateBreadcrumbSchema([
+  <title>Services — Strategy, Design, Development | Techyor</title>
+  <meta
+    name="description"
+    content="End-to-end digital product services. Strategy, UX/UI design, web and mobile development, AI integrations, e-commerce, and automation — all under one roof. Built for ambitious teams."
+  />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Services — Strategy, Design, Development | Techyor" />
+  <meta
+    property="og:description"
+    content="Strategy, design, web and mobile development, AI, e-commerce, and automation. Custom-built for ambitious teams."
+  />
+  <meta property="og:image" content="https://www.techyor.com/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Techyor services" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@TechyorDotCo" />
+  <meta name="twitter:title" content="Services — Strategy, Design, Development | Techyor" />
+  <meta
+    name="twitter:description"
+    content="Strategy, design, web/mobile development, AI, e-commerce, and automation — under one roof."
+  />
+  <meta name="twitter:image" content="https://www.techyor.com/og.png" />
+
+  <script type="application/ld+json">
+{generateOrganizationSchema()}
+  </script>
+  <script type="application/ld+json">
+{generateBreadcrumbSchema([
     { name: 'Home', url: '/' },
     { name: 'Services', url: '/services' }
-  ])}</script>
-  <script type="application/ld+json">{generateServiceSchema('Digital Product Services', 'End-to-end digital product development including strategy, design, development, and deployment.')}</script>
-  <script type="application/ld+json">{generateFAQSchema(commonFaqsBlock.faqs_items.map(item => ({
+  ])}
+  </script>
+  <script type="application/ld+json">
+{generateServiceSchema('Digital Product Services', 'End-to-end digital product development including strategy, design, development, and deployment.')}
+  </script>
+  <script type="application/ld+json">
+{generateFAQSchema(commonFaqsBlock.faqs_items.map(item => ({
     question: item.question,
     answer: item.answer
-  })))}</script>
+  })))}
+  </script>
 </svelte:head>
 
 <div class="overflow-hidden">
@@ -485,8 +680,11 @@
     <div class="grid grid-cols-3 overflow-hidden rounded-lg border">
       <div class="col-span-1 hidden flex-col bg-background-panel @5xl:flex">
         <div class="p-8">
-          <h3 class="text-4xl">Have a project in mind?<br> Let's make it happen.</h3>
-          <p class="mt-4 text-xl text-foreground-secondary">Tell us about your goals, your timeline, and the problem you're solving. We'll get back within a business day with thoughts, questions, and next steps.</p>
+          <h3 class="text-4xl">Have a project in mind?<br /> Let's make it happen.</h3>
+          <p class="mt-4 text-xl text-foreground-secondary">
+            Tell us about your goals, your timeline, and the problem you're solving. We'll get back
+            within a business day with thoughts, questions, and next steps.
+          </p>
         </div>
       </div>
       <div class="col-span-3 bg-background-panel p-4 pt-8 @5xl:col-span-2 @5xl:border-l @5xl:p-8">

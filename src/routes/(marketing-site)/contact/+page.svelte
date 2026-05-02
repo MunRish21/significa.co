@@ -50,29 +50,59 @@
 </script>
 
 <svelte:head>
-  <title>Contact Techyor — Get a Quote for Your Digital Product</title>
-  <meta name="description" content="Got a project in mind? Drop us a message and we'll get back within 24 hours. No lengthy briefs needed — just tell us what you're thinking. Email: info@techyor.com | Phone: +91 9915002625" />
-  <script type="application/ld+json">{generateOrganizationSchema()}</script>
-  <script type="application/ld+json">{generateBreadcrumbSchema([
+  <title>Contact Techyor — Start a Project or Ask a Question</title>
+  <meta
+    name="description"
+    content="Got a project in mind? Send us a message — no lengthy brief required. We reply within 24 hours. Email info@techyor.com or call +91 9915002625."
+  />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Contact Techyor — Start a Project" />
+  <meta
+    property="og:description"
+    content="Tell us what you're building. We reply within 24 hours."
+  />
+  <meta property="og:image" content="https://www.techyor.com/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Contact Techyor" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@TechyorDotCo" />
+  <meta name="twitter:title" content="Contact Techyor — Start a Project" />
+  <meta
+    name="twitter:description"
+    content="Tell us what you're building. We reply within 24 hours."
+  />
+  <meta name="twitter:image" content="https://www.techyor.com/og.png" />
+
+  <script type="application/ld+json">
+{generateOrganizationSchema()}
+  </script>
+  <script type="application/ld+json">
+{generateBreadcrumbSchema([
     { name: 'Home', url: '/' },
     { name: 'Contact', url: '/contact' }
-  ])}</script>
+  ])}
+  </script>
 </svelte:head>
 
 <div class="overflow-hidden">
   <div class="container relative mx-auto px-container">
     <section class="pb-5 pt-10 lg:pb-12 lg:pt-20 lg:text-center">
-      <h1 class="mx-auto text-7xl text-foreground-secondary lg:max-w-2xl">
-        Contact us.
-      </h1>
+      <h1 class="mx-auto text-7xl text-foreground-secondary lg:max-w-2xl">Contact us.</h1>
       <span class="mx-auto block text-7xl lg:max-w-2xl">Tell us what you're building.</span>
       <p class="mx-auto mt-6 max-w-xl text-lg text-foreground-secondary lg:mt-8">
-        Got a project in mind? We'd love to hear it. Drop us a message and we'll get back within 24 hours. No lengthy briefs needed — just tell us what you're thinking.
+        Got a project in mind? We'd love to hear it. Drop us a message and we'll get back within 24
+        hours. No lengthy briefs needed — just tell us what you're thinking.
       </p>
     </section>
 
     <section class="mx-auto lg:max-w-xl lg:pt-5">
-      <ContactForm variant="contact" disclaimer="We respect your privacy and will handle your information securely." />
+      <ContactForm
+        variant="contact"
+        disclaimer="We respect your privacy and will handle your information securely."
+      />
     </section>
 
     <PanWithEggs class="absolute -left-16 top-4 hidden -rotate-[14deg] drop-shadow-md lg:block" />

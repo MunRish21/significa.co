@@ -12,14 +12,20 @@
   import BlogEntry from '$components/blog-entry.svelte';
   import ProjectEntry from '$components/project-entry.svelte';
   import { commonFaqsBlock } from '$lib/data/faqs';
-  import type { HomePageStoryblok, NewtonStoryblok, TextWithMediaStoryblok, AboutGridStoryblok, CareersListStoryblok } from '$types/bloks';
+  import type {
+    HomePageStoryblok,
+    NewtonStoryblok,
+    TextWithMediaStoryblok,
+    AboutGridStoryblok,
+    CareersListStoryblok
+  } from '$types/bloks';
   import { getImageAttributes } from '$lib/utils/cms';
   import { generateOrganizationSchema, generateFAQSchema } from '$lib/utils/schema';
 
   let textElements: HTMLElement[] = [];
 
   onMount(() => {
-    textElements.forEach(el => {
+    textElements.forEach((el) => {
       el.style.opacity = '1';
       el.style.transform = 'translateY(0)';
     });
@@ -30,15 +36,18 @@
     about_links: [
       {
         title: 'Mission and values.',
-        description: 'Building digital products that solve real problems for real people. It\'s the why behind every line of code and every pixel we ship.'
+        description:
+          "Building digital products that solve real problems for real people. It's the why behind every line of code and every pixel we ship."
       },
       {
         title: 'Perks and benefits.',
-        description: 'Flexible hours, remote-friendly, unlimited learning stipend, health cover, and an annual team retreat. The good stuff, and growing.'
+        description:
+          'Flexible hours, remote-friendly, unlimited learning stipend, health cover, and an annual team retreat. The good stuff, and growing.'
       },
       {
         title: 'Career plan.',
-        description: 'Your goals shape your path. We pair you with mentors, OKRs, and the room to grow at your own pace.'
+        description:
+          'Your goals shape your path. We pair you with mentors, OKRs, and the room to grow at your own pace.'
       }
     ]
   };
@@ -47,7 +56,8 @@
     component: 'text-with-media',
     eyebrow: 'About Techyor.',
     title: 'A digital product studio that ships.',
-    description: 'For 8+ years, we\'ve been building websites, web apps, and mobile products for ambitious teams across the US, UK, Switzerland, and Australia. Strategy-led, design-driven, engineered to last — we partner with founders and product teams who care about the craft as much as we do.',
+    description:
+      "For 8+ years, we've been building websites, web apps, and mobile products for ambitious teams across the US, UK, Switzerland, and Australia. Strategy-led, design-driven, engineered to last — we partner with founders and product teams who care about the craft as much as we do.",
     cta: [
       {
         label: 'About us',
@@ -66,7 +76,8 @@
     component: 'newton',
     title1: 'Our services.',
     title2: 'End-to-end digital product development.',
-    description: 'Custom websites, web and mobile apps, e-commerce stores, AI-powered tools, automation workflows, and robotics interfaces — all built from scratch by a single team. We take products from research and strategy through design and into production code, so nothing gets lost in handoff.',
+    description:
+      'Custom websites, web and mobile apps, e-commerce stores, AI-powered tools, automation workflows, and robotics interfaces — all built from scratch by a single team. We take products from research and strategy through design and into production code, so nothing gets lost in handoff.',
     cta_label: 'Explore services',
     cta_link: {
       cached_url: '/services',
@@ -85,7 +96,8 @@
       story: undefined
     },
     handbook_title: 'Making it happen, with(out) chaos.',
-    handbook_description: 'We think, design, develop, and launch digital products — that\'s the bottom line.\n\nIf you\'d like to know how we actually work day to day, our Handbook is the long read. Make a coffee first.',
+    handbook_description:
+      "We think, design, develop, and launch digital products — that's the bottom line.\n\nIf you'd like to know how we actually work day to day, our Handbook is the long read. Make a coffee first.",
     handbook_cta_text: 'Read Handbook',
     handbook_cta_link: {
       cached_url: '/handbook',
@@ -105,18 +117,20 @@
   const capabilities = [
     {
       title: 'Strategy.',
-      description: 'Discovery, product definition, user research, and growth planning — the groundwork that turns ideas into products people use.'
+      description:
+        'Discovery, product definition, user research, and growth planning — the groundwork that turns ideas into products people use.'
     },
     {
       title: 'Design.',
-      description: 'UX and UI design, brand identity, design systems, and motion. Interfaces that look the part and feel right at every step.'
+      description:
+        'UX and UI design, brand identity, design systems, and motion. Interfaces that look the part and feel right at every step.'
     },
     {
       title: 'Development.',
-      description: 'Modern front-end, scalable back-end, mobile, AI integrations, and automation. Engineered to be fast, secure, and built to last.'
+      description:
+        'Modern front-end, scalable back-end, mobile, AI integrations, and automation. Engineered to be fast, secure, and built to last.'
     }
   ];
-
 
   const sampleCareers = [
     {
@@ -145,9 +159,8 @@
     }
   ];
 
-
   const smallHighlights: HomePageStoryblok['small_highlights'] = [
-    ...projectsData.map(project => ({
+    ...projectsData.map((project) => ({
       id: project.id,
       uuid: `uuid-${project.id}`,
       name: project.name,
@@ -221,38 +234,86 @@
       }
     }
   ];
-
 </script>
 
 <svelte:head>
-  <title>Techyor — Custom Web, App & AI Product Development Agency</title>
-  <meta name="description" content="Techyor is a digital product agency in Chandigarh, India, building custom websites, web apps, mobile apps, e-commerce, AI tools, and automation for clients across the US, UK, Switzerland, and Australia. 8+ years. 80+ products shipped." />
-  <meta name="keywords" content="digital product agency, web development Chandigarh, custom software development India, mobile app development, AI development agency, e-commerce development, website design India, automation development" />
-  <meta property="og:title" content="Techyor — Custom Digital Product Development" />
-  <meta property="og:description" content="Strategy-led, design-driven digital products. 8+ years. 80+ shipped. Trusted by global teams." />
+  <title>Techyor — Web, App & AI Product Development Studio</title>
+  <meta
+    name="description"
+    content="Techyor is a digital product studio building custom websites, web apps, mobile apps, e-commerce stores, AI tools, and automation for teams in the US, UK, Switzerland, and Australia. Strategy, design, development — under one roof."
+  />
+  <meta
+    name="keywords"
+    content="digital product agency, web development, custom software development, mobile app development, AI development agency, e-commerce development, website design, automation"
+  />
+
   <meta property="og:type" content="website" />
+  <meta property="og:title" content="Techyor — Web, App & AI Product Development Studio" />
+  <meta
+    property="og:description"
+    content="Strategy, design, and development under one roof. 8+ years. 80+ products shipped for teams across the US, UK, Switzerland, and Australia."
+  />
+  <meta property="og:image" content="https://www.techyor.com/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Techyor — digital product studio" />
+
   <meta name="twitter:card" content="summary_large_image" />
-  <script type="application/ld+json">{generateOrganizationSchema()}</script>
-  <script type="application/ld+json">{generateFAQSchema(commonFaqsBlock.faqs_items.map(item => ({
+  <meta name="twitter:site" content="@TechyorDotCo" />
+  <meta name="twitter:creator" content="@TechyorDotCo" />
+  <meta name="twitter:title" content="Techyor — Web, App & AI Product Development Studio" />
+  <meta
+    name="twitter:description"
+    content="Strategy, design, and development under one roof. 8+ years. 80+ products shipped."
+  />
+  <meta name="twitter:image" content="https://www.techyor.com/og.png" />
+
+  <script type="application/ld+json">
+{generateOrganizationSchema()}
+  </script>
+  <script type="application/ld+json">
+{generateFAQSchema(commonFaqsBlock.faqs_items.map(item => ({
     question: item.question,
     answer: item.answer
-  })))}</script>
+  })))}
+  </script>
 </svelte:head>
 
 <main class="overflow-hidden">
   <!-- Hero Section -->
   <div class="container mx-auto px-container">
     <h1 class="mt-10 text-7xl font-bold md:mt-14 lg:mt-20">
-      <span bind:this={textElements[0]} class="mr-1 inline-block transition-all duration-500 ease-[cubic-bezier(0.34, 1.56, 0.64, 1)]" style="opacity: 1; transform: translateY(0);">Think.</span>
-      <span bind:this={textElements[1]} class="mr-1 inline-block transition-all duration-500 ease-[cubic-bezier(0.34, 1.56, 0.64, 1)]" style="opacity: 1; transform: translateY(0);">Design.</span>
+      <span
+        bind:this={textElements[0]}
+        class="ease-[cubic-bezier(0.34, 1.56, 0.64, 1)] mr-1 inline-block transition-all duration-500"
+        style="opacity: 1; transform: translateY(0);">Think.</span
+      >
+      <span
+        bind:this={textElements[1]}
+        class="ease-[cubic-bezier(0.34, 1.56, 0.64, 1)] mr-1 inline-block transition-all duration-500"
+        style="opacity: 1; transform: translateY(0);">Design.</span
+      >
       <br />
-      <span bind:this={textElements[2]} class="mr-1 inline-block transition-all duration-500 ease-[cubic-bezier(0.34, 1.56, 0.64, 1)]" style="opacity: 1; transform: translateY(0);">Develop.</span>
-      <span bind:this={textElements[3]} class="mr-1 inline-block transition-all duration-500 ease-[cubic-bezier(0.34, 1.56, 0.64, 1)]" style="opacity: 1; transform: translateY(0);">Launch.</span>
+      <span
+        bind:this={textElements[2]}
+        class="ease-[cubic-bezier(0.34, 1.56, 0.64, 1)] mr-1 inline-block transition-all duration-500"
+        style="opacity: 1; transform: translateY(0);">Develop.</span
+      >
+      <span
+        bind:this={textElements[3]}
+        class="ease-[cubic-bezier(0.34, 1.56, 0.64, 1)] mr-1 inline-block transition-all duration-500"
+        style="opacity: 1; transform: translateY(0);">Launch.</span
+      >
       <br />
-      <span bind:this={textElements[4]} class="mr-1 inline-block transition-all duration-500 ease-[cubic-bezier(0.34, 1.56, 0.64, 1)] text-foreground-secondary" style="opacity: 1; transform: translateY(0);">Scale.</span>
+      <span
+        bind:this={textElements[4]}
+        class="ease-[cubic-bezier(0.34, 1.56, 0.64, 1)] mr-1 inline-block text-foreground-secondary transition-all duration-500"
+        style="opacity: 1; transform: translateY(0);">Scale.</span
+      >
     </h1>
     <p class="mt-6 max-w-3xl text-2xl text-foreground-secondary md:mt-8 lg:mt-10 lg:text-3xl">
-      Techyor is a digital product studio building custom websites, apps, AI tools, and automation for ambitious teams across the US, UK, Switzerland, and Australia.
+      Techyor is a digital product studio building custom websites, apps, AI tools, and automation
+      for ambitious teams across the US, UK, Switzerland, and Australia.
     </p>
   </div>
 
@@ -287,17 +348,25 @@
   </section>
 
   <!-- Featured Content Section -->
-  <div class="transition-all duration-700 ease-[cubic-bezier(0.34, 1.56, 0.64, 1)] opacity-100 translate-y-0">
+  <div
+    class="ease-[cubic-bezier(0.34, 1.56, 0.64, 1)] translate-y-0 opacity-100 transition-all duration-700"
+  >
     <div class="container mx-auto px-container">
       <!-- Featured Projects & Blog -->
       <section class="mb-8 mt-10 md:mt-14 lg:mt-20">
         <SmallHighlights highlights={smallHighlights.slice(0, 12)} />
-        </section>
+      </section>
 
       <!-- Showreel Video -->
       <section class="relative overflow-hidden rounded-lg">
-        <div class="pointer-events-none absolute left-0 top-0 z-10 flex h-full w-full items-center justify-center bg-black/10"></div>
-        <video poster="/assets/storyblok/new-showreel-cover.jpg" class="aspect-video h-auto w-full bg-background-offset [&[poster]]:h-full [&[poster]]:w-full [&[poster]]:bg-background [&[poster]]:object-cover" playsinline="">
+        <div
+          class="pointer-events-none absolute left-0 top-0 z-10 flex h-full w-full items-center justify-center bg-black/10"
+        ></div>
+        <video
+          poster="/assets/storyblok/new-showreel-cover.jpg"
+          class="aspect-video h-auto w-full bg-background-offset [&[poster]]:h-full [&[poster]]:w-full [&[poster]]:bg-background [&[poster]]:object-cover"
+          playsinline=""
+        >
           <source type="video/mp4" src="/assets/storyblok/significareel.mp4" />
           <track kind="captions" srclang="en" label="English" />
         </video>
@@ -306,19 +375,27 @@
   </div>
 
   <!-- Selected Work Section -->
-  <section class="mt-10 md:mt-14 lg:mt-20 mb-12 md:mb-16 lg:mb-20">
+  <section class="mb-12 mt-10 md:mb-16 md:mt-14 lg:mb-20 lg:mt-20">
     <div class="container mx-auto px-container">
       <h2 class="text-5xl text-foreground-secondary">Selected work.</h2>
       <p class="text-5xl">Products we're proud of.</p>
     </div>
     <div class="mt-4 md:mt-6 lg:mt-8">
-      {#each smallHighlights.filter(h => h.content.component === 'project').slice(0, 4) as project}
-        {@const projectData = projectsData.find(p => p.slug === project.slug)}
-        <ProjectEntry project={{...project, category: projectData?.deliverables?.[0]}} variant="default" />
+      {#each smallHighlights
+        .filter((h) => h.content.component === 'project')
+        .slice(0, 4) as project}
+        {@const projectData = projectsData.find((p) => p.slug === project.slug)}
+        <ProjectEntry
+          project={{ ...project, category: projectData?.deliverables?.[0] }}
+          variant="default"
+        />
       {/each}
     </div>
     <div class="mt-8 flex justify-center md:mt-10 lg:mt-12">
-      <a href="/projects" class="group relative inline-flex items-center justify-center gap-1.5 overflow-hidden whitespace-nowrap text-md font-medium leading-none outline-none transition-all hover:ring-4 focus-visible:ring-4 active:scale-[0.98] active:ring-2 disabled:pointer-events-none disabled:opacity-60 h-11 rounded-md px-5 bg-foreground text-background">
+      <a
+        href="/projects"
+        class="text-md group relative inline-flex h-11 items-center justify-center gap-1.5 overflow-hidden whitespace-nowrap rounded-md bg-foreground px-5 font-medium leading-none text-background outline-none transition-all hover:ring-4 focus-visible:ring-4 active:scale-[0.98] active:ring-2 disabled:pointer-events-none disabled:opacity-60"
+      >
         View all projects
       </a>
     </div>
@@ -343,8 +420,10 @@
       <p class="text-5xl">Notes from the studio.</p>
     </div>
     <div class="mt-4 md:mt-6 lg:mt-8">
-      {#each smallHighlights.filter(h => h.content.component === 'blog-post').slice(0, 12) as post}
-        <BlogEntry post={post} />
+      {#each smallHighlights
+        .filter((h) => h.content.component === 'blog-post')
+        .slice(0, 12) as post}
+        <BlogEntry {post} />
       {/each}
     </div>
   </section>

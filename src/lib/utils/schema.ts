@@ -1,4 +1,4 @@
-const BASE_URL = 'https://www.techyor.com';
+export const BASE_URL = 'https://www.techyor.com';
 
 export function generateOrganizationSchema() {
   return JSON.stringify({
@@ -37,11 +37,7 @@ export function generateBreadcrumbSchema(items: { name: string; url: string }[])
   });
 }
 
-export function generateServiceSchema(
-  name: string,
-  description: string,
-  image?: string
-) {
+export function generateServiceSchema(name: string, description: string, image?: string) {
   return JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'Service',
@@ -122,6 +118,66 @@ export function generateProjectSchema(
     creator: {
       '@type': 'Organization',
       name: 'Techyor'
+    }
+  });
+}
+
+export function generateArticleSchema(article: {
+  title: string;
+  description: string;
+  url: string;
+  image?: string;
+  datePublished: string;
+  dateModified?: string;
+  authorName?: string;
+}) {
+  const imageUrl = article.image
+    ? article.image.startsWith('http')
+      ? article.image
+      : `${BASE_URL}${article.image}`
+    : `${BASE_URL}/og.png`;
+
+  return JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: article.title,
+    description: article.description,
+    image: imageUrl,
+    url: `${BASE_URL}${article.url}`,
+    datePublished: article.datePublished,
+    dateModified: article.dateModified || article.datePublished,
+    author: {
+      '@type': article.authorName ? 'Person' : 'Organization',
+      name: article.authorName || 'Techyor'
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Techyor',
+      logo: {
+        '@type': 'ImageObject',
+        url: `${BASE_URL}/techyor.png`
+      }
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `${BASE_URL}${article.url}`
+    }
+  });
+}
+
+export function generateWebsiteSchema() {
+  return JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Techyor',
+    url: BASE_URL,
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: `${BASE_URL}/blog?q={search_term_string}`
+      },
+      'query-input': 'required name=search_term_string'
     }
   });
 }

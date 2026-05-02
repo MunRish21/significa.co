@@ -258,17 +258,18 @@
   let selectedFilters: string[] = [];
   let visiblePosts = 3;
 
-  const allTags = [...new Set(posts.flatMap(p => p.tag_list))].sort();
+  const allTags = [...new Set(posts.flatMap((p) => p.tag_list))].sort();
 
-  $: filteredPosts = selectedFilters.length === 0
-    ? posts
-    : posts.filter(p => selectedFilters.some(f => p.tag_list.includes(f)));
+  $: filteredPosts =
+    selectedFilters.length === 0
+      ? posts
+      : posts.filter((p) => selectedFilters.some((f) => p.tag_list.includes(f)));
 
   $: displayedPosts = filteredPosts.slice(0, visiblePosts);
 
   function toggleFilter(filter: string) {
     if (selectedFilters.includes(filter)) {
-      selectedFilters = selectedFilters.filter(f => f !== filter);
+      selectedFilters = selectedFilters.filter((f) => f !== filter);
     } else {
       selectedFilters = [...selectedFilters, filter];
     }
@@ -282,12 +283,38 @@
 </script>
 
 <svelte:head>
-  <title>Blog — Insights on Design, Development & Digital Innovation | Techyor</title>
-  <meta name="description" content="Read articles and insights on web design, software development, AI, e-commerce, and digital product innovation from the Techyor team." />
-  <script type="application/ld+json">{generateBreadcrumbSchema([
+  <title>Techyor Blog — Notes on Design, Development & Product</title>
+  <meta
+    name="description"
+    content="Notes from the studio on web design, software engineering, AI, e-commerce, and how we ship digital products. Practical, opinionated, and short on fluff."
+  />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Techyor Blog — Notes on Design, Development & Product" />
+  <meta
+    property="og:description"
+    content="Notes from the studio on web design, engineering, AI, and how we ship digital products."
+  />
+  <meta property="og:image" content="https://www.techyor.com/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Techyor Blog" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@TechyorDotCo" />
+  <meta name="twitter:title" content="Techyor Blog — Notes on Design, Development & Product" />
+  <meta
+    name="twitter:description"
+    content="Notes from the studio on design, engineering, AI, and digital products."
+  />
+  <meta name="twitter:image" content="https://www.techyor.com/og.png" />
+
+  <script type="application/ld+json">
+{generateBreadcrumbSchema([
     { name: 'Home', url: '/' },
     { name: 'Blog', url: '/blog' }
-  ])}</script>
+  ])}
+  </script>
   <script type="application/ld+json">
     {JSON.stringify({
       '@context': 'https://schema.org',
@@ -306,16 +333,16 @@
 <main class="overflow-hidden">
   <!-- Header -->
   <div class="container mx-auto mt-10 px-container md:mt-14 lg:mt-20">
-    <h1 class="text-5xl md:text-6xl lg:text-7xl">
-      Blog.
-    </h1>
+    <h1 class="text-5xl md:text-6xl lg:text-7xl">Blog.</h1>
     <p class="mt-4 text-lg text-foreground-secondary md:text-xl">
       Insights on design, development, and digital innovation.
     </p>
   </div>
 
   <!-- Filters Button -->
-  <div class="lg:mt-18 container mx-auto mb-3 mt-8 flex items-center justify-between px-container md:mt-12">
+  <div
+    class="lg:mt-18 container mx-auto mb-3 mt-8 flex items-center justify-between px-container md:mt-12"
+  >
     <div class="flex items-center gap-2">
       <button
         class="inline-flex items-center gap-2 rounded-xs outline-none transition-opacity hover:opacity-80 focus-visible:ring-4 active:opacity-70"
@@ -329,22 +356,39 @@
               d="M4.4 5.1v2h1.2V5H13V4H5.6V2H4.4v2H2V5h2.4Zm5 5.6v-2h1.2v2H13V12h-2.4v2H9.4v-2H2v-1.2h7.4Z"
               fill="currentColor"
             />
-            <path d="m2 4.5 1.2-.1L4.6 4c.6 0 1 0 1.6.2l1.6.1 2 .2c.3 0 .7.3 1.1.3h1.6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" />
-            <path d="m5 1.9-.1 1.8-.3 1.5v1.5M2 11.3h1.5l.8.4 1.2.2h1.4l3.7-.2 1.6-.2h.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" />
-            <path d="M10.2 8.8a7.3 7.3 0 0 1-.5 2.9l-.1.6c0 .4 0 1 .2 1.4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" />
+            <path
+              d="m2 4.5 1.2-.1L4.6 4c.6 0 1 0 1.6.2l1.6.1 2 .2c.3 0 .7.3 1.1.3h1.6"
+              stroke="currentColor"
+              stroke-width="1.2"
+              stroke-linecap="round"
+            />
+            <path
+              d="m5 1.9-.1 1.8-.3 1.5v1.5M2 11.3h1.5l.8.4 1.2.2h1.4l3.7-.2 1.6-.2h.5"
+              stroke="currentColor"
+              stroke-width="1.2"
+              stroke-linecap="round"
+            />
+            <path
+              d="M10.2 8.8a7.3 7.3 0 0 1-.5 2.9l-.1.6c0 .4 0 1 .2 1.4"
+              stroke="currentColor"
+              stroke-width="1.2"
+              stroke-linecap="round"
+            />
           </svg>
         </i>
         <span>{showFilters ? 'Close' : 'Filters'}</span>
       </button>
       {#if selectedFilters.length > 0}
-        <span class="inline-flex items-center justify-center h-6 w-6 rounded-full bg-foreground text-background text-xs font-medium">
+        <span
+          class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-foreground text-xs font-medium text-background"
+        >
           {selectedFilters.length}
         </span>
       {/if}
     </div>
     {#if selectedFilters.length > 0}
       <button
-        class="text-sm font-medium hover:opacity-80 transition-opacity"
+        class="text-sm font-medium transition-opacity hover:opacity-80"
         on:click={clearFilters}
       >
         Clear all
@@ -356,12 +400,12 @@
   {#if showFilters}
     <div transition:slide|global={{ duration: 300 }} class="border-b">
       <div class="container mx-auto px-container py-8">
-        <p class="text-xs uppercase tracking-wider text-foreground-secondary mb-4">Tags</p>
+        <p class="mb-4 text-xs uppercase tracking-wider text-foreground-secondary">Tags</p>
         <div class="flex flex-wrap gap-2">
           {#each allTags as tag}
             <button
               on:click={() => toggleFilter(tag)}
-              class={`px-3 py-1.5 text-sm rounded transition-all ${
+              class={`rounded px-3 py-1.5 text-sm transition-all ${
                 selectedFilters.includes(tag)
                   ? 'bg-foreground text-background'
                   : 'border border-border hover:border-foreground'
@@ -386,7 +430,7 @@
     <div class="container mx-auto px-container py-12">
       <button
         on:click={() => (visiblePosts += 3)}
-        class="group relative inline-flex items-center justify-center gap-1.5 overflow-hidden whitespace-nowrap text-md font-medium leading-none outline-none transition-all hover:ring-4 focus-visible:ring-4 active:scale-[0.98] active:ring-2 disabled:pointer-events-none disabled:opacity-60 text-foreground border-border hover:border-border-active focus-visible:border-border-active active:border-border-active border h-11 rounded-md px-5"
+        class="text-md group relative inline-flex h-11 items-center justify-center gap-1.5 overflow-hidden whitespace-nowrap rounded-md border border-border px-5 font-medium leading-none text-foreground outline-none transition-all hover:border-border-active hover:ring-4 focus-visible:border-border-active focus-visible:ring-4 active:scale-[0.98] active:border-border-active active:ring-2 disabled:pointer-events-none disabled:opacity-60"
       >
         Load More
       </button>
@@ -398,7 +442,7 @@
       <p class="text-lg text-foreground-secondary">No posts match your filters.</p>
       <button
         on:click={clearFilters}
-        class="mt-4 text-sm font-medium text-foreground hover:text-foreground-secondary transition-colors"
+        class="mt-4 text-sm font-medium text-foreground transition-colors hover:text-foreground-secondary"
       >
         Clear filters
       </button>
