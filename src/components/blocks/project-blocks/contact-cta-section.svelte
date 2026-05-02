@@ -126,8 +126,6 @@
           <!-- Submit Section -->
           <div class="mt-8 flex flex-col justify-between gap-6 pb-1 sm:flex-row-reverse sm:items-center">
             <button
-              role="button"
-              tabindex="0"
               class="group relative inline-flex items-center justify-center gap-1.5 overflow-hidden whitespace-nowrap text-md font-medium leading-none outline-none transition-all hover:ring-4 focus-visible:ring-4 active:scale-[0.98] active:ring-2 disabled:pointer-events-none disabled:opacity-60 bg-foreground text-background h-14 rounded-lg px-6"
               type="submit"
             >

@@ -14,11 +14,11 @@
 
 {#if isOpen}
   <!-- Overlay -->
-  <div
-    class="fixed inset-0 z-40 bg-black/50 transition-opacity"
+  <button
+    type="button"
+    aria-label="Close modal"
+    class="fixed inset-0 z-40 cursor-default bg-black/50 transition-opacity"
     on:click={() => (isOpen = false)}
-    role="button"
-    tabindex="0"
   />
 
   <!-- Modal -->
@@ -32,7 +32,7 @@
         </svg>
         <span>Expand</span>
       </button>
-      <button role="button" tabindex="0" on:click={() => (isOpen = false)} class="group relative inline-flex items-center justify-center gap-1.5 overflow-hidden whitespace-nowrap text-md font-medium leading-none outline-none transition-all hover:ring-4 focus-visible:ring-4 active:scale-[0.98] active:ring-2 disabled:pointer-events-none disabled:opacity-60 h-11 rounded-md px-5 bg-background">
+      <button type="button" aria-label="Close" on:click={() => (isOpen = false)} class="group relative inline-flex items-center justify-center gap-1.5 overflow-hidden whitespace-nowrap text-md font-medium leading-none outline-none transition-all hover:ring-4 focus-visible:ring-4 active:scale-[0.98] active:ring-2 disabled:pointer-events-none disabled:opacity-60 h-11 rounded-md px-5 bg-background">
         <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="m4.5 4.5 7 7M4.5 11.5l7-7" stroke="currentColor" stroke-width="1.2"></path>
           <path d="M4.4 4.3c0 .4.2.8.4 1.1l.8 1c.4.4.7.8 1.2 1.1l1.5.8c.6.2 1 .6 1.5 1l1 .6.7 1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"></path>
