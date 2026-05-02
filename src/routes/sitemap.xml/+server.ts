@@ -4,6 +4,15 @@ const BASE_URL = 'https://www.techyor.com';
 
 const today = new Date().toISOString().split('T')[0];
 
+// Helper function to generate URL-safe slugs
+function toSlug(text: string): string {
+  return text
+    .toLowerCase()
+    .replace(/\s+/g, '-')
+    .replace(/&/g, 'and')
+    .replace(/[^\w-]/g, '');
+}
+
 // Static pages with priority and lastmod
 const staticPages = [
   { path: '/', priority: 1.0, changefreq: 'weekly', lastmod: today },
@@ -36,7 +45,7 @@ projectsData.forEach((project) => {
 const servicePages = Array.from(uniqueServices)
   .sort()
   .map((service) => ({
-    path: `/projects/${service.toLowerCase().replace(/\s+/g, '-')}`,
+    path: `/projects/${toSlug(service)}`,
     priority: 0.7,
     changefreq: 'weekly',
     lastmod: today
@@ -54,7 +63,7 @@ projectsData.forEach((project) => {
 const deliverablePages = Array.from(uniqueDeliverables)
   .sort()
   .map((deliverable) => ({
-    path: `/projects/${deliverable.toLowerCase().replace(/\s+/g, '-')}`,
+    path: `/projects/${toSlug(deliverable)}`,
     priority: 0.7,
     changefreq: 'weekly',
     lastmod: today

@@ -2,7 +2,11 @@ import { projectsData } from '$lib/data/projects';
 import { error } from '@sveltejs/kit';
 
 function slugify(name: string): string {
-  return name.toLowerCase().replace(/\s+/g, '-');
+  return name
+    .toLowerCase()
+    .replace(/\s+/g, '-')
+    .replace(/&/g, 'and')
+    .replace(/[^\w-]/g, '');
 }
 
 export function load({ params }) {

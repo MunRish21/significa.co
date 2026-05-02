@@ -17,37 +17,45 @@
   // Get service from URL path
   $: servicePath = $page.params.path;
   console.log('📍 servicePath changed:', servicePath);
-  $: serviceFilter = servicePath
-    ? servicePath.split('/')[0].replace(/-/g, ' ').toUpperCase()
-    : '';
 
-  // Convert kebab-case back to proper service name
+  // Convert kebab-case slug back to proper service/deliverable name
   $: properServiceName = (() => {
+    const slug = servicePath ? servicePath.split('/')[0] : '';
+
+    // Mapping of URL slugs to proper names
     const mapping: Record<string, string> = {
-      'AI & MACHINE LEARNING': 'AI & Machine Learning',
-      'BACKEND ENGINEERING': 'Backend Engineering',
-      'BUSINESS SERVICES': 'Business Services',
-      'DESIGN & CREATIVE': 'Design & Creative',
-      'EDUCATION & TRAINING': 'Education & Training',
-      'E-COMMERCE': 'E-commerce',
-      'FINANCIAL SERVICES': 'Financial Services',
-      'FOOD & BEVERAGE': 'Food & Beverage',
-      'HEALTH & WELLNESS': 'Health & Wellness',
-      'MOBILE APP DEVELOPMENT': 'Mobile App Development',
-      'PYTHON BACKEND ENGINEERING': 'Python Backend Engineering',
-      'REACT & NEXT.JS DEVELOPMENT': 'React & Next.js Development',
-      'REAL ESTATE & PROPERTY': 'Real Estate & Property',
-      'SAAS PLATFORMS': 'SaaS Platforms',
-      'VOICE AI ENGINEERING': 'Voice AI Engineering',
-      'WEB DEVELOPMENT & DESIGN': 'Web Development & Design',
-      'UX & UI DESIGN': 'UX & UI Design'
+      'ai-and-machine-learning': 'AI & Machine Learning',
+      'backend-engineering': 'Backend Engineering',
+      'business-services': 'Business Services',
+      'design-and-creative': 'Design & Creative',
+      'education-and-training': 'Education & Training',
+      'e-commerce': 'E-commerce',
+      'financial-services': 'Financial Services',
+      'food-and-beverage': 'Food & Beverage',
+      'health-and-wellness': 'Health & Wellness',
+      'mobile-app-development': 'Mobile App Development',
+      'python-backend-engineering': 'Python Backend Engineering',
+      'react-and-nextjs-development': 'React & Next.js Development',
+      'real-estate-and-property': 'Real Estate & Property',
+      'saas-platforms': 'SaaS Platforms',
+      'subscription-platforms': 'Subscription Platforms',
+      'voice-ai-engineering': 'Voice AI Engineering',
+      'web-development-and-design': 'Web Development & Design',
+      'ux-and-ui-design': 'UX & UI Design',
+      'website': 'Website',
+      'e-commerce-platforms': 'E-Commerce Platforms',
+      'web-applications': 'Web Applications',
+      'mobile-applications': 'Mobile Applications',
+      'apis-and-backend-services': 'APIs & Backend Services',
+      'design-and-branding': 'Design & Branding',
+      'content-management-systems': 'Content Management Systems',
+      'business-management-platforms': 'Business Management Platforms',
+      'single-protein-navigation-system': 'Single-Protein Navigation System',
+      'reviews-and-press-surfaces': 'Reviews & Press Surfaces'
     };
-    const result = mapping[serviceFilter] || serviceFilter;
-    console.log('properServiceName computed:', {
-      serviceFilter,
-      mapped: mapping[serviceFilter],
-      result
-    });
+
+    const result = mapping[slug] || slug.replace(/-/g, ' ');
+    console.log('properServiceName computed:', { slug, result });
     return result;
   })();
 
@@ -71,7 +79,12 @@
   }
 
   function getFilterUrl(filter: string): string {
-    return `/projects/${filter.toLowerCase().replace(/\s+/g, '-')}`;
+    const slug = filter
+      .toLowerCase()
+      .replace(/\s+/g, '-')
+      .replace(/&/g, 'and')
+      .replace(/[^\w-]/g, '');
+    return `/projects/${slug}`;
   }
 
   function isActiveService(service: string): boolean {
