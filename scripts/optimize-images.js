@@ -196,6 +196,11 @@ function formatBytes(bytes) {
 }
 
 async function main() {
+  if (process.env.VERCEL) {
+    console.log('🖼️  Skipping image optimization on Vercel — using committed static/_optimized/.');
+    return;
+  }
+
   console.log('🖼️  Starting image optimization...\n');
   const startTime = Date.now();
 

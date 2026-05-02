@@ -14,8 +14,9 @@ vite.config.ts.timestamp-*
 
 static/sitemap.xml
 
-# Optimized images (generated at build time)
-static/_optimized/
+# Optimized images are generated locally and committed to the repo
+# so Vercel builds don't re-encode them. Run `npm run optimize-images`
+# locally after adding/changing source images.
 
 # Handbook data
 static/handbook/*
