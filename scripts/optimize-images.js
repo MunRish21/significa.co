@@ -32,6 +32,16 @@ const stats = {
   optimizedSize: 0
 };
 
+// Load existing manifest so we can reuse entries for unchanged images
+let existingManifest = {};
+if (fs.existsSync(manifestPath)) {
+  try {
+    existingManifest = JSON.parse(fs.readFileSync(manifestPath, 'utf-8'));
+  } catch {
+    existingManifest = {};
+  }
+}
+
 // Ensure output directory exists
 if (!fs.existsSync(outputBase)) {
   fs.mkdirSync(outputBase, { recursive: true });
@@ -71,6 +81,35 @@ async function processImage(imagePath, sourceDir, urlPrefix) {
   }
 
   try {
+    const userUrl = `${urlPrefix}/${relativePath}`.replace(/\\/g, '/').replace(/\/+/g, '/');
+    const sourceMtime = fs.statSync(imagePath).mtimeMs;
+    const cachedEntry = existingManifest[userUrl];
+
+    // Fast-path: if we have a manifest entry and all expected output files exist
+    // and are newer than the source, skip re-encoding entirely.
+    if (cachedEntry && cachedEntry.sizes && cachedEntry.width) {
+      const expectedFiles = [];
+      for (const width of cachedEntry.sizes) {
+        const sizedName = `${fileName}-w${width}`;
+        expectedFiles.push(
+          path.join(outputSubDir, `${sizedName}.webp`),
+          path.join(outputSubDir, `${sizedName}.avif`),
+          path.join(outputSubDir, `${sizedName}${ext}`)
+        );
+      }
+
+      const allFresh = expectedFiles.every((p) => {
+        if (!fs.existsSync(p)) return false;
+        return fs.statSync(p).mtimeMs >= sourceMtime;
+      });
+
+      if (allFresh) {
+        imageManifest[userUrl] = cachedEntry;
+        stats.skipped++;
+        return;
+      }
+    }
+
     const inputBuffer = fs.readFileSync(imagePath);
     const originalSize = inputBuffer.length;
     stats.originalSize += originalSize;
@@ -133,9 +172,6 @@ async function processImage(imagePath, sourceDir, urlPrefix) {
     stats.optimizedSize += totalOptimized;
     stats.processed++;
 
-    // Original URL the user references in code
-    const userUrl = `${urlPrefix}/${relativePath}`.replace(/\\/g, '/').replace(/\/+/g, '/');
-
     imageManifest[userUrl] = {
       srcset,
       width: originalWidth,
@@ -187,6 +223,7 @@ async function main() {
   console.log('\n📊 Optimization Summary');
   console.log('─'.repeat(50));
   console.log(`✓ Processed:     ${stats.processed} images`);
+  console.log(`⏭  Skipped:       ${stats.skipped} images (cached)`);
   console.log(`✗ Failed:        ${stats.failed} images`);
   console.log(`📦 Original size: ${formatBytes(stats.originalSize)}`);
   console.log(`📦 Optimized:     ${formatBytes(stats.optimizedSize)} (3 formats × ${RESPONSIVE_SIZES.length} sizes)`);
