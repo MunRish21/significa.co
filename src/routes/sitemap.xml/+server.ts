@@ -42,7 +42,25 @@ const servicePages = Array.from(uniqueServices)
     lastmod: today
   }));
 
-const allPages = [...staticPages, ...projectPages, ...servicePages];
+// Extract unique deliverables from projects for deliverable listing pages
+const uniqueDeliverables = new Set<string>();
+projectsData.forEach((project) => {
+  project.deliverables.forEach((deliverable) => {
+    uniqueDeliverables.add(deliverable);
+  });
+});
+
+// Generate deliverable pages with proper URL slugs
+const deliverablePages = Array.from(uniqueDeliverables)
+  .sort()
+  .map((deliverable) => ({
+    path: `/projects/${deliverable.toLowerCase().replace(/\s+/g, '-')}`,
+    priority: 0.7,
+    changefreq: 'weekly',
+    lastmod: today
+  }));
+
+const allPages = [...staticPages, ...projectPages, ...servicePages, ...deliverablePages];
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

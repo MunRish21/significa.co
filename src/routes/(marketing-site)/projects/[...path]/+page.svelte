@@ -1,7 +1,11 @@
 <script lang="ts">
   import { page } from '$app/stores';
   import { projectsData } from '$lib/data/projects';
+  import { getServiceDescription } from '$lib/data/service-descriptions';
   import OptimizedImage from '$components/optimized-image.svelte';
+  import ContactForm from '$components/contact-form.svelte';
+
+  console.log('🚀 Service page component loaded!');
 
   let projectsToShow = 8;
   const PROJECTS_PER_LOAD = 8;
@@ -12,6 +16,7 @@
 
   // Get service from URL path
   $: servicePath = $page.params.path;
+  console.log('📍 servicePath changed:', servicePath);
   $: serviceFilter = servicePath
     ? servicePath.split('/')[0].replace(/-/g, ' ').toUpperCase()
     : '';
@@ -37,7 +42,13 @@
       'WEB DEVELOPMENT & DESIGN': 'Web Development & Design',
       'UX & UI DESIGN': 'UX & UI Design'
     };
-    return mapping[serviceFilter] || serviceFilter;
+    const result = mapping[serviceFilter] || serviceFilter;
+    console.log('properServiceName computed:', {
+      serviceFilter,
+      mapped: mapping[serviceFilter],
+      result
+    });
+    return result;
   })();
 
   // Filter projects by service
@@ -62,6 +73,37 @@
   function getFilterUrl(filter: string): string {
     return `/projects/${filter.toLowerCase().replace(/\s+/g, '-')}`;
   }
+
+  function isActiveService(service: string): boolean {
+    const isActive = service.toLowerCase() === properServiceName.toLowerCase();
+    console.log('isActiveService:', {
+      service,
+      properServiceName,
+      serviceLower: service.toLowerCase(),
+      properNameLower: properServiceName.toLowerCase(),
+      isActive
+    });
+    return isActive;
+  }
+
+  // Extract unique services from all projects
+  $: uniqueServices = (() => {
+    const services = new Set<string>();
+    projectsData.forEach((p) => {
+      p.services.forEach((s) => {
+        services.add(s);
+      });
+    });
+    return Array.from(services).sort();
+  })();
+
+  // Debug logging
+  $: console.log('Service page loaded:', {
+    servicePath,
+    serviceFilter,
+    properServiceName,
+    totalProjects: filteredProjects.length
+  });
 </script>
 
 <svelte:head>
@@ -96,9 +138,50 @@
     </a>
   </div>
 
+  <!-- Hero Section with SEO Description -->
+  <div class="container mx-auto px-container py-8 md:py-12 lg:py-16">
+    <p class="max-w-3xl text-base leading-relaxed text-foreground-secondary md:text-lg">
+      {getServiceDescription(properServiceName)}
+    </p>
+    <!-- Action Buttons -->
+    <div class="mt-8 flex flex-wrap gap-4">
+      <a href="#projects-section" class="inline-flex h-11 items-center justify-center gap-1.5 rounded-md border border-foreground bg-foreground px-6 font-medium text-background outline-none transition-all hover:ring-4 focus-visible:ring-4 active:scale-[0.98] active:ring-2">
+        <span>View Our Work</span>
+        <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 3v9M11.5 8.5l-3.5 3.5-3.5-3.5" stroke="currentColor" stroke-width="1.2" />
+        </svg>
+      </a>
+      <a href="#testimonials-section" class="inline-flex h-11 items-center justify-center gap-1.5 rounded-md border border-border px-6 font-medium outline-none transition-all hover:border-foreground hover:ring-4 focus-visible:border-foreground focus-visible:ring-4 active:scale-[0.98] active:ring-2">
+        <span>See What Clients Say</span>
+        <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 4h12M2 8h12M2 12h8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" />
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- Service Filter Panel -->
+  <div class="border-b">
+    <div class="container mx-auto px-container py-8">
+      <p class="mb-4 text-xs uppercase tracking-wider text-foreground-secondary">Other Services</p>
+      <div class="flex flex-wrap gap-2">
+        {#each uniqueServices as service}
+          <a
+            href={getFilterUrl(service)}
+            class="rounded border px-3 py-1.5 text-sm transition-all {isActiveService(service)
+              ? 'border-foreground bg-foreground text-background'
+              : 'border-border hover:border-foreground hover:bg-foreground-tertiary/5'}"
+          >
+            {service}
+          </a>
+        {/each}
+      </div>
+    </div>
+  </div>
+
   {#if visibleProjects.length > 0}
     <!-- Projects List -->
-    <section>
+    <section id="projects-section">
       {#each visibleProjects as project, index (project.id)}
         {#if index === 0}
           <!-- First Project - Simple Design -->
@@ -237,4 +320,92 @@
       </p>
     </div>
   {/if}
+
+  <!-- Testimonials Section -->
+  <section id="testimonials-section" class="border-t">
+    <div class="container mx-auto px-container py-12 md:py-16 lg:py-20">
+      <h2 class="text-4xl font-semibold md:text-5xl">What Our Clients Say</h2>
+      <p class="mt-4 max-w-2xl text-lg text-foreground-secondary">
+        Real feedback from teams who've built {properServiceName.toLowerCase()} with us
+      </p>
+      <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div class="rounded-lg border border-border bg-background-offset p-8">
+          <div class="mb-4 flex gap-1">
+            {#each [1, 2, 3, 4, 5] as _}
+              <svg width="16" height="16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 1l2.39 4.83h5.34l-4.32 3.14 1.65 5.07L8 10.66l-4.32 3.14 1.65-5.07-4.32-3.14h5.34z" />
+              </svg>
+            {/each}
+          </div>
+          <p class="text-foreground-secondary">
+            "Techyor delivered exactly what we needed. Their expertise in {properServiceName.toLowerCase()} was instrumental in our success."
+          </p>
+          <div class="mt-6 flex items-center gap-3">
+            <div class="h-10 w-10 rounded-full bg-foreground-tertiary/20" />
+            <div>
+              <p class="text-sm font-medium text-foreground">Client Name</p>
+              <p class="text-xs text-foreground-secondary">Founder & CEO</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-lg border border-border bg-background-offset p-8">
+          <div class="mb-4 flex gap-1">
+            {#each [1, 2, 3, 4, 5] as _}
+              <svg width="16" height="16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 1l2.39 4.83h5.34l-4.32 3.14 1.65 5.07L8 10.66l-4.32 3.14 1.65-5.07-4.32-3.14h5.34z" />
+              </svg>
+            {/each}
+          </div>
+          <p class="text-foreground-secondary">
+            "Working with Techyor was seamless. They understood our vision and brought it to life with exceptional quality."
+          </p>
+          <div class="mt-6 flex items-center gap-3">
+            <div class="h-10 w-10 rounded-full bg-foreground-tertiary/20" />
+            <div>
+              <p class="text-sm font-medium text-foreground">Another Client</p>
+              <p class="text-xs text-foreground-secondary">Product Manager</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-lg border border-border bg-background-offset p-8">
+          <div class="mb-4 flex gap-1">
+            {#each [1, 2, 3, 4, 5] as _}
+              <svg width="16" height="16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 1l2.39 4.83h5.34l-4.32 3.14 1.65 5.07L8 10.66l-4.32 3.14 1.65-5.07-4.32-3.14h5.34z" />
+              </svg>
+            {/each}
+          </div>
+          <p class="text-foreground-secondary">
+            "Outstanding results. Techyor's team went above and beyond to ensure our {properServiceName.toLowerCase()} project exceeded expectations."
+          </p>
+          <div class="mt-6 flex items-center gap-3">
+            <div class="h-10 w-10 rounded-full bg-foreground-tertiary/20" />
+            <div>
+              <p class="text-sm font-medium text-foreground">Happy Founder</p>
+              <p class="text-xs text-foreground-secondary">CEO</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer CTA Section -->
+  <section class="border-t">
+    <div class="container mx-auto px-container py-12 md:py-16 lg:py-20">
+      <div class="grid gap-12 lg:grid-cols-2">
+        <div>
+          <h2 class="text-4xl font-semibold md:text-5xl">Ready to Get Started?</h2>
+          <p class="mt-4 text-lg text-foreground-secondary">
+            Let's discuss how we can build the perfect {properServiceName.toLowerCase()} for your business.
+          </p>
+        </div>
+        <div>
+          <ContactForm />
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
