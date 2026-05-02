@@ -66,7 +66,7 @@ export const projectsData = [
     image: '/assets/projects/navjot-kaur-pllc/cover.png',
     coverImage: '/assets/projects/navjot-kaur-pllc/cover.png',
     publishedYear: 2023,
-    services: ['Brand Identity', 'Web Development & Design', 'Legal Services Portal'],
+    services: ['Design & Creative', 'Web Development & Design', 'Business Services'],
     deliverables: ['Legal Services Website', 'Custom Logo Design', 'WordPress CMS'],
     links: [
       { label: 'Website', url: 'https://navjotkaurpllc.us/' },
@@ -259,7 +259,7 @@ export const projectsData = [
     image: '/assets/projects/hilink-travel-platform/cover.png',
     coverImage: '/assets/projects/hilink-travel-platform/cover.png',
     publishedYear: 2023,
-    services: ['SaaS Platforms', 'Specialized Services', 'Web Development & Design'],
+    services: ['SaaS Platforms', 'Business Services', 'Web Development & Design'],
     deliverables: ['React & Next.js', 'Travel Booking Platform'],
     links: [
       { label: 'Website', url: 'https://travel-ui-ux-three.vercel.app/' }
@@ -277,7 +277,7 @@ export const projectsData = [
     image: '/assets/projects/simpletalk-ai/cover.png',
     coverImage: '/assets/projects/simpletalk-ai/cover.png',
     publishedYear: 2023,
-    services: ['AI & Machine Learning', 'Voice AI Engineering', 'SaaS Platform Development', 'Multi-Tenant Architecture', 'CRM Integration'],
+    services: ['AI & Machine Learning', 'Voice AI Engineering', 'SaaS Platforms'],
     deliverables: ['AI Voice Sales Platform', 'Multi-Channel Agent Dashboard', 'White-Label Reseller System', 'CRM & Telephony Integrations'],
     links: [
       { label: 'Website', url: 'https://www.simpletalk.ai' }
@@ -299,7 +299,7 @@ export const projectsData = [
     image: '/assets/projects/convertbankstatement/cover.png',
     coverImage: '/assets/projects/convertbankstatement/cover.png',
     publishedYear: 2023,
-    services: ['Python Backend Engineering', 'OCR & Document Processing', 'React & Next.js Development', 'SaaS Platform Development', 'API Design', 'Subscription Billing'],
+    services: ['Python Backend Engineering', 'AI & Machine Learning', 'React & Next.js Development', 'SaaS Platforms', 'Backend Engineering'],
     deliverables: ['PDF-to-Excel Conversion Engine', 'Custom OCR Pipeline', 'React Web Application', 'Tiered Subscription Platform', 'Public REST API', 'Developer Documentation Portal'],
     links: [
       { label: 'Website', url: 'https://www.convertbankstatement.io/' }
@@ -649,7 +649,7 @@ export const projectsData = [
     image: '/assets/projects/aimusicservice/cover.png',
     coverImage: '/assets/projects/aimusicservice/cover.png',
     publishedYear: 2023,
-    services: ['AI & Machine Learning', 'E-commerce', 'Service Platform'],
+    services: ['AI & Machine Learning', 'E-commerce', 'Business Services'],
     deliverables: ['AI-powered Platform', 'E-commerce Platform'],
     links: [
       { label: 'Website', url: 'https://aimusicservice.com/' }
@@ -667,7 +667,7 @@ export const projectsData = [
     image: '/assets/projects/guard-dog-security/cover.png',
     coverImage: '/assets/projects/guard-dog-security/cover.png',
     publishedYear: 2023,
-    services: ['E-commerce', 'Specialized Services'],
+    services: ['E-commerce', 'Business Services'],
     deliverables: ['E-commerce Platform'],
     links: [
       { label: 'Website', url: 'https://guarddog-security.com/' }
@@ -685,7 +685,7 @@ export const projectsData = [
     image: '/assets/projects/havalink/cover.png',
     coverImage: '/assets/projects/havalink/cover.png',
     publishedYear: 2023,
-    services: ['E-commerce', 'Specialized Services'],
+    services: ['E-commerce', 'Business Services'],
     deliverables: ['E-commerce Platform'],
     links: [
       { label: 'Website', url: 'https://www.havalink.com/' }
@@ -721,7 +721,7 @@ export const projectsData = [
     image: '/assets/projects/rea-power/cover.png',
     coverImage: '/assets/projects/rea-power/cover.png',
     publishedYear: 2023,
-    services: ['E-commerce', 'Specialized Services'],
+    services: ['E-commerce', 'Business Services'],
     deliverables: ['E-commerce Platform'],
     links: [
       { label: 'Website', url: 'https://reapower.com.au/' }
@@ -775,7 +775,7 @@ export const projectsData = [
     image: '/assets/projects/podologie-praxis-zug/cover.png',
     coverImage: '/assets/projects/podologie-praxis-zug/cover.png',
     publishedYear: 2023,
-    services: ['Business Services', 'Service Booking', 'Web Development & Design'],
+    services: ['Business Services', 'Web Development & Design'],
     deliverables: ['Service Portal', 'WordPress'],
     links: [
       { label: 'Website', url: 'https://podologiepraxiszug.ch/en/' }
@@ -847,7 +847,7 @@ export const projectsData = [
     image: '/assets/projects/oona-home/cover.png',
     coverImage: '/assets/projects/oona-home/cover.png',
     publishedYear: 2023,
-    services: ['Design & Creative', 'Service Showcase', 'Web Development & Design'],
+    services: ['Design & Creative', 'Business Services', 'Web Development & Design'],
     deliverables: ['Portfolio', 'WordPress'],
     links: [
       { label: 'Website', url: 'https://oona-home.ch/' }
@@ -883,7 +883,7 @@ export const projectsData = [
     image: '/assets/projects/shin-jewelers/cover.png',
     coverImage: '/assets/projects/shin-jewelers/cover.png',
     publishedYear: 2023,
-    services: ['E-commerce', 'Fashion & Retail'],
+    services: ['E-commerce'],
     deliverables: ['E-commerce Platform'],
     links: [
       { label: 'Website', url: 'https://shinjewelers.com/' }
@@ -937,7 +937,7 @@ export const projectsData = [
     image: '/assets/projects/ichor-bio/cover.png',
     coverImage: '/assets/projects/ichor-bio/cover.png',
     publishedYear: 2023,
-    services: ['E-commerce', 'Specialized Services'],
+    services: ['E-commerce', 'Business Services'],
     deliverables: ['E-commerce Platform'],
     links: [
       { label: 'Website', url: 'https://ichor.bio/' }
@@ -955,7 +955,7 @@ export const projectsData = [
     image: '/assets/projects/jacob-alexander/cover.png',
     coverImage: '/assets/projects/jacob-alexander/cover.png',
     publishedYear: 2023,
-    services: ['E-commerce', 'Fashion & Retail'],
+    services: ['E-commerce'],
     deliverables: ['E-commerce Platform'],
     links: [
       { label: 'Website', url: 'http://jacobalexander.com/' }
@@ -973,7 +973,7 @@ export const projectsData = [
     image: '/assets/projects/jb-tools/cover.png',
     coverImage: '/assets/projects/jb-tools/cover.png',
     publishedYear: 2023,
-    services: ['E-commerce', 'Industrial Tools'],
+    services: ['E-commerce'],
     deliverables: ['E-commerce Platform'],
     links: [
       { label: 'Website', url: 'https://in.jbtools.com/' }
@@ -991,7 +991,7 @@ export const projectsData = [
     image: '/assets/projects/shark-leathers/cover.png',
     coverImage: '/assets/projects/shark-leathers/cover.png',
     publishedYear: 2023,
-    services: ['E-commerce', 'Fashion & Retail'],
+    services: ['E-commerce'],
     deliverables: ['E-commerce Platform'],
     links: [
       { label: 'Website', url: 'https://sharkleathers.com.au/' }
@@ -1009,7 +1009,7 @@ export const projectsData = [
     image: '/assets/projects/hornsby-beekeeping/cover.png',
     coverImage: '/assets/projects/hornsby-beekeeping/cover.png',
     publishedYear: 2023,
-    services: ['E-commerce', 'Specialized Services'],
+    services: ['E-commerce', 'Business Services'],
     deliverables: ['E-commerce Platform'],
     links: [
       { label: 'Website', url: 'https://www.hornsby-beekeeping.com/' }
@@ -1027,7 +1027,7 @@ export const projectsData = [
     image: '/assets/projects/plant-doctor/cover.png',
     coverImage: '/assets/projects/plant-doctor/cover.png',
     publishedYear: 2023,
-    services: ['E-commerce', 'Specialized Services'],
+    services: ['E-commerce', 'Business Services'],
     deliverables: ['E-commerce Platform'],
     links: [
       { label: 'Website', url: 'https://www.plantdoctor.com.au/' }
@@ -1045,7 +1045,7 @@ export const projectsData = [
     image: '/assets/projects/coore/cover.png',
     coverImage: '/assets/projects/coore/cover.png',
     publishedYear: 2023,
-    services: ['E-commerce', 'Lifestyle Store'],
+    services: ['E-commerce'],
     deliverables: ['E-commerce Platform'],
     links: [
       { label: 'Website', url: 'https://www.coore.com.au/' }
@@ -1063,7 +1063,7 @@ export const projectsData = [
     image: '/assets/projects/guitar-templates/cover.png',
     coverImage: '/assets/projects/guitar-templates/cover.png',
     publishedYear: 2023,
-    services: ['E-commerce', 'Specialized Services'],
+    services: ['E-commerce', 'Business Services'],
     deliverables: ['E-commerce Platform'],
     links: [
       { label: 'Website', url: 'https://www.guitartemplates.com.au/' }
@@ -1081,7 +1081,7 @@ export const projectsData = [
     image: '/assets/projects/american-trucks/cover.png',
     coverImage: '/assets/projects/american-trucks/cover.png',
     publishedYear: 2023,
-    services: ['E-commerce', 'Specialized Services', 'Truck Parts & Accessories'],
+    services: ['E-commerce', 'Business Services'],
     deliverables: ['E-commerce Platform'],
     links: [
       { label: 'Website', url: 'https://www.americantrucks.com/' }
@@ -1171,7 +1171,7 @@ export const projectsData = [
     image: '/assets/projects/lynn-milo-pilates/cover.png',
     coverImage: '/assets/projects/lynn-milo-pilates/cover.png',
     publishedYear: 2023,
-    services: ['Health & Wellness', 'Service Booking', 'Web Development & Design'],
+    services: ['Health & Wellness', 'Business Services', 'Web Development & Design'],
     deliverables: ['Service Portal', 'Squarespace'],
     links: [
       { label: 'Website', url: 'https://www.lynnmilyopilates.com/' }
@@ -1189,7 +1189,7 @@ export const projectsData = [
     image: '/assets/projects/dopple-press/cover.png',
     coverImage: '/assets/projects/dopple-press/cover.png',
     publishedYear: 2023,
-    services: ['Design & Creative', 'Publishing Platform', 'Web Development & Design'],
+    services: ['Design & Creative', 'Business Services', 'Web Development & Design'],
     deliverables: ['Publishing Portal', 'Wix'],
     links: [
       { label: 'Website', url: 'https://www.dopplepress.com/' }
@@ -1243,7 +1243,7 @@ export const projectsData = [
     image: '/assets/projects/evolve-clothing-gallery/cover.png',
     coverImage: '/assets/projects/evolve-clothing-gallery/cover.png',
     publishedYear: 2023,
-    services: ['E-commerce', 'Fashion & Retail', 'Web Development & Design'],
+    services: ['E-commerce', 'Web Development & Design'],
     deliverables: ['E-commerce Platform', 'Wix'],
     links: [
       { label: 'Website', url: 'https://www.evolveclothinggallery.com/' }
@@ -1261,7 +1261,7 @@ export const projectsData = [
     image: '/assets/projects/taste-hub/cover.png',
     coverImage: '/assets/projects/taste-hub/cover.png',
     publishedYear: 2023,
-    services: ['Food & Beverage', 'Reservation System', 'Web Development & Design'],
+    services: ['Food & Beverage', 'Business Services', 'Web Development & Design'],
     deliverables: ['Framer', 'Restaurant Portal'],
     links: [
       { label: 'Website', url: 'https://tastehub.framer.website' }
@@ -1279,7 +1279,7 @@ export const projectsData = [
     image: '/assets/projects/agensip-styleest/cover.png',
     coverImage: '/assets/projects/agensip-styleest/cover.png',
     publishedYear: 2023,
-    services: ['E-commerce', 'Fashion & Retail', 'Web Development & Design'],
+    services: ['E-commerce', 'Web Development & Design'],
     deliverables: ['E-commerce Platform', 'Framer'],
     links: [
       { label: 'Website', url: 'https://agensip-styleest.framer.website' }
@@ -1333,7 +1333,7 @@ export const projectsData = [
     image: '/assets/projects/beauty-design/cover.png',
     coverImage: '/assets/projects/beauty-design/cover.png',
     publishedYear: 2023,
-    services: ['Design & Creative', 'Figma Design'],
+    services: ['Design & Creative'],
     deliverables: ['Figma Design'],
     links: [
       { label: 'Design', url: 'https://www.figma.com/proto/PHYTS03aMqVQRU3ItRanxw/beauty?page-id=0%3A1&node-id=0-1324' }

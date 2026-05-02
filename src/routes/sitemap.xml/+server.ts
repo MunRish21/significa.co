@@ -24,7 +24,25 @@ const projectPages = projectsData.map((project) => ({
   lastmod: `${project.publishedYear}-12-31`
 }));
 
-const allPages = [...staticPages, ...projectPages];
+// Extract unique services from projects for service listing pages
+const uniqueServices = new Set<string>();
+projectsData.forEach((project) => {
+  project.services.forEach((service) => {
+    uniqueServices.add(service);
+  });
+});
+
+// Generate service pages with proper URL slugs
+const servicePages = Array.from(uniqueServices)
+  .sort()
+  .map((service) => ({
+    path: `/projects/${service.toLowerCase().replace(/\s+/g, '-')}`,
+    priority: 0.7,
+    changefreq: 'weekly',
+    lastmod: today
+  }));
+
+const allPages = [...staticPages, ...projectPages, ...servicePages];
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
