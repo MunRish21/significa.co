@@ -1,4 +1,5 @@
 import { projectsData } from '$lib/data/projects';
+import { getActiveTeamMembers } from '$lib/data/team';
 
 const BASE_URL = 'https://www.techyor.com';
 
@@ -69,7 +70,16 @@ const deliverablePages = Array.from(uniqueDeliverables)
     lastmod: today
   }));
 
-const allPages = [...staticPages, ...projectPages, ...servicePages, ...deliverablePages];
+// Team member pages — high priority for SEO
+const teamMembers = getActiveTeamMembers();
+const teamPages = teamMembers.map((member) => ({
+  path: `/team/${member.slug}`,
+  priority: 0.85,
+  changefreq: 'monthly',
+  lastmod: today
+}));
+
+const allPages = [...staticPages, ...projectPages, ...servicePages, ...deliverablePages, ...teamPages];
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
