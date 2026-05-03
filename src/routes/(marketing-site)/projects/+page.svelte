@@ -4,6 +4,7 @@
   import { projectsData } from '$lib/data/projects';
   import { generateBreadcrumbSchema, generateProjectSchema } from '$lib/utils/schema';
   import OptimizedImage from '$components/optimized-image.svelte';
+  import TeamSection from '$components/sections/team-section.svelte';
 
   const projects = projectsData;
 
@@ -349,4 +350,11 @@
       </button>
     </div>
   {/if}
+
+  <!-- Team Section -->
+  <TeamSection
+    title="The team behind these projects."
+    subtitle="Hire a specialist for your next one."
+    showViewAll
+  />
 </main>

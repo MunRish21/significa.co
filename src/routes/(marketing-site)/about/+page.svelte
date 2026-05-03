@@ -3,6 +3,7 @@
   import CoreValues from '$components/blocks/core-values.svelte';
   import FaqsList from '$components/blocks/faqs-list.svelte';
   import ClientsSection from '$components/sections/clients-section.svelte';
+  import TeamSection from '$components/sections/team-section.svelte';
   import OfficeCards from '$components/blocks/office-cards.svelte';
   import { commonFaqsBlock } from '$lib/data/faqs';
   import {
@@ -194,6 +195,12 @@
 
   <!-- Our Values Section -->
   <CoreValues block={coreValuesBlock} />
+
+  <!-- Team Section -->
+  <TeamSection
+    title="The team behind the work."
+    subtitle="Specialists you can hire directly."
+  />
 
   <!-- Clients Section -->
   <ClientsSection title="Clients we've worked with" />

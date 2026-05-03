@@ -4,6 +4,12 @@
   import { getServiceDescription } from '$lib/data/service-descriptions';
   import OptimizedImage from '$components/optimized-image.svelte';
   import ContactForm from '$components/contact-form.svelte';
+  import UpworkTestimonials from '$components/sections/upwork-testimonials.svelte';
+  import {
+    getFeaturedTestimonials,
+    getTestimonialsByService
+  } from '$lib/data/testimonials';
+  import type { ServiceCategory } from '$lib/data/team';
 
   console.log('🚀 Service page component loaded!');
 
@@ -73,6 +79,15 @@
 
   $: hasMore = filteredProjects.length > projectsToShow;
   $: totalProjects = filteredProjects.length;
+
+  /**
+   * Pull testimonials tagged with this service from the central store.
+   * Falls back to featured testimonials so the section is never empty.
+   */
+  $: serviceTestimonials = (() => {
+    const matched = getTestimonialsByService(properServiceName as ServiceCategory);
+    return matched.length > 0 ? matched : getFeaturedTestimonials(3);
+  })();
 
   function loadMore() {
     projectsToShow += PROJECTS_PER_LOAD;
@@ -337,75 +352,14 @@
   {/if}
 
   <!-- Testimonials Section -->
-  <section id="testimonials-section" class="border-t">
-    <div class="container mx-auto px-container py-12 md:py-16 lg:py-20">
-      <h2 class="text-4xl font-semibold md:text-5xl">What Our Clients Say</h2>
-      <p class="mt-4 max-w-2xl text-lg text-foreground-secondary">
-        Real feedback from teams who've built {properServiceName.toLowerCase()} with us
-      </p>
-      <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        <div class="rounded-lg border border-border bg-background-offset p-8">
-          <div class="mb-4 flex gap-1">
-            {#each [1, 2, 3, 4, 5] as _}
-              <svg width="16" height="16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path d="M8 1l2.39 4.83h5.34l-4.32 3.14 1.65 5.07L8 10.66l-4.32 3.14 1.65-5.07-4.32-3.14h5.34z" />
-              </svg>
-            {/each}
-          </div>
-          <p class="text-foreground-secondary">
-            "Techyor delivered exactly what we needed. Their expertise in {properServiceName.toLowerCase()} was instrumental in our success."
-          </p>
-          <div class="mt-6 flex items-center gap-3">
-            <div class="h-10 w-10 rounded-full bg-foreground-tertiary/20" />
-            <div>
-              <p class="text-sm font-medium text-foreground">Client Name</p>
-              <p class="text-xs text-foreground-secondary">Founder & CEO</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="rounded-lg border border-border bg-background-offset p-8">
-          <div class="mb-4 flex gap-1">
-            {#each [1, 2, 3, 4, 5] as _}
-              <svg width="16" height="16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path d="M8 1l2.39 4.83h5.34l-4.32 3.14 1.65 5.07L8 10.66l-4.32 3.14 1.65-5.07-4.32-3.14h5.34z" />
-              </svg>
-            {/each}
-          </div>
-          <p class="text-foreground-secondary">
-            "Working with Techyor was seamless. They understood our vision and brought it to life with exceptional quality."
-          </p>
-          <div class="mt-6 flex items-center gap-3">
-            <div class="h-10 w-10 rounded-full bg-foreground-tertiary/20" />
-            <div>
-              <p class="text-sm font-medium text-foreground">Another Client</p>
-              <p class="text-xs text-foreground-secondary">Product Manager</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="rounded-lg border border-border bg-background-offset p-8">
-          <div class="mb-4 flex gap-1">
-            {#each [1, 2, 3, 4, 5] as _}
-              <svg width="16" height="16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path d="M8 1l2.39 4.83h5.34l-4.32 3.14 1.65 5.07L8 10.66l-4.32 3.14 1.65-5.07-4.32-3.14h5.34z" />
-              </svg>
-            {/each}
-          </div>
-          <p class="text-foreground-secondary">
-            "Outstanding results. Techyor's team went above and beyond to ensure our {properServiceName.toLowerCase()} project exceeded expectations."
-          </p>
-          <div class="mt-6 flex items-center gap-3">
-            <div class="h-10 w-10 rounded-full bg-foreground-tertiary/20" />
-            <div>
-              <p class="text-sm font-medium text-foreground">Happy Founder</p>
-              <p class="text-xs text-foreground-secondary">CEO</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <div id="testimonials-section">
+    <UpworkTestimonials
+      items={serviceTestimonials}
+      title="What clients say."
+      subtitle={`On ${properServiceName.toLowerCase()} work.`}
+      description={`Verified Upwork reviews from teams we've built ${properServiceName.toLowerCase()} for.`}
+    />
+  </div>
 
   <!-- Footer CTA Section -->
   <section class="border-t">

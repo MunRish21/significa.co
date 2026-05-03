@@ -10,9 +10,16 @@
   import TeamSection from '$components/blocks/project-blocks/team-section.svelte';
   import MetricsSection from '$components/blocks/project-blocks/metrics-section.svelte';
   import ContactCtaSection from '$components/blocks/project-blocks/contact-cta-section.svelte';
+  import MarketingTeamSection from '$components/sections/team-section.svelte';
+  import UpworkTestimonials from '$components/sections/upwork-testimonials.svelte';
   import OptimizedImage from '$components/optimized-image.svelte';
   import ContactForm from '$components/contact-form.svelte';
   import { generateBreadcrumbSchema, generateProjectSchema, BASE_URL } from '$lib/utils/schema';
+  import {
+    getFeaturedTestimonials,
+    getTestimonialsByService
+  } from '$lib/data/testimonials';
+  import type { ServiceCategory } from '$lib/data/team';
 
   export let data;
 
@@ -113,6 +120,12 @@
 
   let filterServices: string[] = [];
   let filterDeliverables: string[] = [];
+
+  $: filterTestimonials = (() => {
+    if (!data.filterName) return [];
+    const matched = getTestimonialsByService(data.filterName as ServiceCategory);
+    return matched.length > 0 ? matched : getFeaturedTestimonials(3);
+  })();
 </script>
 
 <svelte:head>
@@ -463,37 +476,14 @@
     {/if}
 
     <!-- Client Testimonials Section -->
-    <section id="testimonials-section" class="container mx-auto px-container py-12 md:py-16 lg:py-20">
-      <h2 class="text-4xl font-semibold md:text-5xl">What Our Clients Say</h2>
-      <p class="mt-4 max-w-2xl text-lg text-foreground-secondary">
-        Real feedback from teams who've built {data.filterName.toLowerCase()} with us
-      </p>
-
-      <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        <!-- Placeholder Testimonials -->
-        {#each [1, 2, 3] as i}
-          <div class="rounded-lg border border-border bg-background-offset p-8">
-            <div class="flex gap-1">
-              {#each [1, 2, 3, 4, 5] as _}
-                <svg width="16" height="16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="text-yellow-500">
-                  <path d="M8 1l2.5 5h5.5l-4.5 3.5 1.5 5-5.5-4-5.5 4 1.5-5-4.5-3.5h5.5z" />
-                </svg>
-              {/each}
-            </div>
-            <p class="mt-4 text-foreground">
-              "Working with this team transformed how we think about our digital product. The quality and attention to detail exceeded our expectations."
-            </p>
-            <div class="mt-6 flex items-center gap-3">
-              <div class="h-10 w-10 rounded-full bg-gradient-to-br from-blue-400 to-blue-600"></div>
-              <div>
-                <p class="font-medium">Client Name</p>
-                <p class="text-sm text-foreground-secondary">Company Title</p>
-              </div>
-            </div>
-          </div>
-        {/each}
-      </div>
-    </section>
+    <div id="testimonials-section">
+      <UpworkTestimonials
+        items={filterTestimonials}
+        title="What clients say."
+        subtitle={`On ${data.filterName.toLowerCase()} work.`}
+        description={`Verified Upwork reviews from teams we've built ${data.filterName.toLowerCase()} for.`}
+      />
+    </div>
 
     <!-- Footer CTA Section -->
     <section class="border-t">
@@ -758,6 +748,7 @@
             author="Henry"
             title="Owner at Monster Fairings"
             image="/assets/storyblok/placeholder.jpeg"
+            source="Upwork"
           />
 
           <!-- Results -->
@@ -1165,6 +1156,7 @@
             author="Sydney"
             title="Client at Karen Lazar Design"
             image="/assets/storyblok/placeholder.jpeg"
+            source="Upwork"
           />
 
           <h2 class="mx-auto max-w-2xl"><b>Results &amp; impact.</b></h2>
@@ -1363,6 +1355,7 @@
             author="Founder"
             title="Shades of Gray Indigenous Pet Treats"
             image="/assets/storyblok/placeholder.jpeg"
+            source="Upwork"
           />
 
           <h2 class="mx-auto max-w-2xl"><b>Results &amp; impact.</b></h2>
@@ -1967,6 +1960,12 @@
           </p>
         {/if}
       </div>
+
+      <!-- Team Section — drives traffic to /team/[slug] for SEO -->
+      <MarketingTeamSection
+        title="Want similar work for your business?"
+        subtitle="Hire the team directly."
+      />
 
       <!-- Contact CTA Section -->
       <ContactCtaSection returnTo={`/projects/${project.slug}`} />

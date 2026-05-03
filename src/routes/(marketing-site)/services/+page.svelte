@@ -3,11 +3,15 @@
   import Services from '$components/blocks/services.svelte';
   import Clients from '$components/blocks/clients.svelte';
   import ClientsSection from '$components/sections/clients-section.svelte';
+  import TeamSection from '$components/sections/team-section.svelte';
   import List from '$components/blocks/list.svelte';
-  import Testimonials from '$components/blocks/testimonials.svelte';
+  import UpworkTestimonials from '$components/sections/upwork-testimonials.svelte';
   import ContactForm from '$components/contact-form.svelte';
   import FaqsList from '$components/blocks/faqs-list.svelte';
   import { commonFaqsBlock } from '$lib/data/faqs';
+  import { getFeaturedTestimonials } from '$lib/data/testimonials';
+
+  const servicesTestimonials = getFeaturedTestimonials();
   import {
     generateOrganizationSchema,
     generateBreadcrumbSchema,
@@ -508,111 +512,6 @@
     ]
   };
 
-  const testimonialsBlock = {
-    _uid: 'testimonials-1',
-    component: 'testimonials' as const,
-    testimonials_title1: 'Testimonials.',
-    testimonials_title2: 'Rumour has it.',
-    testimonials_cta_label: 'See projects',
-    testimonials_cta_link: {
-      linktype: 'url' as const,
-      url: '/projects'
-    },
-    variant: 'two' as const,
-    size: 'h2' as const,
-    testimonials: [
-      {
-        _uid: 'testimonial-1',
-        component: 'richtext-testimonial' as const,
-        testimonial:
-          'Techyor listened to our needs and delivered a solution that exceeded our expectations. Their attention to detail and creative thinking truly set them apart.',
-        name: 'Sarah Johnson',
-        position: 'CEO, Digital Innovations',
-        photo: {
-          id: 1,
-          name: 'avatar-1',
-          alt: 'Sarah Johnson',
-          filename: '/assets/storyblok/default-avatar-1.jpg',
-          focus: null,
-          source: null,
-          title: null,
-          copyright: null
-        }
-      },
-      {
-        _uid: 'testimonial-2',
-        component: 'richtext-testimonial' as const,
-        testimonial:
-          'Working with Techyor was a game-changer for our business. They understood our vision and brought it to life with remarkable precision and creativity.',
-        name: 'Michael Chen',
-        position: 'Founder, Creative Studios',
-        photo: {
-          id: 2,
-          name: 'avatar-2',
-          alt: 'Michael Chen',
-          filename: '/assets/storyblok/default-avatar-2.jpg',
-          focus: null,
-          source: null,
-          title: null,
-          copyright: null
-        }
-      },
-      {
-        _uid: 'testimonial-3',
-        component: 'richtext-testimonial' as const,
-        testimonial:
-          "The team at Techyor is not just talented—they're collaborative, responsive, and genuinely passionate about their work. Highly recommended!",
-        name: 'Emma Williams',
-        position: 'Product Manager, Tech Solutions',
-        photo: {
-          id: 3,
-          name: 'avatar-3',
-          alt: 'Emma Williams',
-          filename: '/assets/storyblok/default-avatar-3.jpg',
-          focus: null,
-          source: null,
-          title: null,
-          copyright: null
-        }
-      },
-      {
-        _uid: 'testimonial-4',
-        component: 'richtext-testimonial' as const,
-        testimonial:
-          'From strategy to execution, Techyor handled every aspect with professionalism and excellence. Our product is better because of their expertise.',
-        name: 'David Martinez',
-        position: 'CTO, Growth Ventures',
-        photo: {
-          id: 4,
-          name: 'avatar-4',
-          alt: 'David Martinez',
-          filename: '/assets/storyblok/default-avatar-4.jpg',
-          focus: null,
-          source: null,
-          title: null,
-          copyright: null
-        }
-      },
-      {
-        _uid: 'testimonial-5',
-        component: 'richtext-testimonial' as const,
-        testimonial:
-          "A truly exceptional partner. They don't just build products; they build experiences. Our users love what they created for us.",
-        name: 'Jessica Lee',
-        position: 'Director, Brand Agency',
-        photo: {
-          id: 5,
-          name: 'avatar-5',
-          alt: 'Jessica Lee',
-          filename: '/assets/storyblok/default-avatar-5.jpg',
-          focus: null,
-          source: null,
-          title: null,
-          copyright: null
-        }
-      }
-    ]
-  };
 </script>
 
 <svelte:head>
@@ -670,7 +569,19 @@
   <List block={deliverablesBlock} />
 
   <!-- Testimonials Section -->
-  <Testimonials block={testimonialsBlock} />
+  <UpworkTestimonials
+    items={servicesTestimonials}
+    title="Testimonials."
+    subtitle="What clients say."
+    description="Verified Upwork reviews from clients who've worked with our team."
+  />
+
+  <!-- Team Section -->
+  <TeamSection
+    title="The specialists behind these services."
+    subtitle="Hire them directly."
+    showViewAll
+  />
 
   <!-- Proud Clients Section -->
   <ClientsSection title="Trusted by ambitious teams." />

@@ -9,6 +9,7 @@
   import CareersListBlock from '$components/blocks/careers-list.svelte';
   import FaqsListBlock from '$components/blocks/faqs-list.svelte';
   import ClientsSection from '$components/sections/clients-section.svelte';
+  import TeamSection from '$components/sections/team-section.svelte';
   import BlogEntry from '$components/blog-entry.svelte';
   import ProjectEntry from '$components/project-entry.svelte';
   import { commonFaqsBlock } from '$lib/data/faqs';
@@ -409,6 +410,13 @@
 
   <!-- About Grid Section -->
   <AboutGrid block={aboutGridBlock} />
+
+  <!-- Team Section -->
+  <TeamSection
+    title="Meet the people building it."
+    subtitle="Hire a specialist directly."
+    showViewAll
+  />
 
   <!-- Careers Section -->
   <CareersListBlock block={careersBlock} />

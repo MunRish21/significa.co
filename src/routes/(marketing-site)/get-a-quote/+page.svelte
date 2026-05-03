@@ -3,6 +3,7 @@
   import Slideshow from '$components/blocks/slideshow.svelte';
   import Steps from '$components/blocks/steps.svelte';
   import FaqsList from '$components/blocks/faqs-list.svelte';
+  import TeamSection from '$components/sections/team-section.svelte';
   import { commonFaqsBlock } from '$lib/data/faqs';
 
   const slideshowBlock = {
@@ -112,6 +113,12 @@
 
   <!-- What's Next Section -->
   <Steps block={stepsBlock} />
+
+  <!-- Team Section -->
+  <TeamSection
+    title="You'll work with these specialists."
+    subtitle="The people who'll build it."
+  />
 
   <!-- Work Section -->
   <Slideshow block={slideshowBlock} />

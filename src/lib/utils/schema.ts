@@ -182,6 +182,91 @@ export function generateWebsiteSchema() {
   });
 }
 
+export function generatePersonSchema(person: {
+  name: string;
+  jobTitle: string;
+  description: string;
+  image: string;
+  url: string;
+  sameAs?: string[];
+  knowsAbout?: string[];
+  alumniOf?: string;
+  worksFor?: string;
+  addressLocality?: string;
+  addressCountry?: string;
+}) {
+  const imageUrl = person.image.startsWith('http')
+    ? person.image
+    : `${BASE_URL}${person.image}`;
+
+  return JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: person.name,
+    jobTitle: person.jobTitle,
+    description: person.description,
+    image: imageUrl,
+    url: `${BASE_URL}${person.url}`,
+    sameAs: person.sameAs,
+    knowsAbout: person.knowsAbout,
+    alumniOf: person.alumniOf
+      ? { '@type': 'CollegeOrUniversity', name: person.alumniOf }
+      : undefined,
+    worksFor: {
+      '@type': 'Organization',
+      name: person.worksFor || 'Techyor',
+      url: BASE_URL
+    },
+    address: person.addressLocality
+      ? {
+          '@type': 'PostalAddress',
+          addressLocality: person.addressLocality,
+          addressCountry: person.addressCountry || 'IN'
+        }
+      : undefined
+  });
+}
+
+export function generateProfessionalReviewSchema(reviews: {
+  itemName: string;
+  itemUrl: string;
+  itemImage: string;
+  reviews: Array<{
+    rating: number;
+    body: string;
+    author: string;
+    date?: string;
+  }>;
+}) {
+  const ratings = reviews.reviews.map((r) => r.rating);
+  const avg = ratings.reduce((a, b) => a + b, 0) / ratings.length;
+  return JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: reviews.itemName,
+    image: `${BASE_URL}${reviews.itemImage}`,
+    url: `${BASE_URL}${reviews.itemUrl}`,
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: avg.toFixed(1),
+      reviewCount: reviews.reviews.length,
+      bestRating: 5,
+      worstRating: 1
+    },
+    review: reviews.reviews.map((r) => ({
+      '@type': 'Review',
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: r.rating,
+        bestRating: 5
+      },
+      author: { '@type': 'Person', name: r.author },
+      reviewBody: r.body,
+      datePublished: r.date
+    }))
+  });
+}
+
 export function generateFAQSchema(
   faqs: Array<{
     question: string;

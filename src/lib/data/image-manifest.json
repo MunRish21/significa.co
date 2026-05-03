@@ -473,6 +473,190 @@
       1920
     ]
   },
+  "/assets/projects/b2-hookah/gift-card.png": {
+    "srcset": {
+      "webp": [
+        "/_optimized/assets/projects/b2-hookah/gift-card-w320.webp 320w",
+        "/_optimized/assets/projects/b2-hookah/gift-card-w480.webp 480w",
+        "/_optimized/assets/projects/b2-hookah/gift-card-w640.webp 640w",
+        "/_optimized/assets/projects/b2-hookah/gift-card-w768.webp 768w",
+        "/_optimized/assets/projects/b2-hookah/gift-card-w1024.webp 1024w",
+        "/_optimized/assets/projects/b2-hookah/gift-card-w1280.webp 1280w",
+        "/_optimized/assets/projects/b2-hookah/gift-card-w1600.webp 1600w",
+        "/_optimized/assets/projects/b2-hookah/gift-card-w1920.webp 1920w"
+      ],
+      "avif": [
+        "/_optimized/assets/projects/b2-hookah/gift-card-w320.avif 320w",
+        "/_optimized/assets/projects/b2-hookah/gift-card-w480.avif 480w",
+        "/_optimized/assets/projects/b2-hookah/gift-card-w640.avif 640w",
+        "/_optimized/assets/projects/b2-hookah/gift-card-w768.avif 768w",
+        "/_optimized/assets/projects/b2-hookah/gift-card-w1024.avif 1024w",
+        "/_optimized/assets/projects/b2-hookah/gift-card-w1280.avif 1280w",
+        "/_optimized/assets/projects/b2-hookah/gift-card-w1600.avif 1600w",
+        "/_optimized/assets/projects/b2-hookah/gift-card-w1920.avif 1920w"
+      ],
+      "original": [
+        "/_optimized/assets/projects/b2-hookah/gift-card-w320.png 320w",
+        "/_optimized/assets/projects/b2-hookah/gift-card-w480.png 480w",
+        "/_optimized/assets/projects/b2-hookah/gift-card-w640.png 640w",
+        "/_optimized/assets/projects/b2-hookah/gift-card-w768.png 768w",
+        "/_optimized/assets/projects/b2-hookah/gift-card-w1024.png 1024w",
+        "/_optimized/assets/projects/b2-hookah/gift-card-w1280.png 1280w",
+        "/_optimized/assets/projects/b2-hookah/gift-card-w1600.png 1600w",
+        "/_optimized/assets/projects/b2-hookah/gift-card-w1920.png 1920w"
+      ]
+    },
+    "width": 2880,
+    "height": 1800,
+    "sizes": [
+      320,
+      480,
+      640,
+      768,
+      1024,
+      1280,
+      1600,
+      1920
+    ]
+  },
+  "/assets/projects/b2-hookah/before-product-page.png": {
+    "srcset": {
+      "webp": [
+        "/_optimized/assets/projects/b2-hookah/before-product-page-w320.webp 320w",
+        "/_optimized/assets/projects/b2-hookah/before-product-page-w480.webp 480w",
+        "/_optimized/assets/projects/b2-hookah/before-product-page-w640.webp 640w",
+        "/_optimized/assets/projects/b2-hookah/before-product-page-w768.webp 768w",
+        "/_optimized/assets/projects/b2-hookah/before-product-page-w1024.webp 1024w",
+        "/_optimized/assets/projects/b2-hookah/before-product-page-w1280.webp 1280w",
+        "/_optimized/assets/projects/b2-hookah/before-product-page-w1600.webp 1600w",
+        "/_optimized/assets/projects/b2-hookah/before-product-page-w1920.webp 1920w"
+      ],
+      "avif": [
+        "/_optimized/assets/projects/b2-hookah/before-product-page-w320.avif 320w",
+        "/_optimized/assets/projects/b2-hookah/before-product-page-w480.avif 480w",
+        "/_optimized/assets/projects/b2-hookah/before-product-page-w640.avif 640w",
+        "/_optimized/assets/projects/b2-hookah/before-product-page-w768.avif 768w",
+        "/_optimized/assets/projects/b2-hookah/before-product-page-w1024.avif 1024w",
+        "/_optimized/assets/projects/b2-hookah/before-product-page-w1280.avif 1280w",
+        "/_optimized/assets/projects/b2-hookah/before-product-page-w1600.avif 1600w",
+        "/_optimized/assets/projects/b2-hookah/before-product-page-w1920.avif 1920w"
+      ],
+      "original": [
+        "/_optimized/assets/projects/b2-hookah/before-product-page-w320.png 320w",
+        "/_optimized/assets/projects/b2-hookah/before-product-page-w480.png 480w",
+        "/_optimized/assets/projects/b2-hookah/before-product-page-w640.png 640w",
+        "/_optimized/assets/projects/b2-hookah/before-product-page-w768.png 768w",
+        "/_optimized/assets/projects/b2-hookah/before-product-page-w1024.png 1024w",
+        "/_optimized/assets/projects/b2-hookah/before-product-page-w1280.png 1280w",
+        "/_optimized/assets/projects/b2-hookah/before-product-page-w1600.png 1600w",
+        "/_optimized/assets/projects/b2-hookah/before-product-page-w1920.png 1920w"
+      ]
+    },
+    "width": 2880,
+    "height": 1790,
+    "sizes": [
+      320,
+      480,
+      640,
+      768,
+      1024,
+      1280,
+      1600,
+      1920
+    ]
+  },
+  "/assets/projects/b2-hookah/after-product-page.png": {
+    "srcset": {
+      "webp": [
+        "/_optimized/assets/projects/b2-hookah/after-product-page-w320.webp 320w",
+        "/_optimized/assets/projects/b2-hookah/after-product-page-w480.webp 480w",
+        "/_optimized/assets/projects/b2-hookah/after-product-page-w640.webp 640w",
+        "/_optimized/assets/projects/b2-hookah/after-product-page-w768.webp 768w",
+        "/_optimized/assets/projects/b2-hookah/after-product-page-w1024.webp 1024w",
+        "/_optimized/assets/projects/b2-hookah/after-product-page-w1280.webp 1280w",
+        "/_optimized/assets/projects/b2-hookah/after-product-page-w1600.webp 1600w",
+        "/_optimized/assets/projects/b2-hookah/after-product-page-w1920.webp 1920w"
+      ],
+      "avif": [
+        "/_optimized/assets/projects/b2-hookah/after-product-page-w320.avif 320w",
+        "/_optimized/assets/projects/b2-hookah/after-product-page-w480.avif 480w",
+        "/_optimized/assets/projects/b2-hookah/after-product-page-w640.avif 640w",
+        "/_optimized/assets/projects/b2-hookah/after-product-page-w768.avif 768w",
+        "/_optimized/assets/projects/b2-hookah/after-product-page-w1024.avif 1024w",
+        "/_optimized/assets/projects/b2-hookah/after-product-page-w1280.avif 1280w",
+        "/_optimized/assets/projects/b2-hookah/after-product-page-w1600.avif 1600w",
+        "/_optimized/assets/projects/b2-hookah/after-product-page-w1920.avif 1920w"
+      ],
+      "original": [
+        "/_optimized/assets/projects/b2-hookah/after-product-page-w320.png 320w",
+        "/_optimized/assets/projects/b2-hookah/after-product-page-w480.png 480w",
+        "/_optimized/assets/projects/b2-hookah/after-product-page-w640.png 640w",
+        "/_optimized/assets/projects/b2-hookah/after-product-page-w768.png 768w",
+        "/_optimized/assets/projects/b2-hookah/after-product-page-w1024.png 1024w",
+        "/_optimized/assets/projects/b2-hookah/after-product-page-w1280.png 1280w",
+        "/_optimized/assets/projects/b2-hookah/after-product-page-w1600.png 1600w",
+        "/_optimized/assets/projects/b2-hookah/after-product-page-w1920.png 1920w"
+      ]
+    },
+    "width": 2880,
+    "height": 1800,
+    "sizes": [
+      320,
+      480,
+      640,
+      768,
+      1024,
+      1280,
+      1600,
+      1920
+    ]
+  },
+  "/assets/projects/b2-hookah/blog.png": {
+    "srcset": {
+      "webp": [
+        "/_optimized/assets/projects/b2-hookah/blog-w320.webp 320w",
+        "/_optimized/assets/projects/b2-hookah/blog-w480.webp 480w",
+        "/_optimized/assets/projects/b2-hookah/blog-w640.webp 640w",
+        "/_optimized/assets/projects/b2-hookah/blog-w768.webp 768w",
+        "/_optimized/assets/projects/b2-hookah/blog-w1024.webp 1024w",
+        "/_optimized/assets/projects/b2-hookah/blog-w1280.webp 1280w",
+        "/_optimized/assets/projects/b2-hookah/blog-w1600.webp 1600w",
+        "/_optimized/assets/projects/b2-hookah/blog-w1920.webp 1920w"
+      ],
+      "avif": [
+        "/_optimized/assets/projects/b2-hookah/blog-w320.avif 320w",
+        "/_optimized/assets/projects/b2-hookah/blog-w480.avif 480w",
+        "/_optimized/assets/projects/b2-hookah/blog-w640.avif 640w",
+        "/_optimized/assets/projects/b2-hookah/blog-w768.avif 768w",
+        "/_optimized/assets/projects/b2-hookah/blog-w1024.avif 1024w",
+        "/_optimized/assets/projects/b2-hookah/blog-w1280.avif 1280w",
+        "/_optimized/assets/projects/b2-hookah/blog-w1600.avif 1600w",
+        "/_optimized/assets/projects/b2-hookah/blog-w1920.avif 1920w"
+      ],
+      "original": [
+        "/_optimized/assets/projects/b2-hookah/blog-w320.png 320w",
+        "/_optimized/assets/projects/b2-hookah/blog-w480.png 480w",
+        "/_optimized/assets/projects/b2-hookah/blog-w640.png 640w",
+        "/_optimized/assets/projects/b2-hookah/blog-w768.png 768w",
+        "/_optimized/assets/projects/b2-hookah/blog-w1024.png 1024w",
+        "/_optimized/assets/projects/b2-hookah/blog-w1280.png 1280w",
+        "/_optimized/assets/projects/b2-hookah/blog-w1600.png 1600w",
+        "/_optimized/assets/projects/b2-hookah/blog-w1920.png 1920w"
+      ]
+    },
+    "width": 2880,
+    "height": 1800,
+    "sizes": [
+      320,
+      480,
+      640,
+      768,
+      1024,
+      1280,
+      1600,
+      1920
+    ]
+  },
   "/assets/projects/beauty-design/cover.png": {
     "srcset": {
       "webp": [
@@ -592,6 +776,98 @@
     },
     "width": 2560,
     "height": 2000,
+    "sizes": [
+      320,
+      480,
+      640,
+      768,
+      1024,
+      1280,
+      1600,
+      1920
+    ]
+  },
+  "/assets/projects/b2-hookah/product-listing.png": {
+    "srcset": {
+      "webp": [
+        "/_optimized/assets/projects/b2-hookah/product-listing-w320.webp 320w",
+        "/_optimized/assets/projects/b2-hookah/product-listing-w480.webp 480w",
+        "/_optimized/assets/projects/b2-hookah/product-listing-w640.webp 640w",
+        "/_optimized/assets/projects/b2-hookah/product-listing-w768.webp 768w",
+        "/_optimized/assets/projects/b2-hookah/product-listing-w1024.webp 1024w",
+        "/_optimized/assets/projects/b2-hookah/product-listing-w1280.webp 1280w",
+        "/_optimized/assets/projects/b2-hookah/product-listing-w1600.webp 1600w",
+        "/_optimized/assets/projects/b2-hookah/product-listing-w1920.webp 1920w"
+      ],
+      "avif": [
+        "/_optimized/assets/projects/b2-hookah/product-listing-w320.avif 320w",
+        "/_optimized/assets/projects/b2-hookah/product-listing-w480.avif 480w",
+        "/_optimized/assets/projects/b2-hookah/product-listing-w640.avif 640w",
+        "/_optimized/assets/projects/b2-hookah/product-listing-w768.avif 768w",
+        "/_optimized/assets/projects/b2-hookah/product-listing-w1024.avif 1024w",
+        "/_optimized/assets/projects/b2-hookah/product-listing-w1280.avif 1280w",
+        "/_optimized/assets/projects/b2-hookah/product-listing-w1600.avif 1600w",
+        "/_optimized/assets/projects/b2-hookah/product-listing-w1920.avif 1920w"
+      ],
+      "original": [
+        "/_optimized/assets/projects/b2-hookah/product-listing-w320.png 320w",
+        "/_optimized/assets/projects/b2-hookah/product-listing-w480.png 480w",
+        "/_optimized/assets/projects/b2-hookah/product-listing-w640.png 640w",
+        "/_optimized/assets/projects/b2-hookah/product-listing-w768.png 768w",
+        "/_optimized/assets/projects/b2-hookah/product-listing-w1024.png 1024w",
+        "/_optimized/assets/projects/b2-hookah/product-listing-w1280.png 1280w",
+        "/_optimized/assets/projects/b2-hookah/product-listing-w1600.png 1600w",
+        "/_optimized/assets/projects/b2-hookah/product-listing-w1920.png 1920w"
+      ]
+    },
+    "width": 2880,
+    "height": 1800,
+    "sizes": [
+      320,
+      480,
+      640,
+      768,
+      1024,
+      1280,
+      1600,
+      1920
+    ]
+  },
+  "/assets/projects/b2-hookah/homepage.png": {
+    "srcset": {
+      "webp": [
+        "/_optimized/assets/projects/b2-hookah/homepage-w320.webp 320w",
+        "/_optimized/assets/projects/b2-hookah/homepage-w480.webp 480w",
+        "/_optimized/assets/projects/b2-hookah/homepage-w640.webp 640w",
+        "/_optimized/assets/projects/b2-hookah/homepage-w768.webp 768w",
+        "/_optimized/assets/projects/b2-hookah/homepage-w1024.webp 1024w",
+        "/_optimized/assets/projects/b2-hookah/homepage-w1280.webp 1280w",
+        "/_optimized/assets/projects/b2-hookah/homepage-w1600.webp 1600w",
+        "/_optimized/assets/projects/b2-hookah/homepage-w1920.webp 1920w"
+      ],
+      "avif": [
+        "/_optimized/assets/projects/b2-hookah/homepage-w320.avif 320w",
+        "/_optimized/assets/projects/b2-hookah/homepage-w480.avif 480w",
+        "/_optimized/assets/projects/b2-hookah/homepage-w640.avif 640w",
+        "/_optimized/assets/projects/b2-hookah/homepage-w768.avif 768w",
+        "/_optimized/assets/projects/b2-hookah/homepage-w1024.avif 1024w",
+        "/_optimized/assets/projects/b2-hookah/homepage-w1280.avif 1280w",
+        "/_optimized/assets/projects/b2-hookah/homepage-w1600.avif 1600w",
+        "/_optimized/assets/projects/b2-hookah/homepage-w1920.avif 1920w"
+      ],
+      "original": [
+        "/_optimized/assets/projects/b2-hookah/homepage-w320.png 320w",
+        "/_optimized/assets/projects/b2-hookah/homepage-w480.png 480w",
+        "/_optimized/assets/projects/b2-hookah/homepage-w640.png 640w",
+        "/_optimized/assets/projects/b2-hookah/homepage-w768.png 768w",
+        "/_optimized/assets/projects/b2-hookah/homepage-w1024.png 1024w",
+        "/_optimized/assets/projects/b2-hookah/homepage-w1280.png 1280w",
+        "/_optimized/assets/projects/b2-hookah/homepage-w1600.png 1600w",
+        "/_optimized/assets/projects/b2-hookah/homepage-w1920.png 1920w"
+      ]
+    },
+    "width": 2880,
+    "height": 1800,
     "sizes": [
       320,
       480,
@@ -7149,6 +7425,44 @@
       1600
     ]
   },
+  "/assets/team/munish-k.jpg": {
+    "srcset": {
+      "webp": [
+        "/_optimized/assets/team/munish-k-w320.webp 320w",
+        "/_optimized/assets/team/munish-k-w480.webp 480w",
+        "/_optimized/assets/team/munish-k-w640.webp 640w",
+        "/_optimized/assets/team/munish-k-w768.webp 768w",
+        "/_optimized/assets/team/munish-k-w1024.webp 1024w",
+        "/_optimized/assets/team/munish-k-w1280.webp 1280w"
+      ],
+      "avif": [
+        "/_optimized/assets/team/munish-k-w320.avif 320w",
+        "/_optimized/assets/team/munish-k-w480.avif 480w",
+        "/_optimized/assets/team/munish-k-w640.avif 640w",
+        "/_optimized/assets/team/munish-k-w768.avif 768w",
+        "/_optimized/assets/team/munish-k-w1024.avif 1024w",
+        "/_optimized/assets/team/munish-k-w1280.avif 1280w"
+      ],
+      "original": [
+        "/_optimized/assets/team/munish-k-w320.jpg 320w",
+        "/_optimized/assets/team/munish-k-w480.jpg 480w",
+        "/_optimized/assets/team/munish-k-w640.jpg 640w",
+        "/_optimized/assets/team/munish-k-w768.jpg 768w",
+        "/_optimized/assets/team/munish-k-w1024.jpg 1024w",
+        "/_optimized/assets/team/munish-k-w1280.jpg 1280w"
+      ]
+    },
+    "width": 1458,
+    "height": 1236,
+    "sizes": [
+      320,
+      480,
+      640,
+      768,
+      1024,
+      1280
+    ]
+  },
   "/src/assets/handbook/HandbookOG.jpg": {
     "srcset": {
       "webp": [
@@ -7247,6 +7561,28 @@
     "height": 200,
     "sizes": [
       320
+    ]
+  },
+  "/assets/team/rishab-singla.jpg": {
+    "srcset": {
+      "webp": [
+        "/_optimized/assets/team/rishab-singla-w320.webp 320w",
+        "/_optimized/assets/team/rishab-singla-w480.webp 480w"
+      ],
+      "avif": [
+        "/_optimized/assets/team/rishab-singla-w320.avif 320w",
+        "/_optimized/assets/team/rishab-singla-w480.avif 480w"
+      ],
+      "original": [
+        "/_optimized/assets/team/rishab-singla-w320.jpg 320w",
+        "/_optimized/assets/team/rishab-singla-w480.jpg 480w"
+      ]
+    },
+    "width": 576,
+    "height": 576,
+    "sizes": [
+      320,
+      480
     ]
   },
   "/src/assets/storyblok/inspired-evolution-light.png": {
