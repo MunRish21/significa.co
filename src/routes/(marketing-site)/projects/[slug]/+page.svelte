@@ -1756,6 +1756,216 @@
             recently, mostly didn't exist.
           </p>
         {/if}
+
+        <!-- B2 Hookah Content -->
+        {#if project.slug === 'b2-hookah'}
+          <h2 class="mx-auto max-w-2xl"><b>The challenge.</b></h2>
+          <p class="mx-auto max-w-2xl">
+            Hookah retail sits in one of the most heavily regulated categories on Shopify. Every
+            storefront in the space has to run an FDA-compliant nicotine warning on every page, gate
+            its entire catalog behind an enforceable age check before a visitor ever sees a product,
+            keep payment processors comfortable with a tobacco-adjacent merchant, and respect
+            shipping rules that vary state by state. On top of those structural constraints, B2
+            Hookah was carrying a sprawling catalog — multiple hookah brands, dozens of shisha
+            flavors from international suppliers, coals, accessories, and gift cards — but the
+            existing storefront wasn't organizing any of it for a real buyer's journey. New visitors
+            landed on a generic homepage, hunted through unstructured collections, and bounced
+            without converting. The brand needed a storefront that could carry the lifestyle side
+            of premium hookah culture and the operational depth required to sell a regulated
+            product across the United States — without leaning on a stack of paid third-party apps.
+          </p>
+
+          <h2 class="mx-auto max-w-2xl">
+            <b>A premium Shopify build, customized end-to-end.</b>
+          </h2>
+          <p class="mx-auto max-w-2xl">
+            We delivered the storefront on Shopify across a 12-week engagement, starting from a
+            base theme and rebuilding it section by section into a brand-aligned experience. The
+            header, primary navigation, collection templates, product templates, checkout flow,
+            cart drawer, and content blocks were re-skinned around B2 Hookah's dark navy and
+            high-contrast orange identity. The homepage hero runs as an editorial campaign slot —
+            currently anchoring the launch of Severnyi Tobacco from Russia — with a single primary
+            CTA, a flavor wall that doubles as a product showcase, and floating fruit and ice
+            graphics that reinforce the lifestyle positioning the brand was previously missing.
+          </p>
+
+          <p class="mx-auto max-w-2xl">
+            We restructured the navigation around the way buyers actually shop the category.
+            Hookahs, Shisha, Hookah Accessories, Coals, Gift Card, Contact, and Blog became the
+            primary destinations, each opening into a brand-organized dropdown so a returning buyer
+            looking for a specific shisha line — Sebero, Musthave, Severnyi — lands directly on
+            the brand's filtered collection in a single click instead of scrolling a flat catalog.
+          </p>
+
+          <ImageSection
+            src="/assets/projects/b2-hookah/homepage.png"
+            alt="B2 Hookah homepage with the Severnyi Tobacco campaign hero, premium Russian flavor wall, primary navigation across Hookahs, Shisha, Accessories, Coals, Gift Card, Contact, and Blog, and the persistent FDA nicotine warning bar at the top of the page"
+            width="3200"
+            height="2400"
+          />
+
+          <h2 class="mx-auto max-w-2xl">
+            <b>A custom age-gate built for compliance.</b>
+          </h2>
+          <p class="mx-auto max-w-2xl">
+            The single most important piece of custom engineering on this project was the age-gate
+            pop-up. Selling hookah and shisha online means every visitor — whether they arrived
+            from a Google ad, a backlink, a social post, or a direct hit — has to verify they're
+            of legal age before they see a single product. We built a custom age-verification modal
+            into the Shopify theme that intercepts every first-time session, blocks the storefront
+            behind a dismiss-proof overlay until the user confirms their age, persists the consent
+            for the rest of the session, and pairs cleanly with the persistent FDA nicotine warning
+            bar that runs across the top of every page.
+          </p>
+
+          <p class="mx-auto max-w-2xl">
+            The implementation lives inside the theme rather than in a paid third-party app — so
+            there's no per-page latency from an external script, no recurring subscription, and no
+            risk of a dependency disappearing during a theme update. It's a compliance layer that
+            B2 Hookah owns outright, surfaced on the very first interaction a new visitor has with
+            the brand.
+          </p>
+
+          <h2 class="mx-auto max-w-2xl">
+            <b>A catalog architecture for 100+ SKUs across dozens of brands.</b>
+          </h2>
+          <p class="mx-auto max-w-2xl">
+            Hookah is a category-heavy retail vertical: a serious customer is buying a hookah,
+            several shisha flavors, a stack of coals, and a handful of accessories in the same
+            order. We built the collection architecture to mirror that. Twenty-five-plus hookah
+            brands sit under Hookahs, thirty-five-plus shisha brands sit under Shisha, eight coal
+            brands sit under Coals, and each one resolves to its own filtered collection page so
+            buyers can shop by brand without ever touching a search box.
+          </p>
+
+          <p class="mx-auto max-w-2xl">
+            Featured collections like the <b>V5 Precious Cut Collection</b> sit on top of the
+            everyday catalog as editorial drops, with their own hero copy and a dedicated grid
+            that treats each variant — Wine Rush, Lavender Fields, Solar Grove, Helix — as a named
+            SKU rather than a colorway buried in a dropdown. Pricing handles tiered discounts
+            cleanly: a $1,299 hookah marked down to $989 still shows the original price struck
+            through, and the "Choose options" flow surfaces variant selection without ever
+            forcing the buyer off the collection grid.
+          </p>
+
+          <ImageSection
+            src="/assets/projects/b2-hookah/product-listing.png"
+            alt="V5 Precious Cut Collection grid showing six premium stainless steel hookahs — Wine Rush, Lavender Fields, Solar Grove, and Helix Custom Colors with a Pre-Order tag — each priced from $989.99 with the original $1,299.99 struck through and an orange Choose Options call-to-action"
+            width="3200"
+            height="2400"
+          />
+
+          <h2 class="mx-auto max-w-2xl">
+            <b>Rebuilding the product page from the ground up.</b>
+          </h2>
+          <p class="mx-auto max-w-2xl">
+            The product page is where every campaign click and every organic search visit lands —
+            it's the single piece of the storefront that had to change the most. The legacy
+            product detail page was a stock Shopify template with a plain white background, a
+            broken thumbnail gallery, a single sky-blue "Add to cart" button, no trust badges, no
+            cross-sell, and a tone built around clearance discounting — red "Save $100.00" tags
+            and "X-MAS BUNDLES" in the primary navigation — that worked against the premium
+            positioning the rest of the catalog could otherwise support.
+          </p>
+
+          <p class="mx-auto max-w-2xl">
+            We rebuilt it end to end. The redesigned product page anchors on dark editorial
+            photography against a moody studio backdrop, a working multi-image gallery on the
+            left, a brand-orange call-to-action that matches the rest of the storefront, an
+            above-the-fold row of four trust badges (Free Shipping on Qualified Orders, Excellent
+            Service 24/7 Support, Secure Payments, Easy Returns within 14 days), a Sezzle
+            installment payment option surfaced inline with price, and a "Frequently bought
+            together" cross-sell that turns a single SKU view into a multi-item cart. Drag the
+            slider to compare.
+          </p>
+
+          <ComparisonSlider
+            beforeImage="/assets/projects/b2-hookah/after-product-page.png"
+            afterImage="/assets/projects/b2-hookah/before-product-page.png"
+            beforeLabel="Redesigned product page"
+            afterLabel="Legacy product page"
+          />
+
+          <h2 class="mx-auto max-w-2xl">
+            <b>Gift cards as a first-class product.</b>
+          </h2>
+          <p class="mx-auto max-w-2xl">
+            Gift cards in most Shopify stores live as a checkout-flow afterthought. We treated
+            them as a flagship SKU. The Gift Card product page carries the same editorial
+            photography, denomination selector ($10 / $25 / $50 / $100), Sezzle "4 payments of
+            $2.50" installment option, full description copy, the trust-badge row, and the
+            "Frequently bought together" cross-sell module that the rest of the catalog uses —
+            so a gift buyer who arrived for a $25 card has every chance to add a hookah, a flavor
+            pack, or a coal sleeve to the same cart on their way to checkout.
+          </p>
+
+          <ImageSection
+            src="/assets/projects/b2-hookah/gift-card.png"
+            alt="B2 Hookah Gift Card product detail page with $10 to $100 denomination selector, Sezzle four-payment installment option, Add to Cart button, and a row of trust badges covering free shipping, 24/7 service, secure payments, and easy returns"
+            width="3200"
+            height="2400"
+          />
+
+          <h2 class="mx-auto max-w-2xl">
+            <b>A blog hub for hookah culture and SEO.</b>
+          </h2>
+          <p class="mx-auto max-w-2xl">
+            Hookah is a community-driven category. Buyers research flavors, debate setups, and
+            follow brand drops in a way most other e-commerce verticals don't. We launched the
+            <b>B2 Hookah Blog — Tips, Reviews &amp; Hookah Culture</b> as a first-class destination
+            in the primary navigation rather than a tucked-away footer link. The hub anchors
+            editorial articles like "Best Flavors of Sebero Hookah Flavors 2025" with full-width
+            feature imagery, structured tags, publication dates, and read-time estimates, all on
+            a clean article-grid template that scales as the content library grows.
+          </p>
+
+          <p class="mx-auto max-w-2xl">
+            The blog feeds the storefront in two ways: it ranks for the long-tail flavor and
+            setup queries that bring new buyers in through organic search, and it gives returning
+            customers a reason to come back to the site between purchases — closing the gap
+            between transactional traffic and a category that lives in a much wider cultural
+            conversation.
+          </p>
+
+          <ImageSection
+            src="/assets/projects/b2-hookah/blog.png"
+            alt="B2 Hookah Blog landing page titled Tips, Reviews and Hookah Culture, with a featured article on the best Sebero hookah flavors of 2025 alongside additional editorial articles and full-width product photography"
+            width="3200"
+            height="2400"
+          />
+
+          <h2 class="mx-auto max-w-2xl"><b>Operational layer.</b></h2>
+          <p class="mx-auto max-w-2xl">
+            Around the storefront we wired the operational pieces a real hookah retailer needs to
+            run the business day to day. Same-day shipping for orders cleared before 10 AM is
+            surfaced on every product page as a trust signal rather than buried in a policy
+            footer. A 24/7 chat widget runs in the lower right of every screen so questions about
+            flavor profiles, hookah specs, or order status get answered without opening a
+            support ticket. A TrustedSite verification badge sits in the global footer to signal
+            to first-time visitors — many of whom arrive cautious about buying in a regulated
+            category online — that the storefront and its checkout are independently verified.
+          </p>
+
+          <h2 class="mx-auto max-w-2xl"><b>Results and impact.</b></h2>
+          <p class="mx-auto max-w-2xl">
+            The B2 Hookah storefront launched in 2023 after a 12-week engagement and now carries
+            100+ SKUs across hookahs, shisha, accessories, coals, and gift cards, with 35+ shisha
+            brands and 25+ hookah brands organized under a single navigation system. The custom
+            age-gate intercepts every first-time visit and clears the compliance hurdle without
+            leaning on a third-party app. The storefront ships same-day on cleared orders, runs a
+            24/7 chat layer, and feeds an active blog program that drives organic traffic into
+            the catalog.
+          </p>
+
+          <p class="mx-auto max-w-2xl">
+            The combination of a heavily customized Shopify theme, a category-aware navigation
+            system, a compliance-grade age verification layer, an editorial collection system
+            anchored on the V5 Precious Cut Collection, gift cards treated as a first-class SKU,
+            and a content hub built into the storefront has positioned B2 Hookah as a premier
+            online destination for serious hookah buyers — a brand that reads as carefully built
+            rather than cobbled together from an off-the-shelf template.
+          </p>
+        {/if}
       </div>
 
       <!-- Contact CTA Section -->

@@ -598,18 +598,22 @@ export const projectsData = [
     id: 22,
     slug: 'b2-hookah',
     name: 'B2 Hookah',
-    tagline: 'Lifestyle e-commerce platform for premium hookah products',
+    tagline: 'A premium hookah e-commerce storefront with a custom age-gate, brand-organized navigation across 35+ shisha brands, and an editorial blog hub.',
     image: '/assets/projects/b2-hookah/cover.png',
     coverImage: '/assets/projects/b2-hookah/cover.png',
     publishedYear: 2023,
-    services: ['E-commerce'],
-    deliverables: ['E-Commerce Platforms'],
+    services: ['E-commerce', 'Web Development & Design', 'Design & Creative'],
+    deliverables: ['E-Commerce Platforms', 'Content Management Systems'],
     links: [
       { label: 'Website', url: 'https://b2hookah.com' }
     ],
     team: [],
-    metrics: [],
-    intro: 'B2 Hookah is a lifestyle e-commerce platform built on Shopify specializing in premium hookah products and accessories. The platform offers curated collections of high-quality hookah equipment, shisha, and related items. With detailed product descriptions and lifestyle content, B2 Hookah creates an engaging shopping experience for enthusiasts.',
+    metrics: [
+      { label: 'SKUs', value: '100+', tooltip: 'Hookahs, shisha, accessories, coals, and gift cards', isPositive: true },
+      { label: 'Shisha Brands', value: '35+', tooltip: 'International shisha and tobacco brands carried', isPositive: true },
+      { label: 'Build Time', value: '12 weeks', tooltip: 'End-to-end Shopify build and launch', isPositive: true }
+    ],
+    intro: 'B2 Hookah is a premium online hookah retailer carrying 100+ SKUs across hookahs, shisha, accessories, coals, and gift cards, with 35+ shisha brands and 25+ hookah brands organized under a single navigation system. We delivered the storefront on Shopify across a 12-week build, customizing a base theme into a brand-aligned dark-and-orange experience and shipping the pieces a regulated online retailer actually needs to run — a custom age-gate pop-up that intercepts every first-time visitor for compliance, brand-by-brand subnavigation that mirrors how serious hookah buyers shop, an editorial collection system anchored on the V5 Precious Cut Collection, a multi-denomination gift-card SKU as a flagship cross-sell, and an in-storefront blog hub that drives organic search traffic into the catalog.',
     awards: []
   },
   {
