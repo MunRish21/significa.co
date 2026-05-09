@@ -7,10 +7,23 @@
   import OfficeCards from '$components/blocks/office-cards.svelte';
   import { commonFaqsBlock, getCommonFaqsForSchema } from '$lib/data/faqs';
   import {
+    BASE_URL,
     generateOrganizationSchema,
     generateFAQSchema,
-    generateBreadcrumbSchema
+    generateBreadcrumbSchema,
+    generateAboutPageSchema,
+    generateTeamMembersSchema
   } from '$lib/utils/schema';
+  import { getActiveTeamMembers } from '$lib/data/team';
+
+  const aboutTeamSchema = getActiveTeamMembers().map((m) => ({
+    name: m.name,
+    jobTitle: m.role,
+    description: m.tagline,
+    image: m.avatar,
+    url: `/team/${m.slug}`,
+    sameAs: m.links.map((l) => l.url)
+  }));
 
   const physicsBlock = {
     component: 'physics',
@@ -138,10 +151,10 @@
     property="og:description"
     content="A digital product studio with 8+ years of experience. Meet the team, our values, and how we build."
   />
-  <meta property="og:image" content="https://www.techyor.com/og.png" />
+  <meta property="og:image" content="{BASE_URL}/api/og/about" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="About Techyor" />
+  <meta property="og:image:alt" content="About Techyor — mission, values, and team" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@TechyorDotCo" />
@@ -150,14 +163,22 @@
     name="twitter:description"
     content="A digital product studio with 8+ years of experience. Meet the team behind the work."
   />
-  <meta name="twitter:image" content="https://www.techyor.com/og.png" />
+  <meta name="twitter:image" content="{BASE_URL}/api/og/about" />
+  <meta name="twitter:image:alt" content="About Techyor — mission, values, and team" />
 
   {@html `<${'script'} type="application/ld+json">${generateOrganizationSchema()}</${'script'}>`}
   {@html `<${'script'} type="application/ld+json">${generateBreadcrumbSchema([
     { name: 'Home', url: '/' },
     { name: 'About', url: '/about' }
   ])}</${'script'}>`}
+  {@html `<${'script'} type="application/ld+json">${generateAboutPageSchema({
+    url: `${BASE_URL}/about`,
+    description:
+      'Techyor is a digital product studio with 8+ years of experience and 80+ products shipped. Meet the team, our values, and the principles behind every product we build.',
+    imagePath: '/api/og/about'
+  })}</${'script'}>`}
   {@html `<${'script'} type="application/ld+json">${generateFAQSchema(getCommonFaqsForSchema())}</${'script'}>`}
+  {@html `<${'script'} type="application/ld+json">${generateTeamMembersSchema(aboutTeamSchema)}</${'script'}>`}
 </svelte:head>
 
 <div class="overflow-hidden">

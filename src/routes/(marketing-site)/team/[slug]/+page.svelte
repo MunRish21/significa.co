@@ -63,7 +63,10 @@
   <meta property="og:type" content="profile" />
   <meta property="og:title" content={member.seo.title} />
   <meta property="og:description" content={member.seo.description} />
-  <meta property="og:image" content={`${BASE_URL}${member.avatar}`} />
+  <meta property="og:image" content={`${BASE_URL}/api/og/team/${member.slug}`} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="{member.name} — {member.role} at Techyor" />
   <meta property="og:url" content={`${BASE_URL}${pageUrl}`} />
   <meta property="profile:first_name" content={member.name.split(' ')[0]} />
   <meta property="profile:last_name" content={member.name.split(' ').slice(1).join(' ')} />
@@ -71,12 +74,13 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={member.seo.title} />
   <meta name="twitter:description" content={member.seo.description} />
-  <meta name="twitter:image" content={`${BASE_URL}${member.avatar}`} />
+  <meta name="twitter:image" content={`${BASE_URL}/api/og/team/${member.slug}`} />
+  <meta name="twitter:image:alt" content="{member.name} — {member.role} at Techyor" />
 
-  {@html `<script type="application/ld+json">${personSchema}</script>`}
-  {@html `<script type="application/ld+json">${breadcrumbSchema}</script>`}
+  {@html `<${'script'} type="application/ld+json">${personSchema}</${'script'}>`}
+  {@html `<${'script'} type="application/ld+json">${breadcrumbSchema}</${'script'}>`}
   {#if reviewSchema}
-    {@html `<script type="application/ld+json">${reviewSchema}</script>`}
+    {@html `<${'script'} type="application/ld+json">${reviewSchema}</${'script'}>`}
   {/if}
 </svelte:head>
 
@@ -137,7 +141,7 @@
       <p class="mt-2 text-3xl text-foreground-secondary lg:text-4xl">
         {member.role}
       </p>
-      <p class="mt-1 text-xl text-foreground-secondary">{member.tagline}</p>
+      <p data-speakable class="mt-1 text-xl text-foreground-secondary">{member.tagline}</p>
 
       <div class="mt-6 flex flex-wrap gap-2">
         {#each member.badges as badge}

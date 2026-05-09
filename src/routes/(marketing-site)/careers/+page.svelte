@@ -6,6 +6,7 @@
   import RandomizedHoverableGallery from '$components/randomized-hoverable-gallery.svelte';
   import type { OpenPositionsStoryblok } from '$types/bloks';
   import {
+    BASE_URL,
     generateOrganizationSchema,
     generateBreadcrumbSchema,
     generateJobPostingSchema
@@ -122,10 +123,10 @@
     property="og:description"
     content="Open roles in design, engineering, and marketing. Remote-friendly, full-time. Build digital products for global clients."
   />
-  <meta property="og:image" content="https://www.techyor.com/og.png" />
+  <meta property="og:image" content="{BASE_URL}/api/og/careers" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Careers at Techyor" />
+  <meta property="og:image:alt" content="Careers at Techyor — open roles" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@TechyorDotCo" />
@@ -134,7 +135,8 @@
     name="twitter:description"
     content="Open roles in design, engineering, and marketing. Remote-friendly, full-time."
   />
-  <meta name="twitter:image" content="https://www.techyor.com/og.png" />
+  <meta name="twitter:image" content="{BASE_URL}/api/og/careers" />
+  <meta name="twitter:image:alt" content="Careers at Techyor — open roles" />
 
   {@html `<${'script'} type="application/ld+json">${generateOrganizationSchema()}</${'script'}>`}
   {@html `<${'script'} type="application/ld+json">${generateBreadcrumbSchema([
@@ -149,7 +151,10 @@
   <!-- Hero Section -->
   <section class="container mx-auto px-container pb-16 md:pb-20 lg:pb-24">
     <h1 class="mt-10 text-7xl font-bold md:mt-14 lg:mt-20">Careers.</h1>
-    <p class="mt-4 max-w-3xl text-2xl text-foreground-secondary md:mt-6 lg:mt-8">
+    <p
+      data-speakable
+      class="mt-4 max-w-3xl text-2xl text-foreground-secondary md:mt-6 lg:mt-8"
+    >
       Join a team of creatives, strategists, and builders shipping digital products for clients
       across the US, UK, Switzerland, and Australia. Based in Chandigarh, India — remote-friendly,
       full-time, and built for people who care about their craft.

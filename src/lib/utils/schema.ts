@@ -24,6 +24,204 @@ export function generateOrganizationSchema() {
   });
 }
 
+/**
+ * ProfessionalService — better than plain Organization for the homepage:
+ * surfaces services offered, area served, audience, ratings, and price
+ * range in one entity. Eligible for Local Business / Service rich-results.
+ */
+export function generateProfessionalServiceSchema(input: {
+  description: string;
+  url: string;
+  imagePath?: string;
+  ratings?: number[];
+  reviews?: Array<{ rating: number; body: string; author: string; date?: string }>;
+}) {
+  const ratings = input.ratings || [];
+  const aggregateRating =
+    ratings.length > 0
+      ? {
+          '@type': 'AggregateRating',
+          ratingValue: (ratings.reduce((a, b) => a + b, 0) / ratings.length).toFixed(1),
+          reviewCount: ratings.length,
+          bestRating: 5,
+          worstRating: 1
+        }
+      : undefined;
+
+  const review =
+    input.reviews && input.reviews.length > 0
+      ? input.reviews.map((r) => ({
+          '@type': 'Review',
+          reviewRating: {
+            '@type': 'Rating',
+            ratingValue: r.rating,
+            bestRating: 5,
+            worstRating: 1
+          },
+          author: { '@type': 'Person', name: r.author },
+          reviewBody: r.body,
+          datePublished: r.date
+        }))
+      : undefined;
+
+  return JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'ProfessionalService',
+    name: 'Techyor',
+    alternateName: 'Techyor Digital Product Studio',
+    description: input.description,
+    url: input.url,
+    logo: `${BASE_URL}/techyor.png`,
+    image: `${BASE_URL}${input.imagePath || '/og.png'}`,
+    priceRange: '$$$',
+    sameAs: ['https://twitter.com/TechyorDotCo', 'https://www.linkedin.com/company/techyor'],
+    address: {
+      '@type': 'PostalAddress',
+      addressCountry: 'IN',
+      addressLocality: 'Chandigarh'
+    },
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'Sales',
+      email: 'info@techyor.com',
+      telephone: '+91 9915002625',
+      areaServed: ['US', 'GB', 'AU', 'CH', 'IN'],
+      availableLanguage: ['en']
+    },
+    areaServed: [
+      { '@type': 'Country', name: 'United States' },
+      { '@type': 'Country', name: 'United Kingdom' },
+      { '@type': 'Country', name: 'Australia' },
+      { '@type': 'Country', name: 'Switzerland' },
+      { '@type': 'Place', name: 'Worldwide' }
+    ],
+    knowsAbout: [
+      'Web development',
+      'Mobile app development',
+      'AI and machine learning',
+      'E-commerce',
+      'SaaS',
+      'UX/UI design',
+      'React',
+      'Next.js',
+      'Python',
+      'React Native'
+    ],
+    aggregateRating,
+    review,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': input.url,
+      speakable: {
+        '@type': 'SpeakableSpecification',
+        cssSelector: ['h1', '[data-speakable]']
+      }
+    }
+  });
+}
+
+/**
+ * AboutPage schema — used for the /about route. Pairs with
+ * Organization/ProfessionalService and a team ItemList.
+ */
+export function generateAboutPageSchema(input: {
+  url: string;
+  description: string;
+  imagePath?: string;
+}) {
+  return JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    name: 'About Techyor',
+    description: input.description,
+    url: input.url,
+    image: `${BASE_URL}${input.imagePath || '/og.png'}`,
+    mainEntity: {
+      '@type': 'Organization',
+      name: 'Techyor',
+      url: BASE_URL,
+      logo: `${BASE_URL}/techyor.png`
+    },
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['h1', '[data-speakable]']
+    }
+  });
+}
+
+/**
+ * ContactPage schema — surfaces ContactPoint info to crawlers and
+ * voice assistants. Layered on top of /contact's existing Organization.
+ */
+export function generateContactPageSchema(input: {
+  url: string;
+  description: string;
+  imagePath?: string;
+}) {
+  return JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    name: 'Contact Techyor',
+    description: input.description,
+    url: input.url,
+    image: `${BASE_URL}${input.imagePath || '/og.png'}`,
+    mainEntity: {
+      '@type': 'Organization',
+      name: 'Techyor',
+      url: BASE_URL,
+      contactPoint: [
+        {
+          '@type': 'ContactPoint',
+          contactType: 'Sales',
+          email: 'info@techyor.com',
+          telephone: '+91 9915002625',
+          areaServed: ['US', 'GB', 'AU', 'CH', 'IN'],
+          availableLanguage: ['en']
+        }
+      ]
+    },
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['h1', '[data-speakable]']
+    }
+  });
+}
+
+/**
+ * Blog index schema — Blog entity with publisher and main entity list.
+ */
+export function generateBlogIndexSchema(input: {
+  url: string;
+  description: string;
+  imagePath?: string;
+  posts?: Array<{ title: string; url: string; datePublished?: string }>;
+}) {
+  return JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    name: 'Techyor Blog',
+    description: input.description,
+    url: input.url,
+    image: `${BASE_URL}${input.imagePath || '/og.png'}`,
+    publisher: {
+      '@type': 'Organization',
+      name: 'Techyor',
+      url: BASE_URL,
+      logo: { '@type': 'ImageObject', url: `${BASE_URL}/techyor.png` }
+    },
+    blogPost: (input.posts || []).slice(0, 10).map((p) => ({
+      '@type': 'BlogPosting',
+      headline: p.title,
+      url: p.url.startsWith('http') ? p.url : `${BASE_URL}${p.url}`,
+      datePublished: p.datePublished
+    })),
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['h1', '[data-speakable]']
+    }
+  });
+}
+
 export function generateBreadcrumbSchema(items: { name: string; url: string }[]) {
   return JSON.stringify({
     '@context': 'https://schema.org',

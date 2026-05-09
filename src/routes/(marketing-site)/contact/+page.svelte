@@ -4,7 +4,12 @@
   import Segg2 from '$components/pages/contact/illustrations/segg2.svelte';
   import PanWithEggs from '$components/pages/contact/pan-with-eggs.svelte';
   import RandomizedHoverableGallery from '$components/randomized-hoverable-gallery.svelte';
-  import { generateOrganizationSchema, generateBreadcrumbSchema } from '$lib/utils/schema';
+  import {
+    BASE_URL,
+    generateOrganizationSchema,
+    generateBreadcrumbSchema,
+    generateContactPageSchema
+  } from '$lib/utils/schema';
 
   const galleryCards = [
     {
@@ -62,10 +67,10 @@
     property="og:description"
     content="Tell us what you're building. We reply within 24 hours."
   />
-  <meta property="og:image" content="https://www.techyor.com/og.png" />
+  <meta property="og:image" content="{BASE_URL}/api/og/contact" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Contact Techyor" />
+  <meta property="og:image:alt" content="Contact Techyor — replies within 24 hours" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@TechyorDotCo" />
@@ -74,13 +79,20 @@
     name="twitter:description"
     content="Tell us what you're building. We reply within 24 hours."
   />
-  <meta name="twitter:image" content="https://www.techyor.com/og.png" />
+  <meta name="twitter:image" content="{BASE_URL}/api/og/contact" />
+  <meta name="twitter:image:alt" content="Contact Techyor — replies within 24 hours" />
 
   {@html `<${'script'} type="application/ld+json">${generateOrganizationSchema()}</${'script'}>`}
   {@html `<${'script'} type="application/ld+json">${generateBreadcrumbSchema([
     { name: 'Home', url: '/' },
     { name: 'Contact', url: '/contact' }
   ])}</${'script'}>`}
+  {@html `<${'script'} type="application/ld+json">${generateContactPageSchema({
+    url: `${BASE_URL}/contact`,
+    description:
+      "Get in touch with Techyor — a digital product studio building websites, apps, AI tools, and automation. Replies within 24 hours.",
+    imagePath: '/api/og/contact'
+  })}</${'script'}>`}
 </svelte:head>
 
 <div class="overflow-hidden">
@@ -88,7 +100,10 @@
     <section class="pb-5 pt-10 lg:pb-12 lg:pt-20 lg:text-center">
       <h1 class="mx-auto text-7xl text-foreground-secondary lg:max-w-2xl">Contact us.</h1>
       <span class="mx-auto block text-7xl lg:max-w-2xl">Tell us what you're building.</span>
-      <p class="mx-auto mt-6 max-w-xl text-lg text-foreground-secondary lg:mt-8">
+      <p
+        data-speakable
+        class="mx-auto mt-6 max-w-xl text-lg text-foreground-secondary lg:mt-8"
+      >
         Got a project in mind? We'd love to hear it. Drop us a message and we'll get back within 24
         hours. No lengthy briefs needed — just tell us what you're thinking.
       </p>

@@ -3,7 +3,11 @@
   import BlogEntry from '$components/blog-entry.svelte';
   import type { ISbStoryData } from '@storyblok/js';
   import type { BlogPostStoryblok, TeamMemberStoryblok } from '$types/bloks';
-  import { generateBreadcrumbSchema } from '$lib/utils/schema';
+  import {
+    BASE_URL,
+    generateBreadcrumbSchema,
+    generateBlogIndexSchema
+  } from '$lib/utils/schema';
 
   type Post = ISbStoryData<
     Omit<BlogPostStoryblok, 'author'> & {
@@ -295,10 +299,10 @@
     property="og:description"
     content="Notes from the studio on web design, engineering, AI, and how we ship digital products."
   />
-  <meta property="og:image" content="https://www.techyor.com/og.png" />
+  <meta property="og:image" content="{BASE_URL}/api/og/blog" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Techyor Blog" />
+  <meta property="og:image:alt" content="Techyor Blog — notes from the studio" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@TechyorDotCo" />
@@ -307,22 +311,22 @@
     name="twitter:description"
     content="Notes from the studio on design, engineering, AI, and digital products."
   />
-  <meta name="twitter:image" content="https://www.techyor.com/og.png" />
+  <meta name="twitter:image" content="{BASE_URL}/api/og/blog" />
+  <meta name="twitter:image:alt" content="Techyor Blog — notes from the studio" />
 
   {@html `<${'script'} type="application/ld+json">${generateBreadcrumbSchema([
     { name: 'Home', url: '/' },
     { name: 'Blog', url: '/blog' }
   ])}</${'script'}>`}
-  {@html `<${'script'} type="application/ld+json">${JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'Blog',
-    name: 'Techyor Blog',
-    description: 'Articles on web design, development, AI, and digital innovation',
-    url: 'https://www.techyor.com/blog',
-    publisher: {
-      '@type': 'Organization',
-      name: 'Techyor'
-    }
+  {@html `<${'script'} type="application/ld+json">${generateBlogIndexSchema({
+    url: `${BASE_URL}/blog`,
+    description: 'Articles on web design, development, AI, and digital innovation.',
+    imagePath: '/api/og/blog',
+    posts: posts.map((p) => ({
+      title: p.name,
+      url: `/blog/${p.slug}`,
+      datePublished: p.first_published_at
+    }))
   })}</${'script'}>`}
 </svelte:head>
 

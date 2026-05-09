@@ -2,7 +2,11 @@
   import { slide } from 'svelte/transition';
   import { page } from '$app/stores';
   import { projectsData } from '$lib/data/projects';
-  import { generateBreadcrumbSchema, generateProjectSchema } from '$lib/utils/schema';
+  import {
+    BASE_URL,
+    generateBreadcrumbSchema,
+    generateCollectionPageSchema
+  } from '$lib/utils/schema';
   import OptimizedImage from '$components/optimized-image.svelte';
   import TeamSection from '$components/sections/team-section.svelte';
 
@@ -81,10 +85,10 @@
     property="og:description"
     content="80+ shipped products: websites, web/mobile apps, e-commerce, AI tools, and automation."
   />
-  <meta property="og:image" content="https://www.techyor.com/og.png" />
+  <meta property="og:image" content="{BASE_URL}/api/og/projects" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Techyor projects" />
+  <meta property="og:image:alt" content="Techyor projects — selected work" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@TechyorDotCo" />
@@ -93,25 +97,21 @@
     name="twitter:description"
     content="80+ shipped products: websites, apps, e-commerce, AI, and automation."
   />
-  <meta name="twitter:image" content="https://www.techyor.com/og.png" />
+  <meta name="twitter:image" content="{BASE_URL}/api/og/projects" />
+  <meta name="twitter:image:alt" content="Techyor projects — selected work" />
 
   {@html `<${'script'} type="application/ld+json">${generateBreadcrumbSchema([
     { name: 'Home', url: '/' },
     { name: 'Projects', url: '/projects' }
   ])}</${'script'}>`}
-  {@html `<${'script'} type="application/ld+json">${JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'CollectionPage',
-    name: 'Techyor Projects',
-    description: 'Portfolio of digital products including websites, apps, and custom solutions',
-    url: 'https://www.techyor.com/projects',
-    mainEntity: projectsData.slice(0, 5).map((project) => ({
-      '@type': 'CreativeWork',
-      name: project.name,
-      description: project.tagline,
-      image: 'https://www.techyor.com' + project.image,
-      url: 'https://www.techyor.com/projects/' + project.slug
-    }))
+  {@html `<${'script'} type="application/ld+json">${generateCollectionPageSchema({
+    name: 'Techyor Projects — Portfolio',
+    description:
+      'Portfolio of digital products including websites, apps, e-commerce, AI tools, and automation built for ambitious teams across the US, UK, AU, and Europe.',
+    url: `${BASE_URL}/projects`,
+    numberOfItems: projectsData.length,
+    itemUrls: projectsData.map((p) => `${BASE_URL}/projects/${p.slug}`),
+    imagePath: '/api/og/projects'
   })}</${'script'}>`}
 </svelte:head>
 

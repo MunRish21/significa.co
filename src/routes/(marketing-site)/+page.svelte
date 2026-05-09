@@ -21,7 +21,37 @@
     CareersListStoryblok
   } from '$types/bloks';
   import { getImageAttributes } from '$lib/utils/cms';
-  import { generateOrganizationSchema, generateFAQSchema } from '$lib/utils/schema';
+  import {
+    BASE_URL,
+    generateOrganizationSchema,
+    generateFAQSchema,
+    generateProfessionalServiceSchema,
+    generateTeamMembersSchema
+  } from '$lib/utils/schema';
+  import { getFeaturedTestimonials } from '$lib/data/testimonials';
+  import { getActiveTeamMembers } from '$lib/data/team';
+
+  const homeFeaturedTestimonials = getFeaturedTestimonials();
+  const homeRatings = homeFeaturedTestimonials
+    .map((t) => t.rating)
+    .filter((r): r is number => typeof r === 'number');
+  const homeReviews = homeFeaturedTestimonials
+    .filter((t) => typeof t.rating === 'number')
+    .slice(0, 10)
+    .map((t) => ({
+      rating: t.rating as number,
+      body: t.quote,
+      author: t.author,
+      date: t.date
+    }));
+  const homeTeamSchema = getActiveTeamMembers().map((m) => ({
+    name: m.name,
+    jobTitle: m.role,
+    description: m.tagline,
+    image: m.avatar,
+    url: `/team/${m.slug}`,
+    sameAs: m.links.map((l) => l.url)
+  }));
 
   let textElements: HTMLElement[] = [];
 
@@ -254,7 +284,7 @@
     property="og:description"
     content="Strategy, design, and development under one roof. 8+ years. 80+ products shipped for teams across the US, UK, Switzerland, and Australia."
   />
-  <meta property="og:image" content="https://www.techyor.com/og.png?v=2" />
+  <meta property="og:image" content="{BASE_URL}/api/og/home" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="Techyor — digital product studio" />
@@ -267,10 +297,20 @@
     name="twitter:description"
     content="Strategy, design, and development under one roof. 8+ years. 80+ products shipped."
   />
-  <meta name="twitter:image" content="https://www.techyor.com/og.png?v=2" />
+  <meta name="twitter:image" content="{BASE_URL}/api/og/home" />
+  <meta name="twitter:image:alt" content="Techyor — digital product studio" />
 
   {@html `<${'script'} type="application/ld+json">${generateOrganizationSchema()}</${'script'}>`}
+  {@html `<${'script'} type="application/ld+json">${generateProfessionalServiceSchema({
+    description:
+      'A digital product studio building custom websites, web apps, mobile apps, e-commerce stores, AI tools, and automation for teams in the US, UK, Switzerland, and Australia.',
+    url: BASE_URL,
+    imagePath: '/api/og/home',
+    ratings: homeRatings,
+    reviews: homeReviews
+  })}</${'script'}>`}
   {@html `<${'script'} type="application/ld+json">${generateFAQSchema(getCommonFaqsForSchema())}</${'script'}>`}
+  {@html `<${'script'} type="application/ld+json">${generateTeamMembersSchema(homeTeamSchema)}</${'script'}>`}
 </svelte:head>
 
 <main class="overflow-hidden">
@@ -305,7 +345,10 @@
         style="opacity: 1; transform: translateY(0);">Scale.</span
       >
     </h1>
-    <p class="mt-6 max-w-3xl text-2xl text-foreground-secondary md:mt-8 lg:mt-10 lg:text-3xl">
+    <p
+      data-speakable
+      class="mt-6 max-w-3xl text-2xl text-foreground-secondary md:mt-8 lg:mt-10 lg:text-3xl"
+    >
       Techyor is a digital product studio building custom websites, apps, AI tools, and automation
       for ambitious teams across the US, UK, Switzerland, and Australia.
     </p>
