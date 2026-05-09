@@ -1,5 +1,6 @@
 import { projectsData } from '$lib/data/projects';
 import { getActiveTeamMembers } from '$lib/data/team';
+import { hireRoles } from '$lib/data/hire-roles';
 
 const BASE_URL = 'https://www.techyor.com';
 
@@ -79,7 +80,22 @@ const teamPages = teamMembers.map((member) => ({
   lastmod: today
 }));
 
-const allPages = [...staticPages, ...projectPages, ...servicePages, ...deliverablePages, ...teamPages];
+// /hire/<role> landing pages — primary lead-gen surface
+const hirePages = hireRoles.map((role) => ({
+  path: `/hire/${role.slug}`,
+  priority: 0.9,
+  changefreq: 'weekly',
+  lastmod: today
+}));
+
+const allPages = [
+  ...staticPages,
+  ...projectPages,
+  ...servicePages,
+  ...deliverablePages,
+  ...teamPages,
+  ...hirePages
+];
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
