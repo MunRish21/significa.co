@@ -5,7 +5,7 @@ import {
   getTestimonialsByService,
   getFeaturedTestimonials
 } from '$lib/data/testimonials';
-import type { ServiceCategory } from '$lib/data/team';
+import { getActiveTeamMembers, type ServiceCategory } from '$lib/data/team';
 import { BYPASS_TOKEN } from '$env/static/private';
 
 export const load = async ({ params }) => {
@@ -49,11 +49,34 @@ export const load = async ({ params }) => {
     .map((t) => t.rating)
     .filter((r): r is number => typeof r === 'number');
 
+  /** Per-Review entries for Service.review JSON-LD (cap at 10 to keep payload reasonable). */
+  const reviewEntries = allMatchingTestimonials
+    .filter((t) => typeof t.rating === 'number')
+    .slice(0, 10)
+    .map((t) => ({
+      rating: t.rating as number,
+      body: t.quote,
+      author: t.author,
+      date: t.date
+    }));
+
+  /** Active team members shaped for ItemList of Person JSON-LD. */
+  const teamSchemaMembers = getActiveTeamMembers().map((m) => ({
+    name: m.name,
+    jobTitle: m.role,
+    description: m.tagline,
+    image: m.avatar,
+    url: `/team/${m.slug}`,
+    sameAs: m.links.map((l) => l.url)
+  }));
+
   return {
     role,
     matchingProjects,
     matchingTestimonials,
-    ratings
+    ratings,
+    reviewEntries,
+    teamSchemaMembers
   };
 };
 

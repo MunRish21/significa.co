@@ -269,9 +269,9 @@ export function generateProfessionalReviewSchema(reviews: {
 
 /**
  * Rich Service schema for /hire/<role> pages. Combines Service +
- * AggregateRating + Offers (engagement models) so the page is eligible
- * for Google rich results and surfaces price/audience/area-served
- * signals to crawlers.
+ * AggregateRating + Offers (engagement models) + per-Review entries
+ * so the page is eligible for Google rich results and surfaces
+ * price/audience/area-served signals to crawlers.
  */
 export function generateHireRoleSchema(input: {
   roleTitle: string;
@@ -282,6 +282,12 @@ export function generateHireRoleSchema(input: {
   techStack: string[];
   engagementModels: { title: string; description: string }[];
   ratings?: number[];
+  reviews?: Array<{
+    rating: number;
+    body: string;
+    author: string;
+    date?: string;
+  }>;
   imagePath?: string;
 }) {
   const ratings = input.ratings || [];
@@ -294,6 +300,22 @@ export function generateHireRoleSchema(input: {
           bestRating: 5,
           worstRating: 1
         }
+      : undefined;
+
+  const review =
+    input.reviews && input.reviews.length > 0
+      ? input.reviews.map((r) => ({
+          '@type': 'Review',
+          reviewRating: {
+            '@type': 'Rating',
+            ratingValue: r.rating,
+            bestRating: 5,
+            worstRating: 1
+          },
+          author: { '@type': 'Person', name: r.author },
+          reviewBody: r.body,
+          datePublished: r.date
+        }))
       : undefined;
 
   return JSON.stringify({
@@ -346,6 +368,7 @@ export function generateHireRoleSchema(input: {
       }))
     },
     aggregateRating,
+    review,
     mainEntityOfPage: {
       '@type': 'WebPage',
       '@id': input.url,
@@ -354,6 +377,70 @@ export function generateHireRoleSchema(input: {
         cssSelector: ['h1', '[data-speakable]']
       }
     }
+  });
+}
+
+/**
+ * HowTo schema — used to describe a step-by-step engagement process.
+ * Eligible for Google "HowTo" rich-result style on supported queries.
+ */
+export function generateHowToSchema(input: {
+  name: string;
+  description: string;
+  steps: { name: string; text: string }[];
+  totalTime?: string; // ISO 8601 duration, e.g. PT5D for 5 days
+}) {
+  return JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: input.name,
+    description: input.description,
+    totalTime: input.totalTime,
+    step: input.steps.map((s, i) => ({
+      '@type': 'HowToStep',
+      position: i + 1,
+      name: s.name,
+      text: s.text
+    }))
+  });
+}
+
+/**
+ * ItemList of Person entities — used to mark up team-member sections.
+ * Each member also includes worksFor → Organization for entity linkage.
+ */
+export function generateTeamMembersSchema(
+  members: Array<{
+    name: string;
+    jobTitle: string;
+    description: string;
+    image: string;
+    url: string;
+    sameAs?: string[];
+  }>
+) {
+  return JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Techyor team',
+    itemListElement: members.map((m, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      item: {
+        '@type': 'Person',
+        name: m.name,
+        jobTitle: m.jobTitle,
+        description: m.description,
+        image: m.image.startsWith('http') ? m.image : `${BASE_URL}${m.image}`,
+        url: m.url.startsWith('http') ? m.url : `${BASE_URL}${m.url}`,
+        sameAs: m.sameAs,
+        worksFor: {
+          '@type': 'Organization',
+          name: 'Techyor',
+          url: BASE_URL
+        }
+      }
+    }))
   });
 }
 

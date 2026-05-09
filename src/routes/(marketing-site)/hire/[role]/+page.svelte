@@ -8,7 +8,9 @@
     BASE_URL,
     generateBreadcrumbSchema,
     generateHireRoleSchema,
-    generateFAQSchema
+    generateFAQSchema,
+    generateHowToSchema,
+    generateTeamMembersSchema
   } from '$lib/utils/schema';
   import { engagementModels, hiringProcess, sharedFaq, hireRoles } from '$lib/data/hire-roles';
 
@@ -35,7 +37,8 @@
     techStack: role.techStack,
     engagementModels,
     ratings: data.ratings,
-    imagePath: '/og.png'
+    reviews: data.reviewEntries,
+    imagePath: `/api/og/${role.slug}`
   });
   $: faqJsonLd = generateFAQSchema(combinedFaq);
   $: breadcrumbJsonLd = generateBreadcrumbSchema([
@@ -43,6 +46,14 @@
     { name: 'Hire', url: '/hire' },
     { name: role.title, url: `/hire/${role.slug}` }
   ]);
+  $: howToJsonLd = generateHowToSchema({
+    name: `How to hire a ${role.title} from Techyor`,
+    description:
+      'A simple three-step process: book a quick intro call, hear our experience and approach, and start work that week.',
+    totalTime: 'P10D',
+    steps: hiringProcess.map((s) => ({ name: s.title, text: s.description }))
+  });
+  $: teamJsonLd = generateTeamMembersSchema(data.teamSchemaMembers);
 
   /** Smooth-scroll to contact form. */
   function scrollToContact(event: MouseEvent) {
@@ -59,7 +70,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content={role.metaTitle} />
   <meta property="og:description" content={role.metaDescription} />
-  <meta property="og:image" content="{BASE_URL}/og.png" />
+  <meta property="og:image" content="{BASE_URL}/api/og/{role.slug}" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="Hire senior {role.title}s — Techyor" />
@@ -68,12 +79,14 @@
   <meta name="twitter:site" content="@TechyorDotCo" />
   <meta name="twitter:title" content={role.metaTitle} />
   <meta name="twitter:description" content={role.metaDescription} />
-  <meta name="twitter:image" content="{BASE_URL}/og.png" />
+  <meta name="twitter:image" content="{BASE_URL}/api/og/{role.slug}" />
   <meta name="twitter:image:alt" content="Hire senior {role.title}s — Techyor" />
 
   {@html `<${'script'} type="application/ld+json">${serviceJsonLd}</${'script'}>`}
   {@html `<${'script'} type="application/ld+json">${faqJsonLd}</${'script'}>`}
   {@html `<${'script'} type="application/ld+json">${breadcrumbJsonLd}</${'script'}>`}
+  {@html `<${'script'} type="application/ld+json">${howToJsonLd}</${'script'}>`}
+  {@html `<${'script'} type="application/ld+json">${teamJsonLd}</${'script'}>`}
 </svelte:head>
 
 <main class="overflow-hidden">
