@@ -41,7 +41,16 @@
                     {#if entry.list}
                       {#each entry.list as item}
                         <div class="flex flex-col">
-                          <p class="mt-3 text-xl text-foreground-secondary">{item.label}</p>
+                          {#if item.link}
+                            <a
+                              href={item.link}
+                              class="mt-3 text-xl text-foreground-secondary underline-offset-4 transition-colors hover:text-foreground hover:underline"
+                            >
+                              {item.label}
+                            </a>
+                          {:else}
+                            <p class="mt-3 text-xl text-foreground-secondary">{item.label}</p>
+                          {/if}
                         </div>
                       {/each}
                     {/if}

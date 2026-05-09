@@ -62,37 +62,25 @@ export const engagementModels = [
   }
 ];
 
-/** Shared 5-step engagement process — same for every role. */
+/** Shared engagement process — kept simple, reflects how we actually work. */
 export const hiringProcess = [
   {
     step: 1,
-    title: 'Intro call',
+    title: 'Quick intro call',
     description:
-      'A 30-minute call to understand the role, stack, timelines, and the kind of person who would fit your team. No-obligation.'
+      "A 30-minute conversation. Tell us what you're building, the stack you're on, and where you'd like help. No deck, no obligation."
   },
   {
     step: 2,
-    title: 'Shortlist within 48 hours',
+    title: 'We share our experience',
     description:
-      'We propose two to three senior developers from our team, each with a profile, relevant case studies, and availability. You pick who you meet.'
+      'We walk you through relevant projects we have shipped, the approach we would take, and the trade-offs to expect. Honest about what we are great at — and what we are not.'
   },
   {
     step: 3,
-    title: 'Technical interview',
+    title: 'Start work',
     description:
-      "Talk to the developer directly. Run a live coding session, architecture discussion, or paid trial task — whatever helps you decide."
-  },
-  {
-    step: 4,
-    title: 'Onboard in days, not months',
-    description:
-      'Mutual NDA, contract, and a clear start date. The developer joins your Slack / Linear / GitHub on day one and ramps into your codebase that week.'
-  },
-  {
-    step: 5,
-    title: 'Ongoing partnership',
-    description:
-      'Weekly check-ins, transparent reporting, and a single point of escalation. Ramp the engagement up or down as the roadmap evolves.'
+      'Mutual NDA, a clear scope, and a start date. We begin shipping that week. Daily updates and a single point of contact throughout.'
   }
 ];
 

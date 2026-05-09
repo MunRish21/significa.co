@@ -88,21 +88,41 @@
           {
             title: 'Front-end',
             list: [
-              { label: 'React' },
-              { label: 'NextJS' },
-              { label: 'Svelte' },
-              { label: 'React Native' },
-              { label: 'Swift' },
-              { label: 'Kotlin' }
+              { label: 'React', link: '/hire/react-developer' },
+              { label: 'NextJS', link: '/hire/nextjs-developer' },
+              { label: 'Svelte', link: '/hire/frontend-developer' },
+              { label: 'React Native', link: '/hire/react-native-developer' },
+              { label: 'Swift', link: '/hire/ios-developer' },
+              { label: 'Kotlin', link: '/hire/android-developer' }
             ]
           },
           {
             title: 'Back-end',
-            list: [{ label: 'Elixir' }, { label: 'Python' }, { label: 'Node' }]
+            list: [
+              { label: 'Python', link: '/hire/python-developer' },
+              { label: 'Node', link: '/hire/nodejs-developer' },
+              { label: 'TypeScript', link: '/hire/typescript-developer' }
+            ]
+          },
+          {
+            title: 'AI & Voice',
+            list: [
+              { label: 'AI Engineering', link: '/hire/ai-engineer' },
+              { label: 'LLM integration', link: '/hire/llm-developer' },
+              { label: 'Voice AI', link: '/hire/voice-ai-developer' }
+            ]
+          },
+          {
+            title: 'E-commerce',
+            list: [
+              { label: 'Shopify', link: '/hire/shopify-developer' },
+              { label: 'WooCommerce', link: '/hire/woocommerce-developer' },
+              { label: 'WordPress', link: '/hire/wordpress-developer' }
+            ]
           },
           {
             title: 'DevOps',
-            list: [{ label: 'Hosting and maintenance' }, { label: 'Infrastructure setup' }]
+            list: [{ label: 'DevOps engineering', link: '/hire/devops-engineer' }]
           }
         ]
       }
