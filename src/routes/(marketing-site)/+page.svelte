@@ -12,7 +12,7 @@
   import TeamSection from '$components/sections/team-section.svelte';
   import BlogEntry from '$components/blog-entry.svelte';
   import ProjectEntry from '$components/project-entry.svelte';
-  import { commonFaqsBlock } from '$lib/data/faqs';
+  import { commonFaqsBlock, getCommonFaqsForSchema } from '$lib/data/faqs';
   import type {
     HomePageStoryblok,
     NewtonStoryblok,
@@ -270,10 +270,7 @@
   <meta name="twitter:image" content="https://www.techyor.com/og.png?v=2" />
 
   {@html `<${'script'} type="application/ld+json">${generateOrganizationSchema()}</${'script'}>`}
-  {@html `<${'script'} type="application/ld+json">${generateFAQSchema(commonFaqsBlock.faqs_items.map((item) => ({
-    question: item.question,
-    answer: item.answer
-  })))}</${'script'}>`}
+  {@html `<${'script'} type="application/ld+json">${generateFAQSchema(getCommonFaqsForSchema())}</${'script'}>`}
 </svelte:head>
 
 <main class="overflow-hidden">

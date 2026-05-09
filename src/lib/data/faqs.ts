@@ -65,3 +65,25 @@ export const commonFaqsBlock = {
     }
   ]
 };
+
+/** Walk a Storyblok rich-text doc and return concatenated plain text. */
+function richTextToPlain(node: unknown): string {
+  if (!node || typeof node !== 'object') return '';
+  const n = node as { type?: string; text?: string; content?: unknown[] };
+  if (n.type === 'text' && typeof n.text === 'string') return n.text;
+  if (Array.isArray(n.content)) {
+    return n.content.map(richTextToPlain).join(n.type === 'paragraph' ? '\n\n' : '');
+  }
+  return '';
+}
+
+/**
+ * Returns commonFaqs as {question, answer} pairs ready for generateFAQSchema.
+ * Use this on pages that ship FAQPage JSON-LD.
+ */
+export function getCommonFaqsForSchema(): { question: string; answer: string }[] {
+  return commonFaqsBlock.questions.map((q) => ({
+    question: q.question,
+    answer: richTextToPlain(q.body).trim()
+  }));
+}

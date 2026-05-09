@@ -5,7 +5,7 @@
   import ClientsSection from '$components/sections/clients-section.svelte';
   import TeamSection from '$components/sections/team-section.svelte';
   import OfficeCards from '$components/blocks/office-cards.svelte';
-  import { commonFaqsBlock } from '$lib/data/faqs';
+  import { commonFaqsBlock, getCommonFaqsForSchema } from '$lib/data/faqs';
   import {
     generateOrganizationSchema,
     generateFAQSchema,
@@ -157,10 +157,7 @@
     { name: 'Home', url: '/' },
     { name: 'About', url: '/about' }
   ])}</${'script'}>`}
-  {@html `<${'script'} type="application/ld+json">${generateFAQSchema(commonFaqsBlock.faqs_items.map((item) => ({
-    question: item.question,
-    answer: item.answer
-  })))}</${'script'}>`}
+  {@html `<${'script'} type="application/ld+json">${generateFAQSchema(getCommonFaqsForSchema())}</${'script'}>`}
 </svelte:head>
 
 <div class="overflow-hidden">

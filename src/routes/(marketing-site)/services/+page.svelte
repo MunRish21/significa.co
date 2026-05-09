@@ -8,7 +8,7 @@
   import UpworkTestimonials from '$components/sections/upwork-testimonials.svelte';
   import ContactForm from '$components/contact-form.svelte';
   import FaqsList from '$components/blocks/faqs-list.svelte';
-  import { commonFaqsBlock } from '$lib/data/faqs';
+  import { commonFaqsBlock, getCommonFaqsForSchema } from '$lib/data/faqs';
   import { getFeaturedTestimonials } from '$lib/data/testimonials';
 
   const servicesTestimonials = getFeaturedTestimonials();
@@ -547,10 +547,7 @@
     { name: 'Services', url: '/services' }
   ])}</${'script'}>`}
   {@html `<${'script'} type="application/ld+json">${generateServiceSchema('Digital Product Services', 'End-to-end digital product development including strategy, design, development, and deployment.')}</${'script'}>`}
-  {@html `<${'script'} type="application/ld+json">${generateFAQSchema(commonFaqsBlock.faqs_items.map((item) => ({
-    question: item.question,
-    answer: item.answer
-  })))}</${'script'}>`}
+  {@html `<${'script'} type="application/ld+json">${generateFAQSchema(getCommonFaqsForSchema())}</${'script'}>`}
 </svelte:head>
 
 <div class="overflow-hidden">
