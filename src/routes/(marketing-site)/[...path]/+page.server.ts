@@ -1,20 +1,11 @@
 import { error } from '@sveltejs/kit';
-import { fetchPage } from '$lib/content';
 import { BYPASS_TOKEN } from '$env/static/private';
 
-export const load = async ({ params, locals, fetch, url }) => {
-  const version = locals.version;
-  // don't catch paths that end with an extension
-  if (/\..+$/.test(params.path)) throw error(404);
-
-  const page = await fetchPage({
-    slug: params.path,
-    version,
-    fetch,
-    url
-  });
-
-  return { page };
+export const load = async ({ params }) => {
+  // No dynamic CMS-backed pages are served from this catch-all anymore.
+  // Anything that lands here is an unknown URL (e.g. legacy WordPress paths
+  // still in Google's index) — return 404 so it drops out of search results.
+  throw error(404, `No page found for /${params.path}`);
 };
 
 // Use a 32+ character fallback if BYPASS_TOKEN is not set (during build)
