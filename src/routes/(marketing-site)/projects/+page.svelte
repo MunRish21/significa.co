@@ -95,28 +95,24 @@
   />
   <meta name="twitter:image" content="https://www.techyor.com/og.png" />
 
-  <script type="application/ld+json">
-{generateBreadcrumbSchema([
+  {@html `<${'script'} type="application/ld+json">${generateBreadcrumbSchema([
     { name: 'Home', url: '/' },
     { name: 'Projects', url: '/projects' }
-  ])}
-  </script>
-  <script type="application/ld+json">
-    {JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'CollectionPage',
-      name: 'Techyor Projects',
-      description: 'Portfolio of digital products including websites, apps, and custom solutions',
-      url: 'https://www.techyor.com/projects',
-      mainEntity: projectsData.slice(0, 5).map(project => ({
-        '@type': 'CreativeWork',
-        name: project.name,
-        description: project.tagline,
-        image: 'https://www.techyor.com' + project.image,
-        url: 'https://www.techyor.com/projects/' + project.slug
-      }))
-    })}
-  </script>
+  ])}</${'script'}>`}
+  {@html `<${'script'} type="application/ld+json">${JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'Techyor Projects',
+    description: 'Portfolio of digital products including websites, apps, and custom solutions',
+    url: 'https://www.techyor.com/projects',
+    mainEntity: projectsData.slice(0, 5).map((project) => ({
+      '@type': 'CreativeWork',
+      name: project.name,
+      description: project.tagline,
+      image: 'https://www.techyor.com' + project.image,
+      url: 'https://www.techyor.com/projects/' + project.slug
+    }))
+  })}</${'script'}>`}
 </svelte:head>
 
 <main class="overflow-hidden">

@@ -156,22 +156,18 @@
     <meta name="twitter:description" content={project.tagline} />
     <meta name="twitter:image" content={absoluteImage} />
 
-    <script type="application/ld+json">
-{generateBreadcrumbSchema([
+    {@html `<${'script'} type="application/ld+json">${generateBreadcrumbSchema([
       { name: 'Home', url: '/' },
       { name: 'Projects', url: '/projects' },
       { name: project.name, url: `/projects/${project.slug}` }
-    ])}
-    </script>
-    <script type="application/ld+json">
-{generateProjectSchema(
+    ])}</${'script'}>`}
+    {@html `<${'script'} type="application/ld+json">${generateProjectSchema(
       project.name,
       project.tagline,
       project.coverImage || project.image,
       `/projects/${project.slug}`,
       project.publishedYear
-    )}
-    </script>
+    )}</${'script'}>`}
   {:else if data.isFilter}
     <title>{data.filterName} Projects — Techyor Portfolio</title>
     <meta
@@ -192,13 +188,11 @@
     <meta name="twitter:description" content="Browse Techyor projects in {data.filterName}." />
     <meta name="twitter:image" content="https://www.techyor.com/og.png" />
 
-    <script type="application/ld+json">
-{generateBreadcrumbSchema([
+    {@html `<${'script'} type="application/ld+json">${generateBreadcrumbSchema([
       { name: 'Home', url: '/' },
       { name: 'Projects', url: '/projects' },
       { name: data.filterName, url: `/projects/${data.filterName.toLowerCase().replace(/\s+/g, '-')}` }
-    ])}
-    </script>
+    ])}</${'script'}>`}
   {:else}
     <title>Project Not Found — Techyor</title>
     <meta name="robots" content="noindex, nofollow" />

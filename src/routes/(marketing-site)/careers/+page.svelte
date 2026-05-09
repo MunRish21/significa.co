@@ -136,21 +136,13 @@
   />
   <meta name="twitter:image" content="https://www.techyor.com/og.png" />
 
-  <script type="application/ld+json">
-{generateOrganizationSchema()}
-  </script>
-  <script type="application/ld+json">
-{generateBreadcrumbSchema([
+  {@html `<${'script'} type="application/ld+json">${generateOrganizationSchema()}</${'script'}>`}
+  {@html `<${'script'} type="application/ld+json">${generateBreadcrumbSchema([
     { name: 'Home', url: '/' },
     { name: 'Careers', url: '/careers' }
-  ])}
-  </script>
-  <script type="application/ld+json">
-{generateJobPostingSchema('Digital Product Designer', 'Join Techyor as a Digital Product Designer. Build beautiful and functional digital products.')}
-  </script>
-  <script type="application/ld+json">
-{generateJobPostingSchema('Full Stack Developer', 'Join Techyor as a Full Stack Developer. Work on cutting-edge web and mobile applications.')}
-  </script>
+  ])}</${'script'}>`}
+  {@html `<${'script'} type="application/ld+json">${generateJobPostingSchema('Digital Product Designer', 'Join Techyor as a Digital Product Designer. Build beautiful and functional digital products.')}</${'script'}>`}
+  {@html `<${'script'} type="application/ld+json">${generateJobPostingSchema('Full Stack Developer', 'Join Techyor as a Full Stack Developer. Work on cutting-edge web and mobile applications.')}</${'script'}>`}
 </svelte:head>
 
 <main class="overflow-hidden">

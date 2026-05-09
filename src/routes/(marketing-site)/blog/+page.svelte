@@ -309,25 +309,21 @@
   />
   <meta name="twitter:image" content="https://www.techyor.com/og.png" />
 
-  <script type="application/ld+json">
-{generateBreadcrumbSchema([
+  {@html `<${'script'} type="application/ld+json">${generateBreadcrumbSchema([
     { name: 'Home', url: '/' },
     { name: 'Blog', url: '/blog' }
-  ])}
-  </script>
-  <script type="application/ld+json">
-    {JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'Blog',
-      name: 'Techyor Blog',
-      description: 'Articles on web design, development, AI, and digital innovation',
-      url: 'https://www.techyor.com/blog',
-      publisher: {
-        '@type': 'Organization',
-        name: 'Techyor'
-      }
-    })}
-  </script>
+  ])}</${'script'}>`}
+  {@html `<${'script'} type="application/ld+json">${JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    name: 'Techyor Blog',
+    description: 'Articles on web design, development, AI, and digital innovation',
+    url: 'https://www.techyor.com/blog',
+    publisher: {
+      '@type': 'Organization',
+      name: 'Techyor'
+    }
+  })}</${'script'}>`}
 </svelte:head>
 
 <main class="overflow-hidden">

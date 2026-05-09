@@ -152,21 +152,15 @@
   />
   <meta name="twitter:image" content="https://www.techyor.com/og.png" />
 
-  <script type="application/ld+json">
-{generateOrganizationSchema()}
-  </script>
-  <script type="application/ld+json">
-{generateBreadcrumbSchema([
+  {@html `<${'script'} type="application/ld+json">${generateOrganizationSchema()}</${'script'}>`}
+  {@html `<${'script'} type="application/ld+json">${generateBreadcrumbSchema([
     { name: 'Home', url: '/' },
     { name: 'About', url: '/about' }
-  ])}
-  </script>
-  <script type="application/ld+json">
-{generateFAQSchema(commonFaqsBlock.faqs_items.map(item => ({
+  ])}</${'script'}>`}
+  {@html `<${'script'} type="application/ld+json">${generateFAQSchema(commonFaqsBlock.faqs_items.map((item) => ({
     question: item.question,
     answer: item.answer
-  })))}
-  </script>
+  })))}</${'script'}>`}
 </svelte:head>
 
 <div class="overflow-hidden">

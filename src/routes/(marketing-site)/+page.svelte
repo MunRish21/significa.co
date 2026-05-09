@@ -269,15 +269,11 @@
   />
   <meta name="twitter:image" content="https://www.techyor.com/og.png?v=2" />
 
-  <script type="application/ld+json">
-{generateOrganizationSchema()}
-  </script>
-  <script type="application/ld+json">
-{generateFAQSchema(commonFaqsBlock.faqs_items.map(item => ({
+  {@html `<${'script'} type="application/ld+json">${generateOrganizationSchema()}</${'script'}>`}
+  {@html `<${'script'} type="application/ld+json">${generateFAQSchema(commonFaqsBlock.faqs_items.map((item) => ({
     question: item.question,
     answer: item.answer
-  })))}
-  </script>
+  })))}</${'script'}>`}
 </svelte:head>
 
 <main class="overflow-hidden">

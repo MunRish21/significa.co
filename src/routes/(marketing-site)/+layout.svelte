@@ -27,9 +27,7 @@
   <meta property="og:site_name" content="Techyor" />
   <meta property="og:locale" content="en_US" />
   <meta property="og:url" content={canonical} />
-  <script type="application/ld+json">
-{generateWebsiteSchema()}
-  </script>
+  {@html `<${'script'} type="application/ld+json">${generateWebsiteSchema()}</${'script'}>`}
 </svelte:head>
 
 <TopNavigation configuration={data.configuration.content} />

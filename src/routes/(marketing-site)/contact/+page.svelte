@@ -76,15 +76,11 @@
   />
   <meta name="twitter:image" content="https://www.techyor.com/og.png" />
 
-  <script type="application/ld+json">
-{generateOrganizationSchema()}
-  </script>
-  <script type="application/ld+json">
-{generateBreadcrumbSchema([
+  {@html `<${'script'} type="application/ld+json">${generateOrganizationSchema()}</${'script'}>`}
+  {@html `<${'script'} type="application/ld+json">${generateBreadcrumbSchema([
     { name: 'Home', url: '/' },
     { name: 'Contact', url: '/contact' }
-  ])}
-  </script>
+  ])}</${'script'}>`}
 </svelte:head>
 
 <div class="overflow-hidden">

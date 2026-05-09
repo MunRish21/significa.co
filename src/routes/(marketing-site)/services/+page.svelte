@@ -541,24 +541,16 @@
   />
   <meta name="twitter:image" content="https://www.techyor.com/og.png" />
 
-  <script type="application/ld+json">
-{generateOrganizationSchema()}
-  </script>
-  <script type="application/ld+json">
-{generateBreadcrumbSchema([
+  {@html `<${'script'} type="application/ld+json">${generateOrganizationSchema()}</${'script'}>`}
+  {@html `<${'script'} type="application/ld+json">${generateBreadcrumbSchema([
     { name: 'Home', url: '/' },
     { name: 'Services', url: '/services' }
-  ])}
-  </script>
-  <script type="application/ld+json">
-{generateServiceSchema('Digital Product Services', 'End-to-end digital product development including strategy, design, development, and deployment.')}
-  </script>
-  <script type="application/ld+json">
-{generateFAQSchema(commonFaqsBlock.faqs_items.map(item => ({
+  ])}</${'script'}>`}
+  {@html `<${'script'} type="application/ld+json">${generateServiceSchema('Digital Product Services', 'End-to-end digital product development including strategy, design, development, and deployment.')}</${'script'}>`}
+  {@html `<${'script'} type="application/ld+json">${generateFAQSchema(commonFaqsBlock.faqs_items.map((item) => ({
     question: item.question,
     answer: item.answer
-  })))}
-  </script>
+  })))}</${'script'}>`}
 </svelte:head>
 
 <div class="overflow-hidden">
