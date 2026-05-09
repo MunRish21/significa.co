@@ -6,6 +6,7 @@ import {
   getFeaturedTestimonials
 } from '$lib/data/testimonials';
 import { getActiveTeamMembers, type ServiceCategory } from '$lib/data/team';
+import { toSlug } from '$lib/utils/slugify';
 import { BYPASS_TOKEN } from '$env/static/private';
 
 export const load = async ({ params }) => {
@@ -35,6 +36,30 @@ export const load = async ({ params }) => {
   const projectsToShow = projectsAreFallback
     ? projectsData.slice(0, 6)
     : scoredProjects.slice(0, 6).map((p) => p.project);
+
+  /**
+   * "View all" link for the Sample Work section. Routes to a filtered
+   * /projects/<slug> listing matching the role's primary tag, so
+   * visitors see the full superset of what was just sampled. Falls
+   * back to /projects when nothing relevant matched.
+   */
+  const primaryTag = role.relatedServiceTags[0];
+  const filterCandidateSlug = primaryTag ? toSlug(String(primaryTag)) : null;
+
+  const allProjectFilterSlugs = new Set<string>();
+  projectsData.forEach((p) => {
+    p.services.forEach((s) => allProjectFilterSlugs.add(toSlug(s)));
+    p.deliverables.forEach((d) => allProjectFilterSlugs.add(toSlug(d)));
+  });
+
+  const viewAllUrl =
+    !projectsAreFallback && filterCandidateSlug && allProjectFilterSlugs.has(filterCandidateSlug)
+      ? `/projects/${filterCandidateSlug}`
+      : '/projects';
+  const viewAllLabel =
+    viewAllUrl === '/projects'
+      ? 'View all projects'
+      : `View all ${String(primaryTag)} projects`;
 
   const matchingProjects = projectsToShow.map((project) => ({
     slug: project.slug,
@@ -89,6 +114,8 @@ export const load = async ({ params }) => {
     role,
     matchingProjects,
     projectsAreFallback,
+    viewAllUrl,
+    viewAllLabel,
     matchingTestimonials,
     ratings,
     reviewEntries,

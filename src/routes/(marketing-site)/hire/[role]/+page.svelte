@@ -311,10 +311,10 @@
 
         <div class="mt-12">
           <a
-            href="/projects"
+            href={data.viewAllUrl}
             class="inline-flex h-11 items-center gap-1.5 rounded-md border border-border px-5 font-medium transition-all hover:border-foreground hover:ring-4 focus-visible:border-foreground focus-visible:ring-4"
           >
-            View all projects
+            {data.viewAllLabel}
             <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M3 8.5h9M8.5 4.5l3.5 4-3.5 4" stroke="currentColor" stroke-width="1.2" />
             </svg>
