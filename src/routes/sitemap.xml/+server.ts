@@ -1,19 +1,11 @@
 import { projectsData } from '$lib/data/projects';
 import { getActiveTeamMembers } from '$lib/data/team';
 import { hireRoles } from '$lib/data/hire-roles';
+import { toSlug } from '$lib/utils/slugify';
 
 const BASE_URL = 'https://www.techyor.com';
 
 const today = new Date().toISOString().split('T')[0];
-
-// Helper function to generate URL-safe slugs
-function toSlug(text: string): string {
-  return text
-    .toLowerCase()
-    .replace(/\s+/g, '-')
-    .replace(/&/g, 'and')
-    .replace(/[^\w-]/g, '');
-}
 
 // Static pages with priority and lastmod
 const staticPages = [

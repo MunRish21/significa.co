@@ -105,8 +105,54 @@ export function generateProjectSchema(
   description: string,
   image: string,
   url: string,
-  year: number
+  year: number,
+  extra?: {
+    services?: string[];
+    deliverables?: string[];
+    keywords?: string[];
+    ratings?: number[];
+    reviews?: Array<{
+      rating: number;
+      body: string;
+      author: string;
+      date?: string;
+    }>;
+  }
 ) {
+  const ratings = extra?.ratings || [];
+  const aggregateRating =
+    ratings.length > 0
+      ? {
+          '@type': 'AggregateRating',
+          ratingValue: (ratings.reduce((a, b) => a + b, 0) / ratings.length).toFixed(1),
+          reviewCount: ratings.length,
+          bestRating: 5,
+          worstRating: 1
+        }
+      : undefined;
+
+  const review =
+    extra?.reviews && extra.reviews.length > 0
+      ? extra.reviews.map((r) => ({
+          '@type': 'Review',
+          reviewRating: {
+            '@type': 'Rating',
+            ratingValue: r.rating,
+            bestRating: 5,
+            worstRating: 1
+          },
+          author: { '@type': 'Person', name: r.author },
+          reviewBody: r.body,
+          datePublished: r.date
+        }))
+      : undefined;
+
+  const keywords = [
+    ...(extra?.services || []),
+    ...(extra?.deliverables || []),
+    ...(extra?.keywords || [])
+  ];
+
   return JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'CreativeWork',
@@ -115,9 +161,207 @@ export function generateProjectSchema(
     image: `${BASE_URL}${image}`,
     url: `${BASE_URL}${url}`,
     datePublished: `${year}-01-01`,
+    inLanguage: 'en',
     creator: {
       '@type': 'Organization',
-      name: 'Techyor'
+      name: 'Techyor',
+      url: BASE_URL,
+      logo: `${BASE_URL}/techyor.png`
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Techyor',
+      url: BASE_URL,
+      logo: { '@type': 'ImageObject', url: `${BASE_URL}/techyor.png` }
+    },
+    keywords: keywords.length > 0 ? keywords.join(', ') : undefined,
+    about: extra?.services?.map((s) => ({ '@type': 'Thing', name: s })),
+    aggregateRating,
+    review,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `${BASE_URL}${url}`,
+      speakable: {
+        '@type': 'SpeakableSpecification',
+        cssSelector: ['h1', '[data-speakable]']
+      }
+    }
+  });
+}
+
+/**
+ * Rich schema for the /services overview page.
+ * Treats Techyor's services as a top-level Service entity that has
+ * many specialized sub-services in its OfferCatalog. Pairs with
+ * AggregateRating + per-Review entries from featured testimonials.
+ */
+export function generateServicesPageSchema(input: {
+  url: string;
+  description: string;
+  serviceCategories: { title: string; description: string; url?: string }[];
+  ratings?: number[];
+  reviews?: Array<{ rating: number; body: string; author: string; date?: string }>;
+  imagePath?: string;
+}) {
+  const ratings = input.ratings || [];
+  const aggregateRating =
+    ratings.length > 0
+      ? {
+          '@type': 'AggregateRating',
+          ratingValue: (ratings.reduce((a, b) => a + b, 0) / ratings.length).toFixed(1),
+          reviewCount: ratings.length,
+          bestRating: 5,
+          worstRating: 1
+        }
+      : undefined;
+
+  const review =
+    input.reviews && input.reviews.length > 0
+      ? input.reviews.map((r) => ({
+          '@type': 'Review',
+          reviewRating: {
+            '@type': 'Rating',
+            ratingValue: r.rating,
+            bestRating: 5,
+            worstRating: 1
+          },
+          author: { '@type': 'Person', name: r.author },
+          reviewBody: r.body,
+          datePublished: r.date
+        }))
+      : undefined;
+
+  return JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Techyor — Digital Product Studio Services',
+    description: input.description,
+    url: input.url,
+    image: `${BASE_URL}${input.imagePath || '/og.png'}`,
+    serviceType: 'Digital product strategy, design, and development',
+    category: 'Software development services',
+    provider: {
+      '@type': 'Organization',
+      name: 'Techyor',
+      url: BASE_URL,
+      logo: `${BASE_URL}/techyor.png`,
+      sameAs: ['https://twitter.com/TechyorDotCo', 'https://www.linkedin.com/company/techyor']
+    },
+    areaServed: [
+      { '@type': 'Country', name: 'United States' },
+      { '@type': 'Country', name: 'United Kingdom' },
+      { '@type': 'Country', name: 'Australia' },
+      { '@type': 'Country', name: 'Switzerland' },
+      { '@type': 'Place', name: 'Worldwide' }
+    ],
+    audience: {
+      '@type': 'BusinessAudience',
+      audienceType: 'Startups, scale-ups, and product teams'
+    },
+    offers: {
+      '@type': 'AggregateOffer',
+      priceCurrency: 'USD',
+      priceRange: '$$$',
+      availability: 'https://schema.org/InStock',
+      offeredBy: { '@type': 'Organization', name: 'Techyor' }
+    },
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Techyor service categories',
+      itemListElement: input.serviceCategories.map((s, i) => ({
+        '@type': 'Offer',
+        position: i + 1,
+        itemOffered: {
+          '@type': 'Service',
+          name: s.title,
+          description: s.description,
+          url: s.url ? `${BASE_URL}${s.url}` : undefined
+        }
+      }))
+    },
+    aggregateRating,
+    review,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': input.url,
+      speakable: {
+        '@type': 'SpeakableSpecification',
+        cssSelector: ['h1', '[data-speakable]']
+      }
+    }
+  });
+}
+
+/**
+ * CollectionPage schema for /projects/<service-slug> filter pages —
+ * the implicit "items in this collection" entity. Includes
+ * AggregateRating + Review when testimonials exist for the filter.
+ */
+export function generateCollectionPageSchema(input: {
+  name: string;
+  description: string;
+  url: string;
+  numberOfItems: number;
+  itemUrls: string[];
+  ratings?: number[];
+  reviews?: Array<{ rating: number; body: string; author: string; date?: string }>;
+  imagePath?: string;
+}) {
+  const ratings = input.ratings || [];
+  const aggregateRating =
+    ratings.length > 0
+      ? {
+          '@type': 'AggregateRating',
+          ratingValue: (ratings.reduce((a, b) => a + b, 0) / ratings.length).toFixed(1),
+          reviewCount: ratings.length,
+          bestRating: 5,
+          worstRating: 1
+        }
+      : undefined;
+
+  const review =
+    input.reviews && input.reviews.length > 0
+      ? input.reviews.map((r) => ({
+          '@type': 'Review',
+          reviewRating: {
+            '@type': 'Rating',
+            ratingValue: r.rating,
+            bestRating: 5,
+            worstRating: 1
+          },
+          author: { '@type': 'Person', name: r.author },
+          reviewBody: r.body,
+          datePublished: r.date
+        }))
+      : undefined;
+
+  return JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: input.name,
+    description: input.description,
+    url: input.url,
+    image: `${BASE_URL}${input.imagePath || '/og.png'}`,
+    publisher: {
+      '@type': 'Organization',
+      name: 'Techyor',
+      url: BASE_URL,
+      logo: `${BASE_URL}/techyor.png`
+    },
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: input.numberOfItems,
+      itemListElement: input.itemUrls.slice(0, 20).map((url, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        url: url.startsWith('http') ? url : `${BASE_URL}${url}`
+      }))
+    },
+    aggregateRating,
+    review,
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['h1', '[data-speakable]']
     }
   });
 }

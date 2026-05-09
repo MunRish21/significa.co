@@ -14,7 +14,13 @@
   import UpworkTestimonials from '$components/sections/upwork-testimonials.svelte';
   import OptimizedImage from '$components/optimized-image.svelte';
   import ContactForm from '$components/contact-form.svelte';
-  import { generateBreadcrumbSchema, generateProjectSchema, BASE_URL } from '$lib/utils/schema';
+  import {
+    generateBreadcrumbSchema,
+    generateProjectSchema,
+    generateCollectionPageSchema,
+    BASE_URL
+  } from '$lib/utils/schema';
+  import { toSlug } from '$lib/utils/slugify';
   import {
     getFeaturedTestimonials,
     getTestimonialsByService
@@ -155,6 +161,7 @@
     <meta name="twitter:title" content="{project.name} — Techyor" />
     <meta name="twitter:description" content={project.tagline} />
     <meta name="twitter:image" content={absoluteImage} />
+    <meta name="twitter:image:alt" content={project.name} />
 
     {@html `<${'script'} type="application/ld+json">${generateBreadcrumbSchema([
       { name: 'Home', url: '/' },
@@ -166,33 +173,53 @@
       project.tagline,
       project.coverImage || project.image,
       `/projects/${project.slug}`,
-      project.publishedYear
+      project.publishedYear,
+      {
+        services: project.services,
+        deliverables: project.deliverables,
+        ratings: data.ratings,
+        reviews: data.reviewEntries
+      }
     )}</${'script'}>`}
   {:else if data.isFilter}
+    {@const filterSlug = toSlug(data.filterName)}
+    {@const filterOgUrl = `${BASE_URL}/api/og/projects-filter/${filterSlug}`}
     <title>{data.filterName} Projects — Techyor Portfolio</title>
     <meta
       name="description"
-      content="Browse Techyor projects in {data.filterName}. Custom websites, web apps, mobile apps, e-commerce, AI tools, and automation built for ambitious teams."
+      content="Browse Techyor projects in {data.filterName}. {data.filteredProjects.length}+ shipped {data.filterName.toLowerCase()} projects for teams across the US, UK, AU, and Europe."
     />
 
     <meta property="og:type" content="website" />
     <meta property="og:title" content="{data.filterName} Projects — Techyor" />
     <meta property="og:description" content="Browse Techyor projects in {data.filterName}." />
-    <meta property="og:image" content="https://www.techyor.com/og.png" />
+    <meta property="og:image" content={filterOgUrl} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="{data.filterName} projects — Techyor portfolio" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@TechyorDotCo" />
     <meta name="twitter:title" content="{data.filterName} Projects — Techyor" />
     <meta name="twitter:description" content="Browse Techyor projects in {data.filterName}." />
-    <meta name="twitter:image" content="https://www.techyor.com/og.png" />
+    <meta name="twitter:image" content={filterOgUrl} />
+    <meta name="twitter:image:alt" content="{data.filterName} projects — Techyor portfolio" />
 
     {@html `<${'script'} type="application/ld+json">${generateBreadcrumbSchema([
       { name: 'Home', url: '/' },
       { name: 'Projects', url: '/projects' },
-      { name: data.filterName, url: `/projects/${data.filterName.toLowerCase().replace(/\s+/g, '-')}` }
+      { name: data.filterName, url: `/projects/${filterSlug}` }
     ])}</${'script'}>`}
+    {@html `<${'script'} type="application/ld+json">${generateCollectionPageSchema({
+      name: `${data.filterName} Projects — Techyor Portfolio`,
+      description: `${data.filteredProjects.length}+ ${data.filterName.toLowerCase()} projects shipped by Techyor for teams worldwide.`,
+      url: `${BASE_URL}/projects/${filterSlug}`,
+      numberOfItems: data.filteredProjects.length,
+      itemUrls: data.filteredProjects.map((p) => `${BASE_URL}/projects/${p.slug}`),
+      ratings: data.ratings,
+      reviews: data.reviewEntries,
+      imagePath: `/api/og/projects-filter/${filterSlug}`
+    })}</${'script'}>`}
   {:else}
     <title>Project Not Found — Techyor</title>
     <meta name="robots" content="noindex, nofollow" />
@@ -213,7 +240,10 @@
       </div>
 
       <!-- Intro Paragraph -->
-      <p class="max-w-3xl text-base leading-relaxed text-foreground-secondary md:text-lg">
+      <p
+        data-speakable
+        class="max-w-3xl text-base leading-relaxed text-foreground-secondary md:text-lg"
+      >
         {getServiceDescription(data.filterName)}
       </p>
 
@@ -515,10 +545,10 @@
 
     <div class="container mx-auto px-container">
       <!-- Header -->
-      <header>
+      <header id="overview" aria-labelledby="project-name">
         <div class="mx-auto mt-8 max-w-2xl border-b pb-12 md:mt-14 lg:mt-20">
-          <h1 class="text-5xl text-foreground-secondary">{project.name}</h1>
-          <h2 class="text-5xl">{project.tagline}</h2>
+          <h1 id="project-name" class="text-5xl text-foreground-secondary">{project.name}</h1>
+          <h2 data-speakable class="text-5xl">{project.tagline}</h2>
           <p class="mt-4 text-base font-medium text-foreground-secondary">
             Published in {project.publishedYear}
           </p>
@@ -589,7 +619,10 @@
       <MetricsSection metrics={project.metrics} />
 
       <!-- Intro -->
-      <p class="mx-auto my-10 max-w-2xl text-3xl font-medium md:my-14 lg:my-20">
+      <p
+        data-speakable
+        class="mx-auto my-10 max-w-2xl text-3xl font-medium md:my-14 lg:my-20"
+      >
         {project.intro}
       </p>
 

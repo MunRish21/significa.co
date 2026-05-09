@@ -1,48 +1,61 @@
-import { projectsData } from '$lib/data/projects';
 import { error } from '@sveltejs/kit';
-
-function slugify(name: string): string {
-  return name
-    .toLowerCase()
-    .replace(/&/g, '')  // Remove ampersand
-    .replace(/\s+/g, '-')  // Replace spaces (including those from ampersand removal) with dashes
-    .replace(/--+/g, '-')  // Clean up any double dashes
-    .replace(/[^\w-]/g, '');
-}
+import { projectsData } from '$lib/data/projects';
+import { toSlug } from '$lib/utils/slugify';
+import {
+  testimonials,
+  getTestimonialsByService,
+  getTestimonialsByProject
+} from '$lib/data/testimonials';
+import type { ServiceCategory } from '$lib/data/team';
 
 export function load({ params }) {
   const { slug } = params;
 
-  // Check if slug matches a project
-  const project = projectsData.find(p => p.slug === slug);
+  // ─── 1. Project case-study page ────────────────────────────────────
+  const project = projectsData.find((p) => p.slug === slug);
   if (project) {
-    return { isProject: true, project };
+    const projectTestimonials = getTestimonialsByProject(project.slug);
+    const ratings = projectTestimonials
+      .map((t) => t.rating)
+      .filter((r): r is number => typeof r === 'number');
+    const reviewEntries = projectTestimonials
+      .filter((t) => typeof t.rating === 'number')
+      .slice(0, 10)
+      .map((t) => ({
+        rating: t.rating as number,
+        body: t.quote,
+        author: t.author,
+        date: t.date
+      }));
+    return {
+      isProject: true,
+      project,
+      ratings,
+      reviewEntries
+    };
   }
 
-  // Check if slug matches a service or deliverable
+  // ─── 2. Filter (service or deliverable) page ───────────────────────
   const allServices = new Set<string>();
   const allDeliverables = new Set<string>();
-
-  projectsData.forEach(p => {
-    p.services.forEach(s => allServices.add(s));
-    p.deliverables.forEach(d => allDeliverables.add(d));
+  projectsData.forEach((p) => {
+    p.services.forEach((s) => allServices.add(s));
+    p.deliverables.forEach((d) => allDeliverables.add(d));
   });
 
-  // Find matching service or deliverable by comparing slugs
   let matchedFilter: string | null = null;
   let filterType: 'service' | 'deliverable' | null = null;
 
   for (const service of allServices) {
-    if (slugify(service) === slug) {
+    if (toSlug(service) === slug) {
       matchedFilter = service;
       filterType = 'service';
       break;
     }
   }
-
   if (!matchedFilter) {
     for (const deliverable of allDeliverables) {
-      if (slugify(deliverable) === slug) {
+      if (toSlug(deliverable) === slug) {
         matchedFilter = deliverable;
         filterType = 'deliverable';
         break;
@@ -51,22 +64,43 @@ export function load({ params }) {
   }
 
   if (matchedFilter && filterType) {
-    const filteredProjects = projectsData.filter(p => {
-      if (filterType === 'service') {
-        // Use case-insensitive comparison to ensure matches work correctly
-        return p.services.some(s => s.toLowerCase() === matchedFilter!.toLowerCase());
-      } else {
-        // Use case-insensitive comparison for deliverables too
-        return p.deliverables.some(d => d.toLowerCase() === matchedFilter!.toLowerCase());
-      }
-    });
+    const filteredProjects = projectsData.filter((p) =>
+      filterType === 'service'
+        ? p.services.some((s) => s.toLowerCase() === matchedFilter!.toLowerCase())
+        : p.deliverables.some((d) => d.toLowerCase() === matchedFilter!.toLowerCase())
+    );
+
+    // Filter testimonials match either service tag or any project that matched.
+    const matchedSlugs = new Set(filteredProjects.map((p) => p.slug));
+    const filterTestimonials = testimonials.filter(
+      (t) =>
+        (filterType === 'service' &&
+          t.services?.some(
+            (s) => (s as string).toLowerCase() === matchedFilter!.toLowerCase()
+          )) ||
+        (t.projectSlug && matchedSlugs.has(t.projectSlug))
+    );
+    const ratings = filterTestimonials
+      .map((t) => t.rating)
+      .filter((r): r is number => typeof r === 'number');
+    const reviewEntries = filterTestimonials
+      .filter((t) => typeof t.rating === 'number')
+      .slice(0, 10)
+      .map((t) => ({
+        rating: t.rating as number,
+        body: t.quote,
+        author: t.author,
+        date: t.date
+      }));
 
     return {
       isProject: false,
       isFilter: true,
       filterType,
       filterName: matchedFilter,
-      filteredProjects
+      filteredProjects,
+      ratings,
+      reviewEntries
     };
   }
 

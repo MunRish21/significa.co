@@ -10,14 +10,49 @@
   import FaqsList from '$components/blocks/faqs-list.svelte';
   import { commonFaqsBlock, getCommonFaqsForSchema } from '$lib/data/faqs';
   import { getFeaturedTestimonials } from '$lib/data/testimonials';
+  import { getActiveTeamMembers } from '$lib/data/team';
 
   const servicesTestimonials = getFeaturedTestimonials();
   import {
+    BASE_URL,
     generateOrganizationSchema,
     generateBreadcrumbSchema,
-    generateServiceSchema,
-    generateFAQSchema
+    generateServicesPageSchema,
+    generateFAQSchema,
+    generateHowToSchema,
+    generateTeamMembersSchema
   } from '$lib/utils/schema';
+
+  /** Pull aggregate ratings + reviews from the featured testimonials surfaced on this page. */
+  const ratings = servicesTestimonials
+    .map((t) => t.rating)
+    .filter((r): r is number => typeof r === 'number');
+
+  const reviewEntries = servicesTestimonials
+    .filter((t) => typeof t.rating === 'number')
+    .slice(0, 10)
+    .map((t) => ({
+      rating: t.rating as number,
+      body: t.quote,
+      author: t.author,
+      date: t.date
+    }));
+
+  const teamSchemaMembers = getActiveTeamMembers().map((m) => ({
+    name: m.name,
+    jobTitle: m.role,
+    description: m.tagline,
+    image: m.avatar,
+    url: `/team/${m.slug}`,
+    sameAs: m.links.map((l) => l.url)
+  }));
+
+  /** Service categories used by the OfferCatalog in the Service schema. */
+  const schemaServiceCategories = [
+    { title: 'Strategy', description: 'Discovery, product definition, and operations.' },
+    { title: 'Design', description: 'Interface, brand, and multimedia.' },
+    { title: 'Development', description: 'Front-end, back-end, AI, e-commerce, DevOps.' }
+  ];
 
   const servicesBlock = {
     component: 'services',
@@ -547,10 +582,10 @@
     property="og:description"
     content="Strategy, design, web and mobile development, AI, e-commerce, and automation. Custom-built for ambitious teams."
   />
-  <meta property="og:image" content="https://www.techyor.com/og.png" />
+  <meta property="og:image" content="{BASE_URL}/api/og/services" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Techyor services" />
+  <meta property="og:image:alt" content="Techyor services — strategy, design, development" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@TechyorDotCo" />
@@ -559,15 +594,45 @@
     name="twitter:description"
     content="Strategy, design, web/mobile development, AI, e-commerce, and automation — under one roof."
   />
-  <meta name="twitter:image" content="https://www.techyor.com/og.png" />
+  <meta name="twitter:image" content="{BASE_URL}/api/og/services" />
+  <meta name="twitter:image:alt" content="Techyor services — strategy, design, development" />
 
   {@html `<${'script'} type="application/ld+json">${generateOrganizationSchema()}</${'script'}>`}
   {@html `<${'script'} type="application/ld+json">${generateBreadcrumbSchema([
     { name: 'Home', url: '/' },
     { name: 'Services', url: '/services' }
   ])}</${'script'}>`}
-  {@html `<${'script'} type="application/ld+json">${generateServiceSchema('Digital Product Services', 'End-to-end digital product development including strategy, design, development, and deployment.')}</${'script'}>`}
+  {@html `<${'script'} type="application/ld+json">${generateServicesPageSchema({
+    url: `${BASE_URL}/services`,
+    description:
+      'End-to-end digital product services. Strategy, UX/UI design, web and mobile development, AI integrations, e-commerce, and automation — all under one roof.',
+    serviceCategories: schemaServiceCategories,
+    ratings,
+    reviews: reviewEntries,
+    imagePath: '/api/og/services'
+  })}</${'script'}>`}
+  {@html `<${'script'} type="application/ld+json">${generateHowToSchema({
+    name: 'How Techyor delivers digital products',
+    description:
+      'Each delivery moves through cycles of strategy, design, and development. The blend of these creates products people love.',
+    totalTime: 'P30D',
+    steps: [
+      {
+        name: 'Strategy',
+        text: 'Discovery, product definition, and operations. We start with the business problem before any pixel or line of code.'
+      },
+      {
+        name: 'Design',
+        text: 'Interface, brand, and multimedia. Visual systems and interaction design grounded in user research.'
+      },
+      {
+        name: 'Development',
+        text: 'Front-end, back-end, AI, e-commerce, and DevOps. Production-grade engineering with shipped outcomes.'
+      }
+    ]
+  })}</${'script'}>`}
   {@html `<${'script'} type="application/ld+json">${generateFAQSchema(getCommonFaqsForSchema())}</${'script'}>`}
+  {@html `<${'script'} type="application/ld+json">${generateTeamMembersSchema(teamSchemaMembers)}</${'script'}>`}
 </svelte:head>
 
 <div class="overflow-hidden">
