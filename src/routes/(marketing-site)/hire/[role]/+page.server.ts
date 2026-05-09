@@ -14,21 +14,36 @@ export const load = async ({ params }) => {
 
   const tagSet = new Set(role.relatedServiceTags.map((t) => t.toLowerCase()));
 
-  const matchingProjects = projectsData
-    .filter((project) => {
+  /**
+   * Score each project by the number of role-tag overlaps with the project's
+   * own services + deliverables. Higher score = more relevant. Ties keep
+   * the original projectsData order (newest first by convention).
+   */
+  const scoredProjects = projectsData
+    .map((project) => {
       const services = (project.services || []).map((s) => s.toLowerCase());
       const deliverables = (project.deliverables || []).map((d) => d.toLowerCase());
-      return services.some((s) => tagSet.has(s)) || deliverables.some((d) => tagSet.has(d));
+      const score = [...services, ...deliverables].filter((tag) => tagSet.has(tag)).length;
+      return { project, score };
     })
-    .slice(0, 6)
-    .map((project) => ({
-      slug: project.slug,
-      name: project.name,
-      tagline: project.tagline,
-      image: project.image,
-      services: project.services,
-      deliverables: project.deliverables
-    }));
+    .filter((p) => p.score > 0)
+    .sort((a, b) => b.score - a.score);
+
+  /** True when no project matches any of this role's tags — page shows fallback set. */
+  const projectsAreFallback = scoredProjects.length === 0;
+
+  const projectsToShow = projectsAreFallback
+    ? projectsData.slice(0, 6)
+    : scoredProjects.slice(0, 6).map((p) => p.project);
+
+  const matchingProjects = projectsToShow.map((project) => ({
+    slug: project.slug,
+    name: project.name,
+    tagline: project.tagline,
+    image: project.image,
+    services: project.services,
+    deliverables: project.deliverables
+  }));
 
   const allMatchingTestimonials = (() => {
     const collected = new Map<string, ReturnType<typeof getTestimonialsByService>[number]>();
@@ -73,6 +88,7 @@ export const load = async ({ params }) => {
   return {
     role,
     matchingProjects,
+    projectsAreFallback,
     matchingTestimonials,
     ratings,
     reviewEntries,

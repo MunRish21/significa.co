@@ -266,15 +266,25 @@
   {#if matchingProjects.length > 0}
     <section id="work" aria-labelledby="work-heading" class="border-t">
       <div class="container mx-auto px-container py-12 md:py-20">
-        <h2 id="work-heading" class="text-5xl text-foreground-secondary md:text-6xl">
-          Selected work.
-        </h2>
-        <p class="text-5xl md:text-6xl">{role.title}s in the wild.</p>
-        <p class="mt-6 max-w-2xl text-lg text-foreground-secondary md:text-xl">
-          A small slice of {matchingProjects.length} project{matchingProjects.length !== 1
-            ? 's'
-            : ''} where this role led the work.
-        </p>
+        {#if data.projectsAreFallback}
+          <h2 id="work-heading" class="text-5xl text-foreground-secondary md:text-6xl">
+            Recent work.
+          </h2>
+          <p class="text-5xl md:text-6xl">A taste of what we ship.</p>
+          <p class="mt-6 max-w-2xl text-lg text-foreground-secondary md:text-xl">
+            A small slice of recent projects across stacks. Browse the full portfolio for more.
+          </p>
+        {:else}
+          <h2 id="work-heading" class="text-5xl text-foreground-secondary md:text-6xl">
+            Selected work.
+          </h2>
+          <p class="text-5xl md:text-6xl">{role.title}s in the wild.</p>
+          <p class="mt-6 max-w-2xl text-lg text-foreground-secondary md:text-xl">
+            A small slice of {matchingProjects.length} project{matchingProjects.length !== 1
+              ? 's'
+              : ''} where this role led the work.
+          </p>
+        {/if}
 
         <div class="mt-12 grid gap-8 md:mt-16 md:grid-cols-2 lg:grid-cols-3">
           {#each matchingProjects as project (project.slug)}
