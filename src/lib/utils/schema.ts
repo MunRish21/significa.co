@@ -267,6 +267,96 @@ export function generateProfessionalReviewSchema(reviews: {
   });
 }
 
+/**
+ * Rich Service schema for /hire/<role> pages. Combines Service +
+ * AggregateRating + Offers (engagement models) so the page is eligible
+ * for Google rich results and surfaces price/audience/area-served
+ * signals to crawlers.
+ */
+export function generateHireRoleSchema(input: {
+  roleTitle: string;
+  h1: string;
+  description: string;
+  url: string;
+  serviceType: string;
+  techStack: string[];
+  engagementModels: { title: string; description: string }[];
+  ratings?: number[];
+  imagePath?: string;
+}) {
+  const ratings = input.ratings || [];
+  const aggregateRating =
+    ratings.length > 0
+      ? {
+          '@type': 'AggregateRating',
+          ratingValue: (ratings.reduce((a, b) => a + b, 0) / ratings.length).toFixed(1),
+          reviewCount: ratings.length,
+          bestRating: 5,
+          worstRating: 1
+        }
+      : undefined;
+
+  return JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: input.h1,
+    alternateName: `Hire ${input.roleTitle}`,
+    description: input.description,
+    url: input.url,
+    image: `${BASE_URL}${input.imagePath || '/og.png'}`,
+    serviceType: input.serviceType,
+    category: 'Software development services',
+    keywords: input.techStack.join(', '),
+    provider: {
+      '@type': 'Organization',
+      name: 'Techyor',
+      url: BASE_URL,
+      logo: `${BASE_URL}/techyor.png`,
+      sameAs: ['https://twitter.com/TechyorDotCo', 'https://www.linkedin.com/company/techyor']
+    },
+    areaServed: [
+      { '@type': 'Country', name: 'United States' },
+      { '@type': 'Country', name: 'United Kingdom' },
+      { '@type': 'Country', name: 'Australia' },
+      { '@type': 'Country', name: 'Switzerland' },
+      { '@type': 'Place', name: 'Worldwide' }
+    ],
+    audience: {
+      '@type': 'BusinessAudience',
+      audienceType: 'Startups, scale-ups, and product teams hiring senior developers'
+    },
+    offers: {
+      '@type': 'AggregateOffer',
+      priceCurrency: 'USD',
+      priceRange: '$$$',
+      availability: 'https://schema.org/InStock',
+      offeredBy: { '@type': 'Organization', name: 'Techyor' }
+    },
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: `${input.roleTitle} engagement models`,
+      itemListElement: input.engagementModels.map((m, i) => ({
+        '@type': 'Offer',
+        position: i + 1,
+        itemOffered: {
+          '@type': 'Service',
+          name: m.title,
+          description: m.description
+        }
+      }))
+    },
+    aggregateRating,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': input.url,
+      speakable: {
+        '@type': 'SpeakableSpecification',
+        cssSelector: ['h1', '[data-speakable]']
+      }
+    }
+  });
+}
+
 export function generateFAQSchema(
   faqs: Array<{
     question: string;

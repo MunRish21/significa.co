@@ -3,10 +3,11 @@
   import ContactForm from '$components/contact-form.svelte';
   import UpworkTestimonials from '$components/sections/upwork-testimonials.svelte';
   import TeamSection from '$components/sections/team-section.svelte';
+  import FloatingHireCta from '$components/floating-hire-cta.svelte';
   import {
     BASE_URL,
     generateBreadcrumbSchema,
-    generateServiceSchema,
+    generateHireRoleSchema,
     generateFAQSchema
   } from '$lib/utils/schema';
   import { engagementModels, hiringProcess, sharedFaq, hireRoles } from '$lib/data/hire-roles';
@@ -25,7 +26,17 @@
     .map((slug) => hireRoles.find((r) => r.slug === slug))
     .filter((r): r is typeof hireRoles[number] => Boolean(r));
 
-  $: serviceJsonLd = generateServiceSchema(role.h1, role.metaDescription, '/og.png');
+  $: serviceJsonLd = generateHireRoleSchema({
+    roleTitle: role.title,
+    h1: role.h1,
+    description: role.metaDescription,
+    url: `${BASE_URL}/hire/${role.slug}`,
+    serviceType: `${role.title} hiring and staff augmentation`,
+    techStack: role.techStack,
+    engagementModels,
+    ratings: data.ratings,
+    imagePath: '/og.png'
+  });
   $: faqJsonLd = generateFAQSchema(combinedFaq);
   $: breadcrumbJsonLd = generateBreadcrumbSchema([
     { name: 'Home', url: '/' },
@@ -51,12 +62,14 @@
   <meta property="og:image" content="{BASE_URL}/og.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Hire senior {role.title}s — Techyor" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@TechyorDotCo" />
   <meta name="twitter:title" content={role.metaTitle} />
   <meta name="twitter:description" content={role.metaDescription} />
   <meta name="twitter:image" content="{BASE_URL}/og.png" />
+  <meta name="twitter:image:alt" content="Hire senior {role.title}s — Techyor" />
 
   {@html `<${'script'} type="application/ld+json">${serviceJsonLd}</${'script'}>`}
   {@html `<${'script'} type="application/ld+json">${faqJsonLd}</${'script'}>`}
@@ -128,16 +141,26 @@
   </section>
 
   <!-- ─── INTRO ────────────────────────────────────────────────────────── -->
-  <section class="container mx-auto mt-16 px-container md:mt-24">
-    <p class="max-w-4xl text-lg leading-relaxed text-foreground-secondary md:text-xl">
+  <section
+    id="overview"
+    aria-labelledby="overview-heading"
+    class="container mx-auto mt-16 px-container md:mt-24"
+  >
+    <h2 id="overview-heading" class="sr-only">Overview</h2>
+    <p
+      data-speakable
+      class="max-w-4xl text-lg leading-relaxed text-foreground-secondary md:text-xl"
+    >
       {role.intro}
     </p>
   </section>
 
   <!-- ─── WHY TECHYOR — slogan-style eyebrow ───────────────────────────── -->
-  <section class="border-t mt-16 md:mt-24">
+  <section id="why-us" aria-labelledby="why-us-heading" class="border-t mt-16 md:mt-24">
     <div class="container mx-auto px-container py-12 md:py-20">
-      <h2 class="text-5xl text-foreground-secondary md:text-6xl">Why Techyor.</h2>
+      <h2 id="why-us-heading" class="text-5xl text-foreground-secondary md:text-6xl">
+        Why Techyor.
+      </h2>
       <p class="text-5xl md:text-6xl">Senior. Specialist. Shipping.</p>
 
       <div class="mt-12 grid gap-10 md:mt-16 md:grid-cols-3 md:gap-12">
@@ -159,9 +182,15 @@
   </section>
 
   <!-- ─── SKILLS + STACK — service-content style ───────────────────────── -->
-  <section class="border-t bg-background-offset/30">
+  <section
+    id="skills"
+    aria-labelledby="skills-heading"
+    class="border-t bg-background-offset/30"
+  >
     <div class="container mx-auto px-container py-12 md:py-20">
-      <h2 class="text-5xl text-foreground-secondary md:text-6xl">What they cover.</h2>
+      <h2 id="skills-heading" class="text-5xl text-foreground-secondary md:text-6xl">
+        What they cover.
+      </h2>
       <p class="text-5xl md:text-6xl">Skills and stack.</p>
 
       <div class="mt-12 grid gap-12 md:mt-16 lg:grid-cols-[2fr_1fr] lg:gap-20">
@@ -222,9 +251,11 @@
 
   <!-- ─── SAMPLE WORK ──────────────────────────────────────────────────── -->
   {#if matchingProjects.length > 0}
-    <section class="border-t">
+    <section id="work" aria-labelledby="work-heading" class="border-t">
       <div class="container mx-auto px-container py-12 md:py-20">
-        <h2 class="text-5xl text-foreground-secondary md:text-6xl">Selected work.</h2>
+        <h2 id="work-heading" class="text-5xl text-foreground-secondary md:text-6xl">
+          Selected work.
+        </h2>
         <p class="text-5xl md:text-6xl">{role.title}s in the wild.</p>
         <p class="mt-6 max-w-2xl text-lg text-foreground-secondary md:text-xl">
           A small slice of {matchingProjects.length} project{matchingProjects.length !== 1
@@ -271,9 +302,15 @@
   {/if}
 
   <!-- ─── ENGAGEMENT MODELS ────────────────────────────────────────────── -->
-  <section class="border-t bg-background-offset/30">
+  <section
+    id="engagement"
+    aria-labelledby="engagement-heading"
+    class="border-t bg-background-offset/30"
+  >
     <div class="container mx-auto px-container py-12 md:py-20">
-      <h2 class="text-5xl text-foreground-secondary md:text-6xl">How you can hire.</h2>
+      <h2 id="engagement-heading" class="text-5xl text-foreground-secondary md:text-6xl">
+        How you can hire.
+      </h2>
       <p class="text-5xl md:text-6xl">Three ways to engage.</p>
 
       <div class="mt-12 grid gap-6 md:mt-16 md:grid-cols-3 md:gap-8">
@@ -296,9 +333,11 @@
   </section>
 
   <!-- ─── PROCESS ──────────────────────────────────────────────────────── -->
-  <section id="process" class="border-t">
+  <section id="process" aria-labelledby="process-heading" class="border-t">
     <div class="container mx-auto px-container py-12 md:py-20">
-      <h2 class="text-5xl text-foreground-secondary md:text-6xl">How it works.</h2>
+      <h2 id="process-heading" class="text-5xl text-foreground-secondary md:text-6xl">
+        How it works.
+      </h2>
       <p class="text-5xl md:text-6xl">Simple. No theatre.</p>
 
       <ol class="mt-12 grid gap-10 md:mt-16 md:grid-cols-3 md:gap-12">
@@ -343,9 +382,9 @@
   {/if}
 
   <!-- ─── FAQ ──────────────────────────────────────────────────────────── -->
-  <section class="border-t">
+  <section id="faq" aria-labelledby="faq-heading" class="border-t">
     <div class="container mx-auto px-container py-12 md:py-20">
-      <h2 class="text-5xl text-foreground-secondary md:text-6xl">FAQ.</h2>
+      <h2 id="faq-heading" class="text-5xl text-foreground-secondary md:text-6xl">FAQ.</h2>
       <p class="text-5xl md:text-6xl">Common questions.</p>
 
       <div class="mt-12 grid gap-x-12 gap-y-8 md:mt-16 lg:grid-cols-2">
@@ -424,3 +463,6 @@
     </div>
   </section>
 </main>
+
+<FloatingHireCta label="Hire {role.title}s" />
+

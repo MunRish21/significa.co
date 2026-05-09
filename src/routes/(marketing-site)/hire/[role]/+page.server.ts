@@ -30,20 +30,30 @@ export const load = async ({ params }) => {
       deliverables: project.deliverables
     }));
 
-  const matchingTestimonials = (() => {
+  const allMatchingTestimonials = (() => {
     const collected = new Map<string, ReturnType<typeof getTestimonialsByService>[number]>();
     for (const tag of role.relatedServiceTags) {
       const found = getTestimonialsByService(tag as ServiceCategory);
       for (const t of found) collected.set(t.id, t);
     }
-    const list = Array.from(collected.values());
-    return list.length > 0 ? list.slice(0, 3) : getFeaturedTestimonials(3);
+    return Array.from(collected.values());
   })();
+
+  const matchingTestimonials =
+    allMatchingTestimonials.length > 0
+      ? allMatchingTestimonials.slice(0, 3)
+      : getFeaturedTestimonials(3);
+
+  /** Aggregate ratings drawn from ALL matching testimonials (not just the displayed 3). */
+  const ratings = allMatchingTestimonials
+    .map((t) => t.rating)
+    .filter((r): r is number => typeof r === 'number');
 
   return {
     role,
     matchingProjects,
-    matchingTestimonials
+    matchingTestimonials,
+    ratings
   };
 };
 
