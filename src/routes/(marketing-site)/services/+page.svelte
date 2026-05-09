@@ -124,40 +124,56 @@
             title: 'Front-end',
             list: [
               { label: 'React', link: '/hire/react-developer' },
-              { label: 'NextJS', link: '/hire/nextjs-developer' },
-              { label: 'Svelte', link: '/hire/frontend-developer' },
+              { label: 'Next.js', link: '/hire/nextjs-developer' },
+              { label: 'TypeScript', link: '/hire/typescript-developer' },
+              { label: 'Frontend Engineering', link: '/hire/frontend-developer' },
+              { label: 'Web Development', link: '/hire/web-developer' }
+            ]
+          },
+          {
+            title: 'Mobile',
+            list: [
               { label: 'React Native', link: '/hire/react-native-developer' },
-              { label: 'Swift', link: '/hire/ios-developer' },
-              { label: 'Kotlin', link: '/hire/android-developer' }
+              { label: 'iOS (Swift)', link: '/hire/ios-developer' },
+              { label: 'Android (Kotlin)', link: '/hire/android-developer' },
+              { label: 'Flutter', link: '/hire/flutter-developer' },
+              { label: 'Mobile App Development', link: '/hire/mobile-app-developer' }
             ]
           },
           {
             title: 'Back-end',
             list: [
+              { label: 'Node.js', link: '/hire/nodejs-developer' },
               { label: 'Python', link: '/hire/python-developer' },
-              { label: 'Node', link: '/hire/nodejs-developer' },
-              { label: 'TypeScript', link: '/hire/typescript-developer' }
+              { label: 'Django', link: '/hire/django-developer' },
+              { label: 'FastAPI', link: '/hire/fastapi-developer' },
+              { label: 'Backend Engineering', link: '/hire/backend-developer' },
+              { label: 'Full Stack', link: '/hire/full-stack-developer' }
             ]
           },
           {
             title: 'AI & Voice',
             list: [
               { label: 'AI Engineering', link: '/hire/ai-engineer' },
-              { label: 'LLM integration', link: '/hire/llm-developer' },
+              { label: 'LLM Integration', link: '/hire/llm-developer' },
               { label: 'Voice AI', link: '/hire/voice-ai-developer' }
             ]
           },
           {
-            title: 'E-commerce',
+            title: 'E-commerce & CMS',
             list: [
               { label: 'Shopify', link: '/hire/shopify-developer' },
               { label: 'WooCommerce', link: '/hire/woocommerce-developer' },
-              { label: 'WordPress', link: '/hire/wordpress-developer' }
+              { label: 'WordPress', link: '/hire/wordpress-developer' },
+              { label: 'Headless CMS', link: '/hire/headless-cms-developer' }
             ]
           },
           {
-            title: 'DevOps',
-            list: [{ label: 'DevOps engineering', link: '/hire/devops-engineer' }]
+            title: 'Platform',
+            list: [
+              { label: 'SaaS Development', link: '/hire/saas-developer' },
+              { label: 'DevOps', link: '/hire/devops-engineer' }
+            ]
           }
         ]
       }
