@@ -1,6 +1,7 @@
 import { projectsData } from '$lib/data/projects';
 import { getActiveTeamMembers } from '$lib/data/team';
 import { hireRoles } from '$lib/data/hire-roles';
+import { getReadyLocations } from '$lib/data/locations';
 import { toSlug } from '$lib/utils/slugify';
 
 const BASE_URL = 'https://www.techyor.com';
@@ -80,13 +81,22 @@ const hirePages = hireRoles.map((role) => ({
   lastmod: today
 }));
 
+// /hire-developers/<location> location-targeted pages — only ready ones
+const locationPages = getReadyLocations().map((location) => ({
+  path: `/hire-developers/${location.slug}`,
+  priority: 0.9,
+  changefreq: 'weekly',
+  lastmod: today
+}));
+
 const allPages = [
   ...staticPages,
   ...projectPages,
   ...servicePages,
   ...deliverablePages,
   ...teamPages,
-  ...hirePages
+  ...hirePages,
+  ...locationPages
 ];
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>

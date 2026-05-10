@@ -188,6 +188,116 @@ export function generateContactPageSchema(input: {
 }
 
 /**
+ * Region-targeted Service schema for /hire-developers/<location> pages.
+ * Like generateHireRoleSchema but areaServed is locked to a specific
+ * country and the Service description, audience, and offer catalog are
+ * region-tailored.
+ */
+export function generateLocationServiceSchema(input: {
+  countryName: string;
+  countryCode: string;
+  h1: string;
+  description: string;
+  url: string;
+  imagePath?: string;
+  pricingBands: { label: string; range: string; description: string }[];
+  industries: { name: string; description: string }[];
+  ratings?: number[];
+  reviews?: Array<{ rating: number; body: string; author: string; date?: string }>;
+}) {
+  const ratings = input.ratings || [];
+  const aggregateRating =
+    ratings.length > 0
+      ? {
+          '@type': 'AggregateRating',
+          ratingValue: (ratings.reduce((a, b) => a + b, 0) / ratings.length).toFixed(1),
+          reviewCount: ratings.length,
+          bestRating: 5,
+          worstRating: 1
+        }
+      : undefined;
+
+  const review =
+    input.reviews && input.reviews.length > 0
+      ? input.reviews.map((r) => ({
+          '@type': 'Review',
+          reviewRating: {
+            '@type': 'Rating',
+            ratingValue: r.rating,
+            bestRating: 5,
+            worstRating: 1
+          },
+          author: { '@type': 'Person', name: r.author },
+          reviewBody: r.body,
+          datePublished: r.date
+        }))
+      : undefined;
+
+  return JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: input.h1,
+    description: input.description,
+    url: input.url,
+    image: `${BASE_URL}${input.imagePath || '/og.png'}`,
+    serviceType: `Senior developer hiring for ${input.countryName} companies`,
+    category: 'Software development services',
+    provider: {
+      '@type': 'Organization',
+      name: 'Techyor',
+      url: BASE_URL,
+      logo: `${BASE_URL}/techyor.png`,
+      sameAs: ['https://twitter.com/TechyorDotCo', 'https://www.linkedin.com/company/techyor']
+    },
+    areaServed:
+      input.countryCode === 'EU'
+        ? [{ '@type': 'Place', name: 'Europe' }]
+        : [{ '@type': 'Country', name: input.countryName }],
+    audience: {
+      '@type': 'BusinessAudience',
+      audienceType: `Startups, scale-ups, and product teams based in ${input.countryName}`
+    },
+    offers: {
+      '@type': 'AggregateOffer',
+      priceCurrency: 'USD',
+      priceRange: '$$$',
+      availability: 'https://schema.org/InStock',
+      offeredBy: { '@type': 'Organization', name: 'Techyor' }
+    },
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: `${input.countryName} engagement bands`,
+      itemListElement: input.pricingBands.map((b, i) => ({
+        '@type': 'Offer',
+        position: i + 1,
+        priceCurrency: 'USD',
+        priceSpecification: {
+          '@type': 'PriceSpecification',
+          priceCurrency: 'USD',
+          price: b.range
+        },
+        itemOffered: {
+          '@type': 'Service',
+          name: b.label,
+          description: b.description
+        }
+      }))
+    },
+    knowsAbout: input.industries.map((i) => i.name),
+    aggregateRating,
+    review,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': input.url,
+      speakable: {
+        '@type': 'SpeakableSpecification',
+        cssSelector: ['h1', '[data-speakable]']
+      }
+    }
+  });
+}
+
+/**
  * Blog index schema — Blog entity with publisher and main entity list.
  */
 export function generateBlogIndexSchema(input: {
