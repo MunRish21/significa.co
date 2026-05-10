@@ -57,9 +57,9 @@
   const servicesBlock = {
     component: 'services',
     services_title: 'Our services.',
-    services_subtitle: 'The full list!',
+    services_subtitle: 'The full list.',
     services_description:
-      'Each delivery moves through cycles of strategy, design and development. It is the blend of all these elements that creates interfaces that people will love.',
+      "Strategy first. Then design. Then code. We do all three so you're not chasing three different vendors and stitching their work together. Here's what each one actually means in practice.",
     services: [
       {
         title: 'Strategy',
@@ -188,7 +188,8 @@
     blocks: [
       {
         deliverable: 'E-commerce',
-        description: 'Online stores crafted to turn browsers into loyal buyers.',
+        description:
+          "Online stores. Shopify, WooCommerce, or fully custom, depending on how big the catalog is and how strange your checkout needs to be.",
         link_title: 'See more',
         link: { url: '/e-commerce' }
       },
@@ -198,7 +199,8 @@
           alt: 'Browser icon'
         },
         deliverable: 'Website',
-        description: 'Corporate, marketing, and brand sites that tell your story with clarity.'
+        description:
+          "Marketing sites. Next.js or SvelteKit by default, WordPress when editors prefer it. Fast on mobile, easy to update without a developer."
       },
       {
         icon: {
@@ -207,7 +209,7 @@
         },
         deliverable: 'Software',
         description:
-          'Custom software and internal tools tailored to the way your team actually works.'
+          "Internal tools and admin dashboards. The software your team uses every day but never shows off in pitches."
       },
       {
         icon: {
@@ -215,7 +217,8 @@
           alt: 'Globe icon'
         },
         deliverable: 'Web App',
-        description: 'Powerful tools that live in the browser — no installs, no friction.'
+        description:
+          "Browser-based apps. Dashboards, multi-step forms, real-time UIs. Nothing to download, nothing to install."
       },
       {
         icon: {
@@ -223,7 +226,8 @@
           alt: 'iOS smartphone icon'
         },
         deliverable: 'Mobile App',
-        description: 'Native iOS and Android experiences built for the way people use their phones.'
+        description:
+          "iOS and Android. Native (Swift or Kotlin) when the polish matters; React Native or Flutter when shared code is the smarter call."
       },
       {
         icon: {
@@ -231,30 +235,32 @@
           alt: 'Folder icon'
         },
         deliverable: 'CMS',
-        description: 'Content systems your team will actually enjoy using day to day.'
+        description:
+          "CMS setups. Sanity, Storyblok, Contentful, Payload, or WordPress, whichever your editors will actually open."
       },
       {
         deliverable: 'AI Solutions',
         description:
-          'Intelligent products, copilots, and integrations that put modern AI to work for your business.'
+          "AI features. RAG, agents, voice, copilots. Production work with real evaluation harnesses, not weekend demos."
       },
       {
         deliverable: 'Automation',
         description:
-          'Workflows and integrations that quietly handle the busywork, so your team can focus on what matters.'
+          "Automation. Connect tools, kill manual steps, run jobs on a schedule. Make and n8n where they fit, custom code where they don't."
       },
       {
         deliverable: 'Robotics',
         description:
-          'Physical-meets-digital experiences — control software, firmware, and interfaces for robotic systems.'
+          "Robotics. Control software, firmware, and the dashboards on top. Less common for us, but we've shipped it."
       }
     ]
   };
 
   const timelineServicesBlock = {
     component: 'timeline-services',
-    title: 'End-to-end digital products, built to grow with your business.',
-    description: 'Strategy-led. Design-driven. Engineered to last.',
+    title: 'We design and build digital products.',
+    description:
+      "Eight years in. 80+ products shipped. Strategy, design, and engineering done by the same team — saves the handoff overhead and a lot of emails.",
     timeline: [
       {
         title: 'Strategy',
@@ -589,14 +595,14 @@
   <title>Services — Strategy, Design, Development | Techyor</title>
   <meta
     name="description"
-    content="End-to-end digital product services. Strategy, UX/UI design, web and mobile development, AI integrations, e-commerce, and automation — all under one roof. Built for ambitious teams."
+    content="Strategy, design, and engineering for digital products. Websites, web apps, mobile apps, AI features, automation. 80+ shipped over 8 years for teams in the US, UK, AU, and Europe."
   />
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Services — Strategy, Design, Development | Techyor" />
   <meta
     property="og:description"
-    content="Strategy, design, web and mobile development, AI, e-commerce, and automation. Custom-built for ambitious teams."
+    content="Strategy, design, and engineering for digital products. 80+ shipped over 8 years for teams across the US, UK, AU, and Europe."
   />
   <meta property="og:image" content="{BASE_URL}/api/og/services" />
   <meta property="og:image:width" content="1200" />
@@ -608,7 +614,7 @@
   <meta name="twitter:title" content="Services — Strategy, Design, Development | Techyor" />
   <meta
     name="twitter:description"
-    content="Strategy, design, web/mobile development, AI, e-commerce, and automation — under one roof."
+    content="Strategy, design, and engineering for digital products. 80+ shipped, 8+ years, clients across the US, UK, AU, and EU."
   />
   <meta name="twitter:image" content="{BASE_URL}/api/og/services" />
   <meta name="twitter:image:alt" content="Techyor services — strategy, design, development" />
@@ -621,7 +627,7 @@
   {@html `<${'script'} type="application/ld+json">${generateServicesPageSchema({
     url: `${BASE_URL}/services`,
     description:
-      'End-to-end digital product services. Strategy, UX/UI design, web and mobile development, AI integrations, e-commerce, and automation — all under one roof.',
+      "Strategy, design, and engineering for digital products. Websites, web apps, mobile, AI, automation. 80+ shipped over 8 years for teams in the US, UK, AU, and Europe.",
     serviceCategories: schemaServiceCategories,
     ratings,
     reviews: reviewEntries,
@@ -630,20 +636,20 @@
   {@html `<${'script'} type="application/ld+json">${generateHowToSchema({
     name: 'How Techyor delivers digital products',
     description:
-      'Each delivery moves through cycles of strategy, design, and development. The blend of these creates products people love.',
+      "Strategy first. Then design. Then code. Same team across all three so projects don't fall apart in handoffs.",
     totalTime: 'P30D',
     steps: [
       {
         name: 'Strategy',
-        text: 'Discovery, product definition, and operations. We start with the business problem before any pixel or line of code.'
+        text: "We start by understanding the actual problem your customers have, not just the feature you want built. Discovery, product definition, scope."
       },
       {
         name: 'Design',
-        text: 'Interface, brand, and multimedia. Visual systems and interaction design grounded in user research.'
+        text: "Visual systems and interaction design grounded in what users actually do, not what they say in a survey. Brand, interface, motion."
       },
       {
         name: 'Development',
-        text: 'Front-end, back-end, AI, e-commerce, and DevOps. Production-grade engineering with shipped outcomes.'
+        text: "Front-end, back-end, AI, infrastructure. Whatever the project actually needs to ship and stay shipped."
       }
     ]
   })}</${'script'}>`}
@@ -663,28 +669,29 @@
     items={servicesTestimonials}
     title="Testimonials."
     subtitle="What clients say."
-    description="Verified Upwork reviews from clients who've worked with our team."
+    description="Real Upwork reviews. Verified, paid engagements only — no curated quotes."
   />
 
   <!-- Team Section -->
   <TeamSection
-    title="The specialists behind these services."
+    title="The people you'd actually work with."
     subtitle="Hire them directly."
     showViewAll
   />
 
   <!-- Proud Clients Section -->
-  <ClientsSection title="Trusted by ambitious teams." />
+  <ClientsSection title="Some of the teams we've shipped for." />
 
   <!-- Contact Form Section -->
   <section class="container mx-auto mt-10 px-container @container lg:mt-20">
     <div class="grid grid-cols-3 overflow-hidden rounded-lg border">
       <div class="col-span-1 hidden flex-col bg-background-panel @5xl:flex">
         <div class="p-8">
-          <h3 class="text-4xl">Have a project in mind?<br /> Let's make it happen.</h3>
+          <h3 class="text-4xl">Got something in mind?<br /> Drop us a note.</h3>
           <p class="mt-4 text-xl text-foreground-secondary">
-            Tell us about your goals, your timeline, and the problem you're solving. We'll get back
-            within a business day with thoughts, questions, and next steps.
+            Quick description of what you're building is enough to start. We reply within a day,
+            usually with questions before solutions, because we'd rather understand the problem
+            than pitch a plan that misses it.
           </p>
         </div>
       </div>
