@@ -200,6 +200,8 @@ export function generateLocationServiceSchema(input: {
   description: string;
   url: string;
   imagePath?: string;
+  /** Schema.org priceRange — '$' affordable, '$$' mid, '$$$' premium. */
+  priceRange?: string;
   pricingBands: { label: string; range: string; description: string }[];
   industries: { name: string; description: string }[];
   ratings?: number[];
@@ -260,7 +262,7 @@ export function generateLocationServiceSchema(input: {
     offers: {
       '@type': 'AggregateOffer',
       priceCurrency: 'USD',
-      priceRange: '$$$',
+      priceRange: input.priceRange || '$$',
       availability: 'https://schema.org/InStock',
       offeredBy: { '@type': 'Organization', name: 'Techyor' }
     },

@@ -75,6 +75,8 @@ export type Location = {
   /** Pricing positioning. */
   pricing: {
     summary: string;
+    /** Schema.org priceRange string: '$' affordable, '$$' mid, '$$$' premium. */
+    priceRange: string;
     bands: { label: string; range: string; description: string }[];
   };
 
@@ -211,25 +213,26 @@ export const locations: Location[] = [
 
     pricing: {
       summary:
-        "Fixed-scope projects priced in USD. Premium positioning, transparent ranges — we'd rather lose tire-kickers up front than discover budget mismatch in week three.",
+        "Transparent USD pricing built for offshore value. Projects start from $800 and scale with scope; hourly rates run $15–$40 depending on seniority and stack. Every quote is line-itemed so you see exactly where the budget goes.",
+      priceRange: '$$',
       bands: [
         {
-          label: 'MVP',
-          range: '$15k – $40k',
+          label: 'Small Projects',
+          range: 'From $800',
           description:
-            '6–12 weeks. Working product, real users, polished UX. Ideal for validating product-market fit or launching a v1 with confidence.'
+            'Landing pages, small features, integrations, fixes, and scoped one-offs. Typical timeline 1–2 weeks. Best for quick wins or validating an idea.'
         },
         {
-          label: 'Production',
-          range: '$40k – $150k',
+          label: 'Mid-Size / MVP',
+          range: '$2k – $25k',
           description:
-            '3–6 months. Scalable architecture, full test coverage, observability, multi-tenant where relevant. The team you keep through your Series A.'
+            '4–12 weeks. Full features, MVPs, custom modules, full sites or apps. Working product ready to ship to real users.'
         },
         {
-          label: 'Retainer / Staff Aug',
-          range: 'Custom',
+          label: 'Hourly / Retainer',
+          range: '$15 – $40 / hr',
           description:
-            'Senior developer embedded into your team, monthly. Best for ongoing roadmap work or specialist coverage your in-house team needs.'
+            'Senior developer time, billed hourly. Tier depends on seniority and stack. Ideal for ongoing roadmap work, staff augmentation, or specialist coverage.'
         }
       ]
     },
@@ -328,7 +331,7 @@ export const locations: Location[] = [
       {
         question: 'Why hire offshore from India instead of US-based talent?',
         answer:
-          "Cost is part of it — our project ranges sit at 30–50% of equivalent US-based agency pricing. But the bigger reason most US clients hire us is talent depth: India's senior dev market is enormous, and we've spent 8 years building a bench that ships. The honest tradeoff is time-zone friction. We've designed our engagement model — overlap window, async-first updates, Loom-heavy comms — specifically to minimize that friction."
+          "Cost is the obvious answer — our hourly rates start at $15 and projects start at $800, often 70–90% less than equivalent US-based agencies. But the bigger reason most US clients return to us is talent depth: India's senior dev market is enormous, and we've spent 8 years building a bench that ships. The honest tradeoff is time-zone friction. We've designed our engagement model — overlap window, async-first updates, Loom-heavy comms — specifically to minimize that friction."
       }
     ]
   },

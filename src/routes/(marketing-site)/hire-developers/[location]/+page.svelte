@@ -30,6 +30,7 @@
     description: location.metaDescription,
     url: pageUrl,
     imagePath: ogPath,
+    priceRange: location.pricing.priceRange,
     pricingBands: location.pricing.bands,
     industries: location.industries,
     ratings: data.ratings,
