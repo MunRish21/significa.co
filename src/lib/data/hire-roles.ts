@@ -800,7 +800,7 @@ export const hireRoles: HireRole[] = [
           "WordPress's reputation for security issues is mostly about plugin sprawl. We minimize plugins, choose maintained ones, hard-secure wp-admin, and offer ongoing maintenance plans (updates, security audits, daily backups)."
       }
     ],
-    relatedServiceTags: ['Web Development & Design', 'Content Management Systems', 'E-commerce'],
+    relatedServiceTags: ['Content Management Systems', 'E-commerce', 'Website'],
     relatedRoles: ['woocommerce-developer', 'headless-cms-developer', 'web-developer', 'frontend-developer']
   },
   {
@@ -1239,7 +1239,7 @@ export const hireRoles: HireRole[] = [
           "Always for user-facing UX. Token streaming makes LLM features feel fast even when total latency is high. We use the AI SDK's `streamText` / `streamObject` patterns by default."
       }
     ],
-    relatedServiceTags: ['AI & Machine Learning', 'Python Backend Engineering'],
+    relatedServiceTags: ['AI & Machine Learning'],
     relatedRoles: ['ai-engineer', 'python-developer', 'voice-ai-developer', 'ml-engineer']
   },
   {
@@ -1841,7 +1841,7 @@ export const hireRoles: HireRole[] = [
           "Yes — opt-in consent flows at call start, recording with user awareness, PII redaction from transcripts before storage. We follow jurisdictional rules (US two-party, EU GDPR-aware)."
       }
     ],
-    relatedServiceTags: ['Voice AI Engineering', 'AI & Machine Learning'],
+    relatedServiceTags: ['Voice AI Engineering'],
     relatedRoles: ['ai-engineer', 'llm-developer', 'python-developer', 'ml-engineer']
   },
 
@@ -2100,7 +2100,7 @@ export const hireRoles: HireRole[] = [
           "Static generation (SSG/ISR) with on-demand revalidation. CDN-cached. Edge functions for personalization. Most headless sites we ship hit 95+ Lighthouse Mobile."
       }
     ],
-    relatedServiceTags: ['Web Development & Design', 'Content Management Systems', 'Website'],
+    relatedServiceTags: ['Content Management Systems', 'Website'],
     relatedRoles: ['web-developer', 'frontend-developer', 'wordpress-developer', 'nextjs-developer']
   },
   {
@@ -2272,7 +2272,7 @@ export const hireRoles: HireRole[] = [
           "We build the technical controls: encryption at rest and in transit, access logs, least-privilege IAM, vulnerability scanning, backup/restore drills. Pair with Vanta or Drata for the compliance platform side."
       }
     ],
-    relatedServiceTags: ['Backend Engineering', 'Business Services'],
+    relatedServiceTags: ['Backend Engineering'],
     relatedRoles: ['backend-developer', 'full-stack-developer', 'python-developer', 'nodejs-developer']
   }
 ];
