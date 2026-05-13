@@ -58,7 +58,11 @@ export const serviceDescriptions: Record<string, string> = {
   'Business Management Platforms': `Software tailored to how your business actually works. Not off-the-shelf bloatware. Your workflows, automated. Reporting and visibility that matters.`,
 };
 
-export function getServiceDescription(filterName: string): string {
+export function getServiceDescription(
+  filterName: string,
+  override?: Record<string, string>
+): string {
+  if (override && override[filterName]) return override[filterName];
   return serviceDescriptions[filterName] ||
     `We specialize in delivering exceptional ${filterName.toLowerCase()} that drive business growth. With ${30}+ projects delivered across diverse industries, we bring proven expertise, technical excellence, and a deep understanding of what makes these solutions succeed.`;
 }

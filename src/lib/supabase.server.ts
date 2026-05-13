@@ -53,6 +53,17 @@ type ClientRow = {
   is_active: boolean;
 };
 
+type ServiceDescriptionRow = {
+  id: string;
+  tenant_id: string;
+  kind: 'service' | 'deliverable';
+  slug: string;
+  name: string;
+  description: string;
+  position: number;
+  is_active: boolean;
+};
+
 type TestimonialRow = {
   id: string;
   tenant_id: string;
@@ -113,6 +124,7 @@ export type Database = {
       clients: { Row: ClientRow; Insert: Partial<ClientRow>; Update: Partial<ClientRow>; Relationships: [] };
       team_members: { Row: TeamMemberRow; Insert: Partial<TeamMemberRow>; Update: Partial<TeamMemberRow>; Relationships: [] };
       testimonials: { Row: TestimonialRow; Insert: Partial<TestimonialRow>; Update: Partial<TestimonialRow>; Relationships: [] };
+      service_descriptions: { Row: ServiceDescriptionRow; Insert: Partial<ServiceDescriptionRow>; Update: Partial<ServiceDescriptionRow>; Relationships: [] };
     };
     Views: Record<string, never>;
     Functions: Record<string, never>;
