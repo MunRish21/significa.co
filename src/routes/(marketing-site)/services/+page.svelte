@@ -9,10 +9,23 @@
   import ContactForm from '$components/contact-form.svelte';
   import FaqsList from '$components/blocks/faqs-list.svelte';
   import { commonFaqsBlock, getCommonFaqsForSchema } from '$lib/data/faqs';
-  import { getFeaturedTestimonials } from '$lib/data/testimonials';
+  import {
+    filterFeaturedTestimonials,
+    getFeaturedTestimonials,
+    type Testimonial
+  } from '$lib/data/testimonials';
   import { getActiveTeamMembers, type TeamMember } from '$lib/data/team';
 
   import { isSectionEnabled, type SectionsMap } from '$lib/tenant';
+  import {
+    BASE_URL,
+    generateOrganizationSchema,
+    generateBreadcrumbSchema,
+    generateServicesPageSchema,
+    generateFAQSchema,
+    generateHowToSchema,
+    generateTeamMembersSchema
+  } from '$lib/utils/schema';
 
   export let data: {
     page: { title: string | null; description: string | null; meta: Record<string, unknown> } | null;
@@ -28,23 +41,18 @@
     'End-to-end digital product services. Strategy, UX/UI design, web and mobile development, AI integrations, e-commerce, and automation — all under one roof. Built for ambitious teams.';
   $: pageMeta = (dbPage?.meta ?? {}) as Record<string, string>;
 
-  const servicesTestimonials = getFeaturedTestimonials();
-  import {
-    BASE_URL,
-    generateOrganizationSchema,
-    generateBreadcrumbSchema,
-    generateServicesPageSchema,
-    generateFAQSchema,
-    generateHowToSchema,
-    generateTeamMembersSchema
-  } from '$lib/utils/schema';
+  $: dbTestimonials = (data?.dbTestimonials ?? []) as Testimonial[];
+  $: servicesTestimonials =
+    dbTestimonials.length > 0
+      ? filterFeaturedTestimonials(dbTestimonials)
+      : getFeaturedTestimonials();
 
   /** Pull aggregate ratings + reviews from the featured testimonials surfaced on this page. */
-  const ratings = servicesTestimonials
+  $: ratings = servicesTestimonials
     .map((t) => t.rating)
     .filter((r): r is number => typeof r === 'number');
 
-  const reviewEntries = servicesTestimonials
+  $: reviewEntries = servicesTestimonials
     .filter((t) => typeof t.rating === 'number')
     .slice(0, 10)
     .map((t) => ({

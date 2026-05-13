@@ -206,5 +206,25 @@ export const getTestimonialsByService = (svc: ServiceCategory, limit?: number): 
 export const getTestimonialsByProject = (projectSlug: string): Testimonial[] =>
   testimonials.filter((t) => t.projectSlug === projectSlug);
 
+// Tenant-aware variants — take an explicit source list (typically the
+// per-tenant testimonials loaded into page data) and apply the same filter.
+
+export const filterFeaturedTestimonials = (list: Testimonial[], limit?: number): Testimonial[] => {
+  const featured = list.filter((t) => t.featured);
+  return typeof limit === 'number' ? featured.slice(0, limit) : featured;
+};
+
+export const filterTestimonialsByMember = (list: Testimonial[], slug: string): Testimonial[] =>
+  list.filter((t) => t.memberSlug === slug);
+
+export const filterTestimonialsByService = (
+  list: Testimonial[],
+  svc: ServiceCategory,
+  limit?: number
+): Testimonial[] => {
+  const matched = list.filter((t) => t.services?.includes(svc));
+  return typeof limit === 'number' ? matched.slice(0, limit) : matched;
+};
+
 export const renderStars = (rating: number): string =>
   '★'.repeat(Math.round(rating)) + '☆'.repeat(5 - Math.round(rating));

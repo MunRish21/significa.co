@@ -9,14 +9,24 @@
   import TeamProjectsSlider from '$components/blocks/team-projects-slider.svelte';
   import UpworkLogo from '$components/blocks/upwork-logo.svelte';
   import { slugifyService, type TeamMember } from '$lib/data/team';
-  import { getTestimonialsByMember, renderStars } from '$lib/data/testimonials';
+  import {
+    filterTestimonialsByMember,
+    getTestimonialsByMember,
+    renderStars,
+    type Testimonial
+  } from '$lib/data/testimonials';
+  import { page as pageStore } from '$app/stores';
 
   export let data: { member: TeamMember };
 
   $: member = data.member;
   $: pageUrl = `/team/${member.slug}`;
   $: upworkLink = member.links.find((l) => l.icon === 'upwork')?.url;
-  $: memberTestimonials = getTestimonialsByMember(member.slug);
+  $: dbTestimonials = ($pageStore.data?.dbTestimonials ?? []) as Testimonial[];
+  $: memberTestimonials =
+    dbTestimonials.length > 0
+      ? filterTestimonialsByMember(dbTestimonials, member.slug)
+      : getTestimonialsByMember(member.slug);
 
   $: personSchema = generatePersonSchema({
     name: member.name,

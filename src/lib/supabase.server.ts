@@ -53,6 +53,27 @@ type ClientRow = {
   is_active: boolean;
 };
 
+type TestimonialRow = {
+  id: string;
+  tenant_id: string;
+  external_id: string;
+  quote: string;
+  author: string;
+  author_role: string | null;
+  author_avatar: string | null;
+  rating: number | null;
+  source: string;
+  source_url: string | null;
+  member_slug: string | null;
+  project_slug: string | null;
+  project_title: string | null;
+  services: string[];
+  occurred_at: string | null;
+  tags: string[];
+  featured: boolean;
+  position: number;
+};
+
 type TeamMemberRow = {
   id: string;
   tenant_id: string;
@@ -91,6 +112,7 @@ export type Database = {
       page_sections: { Row: PageSectionRow; Insert: Partial<PageSectionRow>; Update: Partial<PageSectionRow>; Relationships: [] };
       clients: { Row: ClientRow; Insert: Partial<ClientRow>; Update: Partial<ClientRow>; Relationships: [] };
       team_members: { Row: TeamMemberRow; Insert: Partial<TeamMemberRow>; Update: Partial<TeamMemberRow>; Relationships: [] };
+      testimonials: { Row: TestimonialRow; Insert: Partial<TestimonialRow>; Update: Partial<TestimonialRow>; Relationships: [] };
     };
     Views: Record<string, never>;
     Functions: Record<string, never>;

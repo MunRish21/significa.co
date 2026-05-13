@@ -26,7 +26,11 @@
     generateProfessionalServiceSchema,
     generateTeamMembersSchema
   } from '$lib/utils/schema';
-  import { getFeaturedTestimonials } from '$lib/data/testimonials';
+  import {
+    filterFeaturedTestimonials,
+    getFeaturedTestimonials,
+    type Testimonial
+  } from '$lib/data/testimonials';
   import { getActiveTeamMembers, type TeamMember } from '$lib/data/team';
   import { isSectionEnabled, type SectionsMap } from '$lib/tenant';
 
@@ -44,11 +48,15 @@
     'Techyor is a digital product studio building custom websites, web apps, mobile apps, e-commerce stores, AI tools, and automation for teams in the US, UK, Switzerland, and Australia. Strategy, design, development — under one roof.';
   $: pageMeta = (dbPage?.meta ?? {}) as Record<string, string>;
 
-  const homeFeaturedTestimonials = getFeaturedTestimonials();
-  const homeRatings = homeFeaturedTestimonials
+  $: dbTestimonials = (data?.dbTestimonials ?? []) as Testimonial[];
+  $: homeFeaturedTestimonials =
+    dbTestimonials.length > 0
+      ? filterFeaturedTestimonials(dbTestimonials)
+      : getFeaturedTestimonials();
+  $: homeRatings = homeFeaturedTestimonials
     .map((t) => t.rating)
     .filter((r): r is number => typeof r === 'number');
-  const homeReviews = homeFeaturedTestimonials
+  $: homeReviews = homeFeaturedTestimonials
     .filter((t) => typeof t.rating === 'number')
     .slice(0, 10)
     .map((t) => ({

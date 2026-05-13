@@ -7,18 +7,24 @@ import {
 } from '$lib/content';
 import { fetchClients } from '$lib/data/clients.server';
 import { fetchTeamMembersFromDb } from '$lib/data/team.server';
+import { fetchTestimonialsFromDb } from '$lib/data/testimonials.server';
 
 export const load = async ({ locals, fetch }) => {
   const version = locals.version;
   const tenant = locals.tenant;
-  const [clients, dbTeamMembers] = tenant
-    ? await Promise.all([fetchClients(tenant.id), fetchTeamMembersFromDb(tenant.id)])
-    : [[], []];
+  const [clients, dbTeamMembers, dbTestimonials] = tenant
+    ? await Promise.all([
+        fetchClients(tenant.id),
+        fetchTeamMembersFromDb(tenant.id),
+        fetchTestimonialsFromDb(tenant.id)
+      ])
+    : [[], [], []];
 
   return {
     tenant,
     clients,
     dbTeamMembers,
+    dbTestimonials,
     configuration: {
       content: {
         primary_navigation: [
