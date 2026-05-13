@@ -6,7 +6,6 @@
   import Newton from '$components/blocks/newton.svelte';
   import TextWithMedia from '$components/blocks/text-with-media.svelte';
   import AboutGrid from '$components/blocks/about-grid.svelte';
-  import CareersListBlock from '$components/blocks/careers-list.svelte';
   import FaqsListBlock from '$components/blocks/faqs-list.svelte';
   import ClientsSection from '$components/sections/clients-section.svelte';
   import TeamSection from '$components/sections/team-section.svelte';
@@ -17,8 +16,7 @@
     HomePageStoryblok,
     NewtonStoryblok,
     TextWithMediaStoryblok,
-    AboutGridStoryblok,
-    CareersListStoryblok
+    AboutGridStoryblok
   } from '$types/bloks';
   import { getImageAttributes } from '$lib/utils/cms';
   import {
@@ -68,17 +66,17 @@
       {
         title: 'Mission and values.',
         description:
-          "Building digital products that solve real problems for real people. It's the why behind every line of code and every pixel we ship."
+          "We build products that actually work. Not features for features' sake. Products that solve real problems for the people using them."
       },
       {
         title: 'Perks and benefits.',
         description:
-          'Flexible hours, remote-friendly, unlimited learning stipend, health cover, and an annual team retreat. The good stuff, and growing.'
+          "Flexible hours, remote work, health cover, learning budget, and an annual retreat. We try to get the basics right so you can focus on the work."
       },
       {
         title: 'Career plan.',
         description:
-          'Your goals shape your path. We pair you with mentors, OKRs, and the room to grow at your own pace.'
+          "You grow. We pair you with mentors, give you honest feedback, and fund your learning. Set the pace."
       }
     ]
   };
@@ -86,9 +84,9 @@
   const aboutBlock: TextWithMediaStoryblok = {
     component: 'text-with-media',
     eyebrow: 'About Techyor.',
-    title: 'A digital product studio that ships.',
+    title: 'We ship products, not promises.',
     description:
-      "For 8+ years, we've been building websites, web apps, and mobile products for ambitious teams across the US, UK, Switzerland, and Australia. Strategy-led, design-driven, engineered to last — we partner with founders and product teams who care about the craft as much as we do.",
+      "Eight years in, 80+ projects shipped for teams in the US, UK, Switzerland, and Australia. We handle strategy, design, and code. We move fast. We ship on time.",
     cta: [
       {
         label: 'About us',
@@ -106,9 +104,9 @@
   const newtonBlock: NewtonStoryblok = {
     component: 'newton',
     title1: 'Our services.',
-    title2: 'End-to-end digital product development.',
+    title2: 'One team. No handoffs.',
     description:
-      'Custom websites, web and mobile apps, e-commerce stores, AI-powered tools, automation workflows, and robotics interfaces — all built from scratch by a single team. We take products from research and strategy through design and into production code, so nothing gets lost in handoff.',
+      "Websites, apps, e-commerce, AI tools, automation. We build it all in-house. Strategy and research upfront, design, code, launch. Same team the whole way, so ideas don't get lost between departments.",
     cta_label: 'Explore services',
     cta_link: {
       cached_url: '/services',
@@ -117,49 +115,28 @@
     }
   };
 
-  const careersBlock: CareersListStoryblok = {
-    component: 'careers-list',
-    title: 'Careers.',
-    cta_label: 'See all positions',
-    cta_link: {
-      cached_url: '/careers',
-      linktype: 'story',
-      story: undefined
-    },
-    handbook_title: 'Making it happen, with(out) chaos.',
-    handbook_description:
-      "We think, design, develop, and launch digital products — that's the bottom line.\n\nIf you'd like to know how we actually work day to day, our Handbook is the long read. Make a coffee first.",
-    handbook_cta_text: 'Read Handbook',
-    handbook_cta_link: {
-      cached_url: '/handbook',
-      linktype: 'story',
-      story: undefined
-    },
-    handbook_image: undefined
-  };
-
   const stats = [
-    { value: '8+', label: 'Years building digital products' },
-    { value: '80+', label: 'Websites and apps shipped' },
-    { value: '4', label: 'Continents served' },
-    { value: '100%', label: 'Built in-house, end to end' }
+    { value: '8+', label: 'Years in' },
+    { value: '80+', label: 'Shipped' },
+    { value: '4', label: 'Time zones' },
+    { value: '100%', label: 'One team' }
   ];
 
   const capabilities = [
     {
       title: 'Strategy.',
       description:
-        'Discovery, product definition, user research, and growth planning — the groundwork that turns ideas into products people use.'
+        "We start with research. User interviews, market analysis, product definition. Get the strategy right before you build."
     },
     {
       title: 'Design.',
       description:
-        'UX and UI design, brand identity, design systems, and motion. Interfaces that look the part and feel right at every step.'
+        "UI and UX that works on screen and in the browser. We sweat the details so your users don't have to."
     },
     {
       title: 'Development.',
       description:
-        'Modern front-end, scalable back-end, mobile, AI integrations, and automation. Engineered to be fast, secure, and built to last.'
+        "Front-end, back-end, mobile, AI integrations. Code that performs, scales, and doesn't break when load spikes hit."
     }
   ];
 
@@ -331,26 +308,21 @@
       <span
         bind:this={textElements[2]}
         class="ease-[cubic-bezier(0.34, 1.56, 0.64, 1)] mr-1 inline-block transition-all duration-500"
-        style="opacity: 1; transform: translateY(0);">Develop.</span
-      >
-      <span
-        bind:this={textElements[3]}
-        class="ease-[cubic-bezier(0.34, 1.56, 0.64, 1)] mr-1 inline-block transition-all duration-500"
-        style="opacity: 1; transform: translateY(0);">Launch.</span
+        style="opacity: 1; transform: translateY(0);">Build.</span
       >
       <br />
       <span
-        bind:this={textElements[4]}
+        bind:this={textElements[3]}
         class="ease-[cubic-bezier(0.34, 1.56, 0.64, 1)] mr-1 inline-block text-foreground-secondary transition-all duration-500"
-        style="opacity: 1; transform: translateY(0);">Scale.</span
+        style="opacity: 1; transform: translateY(0);">Then keep shipping.</span
       >
     </h1>
     <p
       data-speakable
       class="mt-6 max-w-3xl text-2xl text-foreground-secondary md:mt-8 lg:mt-10 lg:text-3xl"
     >
-      Techyor is a digital product studio building custom websites, apps, AI tools, and automation
-      for ambitious teams across the US, UK, Switzerland, and Australia.
+      Techyor is a product studio. For eight years we've built websites, apps, and AI tools for
+      teams in the US, UK, Switzerland, and Australia.
     </p>
   </div>
 
@@ -453,9 +425,6 @@
     subtitle="Hire a specialist directly."
     showViewAll
   />
-
-  <!-- Careers Section -->
-  <CareersListBlock block={careersBlock} />
 
   <!-- Blog Section -->
   <section class="mt-10 md:mt-14 lg:mt-20">

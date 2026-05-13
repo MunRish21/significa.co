@@ -129,9 +129,9 @@ export const teamMembers: TeamMember[] = [
     location: 'Chandigarh, India',
     avatar: '/assets/team/rishab-singla.jpg',
     isActive: true,
-    bio: "I help eCommerce store owners build fast, scalable, and fully customized solutions on Shopify and WooCommerce. If your store is slow, breaking due to plugin/app conflicts, or you need custom functionality that existing tools can't handle, I can fix and build it the right way.",
+    bio: "I build and fix Shopify and WooCommerce stores. Slow stores, broken integrations, missing features — I handle all of it. PHP, Node.js, React, Next.js, Python. Whatever the problem is, I can ship the solution.",
     longBio:
-      "With 8+ years of experience as a Full Stack Developer, I specialise in eCommerce engineering — Shopify, WooCommerce, PrestaShop — and the custom apps, APIs, and integrations that hold high-traffic stores together. My work spans complex catalogues with 5,000+ SKUs, multi-currency international commerce, headless storefronts, and AI-powered product visualisation. I'm proficient in PHP, Node.js, React, Next.js, and Python — meaning whether your store needs a frontend rebuild, a payment gateway integration, a custom Shopify app, or a full re-architecture, I can ship it end-to-end. Beyond eCommerce, I build SaaS platforms, AI integrations (LLM setup, custom GPTs, voice AI), and Chrome extensions. I'm Top Rated on Upwork with a 100% Job Success Score.",
+      "8 years building eCommerce. Shopify, WooCommerce, PrestaShop. I've worked on stores with thousands of SKUs, multi-currency setups, headless storefronts, and AI product visualizations. I also build SaaS platforms, AI integrations, and Chrome extensions.\n\nStacks: PHP, Laravel, Node.js, React, Next.js, Python. Payment gateways, APIs, migrations, custom apps — I build it all end-to-end. Top Rated on Upwork, 100% job success.",
     yearsExperience: 8,
     hourlyRate: '$16/hr',
     badges: ['Top Rated on Upwork', '100% Job Success', 'ID Verified'],
@@ -205,7 +205,7 @@ export const teamMembers: TeamMember[] = [
         company: 'Freelancer',
         period: 'January 2017 – Present',
         description:
-          "Over 8 years of comprehensive experience as a Full Stack Developer proficient in PHP, WordPress, Shopify, PrestaShop, Node.js, React, Next.js, and Python. Skill set spans the development of robust web applications and APIs using PHP frameworks like Laravel and CodeIgniter, ensuring scalable and maintainable solutions for clients across the UK, Australia, Spain, and Europe."
+          "Shopify, WooCommerce, and custom full-stack builds for clients across the UK, Australia, and Europe. Specializing in eCommerce, APIs, and SaaS platforms. PHP, Node.js, React, Python."
       }
     ],
     links: [
@@ -246,9 +246,9 @@ export const teamMembers: TeamMember[] = [
     location: 'Mohali, India',
     avatar: '/assets/team/munish-k.jpg',
     isActive: true,
-    bio: "Businesses often need reliable development to build, customize, and scale web applications and eCommerce platforms — that's where my experience fits in. With 8+ years of experience, I've worked extensively with WordPress, WooCommerce, and Shopify, alongside modern stacks like React and Next.js, to ship scalable, user-friendly solutions.",
+    bio: "I build WordPress, WooCommerce, and Shopify sites. Also React, Next.js, Webflow, Framer. Whatever the platform, I can take it from design to production and keep it fast.",
     longBio:
-      "I'm a senior web developer with 8+ years of full-stack experience and a track record of $50K+ earned across 87+ Upwork engagements. My core stack spans WordPress, WooCommerce, Shopify, Webflow, Framer, React, Next.js, Vue.js, and Wix — meaning whether you need a custom theme, a headless storefront, a Figma-to-Webflow build, a Framer animation site, or a full React e-commerce front-end, I can take it from design hand-off to production. I'm Top Rated on Upwork with a 100% Job Success Score, and clients return for the combination of clean code, fast communication, and getting the job done before deadline. Beyond the build, I integrate payment gateways, third-party APIs, CMS migrations, and the ongoing optimisation that keeps high-traffic sites fast and reliable.",
+      "8 years building web applications and stores. WordPress, WooCommerce, Shopify, Webflow, Framer, React, Next.js, Vue.js. Custom themes, headless storefronts, Figma-to-code builds, React e-commerce frontends.\n\nI handle the whole stack: design hand-off to production, payment gateways, API integrations, CMS migrations. High-traffic sites stay fast and reliable. Top Rated on Upwork, 100% job success, $50K+ earned across 87+ projects.",
     yearsExperience: 8,
     hourlyRate: '$16/hr',
     badges: ['Top Rated on Upwork', '100% Job Success', 'ID Verified', 'Military Veteran'],
@@ -314,17 +314,17 @@ export const teamMembers: TeamMember[] = [
     ],
     employment: [
       {
-        title: 'PHP Web Developer | Freelancer',
+        title: 'PHP Web Developer',
         company: 'Self-employed',
         period: 'January 2017 – Present',
         description:
-          'Building and shipping WordPress, Shopify, Webflow, Framer, and React projects for clients across the US, UK, EU, and Australia. Specialising in custom themes, headless storefronts, payment integrations, and Figma-to-code conversions for design agencies and direct-to-consumer brands.'
+          'WordPress, Shopify, Webflow, Framer, React projects. Custom themes, headless storefronts, payment integrations, Figma-to-code builds. Clients across the US, UK, EU, and Australia.'
       },
       {
         title: 'Web Developer',
         period: '2015 – 2017',
         description:
-          'Developed and maintained a content website for around 2 years before transitioning to full-time freelancing.'
+          'Maintained content sites. Transitioned to full-time freelancing in 2017.'
       }
     ],
     links: [

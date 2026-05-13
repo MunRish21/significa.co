@@ -99,7 +99,7 @@
   const coreValuesBlock = {
     component: 'core-values',
     values_title1: 'Our Values.',
-    values_title2: 'Built into every line of code.',
+    values_title2: 'How we work.',
     values_description: '',
     values: [
       {
@@ -195,12 +195,7 @@
         <p class="text-5xl">A lean team that ships.</p>
       </div>
       <p class="whitespace-pre-line text-2xl text-foreground-secondary lg:max-w-xl">
-        We started in 2018 with one goal — build digital products that actually work. No fluff, no
-        overcomplicating things. Just sharp execution, honest communication, and results you can
-        measure. We're a dev-first agency that puts AI at the centre of everything we build today.
-        From chatbots to voice agents to full-scale web platforms — we've done it, shipped it, and
-        have the client reviews to back it up. Based in India. Trusted by clients across the UK,
-        Australia, Spain, and Europe. 8 years in. Still hungry.
+        Started in 2018. One goal: build products that work. No fluff, no overcomplicating. Sharp execution, honest talk, measurable results. We build a lot with AI — chatbots, voice agents, web platforms. Shipped it. Clients back it up. Based in India, trusted by teams in the UK, Australia, Spain, Europe. 8 years in. Still hungry.
       </p>
     </div>
   </section>

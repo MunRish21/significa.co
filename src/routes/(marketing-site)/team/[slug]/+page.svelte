@@ -238,7 +238,7 @@
     <div>
       <h2 class="text-4xl text-foreground-secondary">Skills.</h2>
       <p class="mt-2 text-foreground-secondary">
-        Tools, frameworks, and platforms I work with daily.
+        What they use daily.
       </p>
     </div>
     <div class="lg:col-span-2">
@@ -266,7 +266,7 @@
           <h2 class="text-5xl text-foreground-secondary">Testimonials.</h2>
           <p class="text-5xl">What clients say.</p>
           <p class="mt-3 text-foreground-secondary">
-            Real reviews from real clients — every testimonial below is from a verified Upwork engagement.
+            Verified client reviews from Upwork.
           </p>
         </div>
 

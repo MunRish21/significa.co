@@ -104,15 +104,14 @@
         data-speakable
         class="mx-auto mt-6 max-w-xl text-lg text-foreground-secondary lg:mt-8"
       >
-        Got a project in mind? We'd love to hear it. Drop us a message and we'll get back within 24
-        hours. No lengthy briefs needed — just tell us what you're thinking.
+        Send us a message. We reply within 24 hours. No lengthy brief required.
       </p>
     </section>
 
     <section class="mx-auto lg:max-w-xl lg:pt-5">
       <ContactForm
         variant="contact"
-        disclaimer="We respect your privacy and will handle your information securely."
+        disclaimer="Your information stays private and is never shared."
       />
     </section>
 

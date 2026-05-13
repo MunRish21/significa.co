@@ -57,9 +57,9 @@
   const servicesBlock = {
     component: 'services',
     services_title: 'Our services.',
-    services_subtitle: 'The full list!',
+    services_subtitle: 'The full list.',
     services_description:
-      'Each delivery moves through cycles of strategy, design and development. It is the blend of all these elements that creates interfaces that people will love.',
+      'We work in three phases: strategy first, then design, then code. The combination of all three is what makes products people actually want to use.',
     services: [
       {
         title: 'Strategy',
@@ -184,11 +184,11 @@
     component: 'list',
     type: 'deliverables',
     title: 'Deliverables.',
-    subtitle: 'Including, but not limited to.',
+    subtitle: 'We build.',
     blocks: [
       {
         deliverable: 'E-commerce',
-        description: 'Online stores crafted to turn browsers into loyal buyers.',
+        description: 'Online stores that convert. Shopify, WooCommerce, custom builds.',
         link_title: 'See more',
         link: { url: '/e-commerce' }
       },
@@ -236,7 +236,7 @@
       {
         deliverable: 'AI Solutions',
         description:
-          'Intelligent products, copilots, and integrations that put modern AI to work for your business.'
+          'Chatbots, copilots, voice agents, and LLM integrations. We build AI products that work.'
       },
       {
         deliverable: 'Automation',
@@ -253,8 +253,8 @@
 
   const timelineServicesBlock = {
     component: 'timeline-services',
-    title: 'End-to-end digital products, built to grow with your business.',
-    description: 'Strategy-led. Design-driven. Engineered to last.',
+    title: 'How we build.',
+    description: 'Strategy first. Design next. Then code. QA throughout. Launch when ready.',
     timeline: [
       {
         title: 'Strategy',
@@ -674,17 +674,16 @@
   />
 
   <!-- Proud Clients Section -->
-  <ClientsSection title="Trusted by ambitious teams." />
+  <ClientsSection title="Trusted by teams who ship." />
 
   <!-- Contact Form Section -->
   <section class="container mx-auto mt-10 px-container @container lg:mt-20">
     <div class="grid grid-cols-3 overflow-hidden rounded-lg border">
       <div class="col-span-1 hidden flex-col bg-background-panel @5xl:flex">
         <div class="p-8">
-          <h3 class="text-4xl">Have a project in mind?<br /> Let's make it happen.</h3>
+          <h3 class="text-4xl">Got a project?<br /> Let's build it.</h3>
           <p class="mt-4 text-xl text-foreground-secondary">
-            Tell us about your goals, your timeline, and the problem you're solving. We'll get back
-            within a business day with thoughts, questions, and next steps.
+            Tell us about your goals, timeline, and what problem you're solving. We'll respond within a business day.
           </p>
         </div>
       </div>

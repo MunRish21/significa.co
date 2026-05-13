@@ -17,7 +17,7 @@ export const projectsData = [
       { label: 'Products', value: '5000+', tooltip: 'Product Catalog', isPositive: true },
       { label: 'Countries', value: '7+', tooltip: 'Shipping Destinations', isPositive: true }
     ],
-    intro: 'Monster Fairings is a premier e-commerce platform specializing in custom motorcycle fairings for riders worldwide. We engineered a sophisticated platform managing 5000+ products with a complex payment structure supporting multiple business models. The system features an advanced filtering architecture, AI-powered fairings visualization kit allowing riders to see products on their bikes, comprehensive email management capabilities, and robust speed and security infrastructure. The platform seamlessly handles inventory management, customization options, international shipping, and delivers a superior shopping experience across multiple markets.',
+    intro: 'Monster Fairings sells custom motorcycle fairings to riders worldwide. We built the store on Shopify with a 5,000+ SKU catalog, multi-model payment flows, advanced filtering, and an AI visualization kit that lets riders see fairings on their actual bike before buying. International shipping, custom email automation, and the speed and security infrastructure to keep it all running.',
     awards: []
   },
   {
@@ -36,7 +36,7 @@ export const projectsData = [
     ],
     team: [],
     metrics: [],
-    intro: 'Firmable is a cutting-edge B2B Sales Intelligence platform leveraging artificial intelligence to identify and deliver accurate buying signals. The platform helps sales teams discover qualified prospects and understand market dynamics through advanced data analysis. Built on a WordPress foundation with integrated SaaS capabilities, Firmable provides comprehensive sales intelligence solutions tailored for modern B2B enterprises.',
+    intro: 'Firmable is a B2B sales intelligence platform that uses AI to surface buying signals and help sales teams find qualified prospects. We built the marketing site on WordPress with the SaaS app integration sitting on top.',
     awards: []
   },
   {
@@ -55,14 +55,14 @@ export const projectsData = [
     ],
     team: [],
     metrics: [],
-    intro: 'Gisteo is a versatile SaaS platform designed to streamline content management and web development workflows. The platform provides intuitive tools for managing digital content, creating responsive websites, and maintaining robust online presence. With comprehensive web development capabilities and seamless content management integration, Gisteo empowers businesses to build and maintain their digital presence efficiently.',
+    intro: 'Gisteo is a SaaS platform for content management and quick website builds. We shipped the web app and CMS — tools for teams who need to publish without filing tickets to engineering.',
     awards: []
   },
   {
     id: 3,
     slug: 'navjot-kaur-pllc',
     name: 'Navjot Kaur PLLC',
-    tagline: 'Professional legal services portal for compassionate estate planning and immigration law in New York',
+    tagline: 'Brand and website for a New York attorney specializing in estate planning and immigration law for multicultural families.',
     image: '/assets/projects/navjot-kaur-pllc/cover.png',
     coverImage: '/assets/projects/navjot-kaur-pllc/cover.png',
     publishedYear: 2023,
@@ -78,7 +78,7 @@ export const projectsData = [
       { label: 'Bar Associations', value: '4', tooltip: 'Professional Affiliations', isPositive: true },
       { label: 'Languages', value: '3', tooltip: 'English, Hindi, Punjabi', isPositive: true }
     ],
-    intro: 'Navjot Kaur PLLC is a boutique New York City law practice specializing in estate planning, immigration, and cross-border NRI legal services for multicultural families. We designed and built a complete brand identity and WordPress-powered website from the ground up—custom logo, typography, and color system that translate complex legal services into clear, compassionate guidance without the legalese. The site organizes six specialized practice areas, integrated Calendly consultation booking, and multilingual access in English, Hindi, and Punjabi—positioning the practice as a trusted, culturally aware resource in New York\'s competitive legal market.',
+    intro: 'Navjot Kaur PLLC is a boutique NYC law practice covering estate planning, immigration, and cross-border NRI legal work for multicultural families. We built the brand and the website from scratch — custom logo, typography, color system, and a WordPress site that explains six practice areas without legalese. Calendly booking, multilingual access in English, Hindi, and Punjabi.',
     body: {
       type: 'doc',
       content: [
@@ -89,7 +89,7 @@ export const projectsData = [
         },
         {
           type: 'paragraph',
-          content: [{ type: 'text', text: 'Navjot Kaur, a dual-licensed attorney in New York and India, was establishing her independent law practice serving multicultural families. She needed a professional online presence that would not only showcase her expertise but also build trust with potential clients unfamiliar with her practice. The website needed to clearly communicate her specialized services in estate planning and immigration law while reflecting her compassionate, accessible approach to legal guidance.' }]
+          content: [{ type: 'text', text: "Navjot Kaur is a dual-licensed attorney in New York and India launching her own practice. She needed a website that would explain her services to potential clients who don't know her — and one that didn't read like a typical law firm. The site had to communicate estate planning and immigration law clearly, in plain English, without losing the warmth of how she actually works with clients." }]
         },
         {
           type: 'heading',
@@ -98,7 +98,7 @@ export const projectsData = [
         },
         {
           type: 'paragraph',
-          content: [{ type: 'text', text: 'We took a comprehensive, design-led approach to building Navjot Kaur PLLC\'s complete brand and digital presence:' }]
+          content: [{ type: 'text', text: 'A design-led build of the full brand and website:' }]
         },
         {
           type: 'heading',
@@ -110,15 +110,15 @@ export const projectsData = [
           content: [
             {
               type: 'list_item',
-              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Designed custom logo and visual identity system from the ground up' }] }]
+              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Designed the logo and visual identity from scratch' }] }]
             },
             {
               type: 'list_item',
-              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Created a professional color palette and typography that conveys trust and approachability' }] }]
+              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Picked a color palette and typography that read as trustworthy without feeling cold' }] }]
             },
             {
               type: 'list_item',
-              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Established brand guidelines reflecting her multicultural practice philosophy' }] }]
+              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Brand guidelines that reflect her multicultural client base' }] }]
             }
           ]
         },
@@ -132,15 +132,15 @@ export const projectsData = [
           content: [
             {
               type: 'list_item',
-              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Mapped complete information hierarchy for complex legal services' }] }]
+              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Mapped how the legal services should be organized on the site' }] }]
             },
             {
               type: 'list_item',
-              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Designed user journey guiding potential clients from discovery to consultation booking' }] }]
+              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Designed the path from landing page to booked consultation' }] }]
             },
             {
               type: 'list_item',
-              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Structured content to simplify legal terminology without sacrificing accuracy' }] }]
+              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Rewrote legal terminology in plain English without losing accuracy' }] }]
             }
           ]
         },
@@ -154,23 +154,23 @@ export const projectsData = [
           content: [
             {
               type: 'list_item',
-              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Crafted a clean, modern website design that makes legal information accessible' }] }]
+              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Clean website design that puts the legal info first' }] }]
             },
             {
               type: 'list_item',
-              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Built on WordPress CMS for flexibility and ease of updates' }] }]
+              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Built on WordPress so she can update content without us' }] }]
             },
             {
               type: 'list_item',
-              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Implemented custom HTML/CSS for precise design control and performance' }] }]
+              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Custom HTML/CSS for design control and page speed' }] }]
             },
             {
               type: 'list_item',
-              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Created intuitive navigation for six distinct practice areas' }] }]
+              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Built navigation that maps cleanly to her six practice areas' }] }]
             },
             {
               type: 'list_item',
-              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Developed responsive design serving desktop, tablet, and mobile users' }] }]
+              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Responsive across desktop, tablet, and mobile' }] }]
             }
           ]
         },
@@ -184,7 +184,7 @@ export const projectsData = [
           content: [
             {
               type: 'list_item',
-              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Implemented comprehensive SEO strategy to improve search visibility' }] }]
+              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'On-page SEO targeting NYC legal queries' }] }]
             },
             {
               type: 'list_item',
@@ -206,31 +206,31 @@ export const projectsData = [
           content: [
             {
               type: 'list_item',
-              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Attorney Bio Section - Highlights dual licensing in New York and India, multilingual capabilities (English, Hindi, Punjabi), and unique multicultural perspective' }] }]
+              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Attorney bio — dual licensing in New York and India, English/Hindi/Punjabi, multicultural background' }] }]
             },
             {
               type: 'list_item',
-              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Practice Areas - Six specialized services clearly explained: Estate Planning, Immigration Law, Wills & Trusts, Guardianship & Special Needs Planning, International Estate Planning, and Humanitarian Relief' }] }]
+              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Six practice areas: Estate Planning, Immigration Law, Wills & Trusts, Guardianship & Special Needs Planning, International Estate Planning, Humanitarian Relief' }] }]
             },
             {
               type: 'list_item',
-              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Professional Credibility - Featured affiliations with NYC Bar Association, New York State Bar Association, Sikh National Bar Association, and South Asian Bar Association' }] }]
+              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Bar association affiliations: NYC Bar, New York State Bar, Sikh National Bar, South Asian Bar' }] }]
             },
             {
               type: 'list_item',
-              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Easy Consultation Booking - Integrated Calendly for seamless appointment scheduling' }] }]
+              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Calendly integration for direct consultation booking' }] }]
             },
             {
               type: 'list_item',
-              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Multiple Contact Channels - Phone, email, and social media integration for accessibility' }] }]
+              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Phone, email, and social media contact options' }] }]
             },
             {
               type: 'list_item',
-              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Legal Blog - Thought leadership articles establishing expertise and providing client education' }] }]
+              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Legal blog for client education and SEO' }] }]
             },
             {
               type: 'list_item',
-              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Professional Design - Modern, trustworthy aesthetic that differentiates from traditional law firm websites' }] }]
+              content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Design that does not look like a stock law firm site' }] }]
             }
           ]
         },
@@ -241,11 +241,11 @@ export const projectsData = [
         },
         {
           type: 'paragraph',
-          content: [{ type: 'text', text: 'The website successfully established Navjot Kaur\'s professional brand in the competitive New York legal market. By combining strategic design with clear, accessible legal information, the site positions her practice as modern, client-focused, and genuinely accessible to diverse communities. The professional online presence has become a central hub for client inquiries, service discovery, and legal guidance—effectively differentiating her practice in a crowded legal landscape while maintaining the warmth and approachability that define her client relationships.' }]
+          content: [{ type: 'text', text: "The site became Navjot's main entry point for new clients in New York. Inquiries, service questions, and consultation bookings all flow through it. The design helped her practice stand out from the typical law firm look while staying clear about what she does and who she helps." }]
         },
         {
           type: 'paragraph',
-          content: [{ type: 'text', text: 'The clean design, coupled with strong SEO implementation, has improved visibility for estate planning and immigration law services, helping her reach the multicultural families and individuals who need her expertise most.' }]
+          content: [{ type: 'text', text: 'SEO work improved visibility for estate planning and immigration searches, helping her reach the multicultural families she set up the practice to serve.' }]
         }
       ]
     },
@@ -255,7 +255,7 @@ export const projectsData = [
     id: 4,
     slug: 'hilink-travel-platform',
     name: 'Hilink Travel Platform',
-    tagline: 'Modern travel and tourism SaaS platform for seamless booking experiences',
+    tagline: 'Travel and tourism booking app built with React.',
     image: '/assets/projects/hilink-travel-platform/cover.png',
     coverImage: '/assets/projects/hilink-travel-platform/cover.png',
     publishedYear: 2023,
@@ -266,7 +266,7 @@ export const projectsData = [
     ],
     team: [],
     metrics: [],
-    intro: 'Hilink Travel Platform is a modern React-based travel and tourism application deployed on Vercel. The platform provides users with an intuitive interface for exploring destinations, planning trips, and booking travel services. Built with cutting-edge web technologies, it delivers responsive design and smooth user experience across all devices, making travel planning accessible and enjoyable.',
+    intro: 'Hilink is a travel and tourism app for exploring destinations, planning trips, and booking travel. Built with React and deployed on Vercel. Responsive across desktop and mobile.',
     awards: []
   },
   {
@@ -288,7 +288,7 @@ export const projectsData = [
       { label: 'Concurrent', value: '1,800', tooltip: 'Simultaneous conversations supported', isPositive: true },
       { label: 'Languages', value: '12', tooltip: 'Languages supported natively', isPositive: true }
     ],
-    intro: 'SimpleTalk AI is an enterprise-grade AI voice sales platform that handles inbound and outbound calls, texts, emails, and chat 24/7—sounding genuinely human while performing at AI scale. We engineered the full system end-to-end: a Python-powered voice AI engine trained on millions of real sales calls, a React-based multi-agent dashboard, a white-label sub-client architecture for agencies and resellers, and native integrations with Salesforce, Pipedrive, Zoho, HighLevel, and Close.io. To date the platform has processed over 147,000 calls and 127,000 minutes of live conversation across 12 languages.',
+    intro: 'SimpleTalk AI handles inbound and outbound sales calls, texts, emails, and chat 24/7. We built the whole stack: a Python voice AI engine trained on millions of real sales calls, a React multi-agent dashboard, a white-label architecture for agencies and resellers, and integrations with Salesforce, Pipedrive, Zoho, HighLevel, and Close.io. To date: 147K+ calls, 127K minutes of live conversation, 12 languages.',
     awards: []
   },
   {
@@ -312,14 +312,14 @@ export const projectsData = [
       { label: 'Accuracy', value: '99.2%', tooltip: 'Average transaction extraction accuracy across supported formats', isPositive: true },
       { label: 'Currencies', value: '30+', tooltip: 'Multi-currency statements handled natively', isPositive: true }
     ],
-    intro: 'ConvertBankStatement is a financial productivity platform that turns scanned and digital bank statement PDFs into clean, ready-to-use Excel and CSV files in seconds. We engineered the entire system end-to-end—a custom Python OCR and document parsing engine adapted from open-source foundations, a React and Next.js web application with Google OAuth and email authentication, a four-tier subscription model billed by pages, and a public REST API for Pro and Business customers who automate conversions at scale. The platform supports over 250 bank statement formats across 30+ currencies, achieves more than 99% extraction accuracy on real-world scans, and has converted millions of pages for accountants, bookkeepers, and finance professionals worldwide.',
+    intro: 'ConvertBankStatement turns scanned and digital bank statement PDFs into clean Excel and CSV files in seconds. We built the whole thing: a custom Python OCR engine, a React + Next.js web app with Google OAuth, a four-tier subscription billed by pages, and a public REST API for Pro and Business customers who need automation. 250+ bank formats, 30+ currencies, 99%+ extraction accuracy. Millions of pages converted for accountants and bookkeepers worldwide.',
     awards: []
   },
   {
     id: 7,
     slug: 'lineleader',
     name: 'LineLeader',
-    tagline: 'Comprehensive SaaS platform for childcare management and operations',
+    tagline: 'SaaS platform for managing childcare facilities — enrollments, staff, and parent communication.',
     image: '/assets/projects/lineleader/cover.png',
     coverImage: '/assets/projects/lineleader/cover.png',
     publishedYear: 2023,
@@ -330,14 +330,14 @@ export const projectsData = [
     ],
     team: [],
     metrics: [],
-    intro: 'LineLeader is a comprehensive SaaS platform specifically designed for childcare facility management and operations. The platform provides tools for enrollment management, parent communication, staff scheduling, and activity tracking. Built with React and Next.js, LineLeader delivers an intuitive solution that helps childcare providers streamline operations and improve parent engagement.',
+    intro: 'LineLeader is a SaaS platform for childcare facilities. Enrollment management, parent communication, staff scheduling, activity tracking. Built with React and Next.js.',
     awards: []
   },
   {
     id: 8,
     slug: 'arbys-fast-food-android',
     name: 'Arby\'s Fast Food - Android',
-    tagline: 'Mobile application for Arby\'s restaurant chain on Android platform',
+    tagline: "Arby's official ordering app for Android.",
     image: '/assets/projects/arbys-android/cover.png',
     coverImage: '/assets/projects/arbys-android/cover.png',
     publishedYear: 2023,
@@ -348,14 +348,14 @@ export const projectsData = [
     ],
     team: [],
     metrics: [],
-    intro: 'Arby\'s Fast Food Android application is a mobile solution developed using React Native, delivering seamless restaurant experience on Android devices. The application enables customers to browse menu items, place orders, and access exclusive mobile-only offers. With intuitive navigation and robust functionality, the Arby\'s app enhances customer engagement and drives sales through mobile commerce.',
+    intro: "Arby's Android app for menu browsing, ordering, and mobile-only offers. Built with React Native.",
     awards: []
   },
   {
     id: 9,
     slug: 'arbys-fast-food-ios',
     name: 'Arby\'s Fast Food - iOS',
-    tagline: 'Mobile application for Arby\'s restaurant chain on iOS platform',
+    tagline: "Arby's official ordering app for iOS.",
     image: '/assets/projects/arbys-ios/cover.png',
     coverImage: '/assets/projects/arbys-ios/cover.png',
     publishedYear: 2023,
@@ -366,7 +366,7 @@ export const projectsData = [
     ],
     team: [],
     metrics: [],
-    intro: 'Arby\'s Fast Food iOS application provides Apple users with a native-quality mobile experience for restaurant ordering and engagement. Built using React Native, the application delivers fast performance and seamless integration with iOS ecosystem features. Customers can browse the menu, customize orders, and enjoy exclusive mobile promotions directly from their iPhones.',
+    intro: "Arby's iOS app for menu browsing, order customization, and mobile promotions. Built with React Native.",
     awards: []
   },
   {
@@ -384,7 +384,7 @@ export const projectsData = [
     ],
     team: [],
     metrics: [],
-    intro: 'Buffalo Wild Wings Android mobile application focuses on the Blazin\' Rewards loyalty program, enabling customers to earn and redeem rewards. Developed using React Native, the app integrates location services, menu browsing, and rewards management. The platform enhances customer loyalty and encourages repeat business through engaging mobile experiences.',
+    intro: "Buffalo Wild Wings Android app for the Blazin' Rewards loyalty program. Earn and redeem rewards, find locations, browse the menu. Built with React Native.",
     awards: []
   },
   {
@@ -402,14 +402,14 @@ export const projectsData = [
     ],
     team: [],
     metrics: [],
-    intro: 'Buffalo Wild Wings iOS application delivers the Blazin\' Rewards experience to Apple users with native performance and iOS ecosystem integration. The React Native-based app allows customers to locate restaurants, access menus, and manage loyalty rewards seamlessly. The application strengthens customer relationships and drives increased restaurant visits.',
+    intro: "Buffalo Wild Wings iOS app for Blazin' Rewards — find restaurants, browse menus, manage loyalty rewards. Built with React Native.",
     awards: []
   },
   {
     id: 12,
     slug: 'adt-control-ios',
     name: 'ADT Control - iOS',
-    tagline: 'Security system control application for ADT on iOS platform',
+    tagline: 'ADT home security control app for iOS.',
     image: '/assets/projects/adt-ios/cover.png',
     coverImage: '/assets/projects/adt-ios/cover.png',
     publishedYear: 2023,
@@ -420,14 +420,14 @@ export const projectsData = [
     ],
     team: [],
     metrics: [],
-    intro: 'ADT Control iOS application provides customers with mobile control over their home security systems. Built with React Native, the app enables remote monitoring, alarm management, and emergency alerts. The seamless interface allows homeowners to maintain security from anywhere, offering peace of mind and convenient security management.',
+    intro: 'ADT Control iOS app for managing home security from your phone. Remote monitoring, alarm control, emergency alerts. Built with React Native.',
     awards: []
   },
   {
     id: 13,
     slug: 'adt-control-android',
     name: 'ADT Control - Android',
-    tagline: 'Security system control application for ADT on Android platform',
+    tagline: 'ADT home security control app for Android.',
     image: '/assets/projects/adt-android/cover.png',
     coverImage: '/assets/projects/adt-android/cover.png',
     publishedYear: 2023,
@@ -438,14 +438,14 @@ export const projectsData = [
     ],
     team: [],
     metrics: [],
-    intro: 'ADT Control Android application extends security management capabilities to Android users with comprehensive security system control. Using React Native technology, the app provides real-time monitoring, quick alerts, and intuitive controls. Homeowners can manage their security systems with confidence and convenience from their Android devices.',
+    intro: 'ADT Control Android app for managing home security. Real-time monitoring, alerts, full system controls. Built with React Native.',
     awards: []
   },
   {
     id: 14,
     slug: 'medela-family-android',
     name: 'Medela Family - Android',
-    tagline: 'Comprehensive breastfeeding support application for Android users',
+    tagline: 'Breastfeeding support and tracking app for Android.',
     image: '/assets/projects/medela-family-android/cover.png',
     coverImage: '/assets/projects/medela-family-android/cover.png',
     publishedYear: 2023,
@@ -456,14 +456,14 @@ export const projectsData = [
     ],
     team: [],
     metrics: [],
-    intro: 'Medela Family Android application provides comprehensive breastfeeding support and family health management. Developed using React Native, the app tracks feeding patterns, offers lactation guidance, and connects families with healthcare resources. The intuitive interface supports mothers through their breastfeeding journey with evidence-based information and community connection.',
+    intro: 'Medela Family Android app for breastfeeding support. Tracks feeding patterns, offers lactation guidance, connects families with healthcare resources. Built with React Native.',
     awards: []
   },
   {
     id: 15,
     slug: 'medela-family-ios',
     name: 'Medela Family - iOS',
-    tagline: 'Comprehensive breastfeeding support application for iOS users',
+    tagline: 'Breastfeeding support and tracking app for iOS.',
     image: '/assets/projects/medela-family-ios/cover.png',
     coverImage: '/assets/projects/medela-family-ios/cover.png',
     publishedYear: 2023,
@@ -474,14 +474,14 @@ export const projectsData = [
     ],
     team: [],
     metrics: [],
-    intro: 'Medela Family iOS application delivers specialized breastfeeding support to Apple users with native performance and iOS integration. The React Native-based app helps families track feeding sessions, access expert resources, and maintain health records. With intuitive design and evidence-based guidance, Medela Family supports mothers and families throughout their healthcare journey.',
+    intro: 'Medela Family iOS app for breastfeeding support. Track feeding sessions, access expert resources, keep health records. Built with React Native.',
     awards: []
   },
   {
     id: 16,
     slug: 'surfboard-central-android',
     name: 'Surfboard Central - Android',
-    tagline: 'Surfboard management and connectivity platform for Android',
+    tagline: 'Surfboard network management app for Android.',
     image: '/assets/projects/surfboard-central-android/cover.png',
     coverImage: '/assets/projects/surfboard-central-android/cover.png',
     publishedYear: 2023,
@@ -492,14 +492,14 @@ export const projectsData = [
     ],
     team: [],
     metrics: [],
-    intro: 'Surfboard Central Android application provides network connectivity management and device configuration capabilities. Developed with React Native, the app enables users to manage internet connectivity, optimize network performance, and control connected devices. The platform offers robust connectivity solutions for both residential and commercial environments.',
+    intro: 'Surfboard Central Android app for managing network connectivity and connected devices. Optimize performance, configure devices, monitor connections. Built with React Native.',
     awards: []
   },
   {
     id: 17,
     slug: 'surfboard-central-ios',
     name: 'Surfboard Central - iOS',
-    tagline: 'Surfboard management and connectivity platform for iOS',
+    tagline: 'Surfboard network management app for iOS.',
     image: '/assets/projects/surfboard-central-ios/cover.png',
     coverImage: '/assets/projects/surfboard-central-ios/cover.png',
     publishedYear: 2023,
@@ -510,14 +510,14 @@ export const projectsData = [
     ],
     team: [],
     metrics: [],
-    intro: 'Surfboard Central iOS application delivers network management capabilities to Apple users with seamless connectivity control. Built using React Native, the app integrates with iOS ecosystem features for optimal performance. Users can monitor internet health, manage connected devices, and optimize their network configuration effortlessly.',
+    intro: 'Surfboard Central iOS app for network management. Monitor internet health, manage connected devices, configure your network. Built with React Native.',
     awards: []
   },
   {
     id: 18,
     slug: 'allbirds',
     name: 'Allbirds',
-    tagline: 'Sustainable e-commerce platform for eco-friendly footwear and apparel',
+    tagline: 'Shopify storefront for sustainable footwear and apparel.',
     image: '/assets/projects/allbirds/cover.png',
     coverImage: '/assets/projects/allbirds/cover.png',
     publishedYear: 2023,
@@ -528,14 +528,14 @@ export const projectsData = [
     ],
     team: [],
     metrics: [],
-    intro: 'Allbirds is a premium e-commerce platform built on Shopify showcasing sustainable footwear and apparel. The platform emphasizes eco-friendly manufacturing practices and offers a curated selection of comfortable, sustainable products. With seamless checkout experiences and comprehensive product information, Allbirds delivers a premium shopping experience for environmentally conscious consumers.',
+    intro: 'Allbirds sells sustainable footwear and apparel built around eco-friendly manufacturing. We worked on the Shopify storefront — product detail, checkout flow, and the kind of polish a brand at this scale needs.',
     awards: []
   },
   {
     id: 19,
     slug: '260-sample-sale',
     name: '260 Sample Sale',
-    tagline: 'Fashion sample sale e-commerce platform for exclusive designer items',
+    tagline: 'Shopify store for designer sample sales.',
     image: '/assets/projects/260-sample-sale/cover.png',
     coverImage: '/assets/projects/260-sample-sale/cover.png',
     publishedYear: 2023,
@@ -546,7 +546,7 @@ export const projectsData = [
     ],
     team: [],
     metrics: [],
-    intro: '260 Sample Sale is an exclusive fashion e-commerce platform built on Shopify featuring designer sample sales and limited-edition items. The platform showcases luxury fashion at discounted prices, offering customers access to exclusive collections. With focused product curation and premium presentation, 260 Sample Sale creates an exclusive shopping experience for fashion enthusiasts.',
+    intro: '260 Sample Sale is a Shopify storefront for designer sample sales and limited-edition fashion. Luxury items at sale prices, focused curation, limited-quantity drops.',
     awards: []
   },
   {
@@ -631,7 +631,7 @@ export const projectsData = [
     ],
     team: [],
     metrics: [],
-    intro: 'AiMusicService is an innovative e-commerce platform combining Shopify with AI technology to deliver personalized music services. The platform leverages artificial intelligence to recommend music products, manage services, and enhance customer experiences. With cutting-edge technology and comprehensive music catalog, AiMusicService revolutionizes music commerce.',
+    intro: 'AiMusicService is a Shopify store for AI-driven music services. AI-powered product recommendations, music service management, customer flows that adapt to listening preferences.',
     awards: []
   },
   {
@@ -649,14 +649,14 @@ export const projectsData = [
     ],
     team: [],
     metrics: [],
-    intro: 'Guard Dog Security is an e-commerce platform built on Shopify specializing in security products and protective services. The platform showcases comprehensive security solutions including surveillance equipment, alarms, and professional services. With detailed product information and security expertise, Guard Dog Security helps customers protect what matters most.',
+    intro: 'Guard Dog Security is a Shopify store for security products. Surveillance gear, alarms, professional services. Built so customers can find the right product for their setup quickly.',
     awards: []
   },
   {
     id: 25,
     slug: 'havalink',
     name: 'Havalink',
-    tagline: 'E-commerce platform for technology products and innovations',
+    tagline: 'Shopify store for tech products and gadgets.',
     image: '/assets/projects/havalink/cover.png',
     coverImage: '/assets/projects/havalink/cover.png',
     publishedYear: 2023,
@@ -667,14 +667,14 @@ export const projectsData = [
     ],
     team: [],
     metrics: [],
-    intro: 'Havalink is a cutting-edge e-commerce platform built on Shopify featuring innovative technology products. The platform specializes in modern tech solutions and gadgets, offering customers access to the latest innovations. With comprehensive product specifications and technology insights, Havalink connects tech enthusiasts with innovative solutions.',
+    intro: 'Havalink is a Shopify store for tech products and gadgets. Detailed specs, tech-focused content, fast checkout.',
     awards: []
   },
   {
     id: 26,
     slug: 'honey-by-kait',
     name: 'Honey by Kait',
-    tagline: 'E-commerce platform combining food and beauty products',
+    tagline: 'Shopify store selling artisan honey and natural skincare.',
     image: '/assets/projects/honey-by-kait/cover.png',
     coverImage: '/assets/projects/honey-by-kait/cover.png',
     publishedYear: 2023,
@@ -685,7 +685,7 @@ export const projectsData = [
     ],
     team: [],
     metrics: [],
-    intro: 'Honey by Kait is an e-commerce platform built on Shopify combining premium food and beauty products. The platform features artisan honey, skincare items, and complementary wellness products. With beautiful product presentation and natural focus, Honey by Kait creates a compelling shopping experience for health-conscious consumers.',
+    intro: 'Honey by Kait is a Shopify store selling artisan honey and natural skincare. Wellness-focused product range with editorial-style presentation.',
     awards: []
   },
   {
@@ -703,7 +703,7 @@ export const projectsData = [
     ],
     team: [],
     metrics: [],
-    intro: 'REA Power is an automotive e-commerce platform built on Shopify specializing in premium automotive parts and accessories. The platform offers high-quality products for car enthusiasts and maintenance professionals. With detailed specifications and expert guidance, REA Power serves the automotive community with reliable products and information.',
+    intro: 'REA Power is a Shopify store for automotive parts and accessories. Built for car enthusiasts and maintenance pros — detailed specs, vehicle-fit filtering, fast checkout.',
     awards: []
   },
   {
@@ -721,14 +721,14 @@ export const projectsData = [
     ],
     team: [],
     metrics: [],
-    intro: 'TheCodeWiz is a comprehensive tech education portfolio built on WordPress, showcasing programming expertise and educational content. The platform provides a central hub for coding tutorials, project showcases, and learning resources. With clean design and organized content, TheCodeWiz inspires and educates aspiring developers.',
+    intro: 'TheCodeWiz is a WordPress site for tech education — coding tutorials, project showcases, learning resources for developers.',
     awards: []
   },
   {
     id: 30,
     slug: 'howdo',
     name: 'HowDo',
-    tagline: 'Team collaboration and SaaS platform for modern workplaces',
+    tagline: 'SaaS platform for team communication and project management.',
     image: '/assets/projects/howdo/cover.png',
     coverImage: '/assets/projects/howdo/cover.png',
     publishedYear: 2023,
@@ -739,14 +739,14 @@ export const projectsData = [
     ],
     team: [],
     metrics: [],
-    intro: 'HowDo is a collaborative SaaS platform built on WordPress designed for modern team communication and project management. The platform provides tools for team coordination, task management, and collaborative workflows. With intuitive interface and powerful features, HowDo enhances team productivity and workplace collaboration.',
+    intro: 'HowDo is a SaaS platform for team communication and project management. Task management, collaborative workflows, team coordination. Built on WordPress.',
     awards: []
   },
   {
     id: 31,
     slug: 'podologie-praxis-zug',
     name: 'Podologie Praxis Zug',
-    tagline: 'Healthcare medical services website with booking capabilities',
+    tagline: 'Healthcare website with online booking for a Swiss podiatry practice.',
     image: '/assets/projects/podologie-praxis-zug/cover.png',
     coverImage: '/assets/projects/podologie-praxis-zug/cover.png',
     publishedYear: 2023,
@@ -757,7 +757,7 @@ export const projectsData = [
     ],
     team: [],
     metrics: [],
-    intro: 'Podologie Praxis Zug is a healthcare website built on WordPress serving medical and podiatry services. The platform provides comprehensive information about services, provider credentials, and online booking capabilities. With professional design and patient-focused features, the site builds trust and facilitates easy appointment scheduling.',
+    intro: 'Podologie Praxis Zug is a WordPress site for a Swiss podiatry practice. Services, provider credentials, online appointment booking.',
     awards: []
   },
   {
@@ -775,14 +775,14 @@ export const projectsData = [
     ],
     team: [],
     metrics: [],
-    intro: 'Mirai Homes is a real estate platform built on WordPress showcasing construction projects and property developments. The platform features detailed property listings, project information, and virtual tours. With stunning visuals and comprehensive property details, Mirai Homes connects potential buyers with available real estate opportunities.',
+    intro: 'Mirai Homes is a WordPress real estate site for construction projects and property developments. Property listings, project details, virtual tours.',
     awards: []
   },
   {
     id: 33,
     slug: 'meintrade',
     name: 'MeinTrade',
-    tagline: 'Finance and trading platform for market participants',
+    tagline: 'Trading platform with market data and financial tools.',
     image: '/assets/projects/meintrade/cover.png',
     coverImage: '/assets/projects/meintrade/cover.png',
     publishedYear: 2023,
@@ -793,14 +793,14 @@ export const projectsData = [
     ],
     team: [],
     metrics: [],
-    intro: 'MeinTrade is a comprehensive trading platform built on WordPress providing financial services and market access. The platform offers trading tools, market analysis, and financial information. With user-friendly interface and robust features, MeinTrade empowers traders with essential market tools.',
+    intro: 'MeinTrade is a WordPress trading platform for financial services. Trading tools, market analysis, financial data — built for traders who need to act fast.',
     awards: []
   },
   {
     id: 34,
     slug: 'dave-holloway',
     name: 'Dave Holloway',
-    tagline: 'Creative portfolio showcasing artistic and design work',
+    tagline: 'WordPress portfolio for an artist and designer.',
     image: '/assets/projects/dave-holloway/cover.png',
     coverImage: '/assets/projects/dave-holloway/cover.png',
     publishedYear: 2023,
@@ -811,14 +811,14 @@ export const projectsData = [
     ],
     team: [],
     metrics: [],
-    intro: 'Dave Holloway is a creative portfolio website built on WordPress showcasing artistic talent and design expertise. The platform features curated project displays, creative works, and professional accomplishments. With stunning visual presentation, Dave Holloway effectively communicates creative excellence to potential clients and collaborators.',
+    intro: 'Dave Holloway is a WordPress portfolio site for an artist and designer. Curated projects, creative works, professional accomplishments.',
     awards: []
   },
   {
     id: 35,
     slug: 'oona-home',
     name: 'Oona Home',
-    tagline: 'Interior design portfolio and service showcase platform',
+    tagline: 'WordPress portfolio for an interior designer.',
     image: '/assets/projects/oona-home/cover.png',
     coverImage: '/assets/projects/oona-home/cover.png',
     publishedYear: 2023,
@@ -829,7 +829,7 @@ export const projectsData = [
     ],
     team: [],
     metrics: [],
-    intro: 'Oona Home is an interior design portfolio built on WordPress showcasing design expertise and completed projects. The platform features before-and-after transformations, design philosophy, and service offerings. With beautiful imagery and detailed project information, Oona Home attracts clients seeking professional interior design solutions.',
+    intro: 'Oona Home is a WordPress portfolio for an interior designer. Before-and-after project shots, design philosophy, service offerings.',
     awards: []
   },
   {
@@ -847,14 +847,14 @@ export const projectsData = [
     ],
     team: [],
     metrics: [],
-    intro: 'eMaths World is an educational platform built on WordPress delivering mathematics content and learning resources. The platform provides interactive lessons, practice problems, and progress tracking. With engaging content and student-focused features, eMaths World makes mathematics learning accessible and effective.',
+    intro: 'eMaths World is a WordPress learning platform for mathematics. Interactive lessons, practice problems, progress tracking for students.',
     awards: []
   },
   {
     id: 37,
     slug: 'shin-jewelers',
     name: 'Shin Jewelers',
-    tagline: 'E-commerce jewelry store with premium product showcase',
+    tagline: 'BigCommerce store for fine jewelry.',
     image: '/assets/projects/shin-jewelers/cover.png',
     coverImage: '/assets/projects/shin-jewelers/cover.png',
     publishedYear: 2023,
@@ -865,7 +865,7 @@ export const projectsData = [
     ],
     team: [],
     metrics: [],
-    intro: 'Shin Jewelers is a premium jewelry e-commerce platform built on BigCommerce showcasing fine jewelry collections. The platform features detailed product information, high-resolution imagery, and secure payment processing. With elegant design and comprehensive product catalogs, Shin Jewelers delivers exceptional jewelry shopping experiences.',
+    intro: 'Shin Jewelers is a BigCommerce store for fine jewelry. High-resolution product imagery, secure payments, detailed product info.',
     awards: []
   },
   {
@@ -883,7 +883,7 @@ export const projectsData = [
     ],
     team: [],
     metrics: [],
-    intro: 'Christmas Loft is a seasonal e-commerce platform built on BigCommerce specializing in holiday and festive products. The platform offers extensive collections of Christmas decorations, gifts, and seasonal items. With festive presentation and comprehensive product selection, Christmas Loft becomes the go-to destination for holiday shopping.',
+    intro: 'Christmas Loft is a BigCommerce store for holiday products. Christmas decorations, gifts, and seasonal items — built to handle the seasonal rush.',
     awards: []
   },
   {
@@ -901,7 +901,7 @@ export const projectsData = [
     ],
     team: [],
     metrics: [],
-    intro: 'Design Essentials is a beauty and hair care e-commerce platform built on BigCommerce featuring professional-grade products. The platform provides detailed product information, ingredient lists, and beauty guidance. With professional presentation and comprehensive product range, Design Essentials caters to beauty professionals and consumers.',
+    intro: 'Design Essentials is a BigCommerce store for professional-grade beauty and hair care. Detailed product info, ingredient lists, and the structure to support both pros and consumers.',
     awards: []
   },
   {
@@ -919,7 +919,7 @@ export const projectsData = [
     ],
     team: [],
     metrics: [],
-    intro: 'Ichor Bio is a specialized e-commerce platform built on BigCommerce focusing on biotechnology products and research materials. The platform features detailed scientific information, product specifications, and secure ordering. With technical expertise and specialized content, Ichor Bio serves the biotechnology research community.',
+    intro: 'Ichor Bio is a BigCommerce store for biotech products and research materials. Scientific specs, technical content, secure ordering for research teams.',
     awards: []
   },
   {
@@ -937,7 +937,7 @@ export const projectsData = [
     ],
     team: [],
     metrics: [],
-    intro: 'Jacob Alexander is a fashion accessories e-commerce platform built on BigCommerce showcasing curated collections. The platform features diverse fashion items, detailed product descriptions, and seamless checkout. With stylish presentation and quality products, Jacob Alexander attracts fashion-conscious shoppers.',
+    intro: 'Jacob Alexander is a BigCommerce store for fashion accessories. Curated collections, detailed product info, fast checkout.',
     awards: []
   },
   {
@@ -955,7 +955,7 @@ export const projectsData = [
     ],
     team: [],
     metrics: [],
-    intro: 'JB Tools is an industrial e-commerce platform built on BigCommerce offering comprehensive tool and equipment selections. The platform features detailed specifications, professional-grade products, and bulk ordering capabilities. With technical information and competitive pricing, JB Tools serves professional and industrial buyers.',
+    intro: 'JB Tools is a BigCommerce store for industrial tools and equipment. Detailed specs, bulk ordering, and the catalog depth that pros need.',
     awards: []
   },
   {
@@ -973,7 +973,7 @@ export const projectsData = [
     ],
     team: [],
     metrics: [],
-    intro: 'Shark Leathers is a premium leather goods e-commerce platform built on Maropost showcasing authentic leather products. The platform features quality leather items, detailed product information, and craftsmanship details. With authentic presentation and quality focus, Shark Leathers attracts discerning leather product customers.',
+    intro: 'Shark Leathers is a Maropost store selling authentic leather goods. Quality-focused product range with detailed craftsmanship info.',
     awards: []
   },
   {
@@ -991,7 +991,7 @@ export const projectsData = [
     ],
     team: [],
     metrics: [],
-    intro: 'Hornsby Beekeeping is an agricultural e-commerce platform built on Maropost specializing in beekeeping supplies and equipment. The platform offers comprehensive product selection, expert guidance, and educational content. With detailed product information and community focus, Hornsby Beekeeping serves beekeeping enthusiasts and professionals.',
+    intro: 'Hornsby Beekeeping is a Maropost store for beekeeping supplies and equipment. Wide product range, expert guidance, educational content for new and experienced beekeepers.',
     awards: []
   },
   {
@@ -1009,7 +1009,7 @@ export const projectsData = [
     ],
     team: [],
     metrics: [],
-    intro: 'Plant Doctor is a gardening and horticulture e-commerce platform built on Maropost offering diverse plant products and supplies. The platform features plant care guides, product recommendations, and expert advice. With educational content and quality products, Plant Doctor empowers gardening enthusiasts.',
+    intro: 'Plant Doctor is a Maropost store for plant products and gardening supplies. Plant care guides, product recommendations, expert advice.',
     awards: []
   },
   {
@@ -1027,7 +1027,7 @@ export const projectsData = [
     ],
     team: [],
     metrics: [],
-    intro: 'Coore is a lifestyle e-commerce platform built on Maropost showcasing curated lifestyle products. The platform features diverse product collections, quality focus, and lifestyle inspiration. With thoughtful curation and aesthetic presentation, Coore attracts lifestyle-conscious shoppers.',
+    intro: 'Coore is a Maropost store for curated lifestyle products. Aesthetic-led product photography, thoughtful curation.',
     awards: []
   },
   {
@@ -1045,7 +1045,7 @@ export const projectsData = [
     ],
     team: [],
     metrics: [],
-    intro: 'Guitar Templates is a music e-commerce platform built on Maropost specializing in guitar-related templates and products. The platform offers diverse musical templates and creative resources. With music-focused content and quality products, Guitar Templates serves musicians and music creators.',
+    intro: 'Guitar Templates is a Maropost store selling guitar-related templates and resources for musicians.',
     awards: []
   },
   {
@@ -1063,7 +1063,7 @@ export const projectsData = [
     ],
     team: [],
     metrics: [],
-    intro: 'American Trucks is a comprehensive automotive e-commerce platform built on Maropost specializing in truck parts and accessories. The platform features extensive product catalogs, detailed specifications, and professional service. With quality focus and truck enthusiast community, American Trucks serves the automotive market.',
+    intro: 'American Trucks is a Maropost store for truck parts and accessories. Large product catalog, detailed specs, vehicle-fit filtering for truck owners and pros.',
     awards: []
   },
   {
@@ -1081,14 +1081,14 @@ export const projectsData = [
     ],
     team: [],
     metrics: [],
-    intro: 'Woolf University is an educational platform built on Webflow delivering online learning experiences and course management. The platform provides comprehensive course catalogs, student engagement tools, and learning resources. With modern design and education-focused features, Woolf University transforms online education.',
+    intro: 'Woolf University is a Webflow site for an online learning platform. Course catalogs, student engagement tools, learning resources.',
     awards: []
   },
   {
     id: 50,
     slug: 'mirror-media-marketing',
     name: 'Mirror Media Marketing',
-    tagline: 'Marketing agency website showcasing services and expertise',
+    tagline: 'Webflow site for a marketing agency.',
     image: '/assets/projects/mirror-media-marketing/cover.png',
     coverImage: '/assets/projects/mirror-media-marketing/cover.png',
     publishedYear: 2023,
@@ -1099,14 +1099,14 @@ export const projectsData = [
     ],
     team: [],
     metrics: [],
-    intro: 'Mirror Media Marketing is a marketing agency website built on Webflow showcasing services and creative expertise. The platform features project portfolios, service offerings, and client testimonials. With professional presentation and creative portfolio, Mirror Media Marketing attracts marketing clients.',
+    intro: 'Mirror Media Marketing is a Webflow site for a marketing agency. Project portfolio, service offerings, client testimonials.',
     awards: []
   },
   {
     id: 51,
     slug: 'dakwala',
     name: 'Dakwala',
-    tagline: 'Restaurant website for food and beverage services',
+    tagline: 'Webflow site for a restaurant.',
     image: '/assets/projects/dakwala/cover.png',
     coverImage: '/assets/projects/dakwala/cover.png',
     publishedYear: 2023,
@@ -1117,14 +1117,14 @@ export const projectsData = [
     ],
     team: [],
     metrics: [],
-    intro: 'Dakwala is a restaurant website built on Webflow featuring food and beverage offerings. The platform showcases menu items, restaurant ambiance, and dining experiences. With appetizing food presentation and seamless booking, Dakwala attracts food enthusiasts and diners.',
+    intro: 'Dakwala is a Webflow site for a restaurant. Menu, ambiance, online booking.',
     awards: []
   },
   {
     id: 52,
     slug: 'vaisakhhi-haria',
     name: 'Vaisakhhi Haria',
-    tagline: 'Creative portfolio showcasing artistic and design work',
+    tagline: 'Webflow portfolio for an artist and designer.',
     image: '/assets/projects/vaisakhhi-haria/cover.png',
     coverImage: '/assets/projects/vaisakhhi-haria/cover.png',
     publishedYear: 2023,
@@ -1135,14 +1135,14 @@ export const projectsData = [
     ],
     team: [],
     metrics: [],
-    intro: 'Vaisakhhi Haria is a creative portfolio built on Webflow showcasing artistic talent and creative work. The platform features curated projects, design philosophy, and creative accomplishments. With stunning visual presentation, Vaisakhhi Haria effectively communicates creative excellence.',
+    intro: 'Vaisakhhi Haria is a Webflow portfolio for an artist and creative. Curated projects, design philosophy, creative work.',
     awards: []
   },
   {
     id: 53,
     slug: 'lynn-milo-pilates',
     name: 'Lynn Milo Pilates',
-    tagline: 'Fitness and wellness website with service booking capabilities',
+    tagline: 'Pilates studio site with online class booking.',
     image: '/assets/projects/lynn-milo-pilates/cover.png',
     coverImage: '/assets/projects/lynn-milo-pilates/cover.png',
     publishedYear: 2023,
@@ -1153,7 +1153,7 @@ export const projectsData = [
     ],
     team: [],
     metrics: [],
-    intro: 'Lynn Milo Pilates is a fitness and wellness website built on Squarespace offering pilates classes and wellness services. The platform features class schedules, instructor bios, and online booking. With wellness focus and seamless scheduling, Lynn Milo Pilates attracts fitness enthusiasts.',
+    intro: 'Lynn Milo Pilates is a Squarespace site for a pilates studio. Class schedules, instructor bios, online booking.',
     awards: []
   },
   {
@@ -1171,14 +1171,14 @@ export const projectsData = [
     ],
     team: [],
     metrics: [],
-    intro: 'Dopple Press is a publishing platform built on Wix showcasing creative and literary works. The platform features book catalogs, author profiles, and publishing information. With creative focus and literary presentation, Dopple Press connects readers with published works.',
+    intro: 'Dopple Press is a Wix site for an independent publisher. Book catalogs, author profiles, publishing info.',
     awards: []
   },
   {
     id: 55,
     slug: 'salty-donut',
     name: 'Salty Donut',
-    tagline: 'Bakery website combining e-commerce and service information',
+    tagline: 'Wix site for an artisan bakery with online ordering.',
     image: '/assets/projects/salty-donut/cover.png',
     coverImage: '/assets/projects/salty-donut/cover.png',
     publishedYear: 2023,
@@ -1189,7 +1189,7 @@ export const projectsData = [
     ],
     team: [],
     metrics: [],
-    intro: 'Salty Donut is a bakery website built on Wix featuring artisan baked goods and sweet offerings. The platform showcases product selection, ordering capabilities, and bakery information. With appetizing presentation and seamless ordering, Salty Donut attracts donut enthusiasts.',
+    intro: 'Salty Donut is a Wix site for an artisan bakery. Product range, online ordering, store information.',
     awards: []
   },
   {
@@ -1207,7 +1207,7 @@ export const projectsData = [
     ],
     team: [],
     metrics: [],
-    intro: 'Mane Ethical is an ethical beauty and hair care e-commerce platform built on Wix emphasizing sustainable practices. The platform features curated beauty products, ingredient transparency, and ethical sourcing. With sustainability focus and quality products, Mane Ethical attracts conscious consumers.',
+    intro: 'Mane Ethical is a Wix store for ethical beauty and hair care. Curated products, ingredient transparency, sustainable sourcing.',
     awards: []
   },
   {
@@ -1225,14 +1225,14 @@ export const projectsData = [
     ],
     team: [],
     metrics: [],
-    intro: 'Evolve Clothing Gallery is a fashion boutique e-commerce platform built on Wix showcasing clothing collections. The platform features diverse fashion items, styling guides, and seasonal collections. With stylish presentation and quality fashion, Evolve Clothing Gallery attracts fashion-conscious shoppers.',
+    intro: 'Evolve Clothing Gallery is a Wix store for a fashion boutique. Seasonal collections, styling guides, full clothing range.',
     awards: []
   },
   {
     id: 58,
     slug: 'taste-hub',
     name: 'Taste Hub',
-    tagline: 'Restaurant website with reservation system and food services',
+    tagline: 'Framer site for a restaurant with online reservations.',
     image: '/assets/projects/taste-hub/cover.png',
     coverImage: '/assets/projects/taste-hub/cover.png',
     publishedYear: 2023,
@@ -1243,7 +1243,7 @@ export const projectsData = [
     ],
     team: [],
     metrics: [],
-    intro: 'Taste Hub is a restaurant website built on Framer featuring food services and reservation capabilities. The platform showcases menu items, restaurant ambiance, and dining experiences. With modern design and seamless booking, Taste Hub attracts food enthusiasts.',
+    intro: 'Taste Hub is a Framer site for a restaurant. Menu, ambiance, online reservations.',
     awards: []
   },
   {
@@ -1261,7 +1261,7 @@ export const projectsData = [
     ],
     team: [],
     metrics: [],
-    intro: 'AgensIP StyleEst is a fashion e-commerce platform built on Framer showcasing style and fashion products. The platform features fashion catalogs, styling recommendations, and style inspiration. With fashion-forward design and curated collections, AgensIP StyleEst attracts style enthusiasts.',
+    intro: 'AgensIP StyleEst is a Framer site for a fashion brand. Catalog, styling recommendations, brand storytelling.',
     awards: []
   },
   {
@@ -1279,7 +1279,7 @@ export const projectsData = [
     ],
     team: [],
     metrics: [],
-    intro: 'Beauty Products is a cosmetic and beauty e-commerce platform built on Framer featuring premium beauty offerings. The platform showcases beauty products, skincare solutions, and cosmetic collections. With beautifying design and quality products, Beauty Products attracts beauty enthusiasts.',
+    intro: 'Beauty Products is a Framer store for premium cosmetics and skincare.',
     awards: []
   },
   {
@@ -1297,7 +1297,7 @@ export const projectsData = [
     ],
     team: [],
     metrics: [],
-    intro: 'Rayna Site is a beauty and wellness services portfolio built on Framer showcasing professional services. The platform features service offerings, beauty treatments, and wellness expertise. With professional presentation and beauty focus, Rayna Site attracts clients seeking beauty and wellness services.',
+    intro: 'Rayna Site is a Framer portfolio for a beauty and wellness practice. Service offerings, treatment catalog, expertise.',
     awards: []
   },
   {
@@ -1315,7 +1315,7 @@ export const projectsData = [
     ],
     team: [],
     metrics: [],
-    intro: 'Beauty Design is a Figma-based design project showcasing beauty and cosmetic design concepts. The project features design explorations, cosmetic packaging designs, and beauty brand assets. With creative design focus and visual excellence, Beauty Design demonstrates design expertise in the beauty industry.',
+    intro: 'Beauty Design is a Figma project — design exploration, cosmetic packaging concepts, and brand assets for a beauty client.',
     awards: []
   }
 ];

@@ -335,7 +335,7 @@
   <div class="container mx-auto mt-10 px-container md:mt-14 lg:mt-20">
     <h1 class="text-5xl md:text-6xl lg:text-7xl">Blog.</h1>
     <p class="mt-4 text-lg text-foreground-secondary md:text-xl">
-      Insights on design, development, and digital innovation.
+      Notes from the studio.
     </p>
   </div>
 

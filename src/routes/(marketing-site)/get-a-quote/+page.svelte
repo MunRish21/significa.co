@@ -35,27 +35,27 @@
   const stepsBlock = {
     component: 'steps',
     steps_title: 'What happens next.',
-    steps_subtitle: 'Ready to build something great?',
+    steps_subtitle: 'The process.',
     steps: [
       {
         title: 'Tell us about your project.',
         description:
-          "Drop us a message with what you're building, what problem you're solving, and what you're looking for."
+          "Message us: what you're building, the problem it solves, and what you need."
       },
       {
-        title: "We'll get back within 24 hours.",
+        title: "We reply within 24 hours.",
         description:
-          "A real person on our team reads every inquiry and responds fast. We'll ask a few smart questions to understand your goals better."
+          "A real person reads your message and responds. We'll ask questions to understand your goals."
       },
       {
         title: 'Discovery call & proposal.',
         description:
-          'We jump on a quick call, understand the full scope, and send you a clear proposal — timeline, deliverables, and pricing. No surprises.'
+          'We talk scope. You get a written proposal with timeline, deliverables, and price. No hidden costs.'
       },
       {
-        title: 'We get to work.',
+        title: 'We start.',
         description:
-          "Once aligned, we kick off immediately. You'll have a dedicated team, regular updates, and full transparency throughout the project."
+          "We move fast. You get daily updates and full visibility into the work from day one."
       }
     ]
   };
@@ -96,7 +96,7 @@
   >
     <div class="flex-1">
       <h1 class="text-5xl font-medium md:text-6xl lg:text-7xl">Get a quote.</h1>
-      <p class="mt-4 text-lg text-foreground-secondary">It all starts here.</p>
+      <p class="mt-4 text-lg text-foreground-secondary">Let's talk about your project.</p>
       <div class="mt-8">
         <p class="mb-2 text-foreground-secondary">Prefer email?</p>
         <a href="mailto:info@techyor.com" class="font-medium hover:underline"> info@techyor.com </a>

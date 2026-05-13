@@ -1,67 +1,67 @@
 export const commonFaqsBlock = {
   _uid: 'faqs-common-1',
   component: 'faqs' as const,
-  title: 'Frequently Asked Questions',
+  title: 'Questions?',
   questions: [
     {
       _uid: 'faq-1',
       component: 'faq' as const,
       question: 'How much does a typical project cost?',
-      body: { type: 'doc', content: [{ type: 'paragraph', content: [{ type: 'text', text: 'A standard 5-page website starts from as low as $200. Pricing scales with complexity, features, and scope, but we always work to find the best fit for your budget. No hidden costs, ever.' }] }] }
+      body: { type: 'doc', content: [{ type: 'paragraph', content: [{ type: 'text', text: 'A 5-page website starts around $200. Everything else depends on what you need—more pages, custom features, integrations. We quote before we build, no surprises.' }] }] }
     },
     {
       _uid: 'faq-2',
       component: 'faq' as const,
-      question: 'How long does a project take to complete?',
-      body: { type: 'doc', content: [{ type: 'paragraph', content: [{ type: 'text', text: 'It depends on the project. A simple website is delivered within 2 weeks from the day development starts—ready to launch almost immediately. Larger, more complex projects have timelines we agree on upfront before we begin.' }] }] }
+      question: 'How long does a project take?',
+      body: { type: 'doc', content: [{ type: 'paragraph', content: [{ type: 'text', text: 'A simple website: 2 weeks. Bigger projects are 4-12 weeks depending on scope. We lock in a timeline before we start.' }] }] }
     },
     {
       _uid: 'faq-3',
       component: 'faq' as const,
-      question: 'What do you need from us to get started?',
-      body: { type: 'doc', content: [{ type: 'paragraph', content: [{ type: 'text', text: "Just a conversation. Our team is sharp enough to work from the basics—share some information about your business, your goals, and what you have in mind. We'll take it from there without overcomplicating things." }] }] }
+      question: 'What do you need from us to start?',
+      body: { type: 'doc', content: [{ type: 'paragraph', content: [{ type: 'text', text: "A conversation. Tell us about your business, what you want to build, and what success looks like. We'll handle the rest." }] }] }
     },
     {
       _uid: 'faq-4',
       component: 'faq' as const,
-      question: 'Can you help if we only have an idea?',
-      body: { type: 'doc', content: [{ type: 'paragraph', content: [{ type: 'text', text: "Absolutely. We've built hundreds of projects from scratch. Share your idea and we'll put together a clear plan—including a roadmap and a strategy on how to take it to market successfully." }] }] }
+      question: 'Can you work from just an idea?',
+      body: { type: 'doc', content: [{ type: 'paragraph', content: [{ type: 'text', text: "Yes. We've built 80+ products from scratch. Bring us the idea and we'll map out strategy, roadmap, and how to launch it." }] }] }
     },
     {
       _uid: 'faq-5',
       component: 'faq' as const,
-      question: 'Do you work with international clients?',
-      body: { type: 'doc', content: [{ type: 'paragraph', content: [{ type: 'text', text: "Yes—and that's actually our primary market. Over 95% of our clients are international, working with us from the UK, Australia, Spain, and across Europe. Time zones are never a barrier." }] }] }
+      question: 'Do you work internationally?',
+      body: { type: 'doc', content: [{ type: 'paragraph', content: [{ type: 'text', text: "Almost entirely. 95% of our clients are outside India. UK, Australia, Europe, US. Time zones are just time zones." }] }] }
     },
     {
       _uid: 'faq-6',
       component: 'faq' as const,
-      question: 'How do we communicate during the project?',
-      body: { type: 'doc', content: [{ type: 'paragraph', content: [{ type: 'text', text: 'However works best for you—Slack, WhatsApp, email, or regular video calls. We adapt to your preferred tools and keep you updated every step of the way with daily progress updates once the project kicks off.' }] }] }
+      question: 'How do we communicate?',
+      body: { type: 'doc', content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Whatever you prefer. Slack, WhatsApp, email, calls. We match your rhythm and send daily progress updates once we start.' }] }] }
     },
     {
       _uid: 'faq-7',
       component: 'faq' as const,
-      question: 'How often will we get project updates?',
-      body: { type: 'doc', content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Every single day. Once the project starts, you receive daily updates so you always know exactly where things stand. No radio silence, no surprises.' }] }] }
+      question: 'How often do we get updates?',
+      body: { type: 'doc', content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Every day. Once the project kicks off, you get a daily report. No guessing where things stand.' }] }] }
     },
     {
       _uid: 'faq-8',
       component: 'faq' as const,
-      question: 'Do you offer post-launch support?',
-      body: { type: 'doc', content: [{ type: 'paragraph', content: [{ type: 'text', text: "Yes. Every project comes with a 30-day support policy after launch—covering any issues, fixes, or questions. For additional changes or ongoing support beyond that, we've got you covered too." }] }] }
+      question: 'Is there support after launch?',
+      body: { type: 'doc', content: [{ type: 'paragraph', content: [{ type: 'text', text: "Yes. 30 days of free support after launch for bugs and fixes. After that, we're available for whatever you need." }] }] }
     },
     {
       _uid: 'faq-9',
       component: 'faq' as const,
-      question: 'Who owns the code and designs after delivery?',
-      body: { type: 'doc', content: [{ type: 'paragraph', content: [{ type: 'text', text: "You do—completely. We're happy to sign an NDA, and everything we build for you belongs to you. We do not reuse, repurpose, or retain any of your code, designs, or assets after delivery." }] }] }
+      question: 'Who owns the code and designs?',
+      body: { type: 'doc', content: [{ type: 'paragraph', content: [{ type: 'text', text: "You do. Everything. Code, designs, assets—all yours. We sign NDAs. We don't reuse or resell anything we build for you." }] }] }
     },
     {
       _uid: 'faq-10',
       component: 'faq' as const,
-      question: 'Is our business information kept confidential?',
-      body: { type: 'doc', content: [{ type: 'paragraph', content: [{ type: 'text', text: '100%. We never share any credentials, business details, or project information outside our organisation. Everything is handled internally by our team with full confidentiality.' }] }] }
+      question: 'Is our data confidential?',
+      body: { type: 'doc', content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Yes. Credentials, business details, project info—stays between us. Never shared outside the team.' }] }] }
     }
   ]
 };

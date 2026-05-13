@@ -15,7 +15,7 @@
   const openPositionsBlock: OpenPositionsStoryblok = {
     component: 'open-positions',
     open_positions_title: 'Open positions.',
-    open_positions_description: 'One spot. Big opportunity.'
+    open_positions_description: 'Come build with us.'
   };
 
   const benefits = [
@@ -46,12 +46,12 @@
     {
       title: 'Room to grow.',
       description:
-        'We back the things that help you level up, with mentoring and time to learn on the job.',
+        'Mentoring, learning budget, and time to get better at your craft.',
       icon: '/assets/storyblok/xxs_growth.webp'
     },
     {
       title: 'Welcome pack.',
-      description: 'Some Techyor goodies to make you feel at home from day one.',
+      description: 'Techyor gear to get you started.',
       icon: '/assets/storyblok/xxs_backpack.webp'
     }
   ];
@@ -155,9 +155,7 @@
       data-speakable
       class="mt-4 max-w-3xl text-2xl text-foreground-secondary md:mt-6 lg:mt-8"
     >
-      Join a team of creatives, strategists, and builders shipping digital products for clients
-      across the US, UK, Switzerland, and Australia. Based in Chandigarh, India — remote-friendly,
-      full-time, and built for people who care about their craft.
+      We're a small team building digital products for clients in the US, UK, Switzerland, and Australia. Chandigarh-based, remote-friendly, full-time. If you ship code, design, or words — we'd like to meet you.
     </p>
   </section>
 
