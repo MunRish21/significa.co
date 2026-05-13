@@ -28,6 +28,21 @@
   } from '$lib/utils/schema';
   import { getFeaturedTestimonials } from '$lib/data/testimonials';
   import { getActiveTeamMembers } from '$lib/data/team';
+  import { isSectionEnabled, type SectionsMap } from '$lib/tenant';
+
+  export let data: {
+    page: { title: string | null; description: string | null; meta: Record<string, unknown> } | null;
+    sections: SectionsMap;
+  };
+
+  $: dbPage = data?.page ?? null;
+  $: sections = (data?.sections ?? {}) as SectionsMap;
+  $: on = (key: string) => isSectionEnabled(sections, key);
+  $: pageTitle = dbPage?.title ?? 'Techyor — Web, App & AI Product Development Studio';
+  $: pageDescription =
+    dbPage?.description ??
+    'Techyor is a digital product studio building custom websites, web apps, mobile apps, e-commerce stores, AI tools, and automation for teams in the US, UK, Switzerland, and Australia. Strategy, design, development — under one roof.';
+  $: pageMeta = (dbPage?.meta ?? {}) as Record<string, string>;
 
   const homeFeaturedTestimonials = getFeaturedTestimonials();
   const homeRatings = homeFeaturedTestimonials
@@ -245,36 +260,26 @@
 </script>
 
 <svelte:head>
-  <title>Techyor — Web, App & AI Product Development Studio</title>
-  <meta
-    name="description"
-    content="Techyor is a digital product studio building custom websites, web apps, mobile apps, e-commerce stores, AI tools, and automation for teams in the US, UK, Switzerland, and Australia. Strategy, design, development — under one roof."
-  />
-  <meta
-    name="keywords"
-    content="digital product agency, web development, custom software development, mobile app development, AI development agency, e-commerce development, website design, automation"
-  />
+  <title>{pageTitle}</title>
+  <meta name="description" content={pageDescription} />
+  {#if pageMeta.keywords}
+    <meta name="keywords" content={pageMeta.keywords} />
+  {/if}
 
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Techyor — Web, App & AI Product Development Studio" />
-  <meta
-    property="og:description"
-    content="Strategy, design, and development under one roof. 8+ years. 80+ products shipped for teams across the US, UK, Switzerland, and Australia."
-  />
-  <meta property="og:image" content="{BASE_URL}/api/og/home" />
+  <meta property="og:title" content={pageMeta.ogTitle ?? pageTitle} />
+  <meta property="og:description" content={pageMeta.ogDescription ?? pageDescription} />
+  <meta property="og:image" content="{BASE_URL}{pageMeta.ogImage ?? '/api/og/home'}" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="Techyor — digital product studio" />
 
-  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:card" content={pageMeta.twitterCard ?? 'summary_large_image'} />
   <meta name="twitter:site" content="@TechyorDotCo" />
   <meta name="twitter:creator" content="@TechyorDotCo" />
-  <meta name="twitter:title" content="Techyor — Web, App & AI Product Development Studio" />
-  <meta
-    name="twitter:description"
-    content="Strategy, design, and development under one roof. 8+ years. 80+ products shipped."
-  />
-  <meta name="twitter:image" content="{BASE_URL}/api/og/home" />
+  <meta name="twitter:title" content={pageMeta.ogTitle ?? pageTitle} />
+  <meta name="twitter:description" content={pageMeta.ogDescription ?? pageDescription} />
+  <meta name="twitter:image" content="{BASE_URL}{pageMeta.ogImage ?? '/api/og/home'}" />
   <meta name="twitter:image:alt" content="Techyor — digital product studio" />
 
   {@html `<${'script'} type="application/ld+json">${generateOrganizationSchema()}</${'script'}>`}
@@ -291,159 +296,171 @@
 </svelte:head>
 
 <main class="overflow-hidden">
-  <!-- Hero Section -->
-  <div class="container mx-auto px-container">
-    <h1 class="mt-10 text-7xl font-bold md:mt-14 lg:mt-20">
-      <span
-        bind:this={textElements[0]}
-        class="ease-[cubic-bezier(0.34, 1.56, 0.64, 1)] mr-1 inline-block transition-all duration-500"
-        style="opacity: 1; transform: translateY(0);">Think.</span
-      >
-      <span
-        bind:this={textElements[1]}
-        class="ease-[cubic-bezier(0.34, 1.56, 0.64, 1)] mr-1 inline-block transition-all duration-500"
-        style="opacity: 1; transform: translateY(0);">Design.</span
-      >
-      <br />
-      <span
-        bind:this={textElements[2]}
-        class="ease-[cubic-bezier(0.34, 1.56, 0.64, 1)] mr-1 inline-block transition-all duration-500"
-        style="opacity: 1; transform: translateY(0);">Build.</span
-      >
-      <br />
-      <span
-        bind:this={textElements[3]}
-        class="ease-[cubic-bezier(0.34, 1.56, 0.64, 1)] mr-1 inline-block text-foreground-secondary transition-all duration-500"
-        style="opacity: 1; transform: translateY(0);">Then keep shipping.</span
-      >
-    </h1>
-    <p
-      data-speakable
-      class="mt-6 max-w-3xl text-2xl text-foreground-secondary md:mt-8 lg:mt-10 lg:text-3xl"
-    >
-      Techyor is a product studio. For eight years we've built websites, apps, and AI tools for
-      teams in the US, UK, Switzerland, and Australia.
-    </p>
-  </div>
-
-  <!-- Stats Strip -->
-  <section class="mt-10 md:mt-14 lg:mt-20">
+  {#if on('hero')}
     <div class="container mx-auto px-container">
-      <div class="grid grid-cols-2 gap-6 border-y py-10 md:grid-cols-4 md:gap-8 md:py-14">
-        {#each stats as stat}
-          <div class="flex flex-col">
-            <p class="text-5xl font-bold lg:text-6xl">{stat.value}</p>
-            <p class="mt-2 text-base text-foreground-secondary md:text-lg">{stat.label}</p>
-          </div>
-        {/each}
-      </div>
+      <h1 class="mt-10 text-7xl font-bold md:mt-14 lg:mt-20">
+        <span
+          bind:this={textElements[0]}
+          class="ease-[cubic-bezier(0.34, 1.56, 0.64, 1)] mr-1 inline-block transition-all duration-500"
+          style="opacity: 1; transform: translateY(0);">Think.</span
+        >
+        <span
+          bind:this={textElements[1]}
+          class="ease-[cubic-bezier(0.34, 1.56, 0.64, 1)] mr-1 inline-block transition-all duration-500"
+          style="opacity: 1; transform: translateY(0);">Design.</span
+        >
+        <br />
+        <span
+          bind:this={textElements[2]}
+          class="ease-[cubic-bezier(0.34, 1.56, 0.64, 1)] mr-1 inline-block transition-all duration-500"
+          style="opacity: 1; transform: translateY(0);">Build.</span
+        >
+        <br />
+        <span
+          bind:this={textElements[3]}
+          class="ease-[cubic-bezier(0.34, 1.56, 0.64, 1)] mr-1 inline-block text-foreground-secondary transition-all duration-500"
+          style="opacity: 1; transform: translateY(0);">Then keep shipping.</span
+        >
+      </h1>
+      <p
+        data-speakable
+        class="mt-6 max-w-3xl text-2xl text-foreground-secondary md:mt-8 lg:mt-10 lg:text-3xl"
+      >
+        Techyor is a product studio. For eight years we've built websites, apps, and AI tools for
+        teams in the US, UK, Switzerland, and Australia.
+      </p>
     </div>
-  </section>
+  {/if}
 
-  <!-- Why Us / Capabilities Strip -->
-  <section class="mt-10 md:mt-14 lg:mt-20">
-    <div class="container mx-auto px-container">
-      <h2 class="text-5xl text-foreground-secondary">What we do.</h2>
-      <p class="text-5xl">Strategy. Design. Development.</p>
-      <div class="mt-8 grid grid-cols-1 gap-8 md:mt-12 md:grid-cols-3 md:gap-10">
-        {#each capabilities as cap}
-          <div class="flex flex-col">
-            <h3 class="text-3xl font-semibold">{cap.title}</h3>
-            <p class="mt-3 text-xl text-foreground-secondary">{cap.description}</p>
-          </div>
-        {/each}
+  {#if on('stats')}
+    <section class="mt-10 md:mt-14 lg:mt-20">
+      <div class="container mx-auto px-container">
+        <div class="grid grid-cols-2 gap-6 border-y py-10 md:grid-cols-4 md:gap-8 md:py-14">
+          {#each stats as stat}
+            <div class="flex flex-col">
+              <p class="text-5xl font-bold lg:text-6xl">{stat.value}</p>
+              <p class="mt-2 text-base text-foreground-secondary md:text-lg">{stat.label}</p>
+            </div>
+          {/each}
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  {/if}
 
-  <!-- Featured Content Section -->
+  {#if on('capabilities')}
+    <section class="mt-10 md:mt-14 lg:mt-20">
+      <div class="container mx-auto px-container">
+        <h2 class="text-5xl text-foreground-secondary">What we do.</h2>
+        <p class="text-5xl">Strategy. Design. Development.</p>
+        <div class="mt-8 grid grid-cols-1 gap-8 md:mt-12 md:grid-cols-3 md:gap-10">
+          {#each capabilities as cap}
+            <div class="flex flex-col">
+              <h3 class="text-3xl font-semibold">{cap.title}</h3>
+              <p class="mt-3 text-xl text-foreground-secondary">{cap.description}</p>
+            </div>
+          {/each}
+        </div>
+      </div>
+    </section>
+  {/if}
+
   <div
     class="ease-[cubic-bezier(0.34, 1.56, 0.64, 1)] translate-y-0 opacity-100 transition-all duration-700"
   >
     <div class="container mx-auto px-container">
-      <!-- Featured Projects & Blog -->
-      <section class="mb-8 mt-10 md:mt-14 lg:mt-20">
-        <SmallHighlights highlights={smallHighlights.slice(0, 12)} />
-      </section>
+      {#if on('featured-highlights')}
+        <section class="mb-8 mt-10 md:mt-14 lg:mt-20">
+          <SmallHighlights highlights={smallHighlights.slice(0, 12)} />
+        </section>
+      {/if}
 
-      <!-- Showreel Video -->
-      <section class="relative overflow-hidden rounded-lg">
-        <div
-          class="pointer-events-none absolute left-0 top-0 z-10 flex h-full w-full items-center justify-center bg-black/10"
-        ></div>
-        <video
-          poster="/_optimized/assets/storyblok/new-showreel-cover-w768.jpg"
-          class="aspect-video h-auto w-full bg-background-offset [&[poster]]:h-full [&[poster]]:w-full [&[poster]]:bg-background [&[poster]]:object-cover"
-          playsinline=""
-        >
-          <source type="video/mp4" src="/assets/storyblok/significareel.mp4" />
-          <track kind="captions" srclang="en" label="English" />
-        </video>
-      </section>
+      {#if on('showreel')}
+        <section class="relative overflow-hidden rounded-lg">
+          <div
+            class="pointer-events-none absolute left-0 top-0 z-10 flex h-full w-full items-center justify-center bg-black/10"
+          ></div>
+          <video
+            poster="/_optimized/assets/storyblok/new-showreel-cover-w768.jpg"
+            class="aspect-video h-auto w-full bg-background-offset [&[poster]]:h-full [&[poster]]:w-full [&[poster]]:bg-background [&[poster]]:object-cover"
+            playsinline=""
+          >
+            <source type="video/mp4" src="/assets/storyblok/significareel.mp4" />
+            <track kind="captions" srclang="en" label="English" />
+          </video>
+        </section>
+      {/if}
     </div>
   </div>
 
-  <!-- Selected Work Section -->
-  <section class="mb-12 mt-10 md:mb-16 md:mt-14 lg:mb-20 lg:mt-20">
-    <div class="container mx-auto px-container">
-      <h2 class="text-5xl text-foreground-secondary">Selected work.</h2>
-      <p class="text-5xl">Products we're proud of.</p>
-    </div>
-    <div class="mt-4 md:mt-6 lg:mt-8">
-      {#each smallHighlights
-        .filter((h) => h.content.component === 'project')
-        .slice(0, 4) as project}
-        {@const projectData = projectsData.find((p) => p.slug === project.slug)}
-        <ProjectEntry
-          project={{ ...project, category: projectData?.deliverables?.[0] }}
-          variant="default"
-        />
-      {/each}
-    </div>
-    <div class="mt-8 flex justify-center md:mt-10 lg:mt-12">
-      <a
-        href="/projects"
-        class="text-md group relative inline-flex h-11 items-center justify-center gap-1.5 overflow-hidden whitespace-nowrap rounded-md bg-foreground px-5 font-medium leading-none text-background outline-none transition-all hover:ring-4 focus-visible:ring-4 active:scale-[0.98] active:ring-2 disabled:pointer-events-none disabled:opacity-60"
-      >
-        View all projects
-      </a>
-    </div>
-  </section>
+  {#if on('selected-work')}
+    <section class="mb-12 mt-10 md:mb-16 md:mt-14 lg:mb-20 lg:mt-20">
+      <div class="container mx-auto px-container">
+        <h2 class="text-5xl text-foreground-secondary">Selected work.</h2>
+        <p class="text-5xl">Products we're proud of.</p>
+      </div>
+      <div class="mt-4 md:mt-6 lg:mt-8">
+        {#each smallHighlights
+          .filter((h) => h.content.component === 'project')
+          .slice(0, 4) as project}
+          {@const projectData = projectsData.find((p) => p.slug === project.slug)}
+          <ProjectEntry
+            project={{ ...project, category: projectData?.deliverables?.[0] }}
+            variant="default"
+          />
+        {/each}
+      </div>
+      <div class="mt-8 flex justify-center md:mt-10 lg:mt-12">
+        <a
+          href="/projects"
+          class="text-md group relative inline-flex h-11 items-center justify-center gap-1.5 overflow-hidden whitespace-nowrap rounded-md bg-foreground px-5 font-medium leading-none text-background outline-none transition-all hover:ring-4 focus-visible:ring-4 active:scale-[0.98] active:ring-2 disabled:pointer-events-none disabled:opacity-60"
+        >
+          View all projects
+        </a>
+      </div>
+    </section>
+  {/if}
 
-  <!-- Services Section with Newton -->
-  <Newton block={newtonBlock} />
+  {#if on('services-newton')}
+    <Newton block={newtonBlock} />
+  {/if}
 
-  <!-- About Section -->
-  <TextWithMedia block={aboutBlock} />
+  {#if on('about-text-media')}
+    <TextWithMedia block={aboutBlock} />
+  {/if}
 
-  <!-- About Grid Section -->
-  <AboutGrid block={aboutGridBlock} />
+  {#if on('about-grid')}
+    <AboutGrid block={aboutGridBlock} />
+  {/if}
 
-  <!-- Team Section -->
-  <TeamSection
-    title="Meet the people building it."
-    subtitle="Hire a specialist directly."
-    showViewAll
-  />
+  {#if on('team')}
+    <TeamSection
+      title="Meet the people building it."
+      subtitle="Hire a specialist directly."
+      showViewAll
+    />
+  {/if}
 
-  <!-- Blog Section -->
-  <section class="mt-10 md:mt-14 lg:mt-20">
-    <div class="container mx-auto px-container">
-      <h2 class="text-5xl text-foreground-secondary">Insights.</h2>
-      <p class="text-5xl">Notes from the studio.</p>
-    </div>
-    <div class="mt-4 md:mt-6 lg:mt-8">
-      {#each smallHighlights
-        .filter((h) => h.content.component === 'blog-post')
-        .slice(0, 12) as post}
-        <BlogEntry {post} />
-      {/each}
-    </div>
-  </section>
+  {#if on('blog-insights')}
+    <section class="mt-10 md:mt-14 lg:mt-20">
+      <div class="container mx-auto px-container">
+        <h2 class="text-5xl text-foreground-secondary">Insights.</h2>
+        <p class="text-5xl">Notes from the studio.</p>
+      </div>
+      <div class="mt-4 md:mt-6 lg:mt-8">
+        {#each smallHighlights
+          .filter((h) => h.content.component === 'blog-post')
+          .slice(0, 12) as post}
+          <BlogEntry {post} />
+        {/each}
+      </div>
+    </section>
+  {/if}
 
-  <!-- Clients Section -->
-  <ClientsSection title="Trusted by teams in the US, UK, Switzerland, and Australia." />
+  {#if on('clients')}
+    <ClientsSection title="Trusted by teams in the US, UK, Switzerland, and Australia." />
+  {/if}
 
-  <!-- FAQ Section -->
-  <FaqsListBlock block={commonFaqsBlock} />
+  {#if on('faqs')}
+    <FaqsListBlock block={commonFaqsBlock} />
+  {/if}
 </main>

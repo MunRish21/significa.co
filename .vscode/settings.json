@@ -1,13 +1,40 @@
 {
-  "cssvar.files": ["src/**/*.css", "node_modules/@techyor/svelte-ui/dist/**/*.css"],
-  "cssvar.ignore": [],
-  "files.associations": {
-    "*.css": "tailwindcss"
+  "[typescript]": {
+    "editor.defaultFormatter": "denoland.vscode-deno"
   },
-  "editor.formatOnSave": true,
+  "cssvar.files": [
+    "src/**/*.css",
+    "node_modules/@techyor/svelte-ui/dist/**/*.css"
+  ],
+  "cssvar.ignore": [],
+  "deno.enablePaths": [
+    "supabase/functions"
+  ],
+  "deno.lint": true,
+  "deno.unstable": [
+    "bare-node-builtins",
+    "byonm",
+    "sloppy-imports",
+    "unsafe-proto",
+    "webgpu",
+    "broadcast-channel",
+    "worker-options",
+    "cron",
+    "kv",
+    "ffi",
+    "fs",
+    "http",
+    "net"
+  ],
   "editor.codeActionsOnSave": {
     "source.fixAll": "explicit"
   },
-  "eslint.validate": ["svelte"],
-  "editor.tabSize": 2
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "eslint.validate": [
+    "svelte"
+  ],
+  "files.associations": {
+    "*.css": "tailwindcss"
+  }
 }

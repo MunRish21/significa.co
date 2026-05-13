@@ -1,4 +1,5 @@
 import { PREVIEW_COOKIE_KEY } from '$lib/constants';
+import { resolveTenant } from '$lib/tenant.server';
 import { sequence } from '@sveltejs/kit/hooks';
 import type { Handle } from '@sveltejs/kit';
 
@@ -9,7 +10,19 @@ const validateDraftMode: Handle = async ({ event, resolve }) => {
   return response;
 };
 
-export const handle = sequence(validateDraftMode);
+const attachTenant: Handle = async ({ event, resolve }) => {
+  const hostname = event.url.hostname;
+  event.locals.hostname = hostname;
+  try {
+    event.locals.tenant = await resolveTenant(hostname);
+  } catch (err) {
+    console.error('[tenant] failed to resolve tenant', err);
+    event.locals.tenant = null;
+  }
+  return resolve(event);
+};
+
+export const handle = sequence(validateDraftMode, attachTenant);
 
 import * as fs from 'fs';
 import * as os from 'os';

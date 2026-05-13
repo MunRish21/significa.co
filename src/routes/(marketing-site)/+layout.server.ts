@@ -8,8 +8,10 @@ import {
 
 export const load = async ({ locals, fetch }) => {
   const version = locals.version;
+  const tenant = locals.tenant;
 
   return {
+    tenant,
     configuration: {
       content: {
         primary_navigation: [
