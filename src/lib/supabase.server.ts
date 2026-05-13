@@ -39,12 +39,27 @@ type PageSectionRow = {
   props: Record<string, unknown>;
 };
 
+type ClientRow = {
+  id: string;
+  tenant_id: string;
+  slug: string;
+  name: string;
+  light_logo: string | null;
+  dark_logo: string | null;
+  width: number | null;
+  height: number | null;
+  url: string | null;
+  position: number;
+  is_active: boolean;
+};
+
 export type Database = {
   public: {
     Tables: {
       tenants: { Row: TenantRow; Insert: Partial<TenantRow>; Update: Partial<TenantRow>; Relationships: [] };
       pages: { Row: PageRow; Insert: Partial<PageRow>; Update: Partial<PageRow>; Relationships: [] };
       page_sections: { Row: PageSectionRow; Insert: Partial<PageSectionRow>; Update: Partial<PageSectionRow>; Relationships: [] };
+      clients: { Row: ClientRow; Insert: Partial<ClientRow>; Update: Partial<ClientRow>; Relationships: [] };
     };
     Views: Record<string, never>;
     Functions: Record<string, never>;

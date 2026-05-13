@@ -5,13 +5,16 @@ import {
   fetchHomeBlogPosts,
   fetchTeamMembers
 } from '$lib/content';
+import { fetchClients } from '$lib/data/clients.server';
 
 export const load = async ({ locals, fetch }) => {
   const version = locals.version;
   const tenant = locals.tenant;
+  const clients = tenant ? await fetchClients(tenant.id) : [];
 
   return {
     tenant,
+    clients,
     configuration: {
       content: {
         primary_navigation: [
