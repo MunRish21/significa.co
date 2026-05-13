@@ -6,15 +6,19 @@ import {
   fetchTeamMembers
 } from '$lib/content';
 import { fetchClients } from '$lib/data/clients.server';
+import { fetchTeamMembersFromDb } from '$lib/data/team.server';
 
 export const load = async ({ locals, fetch }) => {
   const version = locals.version;
   const tenant = locals.tenant;
-  const clients = tenant ? await fetchClients(tenant.id) : [];
+  const [clients, dbTeamMembers] = tenant
+    ? await Promise.all([fetchClients(tenant.id), fetchTeamMembersFromDb(tenant.id)])
+    : [[], []];
 
   return {
     tenant,
     clients,
+    dbTeamMembers,
     configuration: {
       content: {
         primary_navigation: [

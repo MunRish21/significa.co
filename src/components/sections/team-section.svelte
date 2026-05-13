@@ -1,15 +1,22 @@
 <script lang="ts">
   import TeamMemberCard from '$components/blocks/team-member-card.svelte';
+  import { page } from '$app/stores';
   import { getActiveTeamMembers, type TeamMember } from '$lib/data/team';
 
   export let title: string = 'The team behind the work.';
   export let subtitle: string = 'Specialists you can hire directly.';
-  export let members: TeamMember[] = getActiveTeamMembers();
+  /** Override the per-tenant DB list. Falls back to hardcoded only when DB is empty. */
+  export let members: TeamMember[] | null = null;
   export let limit: number | undefined = undefined;
   export let showViewAll: boolean = false;
 
-  $: visible = limit ? members.slice(0, limit) : members;
+  $: dbMembers = ($page.data?.dbTeamMembers ?? []) as TeamMember[];
+  $: effective =
+    members ?? (dbMembers.length > 0 ? dbMembers : getActiveTeamMembers());
+  $: visible = limit ? effective.slice(0, limit) : effective;
 </script>
+
+
 
 {#if visible.length > 0}
   <section class="border-t">

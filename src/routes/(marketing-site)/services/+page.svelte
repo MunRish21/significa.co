@@ -10,7 +10,7 @@
   import FaqsList from '$components/blocks/faqs-list.svelte';
   import { commonFaqsBlock, getCommonFaqsForSchema } from '$lib/data/faqs';
   import { getFeaturedTestimonials } from '$lib/data/testimonials';
-  import { getActiveTeamMembers } from '$lib/data/team';
+  import { getActiveTeamMembers, type TeamMember } from '$lib/data/team';
 
   import { isSectionEnabled, type SectionsMap } from '$lib/tenant';
 
@@ -54,7 +54,9 @@
       date: t.date
     }));
 
-  const teamSchemaMembers = getActiveTeamMembers().map((m) => ({
+  $: tenantMembers = (data?.dbTeamMembers ?? []) as TeamMember[];
+  $: schemaSourceMembers = tenantMembers.length > 0 ? tenantMembers : getActiveTeamMembers();
+  $: teamSchemaMembers = schemaSourceMembers.map((m) => ({
     name: m.name,
     jobTitle: m.role,
     description: m.tagline,

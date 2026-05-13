@@ -14,12 +14,13 @@
     generateAboutPageSchema,
     generateTeamMembersSchema
   } from '$lib/utils/schema';
-  import { getActiveTeamMembers } from '$lib/data/team';
+  import { getActiveTeamMembers, type TeamMember } from '$lib/data/team';
   import { isSectionEnabled, type SectionsMap } from '$lib/tenant';
 
   export let data: {
     page: { title: string | null; description: string | null; meta: Record<string, unknown> } | null;
     sections: SectionsMap;
+    dbTeamMembers?: TeamMember[];
   };
 
   $: dbPage = data?.page ?? null;
@@ -31,7 +32,9 @@
     'Techyor is a digital product studio with 8+ years of experience and 80+ products shipped. Meet the team, our values, and the principles behind every product we build.';
   $: pageMeta = (dbPage?.meta ?? {}) as Record<string, string>;
 
-  const aboutTeamSchema = getActiveTeamMembers().map((m) => ({
+  $: tenantMembers = (data?.dbTeamMembers ?? []) as TeamMember[];
+  $: schemaMembers = tenantMembers.length > 0 ? tenantMembers : getActiveTeamMembers();
+  $: aboutTeamSchema = schemaMembers.map((m) => ({
     name: m.name,
     jobTitle: m.role,
     description: m.tagline,

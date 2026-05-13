@@ -53,6 +53,36 @@ type ClientRow = {
   is_active: boolean;
 };
 
+type TeamMemberRow = {
+  id: string;
+  tenant_id: string;
+  slug: string;
+  name: string;
+  short_name: string | null;
+  role: string;
+  tagline: string | null;
+  location: string | null;
+  avatar: string | null;
+  cover_image: string | null;
+  is_active: boolean;
+  bio: string | null;
+  long_bio: string | null;
+  years_experience: number | null;
+  hourly_rate: string | null;
+  badges: string[];
+  skills: string[];
+  primary_services: string[];
+  featured_project_slugs: string[];
+  stats: Record<string, unknown>;
+  languages: unknown[];
+  education: unknown[];
+  employment: unknown[];
+  links: unknown[];
+  intro_video: Record<string, unknown> | null;
+  seo: Record<string, unknown>;
+  position: number;
+};
+
 export type Database = {
   public: {
     Tables: {
@@ -60,6 +90,7 @@ export type Database = {
       pages: { Row: PageRow; Insert: Partial<PageRow>; Update: Partial<PageRow>; Relationships: [] };
       page_sections: { Row: PageSectionRow; Insert: Partial<PageSectionRow>; Update: Partial<PageSectionRow>; Relationships: [] };
       clients: { Row: ClientRow; Insert: Partial<ClientRow>; Update: Partial<ClientRow>; Relationships: [] };
+      team_members: { Row: TeamMemberRow; Insert: Partial<TeamMemberRow>; Update: Partial<TeamMemberRow>; Relationships: [] };
     };
     Views: Record<string, never>;
     Functions: Record<string, never>;

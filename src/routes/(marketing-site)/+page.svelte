@@ -27,7 +27,7 @@
     generateTeamMembersSchema
   } from '$lib/utils/schema';
   import { getFeaturedTestimonials } from '$lib/data/testimonials';
-  import { getActiveTeamMembers } from '$lib/data/team';
+  import { getActiveTeamMembers, type TeamMember } from '$lib/data/team';
   import { isSectionEnabled, type SectionsMap } from '$lib/tenant';
 
   export let data: {
@@ -57,7 +57,9 @@
       author: t.author,
       date: t.date
     }));
-  const homeTeamSchema = getActiveTeamMembers().map((m) => ({
+  $: tenantMembers = (data?.dbTeamMembers ?? []) as TeamMember[];
+  $: schemaMembers = tenantMembers.length > 0 ? tenantMembers : getActiveTeamMembers();
+  $: homeTeamSchema = schemaMembers.map((m) => ({
     name: m.name,
     jobTitle: m.role,
     description: m.tagline,
