@@ -5,6 +5,20 @@
   import FaqsList from '$components/blocks/faqs-list.svelte';
   import TeamSection from '$components/sections/team-section.svelte';
   import { commonFaqsBlock } from '$lib/data/faqs';
+  import { isSectionEnabled, type SectionsMap } from '$lib/tenant';
+
+  export let data: {
+    page: { title: string | null; description: string | null; meta: Record<string, unknown> } | null;
+    sections: SectionsMap;
+  };
+
+  $: dbPage = data?.page ?? null;
+  $: sections = (data?.sections ?? {}) as SectionsMap;
+  $: on = (key: string) => isSectionEnabled(sections, key);
+  $: pageTitle = dbPage?.title ?? 'Get a Quote — Techyor';
+  $: pageDescription =
+    dbPage?.description ??
+    "Tell us what you're building. We reply within 24 hours with a clear proposal — timeline, deliverables, and pricing. No surprises, no lock-in.";
 
   const slideshowBlock = {
     component: 'slideshow',
@@ -62,11 +76,8 @@
 </script>
 
 <svelte:head>
-  <title>Get a Quote — Techyor</title>
-  <meta
-    name="description"
-    content="Tell us what you're building. We reply within 24 hours with a clear proposal — timeline, deliverables, and pricing. No surprises, no lock-in."
-  />
+  <title>{pageTitle}</title>
+  <meta name="description" content={pageDescription} />
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Get a Quote — Techyor" />
@@ -90,39 +101,41 @@
 </svelte:head>
 
 <div class="overflow-hidden">
-  <!-- Form Section -->
-  <section
-    class="container relative mx-auto mt-10 gap-8 overflow-hidden px-container pb-12 md:mt-14 md:pb-20 lg:mt-20 lg:flex lg:justify-between lg:pb-32"
-  >
-    <div class="flex-1">
-      <h1 class="text-5xl font-medium md:text-6xl lg:text-7xl">Get a quote.</h1>
-      <p class="mt-4 text-lg text-foreground-secondary">Let's talk about your project.</p>
-      <div class="mt-8">
-        <p class="mb-2 text-foreground-secondary">Prefer email?</p>
-        <a href="mailto:info@techyor.com" class="font-medium hover:underline"> info@techyor.com </a>
+  {#if on('quote-form')}
+    <section
+      class="container relative mx-auto mt-10 gap-8 overflow-hidden px-container pb-12 md:mt-14 md:pb-20 lg:mt-20 lg:flex lg:justify-between lg:pb-32"
+    >
+      <div class="flex-1">
+        <h1 class="text-5xl font-medium md:text-6xl lg:text-7xl">Get a quote.</h1>
+        <p class="mt-4 text-lg text-foreground-secondary">Let's talk about your project.</p>
+        <div class="mt-8">
+          <p class="mb-2 text-foreground-secondary">Prefer email?</p>
+          <a href="mailto:info@techyor.com" class="font-medium hover:underline"> info@techyor.com </a>
+        </div>
       </div>
-    </div>
 
-    <div class="flex-1 lg:max-w-xl">
-      <ContactForm
-        variant="quote"
-        disclaimer="We respect your privacy and will handle your information securely."
-      />
-    </div>
-  </section>
+      <div class="flex-1 lg:max-w-xl">
+        <ContactForm
+          variant="quote"
+          disclaimer="We respect your privacy and will handle your information securely."
+        />
+      </div>
+    </section>
+  {/if}
 
-  <!-- What's Next Section -->
-  <Steps block={stepsBlock} />
+  {#if on('steps')}
+    <Steps block={stepsBlock} />
+  {/if}
 
-  <!-- Team Section -->
-  <TeamSection
-    title="You'll work with these specialists."
-    subtitle="The people who'll build it."
-  />
+  {#if on('team')}
+    <TeamSection title="You'll work with these specialists." subtitle="The people who'll build it." />
+  {/if}
 
-  <!-- Work Section -->
-  <Slideshow block={slideshowBlock} />
+  {#if on('slideshow')}
+    <Slideshow block={slideshowBlock} />
+  {/if}
 
-  <!-- FAQ Section -->
-  <FaqsList block={commonFaqsBlock} />
+  {#if on('faqs')}
+    <FaqsList block={commonFaqsBlock} />
+  {/if}
 </div>

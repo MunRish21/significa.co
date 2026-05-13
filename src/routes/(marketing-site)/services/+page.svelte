@@ -12,6 +12,22 @@
   import { getFeaturedTestimonials } from '$lib/data/testimonials';
   import { getActiveTeamMembers } from '$lib/data/team';
 
+  import { isSectionEnabled, type SectionsMap } from '$lib/tenant';
+
+  export let data: {
+    page: { title: string | null; description: string | null; meta: Record<string, unknown> } | null;
+    sections: SectionsMap;
+  };
+
+  $: dbPage = data?.page ?? null;
+  $: sections = (data?.sections ?? {}) as SectionsMap;
+  $: on = (key: string) => isSectionEnabled(sections, key);
+  $: pageTitle = dbPage?.title ?? 'Services — Strategy, Design, Development | Techyor';
+  $: pageDescription =
+    dbPage?.description ??
+    'End-to-end digital product services. Strategy, UX/UI design, web and mobile development, AI integrations, e-commerce, and automation — all under one roof. Built for ambitious teams.';
+  $: pageMeta = (dbPage?.meta ?? {}) as Record<string, string>;
+
   const servicesTestimonials = getFeaturedTestimonials();
   import {
     BASE_URL,
@@ -586,31 +602,22 @@
 </script>
 
 <svelte:head>
-  <title>Services — Strategy, Design, Development | Techyor</title>
-  <meta
-    name="description"
-    content="End-to-end digital product services. Strategy, UX/UI design, web and mobile development, AI integrations, e-commerce, and automation — all under one roof. Built for ambitious teams."
-  />
+  <title>{pageTitle}</title>
+  <meta name="description" content={pageDescription} />
 
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Services — Strategy, Design, Development | Techyor" />
-  <meta
-    property="og:description"
-    content="Strategy, design, web and mobile development, AI, e-commerce, and automation. Custom-built for ambitious teams."
-  />
-  <meta property="og:image" content="{BASE_URL}/api/og/services" />
+  <meta property="og:title" content={pageMeta.ogTitle ?? pageTitle} />
+  <meta property="og:description" content={pageMeta.ogDescription ?? pageDescription} />
+  <meta property="og:image" content="{BASE_URL}{pageMeta.ogImage ?? '/api/og/services'}" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="Techyor services — strategy, design, development" />
 
-  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:card" content={pageMeta.twitterCard ?? 'summary_large_image'} />
   <meta name="twitter:site" content="@TechyorDotCo" />
-  <meta name="twitter:title" content="Services — Strategy, Design, Development | Techyor" />
-  <meta
-    name="twitter:description"
-    content="Strategy, design, web/mobile development, AI, e-commerce, and automation — under one roof."
-  />
-  <meta name="twitter:image" content="{BASE_URL}/api/og/services" />
+  <meta name="twitter:title" content={pageMeta.ogTitle ?? pageTitle} />
+  <meta name="twitter:description" content={pageMeta.ogDescription ?? pageDescription} />
+  <meta name="twitter:image" content="{BASE_URL}{pageMeta.ogImage ?? '/api/og/services'}" />
   <meta name="twitter:image:alt" content="Techyor services — strategy, design, development" />
 
   {@html `<${'script'} type="application/ld+json">${generateOrganizationSchema()}</${'script'}>`}
@@ -652,47 +659,58 @@
 </svelte:head>
 
 <div class="overflow-hidden">
-  <TimelineServices block={timelineServicesBlock} />
-  <Services block={servicesBlock} />
+  {#if on('timeline-services')}
+    <TimelineServices block={timelineServicesBlock} />
+  {/if}
 
-  <!-- Deliverables Section -->
-  <List block={deliverablesBlock} />
+  {#if on('services-list')}
+    <Services block={servicesBlock} />
+  {/if}
 
-  <!-- Testimonials Section -->
-  <UpworkTestimonials
-    items={servicesTestimonials}
-    title="Testimonials."
-    subtitle="What clients say."
-    description="Verified Upwork reviews from clients who've worked with our team."
-  />
+  {#if on('deliverables')}
+    <List block={deliverablesBlock} />
+  {/if}
 
-  <!-- Team Section -->
-  <TeamSection
-    title="The specialists behind these services."
-    subtitle="Hire them directly."
-    showViewAll
-  />
+  {#if on('testimonials')}
+    <UpworkTestimonials
+      items={servicesTestimonials}
+      title="Testimonials."
+      subtitle="What clients say."
+      description="Verified Upwork reviews from clients who've worked with our team."
+    />
+  {/if}
 
-  <!-- Proud Clients Section -->
-  <ClientsSection title="Trusted by teams who ship." />
+  {#if on('team')}
+    <TeamSection
+      title="The specialists behind these services."
+      subtitle="Hire them directly."
+      showViewAll
+    />
+  {/if}
 
-  <!-- Contact Form Section -->
-  <section class="container mx-auto mt-10 px-container @container lg:mt-20">
-    <div class="grid grid-cols-3 overflow-hidden rounded-lg border">
-      <div class="col-span-1 hidden flex-col bg-background-panel @5xl:flex">
-        <div class="p-8">
-          <h3 class="text-4xl">Got a project?<br /> Let's build it.</h3>
-          <p class="mt-4 text-xl text-foreground-secondary">
-            Tell us about your goals, timeline, and what problem you're solving. We'll respond within a business day.
-          </p>
+  {#if on('clients')}
+    <ClientsSection title="Trusted by teams who ship." />
+  {/if}
+
+  {#if on('contact')}
+    <section class="container mx-auto mt-10 px-container @container lg:mt-20">
+      <div class="grid grid-cols-3 overflow-hidden rounded-lg border">
+        <div class="col-span-1 hidden flex-col bg-background-panel @5xl:flex">
+          <div class="p-8">
+            <h3 class="text-4xl">Got a project?<br /> Let's build it.</h3>
+            <p class="mt-4 text-xl text-foreground-secondary">
+              Tell us about your goals, timeline, and what problem you're solving. We'll respond within a business day.
+            </p>
+          </div>
+        </div>
+        <div class="col-span-3 bg-background-panel p-4 pt-8 @5xl:col-span-2 @5xl:border-l @5xl:p-8">
+          <ContactForm />
         </div>
       </div>
-      <div class="col-span-3 bg-background-panel p-4 pt-8 @5xl:col-span-2 @5xl:border-l @5xl:p-8">
-        <ContactForm />
-      </div>
-    </div>
-  </section>
+    </section>
+  {/if}
 
-  <!-- FAQ Section -->
-  <FaqsList block={commonFaqsBlock} />
+  {#if on('faqs')}
+    <FaqsList block={commonFaqsBlock} />
+  {/if}
 </div>

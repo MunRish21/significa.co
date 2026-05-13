@@ -9,6 +9,20 @@
   } from '$lib/utils/schema';
   import OptimizedImage from '$components/optimized-image.svelte';
   import TeamSection from '$components/sections/team-section.svelte';
+  import { isSectionEnabled, type SectionsMap } from '$lib/tenant';
+
+  export let data: {
+    page: { title: string | null; description: string | null; meta: Record<string, unknown> } | null;
+    sections: SectionsMap;
+  };
+
+  $: dbPage = data?.page ?? null;
+  $: sections = (data?.sections ?? {}) as SectionsMap;
+  $: on = (key: string) => isSectionEnabled(sections, key);
+  $: pageTitle = dbPage?.title ?? 'Projects — Web, App, AI & E-commerce Portfolio | Techyor';
+  $: pageDescription =
+    dbPage?.description ??
+    "Browse Techyor's portfolio of 80+ shipped products: custom websites, web apps, mobile apps, e-commerce stores, AI tools, and automation built for teams worldwide.";
 
   const projects = projectsData;
 
@@ -73,11 +87,8 @@
 </script>
 
 <svelte:head>
-  <title>Projects — Web, App, AI & E-commerce Portfolio | Techyor</title>
-  <meta
-    name="description"
-    content="Browse Techyor's portfolio of 80+ shipped products: custom websites, web apps, mobile apps, e-commerce stores, AI tools, and automation built for teams worldwide."
-  />
+  <title>{pageTitle}</title>
+  <meta name="description" content={pageDescription} />
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Projects — Techyor Portfolio" />
@@ -116,12 +127,14 @@
 </svelte:head>
 
 <main class="overflow-hidden">
-  <!-- Header -->
-  <div class="container mx-auto mt-10 px-container md:mt-14 lg:mt-20">
-    <h1 class="text-5xl md:text-6xl lg:text-7xl">Projects.</h1>
-  </div>
+  {#if on('header')}
+    <div class="container mx-auto mt-10 px-container md:mt-14 lg:mt-20">
+      <h1 class="text-5xl md:text-6xl lg:text-7xl">Projects.</h1>
+    </div>
+  {/if}
 
-  <!-- Filters Button -->
+  {#if on('projects-grid')}
+    <!-- Filters Button -->
   <div
     class="lg:mt-18 container mx-auto mb-3 mt-8 flex items-center justify-between px-container md:mt-12"
   >
@@ -347,10 +360,13 @@
     </div>
   {/if}
 
-  <!-- Team Section -->
-  <TeamSection
-    title="The team behind these projects."
-    subtitle="Hire a specialist for your next one."
-    showViewAll
-  />
+  {/if}
+
+  {#if on('team')}
+    <TeamSection
+      title="The team behind these projects."
+      subtitle="Hire a specialist for your next one."
+      showViewAll
+    />
+  {/if}
 </main>

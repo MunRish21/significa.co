@@ -15,6 +15,21 @@
     generateTeamMembersSchema
   } from '$lib/utils/schema';
   import { getActiveTeamMembers } from '$lib/data/team';
+  import { isSectionEnabled, type SectionsMap } from '$lib/tenant';
+
+  export let data: {
+    page: { title: string | null; description: string | null; meta: Record<string, unknown> } | null;
+    sections: SectionsMap;
+  };
+
+  $: dbPage = data?.page ?? null;
+  $: sections = (data?.sections ?? {}) as SectionsMap;
+  $: on = (key: string) => isSectionEnabled(sections, key);
+  $: pageTitle = dbPage?.title ?? 'About Techyor — Mission, Values & Team Behind the Studio';
+  $: pageDescription =
+    dbPage?.description ??
+    'Techyor is a digital product studio with 8+ years of experience and 80+ products shipped. Meet the team, our values, and the principles behind every product we build.';
+  $: pageMeta = (dbPage?.meta ?? {}) as Record<string, string>;
 
   const aboutTeamSchema = getActiveTeamMembers().map((m) => ({
     name: m.name,
@@ -139,31 +154,22 @@
 </script>
 
 <svelte:head>
-  <title>About Techyor — Mission, Values & Team Behind the Studio</title>
-  <meta
-    name="description"
-    content="Techyor is a digital product studio with 8+ years of experience and 80+ products shipped. Meet the team, our values, and the principles behind every product we build."
-  />
+  <title>{pageTitle}</title>
+  <meta name="description" content={pageDescription} />
 
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="About Techyor — Mission, Values & Team" />
-  <meta
-    property="og:description"
-    content="A digital product studio with 8+ years of experience. Meet the team, our values, and how we build."
-  />
-  <meta property="og:image" content="{BASE_URL}/api/og/about" />
+  <meta property="og:title" content={pageMeta.ogTitle ?? pageTitle} />
+  <meta property="og:description" content={pageMeta.ogDescription ?? pageDescription} />
+  <meta property="og:image" content="{BASE_URL}{pageMeta.ogImage ?? '/api/og/about'}" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="About Techyor — mission, values, and team" />
 
-  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:card" content={pageMeta.twitterCard ?? 'summary_large_image'} />
   <meta name="twitter:site" content="@TechyorDotCo" />
-  <meta name="twitter:title" content="About Techyor — Mission, Values & Team" />
-  <meta
-    name="twitter:description"
-    content="A digital product studio with 8+ years of experience. Meet the team behind the work."
-  />
-  <meta name="twitter:image" content="{BASE_URL}/api/og/about" />
+  <meta name="twitter:title" content={pageMeta.ogTitle ?? pageTitle} />
+  <meta name="twitter:description" content={pageMeta.ogDescription ?? pageDescription} />
+  <meta name="twitter:image" content="{BASE_URL}{pageMeta.ogImage ?? '/api/og/about'}" />
   <meta name="twitter:image:alt" content="About Techyor — mission, values, and team" />
 
   {@html `<${'script'} type="application/ld+json">${generateOrganizationSchema()}</${'script'}>`}
@@ -182,39 +188,43 @@
 </svelte:head>
 
 <div class="overflow-hidden">
-  <!-- Physics Hero Section -->
-  <Physics block={physicsBlock} />
+  {#if on('hero-physics')}
+    <Physics block={physicsBlock} />
+  {/if}
 
-  <!-- Who We Are Section -->
-  <section class="border-t">
-    <div
-      class="container mx-auto flex flex-col justify-between gap-6 px-container py-8 lg:flex-row lg:gap-4 lg:py-12"
-    >
-      <div class="lg:max-w-xl">
-        <h2 class="text-5xl text-foreground-secondary">Who we are.</h2>
-        <p class="text-5xl">A lean team that ships.</p>
+  {#if on('who-we-are')}
+    <section class="border-t">
+      <div
+        class="container mx-auto flex flex-col justify-between gap-6 px-container py-8 lg:flex-row lg:gap-4 lg:py-12"
+      >
+        <div class="lg:max-w-xl">
+          <h2 class="text-5xl text-foreground-secondary">Who we are.</h2>
+          <p class="text-5xl">A lean team that ships.</p>
+        </div>
+        <p class="whitespace-pre-line text-2xl text-foreground-secondary lg:max-w-xl">
+          Started in 2018. One goal: build products that work. No fluff, no overcomplicating. Sharp execution, honest talk, measurable results. We build a lot with AI — chatbots, voice agents, web platforms. Shipped it. Clients back it up. Based in India, trusted by teams in the UK, Australia, Spain, Europe. 8 years in. Still hungry.
+        </p>
       </div>
-      <p class="whitespace-pre-line text-2xl text-foreground-secondary lg:max-w-xl">
-        Started in 2018. One goal: build products that work. No fluff, no overcomplicating. Sharp execution, honest talk, measurable results. We build a lot with AI — chatbots, voice agents, web platforms. Shipped it. Clients back it up. Based in India, trusted by teams in the UK, Australia, Spain, Europe. 8 years in. Still hungry.
-      </p>
-    </div>
-  </section>
+    </section>
+  {/if}
 
-  <!-- Our Values Section -->
-  <CoreValues block={coreValuesBlock} />
+  {#if on('core-values')}
+    <CoreValues block={coreValuesBlock} />
+  {/if}
 
-  <!-- Team Section -->
-  <TeamSection
-    title="The team behind the work."
-    subtitle="Specialists you can hire directly."
-  />
+  {#if on('team')}
+    <TeamSection title="The team behind the work." subtitle="Specialists you can hire directly." />
+  {/if}
 
-  <!-- Clients Section -->
-  <ClientsSection title="Clients we've worked with" />
+  {#if on('clients')}
+    <ClientsSection title="Clients we've worked with" />
+  {/if}
 
-  <!-- FAQ Section -->
-  <FaqsList block={commonFaqsBlock} />
+  {#if on('faqs')}
+    <FaqsList block={commonFaqsBlock} />
+  {/if}
 
-  <!-- Remote Section -->
-  <OfficeCards block={remoteBlock} />
+  {#if on('office-cards')}
+    <OfficeCards block={remoteBlock} />
+  {/if}
 </div>

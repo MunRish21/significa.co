@@ -12,6 +12,21 @@
     generateJobPostingSchema
   } from '$lib/utils/schema';
 
+  import { isSectionEnabled, type SectionsMap } from '$lib/tenant';
+
+  export let data: {
+    page: { title: string | null; description: string | null; meta: Record<string, unknown> } | null;
+    sections: SectionsMap;
+  };
+
+  $: dbPage = data?.page ?? null;
+  $: sections = (data?.sections ?? {}) as SectionsMap;
+  $: on = (key: string) => isSectionEnabled(sections, key);
+  $: pageTitle = dbPage?.title ?? 'Careers at Techyor — Design, Engineering & Marketing Roles';
+  $: pageDescription =
+    dbPage?.description ??
+    "Join Techyor in Chandigarh, India. We're hiring designers, engineers, and marketers — remote-friendly, full-time. Help us ship digital products for teams in the US, UK, Switzerland, and Australia.";
+
   const openPositionsBlock: OpenPositionsStoryblok = {
     component: 'open-positions',
     open_positions_title: 'Open positions.',
@@ -107,11 +122,8 @@
 </script>
 
 <svelte:head>
-  <title>Careers at Techyor — Design, Engineering & Marketing Roles</title>
-  <meta
-    name="description"
-    content="Join Techyor in Chandigarh, India. We're hiring designers, engineers, and marketers — remote-friendly, full-time. Help us ship digital products for teams in the US, UK, Switzerland, and Australia."
-  />
+  <title>{pageTitle}</title>
+  <meta name="description" content={pageDescription} />
   <meta
     name="keywords"
     content="careers Chandigarh, jobs at Techyor, design jobs India, full stack developer jobs, digital agency careers, remote jobs India"
@@ -148,31 +160,37 @@
 </svelte:head>
 
 <main class="overflow-hidden">
-  <!-- Hero Section -->
-  <section class="container mx-auto px-container pb-16 md:pb-20 lg:pb-24">
-    <h1 class="mt-10 text-7xl font-bold md:mt-14 lg:mt-20">Careers.</h1>
-    <p
-      data-speakable
-      class="mt-4 max-w-3xl text-2xl text-foreground-secondary md:mt-6 lg:mt-8"
-    >
-      We're a small team building digital products for clients in the US, UK, Switzerland, and Australia. Chandigarh-based, remote-friendly, full-time. If you ship code, design, or words — we'd like to meet you.
-    </p>
-  </section>
+  {#if on('hero')}
+    <section class="container mx-auto px-container pb-16 md:pb-20 lg:pb-24">
+      <h1 class="mt-10 text-7xl font-bold md:mt-14 lg:mt-20">Careers.</h1>
+      <p
+        data-speakable
+        class="mt-4 max-w-3xl text-2xl text-foreground-secondary md:mt-6 lg:mt-8"
+      >
+        We're a small team building digital products for clients in the US, UK, Switzerland, and Australia. Chandigarh-based, remote-friendly, full-time. If you ship code, design, or words — we'd like to meet you.
+      </p>
+    </section>
+  {/if}
 
-  <!-- Culture Section -->
-  <CultureSection />
+  {#if on('culture')}
+    <CultureSection />
+  {/if}
 
-  <!-- Open Positions Component -->
-  <OpenPositions block={openPositionsBlock} />
+  {#if on('open-positions')}
+    <OpenPositions block={openPositionsBlock} />
+  {/if}
 
-  <!-- Image Slider Section -->
-  <ImageSlider images={sliderImages} />
+  {#if on('image-slider')}
+    <ImageSlider images={sliderImages} />
+  {/if}
 
-  <!-- Benefits Section -->
-  <BenefitsSection {benefits} />
+  {#if on('benefits')}
+    <BenefitsSection {benefits} />
+  {/if}
 
-  <!-- Office Gallery Section -->
-  <section class="container mx-auto px-container py-12 lg:py-20">
-    <RandomizedHoverableGallery cards={galleryCards} />
-  </section>
+  {#if on('gallery')}
+    <section class="container mx-auto px-container py-12 lg:py-20">
+      <RandomizedHoverableGallery cards={galleryCards} />
+    </section>
+  {/if}
 </main>
