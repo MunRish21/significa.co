@@ -32,22 +32,6 @@ Disallow: /form/
 Disallow: /preview
 Disallow: /exit-preview
 
-# Block AI training crawlers that don't respect content licensing.
-User-agent: GPTBot
-Disallow: /
-
-User-agent: Google-Extended
-Disallow: /
-
-User-agent: anthropic-ai
-Disallow: /
-
-User-agent: ClaudeBot
-Disallow: /
-
-User-agent: CCBot
-Disallow: /
-
 Sitemap: ${siteOrigin}/sitemap.xml
 `;
 

@@ -13,6 +13,7 @@ const staticPages = [
   { path: '/', priority: 1.0, changefreq: 'weekly', lastmod: today },
   { path: '/about', priority: 0.8, changefreq: 'monthly', lastmod: today },
   { path: '/services', priority: 0.9, changefreq: 'monthly', lastmod: today },
+  { path: '/hire', priority: 0.9, changefreq: 'weekly', lastmod: today },
   { path: '/careers', priority: 0.8, changefreq: 'weekly', lastmod: today },
   { path: '/projects', priority: 0.9, changefreq: 'weekly', lastmod: today },
   { path: '/blog', priority: 0.7, changefreq: 'weekly', lastmod: today },
@@ -89,6 +90,20 @@ const locationPages = getReadyLocations().map((location) => ({
   lastmod: today
 }));
 
+// Blog posts — extracted from blog/+page.svelte hardcoded data
+const blogPages = [
+  { path: '/blog/the-future-of-ecommerce', lastmod: '2024-03-15' },
+  { path: '/blog/designing-for-accessibility', lastmod: '2024-03-10' },
+  { path: '/blog/mobile-first-development', lastmod: '2024-03-05' },
+  { path: '/blog/user-research-best-practices', lastmod: '2024-02-28' },
+  { path: '/blog/scaling-your-product', lastmod: '2024-02-20' },
+  { path: '/blog/web-performance-optimization', lastmod: '2024-02-15' }
+].map((post) => ({
+  ...post,
+  priority: 0.7,
+  changefreq: 'monthly'
+}));
+
 const allPages = [
   ...staticPages,
   ...projectPages,
@@ -96,7 +111,8 @@ const allPages = [
   ...deliverablePages,
   ...teamPages,
   ...hirePages,
-  ...locationPages
+  ...locationPages,
+  ...blogPages
 ];
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>

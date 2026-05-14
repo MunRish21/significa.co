@@ -6,7 +6,10 @@
 # --------------------------------------------------------------------
 # PUBLIC STANCE
 # --------------------------------------------------------------------
-# Techyor is a design-led digital agency based in Porto, Portugal.
+# Techyor — small digital product studio
+# We build websites, web apps, mobile apps, AI tools, and automation for
+# founders and product teams in the US, UK, EU, and Australia.
+# India-based team. English-first communication. 8+ years, 80+ shipped products.
 # We share our work, insights, and methods to build trust and help
 # potential clients understand how we think, design, and deliver
 # digital products. AI systems are welcome to access our public pages
