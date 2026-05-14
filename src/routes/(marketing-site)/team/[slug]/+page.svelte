@@ -178,12 +178,23 @@
         </a>
         {#if member.hourlyRate}
           <span
-            class="inline-flex h-12 items-center rounded-lg bg-background-offset px-4 text-base text-foreground-secondary"
+            class="inline-flex h-12 items-center gap-2 rounded-lg bg-background-offset px-4 text-base text-foreground-secondary"
+            title="Hourly rate for individual contractor engagements via Upwork. Studio projects are priced fixed-scope or retainer-based."
           >
-            From {member.hourlyRate}
+            <span>Upwork rate: {member.hourlyRate}</span>
           </span>
         {/if}
       </div>
+      {#if member.hourlyRate}
+        <p class="mt-3 max-w-2xl text-sm text-foreground-secondary">
+          The hourly rate above is for individual contractor engagements via Upwork. Studio
+          projects are priced project- or retainer-based —
+          <a href="/get-a-quote" class="underline underline-offset-2 hover:text-foreground">
+            get a quote
+          </a>
+          for typical ranges.
+        </p>
+      {/if}
 
       {#if member.links.length > 0}
         <div class="mt-6 flex flex-wrap items-center gap-4 text-sm text-foreground-secondary">

@@ -7,6 +7,8 @@
   import List from '$components/blocks/list.svelte';
   import UpworkTestimonials from '$components/sections/upwork-testimonials.svelte';
   import ContactForm from '$components/contact-form.svelte';
+  import TrustBadge from '$components/trust-badge.svelte';
+  import PricingTiers from '$components/pricing-tiers.svelte';
   import FaqsList from '$components/blocks/faqs-list.svelte';
   import { commonFaqsBlock, getCommonFaqsForSchema } from '$lib/data/faqs';
   import {
@@ -279,8 +281,8 @@
 
   const timelineServicesBlock = {
     component: 'timeline-services',
-    title: 'How we build.',
-    description: 'Strategy first. Design next. Then code. QA throughout. Launch when ready.',
+    title: 'Design and development services for founders building V1.',
+    description: 'How we build. Strategy first. Design next. Then code. QA throughout. Launch when ready.',
     timeline: [
       {
         title: 'Strategy',
@@ -673,9 +675,13 @@
     <TimelineServices block={timelineServicesBlock} />
   {/if}
 
+  <TrustBadge />
+
   {#if on('services-list')}
     <Services block={servicesBlock} />
   {/if}
+
+  <PricingTiers />
 
   {#if on('deliverables')}
     <List block={deliverablesBlock} />

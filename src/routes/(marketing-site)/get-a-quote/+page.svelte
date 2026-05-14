@@ -1,5 +1,7 @@
 <script lang="ts">
   import ContactForm from '$components/contact-form.svelte';
+  import TrustBadge from '$components/trust-badge.svelte';
+  import PricingTiers from '$components/pricing-tiers.svelte';
   import Slideshow from '$components/blocks/slideshow.svelte';
   import Steps from '$components/blocks/steps.svelte';
   import FaqsList from '$components/blocks/faqs-list.svelte';
@@ -122,6 +124,14 @@
       </div>
     </section>
   {/if}
+
+  <TrustBadge />
+
+  <PricingTiers
+    title="Investment."
+    subtitle="What it costs to build with us."
+    bordered={false}
+  />
 
   {#if on('steps')}
     <Steps block={stepsBlock} />

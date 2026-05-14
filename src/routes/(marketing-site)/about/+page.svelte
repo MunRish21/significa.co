@@ -46,7 +46,7 @@
   const physicsBlock = {
     component: 'physics',
     variant: 'hero',
-    hero_title: 'About us.',
+    hero_title: 'A small product studio building for founders in the US, UK, Switzerland, and Australia.',
     physics_blocks: [
       {
         _uid: '1',

@@ -1,6 +1,7 @@
 <script lang="ts">
   import OptimizedImage from '$components/optimized-image.svelte';
   import ContactForm from '$components/contact-form.svelte';
+  import TrustBadge from '$components/trust-badge.svelte';
   import UpworkTestimonials from '$components/sections/upwork-testimonials.svelte';
   import TeamSection from '$components/sections/team-section.svelte';
   import FloatingHireCta from '$components/floating-hire-cta.svelte';
@@ -136,6 +137,9 @@
       {/each}
     </div>
   </section>
+
+  <!-- ─── TRUST BADGE (NDA + IP) ────────────────────────────────────────── -->
+  <TrustBadge bordered={false} background="" />
 
   <!-- ─── INTRO ────────────────────────────────────────────────────────── -->
   <section

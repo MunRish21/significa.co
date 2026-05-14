@@ -51,6 +51,26 @@
   export let email = '';
   export let position = DEFAULT_POSITION;
   export let message = '';
+  export let projectType = '';
+  export let budgetRange = '';
+
+  const projectTypes = [
+    { value: '', label: 'Project type (optional)' },
+    { value: 'marketing-site', label: 'Marketing site' },
+    { value: 'web-app', label: 'Web app / SaaS' },
+    { value: 'mobile-app', label: 'Mobile app' },
+    { value: 'ai-tool', label: 'AI tool / automation' },
+    { value: 'other', label: 'Other / not sure yet' }
+  ];
+
+  const budgetRanges = [
+    { value: '', label: 'Budget range (optional)' },
+    { value: 'under-5k', label: 'Under $5K' },
+    { value: '5k-15k', label: '$5K – $15K' },
+    { value: '15k-50k', label: '$15K – $50K' },
+    { value: '50k-plus', label: '$50K+' },
+    { value: 'not-sure', label: 'Not sure yet' }
+  ];
 
   const dispatch = createEventDispatcher<{
     focus: string;
@@ -199,6 +219,34 @@
           <option value={option}>{option}</option>
         {/each}
       </FloatingSelect>
+    {/if}
+    {#if (variant ?? type) === 'quote'}
+      <div class="flex w-full flex-col gap-4 md:flex-row">
+        <FloatingSelect
+          name="project-type"
+          class="w-full"
+          label="Project type"
+          bind:value={projectType}
+          on:focus={() => dispatch('focus', 'project-type')}
+          on:blur={() => dispatch('blur', 'project-type')}
+        >
+          {#each projectTypes as option}
+            <option value={option.value}>{option.label}</option>
+          {/each}
+        </FloatingSelect>
+        <FloatingSelect
+          name="budget-range"
+          class="w-full"
+          label="Budget range"
+          bind:value={budgetRange}
+          on:focus={() => dispatch('focus', 'budget-range')}
+          on:blur={() => dispatch('blur', 'budget-range')}
+        >
+          {#each budgetRanges as option}
+            <option value={option.value}>{option.label}</option>
+          {/each}
+        </FloatingSelect>
+      </div>
     {/if}
     <div>
       <FloatingTextarea

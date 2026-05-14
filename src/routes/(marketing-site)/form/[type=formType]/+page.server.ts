@@ -16,9 +16,28 @@ type FormFields = {
   message: string;
   position?: string;
   budget?: string;
+  'project-type'?: string;
+  'budget-range'?: string;
   'submitted-using-progressive-enhancement'?: string;
   'return-to'?: string;
   estimations?: string;
+};
+
+/** Map machine-readable form values to human-readable labels for storage. */
+const PROJECT_TYPE_LABELS: Record<string, string> = {
+  'marketing-site': 'Marketing site',
+  'web-app': 'Web app / SaaS',
+  'mobile-app': 'Mobile app',
+  'ai-tool': 'AI tool / automation',
+  other: 'Other / not sure yet'
+};
+
+const BUDGET_RANGE_LABELS: Record<string, string> = {
+  'under-5k': 'Under $5K',
+  '5k-15k': '$5K – $15K',
+  '15k-50k': '$15K – $50K',
+  '50k-plus': '$50K+',
+  'not-sure': 'Not sure yet'
 };
 
 export const actions = {
@@ -58,13 +77,30 @@ export const actions = {
         switch (event.params.type) {
           case 'quote':
             if (NOTION_DB_LEADS) {
+              const projectTypeLabel = fields['project-type']
+                ? PROJECT_TYPE_LABELS[fields['project-type']] || fields['project-type']
+                : '';
+              const budgetRangeLabel = fields['budget-range']
+                ? BUDGET_RANGE_LABELS[fields['budget-range']] || fields['budget-range']
+                : '';
+              // Prepend qualification metadata to message so it's captured even if
+              // the Notion DB doesn't yet have dedicated columns for these fields.
+              const enrichedMessage = [
+                projectTypeLabel && `Project type: ${projectTypeLabel}`,
+                budgetRangeLabel && `Budget range: ${budgetRangeLabel}`,
+                projectTypeLabel || budgetRangeLabel ? '---' : '',
+                message
+              ]
+                .filter(Boolean)
+                .join('\n');
+
               const response = await notion.pages.create({
                 parent: { database_id: NOTION_DB_LEADS },
                 properties: {
                   Name: { title: [{ text: { content: name } }] },
                   Email: { email: email },
-                  Budget: { select: { name: fields.budget || 'n/a' } },
-                  Message: { rich_text: [{ text: { content: message || '' } }] },
+                  Budget: { select: { name: budgetRangeLabel || fields.budget || 'n/a' } },
+                  Message: { rich_text: [{ text: { content: enrichedMessage } }] },
                   Status: { select: { name: 'To triage' } },
                   Type: { select: { name: 'Organic' } },
                   Source: { select: { name: 'Website' } },
