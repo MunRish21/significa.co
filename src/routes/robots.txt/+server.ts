@@ -12,9 +12,14 @@ export const GET: RequestHandler = async ({ locals, url }) => {
     });
   }
 
-  const siteOrigin = tenant?.primary_domain
+  let siteOrigin = tenant?.primary_domain
     ? `https://${tenant.primary_domain}`
     : `${url.protocol}//${url.host}`;
+
+  // Ensure www prefix for canonical domain
+  if (siteOrigin.includes('techyor.com') && !siteOrigin.includes('www.')) {
+    siteOrigin = siteOrigin.replace('https://techyor.com', 'https://www.techyor.com');
+  }
 
   const robots = `# ${tenant?.name ?? 'Techyor'} — robots.txt
 # Crawlable: marketing site, hire pages, services, projects, blog, team
