@@ -10,12 +10,27 @@
 
   export let configuration: ConfigurationStoryblok;
   let animate = false;
+
+  $: tenant = $page.data?.tenant as
+    | { name?: string; meta?: Record<string, unknown>; brand?: Record<string, unknown> }
+    | undefined;
+  $: isAgency = (tenant?.meta?.isAgency as boolean | undefined) === true;
+  $: brandName = tenant?.name ?? 'Techyor';
+  $: tenantLogo = (tenant?.brand?.logo as string | undefined) ?? null;
 </script>
 
 <footer>
   <div class="container mx-auto grid grid-cols-8 gap-8 px-container py-20">
     <div class="col-span-8 flex flex-col justify-between md:col-span-3 lg:col-span-4">
-      <Logo variant="symbol" class="md:origin-top-left md:scale-125" />
+      {#if tenantLogo}
+        <img
+          src={tenantLogo}
+          alt={brandName}
+          class="h-10 w-auto md:origin-top-left md:scale-125"
+        />
+      {:else}
+        <Logo variant="symbol" class="md:origin-top-left md:scale-125" />
+      {/if}
       <span
         use:intersectionObserver={{
           callback: ([e]) => {
@@ -57,7 +72,7 @@
       <!-- Menu 1: Navigation -->
       <div class="flex-1">
         <p class="mb-4 text-xs font-medium uppercase tracking-wider text-foreground-secondary">
-          Techyor
+          {brandName}
         </p>
         <ul class="text-lg leading-normal">
           <li class="mb-2"><Link href="/">Home</Link></li>
@@ -68,28 +83,30 @@
         </ul>
       </div>
 
-      <!-- Menu 2: Company -->
-      <div class="flex-1">
-        <p class="mb-4 text-xs font-medium uppercase tracking-wider text-foreground-secondary">
-          Company
-        </p>
-        <ul class="text-lg leading-normal">
-          <li class="mb-2"><Link href="/get-a-quote">Get a quote</Link></li>
-          <li class="mb-2"><Link href="/contact">Contact us</Link></li>
-          <li class="mb-2"><Link href="/careers">Careers</Link></li>
-        </ul>
-      </div>
+      {#if isAgency}
+        <!-- Menu 2: Company -->
+        <div class="flex-1">
+          <p class="mb-4 text-xs font-medium uppercase tracking-wider text-foreground-secondary">
+            Company
+          </p>
+          <ul class="text-lg leading-normal">
+            <li class="mb-2"><Link href="/get-a-quote">Get a quote</Link></li>
+            <li class="mb-2"><Link href="/contact">Contact us</Link></li>
+            <li class="mb-2"><Link href="/careers">Careers</Link></li>
+          </ul>
+        </div>
 
-      <!-- Menu 3: Follow us -->
-      <div class="flex-1">
-        <p class="mb-4 text-xs font-medium uppercase tracking-wider text-foreground-secondary">
-          Follow us
-        </p>
-        <ul class="text-lg leading-normal">
-          <li class="mb-2"><Link href="#linkedin">LinkedIn</Link></li>
-          <li class="mb-2"><Link href="#github">Github</Link></li>
-        </ul>
-      </div>
+        <!-- Menu 3: Follow us -->
+        <div class="flex-1">
+          <p class="mb-4 text-xs font-medium uppercase tracking-wider text-foreground-secondary">
+            Follow us
+          </p>
+          <ul class="text-lg leading-normal">
+            <li class="mb-2"><Link href="#linkedin">LinkedIn</Link></li>
+            <li class="mb-2"><Link href="#github">Github</Link></li>
+          </ul>
+        </div>
+      {/if}
     </div>
 
     {#if !!configuration.footer_partners?.length}
@@ -120,7 +137,11 @@
     <div
       class="container mx-auto flex flex-col items-start justify-between px-container py-4 text-sm text-foreground-secondary xs:flex-row xs:items-center"
     >
-      <span>Techyor &mdash; Digital Product Design & Development Agency</span>
+      <span>
+        {brandName}{#if isAgency}
+          &mdash; Digital Product Design & Development Agency
+        {/if}
+      </span>
       <Link href="#legal">Legal</Link>
     </div>
   </div>

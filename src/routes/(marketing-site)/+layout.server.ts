@@ -13,6 +13,7 @@ import { fetchServiceDescriptions } from '$lib/data/service-descriptions.server'
 export const load = async ({ locals, fetch }) => {
   const version = locals.version;
   const tenant = locals.tenant;
+  const isAgency = (tenant?.meta as Record<string, unknown> | undefined)?.isAgency === true;
   const [clients, dbTeamMembers, dbTestimonials, dbServiceDescriptions] = tenant
     ? await Promise.all([
         fetchClients(tenant.id),
@@ -35,15 +36,17 @@ export const load = async ({ locals, fetch }) => {
           { full_slug: 'services', name: 'Services' },
           { full_slug: 'about', name: 'About' }
         ],
-        call_to_action: [
-          {
-            label: 'Get a quote',
-            link: {
-              linktype: 'url',
-              url: '/get-a-quote'
-            }
-          }
-        ],
+        call_to_action: isAgency
+          ? [
+              {
+                label: 'Get a quote',
+                link: {
+                  linktype: 'url',
+                  url: '/get-a-quote'
+                }
+              }
+            ]
+          : [],
         secondary_navigation: [],
         footer_columns: []
       }

@@ -22,6 +22,10 @@
   $: member = data.member;
   $: pageUrl = `/team/${member.slug}`;
   $: upworkLink = member.links.find((l) => l.icon === 'upwork')?.url;
+  $: isAgency =
+    (($pageStore.data?.tenant?.meta as Record<string, unknown> | undefined)?.isAgency as
+      | boolean
+      | undefined) === true;
   $: dbTestimonials = ($pageStore.data?.dbTestimonials ?? []) as Testimonial[];
   $: memberTestimonials =
     dbTestimonials.length > 0
@@ -142,9 +146,11 @@
     </div>
 
     <div>
-      <p class="text-xs uppercase tracking-wider text-foreground-secondary">
-        {member.location}
-      </p>
+      {#if member.location}
+        <p class="text-xs uppercase tracking-wider text-foreground-secondary">
+          {member.location}
+        </p>
+      {/if}
       <h1 class="mt-2 text-5xl leading-tight lg:text-6xl">
         {member.name}
       </h1>
@@ -164,18 +170,20 @@
       <p class="mt-8 text-xl">{member.bio}</p>
 
       <div class="mt-8 flex flex-wrap gap-3">
-        <a
-          href="/get-a-quote"
-          class="inline-flex h-12 items-center justify-center rounded-lg bg-foreground px-6 text-md font-medium text-background transition-all hover:ring-4 active:scale-[0.98]"
-        >
-          Hire {member.name.split(' ')[0]}
-        </a>
-        <a
-          href="/contact"
-          class="inline-flex h-12 items-center justify-center rounded-lg border px-6 text-md font-medium transition-all hover:bg-foreground/5"
-        >
-          Book a call
-        </a>
+        {#if isAgency}
+          <a
+            href="/get-a-quote"
+            class="inline-flex h-12 items-center justify-center rounded-lg bg-foreground px-6 text-md font-medium text-background transition-all hover:ring-4 active:scale-[0.98]"
+          >
+            Hire {member.name.split(' ')[0]}
+          </a>
+          <a
+            href="/contact"
+            class="inline-flex h-12 items-center justify-center rounded-lg border px-6 text-md font-medium transition-all hover:bg-foreground/5"
+          >
+            Book a call
+          </a>
+        {/if}
         {#if member.hourlyRate}
           <span
             class="inline-flex h-12 items-center gap-2 rounded-lg bg-background-offset px-4 text-base text-foreground-secondary"
@@ -185,7 +193,7 @@
           </span>
         {/if}
       </div>
-      {#if member.hourlyRate}
+      {#if isAgency && member.hourlyRate}
         <p class="mt-3 max-w-2xl text-sm text-foreground-secondary">
           The hourly rate above is for individual contractor engagements via Upwork. Studio
           projects are priced project- or retainer-based —
@@ -476,4 +484,6 @@
   </section>
 {/if}
 
-<ContactCtaSection returnTo={pageUrl} />
+{#if isAgency}
+  <ContactCtaSection returnTo={pageUrl} />
+{/if}

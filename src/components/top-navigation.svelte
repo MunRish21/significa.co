@@ -21,6 +21,11 @@
   const scrollStatus = createTopNavScrollStatus();
 
   $: isNavHidden = $page.data?.page?.story?.content?.keep_top_bar_hidden;
+  $: tenant = $page.data?.tenant as
+    | { name?: string; brand?: Record<string, unknown> }
+    | undefined;
+  $: tenantLogo = (tenant?.brand?.logo as string | undefined) ?? null;
+  $: brandName = tenant?.name ?? 'Techyor';
 </script>
 
 <div class="mb-px h-[--topnav-height]">
@@ -38,8 +43,7 @@
     <div class="container mx-auto flex items-center justify-between px-container py-4">
       <div class="flex items-center gap-2">
         <a aria-label="Go to homepage" href="/">
-          <!-- <Logo class="mt-1" variant="wordmark" /> -->
-          <img src="/techyor.png" alt="Techyor" class="h-6" />
+          <img src={tenantLogo ?? '/techyor.png'} alt={brandName} class="h-6" />
         </a>
       </div>
 
@@ -92,7 +96,11 @@
       )}
     >
       <div class="flex w-full items-center justify-between">
-        <Logo variant="symbol" />
+        {#if tenantLogo}
+          <img src={tenantLogo} alt={brandName} class="h-7" />
+        {:else}
+          <Logo variant="symbol" />
+        {/if}
         <div class="flex gap-4">
           {#if configuration.call_to_action?.length}
             {@const { href } = getAnchorFromCmsLink(configuration.call_to_action[0].link)}
