@@ -14,11 +14,15 @@
   $: effective =
     members ?? (dbMembers.length > 0 ? dbMembers : getActiveTeamMembers());
   $: visible = limit ? effective.slice(0, limit) : effective;
+  $: isAgency =
+    (($page.data?.tenant?.meta as Record<string, unknown> | undefined)?.isAgency as
+      | boolean
+      | undefined) === true;
 </script>
 
 
 
-{#if visible.length > 0}
+{#if isAgency && visible.length > 0}
   <section class="border-t">
     <div class="container mx-auto px-container py-16 lg:py-24">
       <div class="mb-10 flex flex-col justify-between gap-4 lg:mb-14 lg:flex-row lg:items-end">

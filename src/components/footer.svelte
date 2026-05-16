@@ -79,7 +79,9 @@
           <li class="mb-2"><Link href="/about">About</Link></li>
           <li class="mb-2"><Link href="/projects">Projects</Link></li>
           <li class="mb-2"><Link href="/services">Services</Link></li>
-          <li class="mb-2"><Link href="/blog">Blog</Link></li>
+          {#if isAgency}
+            <li class="mb-2"><Link href="/blog">Blog</Link></li>
+          {/if}
         </ul>
       </div>
 
