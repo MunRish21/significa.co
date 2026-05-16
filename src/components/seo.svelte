@@ -24,6 +24,13 @@
 
   $: canonical =
     $page.data.page?.story?.content?.seo_canonical_url || `${BASE_URL}${$page.url.pathname}`;
+
+  $: tenant = $page.data?.tenant as
+    | { name?: string; meta?: Record<string, unknown> }
+    | undefined;
+  $: brandName = tenant?.name ?? 'Techyor';
+  $: isAgency = (tenant?.meta?.isAgency as boolean | undefined) === true;
+  $: twitterHandle = (tenant?.meta?.twitterHandle as string | undefined) ?? null;
 </script>
 
 <svelte:head>
@@ -41,8 +48,13 @@
 
     <title>{title || $page.data.page?.story?.content?.seo_title || t('seo.title')}</title>
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@TechyorDotCo" />
-    <meta name="twitter:creator" content="@TechyorDotCo" />
+    {#if isAgency}
+      <meta name="twitter:site" content="@TechyorDotCo" />
+      <meta name="twitter:creator" content="@TechyorDotCo" />
+    {:else if twitterHandle}
+      <meta name="twitter:site" content={twitterHandle} />
+      <meta name="twitter:creator" content={twitterHandle} />
+    {/if}
 
     {#if structureDataMarkup}
       <!-- eslint-disable-next-line svelte/no-at-html-tags -->
@@ -82,7 +94,7 @@
     {/each}
 
     <meta property="og:url" content={canonical} />
-    <meta property="og:site_name" content="Techyor" />
+    <meta property="og:site_name" content={brandName} />
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content={type} />
     {#if type === 'article'}
@@ -95,14 +107,14 @@
       {@const { src } = getImageAttributes(image, { size: [1200, 630] })}
       <meta property="og:image" content={src} />
       <meta property="twitter:image" content={src} />
-      <meta property="og:image:alt" content={title || image.alt || 'Techyor'} />
+      <meta property="og:image:alt" content={title || image.alt || brandName} />
     {:else if $page.data.page?.story?.content?.seo_og_image?.filename}
       {@const { src } = getImageAttributes($page.data.page?.story?.content?.seo_og_image, {
         size: [1200, 630]
       })}
       <meta property="og:image" content={src} />
       <meta property="twitter:image" content={src} />
-      <meta property="og:image:alt" content={title || 'Techyor'} />
+      <meta property="og:image:alt" content={title || brandName} />
     {:else if typeof image === 'string'}
       <meta
         property="og:image"
@@ -112,11 +124,11 @@
         property="twitter:image"
         content={image.startsWith('http') ? image : `${BASE_URL}${image}`}
       />
-      <meta property="og:image:alt" content={title || 'Techyor'} />
+      <meta property="og:image:alt" content={title || brandName} />
     {:else}
       <meta property="og:image" content="{BASE_URL}/og.png" />
       <meta property="twitter:image" content="{BASE_URL}/og.png" />
-      <meta property="og:image:alt" content={title || 'Techyor'} />
+      <meta property="og:image:alt" content={title || brandName} />
     {/if}
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />

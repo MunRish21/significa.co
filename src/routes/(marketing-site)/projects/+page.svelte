@@ -19,10 +19,21 @@
   $: dbPage = data?.page ?? null;
   $: sections = (data?.sections ?? {}) as SectionsMap;
   $: on = (key: string) => isSectionEnabled(sections, key);
-  $: pageTitle = dbPage?.title ?? 'Projects — Web, App, AI & E-commerce Portfolio | Techyor';
+  $: tenant = $page.data?.tenant as
+    | { name?: string; meta?: Record<string, unknown> }
+    | undefined;
+  $: brandName = tenant?.name ?? 'Techyor';
+  $: isAgency = (tenant?.meta?.isAgency as boolean | undefined) === true;
+  $: pageTitle =
+    dbPage?.title ??
+    (isAgency
+      ? 'Projects — Web, App, AI & E-commerce Portfolio | Techyor'
+      : `Projects — Selected case studies | ${brandName}`);
   $: pageDescription =
     dbPage?.description ??
-    "Browse Techyor's portfolio of 80+ shipped products: custom websites, web apps, mobile apps, e-commerce stores, AI tools, and automation built for teams worldwide.";
+    (isAgency
+      ? "Browse Techyor's portfolio of 80+ shipped products: custom websites, web apps, mobile apps, e-commerce stores, AI tools, and automation built for teams worldwide."
+      : `Selected case studies by ${brandName} — websites, web apps, e-commerce stores, and integrations shipped for clients in the US, UK, EU, and Australia.`);
 
   const projects = projectsData;
 
@@ -91,34 +102,29 @@
   <meta name="description" content={pageDescription} />
 
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Projects — Techyor Portfolio" />
-  <meta
-    property="og:description"
-    content="80+ shipped products: websites, web/mobile apps, e-commerce, AI tools, and automation."
-  />
+  <meta property="og:title" content={pageTitle} />
+  <meta property="og:description" content={pageDescription} />
   <meta property="og:image" content="{BASE_URL}/api/og/projects" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Techyor projects — selected work" />
+  <meta property="og:image:alt" content={`${brandName} projects — selected work`} />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@TechyorDotCo" />
-  <meta name="twitter:title" content="Projects — Techyor Portfolio" />
-  <meta
-    name="twitter:description"
-    content="80+ shipped products: websites, apps, e-commerce, AI, and automation."
-  />
+  {#if isAgency}
+    <meta name="twitter:site" content="@TechyorDotCo" />
+  {/if}
+  <meta name="twitter:title" content={pageTitle} />
+  <meta name="twitter:description" content={pageDescription} />
   <meta name="twitter:image" content="{BASE_URL}/api/og/projects" />
-  <meta name="twitter:image:alt" content="Techyor projects — selected work" />
+  <meta name="twitter:image:alt" content={`${brandName} projects — selected work`} />
 
   {@html `<${'script'} type="application/ld+json">${generateBreadcrumbSchema([
     { name: 'Home', url: '/' },
     { name: 'Projects', url: '/projects' }
   ])}</${'script'}>`}
   {@html `<${'script'} type="application/ld+json">${generateCollectionPageSchema({
-    name: 'Techyor Projects — Portfolio',
-    description:
-      'Portfolio of digital products including websites, apps, e-commerce, AI tools, and automation built for ambitious teams across the US, UK, AU, and Europe.',
+    name: `${brandName} Projects — Portfolio`,
+    description: pageDescription,
     url: `${BASE_URL}/projects`,
     numberOfItems: projectsData.length,
     itemUrls: projectsData.map((p) => `${BASE_URL}/projects/${p.slug}`),

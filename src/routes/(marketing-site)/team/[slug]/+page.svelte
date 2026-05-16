@@ -26,6 +26,7 @@
     (($pageStore.data?.tenant?.meta as Record<string, unknown> | undefined)?.isAgency as
       | boolean
       | undefined) === true;
+  $: brandName = ($pageStore.data?.tenant?.name as string | undefined) ?? 'Techyor';
   $: dbTestimonials = ($pageStore.data?.dbTestimonials ?? []) as Testimonial[];
   $: memberTestimonials =
     dbTestimonials.length > 0
@@ -80,7 +81,7 @@
   <meta property="og:image" content={`${BASE_URL}/api/og/team/${member.slug}`} />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="{member.name} — {member.role} at Techyor" />
+  <meta property="og:image:alt" content="{member.name} — {member.role}{isAgency ? ` at ${brandName}` : ''}" />
   <meta property="og:url" content={`${BASE_URL}${pageUrl}`} />
   <meta property="profile:first_name" content={member.name.split(' ')[0]} />
   <meta property="profile:last_name" content={member.name.split(' ').slice(1).join(' ')} />
@@ -89,7 +90,7 @@
   <meta name="twitter:title" content={member.seo.title} />
   <meta name="twitter:description" content={member.seo.description} />
   <meta name="twitter:image" content={`${BASE_URL}/api/og/team/${member.slug}`} />
-  <meta name="twitter:image:alt" content="{member.name} — {member.role} at Techyor" />
+  <meta name="twitter:image:alt" content="{member.name} — {member.role}{isAgency ? ` at ${brandName}` : ''}" />
 
   {@html `<${'script'} type="application/ld+json">${personSchema}</${'script'}>`}
   {@html `<${'script'} type="application/ld+json">${breadcrumbSchema}</${'script'}>`}

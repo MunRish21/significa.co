@@ -42,10 +42,20 @@
     (($page.data?.tenant?.meta as Record<string, unknown> | undefined)?.isAgency as
       | boolean
       | undefined) === true;
-  $: pageTitle = dbPage?.title ?? 'Services — Strategy, Design, Development | Techyor';
+  $: tenant = $page.data?.tenant as
+    | { name?: string; meta?: Record<string, unknown> }
+    | undefined;
+  $: brandName = tenant?.name ?? 'Techyor';
+  $: pageTitle =
+    dbPage?.title ??
+    (isAgency
+      ? 'Services — Strategy, Design, Development | Techyor'
+      : `Services — What I build | ${brandName}`);
   $: pageDescription =
     dbPage?.description ??
-    'End-to-end digital product services. Strategy, UX/UI design, web and mobile development, AI integrations, e-commerce, and automation — all under one roof. Built for ambitious teams.';
+    (isAgency
+      ? 'End-to-end digital product services. Strategy, UX/UI design, web and mobile development, AI integrations, e-commerce, and automation — all under one roof. Built for ambitious teams.'
+      : `Services offered by ${brandName} — websites, web apps, e-commerce stores, integrations, and AI tools. Solo, end-to-end. Built for clients in the US, UK, EU, and Australia.`);
   $: pageMeta = (dbPage?.meta ?? {}) as Record<string, string>;
 
   $: dbTestimonials = (data?.dbTestimonials ?? []) as Testimonial[];
@@ -628,14 +638,26 @@
   <meta property="og:image" content="{BASE_URL}{pageMeta.ogImage ?? '/api/og/services'}" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Techyor services — strategy, design, development" />
+  <meta
+    property="og:image:alt"
+    content={isAgency
+      ? 'Techyor services — strategy, design, development'
+      : `${brandName} — services`}
+  />
 
   <meta name="twitter:card" content={pageMeta.twitterCard ?? 'summary_large_image'} />
-  <meta name="twitter:site" content="@TechyorDotCo" />
+  {#if isAgency}
+    <meta name="twitter:site" content="@TechyorDotCo" />
+  {/if}
   <meta name="twitter:title" content={pageMeta.ogTitle ?? pageTitle} />
   <meta name="twitter:description" content={pageMeta.ogDescription ?? pageDescription} />
   <meta name="twitter:image" content="{BASE_URL}{pageMeta.ogImage ?? '/api/og/services'}" />
-  <meta name="twitter:image:alt" content="Techyor services — strategy, design, development" />
+  <meta
+    name="twitter:image:alt"
+    content={isAgency
+      ? 'Techyor services — strategy, design, development'
+      : `${brandName} — services`}
+  />
 
   {@html `<${'script'} type="application/ld+json">${generateOrganizationSchema()}</${'script'}>`}
   {@html `<${'script'} type="application/ld+json">${generateBreadcrumbSchema([

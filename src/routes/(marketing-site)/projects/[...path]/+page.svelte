@@ -20,6 +20,11 @@
     projectsToShow = 8;
   }
 
+  $: tenant = $page.data?.tenant as
+    | { name?: string; meta?: Record<string, unknown> }
+    | undefined;
+  $: brandName = tenant?.name ?? 'Techyor';
+
   // Get service from URL path
   $: servicePath = $page.params.path;
   console.log('📍 servicePath changed:', servicePath);
@@ -137,14 +142,14 @@
 </script>
 
 <svelte:head>
-  <title>{properServiceName} Projects — Techyor Portfolio</title>
+  <title>{properServiceName} Projects — {brandName} Portfolio</title>
   <meta
     name="description"
-    content="Browse Techyor's {properServiceName} projects. {totalProjects}+ shipped {properServiceName} products including custom solutions for teams worldwide."
+    content="Browse {brandName}'s {properServiceName} projects. {totalProjects}+ shipped {properServiceName} products including custom solutions for teams worldwide."
   />
 
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="{properServiceName} Projects — Techyor" />
+  <meta property="og:title" content="{properServiceName} Projects — {brandName}" />
   <meta
     property="og:description"
     content="{totalProjects}+ {properServiceName} projects: websites, apps, custom solutions built for leading brands."

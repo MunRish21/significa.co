@@ -33,6 +33,7 @@
     (($page.data?.tenant?.meta as Record<string, unknown> | undefined)?.isAgency as
       | boolean
       | undefined) === true;
+  $: brandName = ($page.data?.tenant?.name as string | undefined) ?? 'Techyor';
 
   const projectsMap: Record<string, any> = {
     'monster-fairings': {
@@ -145,13 +146,13 @@
     {@const absoluteImage = projectImage.startsWith('http')
       ? projectImage
       : `${BASE_URL}${projectImage}`}
-    <title>{project.name} — {project.deliverables?.[0] || 'Case Study'} | Techyor</title>
+    <title>{project.name} — {project.deliverables?.[0] || 'Case Study'} | {brandName}</title>
     <meta name="description" content={project.tagline} />
 
     <meta property="og:type" content="article" />
     <meta
       property="og:title"
-      content="{project.name} — {project.deliverables?.[0] || 'Case Study'} | Techyor"
+      content="{project.name} — {project.deliverables?.[0] || 'Case Study'} | {brandName}"
     />
     <meta property="og:description" content={project.tagline} />
     <meta property="og:image" content={absoluteImage} />
@@ -159,11 +160,13 @@
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content={project.name} />
     <meta property="article:published_time" content="{project.publishedYear}-01-01" />
-    <meta property="article:author" content="Techyor" />
+    <meta property="article:author" content={brandName} />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@TechyorDotCo" />
-    <meta name="twitter:title" content="{project.name} — Techyor" />
+    {#if isAgency}
+      <meta name="twitter:site" content="@TechyorDotCo" />
+    {/if}
+    <meta name="twitter:title" content="{project.name} — {brandName}" />
     <meta name="twitter:description" content={project.tagline} />
     <meta name="twitter:image" content={absoluteImage} />
     <meta name="twitter:image:alt" content={project.name} />
@@ -189,26 +192,28 @@
   {:else if data.isFilter}
     {@const filterSlug = toSlug(data.filterName)}
     {@const filterOgUrl = `${BASE_URL}/api/og/projects-filter/${filterSlug}`}
-    <title>{data.filterName} Projects — Techyor Portfolio</title>
+    <title>{data.filterName} Projects — {brandName} Portfolio</title>
     <meta
       name="description"
-      content="Browse Techyor projects in {data.filterName}. {data.filteredProjects.length}+ shipped {data.filterName.toLowerCase()} projects for teams across the US, UK, AU, and Europe."
+      content="Browse {brandName} projects in {data.filterName}. {data.filteredProjects.length}+ shipped {data.filterName.toLowerCase()} projects for teams across the US, UK, AU, and Europe."
     />
 
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="{data.filterName} Projects — Techyor" />
-    <meta property="og:description" content="Browse Techyor projects in {data.filterName}." />
+    <meta property="og:title" content="{data.filterName} Projects — {brandName}" />
+    <meta property="og:description" content="Browse {brandName} projects in {data.filterName}." />
     <meta property="og:image" content={filterOgUrl} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="{data.filterName} projects — Techyor portfolio" />
+    <meta property="og:image:alt" content="{data.filterName} projects — {brandName} portfolio" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@TechyorDotCo" />
-    <meta name="twitter:title" content="{data.filterName} Projects — Techyor" />
-    <meta name="twitter:description" content="Browse Techyor projects in {data.filterName}." />
+    {#if isAgency}
+      <meta name="twitter:site" content="@TechyorDotCo" />
+    {/if}
+    <meta name="twitter:title" content="{data.filterName} Projects — {brandName}" />
+    <meta name="twitter:description" content="Browse {brandName} projects in {data.filterName}." />
     <meta name="twitter:image" content={filterOgUrl} />
-    <meta name="twitter:image:alt" content="{data.filterName} projects — Techyor portfolio" />
+    <meta name="twitter:image:alt" content="{data.filterName} projects — {brandName} portfolio" />
 
     {@html `<${'script'} type="application/ld+json">${generateBreadcrumbSchema([
       { name: 'Home', url: '/' },
@@ -216,8 +221,8 @@
       { name: data.filterName, url: `/projects/${filterSlug}` }
     ])}</${'script'}>`}
     {@html `<${'script'} type="application/ld+json">${generateCollectionPageSchema({
-      name: `${data.filterName} Projects — Techyor Portfolio`,
-      description: `${data.filteredProjects.length}+ ${data.filterName.toLowerCase()} projects shipped by Techyor for teams worldwide.`,
+      name: `${data.filterName} Projects — ${brandName} Portfolio`,
+      description: `${data.filteredProjects.length}+ ${data.filterName.toLowerCase()} projects shipped by ${brandName} for teams worldwide.`,
       url: `${BASE_URL}/projects/${filterSlug}`,
       numberOfItems: data.filteredProjects.length,
       itemUrls: data.filteredProjects.map((p) => `${BASE_URL}/projects/${p.slug}`),
@@ -226,7 +231,7 @@
       imagePath: `/api/og/projects-filter/${filterSlug}`
     })}</${'script'}>`}
   {:else}
-    <title>Project Not Found — Techyor</title>
+    <title>Project Not Found — {brandName}</title>
     <meta name="robots" content="noindex, nofollow" />
   {/if}
 </svelte:head>
