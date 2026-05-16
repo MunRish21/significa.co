@@ -22,10 +22,11 @@
 
   $: isNavHidden = $page.data?.page?.story?.content?.keep_top_bar_hidden;
   $: tenant = $page.data?.tenant as
-    | { name?: string; brand?: Record<string, unknown> }
+    | { name?: string; brand?: Record<string, unknown>; meta?: Record<string, unknown> }
     | undefined;
   $: tenantLogo = (tenant?.brand?.logo as string | undefined) ?? null;
   $: brandName = tenant?.name ?? 'Techyor';
+  $: isAgency = (tenant?.meta?.isAgency as boolean | undefined) === true;
 </script>
 
 <div class="mb-px h-[--topnav-height]">
@@ -142,28 +143,32 @@
             <li class="mb-3">
               <Link class="inline-block" href="/careers">Careers</Link>
             </li>
-            <li class="mb-3">
-              <Link class="inline-block" href="/get-a-quote">Get a quote</Link>
-            </li>
-            <li class="mb-3">
-              <Link class="inline-block" href="/contact">Contact us</Link>
-            </li>
+            {#if isAgency}
+              <li class="mb-3">
+                <Link class="inline-block" href="/get-a-quote">Get a quote</Link>
+              </li>
+              <li class="mb-3">
+                <Link class="inline-block" href="/contact">Contact us</Link>
+              </li>
+            {/if}
           </ul>
         </div>
 
-        <div class="mt-10">
-          <p class="mb-4 text-xs font-medium uppercase tracking-wider text-foreground-secondary">
-            Follow us
-          </p>
-          <ul class="text-lg font-medium">
-            <li class="mb-3">
-              <Link class="inline-block" href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</Link>
-            </li>
-            <li class="mb-3">
-              <Link class="inline-block" href="https://github.com" target="_blank" rel="noopener noreferrer">Github</Link>
-            </li>
-          </ul>
-        </div>
+        {#if isAgency}
+          <div class="mt-10">
+            <p class="mb-4 text-xs font-medium uppercase tracking-wider text-foreground-secondary">
+              Follow us
+            </p>
+            <ul class="text-lg font-medium">
+              <li class="mb-3">
+                <Link class="inline-block" href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</Link>
+              </li>
+              <li class="mb-3">
+                <Link class="inline-block" href="https://github.com" target="_blank" rel="noopener noreferrer">Github</Link>
+              </li>
+            </ul>
+          </div>
+        {/if}
       </div>
     </div>
   {/if}

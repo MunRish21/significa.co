@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { page } from '$app/stores';
   import { richTextBlockWidths } from '$lib/constants';
   import { getAnchorFromCmsLink, getImageAttributes } from '$lib/utils/cms';
   import { formatDate } from '$lib/utils/dates';
@@ -16,6 +17,10 @@
   export let story: BlogPostPage;
   export let related: BlogPostPage[];
 
+  $: isAgency =
+      (($page.data?.tenant?.meta as Record<string, unknown> | undefined)?.isAgency as
+        | boolean
+        | undefined) === true;
   $: publishedAt = story.first_published_at || story.published_at || story.created_at;
   $: modifiedAt = story.published_at || story.first_published_at || story.created_at;
   $: primaryAuthor = story.content.authors?.[0]?.name || story.content.external_authors?.[0]?.name;
@@ -168,19 +173,21 @@
 </div>
 
 <div class="mx-auto px-container">
-  <div class="relative mx-auto mt-12 max-w-2xl">
-    <div data-theme="yellow" class="flex justify-between gap-8 rounded-3xl p-6 md:p-8">
-      <div class="flex flex-col items-start">
-        <div class="flex-1">
-          <h4 class="max-w-md text-3xl font-bold">{t('blog.pre-footer.title')}</h4>
+  {#if isAgency}
+    <div class="relative mx-auto mt-12 max-w-2xl">
+      <div data-theme="yellow" class="flex justify-between gap-8 rounded-3xl p-6 md:p-8">
+        <div class="flex flex-col items-start">
+          <div class="flex-1">
+            <h4 class="max-w-md text-3xl font-bold">{t('blog.pre-footer.title')}</h4>
+          </div>
+          <Button class="mt-6" as="a" href="/get-a-quote" arrow icon="document"
+            >{t('blog.pre-footer.cta')}</Button
+          >
         </div>
-        <Button class="mt-6" as="a" href="/get-a-quote" arrow icon="document"
-          >{t('blog.pre-footer.cta')}</Button
-        >
+        <TwoEggs class="hidden w-60 sm:block" />
       </div>
-      <TwoEggs class="hidden w-60 sm:block" />
     </div>
-  </div>
+  {/if}
   <h4 class="mb-[-40px] mt-10 block text-foreground-secondary md:hidden">
     {t('blog.pre-footer.related')}
   </h4>

@@ -29,6 +29,11 @@
 
   export let data;
 
+  $: isAgency =
+    (($page.data?.tenant?.meta as Record<string, unknown> | undefined)?.isAgency as
+      | boolean
+      | undefined) === true;
+
   const projectsMap: Record<string, any> = {
     'monster-fairings': {
       id: 11,
@@ -1995,7 +2000,9 @@
       />
 
       <!-- Contact CTA Section -->
-      <ContactCtaSection returnTo={`/projects/${project.slug}`} />
+      {#if isAgency}
+        <ContactCtaSection returnTo={`/projects/${project.slug}`} />
+      {/if}
     </div>
   </main>
 {:else}
