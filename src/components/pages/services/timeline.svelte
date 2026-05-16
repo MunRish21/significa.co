@@ -1,11 +1,20 @@
 <script lang="ts">
   import clsx from 'clsx';
   import { Confetti } from 'svelte-confetti';
+  import { page } from '$app/stores';
   import TimelineCell from './timeline-cell.svelte';
   import Needle from './needle.svelte';
-
-  const NeedleHead = '/assets/storyblok/experience-badge.webp';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
+
+  const NEEDLE_HEAD_BY_TENANT: Record<string, string> = {
+    rishab: '/assets/storyblok/upwork-certified.webp',
+    munish: '/assets/storyblok/experience-badge.webp'
+  };
+  const DEFAULT_NEEDLE_HEAD = '/assets/storyblok/experience-badge.webp';
+
+  $: tenantSlug = ($page.data?.tenant?.slug as string | undefined) ?? null;
+  $: NeedleHead =
+    (tenantSlug && NEEDLE_HEAD_BY_TENANT[tenantSlug]) ?? DEFAULT_NEEDLE_HEAD;
   import { CONFETTI_COLOR_ARRAY } from '$lib/constants';
   import type { ServiceTimelineRowStoryblok } from '$types/bloks';
 
