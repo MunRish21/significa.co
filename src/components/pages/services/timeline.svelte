@@ -8,7 +8,8 @@
 
   const NEEDLE_HEAD_BY_TENANT: Record<string, string> = {
     rishab: '/assets/storyblok/upwork-certified.webp',
-    munish: '/assets/storyblok/experience-badge.webp'
+    munish: '/assets/storyblok/experience-badge.webp',
+    techyor: '/assets/storyblok/experience-badge.webp'
   };
   const DEFAULT_NEEDLE_HEAD = '/assets/storyblok/experience-badge.webp';
 
