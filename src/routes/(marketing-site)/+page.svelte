@@ -33,6 +33,7 @@
   } from '$lib/data/testimonials';
   import { getActiveTeamMembers, type TeamMember } from '$lib/data/team';
   import { isSectionEnabled, type SectionsMap } from '$lib/tenant';
+  import { getHomeContent } from '$lib/data/home-content';
 
   export let data: {
     page: { title: string | null; description: string | null; meta: Record<string, unknown> } | null;
@@ -41,11 +42,15 @@
 
   $: dbPage = data?.page ?? null;
   $: sections = (data?.sections ?? {}) as SectionsMap;
-  $: on = (key: string) => isSectionEnabled(sections, key);
-  $: pageTitle = dbPage?.title ?? 'Techyor — Web, App & AI Product Development Studio';
-  $: pageDescription =
-    dbPage?.description ??
-    'Techyor is a digital product studio building custom websites, web apps, mobile apps, e-commerce stores, AI tools, and automation for teams in the US, UK, Switzerland, and Australia. Strategy, design, development — under one roof.';
+  $: tenantSlug = ($page.data?.tenant?.slug as string | undefined) ?? null;
+  $: home = getHomeContent(tenantSlug);
+  // A section renders when BOTH the per-tenant content config AND the
+  // Supabase page_sections row say it is enabled. The content config wins
+  // when it explicitly disables a section for a tenant.
+  $: on = (key: string, contentEnabled: boolean) =>
+    contentEnabled && isSectionEnabled(sections, key);
+  $: pageTitle = dbPage?.title ?? home.meta.title;
+  $: pageDescription = dbPage?.description ?? home.meta.description;
   $: pageMeta = (dbPage?.meta ?? {}) as Record<string, string>;
 
   $: dbTestimonials = (data?.dbTestimonials ?? []) as Testimonial[];
@@ -85,7 +90,7 @@
     });
   });
 
-  const aboutGridBlock: AboutGridStoryblok = {
+  $: aboutGridBlock = {
     component: 'about-grid',
     about_links: [
       {
@@ -96,27 +101,26 @@
       {
         title: 'Perks and benefits.',
         description:
-          "Flexible hours, remote work, health cover, learning budget, and an annual retreat. We try to get the basics right so you can focus on the work."
+          'Flexible hours, remote work, health cover, learning budget, and an annual retreat. We try to get the basics right so you can focus on the work.'
       },
       {
         title: 'Career plan.',
         description:
-          "You grow. We pair you with mentors, give you honest feedback, and fund your learning. Set the pace."
+          'You grow. We pair you with mentors, give you honest feedback, and fund your learning. Set the pace.'
       }
     ]
-  };
+  } as AboutGridStoryblok;
 
-  const aboutBlock: TextWithMediaStoryblok = {
+  $: aboutBlock = {
     component: 'text-with-media',
-    eyebrow: 'About Techyor.',
-    title: 'We ship products, not promises.',
-    description:
-      "Eight years in, 80+ projects shipped for teams in the US, UK, Switzerland, and Australia. We handle strategy, design, and code. We move fast. We ship on time.",
+    eyebrow: home.about.eyebrow,
+    title: home.about.title,
+    description: home.about.description,
     cta: [
       {
-        label: 'About us',
+        label: home.about.ctaLabel,
         link: {
-          cached_url: '/about',
+          cached_url: home.about.ctaUrl,
           linktype: 'story',
           story: undefined
         }
@@ -124,46 +128,20 @@
     ],
     media: undefined,
     revert_orientation: false
-  };
+  } as unknown as TextWithMediaStoryblok;
 
-  const newtonBlock: NewtonStoryblok = {
+  $: newtonBlock = {
     component: 'newton',
-    title1: 'Our services.',
-    title2: 'One team. No handoffs.',
-    description:
-      "Websites, apps, e-commerce, AI tools, automation. We build it all in-house. Strategy and research upfront, design, code, launch. Same team the whole way, so ideas don't get lost between departments.",
-    cta_label: 'Explore services',
+    title1: home.newton.title1,
+    title2: home.newton.title2,
+    description: home.newton.description,
+    cta_label: home.newton.ctaLabel,
     cta_link: {
-      cached_url: '/services',
+      cached_url: home.newton.ctaUrl,
       linktype: 'story',
       story: undefined
     }
-  };
-
-  const stats = [
-    { value: '8+', label: 'Years in' },
-    { value: '80+', label: 'Shipped' },
-    { value: '4', label: 'Time zones' },
-    { value: '100%', label: 'One team' }
-  ];
-
-  const capabilities = [
-    {
-      title: 'Strategy.',
-      description:
-        "We start with research. User interviews, market analysis, product definition. Get the strategy right before you build."
-    },
-    {
-      title: 'Design.',
-      description:
-        "UI and UX that works on screen and in the browser. We sweat the details so your users don't have to."
-    },
-    {
-      title: 'Development.',
-      description:
-        "Front-end, back-end, mobile, AI integrations. Code that performs, scales, and doesn't break when load spikes hit."
-    }
-  ];
+  } as unknown as NewtonStoryblok;
 
   const sampleCareers = [
     {
@@ -192,8 +170,12 @@
     }
   ];
 
-  const smallHighlights: HomePageStoryblok['small_highlights'] = [
-    ...projectsData.map((project) => ({
+  $: filteredProjectsData = home.selectedWork.projectSlugs
+    ? projectsData.filter((p) => home.selectedWork.projectSlugs!.includes(p.slug))
+    : projectsData;
+
+  $: smallHighlights = [
+    ...filteredProjectsData.map((project) => ({
       id: project.id,
       uuid: `uuid-${project.id}`,
       name: project.name,
@@ -272,81 +254,83 @@
 <svelte:head>
   <title>{pageTitle}</title>
   <meta name="description" content={pageDescription} />
-  {#if pageMeta.keywords}
-    <meta name="keywords" content={pageMeta.keywords} />
+  {#if pageMeta.keywords ?? home.meta.keywords}
+    <meta name="keywords" content={pageMeta.keywords ?? home.meta.keywords} />
   {/if}
 
   <meta property="og:type" content="website" />
-  <meta property="og:title" content={pageMeta.ogTitle ?? pageTitle} />
-  <meta property="og:description" content={pageMeta.ogDescription ?? pageDescription} />
-  <meta property="og:image" content="{BASE_URL}{pageMeta.ogImage ?? '/api/og/home'}" />
+  <meta property="og:title" content={pageMeta.ogTitle ?? home.meta.ogTitle ?? pageTitle} />
+  <meta
+    property="og:description"
+    content={pageMeta.ogDescription ?? home.meta.ogDescription ?? pageDescription}
+  />
+  <meta property="og:image" content="{BASE_URL}{pageMeta.ogImage ?? home.meta.ogImage}" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Techyor — digital product studio" />
+  <meta property="og:image:alt" content={home.meta.ogImageAlt} />
 
   <meta name="twitter:card" content={pageMeta.twitterCard ?? 'summary_large_image'} />
-  <meta name="twitter:site" content="@TechyorDotCo" />
-  <meta name="twitter:creator" content="@TechyorDotCo" />
-  <meta name="twitter:title" content={pageMeta.ogTitle ?? pageTitle} />
-  <meta name="twitter:description" content={pageMeta.ogDescription ?? pageDescription} />
-  <meta name="twitter:image" content="{BASE_URL}{pageMeta.ogImage ?? '/api/og/home'}" />
-  <meta name="twitter:image:alt" content="Techyor — digital product studio" />
+  {#if home.meta.twitterSite}
+    <meta name="twitter:site" content={home.meta.twitterSite} />
+  {/if}
+  {#if home.meta.twitterCreator}
+    <meta name="twitter:creator" content={home.meta.twitterCreator} />
+  {/if}
+  <meta name="twitter:title" content={pageMeta.ogTitle ?? home.meta.ogTitle ?? pageTitle} />
+  <meta
+    name="twitter:description"
+    content={pageMeta.ogDescription ?? home.meta.ogDescription ?? pageDescription}
+  />
+  <meta name="twitter:image" content="{BASE_URL}{pageMeta.ogImage ?? home.meta.ogImage}" />
+  <meta name="twitter:image:alt" content={home.meta.ogImageAlt} />
 
   {@html `<${'script'} type="application/ld+json">${generateOrganizationSchema()}</${'script'}>`}
   {@html `<${'script'} type="application/ld+json">${generateProfessionalServiceSchema({
-    description:
-      'A digital product studio building custom websites, web apps, mobile apps, e-commerce stores, AI tools, and automation for teams in the US, UK, Switzerland, and Australia.',
+    description: home.meta.description,
     url: BASE_URL,
-    imagePath: '/api/og/home',
+    imagePath: home.meta.ogImage,
     ratings: homeRatings,
     reviews: homeReviews
   })}</${'script'}>`}
-  {@html `<${'script'} type="application/ld+json">${generateFAQSchema(getCommonFaqsForSchema())}</${'script'}>`}
-  {@html `<${'script'} type="application/ld+json">${generateTeamMembersSchema(homeTeamSchema)}</${'script'}>`}
+  {#if home.faqs.enabled}
+    {@html `<${'script'} type="application/ld+json">${generateFAQSchema(getCommonFaqsForSchema())}</${'script'}>`}
+  {/if}
+  {#if home.team.enabled}
+    {@html `<${'script'} type="application/ld+json">${generateTeamMembersSchema(homeTeamSchema)}</${'script'}>`}
+  {/if}
 </svelte:head>
 
 <main class="overflow-hidden">
-  {#if on('hero')}
+  {#if on('hero', home.hero.enabled)}
     <div class="container mx-auto px-container">
       <h1 class="mt-10 text-7xl font-bold md:mt-14 lg:mt-20">
-        <span
-          bind:this={textElements[0]}
-          class="ease-[cubic-bezier(0.34, 1.56, 0.64, 1)] mr-1 inline-block transition-all duration-500"
-          style="opacity: 1; transform: translateY(0);">Think.</span
-        >
-        <span
-          bind:this={textElements[1]}
-          class="ease-[cubic-bezier(0.34, 1.56, 0.64, 1)] mr-1 inline-block transition-all duration-500"
-          style="opacity: 1; transform: translateY(0);">Design.</span
-        >
-        <br />
-        <span
-          bind:this={textElements[2]}
-          class="ease-[cubic-bezier(0.34, 1.56, 0.64, 1)] mr-1 inline-block transition-all duration-500"
-          style="opacity: 1; transform: translateY(0);">Build.</span
-        >
-        <br />
-        <span
-          bind:this={textElements[3]}
-          class="ease-[cubic-bezier(0.34, 1.56, 0.64, 1)] mr-1 inline-block text-foreground-secondary transition-all duration-500"
-          style="opacity: 1; transform: translateY(0);">Then keep shipping.</span
-        >
+        {#each home.hero.headlineLines as line, i}
+          <span
+            bind:this={textElements[i]}
+            class="ease-[cubic-bezier(0.34, 1.56, 0.64, 1)] mr-1 inline-block transition-all duration-500 {line.secondary
+              ? 'text-foreground-secondary'
+              : ''}"
+            style="opacity: 1; transform: translateY(0);">{line.text}</span
+          >
+          {#if i === 1 || i === 2}
+            <br />
+          {/if}
+        {/each}
       </h1>
       <p
         data-speakable
         class="mt-6 max-w-3xl text-2xl text-foreground-secondary md:mt-8 lg:mt-10 lg:text-3xl"
       >
-        Techyor is a product studio. For eight years we've built websites, apps, and AI tools for
-        teams in the US, UK, Switzerland, and Australia.
+        {home.hero.subtitle}
       </p>
     </div>
   {/if}
 
-  {#if on('stats')}
+  {#if on('stats', home.stats.enabled)}
     <section class="mt-10 md:mt-14 lg:mt-20">
       <div class="container mx-auto px-container">
         <div class="grid grid-cols-2 gap-6 border-y py-10 md:grid-cols-4 md:gap-8 md:py-14">
-          {#each stats as stat}
+          {#each home.stats.items as stat}
             <div class="flex flex-col">
               <p class="text-5xl font-bold lg:text-6xl">{stat.value}</p>
               <p class="mt-2 text-base text-foreground-secondary md:text-lg">{stat.label}</p>
@@ -357,13 +341,13 @@
     </section>
   {/if}
 
-  {#if on('capabilities')}
+  {#if on('capabilities', home.capabilities.enabled)}
     <section class="mt-10 md:mt-14 lg:mt-20">
       <div class="container mx-auto px-container">
-        <h2 class="text-5xl text-foreground-secondary">What we do.</h2>
-        <p class="text-5xl">Strategy. Design. Development.</p>
+        <h2 class="text-5xl text-foreground-secondary">{home.capabilities.eyebrow}</h2>
+        <p class="text-5xl">{home.capabilities.title}</p>
         <div class="mt-8 grid grid-cols-1 gap-8 md:mt-12 md:grid-cols-3 md:gap-10">
-          {#each capabilities as cap}
+          {#each home.capabilities.items as cap}
             <div class="flex flex-col">
               <h3 class="text-3xl font-semibold">{cap.title}</h3>
               <p class="mt-3 text-xl text-foreground-secondary">{cap.description}</p>
@@ -378,13 +362,13 @@
     class="ease-[cubic-bezier(0.34, 1.56, 0.64, 1)] translate-y-0 opacity-100 transition-all duration-700"
   >
     <div class="container mx-auto px-container">
-      {#if on('featured-highlights')}
+      {#if on('featured-highlights', home.featuredHighlights.enabled)}
         <section class="mb-8 mt-10 md:mt-14 lg:mt-20">
           <SmallHighlights highlights={smallHighlights.slice(0, 12)} />
         </section>
       {/if}
 
-      {#if on('showreel')}
+      {#if on('showreel', home.showreel.enabled)}
         <section class="relative overflow-hidden rounded-lg">
           <div
             class="pointer-events-none absolute left-0 top-0 z-10 flex h-full w-full items-center justify-center bg-black/10"
@@ -402,11 +386,11 @@
     </div>
   </div>
 
-  {#if on('selected-work')}
+  {#if on('selected-work', home.selectedWork.enabled)}
     <section class="mb-12 mt-10 md:mb-16 md:mt-14 lg:mb-20 lg:mt-20">
       <div class="container mx-auto px-container">
-        <h2 class="text-5xl text-foreground-secondary">Selected work.</h2>
-        <p class="text-5xl">Products we're proud of.</p>
+        <h2 class="text-5xl text-foreground-secondary">{home.selectedWork.eyebrow}</h2>
+        <p class="text-5xl">{home.selectedWork.title}</p>
       </div>
       <div class="mt-4 md:mt-6 lg:mt-8">
         {#each smallHighlights
@@ -424,33 +408,33 @@
           href="/projects"
           class="text-md group relative inline-flex h-11 items-center justify-center gap-1.5 overflow-hidden whitespace-nowrap rounded-md bg-foreground px-5 font-medium leading-none text-background outline-none transition-all hover:ring-4 focus-visible:ring-4 active:scale-[0.98] active:ring-2 disabled:pointer-events-none disabled:opacity-60"
         >
-          View all projects
+          {home.selectedWork.viewAllLabel}
         </a>
       </div>
     </section>
   {/if}
 
-  {#if on('services-newton')}
+  {#if on('services-newton', home.newton.enabled)}
     <Newton block={newtonBlock} />
   {/if}
 
-  {#if on('about-text-media')}
+  {#if on('about-text-media', home.about.enabled)}
     <TextWithMedia block={aboutBlock} />
   {/if}
 
-  {#if on('about-grid')}
+  {#if on('about-grid', home.aboutGrid.enabled)}
     <AboutGrid block={aboutGridBlock} />
   {/if}
 
-  {#if on('team')}
+  {#if on('team', home.team.enabled)}
     <TeamSection
-      title="Meet the people building it."
-      subtitle="Hire a specialist directly."
+      title={home.team.title ?? 'Meet the people building it.'}
+      subtitle={home.team.subtitle ?? 'Hire a specialist directly.'}
       showViewAll
     />
   {/if}
 
-  {#if on('blog-insights')}
+  {#if on('blog-insights', home.blogInsights.enabled)}
     <section class="mt-10 md:mt-14 lg:mt-20">
       <div class="container mx-auto px-container">
         <h2 class="text-5xl text-foreground-secondary">Insights.</h2>
@@ -466,11 +450,11 @@
     </section>
   {/if}
 
-  {#if on('clients')}
-    <ClientsSection title="Trusted by teams in the US, UK, Switzerland, and Australia." />
+  {#if on('clients', home.clients.enabled)}
+    <ClientsSection title={home.clients.title} />
   {/if}
 
-  {#if on('faqs')}
+  {#if on('faqs', home.faqs.enabled)}
     <FaqsListBlock block={commonFaqsBlock} />
   {/if}
 </main>

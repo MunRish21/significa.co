@@ -26,7 +26,7 @@
         <img
           src={tenantLogo}
           alt={brandName}
-          class="h-10 w-auto md:origin-top-left md:scale-125"
+          class="h-12 w-auto max-w-[180px] self-start object-contain"
         />
       {:else}
         <Logo variant="symbol" class="md:origin-top-left md:scale-125" />
