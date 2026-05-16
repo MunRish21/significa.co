@@ -1,10 +1,17 @@
 <script lang="ts">
+  import { page } from '$app/stores';
+
   /** Compact variant strips description and uses smaller padding. */
   export let compact: boolean = false;
   /** Background variant — set to 'transparent' or '' to remove tint. */
   export let background: string = 'bg-background-offset/40';
   /** Add a top border. */
   export let bordered: boolean = false;
+
+  $: isAgency =
+    (($page.data?.tenant?.meta as Record<string, unknown> | undefined)?.isAgency as
+      | boolean
+      | undefined) === true;
 
   const signals = [
     {
@@ -25,6 +32,7 @@
   ];
 </script>
 
+{#if isAgency}
 <section class="{bordered ? 'border-t' : ''} {background}">
   <div class="container mx-auto px-container {compact ? 'py-6 lg:py-8' : 'py-10 lg:py-14'}">
     <div class="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8">
@@ -44,3 +52,4 @@
     </div>
   </div>
 </section>
+{/if}

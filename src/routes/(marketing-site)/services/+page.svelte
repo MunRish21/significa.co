@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { page } from '$app/stores';
   import TimelineServices from '$components/blocks/timeline-services.svelte';
   import Services from '$components/blocks/services.svelte';
   import Clients from '$components/blocks/clients.svelte';
@@ -37,6 +38,10 @@
   $: dbPage = data?.page ?? null;
   $: sections = (data?.sections ?? {}) as SectionsMap;
   $: on = (key: string) => isSectionEnabled(sections, key);
+  $: isAgency =
+    (($page.data?.tenant?.meta as Record<string, unknown> | undefined)?.isAgency as
+      | boolean
+      | undefined) === true;
   $: pageTitle = dbPage?.title ?? 'Services — Strategy, Design, Development | Techyor';
   $: pageDescription =
     dbPage?.description ??
@@ -708,7 +713,7 @@
     <ClientsSection title="Trusted by teams who ship." />
   {/if}
 
-  {#if on('contact')}
+  {#if isAgency && on('contact')}
     <section class="container mx-auto mt-10 px-container @container lg:mt-20">
       <div class="grid grid-cols-3 overflow-hidden rounded-lg border">
         <div class="col-span-1 hidden flex-col bg-background-panel @5xl:flex">
@@ -726,7 +731,7 @@
     </section>
   {/if}
 
-  {#if on('faqs')}
+  {#if isAgency && on('faqs')}
     <FaqsList block={commonFaqsBlock} />
   {/if}
 </div>

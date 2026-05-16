@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { page } from '$app/stores';
+
   export let title: string = 'Investment.';
   export let subtitle: string = 'What it costs to build with us.';
   export let description: string =
@@ -7,6 +9,11 @@
   export let background: string = '';
   /** Add a top border. */
   export let bordered: boolean = true;
+
+  $: isAgency =
+    (($page.data?.tenant?.meta as Record<string, unknown> | undefined)?.isAgency as
+      | boolean
+      | undefined) === true;
 
   const tiers = [
     {
@@ -52,6 +59,7 @@
   ];
 </script>
 
+{#if isAgency}
 <section class="{bordered ? 'border-t' : ''} {background}">
   <div class="container mx-auto px-container py-16 lg:py-24">
     <!-- Header -->
@@ -107,3 +115,4 @@
     </p>
   </div>
 </section>
+{/if}
