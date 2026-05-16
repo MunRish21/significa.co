@@ -186,7 +186,8 @@
         services: project.services,
         deliverables: project.deliverables,
         ratings: data.ratings,
-        reviews: data.reviewEntries
+        reviews: data.reviewEntries,
+        brand: isAgency ? undefined : { name: brandName, isPerson: true }
       }
     )}</${'script'}>`}
   {:else if data.isFilter}

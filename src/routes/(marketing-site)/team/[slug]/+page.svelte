@@ -42,6 +42,7 @@
     sameAs: member.links.map((l) => l.url),
     knowsAbout: member.skills,
     alumniOf: member.education[0]?.school,
+    worksFor: isAgency ? brandName : undefined,
     addressLocality: member.location.split(',')[0]?.trim(),
     addressCountry:
       member.location.toLowerCase().includes('india') ? 'IN' : undefined

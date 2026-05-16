@@ -6,7 +6,10 @@ import { getActiveTeamMembers } from '$lib/data/team';
 import { hireRoles } from '$lib/data/hire-roles';
 import { BYPASS_TOKEN } from '$env/static/private';
 
-export const load = async ({ params }) => {
+export const load = async ({ params, locals }) => {
+  const isAgency = (locals.tenant?.meta as Record<string, unknown> | undefined)?.isAgency === true;
+  if (!isAgency) throw error(404, 'Not found');
+
   const location = getLocation(params.location);
   if (!location || !location.ready) throw error(404, 'Location page not yet available');
 

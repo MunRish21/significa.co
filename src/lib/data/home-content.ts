@@ -163,7 +163,7 @@ const rishab: HomeContent = {
     title: 'Rishab Singla — Shopify & WooCommerce Developer | Top Rated on Upwork',
     description:
       'Independent Shopify and WooCommerce developer with 8 years of full-stack experience. PHP, React, Next.js, Python, AI integrations. 100% Job Success on Upwork.',
-    ogImage: '/api/og/home',
+    ogImage: '/api/og/team/rishab-singla',
     ogImageAlt: 'Rishab Singla — Shopify & WooCommerce Developer'
   },
   hero: {
@@ -258,7 +258,7 @@ const munish: HomeContent = {
     title: 'Munish K. — Senior WordPress, Shopify & Webflow Developer | Top Rated on Upwork',
     description:
       'Senior web developer with 8 years building WordPress, Shopify, Webflow, Framer, React, and Next.js projects. 87+ jobs shipped, $50K+ earned, 100% Job Success on Upwork.',
-    ogImage: '/api/og/home',
+    ogImage: '/api/og/team/munish-k',
     ogImageAlt: 'Munish K. — Senior Web Developer'
   },
   hero: {

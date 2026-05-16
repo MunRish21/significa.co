@@ -427,9 +427,21 @@ export function generateProjectSchema(
       author: string;
       date?: string;
     }>;
+    /** Brand identity for creator/publisher. Defaults to the Techyor organization. */
+    brand?: {
+      name?: string;
+      url?: string;
+      logoPath?: string;
+      /** Set true to emit creator/publisher as Person instead of Organization. */
+      isPerson?: boolean;
+    };
   }
 ) {
   const ratings = extra?.ratings || [];
+  const brandName = extra?.brand?.name ?? 'Techyor';
+  const brandUrl = extra?.brand?.url ?? BASE_URL;
+  const brandLogo = `${brandUrl}${extra?.brand?.logoPath ?? '/techyor.png'}`;
+  const brandType = extra?.brand?.isPerson ? 'Person' : 'Organization';
   const aggregateRating =
     ratings.length > 0
       ? {
@@ -473,16 +485,18 @@ export function generateProjectSchema(
     datePublished: `${year}-01-01`,
     inLanguage: 'en',
     creator: {
-      '@type': 'Organization',
-      name: 'Techyor',
-      url: BASE_URL,
-      logo: `${BASE_URL}/techyor.png`
+      '@type': brandType,
+      name: brandName,
+      url: brandUrl,
+      ...(brandType === 'Organization' ? { logo: brandLogo } : { image: brandLogo })
     },
     publisher: {
-      '@type': 'Organization',
-      name: 'Techyor',
-      url: BASE_URL,
-      logo: { '@type': 'ImageObject', url: `${BASE_URL}/techyor.png` }
+      '@type': brandType,
+      name: brandName,
+      url: brandUrl,
+      ...(brandType === 'Organization'
+        ? { logo: { '@type': 'ImageObject', url: brandLogo } }
+        : { image: brandLogo })
     },
     keywords: keywords.length > 0 ? keywords.join(', ') : undefined,
     about: extra?.services?.map((s) => ({ '@type': 'Thing', name: s })),
@@ -719,21 +733,31 @@ export function generateArticleSchema(article: {
   });
 }
 
-export function generateWebsiteSchema() {
-  return JSON.stringify({
+export function generateWebsiteSchema(input?: {
+  name?: string;
+  url?: string;
+  /** Set false to omit the SearchAction (e.g. for tenants with no /blog). */
+  includeSearch?: boolean;
+}) {
+  const name = input?.name ?? 'Techyor';
+  const url = input?.url ?? BASE_URL;
+  const schema: Record<string, unknown> = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'Techyor',
-    url: BASE_URL,
-    potentialAction: {
+    name,
+    url
+  };
+  if (input?.includeSearch !== false) {
+    schema.potentialAction = {
       '@type': 'SearchAction',
       target: {
         '@type': 'EntryPoint',
-        urlTemplate: `${BASE_URL}/blog?q={search_term_string}`
+        urlTemplate: `${url}/blog?q={search_term_string}`
       },
       'query-input': 'required name=search_term_string'
-    }
-  });
+    };
+  }
+  return JSON.stringify(schema);
 }
 
 export function generatePersonSchema(person: {
@@ -766,11 +790,13 @@ export function generatePersonSchema(person: {
     alumniOf: person.alumniOf
       ? { '@type': 'CollegeOrUniversity', name: person.alumniOf }
       : undefined,
-    worksFor: {
-      '@type': 'Organization',
-      name: person.worksFor || 'Techyor',
-      url: BASE_URL
-    },
+    worksFor: person.worksFor
+      ? {
+          '@type': 'Organization',
+          name: person.worksFor,
+          url: BASE_URL
+        }
+      : undefined,
     address: person.addressLocality
       ? {
           '@type': 'PostalAddress',

@@ -12,6 +12,7 @@
   $: tenantMeta = (data?.tenant?.meta ?? {}) as Record<string, unknown>;
   $: shouldIndex = tenantMeta.robotsIndex !== false;
   $: siteName = data?.tenant?.name ?? 'Techyor';
+  $: isAgency = tenantMeta.isAgency === true;
 </script>
 
 <svelte:head>
@@ -27,7 +28,10 @@
   <meta property="og:site_name" content={siteName} />
   <meta property="og:locale" content="en_US" />
   <meta property="og:url" content={canonical} />
-  {@html `<${'script'} type="application/ld+json">${generateWebsiteSchema()}</${'script'}>`}
+  {@html `<${'script'} type="application/ld+json">${generateWebsiteSchema({
+    name: siteName,
+    includeSearch: isAgency
+  })}</${'script'}>`}
 </svelte:head>
 
 <TopNavigation configuration={data.configuration.content} />

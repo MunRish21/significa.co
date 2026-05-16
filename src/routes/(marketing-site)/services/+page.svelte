@@ -659,42 +659,46 @@
       : `${brandName} — services`}
   />
 
-  {@html `<${'script'} type="application/ld+json">${generateOrganizationSchema()}</${'script'}>`}
+  {#if isAgency}
+    {@html `<${'script'} type="application/ld+json">${generateOrganizationSchema()}</${'script'}>`}
+  {/if}
   {@html `<${'script'} type="application/ld+json">${generateBreadcrumbSchema([
     { name: 'Home', url: '/' },
     { name: 'Services', url: '/services' }
   ])}</${'script'}>`}
-  {@html `<${'script'} type="application/ld+json">${generateServicesPageSchema({
-    url: `${BASE_URL}/services`,
-    description:
-      'End-to-end digital product services. Strategy, UX/UI design, web and mobile development, AI integrations, e-commerce, and automation — all under one roof.',
-    serviceCategories: schemaServiceCategories,
-    ratings,
-    reviews: reviewEntries,
-    imagePath: '/api/og/services'
-  })}</${'script'}>`}
-  {@html `<${'script'} type="application/ld+json">${generateHowToSchema({
-    name: 'How Techyor delivers digital products',
-    description:
-      'Each delivery moves through cycles of strategy, design, and development. The blend of these creates products people love.',
-    totalTime: 'P30D',
-    steps: [
-      {
-        name: 'Strategy',
-        text: 'Discovery, product definition, and operations. We start with the business problem before any pixel or line of code.'
-      },
-      {
-        name: 'Design',
-        text: 'Interface, brand, and multimedia. Visual systems and interaction design grounded in user research.'
-      },
-      {
-        name: 'Development',
-        text: 'Front-end, back-end, AI, e-commerce, and DevOps. Production-grade engineering with shipped outcomes.'
-      }
-    ]
-  })}</${'script'}>`}
-  {@html `<${'script'} type="application/ld+json">${generateFAQSchema(getCommonFaqsForSchema())}</${'script'}>`}
-  {@html `<${'script'} type="application/ld+json">${generateTeamMembersSchema(teamSchemaMembers)}</${'script'}>`}
+  {#if isAgency}
+    {@html `<${'script'} type="application/ld+json">${generateServicesPageSchema({
+      url: `${BASE_URL}/services`,
+      description:
+        'End-to-end digital product services. Strategy, UX/UI design, web and mobile development, AI integrations, e-commerce, and automation — all under one roof.',
+      serviceCategories: schemaServiceCategories,
+      ratings,
+      reviews: reviewEntries,
+      imagePath: '/api/og/services'
+    })}</${'script'}>`}
+    {@html `<${'script'} type="application/ld+json">${generateHowToSchema({
+      name: 'How Techyor delivers digital products',
+      description:
+        'Each delivery moves through cycles of strategy, design, and development. The blend of these creates products people love.',
+      totalTime: 'P30D',
+      steps: [
+        {
+          name: 'Strategy',
+          text: 'Discovery, product definition, and operations. We start with the business problem before any pixel or line of code.'
+        },
+        {
+          name: 'Design',
+          text: 'Interface, brand, and multimedia. Visual systems and interaction design grounded in user research.'
+        },
+        {
+          name: 'Development',
+          text: 'Front-end, back-end, AI, e-commerce, and DevOps. Production-grade engineering with shipped outcomes.'
+        }
+      ]
+    })}</${'script'}>`}
+    {@html `<${'script'} type="application/ld+json">${generateFAQSchema(getCommonFaqsForSchema())}</${'script'}>`}
+    {@html `<${'script'} type="application/ld+json">${generateTeamMembersSchema(teamSchemaMembers)}</${'script'}>`}
+  {/if}
 </svelte:head>
 
 <div class="overflow-hidden">

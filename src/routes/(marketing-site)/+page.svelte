@@ -23,6 +23,7 @@
     BASE_URL,
     generateOrganizationSchema,
     generateFAQSchema,
+    generatePersonSchema,
     generateProfessionalServiceSchema,
     generateTeamMembersSchema
   } from '$lib/utils/schema';
@@ -44,6 +45,10 @@
   $: sections = (data?.sections ?? {}) as SectionsMap;
   $: tenantSlug = ($page.data?.tenant?.slug as string | undefined) ?? null;
   $: home = getHomeContent(tenantSlug);
+  $: isAgency =
+    (($page.data?.tenant?.meta as Record<string, unknown> | undefined)?.isAgency as
+      | boolean
+      | undefined) === true;
   // A section renders when BOTH the per-tenant content config AND the
   // Supabase page_sections row say it is enabled. The content config wins
   // when it explicitly disables a section for a tenant.
@@ -72,6 +77,23 @@
     }));
   $: tenantMembers = (data?.dbTeamMembers ?? []) as TeamMember[];
   $: schemaMembers = tenantMembers.length > 0 ? tenantMembers : getActiveTeamMembers();
+  $: primaryMember = tenantMembers[0];
+  $: tenantPersonSchema =
+    !isAgency && primaryMember
+      ? generatePersonSchema({
+          name: primaryMember.name,
+          jobTitle: primaryMember.role,
+          description: primaryMember.bio,
+          image: primaryMember.avatar,
+          url: `/team/${primaryMember.slug}`,
+          sameAs: primaryMember.links.map((l) => l.url),
+          knowsAbout: primaryMember.skills,
+          alumniOf: primaryMember.education[0]?.school,
+          addressLocality: primaryMember.location?.split(',')[0]?.trim() || undefined,
+          addressCountry:
+            primaryMember.location?.toLowerCase().includes('india') ? 'IN' : undefined
+        })
+      : null;
   $: homeTeamSchema = schemaMembers.map((m) => ({
     name: m.name,
     jobTitle: m.role,
@@ -284,14 +306,18 @@
   <meta name="twitter:image" content="{BASE_URL}{pageMeta.ogImage ?? home.meta.ogImage}" />
   <meta name="twitter:image:alt" content={home.meta.ogImageAlt} />
 
-  {@html `<${'script'} type="application/ld+json">${generateOrganizationSchema()}</${'script'}>`}
-  {@html `<${'script'} type="application/ld+json">${generateProfessionalServiceSchema({
-    description: home.meta.description,
-    url: BASE_URL,
-    imagePath: home.meta.ogImage,
-    ratings: homeRatings,
-    reviews: homeReviews
-  })}</${'script'}>`}
+  {#if isAgency}
+    {@html `<${'script'} type="application/ld+json">${generateOrganizationSchema()}</${'script'}>`}
+    {@html `<${'script'} type="application/ld+json">${generateProfessionalServiceSchema({
+      description: home.meta.description,
+      url: BASE_URL,
+      imagePath: home.meta.ogImage,
+      ratings: homeRatings,
+      reviews: homeReviews
+    })}</${'script'}>`}
+  {:else if tenantPersonSchema}
+    {@html `<${'script'} type="application/ld+json">${tenantPersonSchema}</${'script'}>`}
+  {/if}
   {#if home.faqs.enabled}
     {@html `<${'script'} type="application/ld+json">${generateFAQSchema(getCommonFaqsForSchema())}</${'script'}>`}
   {/if}
