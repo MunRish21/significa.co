@@ -63,6 +63,8 @@
 <svelte:head>
   <title>{pageTitle}</title>
   <meta name="description" content={pageDescription} />
+  <!-- TODO: remove once we have real blog posts -->
+  <meta name="robots" content="noindex, follow" />
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Techyor Blog — Notes on Design, Development & Product" />

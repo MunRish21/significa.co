@@ -35,6 +35,53 @@
       | undefined) === true;
   $: brandName = ($page.data?.tenant?.name as string | undefined) ?? 'Techyor';
 
+  // Project slugs flagged by SEMrush for low word count (~130-150 words).
+  // Noindexed until their content is expanded to 250+ words
+  // (challenge, solution, stack, outcome). Remove a slug from this list
+  // once that page has been fleshed out.
+  const THIN_CONTENT_PROJECT_SLUGS = new Set([
+    '260-sample-sale',
+    'adt-control-android',
+    'adt-control-ios',
+    'agensip-styleest',
+    'aimusicservice',
+    'allbirds',
+    'arbys-fast-food-android',
+    'arbys-fast-food-ios',
+    'beauty-products-framer',
+    'buffalo-wild-wings-android',
+    'buffalo-wild-wings-ios',
+    'christmas-loft',
+    'dakwala',
+    'dave-holloway',
+    'dopple-press',
+    'emaths-world',
+    'evolve-clothing-gallery',
+    'firmable',
+    'gisteo',
+    'guard-dog-security',
+    'havalink',
+    'hilink-travel-platform',
+    'howdo',
+    'lineleader',
+    'lynn-milo-pilates',
+    'mane-ethical',
+    'medela-family-android',
+    'medela-family-ios',
+    'meintrade',
+    'mirai-homes',
+    'mirror-media-marketing',
+    'oona-home',
+    'podologie-praxis-zug',
+    'rayna-site',
+    'rea-power',
+    'salty-donut',
+    'taste-hub',
+    'thecodewiz',
+    'vaisakhhi-haria',
+    'woolf-university'
+  ]);
+
   const projectsMap: Record<string, any> = {
     'monster-fairings': {
       id: 11,
@@ -148,6 +195,9 @@
       : `${BASE_URL}${projectImage}`}
     <title>{project.name} — {project.deliverables?.[0] || 'Case Study'} | {brandName}</title>
     <meta name="description" content={project.tagline} />
+    {#if THIN_CONTENT_PROJECT_SLUGS.has(project.slug)}
+      <meta name="robots" content="noindex, follow" />
+    {/if}
 
     <meta property="og:type" content="article" />
     <meta

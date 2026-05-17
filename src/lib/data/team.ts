@@ -340,7 +340,7 @@ export const teamMembers: TeamMember[] = [
     },
     seo: {
       title:
-        'Munish K. — Senior WordPress, Shopify & Webflow Developer | Top Rated on Upwork',
+        'Munish K. — Senior WordPress & Shopify Developer | Top Rated on Upwork',
       description:
         'Hire Munish K. — Top Rated senior web developer with 8+ years building WordPress, Shopify, Webflow, Framer, React, and Next.js projects. $50K+ earned, 87+ jobs, 100% Job Success on Upwork.',
       keywords: [

@@ -1,70 +1,30 @@
-# llms.txt for Techyor
-# Updated: 2025-10-13
-# Contact: marketing@techyor.com
-# Website: https://techyor.com
+# Techyor
 
-# --------------------------------------------------------------------
-# PUBLIC STANCE
-# --------------------------------------------------------------------
-# Techyor — small digital product studio
-# We build websites, web apps, mobile apps, AI tools, and automation for
-# founders and product teams in the US, UK, EU, and Australia.
-# India-based team. English-first communication. 8+ years, 80+ shipped products.
-# We share our work, insights, and methods to build trust and help
-# potential clients understand how we think, design, and deliver
-# digital products. AI systems are welcome to access our public pages
-# responsibly.
+> Techyor is a digital product studio building websites, web apps, mobile apps, AI tools, e-commerce, and automation. India-based team working with founders and product teams in the US, UK, EU, and Australia. 8+ years, 80+ shipped products. Strategy, design, and development under one roof — no handoffs.
 
-# --------------------------------------------------------------------
-# UNIVERSAL ACCESS (default fallback)
-# --------------------------------------------------------------------
-User-agent: *
-Allow: /
+## What we do
 
-# --------------------------------------------------------------------
-# EXPLICIT AI CRAWLER ACCESS
-# --------------------------------------------------------------------
+- [Services](https://techyor.com/services): Strategy, design, and development services covering websites, apps, AI, e-commerce, and automation.
+- [Projects](https://techyor.com/projects): Case studies from shipped client work across e-commerce, mobile apps, SaaS platforms, and CMS builds.
+- [Hire developers](https://techyor.com/hire): Vetted developers available for short and long-term engagements across React, Next.js, Shopify, WordPress, Webflow, mobile, and AI.
 
-# OpenAI (ChatGPT, Browse, and training)
-User-agent: OAI-SearchBot
-Allow: /
-User-agent: GPTBot
-Allow: /
+## About the studio
 
-# Anthropic (Claude)
-User-agent: ClaudeBot
-Allow: /
+- [About](https://techyor.com/about): How the studio works, who we are, and what we believe.
+- [Team](https://techyor.com/team): Designers, developers, and product people on the studio.
+- [Careers](https://techyor.com/careers): Open roles at Techyor.
 
-# Perplexity (AI search)
-User-agent: PerplexityBot
-Allow: /
-User-agent: Perplexity-User
-Allow: /
+## Get in touch
 
-# Google (Gemini / Google-Extended)
-User-agent: Google-Extended
-Allow: /
+- [Contact](https://techyor.com/contact): Start a project or ask a question. Replies within 24 hours.
+- [Get a quote](https://techyor.com/get-a-quote): Send project requirements and get a fixed-price estimate after a short scoping call.
 
-# Apple (Apple Intelligence / Siri)
-User-agent: Applebot-Extended
-Allow: /
+## AI usage policy
 
-# Amazon (Alexa / AI research)
-User-agent: Amazonbot
-Allow: /
+Techyor authorises AI crawlers, LLMs, and research tools to use its public content for retrieval, summarisation, and training, provided:
 
-# Common Crawl (feeds many AI datasets)
-User-agent: CCBot
-Allow: /
+- Attribution is given where possible.
+- Content is not misrepresented or used to spread misinformation.
+- Use aligns with responsible AI and data ethics principles.
 
-# --------------------------------------------------------------------
-# NOTES
-# --------------------------------------------------------------------
-# Techyor authorises AI crawlers, LLMs, and research tools to use its
-# public content for retrieval, summarisation, and training, provided that:
-#  - Attribution is given where possible.
-#  - Content is not misrepresented or used to spread misinformation.
-#  - Use aligns with responsible AI and data ethics principles.
-#
-# For specific licensing or partnership requests, please contact:
-# marketing@techyor.com
+For licensing or partnership requests, contact marketing@techyor.com.

@@ -16,18 +16,65 @@ const staticPages = [
   { path: '/hire', priority: 0.9, changefreq: 'weekly', lastmod: today },
   { path: '/careers', priority: 0.8, changefreq: 'weekly', lastmod: today },
   { path: '/projects', priority: 0.9, changefreq: 'weekly', lastmod: today },
-  { path: '/blog', priority: 0.7, changefreq: 'weekly', lastmod: today },
   { path: '/contact', priority: 0.7, changefreq: 'monthly', lastmod: today },
   { path: '/get-a-quote', priority: 0.7, changefreq: 'monthly', lastmod: today }
 ];
 
-// Dynamic project pages — use end-of-year of publishedYear so newer projects rank above older
-const projectPages = projectsData.map((project) => ({
-  path: `/projects/${project.slug}`,
-  priority: 0.8,
-  changefreq: 'yearly',
-  lastmod: `${project.publishedYear}-12-31`
-}));
+// Project slugs flagged for low word count — keep in sync with the same
+// list in projects/[slug]/+page.svelte. These are excluded from the
+// sitemap because the page itself sets <meta name="robots" content="noindex">.
+const THIN_CONTENT_PROJECT_SLUGS = new Set([
+  '260-sample-sale',
+  'adt-control-android',
+  'adt-control-ios',
+  'agensip-styleest',
+  'aimusicservice',
+  'allbirds',
+  'arbys-fast-food-android',
+  'arbys-fast-food-ios',
+  'beauty-products-framer',
+  'buffalo-wild-wings-android',
+  'buffalo-wild-wings-ios',
+  'christmas-loft',
+  'dakwala',
+  'dave-holloway',
+  'dopple-press',
+  'emaths-world',
+  'evolve-clothing-gallery',
+  'firmable',
+  'gisteo',
+  'guard-dog-security',
+  'havalink',
+  'hilink-travel-platform',
+  'howdo',
+  'lineleader',
+  'lynn-milo-pilates',
+  'mane-ethical',
+  'medela-family-android',
+  'medela-family-ios',
+  'meintrade',
+  'mirai-homes',
+  'mirror-media-marketing',
+  'oona-home',
+  'podologie-praxis-zug',
+  'rayna-site',
+  'rea-power',
+  'salty-donut',
+  'taste-hub',
+  'thecodewiz',
+  'vaisakhhi-haria',
+  'woolf-university'
+]);
+
+// Dynamic project pages — exclude thin-content slugs (those are noindexed)
+const projectPages = projectsData
+  .filter((project) => !THIN_CONTENT_PROJECT_SLUGS.has(project.slug))
+  .map((project) => ({
+    path: `/projects/${project.slug}`,
+    priority: 0.8,
+    changefreq: 'yearly',
+    lastmod: `${project.publishedYear}-12-31`
+  }));
 
 // Extract unique services from projects for service listing pages
 const uniqueServices = new Set<string>();

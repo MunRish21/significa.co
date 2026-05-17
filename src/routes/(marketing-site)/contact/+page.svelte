@@ -8,7 +8,8 @@
     BASE_URL,
     generateOrganizationSchema,
     generateBreadcrumbSchema,
-    generateContactPageSchema
+    generateContactPageSchema,
+    generateFAQSchema
   } from '$lib/utils/schema';
 
   import { isSectionEnabled, type SectionsMap } from '$lib/tenant';
@@ -26,6 +27,39 @@
     dbPage?.description ??
     "Got a project in mind? Send us a message — no lengthy brief required. We reply within 24 hours. Email info@techyor.com or call +91 9915002625.";
   $: pageMeta = (dbPage?.meta ?? {}) as Record<string, string>;
+
+  const faqs = [
+    {
+      question: 'How fast do you reply?',
+      answer:
+        "Within 24 hours on weekdays. If it's urgent, mention it in the message and we'll get back faster."
+    },
+    {
+      question: 'What should I send with my first message?',
+      answer:
+        "Whatever's easiest. A rough idea, a Figma file, a feature list, or a 2-minute Loom. We don't need a polished brief."
+    },
+    {
+      question: 'Do you work with teams outside India?',
+      answer:
+        'Yes. Most of our clients are in the US, UK, Switzerland, and Australia. We run remote with weekly syncs in your timezone.'
+    },
+    {
+      question: 'How much does a project cost?',
+      answer:
+        'It depends on scope. Most engagements start at $5K for small builds and scale up for larger products. We send a fixed quote after a short scoping call.'
+    },
+    {
+      question: 'Can you work with our existing team?',
+      answer:
+        "Yes. We're often the design and development arm of in-house product teams. We can plug into Slack, GitHub, Linear, or whatever you already use."
+    },
+    {
+      question: 'How long until we can start?',
+      answer:
+        "Usually within one to two weeks. For smaller projects, sooner. We'll confirm exact timelines on the scoping call."
+    }
+  ];
 
   const galleryCards = [
     {
@@ -106,6 +140,7 @@
       "Get in touch with Techyor — a digital product studio building websites, apps, AI tools, and automation. Replies within 24 hours.",
     imagePath: '/api/og/contact'
   })}</${'script'}>`}
+  {@html `<${'script'} type="application/ld+json">${generateFAQSchema(faqs)}</${'script'}>`}
 </svelte:head>
 
 <div class="overflow-hidden">
@@ -140,4 +175,18 @@
       <RandomizedHoverableGallery cards={galleryCards} />
     </div>
   {/if}
+
+  <section class="container mx-auto px-container py-16 lg:py-24">
+    <div class="mx-auto max-w-2xl">
+      <h2 class="text-3xl md:text-4xl">Common questions.</h2>
+      <dl class="mt-8 space-y-8 lg:mt-12">
+        {#each faqs as faq}
+          <div>
+            <dt class="text-lg font-medium">{faq.question}</dt>
+            <dd class="mt-2 text-foreground-secondary">{faq.answer}</dd>
+          </div>
+        {/each}
+      </dl>
+    </div>
+  </section>
 </div>
