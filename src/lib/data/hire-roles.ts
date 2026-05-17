@@ -520,13 +520,13 @@ export const hireRoles: HireRole[] = [
     title: 'React Native Developer',
     h1: 'Hire Senior React Native Developers',
     subhead:
-      'JavaScript engineers who ship to App Store and Play Store from one codebase — without sacrificing native polish.',
-    metaTitle: 'Hire React Native Developers — iOS & Android | Techyor',
+      'Hire dedicated React Native app developers — JavaScript engineers who ship to App Store and Play Store from one codebase without sacrificing native polish.',
+    metaTitle: 'Hire React Native Developers — Senior, Dedicated | Techyor',
     metaDescription:
-      'Hire senior React Native developers fluent in Expo, Reanimated, native modules, and EAS Build. Ship to App Store and Play Store from one codebase.',
+      'Hire React Native app developers with senior-level Expo, Reanimated, native modules, and EAS Build experience. Ship to App Store and Play Store from one codebase. For US, UK, EU teams.',
     intro:
-      "React Native gets a bad reputation from teams that hired generalist React developers and asked them to also build a mobile app. That's not what you want. A senior React Native developer thinks in terms of bridge cost, frame budget, and platform conventions — they know when to drop into Swift or Kotlin to fix a problem, and when not to. Our React Native engineers have shipped consumer apps to the App Store, retail apps to enterprise customers, and SDK-heavy products that need native modules. We use Expo as the default and bare RN when we need to.",
-    primaryKeyword: 'hire react native developer',
+      "Hire React Native developers who think in bridge cost, frame budget, and platform conventions — not generalist React developers asked to also build a mobile app. That mismatch is why React Native gets a bad reputation. Our React Native app developers know when to drop into Swift or Kotlin to fix a problem, and when not to. They've shipped consumer apps to the App Store, retail apps to enterprise customers, and SDK-heavy products that need native modules. We use Expo as the default and bare RN when we need to. We also place full React Native development teams when one engineer isn't enough — frontend, app developer, and native-module engineers moving as a unit.",
+    primaryKeyword: 'hire react native developers',
     whyUs: [
       {
         title: 'Expo + EAS, native fallback',
@@ -568,6 +568,21 @@ export const hireRoles: HireRole[] = [
       'React Navigation'
     ],
     faq: [
+      {
+        question: 'Should I hire dedicated React Native developers or generalist React developers for mobile?',
+        answer:
+          "Hire dedicated React Native developers when the app is shipping to both stores from one codebase, when native module work is on the roadmap, or when 60fps animations and frame budgets matter. A generalist React developer will ship a working build; a dedicated React Native app developer handles the harder edges — bridge cost, JSI/TurboModule patterns, Reanimated 3 worklets, Skia for high-performance UI, and the OEM-specific quirks that don't show up in the JS layer. The split is most worth it past prototype, especially when the app needs to feel native on both platforms."
+      },
+      {
+        question: 'How is hiring a senior React Native app developer different from a junior?',
+        answer:
+          "Three things separate senior React Native work from junior. First, native-bridge instinct — they know when to drop into Swift or Kotlin to write a custom TurboModule, when an existing community package is broken, and when JSI is the right escape hatch. Second, performance ownership — they read a Flipper trace and immediately know which JS thread block is dropping frames, when to reach for Reanimated worklets, and how to ship under the iOS app-binary limit. Third, store-launch discipline — TestFlight beta tracks, Play Console phased rollouts, Sentry crash gates, and OTA updates via EAS that never push native code. A senior React Native app developer keeps the app stable across both stores through launch and beyond."
+      },
+      {
+        question: 'Can I hire React Native developers from India for a US or UK product?',
+        answer:
+          "Yes — most of our React Native clients are in the US, UK, EU, and Australia. We overlap with East Coast US morning and UK afternoon hours, run async-first with daily standups, and ship in your timezone's calendar. Senior India-based React Native app developers cost 40–60% less than equivalent senior mobile engineers in the US or UK without quality compromise. We've shipped React Native apps across all four regions — including apps with custom native modules in Swift and Kotlin, Reanimated-heavy UI, RevenueCat subscription flows, and EAS Build pipelines integrated with TestFlight and Play Console."
+      },
       {
         question: 'Expo or bare React Native?',
         answer:
