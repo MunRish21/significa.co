@@ -547,13 +547,13 @@ export const hireRoles: HireRole[] = [
     title: 'Python Developer',
     h1: 'Hire Senior Python Developers',
     subhead:
-      'Backend Python engineers who ship FastAPI, Django, and ML pipelines that handle real production load.',
-    metaTitle: 'Hire Python Developers — FastAPI, Django, ML | Techyor',
+      'Hire dedicated Python developers — backend engineers who ship FastAPI, async services, and ML pipelines that handle real production load.',
+    metaTitle: 'Hire Python Developers — Senior, Dedicated | Techyor',
     metaDescription:
-      'Hire senior Python developers experienced in FastAPI, Django, async, ML pipelines, and high-throughput data systems. Production-grade backend engineers.',
+      'Hire Python developers with senior-level FastAPI, async, ML, and high-throughput backend experience. Trusted Python development company for US, UK, EU teams.',
     intro:
-      "Python is the most over-promised, under-delivered hire in the industry. 'Knows Python' covers everything from a Jupyter notebook hobbyist to a senior backend engineer who runs gRPC services at 10k QPS. Ours are the latter. Every Python developer on our bench has shipped at least one production async service, knows the difference between asyncio.gather and TaskGroup, has dealt with the GIL for real, and can explain what a Python interpreter is doing during your CPU spike. We use Python where its strengths matter — fast iteration on backend services, ML pipelines, data tooling — and we know when to reach for Go or Rust instead.",
-    primaryKeyword: 'hire python developer',
+      "Hire Python developers who write production async services, not Jupyter notebooks. 'Knows Python' covers everything from a hobbyist to a senior backend engineer running gRPC services at 10k QPS — the difference between the two is the difference between a build that ships and one that doesn't. As a Python development company, we ship FastAPI services, ML pipelines, and data tooling for products in the US, UK, EU, and Australia. Every Python developer on our bench has shipped at least one production async service, knows the difference between asyncio.gather and TaskGroup, has dealt with the GIL for real, and can explain what a Python interpreter is doing during your CPU spike.",
+    primaryKeyword: 'hire python developers',
     whyUs: [
       {
         title: 'Async-first, not async-bolted-on',
@@ -595,6 +595,21 @@ export const hireRoles: HireRole[] = [
       'AWS / Vercel'
     ],
     faq: [
+      {
+        question: 'Should I hire dedicated Python developers or a generalist agency?',
+        answer:
+          "Hire dedicated Python developers when the project is more than scripting — async APIs, multi-tenant SaaS backends, ML inference pipelines, data ingestion at scale, or any service where event-loop discipline and database performance matter. A generalist agency will get the script working; dedicated Python developers will ship a production service with proper async patterns, type-checked codebases (mypy/pyright strict), structured logging, and observability that lets you debug it at 3am. The split is most worth it past the prototype stage or when uptime targets are real."
+      },
+      {
+        question: 'How is hiring a senior Python developer different from a junior?',
+        answer:
+          "Three things separate senior Python work from junior. First, async instinct — a senior knows when to reach for asyncio.gather vs TaskGroup, why your asyncio code is silently blocking on a sync DB driver, how to structure concurrency safely with anyio. Second, performance discipline — they profile with cProfile / py-spy / scalene before guessing, recognize that 'slow Python' is usually a slow query or N+1, and know when to drop hot paths to Cython, Rust via PyO3, or a Go rewrite. Third, type and test rigor — mypy strict or pyright strict in CI, pytest-asyncio for async code, hypothesis for property tests. A senior Python developer turns 'it runs' into 'it runs reliably at 10k QPS.'"
+      },
+      {
+        question: 'Can I hire Python developers from India for a US or UK product?',
+        answer:
+          "Yes — most of our Python clients are in the US, UK, EU, and Australia. We overlap with East Coast US morning and UK afternoon hours, run async-first with daily standups, and ship in your timezone's calendar. Senior India-based Python developers cost 40–60% less than equivalent senior backend engineers in the US or UK without quality compromise. We've shipped Python services across all four regions — Firmable (B2B sales intelligence), ConvertBankStatement (AI document processing), SimpleTalk AI (voice agents), AiMusicService (subscription AI) — including FastAPI APIs, ML pipelines, and async data tooling."
+      },
       {
         question: 'FastAPI or Django — which do you recommend?',
         answer:
