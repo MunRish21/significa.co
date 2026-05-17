@@ -35,10 +35,10 @@
       | undefined) === true;
   $: brandName = ($page.data?.tenant?.name as string | undefined) ?? 'Techyor';
 
-  // Project slugs flagged by SEMrush for low word count (~130-150 words).
-  // Noindexed until their content is expanded to 250+ words
-  // (challenge, solution, stack, outcome). Remove a slug from this list
-  // once that page has been fleshed out.
+  // Project slugs flagged for thin content (intro < 50 words or missing).
+  // Each ships <meta name="robots" content="noindex, follow"> and is
+  // excluded from the sitemap. Remove a slug once its intro is expanded
+  // past ~50 words with real problem / solution / stack / outcome detail.
   const THIN_CONTENT_PROJECT_SLUGS = new Set([
     '260-sample-sale',
     'adt-control-android',
@@ -46,23 +46,33 @@
     'agensip-styleest',
     'aimusicservice',
     'allbirds',
+    'american-trucks',
     'arbys-fast-food-android',
     'arbys-fast-food-ios',
+    'beauty-design',
     'beauty-products-framer',
     'buffalo-wild-wings-android',
     'buffalo-wild-wings-ios',
     'christmas-loft',
+    'coore',
     'dakwala',
     'dave-holloway',
+    'design-essentials',
     'dopple-press',
     'emaths-world',
     'evolve-clothing-gallery',
     'firmable',
     'gisteo',
     'guard-dog-security',
+    'guitar-templates',
     'havalink',
     'hilink-travel-platform',
+    'honey-by-kait',
+    'hornsby-beekeeping',
     'howdo',
+    'ichor-bio',
+    'jacob-alexander',
+    'jb-tools',
     'lineleader',
     'lynn-milo-pilates',
     'mane-ethical',
@@ -72,10 +82,15 @@
     'mirai-homes',
     'mirror-media-marketing',
     'oona-home',
+    'plant-doctor',
     'podologie-praxis-zug',
     'rayna-site',
     'rea-power',
     'salty-donut',
+    'shark-leathers',
+    'shin-jewelers',
+    'surfboard-central-android',
+    'surfboard-central-ios',
     'taste-hub',
     'thecodewiz',
     'vaisakhhi-haria',

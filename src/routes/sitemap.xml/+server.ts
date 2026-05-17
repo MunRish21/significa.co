@@ -19,9 +19,11 @@ const staticPages = [
   { path: '/get-a-quote', priority: 0.7, changefreq: 'monthly', lastmod: today }
 ];
 
-// Project slugs flagged for low word count — keep in sync with the same
-// list in projects/[slug]/+page.svelte. These are excluded from the
-// sitemap because the page itself sets <meta name="robots" content="noindex">.
+// Project slugs flagged for thin content (intro < 50 words or missing).
+// Keep in sync with the same list in projects/[slug]/+page.svelte.
+// Excluded from the sitemap; the page itself ships noindex,follow.
+// Remove a slug once its intro is expanded past ~50 words with real
+// problem / solution / stack / outcome detail.
 const THIN_CONTENT_PROJECT_SLUGS = new Set([
   '260-sample-sale',
   'adt-control-android',
@@ -29,23 +31,33 @@ const THIN_CONTENT_PROJECT_SLUGS = new Set([
   'agensip-styleest',
   'aimusicservice',
   'allbirds',
+  'american-trucks',
   'arbys-fast-food-android',
   'arbys-fast-food-ios',
+  'beauty-design',
   'beauty-products-framer',
   'buffalo-wild-wings-android',
   'buffalo-wild-wings-ios',
   'christmas-loft',
+  'coore',
   'dakwala',
   'dave-holloway',
+  'design-essentials',
   'dopple-press',
   'emaths-world',
   'evolve-clothing-gallery',
   'firmable',
   'gisteo',
   'guard-dog-security',
+  'guitar-templates',
   'havalink',
   'hilink-travel-platform',
+  'honey-by-kait',
+  'hornsby-beekeeping',
   'howdo',
+  'ichor-bio',
+  'jacob-alexander',
+  'jb-tools',
   'lineleader',
   'lynn-milo-pilates',
   'mane-ethical',
@@ -55,10 +67,15 @@ const THIN_CONTENT_PROJECT_SLUGS = new Set([
   'mirai-homes',
   'mirror-media-marketing',
   'oona-home',
+  'plant-doctor',
   'podologie-praxis-zug',
   'rayna-site',
   'rea-power',
   'salty-donut',
+  'shark-leathers',
+  'shin-jewelers',
+  'surfboard-central-android',
+  'surfboard-central-ios',
   'taste-hub',
   'thecodewiz',
   'vaisakhhi-haria',
