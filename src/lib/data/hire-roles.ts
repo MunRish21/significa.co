@@ -388,13 +388,13 @@ export const hireRoles: HireRole[] = [
     title: 'Mobile App Developer',
     h1: 'Hire Senior Mobile App Developers',
     subhead:
-      'iOS, Android, and cross-platform engineers behind 14+ shipped mobile apps across health, retail, and consumer brands.',
-    metaTitle: 'Hire Mobile App Developers — iOS & Android | Techyor',
+      'Hire dedicated mobile app developers — iOS, Android, and cross-platform engineers behind 14+ shipped apps across health, retail, and consumer brands.',
+    metaTitle: 'Hire Mobile App Developers — Senior, Dedicated | Techyor',
     metaDescription:
-      'Hire senior mobile app developers experienced in iOS (Swift), Android (Kotlin), React Native, and Flutter. 14+ shipped apps, App Store and Play Store launches.',
+      'Hire dedicated mobile app developers with senior-level experience across iOS (Swift), Android (Kotlin), React Native, and Flutter. 14+ shipped apps, App Store and Play Store launches for US, UK, EU teams.',
     intro:
-      "Mobile development is what we've shipped most: 14+ production apps for clients including Arby's, Buffalo Wild Wings, ADT, Medela, and Surfboard Central — across iOS, Android, and cross-platform stacks. Our mobile developers know that an App Store rejection isn't a build error: it's a UX decision, an icon size, a privacy disclosure, an in-app purchase flow that doesn't quite match Apple's guidance. They know to test on a real device before committing, what offline-first really means for sync, and why your push notifications stopped delivering after iOS 17. Hire them for the part of mobile that's not about writing the app — the part about getting it into users' hands and keeping it there.",
-    primaryKeyword: 'hire mobile app developer',
+      "Hire dedicated mobile app developers who've shipped to real users, not just to TestFlight. Mobile development is what we've shipped most: 14+ production apps for clients including Arby's, Buffalo Wild Wings, ADT, Medela, and Surfboard Central — across iOS, Android, and cross-platform stacks. Our mobile app developers know that an App Store rejection isn't a build error — it's a UX decision, an icon size, a privacy disclosure, an in-app purchase flow that doesn't quite match Apple's guidance. They know to test on a real device before committing, what offline-first really means for sync, and why your push notifications stopped delivering after iOS 17. We also operate as a mobile app development company when teams need design, iOS, Android, and cross-platform engineers moving as a unit.",
+    primaryKeyword: 'hire dedicated mobile app developers',
     whyUs: [
       {
         title: '14+ shipped apps in production',
@@ -436,6 +436,21 @@ export const hireRoles: HireRole[] = [
       'Sentry'
     ],
     faq: [
+      {
+        question: 'Should I hire dedicated mobile app developers or a mobile app development company?',
+        answer:
+          "Hire dedicated mobile app developers when you need one or two engineers plugged into your team — feature delivery, App Store submissions, performance optimization, in-app purchase work. Hire a mobile app development company when the build is bigger: greenfield products shipping to both stores, parallel iOS + Android tracks, or apps with custom backend, design system, and analytics work alongside the app itself. The company route brings design, native iOS (Swift/SwiftUI), native Android (Kotlin/Compose), and cross-platform (React Native or Flutter) engineers moving as a unit, with App Store and Play Store launch fluency. The split is about scope, not quality."
+      },
+      {
+        question: 'How is hiring a senior mobile app developer different from a junior?',
+        answer:
+          "Three things separate senior mobile work from junior. First, store-review instinct — they anticipate the common App Store and Play Console rejections (Sign in with Apple, IAP for digital goods, privacy disclosures, ANR/crash rate gates) and architect around them upfront. Second, platform fluency — they know when to choose native iOS (Swift/SwiftUI) vs native Android (Kotlin/Compose) vs cross-platform (React Native, Flutter), and they can defend the choice with profiling data instead of preference. Third, real-device discipline — they test on 3-year-old Samsung phones with custom OEM skins, watch crash rate during phased rollouts, and ship with structured logging that survives production. A senior mobile app developer keeps the app on the store without surprises."
+      },
+      {
+        question: 'Can I hire mobile app developers from India for a US or UK product?',
+        answer:
+          "Yes — most of our mobile clients are in the US, UK, EU, and Australia. We overlap with East Coast US morning and UK afternoon hours, run async-first with daily standups, and ship in your timezone's calendar. Senior India-based mobile app developers cost 40–60% less than equivalent senior mobile engineers in the US or UK without quality compromise. We've shipped to the US, UK, and global App and Play Stores — ADT Control (iOS + Android), Buffalo Wild Wings (iOS + Android), Arby's (iOS + Android), Medela Family (iOS + Android), Surfboard Central — including IAP, push notifications, deep links, and OTA updates."
+      },
       {
         question: 'Native or cross-platform — which should we choose?',
         answer:
