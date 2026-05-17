@@ -54,8 +54,8 @@ export const load = async ({ params, locals }) => {
       slugs: ['nodejs-developer', 'python-developer', 'fastapi-developer', 'backend-developer', 'full-stack-developer']
     },
     {
-      title: 'AI & Voice',
-      slugs: ['ai-engineer', 'voice-ai-developer']
+      title: 'AI',
+      slugs: ['ai-engineer']
     },
     {
       title: 'E-commerce & CMS',

@@ -194,10 +194,9 @@
             ]
           },
           {
-            title: 'AI & Voice',
+            title: 'AI',
             list: [
-              { label: 'AI Engineering', link: '/hire/ai-engineer' },
-              { label: 'Voice AI', link: '/hire/voice-ai-developer' }
+              { label: 'AI Engineering', link: '/hire/ai-engineer' }
             ]
           },
           {

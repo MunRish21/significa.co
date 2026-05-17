@@ -977,8 +977,8 @@ export const hireRoles: HireRole[] = [
           "Model Context Protocol — Anthropic's open standard for AI tool integration. Yes, we build MCP servers for clients (data sources, internal APIs) and integrate MCP into agent workflows. It's becoming the default plumbing for AI integrations."
       }
     ],
-    relatedServiceTags: ['AI & Machine Learning', 'Voice AI Engineering', 'Python Backend Engineering'],
-    relatedRoles: ['python-developer', 'ml-engineer', 'voice-ai-developer']
+    relatedServiceTags: ['AI & Machine Learning', 'Python Backend Engineering'],
+    relatedRoles: ['python-developer', 'ml-engineer']
   },
 
   // ─── PHASE 2 ──────────────────────────────────────────────────────────────
@@ -1674,92 +1674,6 @@ export const hireRoles: HireRole[] = [
     ],
     relatedServiceTags: ['Mobile App Development', 'Mobile Applications'],
     relatedRoles: ['mobile-app-developer', 'ios-developer', 'react-native-developer', 'flutter-developer']
-  },
-  {
-    slug: 'voice-ai-developer',
-    title: 'Voice AI Developer',
-    h1: 'Hire Senior Voice AI Developers',
-    subhead:
-      'Engineers who ship voice agents that sound human — STT, LLM, TTS, with sub-second latency and graceful interruption.',
-    metaTitle: 'Hire Voice AI Developers — Conversational AI | Techyor',
-    metaDescription:
-      'Hire senior voice AI developers building production conversational agents. Twilio, Vapi, LiveKit, sub-second latency, interruption handling.',
-    intro:
-      "Voice AI is the most demanding production AI you can ship. Latency matters: a conversational agent needs sub-second time-to-first-audio or it feels robotic. Interruption handling matters: real conversations interrupt. Persona matters: a voice agent that sounds awkward loses trust in seconds. Our voice AI developers ship production voice agents for customer support, sales, and accessibility — using Twilio, Vapi, LiveKit, or custom orchestration. We know the latency tradeoffs of every STT-LLM-TTS provider and how to design conversations that don't fall apart when the model gets confused.",
-    primaryKeyword: 'hire voice ai developer',
-    whyUs: [
-      {
-        title: 'Sub-second latency or it doesn\'t ship',
-        description:
-          'Time-to-first-audio under 1.5s with streaming STT, streaming LLM, streaming TTS. We measure and budget every hop.'
-      },
-      {
-        title: 'Interruption-safe by design',
-        description:
-          "Voice agents that handle real human conversation: interruptions, backchanneling, repair patterns. We don't ship turn-based bots."
-      },
-      {
-        title: 'Telephony-fluent',
-        description:
-          "Twilio, Vonage, SIP integration. PSTN and WebRTC. We've connected voice agents to real phone numbers and handled compliance basics (call recording, consent flows)."
-      }
-    ],
-    skills: [
-      'Voice platforms — Vapi, LiveKit Agents, Pipecat, Retell, custom orchestration',
-      'STT — Deepgram, AssemblyAI, OpenAI Whisper (for non-realtime)',
-      'TTS — ElevenLabs, Cartesia, Deepgram Aura, Azure Neural',
-      'LLM orchestration — function calling, tool use, conversation memory',
-      'Telephony — Twilio Voice, SIP, WebRTC',
-      'Real-time audio — WebSocket streaming, opus codec',
-      'Interruption handling — VAD, barge-in, repair conversations',
-      'Latency optimization — streaming pipelines, parallel hops',
-      'Compliance — call recording, consent, PII redaction in transcripts'
-    ],
-    techStack: [
-      'Vapi',
-      'LiveKit',
-      'Pipecat',
-      'Twilio',
-      'Deepgram',
-      'ElevenLabs',
-      'Cartesia',
-      'Anthropic Claude',
-      'OpenAI'
-    ],
-    faq: [
-      {
-        question: 'Vapi, Retell, LiveKit, or custom?',
-        answer:
-          "Vapi for fastest time-to-market with managed orchestration. LiveKit Agents when you want full control and self-hosting. Pipecat when you need Python-based orchestration. Custom when latency budgets, persona requirements, or compliance demand it."
-      },
-      {
-        question: 'What latency can we expect?',
-        answer:
-          "Time-to-first-audio: 800ms–1.5s end-to-end with streaming STT + streaming LLM + streaming TTS. End-to-turn (full response): 2–4s depending on response length. We measure each hop."
-      },
-      {
-        question: 'How do you handle interruptions?',
-        answer:
-          'Voice activity detection (VAD) on the user\'s mic. When the user speaks during the agent\'s turn, we cut TTS, capture the new utterance, and reroute. Repair turns ("sorry, can you say that again?") for low-confidence ASR.'
-      },
-      {
-        question: 'TTS quality — which provider?',
-        answer:
-          "ElevenLabs for the most expressive voices (slower). Cartesia for low-latency real-time (faster). Deepgram Aura for cost-effective production. We benchmark on your script and persona."
-      },
-      {
-        question: 'Can you connect to a real phone number?',
-        answer:
-          "Yes — Twilio Voice + SIP integration is standard. We handle the inbound call, route to the voice agent, and connect outbound when the agent decides to transfer to a human."
-      },
-      {
-        question: 'Compliance — call recording, consent?',
-        answer:
-          "Yes — opt-in consent flows at call start, recording with user awareness, PII redaction from transcripts before storage. We follow jurisdictional rules (US two-party, EU GDPR-aware)."
-      }
-    ],
-    relatedServiceTags: ['Voice AI Engineering'],
-    relatedRoles: ['ai-engineer', 'python-developer', 'ml-engineer']
   },
 
   // ─── PHASE 3 ──────────────────────────────────────────────────────────────
