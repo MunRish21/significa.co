@@ -198,7 +198,6 @@
             title: 'AI & Voice',
             list: [
               { label: 'AI Engineering', link: '/hire/ai-engineer' },
-              { label: 'LLM Integration', link: '/hire/llm-developer' },
               { label: 'Voice AI', link: '/hire/voice-ai-developer' }
             ]
           },

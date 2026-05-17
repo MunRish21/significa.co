@@ -978,7 +978,7 @@ export const hireRoles: HireRole[] = [
       }
     ],
     relatedServiceTags: ['AI & Machine Learning', 'Voice AI Engineering', 'Python Backend Engineering'],
-    relatedRoles: ['llm-developer', 'python-developer', 'ml-engineer', 'voice-ai-developer']
+    relatedRoles: ['python-developer', 'ml-engineer', 'voice-ai-developer']
   },
 
   // ─── PHASE 2 ──────────────────────────────────────────────────────────────
@@ -1155,92 +1155,6 @@ export const hireRoles: HireRole[] = [
     ],
     relatedServiceTags: ['Python Backend Engineering', 'Backend Engineering', 'APIs & Backend Services'],
     relatedRoles: ['python-developer', 'django-developer', 'backend-developer', 'ai-engineer']
-  },
-  {
-    slug: 'llm-developer',
-    title: 'LLM Developer',
-    h1: 'Hire Senior LLM Developers',
-    subhead:
-      'Engineers who build production LLM features — chat, agents, RAG, structured generation — backed by real evals.',
-    metaTitle: 'Hire LLM Developers — Claude, GPT, Open Source | Techyor',
-    metaDescription:
-      'Hire senior LLM developers building production AI features with Claude, GPT, Gemini, and open-weight models. RAG, agents, evals, observability.',
-    intro:
-      "LLM development in 2026 has separated into two cohorts: people who can run a chat completion, and people who can ship a reliable LLM feature into production. Our LLM developers are the second. They've shipped RAG systems with measurable retrieval quality, AI agents with safety boundaries that hold under adversarial input, and structured-output features that fail predictably when the model is wrong. We build with the AI SDK, prompt caching, and provider-agnostic patterns. Cost discipline, latency budgets, and evaluation harnesses are part of every project.",
-    primaryKeyword: 'hire llm developer',
-    whyUs: [
-      {
-        title: 'Production AI, not demo AI',
-        description:
-          "Our LLM features ship with retries, fallbacks, evals, observability, and cost monitoring. They behave when the model is slow, wrong, or unavailable."
-      },
-      {
-        title: 'Provider-agnostic',
-        description:
-          'Vercel AI Gateway or Portkey-style abstractions — switch from Claude to GPT to Gemini in config, not in code. Vendor lock-in is a choice, not a default.'
-      },
-      {
-        title: 'Evaluation-driven',
-        description:
-          "Every LLM feature ships with a test set, automated scoring, and regression alerts. We can prove the feature improved, not just hope it did."
-      }
-    ],
-    skills: [
-      'Claude (Opus, Sonnet, Haiku) — including prompt caching, tool use, extended thinking',
-      'OpenAI GPT-5 family, Gemini, open-weight models (Llama, Mistral)',
-      'Vercel AI SDK, AI Gateway, MCP servers',
-      'RAG — chunking strategies, embedding models, hybrid search, reranking',
-      'Agent frameworks — LangGraph, CrewAI, custom orchestration',
-      'Structured generation — schema-constrained output, retry-on-validation-fail',
-      'Evaluation — Promptfoo, LangSmith, custom LLM-as-judge harnesses',
-      'Observability — token usage, latency, cost tracking per feature',
-      'Cost optimization — prompt caching, model routing, response caching'
-    ],
-    techStack: [
-      'Anthropic Claude',
-      'OpenAI',
-      'Vercel AI SDK',
-      'LangChain',
-      'LangGraph',
-      'pgvector',
-      'Pinecone',
-      'Promptfoo',
-      'MCP'
-    ],
-    faq: [
-      {
-        question: 'Which model do you recommend?',
-        answer:
-          "Depends on the workload. Claude Opus 4.7 for hardest reasoning. Claude Sonnet 4.6 for most production work — best ratio of quality to cost. Claude Haiku 4.5 for high-throughput. GPT-5 family for tool use. We design code to be model-agnostic and benchmark on your actual prompts."
-      },
-      {
-        question: 'How do you handle prompt caching?',
-        answer:
-          "Anthropic prompt caching for repeated system prompts and long contexts. Properly designed, it cuts cost 60–90% on repetitive workloads. We layer it with semantic-cache for similar queries."
-      },
-      {
-        question: 'Tool use vs MCP?',
-        answer:
-          "Tool use for in-context tools that the model controls. MCP for connecting AI to external systems through a standardized protocol. We build both — and increasingly, MCP servers expose data sources to multiple AI products, which is where it shines."
-      },
-      {
-        question: 'How do you handle hallucinations?',
-        answer:
-          "Constrain output: structured generation with JSON schemas, citation requirements, refusal patterns when retrieval confidence is low. Combine with eval harnesses that catch regressions on adversarial cases."
-      },
-      {
-        question: 'Open-weight models — when?',
-        answer:
-          "When data sovereignty, cost-at-volume, or fine-tuning is critical. Llama 3, Mistral, and Qwen are production-ready. We deploy on Modal, Together, or self-hosted GPUs depending on requirements."
-      },
-      {
-        question: 'Streaming — always or sometimes?',
-        answer:
-          "Always for user-facing UX. Token streaming makes LLM features feel fast even when total latency is high. We use the AI SDK's `streamText` / `streamObject` patterns by default."
-      }
-    ],
-    relatedServiceTags: ['AI & Machine Learning'],
-    relatedRoles: ['ai-engineer', 'python-developer', 'voice-ai-developer', 'ml-engineer']
   },
   {
     slug: 'frontend-developer',
@@ -1842,7 +1756,7 @@ export const hireRoles: HireRole[] = [
       }
     ],
     relatedServiceTags: ['Voice AI Engineering'],
-    relatedRoles: ['ai-engineer', 'llm-developer', 'python-developer', 'ml-engineer']
+    relatedRoles: ['ai-engineer', 'python-developer', 'ml-engineer']
   },
 
   // ─── PHASE 3 ──────────────────────────────────────────────────────────────
