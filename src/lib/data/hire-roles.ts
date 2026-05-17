@@ -1479,13 +1479,13 @@ export const hireRoles: HireRole[] = [
     title: 'iOS Developer',
     h1: 'Hire Senior iOS Developers',
     subhead:
-      'Swift and SwiftUI engineers who ship native iOS apps that feel native — Apple HIG-fluent, App Store launch-ready.',
-    metaTitle: 'Hire iOS Developers — Swift, SwiftUI | Techyor',
+      'Hire dedicated iOS app developers — Swift and SwiftUI engineers who ship native apps that feel native, Apple HIG-fluent and App Store launch-ready.',
+    metaTitle: 'Hire iOS Developers — Senior, Dedicated | Techyor',
     metaDescription:
-      'Hire senior iOS developers experienced in Swift, SwiftUI, UIKit, Core Data, App Store launches, and native Apple platform features.',
+      'Hire iOS developers with senior-level Swift, SwiftUI, UIKit, Core Data, App Store launch experience. Native iOS app developers for US, UK, and EU teams.',
     intro:
-      "Native iOS development is what you reach for when the user experience must feel iOS — not feel cross-platform. Our iOS developers write Swift, build with SwiftUI for new screens (UIKit when interop demands it), navigate Core Data and SwiftData decisions, and ship to the App Store with the kind of polish Apple rewards in features. They know what's new in the latest iOS, how to handle App Store review surprises, and what HIG actually says (vs what people remember it saying).",
-    primaryKeyword: 'hire ios developer',
+      "Hire iOS developers who ship apps that feel native, not cross-platform. Our iOS app developers write Swift, build with SwiftUI for new screens (UIKit when interop demands it), navigate Core Data and SwiftData decisions, and ship to the App Store with the kind of polish Apple rewards in features. Native iOS development is what you reach for when the user experience must feel iOS. They know what's new in the latest iOS, how to handle App Store review surprises, and what HIG actually says (vs what people remember it saying).",
+    primaryKeyword: 'hire ios developers',
     whyUs: [
       {
         title: 'SwiftUI-first, UIKit-fluent',
@@ -1525,6 +1525,21 @@ export const hireRoles: HireRole[] = [
       'fastlane'
     ],
     faq: [
+      {
+        question: 'Should I hire dedicated iOS developers or a cross-platform team?',
+        answer:
+          "Hire dedicated iOS developers when the user experience must feel iOS, when you need to ship App Clips, Widgets, Live Activities, or App Intents, when StoreKit subscriptions are core to revenue, or when the brand cares about being featured by Apple. A cross-platform Flutter or React Native team will ship a functional app; a dedicated iOS developer will ship one that respects HIG, handles the App Store review cycle without surprises, and uses platform features that wouldn't survive a cross-platform abstraction. The split is most worth it past the prototype stage."
+      },
+      {
+        question: 'How is hiring a senior iOS app developer different from a junior?',
+        answer:
+          "Three things separate senior iOS work from junior. First, App Store review instinct — they anticipate the common rejections (Sign in with Apple, IAP for digital goods, demo accounts, privacy disclosures) and architect around them upfront. Second, performance ownership — they read an Instruments trace and immediately know which view hierarchy churn or layout pass is costing frames. Third, platform fluency — Combine, Swift concurrency, structured concurrency, actors, StoreKit 2 — used pragmatically, not as an academic exercise. A senior iOS app developer keeps the app on the 60fps budget all the way through App Store launch."
+      },
+      {
+        question: 'Can I hire iOS app developers from India for a US or UK product?',
+        answer:
+          "Yes — most of our clients are in the US, UK, EU, and Australia. We overlap with East Coast US morning and UK afternoon hours, run async-first with daily standups, and ship in your timezone's calendar. Senior India-based iOS app developers cost 40–60% less than equivalent senior iOS engineers in the US or UK without quality compromise. We've shipped to the US, UK, and global App Stores — ADT Control iOS, Buffalo Wild Wings iOS, Arby's iOS, Medela Family iOS, among others — including apps with custom Core Data migrations, complex animations, and IAP/subscription flows."
+      },
       {
         question: 'SwiftUI or UIKit?',
         answer:
