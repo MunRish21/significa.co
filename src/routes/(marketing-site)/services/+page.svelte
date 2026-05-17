@@ -231,9 +231,7 @@
     blocks: [
       {
         deliverable: 'E-commerce',
-        description: 'Online stores that convert. Shopify, WooCommerce, custom builds.',
-        link_title: 'See more',
-        link: { url: '/e-commerce' }
+        description: 'Online stores that convert. Shopify, WooCommerce, custom builds.'
       },
       {
         icon: {

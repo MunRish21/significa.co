@@ -30,248 +30,7 @@
     }
   >;
 
-  const posts: Post[] = [
-    {
-      id: 1,
-      uuid: 'uuid-1',
-      name: 'The Future of E-commerce.',
-      slug: 'the-future-of-ecommerce',
-      full_slug: 'blog/the-future-of-ecommerce',
-      created_at: '2024-03-15T00:00:00.000Z',
-      published_at: '2024-03-15T00:00:00.000Z',
-      first_published_at: '2024-03-15T00:00:00.000Z',
-      tag_list: ['E-commerce', 'Trends'],
-      content: {
-        authors: [
-          {
-            id: 1,
-            uuid: 'author-1',
-            name: 'Sarah Johnson',
-            slug: 'sarah-johnson',
-            full_slug: 'team/sarah-johnson',
-            content: {
-              position: 'Design Lead',
-              photo: {
-                id: 1,
-                alt: 'Sarah Johnson',
-                name: 'sarah',
-                focus: '',
-                title: 'Sarah Johnson',
-                filename: '/assets/storyblok/placeholder-author.jpg'
-              },
-              is_active: true
-            },
-            created_at: '',
-            published_at: '',
-            first_published_at: null,
-            tag_list: []
-          }
-        ],
-        external_authors: [],
-        reading_time: 8
-      }
-    },
-    {
-      id: 2,
-      uuid: 'uuid-2',
-      name: 'Designing for Accessibility.',
-      slug: 'designing-for-accessibility',
-      full_slug: 'blog/designing-for-accessibility',
-      created_at: '2024-03-10T00:00:00.000Z',
-      published_at: '2024-03-10T00:00:00.000Z',
-      first_published_at: '2024-03-10T00:00:00.000Z',
-      tag_list: ['Design', 'Accessibility'],
-      content: {
-        authors: [
-          {
-            id: 2,
-            uuid: 'author-2',
-            name: 'Michael Chen',
-            slug: 'michael-chen',
-            full_slug: 'team/michael-chen',
-            content: {
-              position: 'UX Designer',
-              photo: {
-                id: 2,
-                alt: 'Michael Chen',
-                name: 'michael',
-                focus: '',
-                title: 'Michael Chen',
-                filename: '/assets/storyblok/placeholder-author.jpg'
-              },
-              is_active: true
-            },
-            created_at: '',
-            published_at: '',
-            first_published_at: null,
-            tag_list: []
-          }
-        ],
-        external_authors: [],
-        reading_time: 12
-      }
-    },
-    {
-      id: 3,
-      uuid: 'uuid-3',
-      name: 'Mobile-First Development Strategy.',
-      slug: 'mobile-first-development',
-      full_slug: 'blog/mobile-first-development',
-      created_at: '2024-03-05T00:00:00.000Z',
-      published_at: '2024-03-05T00:00:00.000Z',
-      first_published_at: '2024-03-05T00:00:00.000Z',
-      tag_list: ['Development', 'Mobile'],
-      content: {
-        authors: [
-          {
-            id: 3,
-            uuid: 'author-3',
-            name: 'Emma Williams',
-            slug: 'emma-williams',
-            full_slug: 'team/emma-williams',
-            content: {
-              position: 'Frontend Developer',
-              photo: {
-                id: 3,
-                alt: 'Emma Williams',
-                name: 'emma',
-                focus: '',
-                title: 'Emma Williams',
-                filename: '/assets/storyblok/placeholder-author.jpg'
-              },
-              is_active: true
-            },
-            created_at: '',
-            published_at: '',
-            first_published_at: null,
-            tag_list: []
-          }
-        ],
-        external_authors: [],
-        reading_time: 10
-      }
-    },
-    {
-      id: 4,
-      uuid: 'uuid-4',
-      name: 'User Research Best Practices.',
-      slug: 'user-research-best-practices',
-      full_slug: 'blog/user-research-best-practices',
-      created_at: '2024-02-28T00:00:00.000Z',
-      published_at: '2024-02-28T00:00:00.000Z',
-      first_published_at: '2024-02-28T00:00:00.000Z',
-      tag_list: ['Research', 'UX'],
-      content: {
-        authors: [
-          {
-            id: 4,
-            uuid: 'author-4',
-            name: 'David Martinez',
-            slug: 'david-martinez',
-            full_slug: 'team/david-martinez',
-            content: {
-              position: 'Research Director',
-              photo: {
-                id: 4,
-                alt: 'David Martinez',
-                name: 'david',
-                focus: '',
-                title: 'David Martinez',
-                filename: '/assets/storyblok/placeholder-author.jpg'
-              },
-              is_active: true
-            },
-            created_at: '',
-            published_at: '',
-            first_published_at: null,
-            tag_list: []
-          }
-        ],
-        external_authors: [],
-        reading_time: 15
-      }
-    },
-    {
-      id: 5,
-      uuid: 'uuid-5',
-      name: 'Scaling Your Product Successfully.',
-      slug: 'scaling-your-product',
-      full_slug: 'blog/scaling-your-product',
-      created_at: '2024-02-20T00:00:00.000Z',
-      published_at: '2024-02-20T00:00:00.000Z',
-      first_published_at: '2024-02-20T00:00:00.000Z',
-      tag_list: ['Product', 'Strategy'],
-      content: {
-        authors: [
-          {
-            id: 5,
-            uuid: 'author-5',
-            name: 'Jessica Lee',
-            slug: 'jessica-lee',
-            full_slug: 'team/jessica-lee',
-            content: {
-              position: 'Product Manager',
-              photo: {
-                id: 5,
-                alt: 'Jessica Lee',
-                name: 'jessica',
-                focus: '',
-                title: 'Jessica Lee',
-                filename: '/assets/storyblok/placeholder-author.jpg'
-              },
-              is_active: true
-            },
-            created_at: '',
-            published_at: '',
-            first_published_at: null,
-            tag_list: []
-          }
-        ],
-        external_authors: [],
-        reading_time: 11
-      }
-    },
-    {
-      id: 6,
-      uuid: 'uuid-6',
-      name: 'Web Performance Optimization Tips.',
-      slug: 'web-performance-optimization',
-      full_slug: 'blog/web-performance-optimization',
-      created_at: '2024-02-15T00:00:00.000Z',
-      published_at: '2024-02-15T00:00:00.000Z',
-      first_published_at: '2024-02-15T00:00:00.000Z',
-      tag_list: ['Development', 'Performance'],
-      content: {
-        authors: [
-          {
-            id: 6,
-            uuid: 'author-6',
-            name: 'James Wilson',
-            slug: 'james-wilson',
-            full_slug: 'team/james-wilson',
-            content: {
-              position: 'DevOps Engineer',
-              photo: {
-                id: 6,
-                alt: 'James Wilson',
-                name: 'james',
-                focus: '',
-                title: 'James Wilson',
-                filename: '/assets/storyblok/placeholder-author.jpg'
-              },
-              is_active: true
-            },
-            created_at: '',
-            published_at: '',
-            first_published_at: null,
-            tag_list: []
-          }
-        ],
-        external_authors: [],
-        reading_time: 9
-      }
-    }
-  ];
+  const posts: Post[] = [];
 
   let showFilters = false;
   let selectedFilters: string[] = [];
@@ -351,6 +110,7 @@
   {/if}
 
   {#if on('blog-list')}
+    {#if posts.length > 0}
     <!-- Filters Button -->
   <div
     class="lg:mt-18 container mx-auto mb-3 mt-8 flex items-center justify-between px-container md:mt-12"
@@ -430,6 +190,7 @@
       </div>
     </div>
   {/if}
+    {/if}
 
   <!-- Blog Posts List -->
   <section>
@@ -451,13 +212,17 @@
 
   {#if filteredPosts.length === 0}
     <div class="container mx-auto px-container py-20 text-center">
-      <p class="text-lg text-foreground-secondary">No posts match your filters.</p>
-      <button
-        on:click={clearFilters}
-        class="mt-4 text-sm font-medium text-foreground transition-colors hover:text-foreground-secondary"
-      >
-        Clear filters
-      </button>
+      {#if posts.length === 0}
+        <p class="text-lg text-foreground-secondary">New posts coming soon.</p>
+      {:else}
+        <p class="text-lg text-foreground-secondary">No posts match your filters.</p>
+        <button
+          on:click={clearFilters}
+          class="mt-4 text-sm font-medium text-foreground transition-colors hover:text-foreground-secondary"
+        >
+          Clear filters
+        </button>
+      {/if}
     </div>
   {/if}
   {/if}

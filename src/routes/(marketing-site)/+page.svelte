@@ -218,58 +218,7 @@
         ],
         cover: undefined
       }
-    })),
-    {
-      id: 3,
-      uuid: 'uuid-3',
-      name: 'The Future of E-commerce.',
-      slug: 'the-future-of-ecommerce',
-      full_slug: '/blog/the-future-of-ecommerce',
-      created_at: '2024-03-15T00:00:00.000Z',
-      published_at: '2024-03-15T00:00:00.000Z',
-      first_published_at: '2024-03-15T00:00:00.000Z',
-      tag_list: ['E-commerce', 'Trends'],
-      content: {
-        component: 'blog-post',
-        tagline: undefined,
-        thumbnail: undefined,
-        cover: {
-          id: 3,
-          alt: 'Blog',
-          name: 'blog',
-          focus: '',
-          title: 'Blog',
-          filename: '/assets/storyblok/allo_article_cover.png'
-        },
-        authors: [
-          {
-            id: 1,
-            uuid: 'author-1',
-            name: 'Sarah Johnson',
-            slug: 'sarah-johnson',
-            full_slug: 'team/sarah-johnson',
-            content: {
-              position: 'Design Lead',
-              photo: {
-                id: 1,
-                alt: 'Sarah Johnson',
-                name: 'sarah',
-                focus: '',
-                title: 'Sarah Johnson',
-                filename: '/assets/storyblok/placeholder-author.jpg'
-              },
-              is_active: true
-            },
-            created_at: '',
-            published_at: '',
-            first_published_at: null,
-            tag_list: []
-          }
-        ],
-        external_authors: [],
-        reading_time: 8
-      }
-    }
+    }))
   ];
 </script>
 
