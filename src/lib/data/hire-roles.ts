@@ -1682,13 +1682,13 @@ export const hireRoles: HireRole[] = [
     title: 'Web Developer',
     h1: 'Hire Senior Web Developers',
     subhead:
-      'Full-spectrum web engineers who ship websites and web apps that perform, convert, and stay maintainable.',
-    metaTitle: 'Hire Web Developers — Senior, Full-Spectrum | Techyor',
+      'Hire dedicated web developers and web app developers — full-spectrum engineers who ship websites and web apps that perform, convert, and stay maintainable.',
+    metaTitle: 'Hire Web Developers — Senior, Dedicated | Techyor',
     metaDescription:
-      'Hire senior web developers fluent across modern stacks — React, Next.js, Svelte, WordPress, Shopify. Production websites and web apps that ship and last.',
+      'Hire web developers and web app developers with senior-level experience across React, Next.js, Svelte, WordPress, Shopify. Production sites and web apps for US, UK, EU teams.',
     intro:
-      "Web development is the broadest hire we do. A senior web developer ranges from marketing-site SEO to web apps with complex state to e-commerce stores to internal admin panels. Ours pick the right stack for the problem — Next.js when SEO + interactivity matters, SvelteKit when bundle size and performance lead, WordPress when editors drive content, Shopify for storefronts. We don't sell the same hammer to every nail.",
-    primaryKeyword: 'hire web developer',
+      "Hire web developers who pick the right stack for the problem instead of selling the same hammer to every nail. Web development is the broadest hire we do — a senior web developer ranges from marketing-site SEO to web apps with complex state, e-commerce stores, and internal admin panels. We're also web app developers in the harder sense: typed state machines, optimistic UI, real-time data, accessibility-first interactions. Next.js when SEO + interactivity matters, SvelteKit when bundle size and performance lead, WordPress when editors drive content, Shopify for storefronts.",
+    primaryKeyword: 'hire web developers',
     whyUs: [
       {
         title: 'Stack-pluralist',
@@ -1729,6 +1729,21 @@ export const hireRoles: HireRole[] = [
       'Vercel'
     ],
     faq: [
+      {
+        question: 'Should I hire dedicated web developers or generalists?',
+        answer:
+          "Hire dedicated web developers when the project involves more than a brochure site — a real web app, a high-traffic storefront, complex SEO requirements, or a design system that needs to scale. Generalists will ship the first version; dedicated web developers will ship one that survives traffic spikes, ranks for the keywords it should, and is still improvable in three years without a rewrite. The split is most worth it past the prototype stage or when web is your primary acquisition surface."
+      },
+      {
+        question: 'What’s the difference between a web developer and a web app developer?',
+        answer:
+          "A web developer covers the full surface: marketing sites, content platforms, e-commerce, internal tools. A web app developer is a subset focused on interactive, state-heavy, often authenticated apps — dashboards, real-time tools, multi-tenant SaaS UIs. We have both. The same engineer often does both, but when a project is web-app-heavy we lean into web app developers who think in typed state machines, optimistic UI, accessibility-first interactions, and offline/error edge cases instead of marketing-site SEO."
+      },
+      {
+        question: 'Can I hire web developers from India for a US or UK product?',
+        answer:
+          "Yes — most of our clients are in the US, UK, EU, and Australia. We overlap with East Coast US morning and UK afternoon hours, run async-first with daily standups, and ship in your timezone's calendar. Senior India-based web developers and web app developers cost 40–60% less than equivalent senior engineers in the US or UK without quality compromise. We've shipped marketing sites, e-commerce stores, SaaS dashboards, and content platforms across all four regions."
+      },
       {
         question: 'Which framework do you recommend?',
         answer:
