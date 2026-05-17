@@ -634,13 +634,13 @@ export const hireRoles: HireRole[] = [
     title: 'Node.js Developer',
     h1: 'Hire Senior Node.js Developers',
     subhead:
-      'Backend JavaScript engineers who write maintainable Node.js services — Express, Fastify, Hono, NestJS.',
-    metaTitle: 'Hire Node.js Developers — Senior, Production | Techyor',
+      'Hire dedicated senior Node.js developers — backend JavaScript engineers who write maintainable Node.js services in Fastify, Hono, NestJS, and Express.',
+    metaTitle: 'Hire Node.js Developers — Senior, Dedicated | Techyor',
     metaDescription:
-      'Hire senior Node.js developers experienced in Fastify, Hono, NestJS, real-time systems, and high-throughput APIs. TypeScript-first, production-shaped.',
+      'Hire Node.js developers with senior-level experience in Fastify, Hono, NestJS, real-time systems, and high-throughput APIs. TypeScript-first, production-shaped.',
     intro:
-      "Node.js engineers are easy to find and hard to find good. The trap: developers who write Node like browser JavaScript, ignore backpressure, never tune the event loop, and ship services that fall over at 200 RPS. Ours don't. Our Node.js developers know when to use streams, when to pin the libuv thread pool, why your Promise.all is silently leaking memory, and how to instrument a Node service so you can debug it at 3am. We default to TypeScript, write services with structured logging, and care about graceful shutdown.",
-    primaryKeyword: 'hire node.js developer',
+      "Hire senior Node.js developers who write Node like a production backend, not like browser JavaScript. The trap with most Node.js developers is the opposite end: ignored backpressure, untuned event loop, services that fall over at 200 RPS. Our team knows when to use streams, when to pin the libuv thread pool, why your Promise.all is silently leaking memory, and how to instrument a Node service so you can debug it at 3am. We default to TypeScript, write services with structured logging, and care about graceful shutdown.",
+    primaryKeyword: 'hire node.js developers',
     whyUs: [
       {
         title: 'TypeScript-first, every time',
@@ -683,6 +683,21 @@ export const hireRoles: HireRole[] = [
       'Redis'
     ],
     faq: [
+      {
+        question: 'Should I hire dedicated Node.js developers or full-stack generalists?',
+        answer:
+          "Hire dedicated Node.js developers when the backend is the product — APIs serving mobile and third-party consumers, real-time systems with WebSockets or SSE, queue-based workflows, services that need to scale past a single instance, or anything where event-loop discipline matters. A full-stack generalist will ship a working Node service; a dedicated Node.js developer will ship one with proper backpressure, libuv thread pool tuning, graceful shutdown handling, and structured logging that survives production. The split is most worth it past prototype RPS or when uptime targets become real."
+      },
+      {
+        question: 'How is hiring a senior Node.js developer different from a junior?',
+        answer:
+          "Three things separate senior Node.js work from junior. First, event-loop instinct — a senior knows when a `Promise.all` is silently leaking memory, why a busy CPU-bound function is blocking every other request, when to reach for worker threads vs clustering. Second, framework opinions backed by reasoning — Fastify for raw RPS, NestJS for structured large teams, Hono on edge runtimes, Express only for ecosystem compatibility. Third, operations awareness — graceful shutdown under SIGTERM, structured logs with pino, OpenTelemetry traces, signal handling that doesn't lose in-flight requests. A senior Node.js developer keeps the service responsive under load and debuggable at 3am."
+      },
+      {
+        question: 'Can I hire Node.js developers from India for a US or UK product?',
+        answer:
+          "Yes — most of our Node.js clients are in the US, UK, EU, and Australia. We overlap with East Coast US morning and UK afternoon hours, run async-first with daily standups, and ship in your timezone's calendar. Senior India-based Node.js developers cost 40–60% less than equivalent senior backend engineers in the US or UK without quality compromise. We've shipped Node.js APIs, real-time services, BullMQ-backed worker pipelines, and TypeScript monorepos across all four regions."
+      },
       {
         question: 'Fastify, NestJS, or Express?',
         answer:
