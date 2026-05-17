@@ -1937,13 +1937,13 @@ export const hireRoles: HireRole[] = [
     title: 'WooCommerce Developer',
     h1: 'Hire Senior WooCommerce Developers',
     subhead:
-      'WordPress + WooCommerce specialists who customize checkout, build payment gateways, and ship subscription stores.',
-    metaTitle: 'Hire WooCommerce Developers — Custom, Senior | Techyor',
+      'Hire dedicated WooCommerce developers who customize checkout, build payment gateways, and ship subscription stores.',
+    metaTitle: 'Hire WooCommerce Developers — Senior, Dedicated | Techyor',
     metaDescription:
-      'Hire senior WooCommerce developers for custom checkout, payment gateways, subscriptions, B2B pricing, and high-performance WooCommerce stores.',
+      'Hire WooCommerce developers with senior-level experience in custom checkout, payment gateways, subscriptions, B2B pricing, and high-performance stores.',
     intro:
-      "WooCommerce is the right e-commerce platform when content (blog, editorial) drives traffic and the store is part of a larger WordPress site. Our WooCommerce developers know it past the surface: custom payment gateways, complex tax rules, B2B wholesale pricing, subscription billing, and performance optimization that takes a slow WooCommerce store under 2.5s. We also tell you when WooCommerce is the wrong tool — for catalog-heavy stores or international tax complexity, Shopify often wins.",
-    primaryKeyword: 'hire woocommerce developer',
+      "Hire WooCommerce developers who know the platform past the surface. We build custom payment gateways, complex tax rules, B2B wholesale pricing, subscription billing, and performance optimization that takes a slow WooCommerce store under 2.5s. WooCommerce is the right e-commerce platform when content drives traffic and the store is part of a larger WordPress site. We also tell you when WooCommerce is the wrong tool — for catalog-heavy stores or international tax complexity, Shopify often wins.",
+    primaryKeyword: 'hire woocommerce developers',
     whyUs: [
       {
         title: 'Custom checkout, custom gateways',
@@ -1982,6 +1982,21 @@ export const hireRoles: HireRole[] = [
       'WP CLI'
     ],
     faq: [
+      {
+        question: 'Should I hire dedicated WooCommerce developers or a generalist agency?',
+        answer:
+          "Hire dedicated WooCommerce developers when the store has any of: custom checkout, subscription billing, B2B pricing, custom payment gateways, or 5,000+ products. A WordPress generalist can do a basic store; they hit a wall once the commerce logic is real. Our WooCommerce developers spend 100% of their time on WooCommerce work, which is why fixing a stuck WooCommerce build is faster than starting it generalist-led."
+      },
+      {
+        question: 'How is hiring a senior WooCommerce expert different from a freelancer?',
+        answer:
+          "Three things. First, scope ownership — a senior WooCommerce expert designs the data model, payment flow, and caching strategy end-to-end instead of executing tickets. Second, edge cases — they've seen the failure modes (broken sessions on cached checkout, race conditions in stock, payment retries) and engineer around them upfront. Third, accountability — you get someone who'll still be there in three months when the production bug hits."
+      },
+      {
+        question: 'Can I hire WooCommerce developers from India for a US or UK store?',
+        answer:
+          "Yes — most of our clients are in the US, UK, EU, and Australia. We work overlapping hours with the East Coast US morning and the UK afternoon, run async-first with daily standups, and ship in your timezone's calendar. Senior India-based WooCommerce developers cost 40–60% less than equivalent senior developers in the US or UK without quality compromise."
+      },
       {
         question: 'WooCommerce vs Shopify?',
         answer:

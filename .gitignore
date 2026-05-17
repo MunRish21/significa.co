@@ -22,3 +22,6 @@ static/sitemap.xml
 static/handbook/*
 handbook-data.json
 .env*.local
+
+# Local SEO research exports (CSVs from SEMrush, etc.)
+keyword-research/
