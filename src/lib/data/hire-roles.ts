@@ -1176,13 +1176,13 @@ export const hireRoles: HireRole[] = [
     title: 'Backend Developer',
     h1: 'Hire Senior Backend Developers',
     subhead:
-      'Server-side engineers who design APIs, model data, and run production systems that don\'t fall over at 3am.',
-    metaTitle: 'Hire Backend Developers — Node, Python, Go | Techyor',
+      'Hire dedicated backend developers who design APIs, model data, and run production systems that don\'t fall over at 3am.',
+    metaTitle: 'Hire Backend Developers — Senior, Dedicated | Techyor',
     metaDescription:
-      'Hire senior backend developers fluent in Node.js, Python, Go, Postgres, Redis, and AWS. API design, data modeling, observability, production-grade.',
+      'Hire backend developers with senior-level experience in Node.js, Python, Go, Postgres, Redis, and AWS. API design, data modeling, observability, production-grade.',
     intro:
-      "Backend is where products earn their revenue. Our backend developers don't just write APIs — they design them. They model data with future flexibility in mind, set up observability before they need it, choose Postgres extensions you didn't know existed, and write services that handle real production traffic without surprises. We're language-pluralist (Node.js, Python, Go) but pattern-consistent: structured concurrency, typed contracts, dependency injection, and ops-aware code.",
-    primaryKeyword: 'hire backend developer',
+      "Hire backend developers who don't just write APIs — they design them. Our team models data with future flexibility in mind, sets up observability before they need it, chooses Postgres extensions you didn't know existed, and writes services that handle real production traffic without surprises. Backend is where products earn their revenue. We're language-pluralist (Node.js, Python, Go) but pattern-consistent: structured concurrency, typed contracts, dependency injection, and ops-aware code.",
+    primaryKeyword: 'hire backend developers',
     whyUs: [
       {
         title: 'API design as a craft',
@@ -1225,9 +1225,24 @@ export const hireRoles: HireRole[] = [
     ],
     faq: [
       {
+        question: 'Should I hire dedicated backend developers or full-stack generalists?',
+        answer:
+          "Hire dedicated backend developers when the data model is non-trivial, when API contracts are consumed by mobile or third parties, when uptime targets are real, or when scale is on the horizon (10k+ users, real-time features, complex billing). A full-stack engineer will ship a working API; a dedicated backend developer will ship one with the right indexes, the right cache invalidation strategy, and observability that catches problems before customers do. The split is most worth it past 3 engineers or when you have a real production load."
+      },
+      {
+        question: 'How is hiring a senior backend developer different from a junior?',
+        answer:
+          "Three things separate senior from junior backend work. First, data modeling instinct — a senior knows when a JSONB column is the right choice and when it's a future migration headache, when to denormalize, and when to lean on Postgres extensions. Second, failure-mode thinking — they design retries, idempotency, and graceful degradation before the bug report arrives, not after. Third, observability as default — structured logs, traces, and metrics ship with the feature, not after the 3am page. A senior backend developer turns 'it works' into 'it keeps working at 100x scale.'"
+      },
+      {
+        question: 'Can I hire backend developers from India for a US or UK product?',
+        answer:
+          "Yes — most of our clients are in the US, UK, EU, and Australia. We overlap with East Coast US morning and UK afternoon hours, run async-first with daily standups, and ship in your timezone's calendar. Senior India-based backend developers cost 40–60% less than equivalent senior backend engineers in the US or UK without quality compromise. We've shipped multi-tenant SaaS backends, high-throughput data pipelines, and AI-adjacent infrastructure across all four regions."
+      },
+      {
         question: 'Which language do you recommend?',
         answer:
-          "TypeScript (Node.js) for stack consistency with frontend. Python for ML-adjacent work, data tooling, or Django/FastAPI products. Go for high-throughput services or when teams have systems engineering experience. We choose by team and problem, not by trend."
+          "TypeScript (Node.js) for stack consistency with frontend. Python for ML-adjacent work, data tooling, or FastAPI products. Go for high-throughput services or when teams have systems engineering experience. We choose by team and problem, not by trend."
       },
       {
         question: 'REST or GraphQL?',
