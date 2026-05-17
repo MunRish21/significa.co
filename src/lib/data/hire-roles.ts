@@ -110,13 +110,13 @@ export const hireRoles: HireRole[] = [
     title: 'React Developer',
     h1: 'Hire Senior React Developers',
     subhead:
-      'Production React engineers who ship fast, accessible, performant interfaces — backed by 80+ shipped products.',
-    metaTitle: 'Hire React Developers — Senior, Vetted | Techyor',
+      'Hire dedicated React developers and React.js development teams — production engineers who ship fast, accessible, performant interfaces.',
+    metaTitle: 'Hire React Developers — Senior, Dedicated | Techyor',
     metaDescription:
-      'Hire senior React developers from Techyor. Ship production-grade interfaces with engineers experienced in React 19, Next.js, RSC, and Core Web Vitals.',
+      'Hire React developers and full React.js development teams with senior-level React 19, Next.js, RSC, and Core Web Vitals experience. Production-grade interfaces for US, UK, EU teams.',
     intro:
-      "When you hire a React developer from Techyor, you're hiring a product engineer first — someone who treats components as a means to an outcome, not the outcome itself. Every developer on our React bench has shipped at least three production React applications, knows the difference between client and server components in their sleep, and has opinions about state management that they can defend with profiling data, not just preferences. We work with React because the ecosystem rewards careful engineering. Our developers know when to reach for Zustand vs Redux, when Suspense saves you a bug and when it hides one, and how to keep a Lighthouse score above 95 once a real product team is shipping into the codebase.",
-    primaryKeyword: 'hire react developer',
+      "Hire React developers who are product engineers first — people who treat components as a means to an outcome, not the outcome itself. Every developer on our React bench has shipped at least three production React applications, knows the difference between client and server components in their sleep, and has opinions about state management they can defend with profiling data, not just preferences. We also place full React.js development teams when one engineer isn't enough — design, frontend, and full-stack moving as a unit. Our developers know when to reach for Zustand vs Redux, when Suspense saves you a bug and when it hides one, and how to keep a Lighthouse score above 95 once a real product team is shipping into the codebase.",
+    primaryKeyword: 'hire react developers',
     whyUs: [
       {
         title: 'Senior, never bootcamp-junior',
@@ -159,6 +159,21 @@ export const hireRoles: HireRole[] = [
       'Storybook'
     ],
     faq: [
+      {
+        question: 'Should I hire dedicated React developers or a full React.js development team?',
+        answer:
+          "Hire one or two dedicated React developers when the team is small and the work is a focused frontend slice — feature delivery, refactors, performance optimization, design system implementation. Hire a React.js development team when the build is bigger than one engineer can carry: a greenfield product, a major migration, a multi-surface app (web + mobile + admin), or a complex domain that needs design and engineering moving together. A team brings frontend, full-stack, and product engineering as a unit, with the same code review discipline and Lighthouse budgets as individual hires. The split is mostly about scope and timeline."
+      },
+      {
+        question: 'How is hiring a senior React developer different from a junior?',
+        answer:
+          "Three things separate senior React work from junior. First, framework instinct — a senior knows when React Server Components are the right tool and when they're a footgun for a highly-interactive dashboard, when Suspense saves a bug vs hides one, when Zustand beats Redux Toolkit. Second, performance ownership — they read a Lighthouse report and immediately know which three changes move the LCP needle, watch the bundle diff on every PR, and treat Core Web Vitals as a budget not a goal. Third, production discipline — they ship behind feature flags, write tests that survive refactors, and don't break accessibility on the way to shipping faster. A senior React developer keeps the codebase improvable in three years without a rewrite."
+      },
+      {
+        question: 'Can I hire React developers from India for a US or UK product?',
+        answer:
+          "Yes — most of our React clients are in the US, UK, EU, and Australia. We overlap with East Coast US morning and UK afternoon hours, run async-first with daily standups, and ship in your timezone's calendar. Senior India-based React developers cost 40–60% less than equivalent senior frontend engineers in the US or UK without quality compromise. We've shipped React apps across all four regions — multi-tenant SaaS dashboards, e-commerce frontends, content platforms, and complex interactive interfaces — with strict-mode TypeScript, accessibility-tested UI, and Lighthouse budgets enforced in CI."
+      },
       {
         question: 'Do your React developers also handle backend work?',
         answer:
