@@ -60,7 +60,12 @@ export function generateProfessionalServiceSchema(input: {
           },
           author: { '@type': 'Person', name: r.author },
           reviewBody: r.body,
-          datePublished: r.date
+          datePublished: r.date,
+          publisher: {
+            '@type': 'Organization',
+            name: 'Upwork',
+            url: 'https://www.upwork.com'
+          }
         }))
       : undefined;
 
@@ -231,7 +236,12 @@ export function generateLocationServiceSchema(input: {
           },
           author: { '@type': 'Person', name: r.author },
           reviewBody: r.body,
-          datePublished: r.date
+          datePublished: r.date,
+          publisher: {
+            '@type': 'Organization',
+            name: 'Upwork',
+            url: 'https://www.upwork.com'
+          }
         }))
       : undefined;
 
@@ -464,7 +474,12 @@ export function generateProjectSchema(
           },
           author: { '@type': 'Person', name: r.author },
           reviewBody: r.body,
-          datePublished: r.date
+          datePublished: r.date,
+          publisher: {
+            '@type': 'Organization',
+            name: 'Upwork',
+            url: 'https://www.upwork.com'
+          }
         }))
       : undefined;
 
@@ -546,7 +561,12 @@ export function generateServicesPageSchema(input: {
           },
           author: { '@type': 'Person', name: r.author },
           reviewBody: r.body,
-          datePublished: r.date
+          datePublished: r.date,
+          publisher: {
+            '@type': 'Organization',
+            name: 'Upwork',
+            url: 'https://www.upwork.com'
+          }
         }))
       : undefined;
 
@@ -650,7 +670,12 @@ export function generateCollectionPageSchema(input: {
           },
           author: { '@type': 'Person', name: r.author },
           reviewBody: r.body,
-          datePublished: r.date
+          datePublished: r.date,
+          publisher: {
+            '@type': 'Organization',
+            name: 'Upwork',
+            url: 'https://www.upwork.com'
+          }
         }))
       : undefined;
 
@@ -837,7 +862,12 @@ export function generateProfessionalReviewSchema(reviews: {
       },
       author: { '@type': 'Person', name: r.author },
       reviewBody: r.body,
-      datePublished: r.date
+      datePublished: r.date,
+      publisher: {
+        '@type': 'Organization',
+        name: 'Upwork',
+        url: 'https://www.upwork.com'
+      }
     }))
   });
 }
@@ -889,7 +919,12 @@ export function generateHireRoleSchema(input: {
           },
           author: { '@type': 'Person', name: r.author },
           reviewBody: r.body,
-          datePublished: r.date
+          datePublished: r.date,
+          publisher: {
+            '@type': 'Organization',
+            name: 'Upwork',
+            url: 'https://www.upwork.com'
+          }
         }))
       : undefined;
 

@@ -76,9 +76,12 @@ export const load = async ({ params }) => {
     return Array.from(collected.values());
   })();
 
+  // Show every matching testimonial so the visible count matches the
+  // AggregateRating reviewCount in the JSON-LD. Falls back to 3 featured
+  // testimonials when the role has none of its own.
   const matchingTestimonials =
     allMatchingTestimonials.length > 0
-      ? allMatchingTestimonials.slice(0, 3)
+      ? allMatchingTestimonials
       : getFeaturedTestimonials(3);
 
   /** Aggregate ratings drawn from ALL matching testimonials (not just the displayed 3). */
