@@ -808,13 +808,13 @@ export const hireRoles: HireRole[] = [
     title: 'Shopify Developer',
     h1: 'Hire Senior Shopify Developers',
     subhead:
-      'Shopify and Shopify Plus engineers building custom themes, apps, and Hydrogen storefronts that convert.',
-    metaTitle: 'Hire Shopify Developers — Plus, Hydrogen | Techyor',
+      'Hire dedicated Shopify developers — Shopify Plus, theme, and app developers who ship custom storefronts that convert.',
+    metaTitle: 'Hire Shopify Developers — Senior, Dedicated | Techyor',
     metaDescription:
-      'Hire senior Shopify developers experienced in Online Store 2.0, Liquid, Hydrogen, custom apps, and Shopify Plus. Ship stores that convert.',
+      'Hire Shopify developers with senior-level Online Store 2.0, Liquid, Hydrogen, custom app, and Shopify Plus experience. Custom themes and storefronts for US, UK, EU teams.',
     intro:
-      "Shopify development isn't theme tweaking. A senior Shopify developer thinks in terms of conversion rate, theme bloat, app performance, and the cost of every Liquid loop. Our Shopify team has built custom OS 2.0 themes, headless Hydrogen storefronts, custom apps via Shopify CLI, and Shopify Plus migrations. We know which apps to remove on day one, why your AOV is dropping after that one A/B test, and how to ship a checkout extension that doesn't blow up your Plus contract.",
-    primaryKeyword: 'hire shopify developer',
+      "Hire Shopify developers who think in conversion rate, theme bloat, app performance, and the cost of every Liquid loop — not just theme tweaking. Our Shopify team has built custom OS 2.0 themes, headless Hydrogen storefronts, Shopify app developer work via Shopify CLI, custom theme developer builds for brand storefronts, and Shopify Plus migrations. We know which apps to remove on day one, why your AOV is dropping after that one A/B test, and how to ship a checkout extension that doesn't blow up your Plus contract.",
+    primaryKeyword: 'hire shopify developers',
     whyUs: [
       {
         title: 'OS 2.0 + Hydrogen, both fluent',
@@ -856,6 +856,21 @@ export const hireRoles: HireRole[] = [
     ],
     faq: [
       {
+        question: 'Should I hire dedicated Shopify developers or use a Shopify Expert agency?',
+        answer:
+          "Hire dedicated Shopify developers when the store has any of: custom theme work where the storefront is the product, custom apps in the Shopify App Store, headless Hydrogen migrations, Shopify Plus checkout extensions, or complex B2B/wholesale logic. A general Shopify Expert agency will tackle the marketing-site layer; a dedicated Shopify developer handles the harder engineering — theme weight optimization, custom Functions for discounts/shipping/payment, Shopify Plus Scripts-to-Functions migrations, and storefront API work that's beyond Liquid. The split is most worth it past the prototype theme stage."
+      },
+      {
+        question: 'Shopify app developer vs Shopify theme developer — what do I need?',
+        answer:
+          "Different specialists. A Shopify theme developer customizes the storefront — Liquid templates, sections, JSON config, performance, brand UX. A Shopify app developer builds embedded or public apps using Shopify CLI, Remix, and Polaris — adding new functionality across the admin or storefront via the API. Most stores need theme work first. Apps come in when the store needs custom logic that doesn't belong in a theme (inventory rules, custom workflows, third-party integrations sold as products). We have both."
+      },
+      {
+        question: 'Can I hire Shopify developers from India for a US or UK store?',
+        answer:
+          "Yes — most of our Shopify clients are in the US, UK, EU, and Australia. We overlap with East Coast US morning and UK afternoon hours, run async-first with daily standups, and ship in your timezone's calendar. Senior India-based Shopify developers cost 40–60% less than equivalent senior Shopify engineers in the US or UK without quality compromise. Our portfolio includes Allbirds, Mane Ethical, Christmas Loft, Evolve Clothing Gallery, REA Power, Guard Dog Security, Havalink, AgensIP StyleEst, and 260 Sample Sale — Shopify storefronts shipped for brands across all four regions."
+      },
+      {
         question: 'Custom theme or premium theme?',
         answer:
           "Custom theme for brands where the storefront is the product. Premium themes (Dawn, Impulse, Empire) make sense for fast launches; we customize them heavily but build from scratch when the design demands it."
@@ -887,7 +902,7 @@ export const hireRoles: HireRole[] = [
       }
     ],
     relatedServiceTags: ['E-commerce', 'E-Commerce Platforms', 'Web Development & Design'],
-    relatedRoles: ['ecommerce-developer', 'web-developer', 'frontend-developer', 'wordpress-developer']
+    relatedRoles: ['woocommerce-developer', 'web-developer', 'frontend-developer', 'wordpress-developer']
   },
   {
     slug: 'ai-engineer',
