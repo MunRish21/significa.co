@@ -1278,13 +1278,13 @@ export const hireRoles: HireRole[] = [
     title: 'TypeScript Developer',
     h1: 'Hire Senior TypeScript Developers',
     subhead:
-      'Engineers fluent in advanced TypeScript — generics, conditional types, branded types — across React, Node, and beyond.',
-    metaTitle: 'Hire TypeScript Developers — Senior, Advanced | Techyor',
+      'Hire dedicated TypeScript developers fluent in advanced types — generics, conditional types, branded types — across React, Node, and beyond.',
+    metaTitle: 'Hire TypeScript Developers — Senior, Dedicated | Techyor',
     metaDescription:
-      'Hire senior TypeScript developers experienced in advanced types, strict mode, type-safe APIs, and full-stack TypeScript projects.',
+      'Hire TypeScript developers with senior-level experience in advanced types, strict mode, type-safe APIs, and full-stack TypeScript projects.',
     intro:
-      "Hiring a 'TypeScript developer' usually means hiring a JavaScript developer who tolerates TypeScript. Ours don't tolerate it — they use it. They write generic functions that compose, conditional types that catch real bugs, branded types that prevent ID-mixing, and discriminated unions that make impossible states impossible. We use TypeScript across the stack: React, Node.js, tRPC, Drizzle, Zod. The result is fewer runtime bugs, faster onboarding, and refactors that complete in hours instead of days.",
-    primaryKeyword: 'hire typescript developer',
+      "Hire TypeScript developers who actually use the type system instead of tolerating it. Most 'TypeScript developers' are JavaScript developers with a tsconfig file. Ours write generic functions that compose, conditional types that catch real bugs, branded types that prevent ID-mixing, and discriminated unions that make impossible states impossible. We use TypeScript across the stack: React, Node.js, tRPC, Drizzle, Zod. The result is fewer runtime bugs, faster onboarding, and refactors that complete in hours instead of days.",
+    primaryKeyword: 'hire typescript developers',
     whyUs: [
       {
         title: 'Strict mode, no escape hatches',
@@ -1324,6 +1324,21 @@ export const hireRoles: HireRole[] = [
       'typescript-eslint'
     ],
     faq: [
+      {
+        question: 'Should I hire dedicated TypeScript developers or a JavaScript team?',
+        answer:
+          "Hire dedicated TypeScript developers when type safety has real business cost: contracts crossing service boundaries, mobile and third-party API consumers, large refactors on the roadmap, or a team big enough that the next dev shouldn't have to read every file to understand a function signature. A JavaScript team will ship working code; a dedicated TypeScript developer will ship code where the next refactor is a 30-minute IDE-led job instead of a week of regression hunting. The payoff compounds the longer the codebase lives."
+      },
+      {
+        question: 'How is hiring a senior TypeScript developer different from a JavaScript developer who uses TS?',
+        answer:
+          "Three things separate senior TypeScript work from JavaScript-with-types. First, type-system literacy — knowing when a conditional type is the right tool and when it's premature, when generics earn their complexity. Second, runtime/compile-time discipline — pairing types with schema validation (Zod, Valibot) so the type system protects what the runtime actually sees. Third, refactor instinct — building APIs whose shape a TypeScript-aware editor can refactor across a 50k-line codebase in seconds. A senior TypeScript developer turns 'we should rename this field' from a sprint into a commit."
+      },
+      {
+        question: 'Can I hire TypeScript developers from India for a US or UK product?',
+        answer:
+          "Yes — most of our clients are in the US, UK, EU, and Australia. We overlap with East Coast US morning and UK afternoon hours, run async-first with daily standups, and ship in your timezone's calendar. Senior India-based TypeScript developers cost 40–60% less than equivalent senior engineers in the US or UK without quality compromise. We've shipped strict-mode codebases, tRPC monorepos, and JavaScript-to-TypeScript migrations across all four regions."
+      },
       {
         question: 'How strict is your strict mode?',
         answer:
