@@ -627,7 +627,7 @@ export const hireRoles: HireRole[] = [
       }
     ],
     relatedServiceTags: ['Python Backend Engineering', 'Backend Engineering', 'AI & Machine Learning'],
-    relatedRoles: ['django-developer', 'fastapi-developer', 'backend-developer', 'ai-engineer']
+    relatedRoles: ['fastapi-developer', 'backend-developer', 'ai-engineer']
   },
   {
     slug: 'nodejs-developer',
@@ -983,93 +983,6 @@ export const hireRoles: HireRole[] = [
 
   // ─── PHASE 2 ──────────────────────────────────────────────────────────────
   {
-    slug: 'django-developer',
-    title: 'Django Developer',
-    h1: 'Hire Senior Django Developers',
-    subhead:
-      'Django engineers who ship admin-heavy products, content platforms, and SaaS backends with Django\'s batteries fully charged.',
-    metaTitle: 'Hire Django Developers — Senior, Production | Techyor',
-    metaDescription:
-      'Hire senior Django developers experienced in DRF, Django Channels, async views, and complex admin interfaces. Ship Django apps that scale.',
-    intro:
-      "Django still wins on the products where 'admin-included, auth-included, ORM-included' is the right answer. Our Django developers ship Django apps the way Django wants to be shipped: clean models, fat views avoided, signals used sparingly, the admin pushed hard. We've built Django backends for SaaS platforms, content sites, multi-tenant products, and legacy upgrades. We also know when not to use Django — for API-only services where async matters, FastAPI is often a better fit.",
-    primaryKeyword: 'hire django developer',
-    whyUs: [
-      {
-        title: 'Django the way Django wants',
-        description:
-          "We follow Django conventions instead of fighting them. Models, generic views, admin customization, signals — used as the framework intends, not bypassed."
-      },
-      {
-        title: 'Custom admin as a product surface',
-        description:
-          "Django admin is underrated for internal tools. We've built ops dashboards on it that took two days instead of two months."
-      },
-      {
-        title: 'DRF or HTMX — your choice',
-        description:
-          "Django Rest Framework for API-driven frontends. HTMX for server-rendered apps that feel modern without an SPA."
-      }
-    ],
-    skills: [
-      'Django 5.x — async views, channels, ASGI deployment',
-      'Django Rest Framework — viewsets, custom permissions, throttling',
-      'Custom admin — inlines, custom views, action buttons, list filters',
-      'Postgres — complex queries, full-text search, JSONB, partitioning',
-      'Multi-tenancy — schema-per-tenant, row-level security, django-tenants',
-      'Background tasks — Celery, Django-Q, dramatiq',
-      'Auth — django-allauth, custom user models, MFA, SSO',
-      'Testing — pytest-django, factory_boy, model bakery',
-      'Deployment — Docker, gunicorn + nginx, AWS, Heroku, Render'
-    ],
-    techStack: [
-      'Django 5.x',
-      'Django Rest Framework',
-      'Postgres',
-      'Celery',
-      'Redis',
-      'HTMX',
-      'django-allauth',
-      'pytest-django',
-      'gunicorn',
-      'Docker'
-    ],
-    faq: [
-      {
-        question: 'Django or FastAPI?',
-        answer:
-          "Django for products needing auth, admin, ORM, templates — anything where Django's batteries save you months. FastAPI for API-only services where async, OpenAPI generation, and Pydantic v2 types matter most."
-      },
-      {
-        question: 'Can you upgrade an old Django codebase?',
-        answer:
-          "Yes — Django 1.x → 4.x → 5.x migrations, Python 2 → 3, removing deprecated APIs. We do incremental upgrades with full test coverage on the path."
-      },
-      {
-        question: 'HTMX or React frontend?',
-        answer:
-          "HTMX for products where the team is small and the UX is form/table-heavy. React frontend (with DRF backend) when the UI is highly interactive (drag-drop, real-time, complex state)."
-      },
-      {
-        question: 'Multi-tenant SaaS — schema or row-level?',
-        answer:
-          'Row-level (django-organizations or custom middleware) for most cases — simpler ops, easier reporting. Schema-per-tenant (django-tenants) when isolation requirements are strict (regulated industries, customer-mandated separation).'
-      },
-      {
-        question: 'Async Django?',
-        answer:
-          "Use it deliberately. Async views work great for I/O-heavy paths (long-running external API calls, websockets). Mixing async views with sync ORM is a footgun — we plan for it explicitly."
-      },
-      {
-        question: 'Best practices for Django performance?',
-        answer:
-          'select_related and prefetch_related religiously, database indexing matched to query patterns, Redis caching at view level, Postgres connection pooling, and async tasks for everything that doesn\'t need to be in the request cycle.'
-      }
-    ],
-    relatedServiceTags: ['Python Backend Engineering', 'Backend Engineering', 'SaaS Platforms'],
-    relatedRoles: ['python-developer', 'fastapi-developer', 'backend-developer']
-  },
-  {
     slug: 'fastapi-developer',
     title: 'FastAPI Developer',
     h1: 'Hire Senior FastAPI Developers',
@@ -1154,7 +1067,7 @@ export const hireRoles: HireRole[] = [
       }
     ],
     relatedServiceTags: ['Python Backend Engineering', 'Backend Engineering', 'APIs & Backend Services'],
-    relatedRoles: ['python-developer', 'django-developer', 'backend-developer', 'ai-engineer']
+    relatedRoles: ['python-developer', 'backend-developer', 'ai-engineer']
   },
   {
     slug: 'frontend-developer',

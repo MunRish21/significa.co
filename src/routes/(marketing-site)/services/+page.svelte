@@ -188,7 +188,6 @@
             list: [
               { label: 'Node.js', link: '/hire/nodejs-developer' },
               { label: 'Python', link: '/hire/python-developer' },
-              { label: 'Django', link: '/hire/django-developer' },
               { label: 'FastAPI', link: '/hire/fastapi-developer' },
               { label: 'Backend Engineering', link: '/hire/backend-developer' },
               { label: 'Full Stack', link: '/hire/full-stack-developer' }
