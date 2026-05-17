@@ -1969,13 +1969,13 @@ export const hireRoles: HireRole[] = [
     title: 'SaaS Developer',
     h1: 'Hire Senior SaaS Developers',
     subhead:
-      'Engineers who build multi-tenant platforms with subscription billing, role-based access, and the boring infrastructure SaaS needs.',
-    metaTitle: 'Hire SaaS Developers — Multi-tenant, Production | Techyor',
+      'Hire dedicated SaaS developers who build multi-tenant platforms with subscription billing, role-based access, and the boring infrastructure SaaS needs.',
+    metaTitle: 'Hire SaaS Developers — Senior, Dedicated | Techyor',
     metaDescription:
-      'Hire senior SaaS developers experienced in multi-tenancy, subscription billing, RBAC, audit logs, and production-grade SaaS infrastructure.',
+      'Hire SaaS developers with senior-level experience in multi-tenancy, subscription billing, RBAC, audit logs, and production-grade SaaS infrastructure.',
     intro:
-      "Building SaaS is mostly the boring infrastructure: multi-tenancy, subscription billing, role-based access control, audit logs, customer onboarding, billing edge cases (proration, tax, dunning). Our SaaS developers have built it before. They know which Stripe webhook to trust, why your trial conversion is dropping, how to design a permissions model that scales past three roles, and what auditable means when SOC 2 enters the picture.",
-    primaryKeyword: 'hire saas developer',
+      "Hire SaaS developers who've shipped the boring infrastructure before — multi-tenancy, subscription billing, role-based access control, audit logs, customer onboarding, billing edge cases (proration, tax, dunning). Our SaaS developers know which Stripe webhook to trust, why your trial conversion is dropping, how to design a permissions model that scales past three roles, and what auditable means when SOC 2 enters the picture. We've shipped SaaS platforms for travel, healthcare, fintech, sales intelligence, and creator tools.",
+    primaryKeyword: 'hire saas developers',
     whyUs: [
       {
         title: 'Multi-tenancy fluency',
@@ -2016,6 +2016,21 @@ export const hireRoles: HireRole[] = [
       'Sentry'
     ],
     faq: [
+      {
+        question: 'Should I hire dedicated SaaS developers or generalists?',
+        answer:
+          "Hire dedicated SaaS developers when multi-tenancy, subscription billing, RBAC, or SSO are core to the product — not when you're just building a website with a login. The boring infrastructure is the moat, and it's where generalists slip. A dedicated SaaS developer has shipped Stripe Tax in production, knows why your proration math is off by a cent, understands the difference between row-level and schema-per-tenant isolation, and won't ship audit logs that miss the action the auditor actually asks about. The split is most worth it once paying customers exist."
+      },
+      {
+        question: 'How is hiring a senior SaaS developer different from a junior full-stack?',
+        answer:
+          "Three things separate senior SaaS work from junior full-stack. First, billing instinct — they design webhook handlers to be idempotent from the first commit, anticipate Stripe race conditions, and test with Stripe's test clock to verify behavior over simulated time. Second, multi-tenancy discipline — every query has a tenant filter, every test asserts cross-tenant isolation, every migration considers backfill across millions of rows. Third, compliance-aware defaults — encryption at rest, audit logs that survive an auditor, least-privilege IAM. A senior SaaS developer turns 'we shipped the feature' into 'we shipped the feature and SOC 2 won't ding us for it.'"
+      },
+      {
+        question: 'Can I hire SaaS developers from India for a US or UK product?',
+        answer:
+          "Yes — most of our SaaS clients are in the US, UK, EU, and Australia. We overlap with East Coast US morning and UK afternoon hours, run async-first with daily standups, and ship in your timezone's calendar. Senior India-based SaaS developers cost 40–60% less than equivalent senior engineers in the US or UK without quality compromise. We've shipped multi-tenant SaaS platforms across all four regions — travel, healthcare, fintech, sales intelligence, AI tools — including Stripe Billing integration, SSO, audit logs, and compliance-aware data models."
+      },
       {
         question: 'Multi-tenancy — row-level or schema-per-tenant?',
         answer:
