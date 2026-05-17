@@ -1074,13 +1074,13 @@ export const hireRoles: HireRole[] = [
     title: 'Frontend Developer',
     h1: 'Hire Senior Frontend Developers',
     subhead:
-      'UI engineers who own the entire user-facing surface — from design system to performance budget to accessibility.',
-    metaTitle: 'Hire Frontend Developers — React, Vue, Svelte | Techyor',
+      'Hire dedicated frontend developers who own the entire user-facing surface — from design system to performance budget to accessibility.',
+    metaTitle: 'Hire Frontend Developers — Senior, Dedicated | Techyor',
     metaDescription:
-      'Hire senior frontend developers fluent in React, Vue, Svelte, accessibility, performance, and design system implementation. Production-grade UI.',
+      'Hire frontend developers with senior-level experience in React, Vue, Svelte, accessibility, performance, and design system implementation. Production-grade UI.',
     intro:
-      "Frontend has become the most under-respected, over-leveraged role in product engineering. Our frontend developers don't just translate Figma into JSX — they own the user-facing surface end-to-end: performance, accessibility, animation polish, design system implementation, and CI for visual regressions. They have opinions about which framework belongs on which project, why your bundle ballooned, and what's actually blocking your LCP. Hire frontend specialists when the UI is the product, when the design system needs to scale, or when performance budgets are slipping.",
-    primaryKeyword: 'hire frontend developer',
+      "Hire frontend developers who own the user-facing surface end-to-end. Our team doesn't just translate Figma into JSX — they own performance, accessibility, animation polish, design system implementation, and CI for visual regressions. Frontend has become the most under-respected, over-leveraged role in product engineering. We have opinions about which framework belongs on which project, why your bundle ballooned, and what's actually blocking your LCP. Hire frontend specialists when the UI is the product, when the design system needs to scale, or when performance budgets are slipping.",
+    primaryKeyword: 'hire frontend developers',
     whyUs: [
       {
         title: 'Framework-fluent, framework-agnostic',
@@ -1122,6 +1122,21 @@ export const hireRoles: HireRole[] = [
       'Vite'
     ],
     faq: [
+      {
+        question: 'Should I hire dedicated frontend developers or generalists?',
+        answer:
+          "Hire dedicated frontend developers when the UI is the product, when the design system needs to outlive its first author, or when performance and accessibility have measurable business cost. A full-stack generalist will ship working UI; a dedicated frontend developer ships UI that survives growth — bundles that don't drift over 18 months, accessibility that doesn't degrade with each feature, animations that don't cost frames on mobile. The split is most worth it past 3 engineers or when a designer needs a real implementation partner."
+      },
+      {
+        question: 'How is hiring a senior frontend developer different from a junior?',
+        answer:
+          "Three things separate senior from junior frontend work. First, framework opinions backed by reasoning — knowing when React Server Components are the right tool and when they're a footgun, why your team's app should be Svelte not Next.js. Second, performance instinct — they read a Lighthouse report and immediately know which three changes will move the needle. Third, accessibility as a default, not a sprint. A senior frontend developer's PR is keyboard-navigable, screen-reader-tested, and within the perf budget without anyone asking."
+      },
+      {
+        question: 'Can I hire frontend developers from India for a US or UK team?',
+        answer:
+          "Yes — most of our clients are in the US, UK, EU, and Australia. We overlap with East Coast US morning and UK afternoon hours, run async-first with daily standups, and ship in your timezone's calendar. Senior India-based frontend developers cost 40–60% less than equivalent senior frontend engineers in the US or UK without quality compromise. We've shipped design system work, complex animations, and accessibility-heavy products across all four regions."
+      },
       {
         question: 'React, Vue, or Svelte?',
         answer:
