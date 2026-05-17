@@ -188,7 +188,6 @@
             list: [
               { label: 'Node.js', link: '/hire/nodejs-developer' },
               { label: 'Python', link: '/hire/python-developer' },
-              { label: 'FastAPI', link: '/hire/fastapi-developer' },
               { label: 'Backend Engineering', link: '/hire/backend-developer' },
               { label: 'Full Stack', link: '/hire/full-stack-developer' }
             ]
@@ -204,15 +203,13 @@
             list: [
               { label: 'Shopify', link: '/hire/shopify-developer' },
               { label: 'WooCommerce', link: '/hire/woocommerce-developer' },
-              { label: 'WordPress', link: '/hire/wordpress-developer' },
-              { label: 'Headless CMS', link: '/hire/headless-cms-developer' }
+              { label: 'WordPress', link: '/hire/wordpress-developer' }
             ]
           },
           {
             title: 'Platform',
             list: [
-              { label: 'SaaS Development', link: '/hire/saas-developer' },
-              { label: 'DevOps', link: '/hire/devops-engineer' }
+              { label: 'SaaS Development', link: '/hire/saas-developer' }
             ]
           }
         ]

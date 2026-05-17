@@ -627,7 +627,7 @@ export const hireRoles: HireRole[] = [
       }
     ],
     relatedServiceTags: ['Python Backend Engineering', 'Backend Engineering', 'AI & Machine Learning'],
-    relatedRoles: ['fastapi-developer', 'backend-developer', 'ai-engineer']
+    relatedRoles: ['backend-developer', 'ai-engineer']
   },
   {
     slug: 'nodejs-developer',
@@ -715,7 +715,7 @@ export const hireRoles: HireRole[] = [
       }
     ],
     relatedServiceTags: ['Backend Engineering', 'Web Development & Design', 'APIs & Backend Services'],
-    relatedRoles: ['typescript-developer', 'backend-developer', 'full-stack-developer', 'fastapi-developer']
+    relatedRoles: ['typescript-developer', 'backend-developer', 'full-stack-developer']
   },
   {
     slug: 'wordpress-developer',
@@ -801,7 +801,7 @@ export const hireRoles: HireRole[] = [
       }
     ],
     relatedServiceTags: ['Content Management Systems', 'E-commerce', 'Website'],
-    relatedRoles: ['woocommerce-developer', 'headless-cms-developer', 'web-developer', 'frontend-developer']
+    relatedRoles: ['woocommerce-developer', 'web-developer', 'frontend-developer']
   },
   {
     slug: 'shopify-developer',
@@ -982,93 +982,6 @@ export const hireRoles: HireRole[] = [
   },
 
   // ─── PHASE 2 ──────────────────────────────────────────────────────────────
-  {
-    slug: 'fastapi-developer',
-    title: 'FastAPI Developer',
-    h1: 'Hire Senior FastAPI Developers',
-    subhead:
-      'Async Python engineers who ship FastAPI services with type-safe contracts, auto-generated OpenAPI, and production-grade ergonomics.',
-    metaTitle: 'Hire FastAPI Developers — Async Python | Techyor',
-    metaDescription:
-      'Hire senior FastAPI developers experienced in async Python, Pydantic v2, dependency injection, and high-throughput API services.',
-    intro:
-      "FastAPI is the right framework when you want type-safe Python APIs without DjangoREST ceremony. Our FastAPI developers ship async-first services, write Pydantic v2 schemas as a contract that's also documentation, and use dependency injection to keep handlers thin. We pair FastAPI with SQLAlchemy 2.0 async, Alembic migrations, Celery or ARQ for background tasks, and OpenTelemetry for tracing. Services we ship handle thousands of RPS per instance and are deploy-anywhere — Docker, AWS Lambda via Mangum, Vercel Functions, or bare VPS.",
-    primaryKeyword: 'hire fastapi developer',
-    whyUs: [
-      {
-        title: 'Async-first by default',
-        description:
-          'Our developers think in event loops, structured concurrency, and backpressure — not threads. FastAPI is asyncio-native; we use it that way.'
-      },
-      {
-        title: 'Pydantic v2 throughout',
-        description:
-          "Schemas are contracts. We use Pydantic v2's validation and serialization for type-safe APIs that double as auto-generated OpenAPI specs your frontend can consume."
-      },
-      {
-        title: 'Dependency injection that scales',
-        description:
-          "FastAPI's DI shines for testability and modularity. We use it to keep handlers thin, mock cleanly in tests, and structure code that scales past 30 endpoints."
-      }
-    ],
-    skills: [
-      'FastAPI — async, dependency injection, OpenAPI customization',
-      'Pydantic v2 — validation, custom validators, serialization',
-      'SQLAlchemy 2.0 async — joined loading, query optimization',
-      'Alembic — migrations, branching, downgrade safety',
-      'Authentication — OAuth 2.0, JWT, Auth0/Clerk integration',
-      'WebSockets — broadcasting, room management',
-      'Background tasks — ARQ, Celery (sync mode), FastAPI BackgroundTasks',
-      'Testing — pytest-asyncio, httpx AsyncClient, real DB integration tests',
-      'Deployment — Docker, Mangum (Lambda), uvicorn workers behind nginx'
-    ],
-    techStack: [
-      'FastAPI',
-      'Python 3.13/3.14',
-      'Pydantic v2',
-      'SQLAlchemy 2.0',
-      'asyncio',
-      'Alembic',
-      'ARQ',
-      'Postgres',
-      'Redis',
-      'uvicorn'
-    ],
-    faq: [
-      {
-        question: 'FastAPI vs Flask vs Django?',
-        answer:
-          "FastAPI for typed async API services. Flask for tiny services where minimalism matters. Django when you need batteries (admin, auth, ORM, templates). FastAPI is our default for anything API-first in 2026."
-      },
-      {
-        question: 'How do you handle authentication?',
-        answer:
-          "OAuth 2.0 password flow + JWT for first-party APIs. OAuth 2.0 authorization code flow for third-party integrations. Auth0 or Clerk when offloading user management makes sense."
-      },
-      {
-        question: 'Can you use FastAPI for serverless?',
-        answer:
-          "Yes — Mangum on AWS Lambda, or Vercel Functions Python runtime. We design with cold starts in mind: lazy imports, connection pooling reused across invocations, minimal global state."
-      },
-      {
-        question: 'Async ORM — SQLAlchemy 2.0 or alternatives?',
-        answer:
-          "SQLAlchemy 2.0 async for most cases — it's mature, well-documented, and ergonomic. Tortoise ORM for Django-like simplicity. SQLModel when you want Pydantic + SQLAlchemy unified."
-      },
-      {
-        question: 'Background tasks?',
-        answer:
-          "ARQ for async-native task queues. Celery (sync) when integrating with an existing Celery setup. FastAPI's built-in BackgroundTasks only for fire-and-forget within request lifetime."
-      },
-      {
-        question: 'Performance tuning?',
-        answer:
-          "uvicorn with N workers (CPU-bound) or single worker + async (I/O-bound). Connection pool tuned to expected concurrency. Pydantic v2 (10x faster than v1). asyncio.gather for parallel I/O. Profile with py-spy before guessing."
-      }
-    ],
-    relatedServiceTags: ['Python Backend Engineering', 'Backend Engineering', 'APIs & Backend Services'],
-    relatedRoles: ['python-developer', 'backend-developer', 'ai-engineer']
-  },
   {
     slug: 'frontend-developer',
     title: 'Frontend Developer',
@@ -1271,7 +1184,7 @@ export const hireRoles: HireRole[] = [
       }
     ],
     relatedServiceTags: ['Backend Engineering', 'Python Backend Engineering', 'APIs & Backend Services'],
-    relatedRoles: ['nodejs-developer', 'python-developer', 'fastapi-developer', 'devops-engineer']
+    relatedRoles: ['nodejs-developer', 'python-developer', 'backend-developer']
   },
   {
     slug: 'typescript-developer',
@@ -1878,93 +1791,6 @@ export const hireRoles: HireRole[] = [
     relatedRoles: ['wordpress-developer', 'shopify-developer', 'web-developer']
   },
   {
-    slug: 'headless-cms-developer',
-    title: 'Headless CMS Developer',
-    h1: 'Hire Senior Headless CMS Developers',
-    subhead:
-      'Engineers who architect content infrastructure — Sanity, Storyblok, Contentful, Payload — for marketing sites that scale.',
-    metaTitle: 'Hire Headless CMS Developers — Sanity, Storyblok | Techyor',
-    metaDescription:
-      'Hire senior headless CMS developers experienced in Sanity, Storyblok, Contentful, Payload, and Strapi. Content infrastructure that scales.',
-    intro:
-      "Headless CMS is the right call when the frontend benefits from a modern framework and the content team needs editorial freedom. Our headless CMS developers architect content models that survive two product redesigns, integrate with Next.js / SvelteKit / Astro frontends, and design preview workflows that editors actually use. We've built on Sanity, Storyblok, Contentful, Payload (self-hosted), and Strapi — and we'll tell you which one fits your team rather than which one we sell.",
-    primaryKeyword: 'hire headless cms developer',
-    whyUs: [
-      {
-        title: 'Content modeling depth',
-        description:
-          "Document types, references, embedded content, slug strategies, localization. We design schemas that don't need to be torn down in two years."
-      },
-      {
-        title: 'Preview that works',
-        description:
-          "Live preview, draft mode, on-demand revalidation — set up so editors see changes the way users will. The preview workflow is part of the deliverable."
-      },
-      {
-        title: 'Platform-pluralist',
-        description:
-          "Sanity for developer-controlled schemas. Storyblok for marketer-friendly visual editing. Contentful for enterprise teams. Payload for self-hosted with full control. We do all of them."
-      }
-    ],
-    skills: [
-      'Sanity — schema design, GROQ, structure builder, custom inputs',
-      'Storyblok — visual editor, blocks, story types, asset management',
-      'Contentful — content models, entries, assets, GraphQL',
-      'Payload (self-hosted) — collections, globals, hooks, custom UI',
-      'Strapi — content types, plugins, media library',
-      'Frontend integration — Next.js, SvelteKit, Astro',
-      'Preview workflows — draft mode, on-demand revalidation, live preview',
-      'Localization — multi-language content, fallback strategies',
-      'Migration — WordPress → headless, between headless platforms'
-    ],
-    techStack: [
-      'Sanity',
-      'Storyblok',
-      'Contentful',
-      'Payload',
-      'Strapi',
-      'Next.js',
-      'SvelteKit',
-      'Astro',
-      'GROQ',
-      'GraphQL'
-    ],
-    faq: [
-      {
-        question: 'Which headless CMS do you recommend?',
-        answer:
-          "Sanity for developer-led teams that want full schema control and powerful querying. Storyblok for marketing teams that want visual editing. Contentful for enterprise content workflows. Payload for self-hosted with TypeScript-native config. Choose by team, not feature comparison."
-      },
-      {
-        question: 'Can you migrate from WordPress?',
-        answer:
-          "Yes — we extract content via WP REST API or WPGraphQL, map to the headless schema, preserve URLs, set up redirects, and shut down WordPress when the new site is live."
-      },
-      {
-        question: 'How do you handle preview?',
-        answer:
-          "Next.js Draft Mode + revalidatePath/revalidateTag for on-demand. Sanity Live Preview for real-time editing experience. Storyblok Visual Editor for editor-led drafts. We set the workflow up so editors don't need to ping engineers."
-      },
-      {
-        question: 'Localization?',
-        answer:
-          "Per-CMS approach. Sanity uses internationalization plugin or custom field structure. Storyblok has language folders. Contentful has locale-per-field. We design schemas with i18n in mind from the start."
-      },
-      {
-        question: 'Self-hosted or SaaS?',
-        answer:
-          'SaaS (Sanity, Storyblok, Contentful) for most cases — managed infra, auto-scaling, regular feature updates. Self-hosted (Payload, Strapi) when data sovereignty, customization, or cost-at-scale demands it.'
-      },
-      {
-        question: 'Performance for content sites?',
-        answer:
-          "Static generation (SSG/ISR) with on-demand revalidation. CDN-cached. Edge functions for personalization. Most headless sites we ship hit 95+ Lighthouse Mobile."
-      }
-    ],
-    relatedServiceTags: ['Content Management Systems', 'Website'],
-    relatedRoles: ['web-developer', 'frontend-developer', 'wordpress-developer', 'nextjs-developer']
-  },
-  {
     slug: 'saas-developer',
     title: 'SaaS Developer',
     h1: 'Hire Senior SaaS Developers',
@@ -2064,92 +1890,6 @@ export const hireRoles: HireRole[] = [
     ],
     relatedServiceTags: ['SaaS Platforms', 'Subscription Platforms', 'Web Applications'],
     relatedRoles: ['full-stack-developer', 'backend-developer', 'react-developer', 'nodejs-developer']
-  },
-  {
-    slug: 'devops-engineer',
-    title: 'DevOps Engineer',
-    h1: 'Hire Senior DevOps Engineers',
-    subhead:
-      'Platform engineers who ship CI/CD, observability, and cloud infrastructure that runs unattended.',
-    metaTitle: 'Hire DevOps Engineers — Senior, Cloud | Techyor',
-    metaDescription:
-      'Hire senior DevOps engineers experienced in AWS, Kubernetes, Terraform, CI/CD, observability, and platform engineering for product teams.',
-    intro:
-      "DevOps is the role you hire when product engineers are spending more time on infrastructure than features. Our DevOps engineers ship CI/CD pipelines that finish in minutes, observability stacks that catch issues before users notice, infrastructure-as-code that's reviewable like product code, and cloud architectures that scale without surprises. They're platform engineers — they build internal platforms that make other engineers faster.",
-    primaryKeyword: 'hire devops engineer',
-    whyUs: [
-      {
-        title: 'Platform engineering, not script collecting',
-        description:
-          "We build internal platforms (Backstage-style or simpler) that abstract infrastructure away from product teams. Self-service deploys, environment management, observability included."
-      },
-      {
-        title: 'Cost-aware',
-        description:
-          "Cloud bills are engineering. We profile spend, identify waste (idle resources, oversized instances, S3 lifecycle), and design architectures that scale efficiently."
-      },
-      {
-        title: 'Observability-first',
-        description:
-          'OpenTelemetry across services, structured logs, metric dashboards, alert thresholds. We ship with the levers to debug production before we need them.'
-      }
-    ],
-    skills: [
-      'Cloud — AWS (deep), GCP, Azure, Cloudflare, Vercel',
-      'IaC — Terraform, Pulumi, AWS CDK',
-      'Containers — Docker, Kubernetes (when needed), ECS, Cloud Run',
-      'CI/CD — GitHub Actions, GitLab CI, CircleCI, Vercel Builds',
-      'Observability — OpenTelemetry, Datadog, Grafana, Prometheus',
-      'Logging — structured logs, log aggregation, retention policies',
-      'Security — IAM, secrets management, vulnerability scanning, SOC 2 controls',
-      'Cost optimization — Reserved Instances, Spot, S3 lifecycle, right-sizing',
-      'Disaster recovery — backups, multi-region failover, runbook drills'
-    ],
-    techStack: [
-      'AWS',
-      'Terraform',
-      'Kubernetes',
-      'Docker',
-      'GitHub Actions',
-      'OpenTelemetry',
-      'Datadog',
-      'Grafana',
-      'Cloudflare'
-    ],
-    faq: [
-      {
-        question: 'Kubernetes or simpler?',
-        answer:
-          'Simpler when possible — ECS, Cloud Run, Vercel Functions, fly.io. Kubernetes when you actually have the scale to justify the operational complexity. Most product teams don\'t need Kubernetes.'
-      },
-      {
-        question: 'Multi-cloud or single-cloud?',
-        answer:
-          "Single-cloud for almost every product company. Multi-cloud only when regulatory or strategic reasons demand it — not for redundancy (that's what regions are for)."
-      },
-      {
-        question: 'Terraform or alternatives?',
-        answer:
-          "Terraform for most projects — mature, broad ecosystem, well-understood. Pulumi when teams want to use TypeScript or Python instead of HCL. AWS CDK when AWS-only and code-first appeals."
-      },
-      {
-        question: 'How do you handle secrets?',
-        answer:
-          "AWS Secrets Manager or HashiCorp Vault. Never in env files in repos, never in CI logs. Rotation policies for high-sensitivity credentials. SOPS or age for encrypted-in-repo when needed."
-      },
-      {
-        question: 'Cost — typical wins?',
-        answer:
-          'Right-sizing instances (most are oversized), Reserved Instances or Savings Plans for steady workloads, S3 lifecycle to Glacier, eliminating idle/forgotten resources, dev/staging downscaled outside hours. 30–50% reductions are typical.'
-      },
-      {
-        question: 'Compliance — SOC 2, HIPAA?',
-        answer:
-          "We build the technical controls: encryption at rest and in transit, access logs, least-privilege IAM, vulnerability scanning, backup/restore drills. Pair with Vanta or Drata for the compliance platform side."
-      }
-    ],
-    relatedServiceTags: ['Backend Engineering'],
-    relatedRoles: ['backend-developer', 'full-stack-developer', 'python-developer', 'nodejs-developer']
   }
 ];
 

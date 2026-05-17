@@ -51,7 +51,7 @@ export const load = async ({ params, locals }) => {
     },
     {
       title: 'Back-end',
-      slugs: ['nodejs-developer', 'python-developer', 'fastapi-developer', 'backend-developer', 'full-stack-developer']
+      slugs: ['nodejs-developer', 'python-developer', 'backend-developer', 'full-stack-developer']
     },
     {
       title: 'AI',
@@ -59,11 +59,11 @@ export const load = async ({ params, locals }) => {
     },
     {
       title: 'E-commerce & CMS',
-      slugs: ['shopify-developer', 'woocommerce-developer', 'wordpress-developer', 'headless-cms-developer']
+      slugs: ['shopify-developer', 'woocommerce-developer', 'wordpress-developer']
     },
     {
       title: 'Platform',
-      slugs: ['saas-developer', 'devops-engineer']
+      slugs: ['saas-developer']
     }
   ].map((group) => ({
     title: group.title,
