@@ -102,12 +102,6 @@
         'AI Integration',
         'Payment Systems'
       ],
-      deliverables: [
-        'Website',
-        'E-commerce Platform',
-        'AI Visualization System',
-        'Payment Gateway'
-      ],
       links: [{ label: 'Website', url: 'https://monsterfairings.com/' }],
       team: [],
       metrics: [
@@ -131,7 +125,7 @@
 
   $: visibleProjects = filteredProjects.slice(0, projectsToShow).map((p) => ({
     ...p,
-    category: p.deliverables?.[0] || 'Project'
+    category: p.services?.[0] || 'Project'
   }));
 
   $: hasMore = filteredProjects.length > projectsToShow;
@@ -164,21 +158,9 @@
     filterServices = Array.from(serviceCount.entries())
       .sort((a, b) => b[1] - a[1])
       .map(([service]) => service);
-
-    // Count deliverables and sort by frequency (descending)
-    const deliverableCount = new Map<string, number>();
-    projectsData.forEach((p) => {
-      p.deliverables.forEach((d) => {
-        deliverableCount.set(d, (deliverableCount.get(d) || 0) + 1);
-      });
-    });
-    filterDeliverables = Array.from(deliverableCount.entries())
-      .sort((a, b) => b[1] - a[1])
-      .map(([deliverable]) => deliverable);
   }
 
   let filterServices: string[] = [];
-  let filterDeliverables: string[] = [];
 
   $: filterTestimonials = (() => {
     if (!data.filterName) return [];
@@ -193,7 +175,7 @@
     {@const absoluteImage = projectImage.startsWith('http')
       ? projectImage
       : `${BASE_URL}${projectImage}`}
-    <title>{project.name} — {project.deliverables?.[0] || 'Case Study'} | {brandName}</title>
+    <title>{project.name} — {project.services?.[0] || 'Case Study'} | {brandName}</title>
     <meta name="description" content={project.tagline} />
     {#if THIN_CONTENT_PROJECT_SLUGS.has(project.slug)}
       <meta name="robots" content="noindex, follow" />
@@ -202,7 +184,7 @@
     <meta property="og:type" content="article" />
     <meta
       property="og:title"
-      content="{project.name} — {project.deliverables?.[0] || 'Case Study'} | {brandName}"
+      content="{project.name} — {project.services?.[0] || 'Case Study'} | {brandName}"
     />
     <meta property="og:description" content={project.tagline} />
     <meta property="og:image" content={absoluteImage} />
@@ -234,7 +216,6 @@
       project.publishedYear,
       {
         services: project.services,
-        deliverables: project.deliverables,
         ratings: data.ratings,
         reviews: data.reviewEntries,
         brand: isAgency ? undefined : { name: brandName, isPerson: true }
@@ -248,6 +229,7 @@
       name="description"
       content="Browse {brandName} projects in {data.filterName}. {data.filteredProjects.length}+ shipped {data.filterName.toLowerCase()} projects for teams across the US, UK, AU, and Europe."
     />
+    <meta name="robots" content="noindex, follow" />
 
     <meta property="og:type" content="website" />
     <meta property="og:title" content="{data.filterName} Projects — {brandName}" />
@@ -392,25 +374,6 @@
                       : 'border-border hover:border-foreground hover:bg-foreground-tertiary/5'}"
                   >
                     {service}
-                  </a>
-                {/each}
-              </div>
-            </div>
-          {/if}
-          {#if filterDeliverables.length > 0}
-            <div class="mt-6 md:mt-0">
-              <p class="mb-4 text-xs uppercase tracking-wider text-foreground-secondary">
-                Deliverables
-              </p>
-              <div class="flex flex-wrap gap-2">
-                {#each filterDeliverables as deliverable}
-                  <a
-                    href={getFilterUrl(deliverable)}
-                    class="rounded border px-3 py-1.5 text-sm transition-all {isActiveFilter(deliverable)
-                      ? 'border-foreground bg-foreground text-background'
-                      : 'border-border hover:border-foreground hover:bg-foreground-tertiary/5'}"
-                  >
-                    {deliverable}
                   </a>
                 {/each}
               </div>
@@ -629,20 +592,6 @@
             {#each project.services as service}
               <li>
                 <p class="mb-2 text-base">{service}</p>
-              </li>
-            {/each}
-          </ul>
-        {/if}
-
-        <!-- Deliverables -->
-        {#if project.deliverables.length}
-          <ul class="col-span-1">
-            <h4 class="mb-2 text-xs uppercase tracking-wider text-foreground-secondary">
-              Deliverables
-            </h4>
-            {#each project.deliverables as deliverable}
-              <li>
-                <p class="mb-2 text-base">{deliverable}</p>
               </li>
             {/each}
           </ul>

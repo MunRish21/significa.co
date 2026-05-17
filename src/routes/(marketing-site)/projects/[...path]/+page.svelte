@@ -79,7 +79,7 @@
 
   $: visibleProjects = filteredProjects.slice(0, projectsToShow).map((p) => ({
     ...p,
-    category: p.deliverables?.[0] || 'Project'
+    category: p.services?.[0] || 'Project'
   }));
 
   $: hasMore = filteredProjects.length > projectsToShow;
@@ -147,6 +147,7 @@
     name="description"
     content="Browse {brandName}'s {properServiceName} projects. {totalProjects}+ shipped {properServiceName} products including custom solutions for teams worldwide."
   />
+  <meta name="robots" content="noindex, follow" />
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="{properServiceName} Projects — {brandName}" />

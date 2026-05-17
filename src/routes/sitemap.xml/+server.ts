@@ -2,7 +2,6 @@ import { projectsData } from '$lib/data/projects';
 import { getActiveTeamMembers } from '$lib/data/team';
 import { hireRoles } from '$lib/data/hire-roles';
 import { getReadyLocations } from '$lib/data/locations';
-import { toSlug } from '$lib/utils/slugify';
 
 const BASE_URL = 'https://www.techyor.com';
 
@@ -76,41 +75,9 @@ const projectPages = projectsData
     lastmod: `${project.publishedYear}-12-31`
   }));
 
-// Extract unique services from projects for service listing pages
-const uniqueServices = new Set<string>();
-projectsData.forEach((project) => {
-  project.services.forEach((service) => {
-    uniqueServices.add(service);
-  });
-});
-
-// Generate service pages with proper URL slugs
-const servicePages = Array.from(uniqueServices)
-  .sort()
-  .map((service) => ({
-    path: `/projects/${toSlug(service)}`,
-    priority: 0.7,
-    changefreq: 'weekly',
-    lastmod: today
-  }));
-
-// Extract unique deliverables from projects for deliverable listing pages
-const uniqueDeliverables = new Set<string>();
-projectsData.forEach((project) => {
-  project.deliverables.forEach((deliverable) => {
-    uniqueDeliverables.add(deliverable);
-  });
-});
-
-// Generate deliverable pages with proper URL slugs
-const deliverablePages = Array.from(uniqueDeliverables)
-  .sort()
-  .map((deliverable) => ({
-    path: `/projects/${toSlug(deliverable)}`,
-    priority: 0.7,
-    changefreq: 'weekly',
-    lastmod: today
-  }));
+// Filter pages (/projects/<service>, /projects/<deliverable>) intentionally
+// excluded — they render as noindex,follow aggregation views. Buyer-intent
+// traffic is funneled to /hire/<role> pages instead.
 
 // Team member pages — high priority for SEO
 const teamMembers = getActiveTeamMembers();
@@ -140,8 +107,6 @@ const locationPages = getReadyLocations().map((location) => ({
 const allPages = [
   ...staticPages,
   ...projectPages,
-  ...servicePages,
-  ...deliverablePages,
   ...teamPages,
   ...hirePages,
   ...locationPages

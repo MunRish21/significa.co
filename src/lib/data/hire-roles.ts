@@ -33,8 +33,8 @@ export type HireRole = {
   /** 6-8 FAQ entries — written per-role to avoid thin/duplicate content penalties. */
   faq: { question: string; answer: string }[];
   /**
-   * Service / deliverable names from projects.ts that this role's portfolio
-   * should pull from. Filtering matches against project.services + project.deliverables.
+   * Service names from projects.ts that this role's portfolio should pull from.
+   * Filtering matches against project.services.
    */
   relatedServiceTags: (ServiceCategory | string)[];
   /** Internal cross-link suggestions for the "Related roles" section. */

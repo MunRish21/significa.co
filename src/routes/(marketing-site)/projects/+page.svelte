@@ -52,20 +52,9 @@
     .sort((a, b) => b[1] - a[1])
     .map(([service]) => service);
 
-  // Count deliverables and sort by frequency (descending)
-  const deliverableCount = new Map<string, number>();
-  projects.forEach((p) => {
-    p.deliverables.forEach((deliverable) => {
-      deliverableCount.set(deliverable, (deliverableCount.get(deliverable) || 0) + 1);
-    });
-  });
-  const allDeliverables = Array.from(deliverableCount.entries())
-    .sort((a, b) => b[1] - a[1])
-    .map(([deliverable]) => deliverable);
-
   $: visibleProjects = projects.slice(0, projectsToShow).map((p) => ({
     ...p,
-    category: p.deliverables?.[0] || 'Project'
+    category: p.services?.[0] || 'Project'
   }));
   $: hasMore = projects.length > projectsToShow;
 
@@ -198,25 +187,6 @@
                     : 'border-border hover:border-foreground hover:bg-foreground-tertiary/5'}"
                 >
                   {service}
-                </a>
-              {/each}
-            </div>
-          </div>
-        {/if}
-        {#if allDeliverables.length > 0}
-          <div class="mt-6 md:mt-0">
-            <p class="mb-4 text-xs uppercase tracking-wider text-foreground-secondary">
-              Deliverables
-            </p>
-            <div class="flex flex-wrap gap-2">
-              {#each allDeliverables as deliverable}
-                <a
-                  href={getFilterUrl(deliverable)}
-                  class="rounded border px-3 py-1.5 text-sm transition-all {isActiveFilter(deliverable)
-                    ? 'border-foreground bg-foreground text-background'
-                    : 'border-border hover:border-foreground hover:bg-foreground-tertiary/5'}"
-                >
-                  {deliverable}
                 </a>
               {/each}
             </div>

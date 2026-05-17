@@ -418,7 +418,6 @@ export function generateProjectSchema(
   year: number,
   extra?: {
     services?: string[];
-    deliverables?: string[];
     keywords?: string[];
     ratings?: number[];
     reviews?: Array<{
@@ -469,11 +468,7 @@ export function generateProjectSchema(
         }))
       : undefined;
 
-  const keywords = [
-    ...(extra?.services || []),
-    ...(extra?.deliverables || []),
-    ...(extra?.keywords || [])
-  ];
+  const keywords = [...(extra?.services || []), ...(extra?.keywords || [])];
 
   return JSON.stringify({
     '@context': 'https://schema.org',

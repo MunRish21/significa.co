@@ -373,7 +373,7 @@
           .slice(0, 4) as project}
           {@const projectData = projectsData.find((p) => p.slug === project.slug)}
           <ProjectEntry
-            project={{ ...project, category: projectData?.deliverables?.[0] }}
+            project={{ ...project, category: projectData?.services?.[0] }}
             variant="default"
           />
         {/each}

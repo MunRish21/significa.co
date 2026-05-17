@@ -17,14 +17,13 @@ export const load = async ({ params }) => {
 
   /**
    * Score each project by the number of role-tag overlaps with the project's
-   * own services + deliverables. Higher score = more relevant. Ties keep
-   * the original projectsData order (newest first by convention).
+   * services. Higher score = more relevant. Ties keep the original
+   * projectsData order (newest first by convention).
    */
   const scoredProjects = projectsData
     .map((project) => {
       const services = (project.services || []).map((s) => s.toLowerCase());
-      const deliverables = (project.deliverables || []).map((d) => d.toLowerCase());
-      const score = [...services, ...deliverables].filter((tag) => tagSet.has(tag)).length;
+      const score = services.filter((tag) => tagSet.has(tag)).length;
       return { project, score };
     })
     .filter((p) => p.score > 0)
@@ -49,7 +48,6 @@ export const load = async ({ params }) => {
   const allProjectFilterSlugs = new Set<string>();
   projectsData.forEach((p) => {
     p.services.forEach((s) => allProjectFilterSlugs.add(toSlug(s)));
-    p.deliverables.forEach((d) => allProjectFilterSlugs.add(toSlug(d)));
   });
 
   const viewAllUrl =
@@ -66,8 +64,7 @@ export const load = async ({ params }) => {
     name: project.name,
     tagline: project.tagline,
     image: project.image,
-    services: project.services,
-    deliverables: project.deliverables
+    services: project.services
   }));
 
   const allMatchingTestimonials = (() => {

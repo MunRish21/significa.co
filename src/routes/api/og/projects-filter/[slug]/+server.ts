@@ -12,7 +12,6 @@ function unslugifyFilterName(slug: string): string | undefined {
   const candidates = new Set<string>();
   projectsData.forEach((p) => {
     p.services.forEach((s) => candidates.add(s));
-    p.deliverables.forEach((d) => candidates.add(d));
   });
   for (const name of candidates) {
     const candidate = name
@@ -29,10 +28,8 @@ export const GET = async ({ params }) => {
   const filterName = unslugifyFilterName(params.slug);
   if (!filterName) throw error(404, 'Filter not found');
 
-  const matching = projectsData.filter(
-    (p) =>
-      p.services.some((s) => s.toLowerCase() === filterName.toLowerCase()) ||
-      p.deliverables.some((d) => d.toLowerCase() === filterName.toLowerCase())
+  const matching = projectsData.filter((p) =>
+    p.services.some((s) => s.toLowerCase() === filterName.toLowerCase())
   );
 
   const tree = buildOgTree({
