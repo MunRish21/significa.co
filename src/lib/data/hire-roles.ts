@@ -300,13 +300,13 @@ export const hireRoles: HireRole[] = [
     title: 'Full Stack Developer',
     h1: 'Hire Senior Full Stack Developers',
     subhead:
-      'End-to-end engineers who own a feature from database schema to UI polish — without context-switching cost.',
-    metaTitle: 'Hire Full Stack Developers — Senior | Techyor',
+      'Hire dedicated full stack developers — end-to-end engineers who own a feature from database schema to UI polish, without context-switching cost.',
+    metaTitle: 'Hire Full Stack Developers — Senior, Dedicated | Techyor',
     metaDescription:
-      'Hire senior full stack developers fluent across React/Next.js, Node.js, Python, Postgres, and AWS. One engineer, end-to-end product features.',
+      'Hire full stack developers with senior-level experience across React/Next.js, Node.js, Python, Postgres, and AWS. One engineer, end-to-end product features. For US, UK, EU teams.',
     intro:
-      "A full-stack developer is the right hire when your roadmap is feature-shaped, not stack-shaped. Instead of a frontend dev waiting on a backend dev, one senior engineer takes the ticket from API design through UI implementation through deployment. Our full-stack team is fluent across React/Next.js + Node.js or Python, with hands-on experience in Postgres schema design, Redis caching, queue patterns, and production observability. We don't pretend full-stack means knowing everything — we know our limits and pull in specialists for native mobile, ML, or infrastructure where it matters.",
-    primaryKeyword: 'hire full stack developer',
+      "Hire full stack developers when your roadmap is feature-shaped, not stack-shaped. Instead of a frontend dev waiting on a backend dev, one senior engineer takes the ticket from API design through UI implementation through deployment. Our full stack team is fluent across React/Next.js + Node.js or Python, with hands-on experience in Postgres schema design, Redis caching, queue patterns, and production observability. We ship full stack web developers who handle the marketing-site-to-product-app continuum, and we know our limits — we pull in specialists for native mobile, ML, or deep platform work where the depth matters more than the breadth.",
+    primaryKeyword: 'hire full stack developers',
     whyUs: [
       {
         title: 'Real depth, not breadth-only',
@@ -349,6 +349,21 @@ export const hireRoles: HireRole[] = [
       'tRPC'
     ],
     faq: [
+      {
+        question: 'Should I hire dedicated full stack developers or two specialists?',
+        answer:
+          "Hire dedicated full stack developers when the roadmap is feature-shaped — one senior engineer takes the ticket from API design through UI through deployment, 30–50% faster than two specialists handing off because there's no API contract negotiation, no waiting on the other side, and no integration debugging across people. Hire two specialists (frontend + backend) when the work is genuinely deep on both sides — complex data layer plus complex UX, or when team size justifies the separation. The trade is depth: for highly specialized work (ML, native mobile, complex infra), specialists win. For most product features, dedicated full stack developers ship faster."
+      },
+      {
+        question: 'How is hiring a senior full stack developer different from a junior?',
+        answer:
+          "Three things separate senior full stack work from junior. First, real depth on one side — they're 80%+ deep in either frontend or backend, with strong working knowledge of the other side, not 'knows a bit of everything, expert in nothing'. Second, database awareness — they write SQL when the ORM is wrong, know what an index does, when a transaction blocks, and why your query plan changed last Tuesday. Third, production discipline — they've shipped, observed, alerted on, and fixed production systems. They write code expecting it to break, not hoping it won't. A senior full stack developer keeps features shippable from day one and improvable in two years."
+      },
+      {
+        question: 'Can I hire full stack developers from India for a US or UK product?',
+        answer:
+          "Yes — most of our full stack clients are in the US, UK, EU, and Australia. We overlap with East Coast US morning and UK afternoon hours, run async-first with daily standups, and ship in your timezone's calendar. Senior India-based full stack developers cost 40–60% less than equivalent senior engineers in the US or UK without quality compromise. We've shipped full stack work across all four regions — React/Next.js + Node.js or Python + Postgres products, multi-tenant SaaS, e-commerce frontends with custom backends, and AI-integrated apps with end-to-end TypeScript or Python stacks."
+      },
       {
         question: "What's the difference between a full-stack and two specialists?",
         answer:
