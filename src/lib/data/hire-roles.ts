@@ -213,13 +213,13 @@ export const hireRoles: HireRole[] = [
     title: 'Next.js Developer',
     h1: 'Hire Senior Next.js Developers',
     subhead:
-      'App Router specialists who ship App-Router apps with sub-second TTFB on Vercel — without overengineering it.',
-    metaTitle: 'Hire Next.js Developers — App Router, RSC | Techyor',
+      'Hire dedicated Next.js developers — App Router specialists who ship sub-second TTFB apps on Vercel without overengineering them.',
+    metaTitle: 'Hire Next.js Developers — Senior, Dedicated | Techyor',
     metaDescription:
-      'Hire vetted senior Next.js developers experienced in App Router, Server Components, Edge runtime, and production deployment on Vercel.',
+      'Hire Next.js developers and a senior Next.js website development agency team — App Router, Server Components, Edge runtime, production deployment on Vercel for US, UK, EU teams.',
     intro:
-      "Hiring a Next.js developer is different from hiring a React developer. Next.js engineers think in routes, layouts, caching boundaries, and the cost of a serverless invocation. Our Next.js team has shipped App Router applications in production for SaaS platforms, e-commerce stores, and internal tools — including the patterns that don't make it into the docs (when to use a layout, when to use a route group, why your `cache()` calls are silently invalidating). We've been in production with App Router since the day it shipped. Our developers know what to do when your `revalidatePath` doesn't, why Server Actions are sometimes the wrong tool, and how to keep your edge bundle under the 1 MB cap when integration libraries keep growing.",
-    primaryKeyword: 'hire next.js developer',
+      "Hire Next.js developers who think in routes, layouts, caching boundaries, and the cost of a serverless invocation — not just React with file-based routing. As a Next.js website development agency, we've shipped App Router applications in production for SaaS platforms, e-commerce stores, and internal tools — including the patterns that don't make it into the docs (when to use a layout, when to use a route group, why your `cache()` calls are silently invalidating). We've been in production with App Router since the day it shipped. Our developers know what to do when your `revalidatePath` doesn't, why Server Actions are sometimes the wrong tool, and how to keep your edge bundle under the 1 MB cap when integration libraries keep growing.",
+    primaryKeyword: 'hire next.js developers',
     whyUs: [
       {
         title: 'App Router-native, not retrofit',
@@ -261,6 +261,21 @@ export const hireRoles: HireRole[] = [
       'Vercel Edge Functions'
     ],
     faq: [
+      {
+        question: 'Should I hire dedicated Next.js developers or a Next.js website development agency?',
+        answer:
+          "Hire one or two dedicated Next.js developers when you need engineers plugged into your team — feature delivery, App Router refactors, performance optimization, server-component patterns. Hire a Next.js website development agency when the build is bigger: greenfield products, complex App Router architectures, parallel marketing-site + product-app surfaces, or apps that need design, frontend, and full-stack engineers moving together. The agency route brings the same code review discipline and TTFB budgets, with more parallel velocity. The split is about scope and timeline, not quality."
+      },
+      {
+        question: 'How is hiring a senior Next.js developer different from a junior?',
+        answer:
+          "Three things separate senior Next.js work from junior. First, App Router instinct — they know when a layout vs a route group is the right tool, when `cache()` is silently invalidating, when Server Actions are wrong for a form, and when partial prerendering earns the complexity. Second, caching strategy — full-route cache, fetch cache, data cache, route segment config, `revalidateTag` and `revalidatePath` — used deliberately to keep TTFB low without breaking freshness. Third, Vercel platform fluency — edge functions, ISR, on-demand revalidation, the pricing model, and how to stay inside it. A senior Next.js developer keeps the app fast and the bill predictable."
+      },
+      {
+        question: 'Can I hire Next.js developers from India for a US or UK product?',
+        answer:
+          "Yes — most of our Next.js clients are in the US, UK, EU, and Australia. We overlap with East Coast US morning and UK afternoon hours, run async-first with daily standups, and ship in your timezone's calendar. Senior India-based Next.js developers cost 40–60% less than equivalent senior frontend engineers in the US or UK without quality compromise. We've shipped App Router apps across all four regions — multi-tenant SaaS dashboards, e-commerce frontends, content platforms — with strict-mode TypeScript, accessibility-tested UI, and TTFB budgets enforced in CI."
+      },
       {
         question: 'App Router or Pages Router?',
         answer:
