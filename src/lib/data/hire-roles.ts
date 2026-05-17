@@ -722,13 +722,13 @@ export const hireRoles: HireRole[] = [
     title: 'WordPress Developer',
     h1: 'Hire Senior WordPress Developers',
     subhead:
-      'WordPress engineers who treat it as a CMS, not a templating wall — custom Gutenberg blocks, headless builds, and performance-first themes.',
-    metaTitle: 'Hire WordPress Developers — Custom, Headless | Techyor',
+      'Hire dedicated WordPress developers — plugin, theme, and headless WP engineers who ship custom builds and performance-first themes.',
+    metaTitle: 'Hire WordPress Developers — Senior, Dedicated | Techyor',
     metaDescription:
-      'Hire senior WordPress developers experienced in custom Gutenberg blocks, ACF, WooCommerce, headless WP, and performance-first themes. Ship maintainable WordPress.',
+      'Hire WordPress developers with senior-level experience — custom Gutenberg blocks, ACF, WordPress plugin developers, theme developers, headless WP, WooCommerce. Maintainable WordPress for US, UK, EU teams.',
     intro:
-      "WordPress runs almost half the web. That doesn't mean it's been built well almost half the time. Our WordPress developers write custom themes from scratch, build Gutenberg blocks in React, run headless WordPress with Next.js or SvelteKit, and optimize page speed past 90 in Lighthouse — on themes that didn't start there. If you have a theme that's 80MB of jQuery accreted over five years, we can refactor it. If you're starting fresh, we can build a maintainable WordPress site that doesn't need a rewrite in three years.",
-    primaryKeyword: 'hire wordpress developer',
+      "Hire WordPress developers who treat it as a CMS, not a templating wall. WordPress runs almost half the web — that doesn't mean it's been built well almost half the time. Our team includes WordPress plugin developers writing real PHP, theme developers building custom themes from scratch instead of layering page builders, and headless WordPress engineers running WP behind Next.js or SvelteKit frontends. We optimize page speed past 90 in Lighthouse on themes that didn't start there. If you have a theme that's 80MB of jQuery accreted over five years, we can refactor it. If you're starting fresh, we can build a maintainable WordPress site that doesn't need a rewrite in three years.",
+    primaryKeyword: 'hire wordpress developers',
     whyUs: [
       {
         title: 'Custom themes, not page-builder soup',
@@ -769,6 +769,21 @@ export const hireRoles: HireRole[] = [
       'WP CLI'
     ],
     faq: [
+      {
+        question: 'Should I hire dedicated WordPress developers or freelancers from Fiverr/Upwork?',
+        answer:
+          "Hire dedicated WordPress developers when the project is more than a brochure site bolted onto a template. A freelance theme tweaker will get the first version live; dedicated WordPress developers write PHP that survives WP-core upgrades, build custom Gutenberg blocks in React, harden the install against the security issues WordPress is known for, and ship sites that score 90+ on Lighthouse Mobile instead of 40. The split is most worth it for sites with custom plugins, headless front-ends, WooCommerce stores past simple catalogs, or any project where WordPress is the operational backbone — not just the theme layer."
+      },
+      {
+        question: 'WordPress plugin developer vs theme developer — what do I need?',
+        answer:
+          "Different specialists. A WordPress theme developer customizes the storefront — PHP templates, Sass, custom blocks, ACF flexible content, performance, brand UX. A WordPress plugin developer builds functionality that lives outside themes — custom post types, REST endpoints, admin UI, integrations with external systems, subscription logic, payment gateways. Most projects start with theme work; plugin developers come in when the site needs custom logic that doesn't belong in a theme (because it needs to survive theme changes). We have both."
+      },
+      {
+        question: 'Can I hire WordPress developers from India for a US or UK site?',
+        answer:
+          "Yes — most of our WordPress clients are in the US, UK, EU, and Australia. We overlap with East Coast US morning and UK afternoon hours, run async-first with daily standups, and ship in your timezone's calendar. Senior India-based WordPress developers cost 40–60% less than equivalent senior WordPress engineers in the US or UK without quality compromise. Munish K. on our team is Top Rated on Upwork with 87+ jobs and 100% Job Success on WordPress and WooCommerce builds for clients across all four regions."
+      },
       {
         question: 'Custom theme or page builder?',
         answer:
