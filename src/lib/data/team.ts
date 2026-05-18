@@ -124,14 +124,14 @@ export const teamMembers: TeamMember[] = [
     slug: 'rishab-singla',
     name: 'Rishab Singla',
     shortName: 'Rishab S.',
-    role: 'Shopify & WooCommerce Developer',
-    tagline: 'Custom Apps, API Integrations & Full Stack Development',
+    role: 'Full Stack Engineer — React, Next.js & Python',
+    tagline: 'Web Apps, AI Tools & Backend APIs',
     location: 'Chandigarh, India',
     avatar: '/assets/team/rishab-singla.jpg',
     isActive: true,
-    bio: "I build and fix Shopify and WooCommerce stores. Slow stores, broken integrations, missing features — I handle all of it. PHP, Node.js, React, Next.js, Python. Whatever the problem is, I can ship the solution.",
+    bio: "I build modern web apps and AI tools end-to-end. React, Next.js, Python, Node.js, LLM integrations. 8 years shipping. Strategy, design, code, deploy — same person the whole way.",
     longBio:
-      "8 years building eCommerce. Shopify, WooCommerce, PrestaShop. I've worked on stores with thousands of SKUs, multi-currency setups, headless storefronts, and AI product visualizations. I also build SaaS platforms, AI integrations, and Chrome extensions.\n\nStacks: PHP, Laravel, Node.js, React, Next.js, Python. Payment gateways, APIs, migrations, custom apps — I build it all end-to-end. Top Rated on Upwork, 100% job success.",
+      "8 years building for the web. I build modern web apps and AI tools end-to-end — React, Next.js, Python, Node.js, Laravel. LLM integrations, agents, automations, Chrome extensions, SaaS platforms from scratch.\n\nAlso 8 years of eCommerce experience across Shopify, WooCommerce, and PrestaShop — thousands of SKUs, multi-currency, headless storefronts, payment gateways, AI product visualizations. Same engineer either way: strategy → design → code → ship. Top Rated on Upwork, 100% job success.",
     yearsExperience: 8,
     hourlyRate: '$16/hr',
     badges: ['Top Rated on Upwork', '100% Job Success', 'ID Verified'],
@@ -142,41 +142,40 @@ export const teamMembers: TeamMember[] = [
       totalHours: 353
     },
     skills: [
-      'Shopify',
-      'WooCommerce',
-      'PrestaShop',
-      'PHP',
-      'Laravel',
-      'CodeIgniter',
-      'Node.js',
-      'Next.js',
       'React',
+      'Next.js',
+      'Node.js',
       'Python',
-      'WordPress',
-      'JavaScript',
       'TypeScript',
-      'Web Design',
-      'CMS Development',
-      'Website & CMS Bug Fix',
-      'UI/UX Prototyping',
-      'Visual Communication',
-      'Webflow',
-      'Framer',
+      'JavaScript',
       'Artificial Intelligence',
       'LLM Prompt Engineering',
+      'AI Integrations',
       'Google Chrome Extensions',
       'Firebase',
-      'API Integrations'
+      'API Integrations',
+      'Laravel',
+      'PHP',
+      'CodeIgniter',
+      'Web Design',
+      'UI/UX Prototyping',
+      'CMS Development',
+      'Webflow',
+      'Framer',
+      'Shopify',
+      'WooCommerce',
+      'WordPress',
+      'PrestaShop'
     ],
     primaryServices: [
-      'E-commerce',
-      'Web Development & Design',
       'React & Next.js Development',
-      'Python Backend Engineering',
       'AI & Machine Learning',
+      'Python Backend Engineering',
       'SaaS Platforms',
       'Backend Engineering',
-      'Voice AI Engineering'
+      'Voice AI Engineering',
+      'Web Development & Design',
+      'E-commerce'
     ],
     featuredProjectSlugs: [
       'monster-fairings',
@@ -201,11 +200,11 @@ export const teamMembers: TeamMember[] = [
     ],
     employment: [
       {
-        title: 'Full Stack Developer',
+        title: 'Full Stack Engineer',
         company: 'Freelancer',
         period: 'January 2017 – Present',
         description:
-          "Shopify, WooCommerce, and custom full-stack builds for clients across the UK, Australia, and Europe. Specializing in eCommerce, APIs, and SaaS platforms. PHP, Node.js, React, Python."
+          "Modern web apps, AI tools, and backend APIs for clients across the US, UK, Australia, and Europe. React, Next.js, Python, Node.js, Laravel. LLM integrations, SaaS platforms, Chrome extensions. Also long-running eCommerce work on Shopify and WooCommerce."
       }
     ],
     links: [
@@ -223,16 +222,18 @@ export const teamMembers: TeamMember[] = [
     ],
     seo: {
       title:
-        'Rishab Singla — Shopify & WooCommerce Developer | Top Rated on Upwork',
+        'Rishab Singla — Full Stack Engineer (React, Next.js, Python) | Top Rated on Upwork',
       description:
-        'Hire Rishab Singla — Top Rated Shopify & WooCommerce developer with 8+ years of full stack experience in PHP, React, Next.js, Python, and AI integrations. 100% Job Success on Upwork.',
+        'Hire Rishab Singla — Top Rated full stack engineer with 8+ years building React, Next.js, Node.js, and Python web apps and AI tools. LLM integrations, SaaS platforms, custom APIs. 100% Job Success on Upwork.',
       keywords: [
-        'hire Shopify developer',
-        'hire WooCommerce developer',
         'hire React developer',
         'hire Next.js developer',
+        'hire Python developer',
+        'hire Node.js developer',
+        'hire AI developer',
+        'LLM integration developer',
         'full stack developer India',
-        'eCommerce developer Chandigarh',
+        'SaaS developer Chandigarh',
         'Top Rated Upwork developer'
       ]
     }

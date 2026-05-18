@@ -160,22 +160,22 @@ const techyor: HomeContent = {
 
 const rishab: HomeContent = {
   meta: {
-    title: 'Rishab Singla — Shopify & WooCommerce Developer | Top Rated on Upwork',
+    title: 'Rishab Singla — Full Stack Engineer (React, Next.js, Python) | Top Rated on Upwork',
     description:
-      'Independent Shopify and WooCommerce developer with 8 years of full-stack experience. PHP, React, Next.js, Python, AI integrations. 100% Job Success on Upwork.',
+      'Independent full stack engineer with 8 years building React, Next.js, Node.js, and Python web apps and AI tools. LLM integrations, SaaS platforms, custom APIs. 100% Job Success on Upwork.',
     ogImage: '/api/og/team/rishab-singla',
-    ogImageAlt: 'Rishab Singla — Shopify & WooCommerce Developer'
+    ogImageAlt: 'Rishab Singla — Full Stack Engineer (React, Next.js, Python)'
   },
   hero: {
     enabled: true,
     headlineLines: [
       { text: 'Ship.' },
-      { text: 'Fix.' },
       { text: 'Scale.' },
-      { text: "Don't break checkout.", secondary: true }
+      { text: 'Solo.' },
+      { text: "Don't break in prod.", secondary: true }
     ],
     subtitle:
-      "I'm Rishab. I build and fix Shopify and WooCommerce stores. Slow stores, broken integrations, missing features — I handle all of it. PHP, Node.js, React, Next.js, Python. Whatever the problem is, I can ship the solution."
+      "I'm Rishab. I build modern web apps and AI tools end-to-end. React, Next.js, Python, Node.js, LLM integrations. 8 years shipping. Strategy → design → code → deploy, same person the whole way."
   },
   stats: {
     enabled: true,
@@ -189,22 +189,22 @@ const rishab: HomeContent = {
   capabilities: {
     enabled: true,
     eyebrow: 'What I build.',
-    title: 'Stores. Integrations. Custom apps.',
+    title: 'Web apps. AI tools. Backends.',
     items: [
       {
-        title: 'eCommerce.',
+        title: 'Web apps.',
         description:
-          'Shopify, WooCommerce, PrestaShop. Stores with thousands of SKUs, multi-currency, headless storefronts, AI product visualizations.'
+          'React, Next.js, TypeScript. Full-stack apps from blank page to production. SaaS dashboards, marketing sites, internal tools — fast, accessible, deployable.'
+      },
+      {
+        title: 'AI tools.',
+        description:
+          'LLM integrations, agents, automations, Chrome extensions. Prompt engineering, RAG pipelines, voice AI. Useful AI, not demo-only.'
       },
       {
         title: 'Backend & APIs.',
         description:
-          'PHP, Laravel, Node.js, Python. Payment gateways, CMS migrations, custom apps. End-to-end, including the parts nobody wants to touch.'
-      },
-      {
-        title: 'AI & SaaS.',
-        description:
-          'AI integrations, Chrome extensions, SaaS platforms built from scratch. LLM prompt engineering, Firebase, automations.'
+          'Python, Node.js, Laravel. REST and streaming APIs, payment gateways, third-party integrations. The parts nobody wants to touch — handled end-to-end.'
       }
     ]
   },
@@ -213,7 +213,7 @@ const rishab: HomeContent = {
     eyebrow: 'About me.',
     title: 'Top Rated on Upwork. 100% job success.',
     description:
-      "Eight years building eCommerce. I've worked on stores with thousands of SKUs, multi-currency setups, headless storefronts, and AI product visualizations. I also build SaaS platforms, AI integrations, and Chrome extensions. Stacks: PHP, Laravel, Node.js, React, Next.js, Python.",
+      "Eight years shipping for the web. I build modern web apps and AI tools end-to-end — React, Next.js, Python, Node.js, Laravel. LLM integrations, SaaS platforms, Chrome extensions. Long-running eCommerce experience too (Shopify, WooCommerce), so payments, integrations, and migrations aren't new territory.",
     ctaLabel: 'View profile',
     ctaUrl: '/team/rishab-singla'
   },
@@ -222,7 +222,7 @@ const rishab: HomeContent = {
     title1: 'What I build.',
     title2: 'Solo. End-to-end.',
     description:
-      'Stores, web apps, integrations, AI tools. Strategy → design → code → ship. Same person the whole way, so nothing gets lost between handoffs and the work moves at one speed: mine.',
+      'Web apps, AI tools, integrations, backends. Strategy → design → code → ship. Same person the whole way, so nothing gets lost between handoffs and the work moves at one speed: mine.',
     ctaLabel: 'See case studies',
     ctaUrl: '/projects'
   },
