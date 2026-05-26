@@ -71,7 +71,7 @@ export function generateProfessionalServiceSchema(input: {
 
   return JSON.stringify({
     '@context': 'https://schema.org',
-    '@type': 'ProfessionalService',
+    '@type': ['ProfessionalService', 'Product'],
     name: 'Techyor',
     alternateName: 'Techyor Digital Product Studio',
     description: input.description,
@@ -247,7 +247,7 @@ export function generateLocationServiceSchema(input: {
 
   return JSON.stringify({
     '@context': 'https://schema.org',
-    '@type': 'Service',
+    '@type': ['Service', 'Product'],
     name: input.h1,
     description: input.description,
     url: input.url,
@@ -487,7 +487,7 @@ export function generateProjectSchema(
 
   return JSON.stringify({
     '@context': 'https://schema.org',
-    '@type': 'CreativeWork',
+    '@type': ['CreativeWork', 'Product'],
     name,
     description,
     image: `${BASE_URL}${image}`,
@@ -572,7 +572,7 @@ export function generateServicesPageSchema(input: {
 
   return JSON.stringify({
     '@context': 'https://schema.org',
-    '@type': 'Service',
+    '@type': ['Service', 'Product'],
     name: 'Techyor — Digital Product Studio Services',
     description: input.description,
     url: input.url,
@@ -681,7 +681,7 @@ export function generateCollectionPageSchema(input: {
 
   return JSON.stringify({
     '@context': 'https://schema.org',
-    '@type': 'CollectionPage',
+    '@type': ['CollectionPage', 'Product'],
     name: input.name,
     description: input.description,
     url: input.url,
@@ -842,7 +842,7 @@ export function generateProfessionalReviewSchema(reviews: {
   const avg = ratings.reduce((a, b) => a + b, 0) / ratings.length;
   return JSON.stringify({
     '@context': 'https://schema.org',
-    '@type': 'Person',
+    '@type': ['Person', 'Product'],
     name: reviews.itemName,
     image: `${BASE_URL}${reviews.itemImage}`,
     url: `${BASE_URL}${reviews.itemUrl}`,
@@ -930,7 +930,7 @@ export function generateHireRoleSchema(input: {
 
   return JSON.stringify({
     '@context': 'https://schema.org',
-    '@type': 'Service',
+    '@type': ['Service', 'Product'],
     name: input.h1,
     alternateName: `Hire ${input.roleTitle}`,
     description: input.description,
