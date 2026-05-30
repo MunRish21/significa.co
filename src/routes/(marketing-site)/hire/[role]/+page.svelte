@@ -28,6 +28,15 @@
     .map((slug) => hireRoles.find((r) => r.slug === slug))
     .filter((r): r is typeof hireRoles[number] => Boolean(r));
 
+  /** Shared "in-house vs Techyor" comparison rows. */
+  const comparison = [
+    { label: 'Time to start', inHouse: '2–4 months to source, interview, and onboard', techyor: '5–10 days from intro call to shipping' },
+    { label: 'Cost', inHouse: 'Full salary, benefits, equipment, and recruiter fees', techyor: '40–60% less — senior talent, no overhead' },
+    { label: 'Seniority', inHouse: 'You vet skill yourself and hope it holds up', techyor: 'Pre-vetted senior engineers, no bootcamp juniors' },
+    { label: 'Commitment', inHouse: 'A permanent hire that is hard to reverse', techyor: 'Month-to-month, two-week no-risk trial' },
+    { label: 'Scaling', inHouse: 'Re-run the whole hiring process for each role', techyor: 'Add or change people with a week of notice' }
+  ];
+
   $: serviceJsonLd = generateHireRoleSchema({
     roleTitle: role.title,
     h1: role.h1,
@@ -255,6 +264,29 @@
     </div>
   </section>
 
+  <!-- ─── USE CASES — what you can build ───────────────────────────────── -->
+  {#if role.useCases && role.useCases.length > 0}
+    <section id="use-cases" aria-labelledby="use-cases-heading" class="border-t">
+      <div class="container mx-auto px-container py-12 md:py-20">
+        <h2 id="use-cases-heading" class="text-5xl text-foreground-secondary md:text-6xl">
+          What you can build.
+        </h2>
+        <p class="text-5xl md:text-6xl">{role.title}s, put to work.</p>
+
+        <div class="mt-12 grid gap-8 md:mt-16 md:grid-cols-2 lg:grid-cols-3">
+          {#each role.useCases as useCase (useCase.title)}
+            <div class="border-t border-border pt-6">
+              <h3 class="text-xl font-semibold md:text-2xl">{useCase.title}</h3>
+              <p class="mt-3 text-base leading-relaxed text-foreground-secondary md:text-lg">
+                {useCase.description}
+              </p>
+            </div>
+          {/each}
+        </div>
+      </div>
+    </section>
+  {/if}
+
   <!-- ─── TEAM ─────────────────────────────────────────────────────────── -->
   <TeamSection
     title="The people behind the work."
@@ -351,6 +383,80 @@
             </p>
           </div>
         {/each}
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── GUARANTEE ────────────────────────────────────────────────────── -->
+  <section aria-labelledby="guarantee-heading" class="border-t">
+    <div class="container mx-auto px-container py-12 md:py-16">
+      <div
+        class="flex flex-col gap-6 rounded-xl border border-foreground bg-background-offset/40 p-8 md:flex-row md:items-center md:justify-between md:p-10"
+      >
+        <div class="max-w-2xl">
+          <h2 id="guarantee-heading" class="text-2xl font-semibold md:text-3xl">
+            A two-week, no-risk trial.
+          </h2>
+          <p class="mt-3 text-base leading-relaxed text-foreground-secondary md:text-lg">
+            Work with your {role.title.toLowerCase()} for two weeks. If it is not the right fit, we
+            replace them free or you walk away owing only for work delivered. After that it is
+            month-to-month — no long contracts, and your code, accounts, and IP are always yours.
+          </p>
+        </div>
+        <a
+          href="#contact-form"
+          on:click={scrollToContact}
+          class="inline-flex h-12 flex-shrink-0 items-center justify-center gap-1.5 rounded-md border border-foreground bg-foreground px-7 font-medium text-background transition-all hover:ring-4 focus-visible:ring-4 active:scale-[0.98]"
+        >
+          Start the trial
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── IN-HOUSE VS TECHYOR ──────────────────────────────────────────── -->
+  <section id="compare" aria-labelledby="compare-heading" class="border-t bg-background-offset/30">
+    <div class="container mx-auto px-container py-12 md:py-20">
+      <h2 id="compare-heading" class="text-5xl text-foreground-secondary md:text-6xl">
+        In-house vs Techyor.
+      </h2>
+      <p class="text-5xl md:text-6xl">A faster, leaner path.</p>
+
+      <div class="mt-12 overflow-hidden rounded-xl border border-border md:mt-16">
+        <div class="grid grid-cols-1 md:grid-cols-[1fr_1.2fr_1.2fr]">
+          <!-- Header row -->
+          <div class="hidden border-b border-border bg-background px-6 py-4 md:block"></div>
+          <div class="hidden border-b border-l border-border bg-background px-6 py-4 md:block">
+            <span class="text-sm font-medium uppercase tracking-wider text-foreground-secondary"
+              >Hiring in-house</span
+            >
+          </div>
+          <div class="hidden border-b border-l border-border bg-foreground px-6 py-4 md:block">
+            <span class="text-sm font-medium uppercase tracking-wider text-background"
+              >Hiring through Techyor</span
+            >
+          </div>
+
+          {#each comparison as row (row.label)}
+            <div class="border-b border-border bg-background px-6 py-5 font-medium md:border-b">
+              {row.label}
+            </div>
+            <div
+              class="border-b border-border px-6 pb-5 pt-1 text-foreground-secondary md:border-l md:pt-5"
+            >
+              <span class="mb-1 block text-xs uppercase tracking-wider text-foreground-secondary md:hidden"
+                >In-house</span
+              >
+              {row.inHouse}
+            </div>
+            <div class="border-b border-l border-border bg-background-offset/40 px-6 pb-6 pt-1 md:pt-5">
+              <span class="mb-1 block text-xs uppercase tracking-wider text-foreground-secondary md:hidden"
+                >Techyor</span
+              >
+              {row.techyor}
+            </div>
+          {/each}
+        </div>
       </div>
     </div>
   </section>

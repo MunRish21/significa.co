@@ -11,6 +11,13 @@ const config = {
     adapter: adapter({
       runtime: 'nodejs20.x'
     }),
+    // Use absolute asset URLs (/_app/…) instead of relative (../../_app/…).
+    // Relative paths break when a nested route is served with a trailing
+    // slash (e.g. /hire/nodejs-developer/), resolving assets to the wrong
+    // directory and returning HTML with a MIME mismatch under nosniff.
+    paths: {
+      relative: false
+    },
     alias: {
       $assets: './src/assets',
       $components: './src/components',

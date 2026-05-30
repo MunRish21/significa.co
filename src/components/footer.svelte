@@ -92,6 +92,8 @@
             Company
           </p>
           <ul class="text-lg leading-normal">
+            <li class="mb-2"><Link href="/php-development-services">PHP Development</Link></li>
+            <li class="mb-2"><Link href="/website-maintenance-services">Website Maintenance</Link></li>
             <li class="mb-2"><Link href="/get-a-quote">Get a quote</Link></li>
             <li class="mb-2"><Link href="/contact">Contact us</Link></li>
             <li class="mb-2"><Link href="/careers">Careers</Link></li>

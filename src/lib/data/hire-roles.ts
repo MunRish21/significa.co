@@ -33,6 +33,11 @@ export type HireRole = {
   /** 6-8 FAQ entries — written per-role to avoid thin/duplicate content penalties. */
   faq: { question: string; answer: string }[];
   /**
+   * Optional "what you can build" use-cases — outcome-framed, targets buyer
+   * long-tail (e.g. "node.js api development"). Rendered when present.
+   */
+  useCases?: { title: string; description: string }[];
+  /**
    * Service names from projects.ts that this role's portfolio should pull from.
    * Filtering matches against project.services.
    */
@@ -100,6 +105,11 @@ export const sharedFaq = [
     question: 'What time zones do your developers cover?',
     answer:
       'Our team primarily operates in IST with 4–6 hours of overlap with US Pacific, full overlap with EU, and full overlap with AU East. We commit to overlap windows in writing.'
+  },
+  {
+    question: 'What if the developer is not the right fit?',
+    answer:
+      "There is no long lock-in. The first two weeks are a no-risk trial: if a developer is not the right fit, we replace them at no cost or you walk away owing only for work delivered. After that, engagements are month-to-month with 30 days notice — you are never trapped in a contract, and your code, accounts, and IP are always yours."
   }
 ];
 
@@ -779,6 +789,16 @@ export const hireRoles: HireRole[] = [
           "Hire dedicated Node.js developers when the backend is the product — APIs serving mobile and third-party consumers, real-time systems with WebSockets or SSE, queue-based workflows, services that need to scale past a single instance, or anything where event-loop discipline matters. A full-stack generalist will ship a working Node service; a dedicated Node.js developer will ship one with proper backpressure, libuv thread pool tuning, graceful shutdown handling, and structured logging that survives production. The split is most worth it past prototype RPS or when uptime targets become real."
       },
       {
+        question: 'How do I hire Node.js developers, and where are they based?',
+        answer:
+          "Hiring is simple. Book a 30-minute intro call, tell us what you're building and the stack you're on, and we match you with a senior Node.js developer — usually starting within 5–10 days. You can hire a dedicated full-time developer, a part-time or fractional engineer, or a developer for a fixed-scope project. Our Node.js developers work remotely from India and ship for teams across the US, UK, EU, and Australia, overlapping East Coast US morning and UK afternoon hours. There's no long procurement cycle — we reply within 24 hours."
+      },
+      {
+        question: 'How much does it cost to hire a Node.js developer?',
+        answer:
+          "Cost depends on the engagement model and seniority, not an hourly meter you have to police. Hiring a senior, India-based Node.js developer through us costs roughly 40–60% less than an equivalent senior backend engineer in the US or UK, with no drop in quality. Dedicated full-time, fractional/part-time, and fixed-scope project options each price differently — share your scope on a quick call and we'll give you a clear, predictable rate up front, with no surprise hourly bills."
+      },
+      {
         question: 'How is hiring a senior Node.js developer different from a junior?',
         answer:
           "Three things separate senior Node.js work from junior. First, event-loop instinct — a senior knows when a `Promise.all` is silently leaking memory, why a busy CPU-bound function is blocking every other request, when to reach for worker threads vs clustering. Second, framework opinions backed by reasoning — Fastify for raw RPS, NestJS for structured large teams, Hono on edge runtimes, Express only for ecosystem compatibility. Third, operations awareness — graceful shutdown under SIGTERM, structured logs with pino, OpenTelemetry traces, signal handling that doesn't lose in-flight requests. A senior Node.js developer keeps the service responsive under load and debuggable at 3am."
@@ -817,6 +837,38 @@ export const hireRoles: HireRole[] = [
         question: 'Can you migrate a JavaScript codebase to TypeScript?',
         answer:
           "Yes — we've done several. Incremental migration is the right strategy: install TS, allow JS, convert files highest-traffic first, tighten compiler options gradually."
+      }
+    ],
+    useCases: [
+      {
+        title: 'REST & GraphQL APIs',
+        description:
+          'Production APIs that serve web, mobile, and third-party consumers — versioned, documented, rate-limited, and load-tested. Fastify or NestJS, typed end to end.'
+      },
+      {
+        title: 'Real-time systems',
+        description:
+          'Chat, live dashboards, collaboration, presence, and notifications over WebSockets or Server-Sent Events — with reconnection, backpressure, and horizontal scaling handled.'
+      },
+      {
+        title: 'Microservices & event-driven backends',
+        description:
+          'Service decomposition, message queues, and event streams with Kafka or RabbitMQ — built for teams that have outgrown a single monolith.'
+      },
+      {
+        title: 'Background jobs & data pipelines',
+        description:
+          'BullMQ and SQS worker pipelines with retries, dead-letter queues, and observability — for billing runs, imports, webhooks, and scheduled work that has to be reliable.'
+      },
+      {
+        title: 'SaaS & API backends for startups',
+        description:
+          'The backend behind your MVP or product — auth, billing, multi-tenancy, and a clean data layer (Prisma or Drizzle) that a team can keep building on for years.'
+      },
+      {
+        title: 'Node.js migrations & rescues',
+        description:
+          'Upgrading legacy Node, untangling a slow Express app, or migrating JavaScript to TypeScript — incrementally, without a risky big-bang rewrite.'
       }
     ],
     relatedServiceTags: ['Backend Engineering', 'Web Development & Design', 'APIs & Backend Services'],

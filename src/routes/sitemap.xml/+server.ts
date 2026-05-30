@@ -12,6 +12,8 @@ const staticPages = [
   { path: '/', priority: 1.0, changefreq: 'weekly', lastmod: today },
   { path: '/about', priority: 0.8, changefreq: 'monthly', lastmod: today },
   { path: '/services', priority: 0.9, changefreq: 'monthly', lastmod: today },
+  { path: '/website-maintenance-services', priority: 0.9, changefreq: 'weekly', lastmod: today },
+  { path: '/php-development-services', priority: 0.9, changefreq: 'weekly', lastmod: today },
   { path: '/hire', priority: 0.9, changefreq: 'weekly', lastmod: today },
   { path: '/careers', priority: 0.8, changefreq: 'weekly', lastmod: today },
   { path: '/projects', priority: 0.9, changefreq: 'weekly', lastmod: today },

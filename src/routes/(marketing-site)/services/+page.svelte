@@ -203,13 +203,20 @@
             list: [
               { label: 'Shopify', link: '/hire/shopify-developer' },
               { label: 'WooCommerce', link: '/hire/woocommerce-developer' },
-              { label: 'WordPress', link: '/hire/wordpress-developer' }
+              { label: 'WordPress', link: '/hire/wordpress-developer' },
+              { label: 'PHP Development', link: '/php-development-services' }
             ]
           },
           {
             title: 'Platform',
             list: [
               { label: 'SaaS Development', link: '/hire/saas-developer' }
+            ]
+          },
+          {
+            title: 'Ongoing',
+            list: [
+              { label: 'Website Maintenance', link: '/website-maintenance-services' }
             ]
           }
         ]

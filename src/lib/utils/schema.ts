@@ -344,6 +344,246 @@ export function generateBlogIndexSchema(input: {
   });
 }
 
+/**
+ * Service schema for the /website-maintenance-services page. Combines
+ * Service + Product (for review-snippet eligibility, matching the rest of
+ * the site) + AggregateRating + Review + an OfferCatalog of care-plan tiers,
+ * so the page surfaces price/audience/area-served signals and is eligible
+ * for Google rich results.
+ */
+export function generateWebsiteMaintenanceSchema(input: {
+  url: string;
+  description: string;
+  imagePath?: string;
+  /** price = monthly USD amount; omit to emit a feature-only Offer. */
+  carePlans: { title: string; description: string; price?: number }[];
+  ratings?: number[];
+  reviews?: Array<{ rating: number; body: string; author: string; date?: string }>;
+}) {
+  const planPrices = input.carePlans
+    .map((p) => p.price)
+    .filter((p): p is number => typeof p === 'number');
+  const ratings = input.ratings || [];
+  const aggregateRating =
+    ratings.length > 0
+      ? {
+          '@type': 'AggregateRating',
+          ratingValue: (ratings.reduce((a, b) => a + b, 0) / ratings.length).toFixed(1),
+          reviewCount: ratings.length,
+          bestRating: 5,
+          worstRating: 1
+        }
+      : undefined;
+
+  const review =
+    input.reviews && input.reviews.length > 0
+      ? input.reviews.map((r) => ({
+          '@type': 'Review',
+          reviewRating: {
+            '@type': 'Rating',
+            ratingValue: r.rating,
+            bestRating: 5,
+            worstRating: 1
+          },
+          author: { '@type': 'Person', name: r.author },
+          reviewBody: r.body,
+          datePublished: r.date,
+          publisher: {
+            '@type': 'Organization',
+            name: 'Upwork',
+            url: 'https://www.upwork.com'
+          }
+        }))
+      : undefined;
+
+  return JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': ['Service', 'Product'],
+    name: 'Website Maintenance Services',
+    alternateName: 'Website Support and Maintenance Services',
+    description: input.description,
+    url: input.url,
+    image: `${BASE_URL}${input.imagePath || '/og.png'}`,
+    serviceType: 'Website maintenance, support, security, and ongoing care',
+    category: 'Website maintenance services',
+    provider: {
+      '@type': 'Organization',
+      name: 'Techyor',
+      url: BASE_URL,
+      logo: `${BASE_URL}/techyor.png`,
+      sameAs: ['https://twitter.com/TechyorDotCo', 'https://www.linkedin.com/company/techyor']
+    },
+    areaServed: [
+      { '@type': 'Country', name: 'United States' },
+      { '@type': 'Country', name: 'United Kingdom' },
+      { '@type': 'Country', name: 'Australia' },
+      { '@type': 'Country', name: 'Switzerland' },
+      { '@type': 'Place', name: 'Worldwide' }
+    ],
+    audience: {
+      '@type': 'BusinessAudience',
+      audienceType: 'Startups, small businesses, and product teams needing ongoing website upkeep'
+    },
+    offers: {
+      '@type': 'AggregateOffer',
+      priceCurrency: 'USD',
+      priceRange: '$$',
+      ...(planPrices.length > 0
+        ? { lowPrice: Math.min(...planPrices), highPrice: Math.max(...planPrices) }
+        : {}),
+      availability: 'https://schema.org/InStock',
+      offeredBy: { '@type': 'Organization', name: 'Techyor' }
+    },
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Website maintenance care plans',
+      itemListElement: input.carePlans.map((p, i) => ({
+        '@type': 'Offer',
+        position: i + 1,
+        name: p.title,
+        ...(typeof p.price === 'number'
+          ? {
+              price: p.price,
+              priceCurrency: 'USD',
+              priceSpecification: {
+                '@type': 'UnitPriceSpecification',
+                price: p.price,
+                priceCurrency: 'USD',
+                referenceQuantity: {
+                  '@type': 'QuantitativeValue',
+                  value: 1,
+                  unitCode: 'MON'
+                }
+              }
+            }
+          : {}),
+        itemOffered: {
+          '@type': 'Service',
+          name: p.title,
+          description: p.description
+        }
+      }))
+    },
+    aggregateRating,
+    review,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': input.url,
+      speakable: {
+        '@type': 'SpeakableSpecification',
+        cssSelector: ['h1', '[data-speakable]']
+      }
+    }
+  });
+}
+
+/**
+ * Service schema for the /php-development-services page. Service + Product
+ * (review-snippet eligibility) + AggregateRating + Review + an OfferCatalog
+ * of the PHP services offered. Quote-based — no fixed prices on the offers.
+ */
+export function generatePhpServicesSchema(input: {
+  url: string;
+  description: string;
+  imagePath?: string;
+  services: { title: string; description: string }[];
+  ratings?: number[];
+  reviews?: Array<{ rating: number; body: string; author: string; date?: string }>;
+}) {
+  const ratings = input.ratings || [];
+  const aggregateRating =
+    ratings.length > 0
+      ? {
+          '@type': 'AggregateRating',
+          ratingValue: (ratings.reduce((a, b) => a + b, 0) / ratings.length).toFixed(1),
+          reviewCount: ratings.length,
+          bestRating: 5,
+          worstRating: 1
+        }
+      : undefined;
+
+  const review =
+    input.reviews && input.reviews.length > 0
+      ? input.reviews.map((r) => ({
+          '@type': 'Review',
+          reviewRating: {
+            '@type': 'Rating',
+            ratingValue: r.rating,
+            bestRating: 5,
+            worstRating: 1
+          },
+          author: { '@type': 'Person', name: r.author },
+          reviewBody: r.body,
+          datePublished: r.date,
+          publisher: {
+            '@type': 'Organization',
+            name: 'Upwork',
+            url: 'https://www.upwork.com'
+          }
+        }))
+      : undefined;
+
+  return JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': ['Service', 'Product'],
+    name: 'PHP Development Services',
+    alternateName: 'Custom PHP Web Application Development',
+    description: input.description,
+    url: input.url,
+    image: `${BASE_URL}${input.imagePath || '/og.png'}`,
+    serviceType: 'Custom PHP web application, CMS, and API development',
+    category: 'PHP development services',
+    provider: {
+      '@type': 'Organization',
+      name: 'Techyor',
+      url: BASE_URL,
+      logo: `${BASE_URL}/techyor.png`,
+      sameAs: ['https://twitter.com/TechyorDotCo', 'https://www.linkedin.com/company/techyor']
+    },
+    areaServed: [
+      { '@type': 'Country', name: 'United States' },
+      { '@type': 'Country', name: 'United Kingdom' },
+      { '@type': 'Country', name: 'Australia' },
+      { '@type': 'Country', name: 'Switzerland' },
+      { '@type': 'Place', name: 'Worldwide' }
+    ],
+    audience: {
+      '@type': 'BusinessAudience',
+      audienceType: 'Startups, scale-ups, and businesses needing custom PHP development'
+    },
+    offers: {
+      '@type': 'AggregateOffer',
+      priceCurrency: 'USD',
+      priceRange: '$$',
+      availability: 'https://schema.org/InStock',
+      offeredBy: { '@type': 'Organization', name: 'Techyor' }
+    },
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'PHP development services',
+      itemListElement: input.services.map((s, i) => ({
+        '@type': 'Offer',
+        position: i + 1,
+        itemOffered: {
+          '@type': 'Service',
+          name: s.title,
+          description: s.description
+        }
+      }))
+    },
+    aggregateRating,
+    review,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': input.url,
+      speakable: {
+        '@type': 'SpeakableSpecification',
+        cssSelector: ['h1', '[data-speakable]']
+      }
+    }
+  });
+}
+
 export function generateBreadcrumbSchema(items: { name: string; url: string }[]) {
   return JSON.stringify({
     '@context': 'https://schema.org',
