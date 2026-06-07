@@ -103,6 +103,21 @@
                       >
                         {initials(tool.name)}
                       </div>
+                    {:else if tool.websiteUrl}
+                      <img
+                        src={faviconUrl(tool.websiteUrl)}
+                        alt={`${tool.name} favicon`}
+                        width="32"
+                        height="32"
+                        loading="lazy"
+                        class="h-8 w-8 rounded border object-contain p-1"
+                        on:error={onLogoError}
+                      />
+                      <div
+                        class="hidden h-8 w-8 items-center justify-center rounded border text-xs font-semibold"
+                      >
+                        {initials(tool.name)}
+                      </div>
                     {:else}
                       <div
                         class="flex h-8 w-8 items-center justify-center rounded border text-xs font-semibold"
@@ -147,6 +162,21 @@
                   height="32"
                   loading="lazy"
                   class="h-8 w-8 rounded object-contain"
+                  on:error={onLogoError}
+                />
+                <div
+                  class="hidden h-8 w-8 items-center justify-center rounded border text-xs font-semibold"
+                >
+                  {initials(tool.name)}
+                </div>
+              {:else if tool.websiteUrl}
+                <img
+                  src={faviconUrl(tool.websiteUrl)}
+                  alt={`${tool.name} favicon`}
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                  class="h-8 w-8 rounded border object-contain p-1"
                   on:error={onLogoError}
                 />
                 <div
@@ -272,6 +302,20 @@
                 {/if}
               </div>
             </div>
+
+            <!-- Preview image -->
+            {#if tool.previewImageUrl}
+              <div class="mt-5">
+                <img
+                  src={tool.previewImageUrl}
+                  alt={`${tool.name} preview`}
+                  width="960"
+                  height="540"
+                  loading="lazy"
+                  class="aspect-[16/9] w-full rounded-lg border object-cover"
+                />
+              </div>
+            {/if}
 
             <!-- Summary -->
             {#if tool.summary}

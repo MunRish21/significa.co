@@ -121,6 +121,7 @@ type ToolRow = {
   slug: string;
   website_url: string | null;
   logo_url: string | null;
+  preview_image_url: string | null;
   best_for: string | null;
   summary: string | null;
   description: string | null;

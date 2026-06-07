@@ -29,6 +29,7 @@ export type ComparisonTool = {
   slug: string;
   bestFor: string;
   logoUrl: string;
+  previewImageUrl: string;
   websiteUrl: string;
   pricing: string;
   summary: string;

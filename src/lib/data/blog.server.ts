@@ -68,7 +68,7 @@ export async function fetchToolsByIds(ids: string[]): Promise<ComparisonTool[]> 
   const { data, error } = await getSupabaseAdmin()
     .from('tools')
     .select(
-      'id, name, slug, best_for, logo_url, website_url, pricing, summary, description, pros, cons'
+      'id, name, slug, best_for, logo_url, preview_image_url, website_url, pricing, summary, description, pros, cons'
     )
     .in('id', ids);
 
@@ -86,6 +86,7 @@ export async function fetchToolsByIds(ids: string[]): Promise<ComparisonTool[]> 
         slug: row.slug,
         bestFor: row.best_for ?? '',
         logoUrl: row.logo_url ?? '',
+        previewImageUrl: row.preview_image_url ?? '',
         websiteUrl: row.website_url ?? '',
         pricing: row.pricing ?? '',
         summary: row.summary ?? '',
