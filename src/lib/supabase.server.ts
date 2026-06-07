@@ -115,16 +115,59 @@ type TeamMemberRow = {
   position: number;
 };
 
+type ToolRow = {
+  id: string;
+  name: string;
+  slug: string;
+  website_url: string | null;
+  logo_url: string | null;
+  best_for: string | null;
+  summary: string | null;
+  description: string | null;
+  pros: unknown[];
+  cons: unknown[];
+  category: string | null;
+  research_topic: string | null;
+  tags: string[];
+  source: string;
+  status: string;
+  pricing: string | null;
+  metadata: Record<string, unknown>;
+  created_at: string;
+  updated_at: string;
+};
+
+type ComparisonPostRow = {
+  id: string;
+  slug: string | null;
+  title: string | null;
+  topic: string | null;
+  introduction: string | null;
+  ranking_criteria: string | null;
+  verdict: string | null;
+  faq: unknown[];
+  comparison_tool_ids: unknown[];
+  use_case_picks: unknown[];
+  hero_image_url: string | null;
+  meta_title: string | null;
+  meta_description: string | null;
+  status: string;
+  created_at: string;
+  updated_at: string;
+};
+
 export type Database = {
   public: {
     Tables: {
       tenants: { Row: TenantRow; Insert: Partial<TenantRow>; Update: Partial<TenantRow>; Relationships: [] };
+      tools: { Row: ToolRow; Insert: Partial<ToolRow>; Update: Partial<ToolRow>; Relationships: [] };
       pages: { Row: PageRow; Insert: Partial<PageRow>; Update: Partial<PageRow>; Relationships: [] };
       page_sections: { Row: PageSectionRow; Insert: Partial<PageSectionRow>; Update: Partial<PageSectionRow>; Relationships: [] };
       clients: { Row: ClientRow; Insert: Partial<ClientRow>; Update: Partial<ClientRow>; Relationships: [] };
       team_members: { Row: TeamMemberRow; Insert: Partial<TeamMemberRow>; Update: Partial<TeamMemberRow>; Relationships: [] };
       testimonials: { Row: TestimonialRow; Insert: Partial<TestimonialRow>; Update: Partial<TestimonialRow>; Relationships: [] };
       service_descriptions: { Row: ServiceDescriptionRow; Insert: Partial<ServiceDescriptionRow>; Update: Partial<ServiceDescriptionRow>; Relationships: [] };
+      comparison_posts: { Row: ComparisonPostRow; Insert: Partial<ComparisonPostRow>; Update: Partial<ComparisonPostRow>; Relationships: [] };
     };
     Views: Record<string, never>;
     Functions: Record<string, never>;

@@ -1,12 +1,20 @@
 import { getPageWithSections } from '$lib/tenant.server';
-import { error } from '@sveltejs/kit';
+import { fetchPublishedBlogPostSummaries } from '$lib/data/blog.server';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ locals }) => {
-  if (!locals.tenant) throw error(404, 'Not found');
-  const isAgency = (locals.tenant.meta as Record<string, unknown> | undefined)?.isAgency === true;
-  if (!isAgency) throw error(404, 'Not found');
-  const result = await getPageWithSections(locals.tenant.id, 'blog');
-  if (!result) throw error(404, 'Not found');
-  return result;
+  // Blog is visible to everyone. Page sections are optional — when no tenant or
+  // no DB row exists, sections default to enabled (isSectionEnabled treats
+  // missing keys as visible).
+  const sectionResult = locals.tenant
+    ? await getPageWithSections(locals.tenant.id, 'blog')
+    : null;
+
+  const posts = await fetchPublishedBlogPostSummaries();
+
+  return {
+    page: sectionResult?.page ?? null,
+    sections: sectionResult?.sections ?? {},
+    posts
+  };
 };
