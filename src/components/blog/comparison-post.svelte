@@ -13,15 +13,16 @@
 
   /**
    * Rendering modes based on tool count:
-   *  - 3+ tools  → full comparison: show Pricing column, use-case picks, "at a glance" framing.
-   *  - 2 tools   → side-by-side stack: hide Pricing, show use-case picks, re-label as "Tech stack".
-   *  - 1 tool    → solo spotlight: hide Pricing AND use-case picks, re-label as "Tech stack".
+   *  - 3+ tools  → full comparison: Pricing column, "Best pick by use case",
+   *               "at a glance" framing.
+   *  - 1-2 tools → tech-stack spotlight: hide Pricing AND use-case picks,
+   *               re-label headings as "Tech stack" / "In depth".
    *
-   * A "comparison" needs at least 3 entries to be meaningful — anything less reads
-   * as a tool spotlight / tech stack, so we drop the comparison-y chrome.
+   * A "comparison" needs at least 3 entries to be meaningful — anything less
+   * reads as a tool spotlight / tech stack, so we drop all of the
+   * comparison-y chrome (pricing + use-case picks both gate on isComparison).
    */
   $: isComparison = post.tools.length >= 3;
-  $: hasMultipleTools = post.tools.length >= 2;
   $: glanceHeading = isComparison ? 'The tools at a glance' : 'Tech stack';
   $: depthHeading = isComparison ? 'The tools in depth' : 'In depth';
 
@@ -204,8 +205,8 @@
     </section>
   {/if}
 
-  <!-- Use-case picks (only meaningful when there's more than one tool to choose from) -->
-  {#if hasMultipleTools && post.useCasePicks.length}
+  <!-- Use-case picks (only meaningful in a real comparison — 3+ tools) -->
+  {#if isComparison && post.useCasePicks.length}
     <section class="mx-auto mt-14 max-w-4xl">
       <h2 class="text-2xl md:text-3xl">Best pick by use case</h2>
       <div class="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
