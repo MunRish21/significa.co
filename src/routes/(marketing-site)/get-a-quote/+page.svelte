@@ -93,7 +93,6 @@
   <meta property="og:image:alt" content="Get a quote — Techyor" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@TechyorDotCo" />
   <meta name="twitter:title" content="Get a Quote — Techyor" />
   <meta
     name="twitter:description"

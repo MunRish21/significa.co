@@ -72,9 +72,7 @@ const techyor: HomeContent = {
     description:
       'Techyor is a digital product studio building custom websites, web apps, mobile apps, e-commerce stores, AI tools, and automation for teams in the US, UK, Switzerland, and Australia. Strategy, design, development — under one roof.',
     ogImage: '/api/og/home',
-    ogImageAlt: 'Techyor — digital product studio',
-    twitterSite: '@TechyorDotCo',
-    twitterCreator: '@TechyorDotCo'
+    ogImageAlt: 'Techyor — digital product studio'
   },
   hero: {
     enabled: true,

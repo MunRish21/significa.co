@@ -141,7 +141,6 @@
   <meta property="og:image:alt" content="Careers at Techyor — open roles" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@TechyorDotCo" />
   <meta name="twitter:title" content="Careers at Techyor — Join Our Team" />
   <meta
     name="twitter:description"

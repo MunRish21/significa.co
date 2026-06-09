@@ -25,6 +25,7 @@ export function load({ params }) {
         rating: t.rating as number,
         body: t.quote,
         author: t.author,
+        url: t.sourceUrl,
         date: t.date
       }));
     return {
@@ -73,6 +74,7 @@ export function load({ params }) {
         rating: t.rating as number,
         body: t.quote,
         author: t.author,
+        url: t.sourceUrl,
         date: t.date
       }));
 

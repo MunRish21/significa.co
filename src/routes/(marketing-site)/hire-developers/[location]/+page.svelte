@@ -71,7 +71,6 @@
   <meta property="og:url" content={pageUrl} />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@TechyorDotCo" />
   <meta name="twitter:title" content={location.metaTitle} />
   <meta name="twitter:description" content={location.metaDescription} />
   <meta name="twitter:image" content="{BASE_URL}{ogPath}" />

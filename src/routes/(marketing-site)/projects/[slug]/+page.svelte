@@ -211,7 +211,6 @@
 
     <meta name="twitter:card" content="summary_large_image" />
     {#if isAgency}
-      <meta name="twitter:site" content="@TechyorDotCo" />
     {/if}
     <meta name="twitter:title" content="{project.name} — {brandName}" />
     <meta name="twitter:description" content={project.tagline} />
@@ -256,7 +255,6 @@
 
     <meta name="twitter:card" content="summary_large_image" />
     {#if isAgency}
-      <meta name="twitter:site" content="@TechyorDotCo" />
     {/if}
     <meta name="twitter:title" content="{data.filterName} Projects — {brandName}" />
     <meta name="twitter:description" content="Browse {brandName} projects in {data.filterName}." />

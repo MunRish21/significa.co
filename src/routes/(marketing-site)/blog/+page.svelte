@@ -33,7 +33,6 @@
   <meta property="og:image:alt" content="Techyor Blog — notes from the studio" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@TechyorDotCo" />
   <meta name="twitter:title" content={pageTitle} />
   <meta name="twitter:description" content={pageDescription} />
   <meta name="twitter:image" content="{BASE_URL}/api/og/blog" />

@@ -36,6 +36,7 @@ export const load = async ({ params, locals }) => {
       rating: t.rating as number,
       body: t.quote,
       author: t.author,
+      url: t.sourceUrl,
       date: t.date
     }));
 

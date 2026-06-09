@@ -85,7 +85,6 @@
   <meta property="og:image:alt" content="Hire senior {role.title}s — Techyor" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@TechyorDotCo" />
   <meta name="twitter:title" content={role.metaTitle} />
   <meta name="twitter:description" content={role.metaDescription} />
   <meta name="twitter:image" content="{BASE_URL}/api/og/{role.slug}" />

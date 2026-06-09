@@ -100,7 +100,6 @@
 
   <meta name="twitter:card" content="summary_large_image" />
   {#if isAgency}
-    <meta name="twitter:site" content="@TechyorDotCo" />
   {/if}
   <meta name="twitter:title" content={pageTitle} />
   <meta name="twitter:description" content={pageDescription} />

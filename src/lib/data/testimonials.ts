@@ -12,6 +12,18 @@
 
 import type { ServiceCategory } from './team';
 
+/**
+ * Upwork freelancer profile URLs — these are the *public* pages where the
+ * client feedback below is independently verifiable. Wired into every
+ * testimonial's `sourceUrl` so Google sees a Review.url that lives on
+ * an unrelated, third-party domain. This is what unlocks star eligibility
+ * in SERPs: reviews must be cross-checkable.
+ */
+const UPWORK_PROFILE: Record<string, string> = {
+  'rishab-singla': 'https://www.upwork.com/freelancers/~0147df006e8175ba30',
+  'munish-k': 'https://www.upwork.com/freelancers/~0122a9e10b8fd61548'
+};
+
 export type TestimonialSource = 'Upwork' | 'LinkedIn' | 'Direct' | 'Email';
 
 export type Testimonial = {
@@ -52,6 +64,7 @@ export const testimonials: Testimonial[] = [
     source: 'Upwork',
     rating: 5,
     memberSlug: 'rishab-singla',
+    sourceUrl: UPWORK_PROFILE['rishab-singla'],
     projectTitle: 'LLM Setup for Content Creators on Google Colab',
     date: 'April 2025',
     services: ['AI & Machine Learning', 'Python Backend Engineering'],
@@ -66,6 +79,7 @@ export const testimonials: Testimonial[] = [
     source: 'Upwork',
     rating: 5,
     memberSlug: 'rishab-singla',
+    sourceUrl: UPWORK_PROFILE['rishab-singla'],
     projectTitle: 'Node.JS Developer — Google Chrome Extensions, Firebase, GitHub',
     date: 'August 2024',
     services: ['Backend Engineering', 'React & Next.js Development'],
@@ -79,6 +93,7 @@ export const testimonials: Testimonial[] = [
     source: 'Upwork',
     rating: 5,
     memberSlug: 'rishab-singla',
+    sourceUrl: UPWORK_PROFILE['rishab-singla'],
     projectTitle: 'WordPress Theme Redesign Specialist',
     date: 'July 2024',
     services: ['Web Development & Design'],
@@ -94,6 +109,7 @@ export const testimonials: Testimonial[] = [
     source: 'Upwork',
     rating: 5,
     memberSlug: 'munish-k',
+    sourceUrl: UPWORK_PROFILE['munish-k'],
     projectTitle: 'Long-term Shopify, WordPress & Vue.js engagement',
     date: 'October 2023',
     services: ['E-commerce', 'Web Development & Design', 'React & Next.js Development'],
@@ -108,6 +124,7 @@ export const testimonials: Testimonial[] = [
     source: 'Upwork',
     rating: 5,
     memberSlug: 'munish-k',
+    sourceUrl: UPWORK_PROFILE['munish-k'],
     projectTitle: 'React E-commerce Development',
     date: 'May 2025',
     services: ['React & Next.js Development', 'E-commerce'],
@@ -129,6 +146,7 @@ export const testimonials: Testimonial[] = [
     source: 'Upwork',
     rating: 5,
     memberSlug: 'munish-k',
+    sourceUrl: UPWORK_PROFILE['munish-k'],
     projectTitle: 'Perfex CRM Server Setup and Installation',
     date: 'May 2025',
     services: ['Backend Engineering', 'Web Development & Design'],
@@ -142,6 +160,7 @@ export const testimonials: Testimonial[] = [
     source: 'Upwork',
     rating: 5,
     memberSlug: 'munish-k',
+    sourceUrl: UPWORK_PROFILE['munish-k'],
     projectTitle: 'Shopify Rebate Forms Implementation & Cart Processing',
     date: 'May 2025',
     services: ['E-commerce'],
@@ -155,6 +174,7 @@ export const testimonials: Testimonial[] = [
     source: 'Upwork',
     rating: 5,
     memberSlug: 'munish-k',
+    sourceUrl: UPWORK_PROFILE['munish-k'],
     projectTitle: 'Booking App Developer',
     date: 'April 2025',
     services: ['Web Development & Design', 'React & Next.js Development'],
@@ -169,6 +189,7 @@ export const testimonials: Testimonial[] = [
     source: 'Upwork',
     rating: 5,
     memberSlug: 'munish-k',
+    sourceUrl: UPWORK_PROFILE['munish-k'],
     projectTitle: 'React E-commerce Website Front-End Development',
     date: 'March 2024',
     services: ['React & Next.js Development', 'E-commerce'],
@@ -182,6 +203,7 @@ export const testimonials: Testimonial[] = [
     source: 'Upwork',
     rating: 5,
     memberSlug: 'munish-k',
+    sourceUrl: UPWORK_PROFILE['munish-k'],
     projectTitle: 'Shopify Storefront Developer',
     date: 'February 2024',
     services: ['E-commerce', 'UX & UI Design'],

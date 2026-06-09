@@ -120,7 +120,6 @@
   <meta property="og:image:alt" content="Contact Techyor — replies within 24 hours" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@TechyorDotCo" />
   <meta name="twitter:title" content="Contact Techyor — Start a Project" />
   <meta
     name="twitter:description"

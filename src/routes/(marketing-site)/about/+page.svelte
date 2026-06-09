@@ -169,7 +169,6 @@
   <meta property="og:image:alt" content="About Techyor — mission, values, and team" />
 
   <meta name="twitter:card" content={pageMeta.twitterCard ?? 'summary_large_image'} />
-  <meta name="twitter:site" content="@TechyorDotCo" />
   <meta name="twitter:title" content={pageMeta.ogTitle ?? pageTitle} />
   <meta name="twitter:description" content={pageMeta.ogDescription ?? pageDescription} />
   <meta name="twitter:image" content="{BASE_URL}{pageMeta.ogImage ?? '/api/og/about'}" />

@@ -1,5 +1,22 @@
 export const BASE_URL = 'https://www.techyor.com';
 
+/**
+ * Third-party properties that verify Techyor's identity. Used as `sameAs`
+ * on Organization / ProfessionalService / Service entities so Google can
+ * cross-reference the entity (and the reviews attached to it) against
+ * independent profiles. Add new profiles here and every schema picks them up.
+ *
+ * The two Upwork freelancer profiles are the *source of truth* for our
+ * Review JSON-LD — the testimonials in $lib/data/testimonials.ts are real
+ * Upwork feedback collected on these profiles, so linking them here is
+ * what makes the reviews independently verifiable.
+ */
+export const TECHYOR_SAME_AS = [
+  'https://www.linkedin.com/company/techyor',
+  'https://www.upwork.com/freelancers/~0147df006e8175ba30',
+  'https://www.upwork.com/freelancers/~0122a9e10b8fd61548'
+];
+
 export function generateOrganizationSchema() {
   return JSON.stringify({
     '@context': 'https://schema.org',
@@ -9,7 +26,7 @@ export function generateOrganizationSchema() {
     logo: `${BASE_URL}/techyor.png`,
     description:
       'A digital product studio that ships. Building websites, web apps, and mobile products for ambitious teams across the US, UK, Switzerland, and Australia.',
-    sameAs: ['https://twitter.com/TechyorDotCo', 'https://www.linkedin.com/company/techyor'],
+    sameAs: TECHYOR_SAME_AS,
     address: {
       '@type': 'PostalAddress',
       addressCountry: 'IN',
@@ -34,7 +51,7 @@ export function generateProfessionalServiceSchema(input: {
   url: string;
   imagePath?: string;
   ratings?: number[];
-  reviews?: Array<{ rating: number; body: string; author: string; date?: string }>;
+  reviews?: Array<{ rating: number; body: string; author: string; date?: string; url?: string }>;
 }) {
   const ratings = input.ratings || [];
   const aggregateRating =
@@ -61,6 +78,7 @@ export function generateProfessionalServiceSchema(input: {
           author: { '@type': 'Person', name: r.author },
           reviewBody: r.body,
           datePublished: r.date,
+          url: r.url,
           publisher: {
             '@type': 'Organization',
             name: 'Upwork',
@@ -79,7 +97,7 @@ export function generateProfessionalServiceSchema(input: {
     logo: `${BASE_URL}/techyor.png`,
     image: `${BASE_URL}${input.imagePath || '/og.png'}`,
     priceRange: '$$$',
-    sameAs: ['https://twitter.com/TechyorDotCo', 'https://www.linkedin.com/company/techyor'],
+    sameAs: TECHYOR_SAME_AS,
     address: {
       '@type': 'PostalAddress',
       addressCountry: 'IN',
@@ -210,7 +228,7 @@ export function generateLocationServiceSchema(input: {
   pricingBands: { label: string; range: string; description: string }[];
   industries: { name: string; description: string }[];
   ratings?: number[];
-  reviews?: Array<{ rating: number; body: string; author: string; date?: string }>;
+  reviews?: Array<{ rating: number; body: string; author: string; date?: string; url?: string }>;
 }) {
   const ratings = input.ratings || [];
   const aggregateRating =
@@ -237,6 +255,7 @@ export function generateLocationServiceSchema(input: {
           author: { '@type': 'Person', name: r.author },
           reviewBody: r.body,
           datePublished: r.date,
+          url: r.url,
           publisher: {
             '@type': 'Organization',
             name: 'Upwork',
@@ -259,7 +278,7 @@ export function generateLocationServiceSchema(input: {
       name: 'Techyor',
       url: BASE_URL,
       logo: `${BASE_URL}/techyor.png`,
-      sameAs: ['https://twitter.com/TechyorDotCo', 'https://www.linkedin.com/company/techyor']
+      sameAs: TECHYOR_SAME_AS
     },
     areaServed:
       input.countryCode === 'EU'
@@ -358,7 +377,7 @@ export function generateWebsiteMaintenanceSchema(input: {
   /** price = monthly USD amount; omit to emit a feature-only Offer. */
   carePlans: { title: string; description: string; price?: number }[];
   ratings?: number[];
-  reviews?: Array<{ rating: number; body: string; author: string; date?: string }>;
+  reviews?: Array<{ rating: number; body: string; author: string; date?: string; url?: string }>;
 }) {
   const planPrices = input.carePlans
     .map((p) => p.price)
@@ -388,6 +407,7 @@ export function generateWebsiteMaintenanceSchema(input: {
           author: { '@type': 'Person', name: r.author },
           reviewBody: r.body,
           datePublished: r.date,
+          url: r.url,
           publisher: {
             '@type': 'Organization',
             name: 'Upwork',
@@ -411,7 +431,7 @@ export function generateWebsiteMaintenanceSchema(input: {
       name: 'Techyor',
       url: BASE_URL,
       logo: `${BASE_URL}/techyor.png`,
-      sameAs: ['https://twitter.com/TechyorDotCo', 'https://www.linkedin.com/company/techyor']
+      sameAs: TECHYOR_SAME_AS
     },
     areaServed: [
       { '@type': 'Country', name: 'United States' },
@@ -488,7 +508,7 @@ export function generatePhpServicesSchema(input: {
   imagePath?: string;
   services: { title: string; description: string }[];
   ratings?: number[];
-  reviews?: Array<{ rating: number; body: string; author: string; date?: string }>;
+  reviews?: Array<{ rating: number; body: string; author: string; date?: string; url?: string }>;
 }) {
   const ratings = input.ratings || [];
   const aggregateRating =
@@ -515,6 +535,7 @@ export function generatePhpServicesSchema(input: {
           author: { '@type': 'Person', name: r.author },
           reviewBody: r.body,
           datePublished: r.date,
+          url: r.url,
           publisher: {
             '@type': 'Organization',
             name: 'Upwork',
@@ -538,7 +559,7 @@ export function generatePhpServicesSchema(input: {
       name: 'Techyor',
       url: BASE_URL,
       logo: `${BASE_URL}/techyor.png`,
-      sameAs: ['https://twitter.com/TechyorDotCo', 'https://www.linkedin.com/company/techyor']
+      sameAs: TECHYOR_SAME_AS
     },
     areaServed: [
       { '@type': 'Country', name: 'United States' },
@@ -675,6 +696,7 @@ export function generateProjectSchema(
       body: string;
       author: string;
       date?: string;
+    url?: string;
     }>;
     /** Brand identity for creator/publisher. Defaults to the Techyor organization. */
     brand?: {
@@ -715,6 +737,7 @@ export function generateProjectSchema(
           author: { '@type': 'Person', name: r.author },
           reviewBody: r.body,
           datePublished: r.date,
+          url: r.url,
           publisher: {
             '@type': 'Organization',
             name: 'Upwork',
@@ -774,7 +797,7 @@ export function generateServicesPageSchema(input: {
   description: string;
   serviceCategories: { title: string; description: string; url?: string }[];
   ratings?: number[];
-  reviews?: Array<{ rating: number; body: string; author: string; date?: string }>;
+  reviews?: Array<{ rating: number; body: string; author: string; date?: string; url?: string }>;
   imagePath?: string;
 }) {
   const ratings = input.ratings || [];
@@ -802,6 +825,7 @@ export function generateServicesPageSchema(input: {
           author: { '@type': 'Person', name: r.author },
           reviewBody: r.body,
           datePublished: r.date,
+          url: r.url,
           publisher: {
             '@type': 'Organization',
             name: 'Upwork',
@@ -824,7 +848,7 @@ export function generateServicesPageSchema(input: {
       name: 'Techyor',
       url: BASE_URL,
       logo: `${BASE_URL}/techyor.png`,
-      sameAs: ['https://twitter.com/TechyorDotCo', 'https://www.linkedin.com/company/techyor']
+      sameAs: TECHYOR_SAME_AS
     },
     areaServed: [
       { '@type': 'Country', name: 'United States' },
@@ -883,7 +907,7 @@ export function generateCollectionPageSchema(input: {
   numberOfItems: number;
   itemUrls: string[];
   ratings?: number[];
-  reviews?: Array<{ rating: number; body: string; author: string; date?: string }>;
+  reviews?: Array<{ rating: number; body: string; author: string; date?: string; url?: string }>;
   imagePath?: string;
 }) {
   const ratings = input.ratings || [];
@@ -911,6 +935,7 @@ export function generateCollectionPageSchema(input: {
           author: { '@type': 'Person', name: r.author },
           reviewBody: r.body,
           datePublished: r.date,
+          url: r.url,
           publisher: {
             '@type': 'Organization',
             name: 'Upwork',
@@ -1076,6 +1101,7 @@ export function generateProfessionalReviewSchema(reviews: {
     body: string;
     author: string;
     date?: string;
+    url?: string;
   }>;
 }) {
   const ratings = reviews.reviews.map((r) => r.rating);
@@ -1103,6 +1129,7 @@ export function generateProfessionalReviewSchema(reviews: {
       author: { '@type': 'Person', name: r.author },
       reviewBody: r.body,
       datePublished: r.date,
+          url: r.url,
       publisher: {
         '@type': 'Organization',
         name: 'Upwork',
@@ -1132,6 +1159,7 @@ export function generateHireRoleSchema(input: {
     body: string;
     author: string;
     date?: string;
+    url?: string;
   }>;
   imagePath?: string;
 }) {
@@ -1160,6 +1188,7 @@ export function generateHireRoleSchema(input: {
           author: { '@type': 'Person', name: r.author },
           reviewBody: r.body,
           datePublished: r.date,
+          url: r.url,
           publisher: {
             '@type': 'Organization',
             name: 'Upwork',
@@ -1184,7 +1213,7 @@ export function generateHireRoleSchema(input: {
       name: 'Techyor',
       url: BASE_URL,
       logo: `${BASE_URL}/techyor.png`,
-      sameAs: ['https://twitter.com/TechyorDotCo', 'https://www.linkedin.com/company/techyor']
+      sameAs: TECHYOR_SAME_AS
     },
     areaServed: [
       { '@type': 'Country', name: 'United States' },

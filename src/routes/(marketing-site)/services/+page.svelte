@@ -76,6 +76,7 @@
       rating: t.rating as number,
       body: t.quote,
       author: t.author,
+      url: t.sourceUrl,
       date: t.date
     }));
 
@@ -646,7 +647,6 @@
 
   <meta name="twitter:card" content={pageMeta.twitterCard ?? 'summary_large_image'} />
   {#if isAgency}
-    <meta name="twitter:site" content="@TechyorDotCo" />
   {/if}
   <meta name="twitter:title" content={pageMeta.ogTitle ?? pageTitle} />
   <meta name="twitter:description" content={pageMeta.ogDescription ?? pageDescription} />

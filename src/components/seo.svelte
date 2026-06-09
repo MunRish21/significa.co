@@ -48,10 +48,7 @@
 
     <title>{title || $page.data.page?.story?.content?.seo_title || t('seo.title')}</title>
     <meta name="twitter:card" content="summary_large_image" />
-    {#if isAgency}
-      <meta name="twitter:site" content="@TechyorDotCo" />
-      <meta name="twitter:creator" content="@TechyorDotCo" />
-    {:else if twitterHandle}
+    {#if !isAgency && twitterHandle}
       <meta name="twitter:site" content={twitterHandle} />
       <meta name="twitter:creator" content={twitterHandle} />
     {/if}

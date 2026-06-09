@@ -73,6 +73,7 @@
       rating: t.rating as number,
       body: t.quote,
       author: t.author,
+      url: t.sourceUrl,
       date: t.date
     }));
   $: tenantMembers = (data?.dbTeamMembers ?? []) as TeamMember[];
