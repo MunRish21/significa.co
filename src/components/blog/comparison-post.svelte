@@ -11,6 +11,20 @@
     )
   );
 
+  /**
+   * Rendering modes based on tool count:
+   *  - 3+ tools  → full comparison: show Pricing column, use-case picks, "at a glance" framing.
+   *  - 2 tools   → side-by-side stack: hide Pricing, show use-case picks, re-label as "Tech stack".
+   *  - 1 tool    → solo spotlight: hide Pricing AND use-case picks, re-label as "Tech stack".
+   *
+   * A "comparison" needs at least 3 entries to be meaningful — anything less reads
+   * as a tool spotlight / tech stack, so we drop the comparison-y chrome.
+   */
+  $: isComparison = post.tools.length >= 3;
+  $: hasMultipleTools = post.tools.length >= 2;
+  $: glanceHeading = isComparison ? 'The tools at a glance' : 'Tech stack';
+  $: depthHeading = isComparison ? 'The tools in depth' : 'In depth';
+
   const initials = (name: string) =>
     name
       .split(/\s+/)
@@ -67,10 +81,10 @@
     </div>
   {/if}
 
-  <!-- Comparison table -->
+  <!-- Comparison table / tech-stack listing -->
   {#if post.tools.length}
     <section class="mx-auto mt-14 max-w-4xl">
-      <h2 class="text-2xl md:text-3xl">The tools at a glance</h2>
+      <h2 class="text-2xl md:text-3xl">{glanceHeading}</h2>
 
       <!-- Desktop table -->
       <div class="mt-6 hidden overflow-hidden rounded-lg border md:block">
@@ -79,7 +93,9 @@
             <tr>
               <th class="p-4 font-medium">Tool</th>
               <th class="p-4 font-medium">Best for</th>
-              <th class="p-4 font-medium">Pricing</th>
+              {#if isComparison}
+                <th class="p-4 font-medium">Pricing</th>
+              {/if}
               <th class="p-4 font-medium"></th>
             </tr>
           </thead>
@@ -134,7 +150,9 @@
                   </div>
                 </td>
                 <td class="p-4 text-foreground-secondary">{tool.bestFor || '—'}</td>
-                <td class="p-4 text-foreground-secondary">{tool.pricing || '—'}</td>
+                {#if isComparison}
+                  <td class="p-4 text-foreground-secondary">{tool.pricing || '—'}</td>
+                {/if}
                 <td class="p-4">
                   <a
                     href={`#tool-${tool.slug}`}
@@ -200,7 +218,7 @@
                 <span class="font-medium text-foreground">Best for:</span> {tool.bestFor}
               </p>
             {/if}
-            {#if tool.pricing}
+            {#if isComparison && tool.pricing}
               <p class="mt-1 text-sm text-foreground-secondary">
                 <span class="font-medium text-foreground">Pricing:</span> {tool.pricing}
               </p>
@@ -224,8 +242,8 @@
     </section>
   {/if}
 
-  <!-- Use-case picks -->
-  {#if post.useCasePicks.length}
+  <!-- Use-case picks (only meaningful when there's more than one tool to choose from) -->
+  {#if hasMultipleTools && post.useCasePicks.length}
     <section class="mx-auto mt-14 max-w-4xl">
       <h2 class="text-2xl md:text-3xl">Best pick by use case</h2>
       <div class="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -247,7 +265,7 @@
   <!-- Tools in depth (one block per tool) -->
   {#if post.tools.length}
     <section class="mx-auto mt-14 max-w-4xl">
-      <h2 class="text-2xl md:text-3xl">The tools in depth</h2>
+      <h2 class="text-2xl md:text-3xl">{depthHeading}</h2>
       <div class="mt-8 space-y-10">
         {#each post.tools as tool, i (tool.id)}
           <article id={`tool-${tool.slug}`} class="scroll-mt-24 border-t pt-8">
@@ -378,7 +396,7 @@
                   Visit website →
                 </a>
               {/if}
-              {#if tool.pricing}
+              {#if isComparison && tool.pricing}
                 <span class="text-sm text-foreground-secondary">
                   <span class="font-medium text-foreground">Pricing:</span> {tool.pricing}
                 </span>
