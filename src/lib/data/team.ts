@@ -131,7 +131,7 @@ export const teamMembers: TeamMember[] = [
     isActive: true,
     bio: 'I build custom WordPress sites, plugins, and themes from the ground up. PHP, WooCommerce, custom carts, REST API integrations. 8 years shipping complex backends and e-commerce solutions. Also AI integrations and Python automation when the project calls for it.',
     longBio:
-      "8 years of custom WordPress and PHP development. Custom themes from scratch, custom plugin development, WooCommerce stores with thousands of SKUs, headless WordPress, REST API integrations, and performance work that brings slow sites back to life.\n\nE-commerce is where I solve the hardest problems — multi-currency carts, payment gateway integrations, custom checkout flows, inventory sync, and complex product catalogs. Long-running WooCommerce engagements where I own the whole storefront.\n\nOn the AI side, I've built LLM integrations, Python automations, and voice AI dashboards for production SaaS products — SimpleTalk AI, ConvertBankStatement, custom GPT tooling. React and Next.js when the frontend calls for it.\n\nTop Rated on Upwork. Full cycle: requirements → architecture → code → deploy → support.",
+      "8 years of custom WordPress and PHP development. Custom themes from scratch, custom plugin development, WooCommerce stores with thousands of SKUs, headless WordPress, REST API integrations, and performance work that brings slow sites back to life.\n\nE-commerce is where I solve the hardest problems — multi-currency carts, payment gateway integrations, custom checkout flows, inventory sync, and complex product catalogs. Long-running WooCommerce engagements where I own the whole storefront.\n\nOn the AI side, I've built LLM integrations, Python automations, and voice AI dashboards for production SaaS products — SimpleTalk AI, ConvertBankStatement, custom GPT tooling. React and Next.js when the frontend calls for it.\n\nFull cycle: requirements → architecture → code → deploy → support.",
     yearsExperience: 8,
     badges: ['Top Rated on Upwork', 'ID Verified'],
     stats: {},
@@ -206,11 +206,11 @@ export const teamMembers: TeamMember[] = [
           'Custom WordPress, WooCommerce, and PHP development for agency clients. Plugin and theme development, REST API integrations, headless WordPress builds, performance work, and AI-assisted automation.'
       },
       {
-        title: 'Senior Freelance Developer (Upwork)',
+        title: 'Senior Freelance Developer',
         company: 'Freelancer',
         period: '2019 – 2025',
         description:
-          'Full-cycle WordPress, WooCommerce, and PHP work for clients in the US, UK, Australia, and Europe. Custom plugins, custom themes, payment gateway integrations, AI and LLM integrations, and Python automation. Top Rated on Upwork.'
+          'Full-cycle WordPress, WooCommerce, and PHP work for clients in the US, UK, Australia, and Europe. Custom plugins, custom themes, payment gateway integrations, AI and LLM integrations, and Python automation. Direct clients and platform engagements across 6 years.'
       },
       {
         title: 'PHP & WordPress Developer',
@@ -234,10 +234,9 @@ export const teamMembers: TeamMember[] = [
       { label: 'GitHub', url: 'https://github.com/MunRish21', icon: 'github' }
     ],
     seo: {
-      title:
-        'Rishab Singla — Senior WordPress & PHP Developer | Top Rated on Upwork',
+      title: 'Rishab Singla — Senior WordPress & PHP Developer',
       description:
-        'Hire Rishab Singla — Top Rated senior WordPress, WooCommerce, and PHP developer with 8+ years of custom plugin development, custom themes, e-commerce, and AI integration experience.',
+        'Hire Rishab Singla — senior WordPress, WooCommerce, and PHP developer with 8+ years of custom plugin development, custom themes, e-commerce, and AI integration experience.',
       keywords: [
         'hire WordPress developer',
         'hire custom WordPress plugin developer',
@@ -246,7 +245,7 @@ export const teamMembers: TeamMember[] = [
         'hire custom e-commerce developer',
         'hire AI integration developer',
         'WordPress theme developer India',
-        'Top Rated Upwork developer'
+        'senior WordPress developer'
       ]
     }
   },
