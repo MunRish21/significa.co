@@ -131,7 +131,7 @@ export const teamMembers: TeamMember[] = [
     isActive: true,
     bio: 'I build custom WordPress sites, plugins, and themes from the ground up. PHP, WooCommerce, custom carts, REST API integrations. 8 years shipping complex backends and e-commerce solutions. Also AI integrations and Python automation when the project calls for it.',
     longBio:
-      "8 years of custom WordPress and PHP development. Custom themes from scratch, custom plugin development, WooCommerce stores with thousands of SKUs, headless WordPress, REST API integrations, and performance work that brings slow sites back to life.\n\nE-commerce is where I solve the hardest problems — multi-currency carts, payment gateway integrations, custom checkout flows, inventory sync, and complex product catalogs. Long-running WooCommerce engagements where I own the whole storefront.\n\nOn the AI side, I've built LLM integrations, Python automations, voice AI dashboards, and Chrome extensions for production SaaS products — SimpleTalk AI, ConvertBankStatement, custom GPT tooling. React and Next.js when the frontend calls for it.\n\nTop Rated on Upwork. Full cycle: requirements → architecture → code → deploy → support.",
+      "8 years of custom WordPress and PHP development. Custom themes from scratch, custom plugin development, WooCommerce stores with thousands of SKUs, headless WordPress, REST API integrations, and performance work that brings slow sites back to life.\n\nE-commerce is where I solve the hardest problems — multi-currency carts, payment gateway integrations, custom checkout flows, inventory sync, and complex product catalogs. Long-running WooCommerce engagements where I own the whole storefront.\n\nOn the AI side, I've built LLM integrations, Python automations, and voice AI dashboards for production SaaS products — SimpleTalk AI, ConvertBankStatement, custom GPT tooling. React and Next.js when the frontend calls for it.\n\nTop Rated on Upwork. Full cycle: requirements → architecture → code → deploy → support.",
     yearsExperience: 8,
     badges: ['Top Rated on Upwork', 'ID Verified'],
     stats: {},
@@ -152,7 +152,6 @@ export const teamMembers: TeamMember[] = [
       'Artificial Intelligence',
       'LLM Prompt Engineering',
       'AI Integrations',
-      'Google Chrome Extensions',
       'Node.js',
       'React',
       'Next.js',
@@ -211,7 +210,7 @@ export const teamMembers: TeamMember[] = [
         company: 'Freelancer',
         period: '2019 – 2025',
         description:
-          'Full-cycle WordPress, WooCommerce, and PHP work for clients in the US, UK, Australia, and Europe. Custom plugins, custom themes, payment gateway integrations, AI and LLM integrations, Chrome extensions, Python automation. Top Rated on Upwork.'
+          'Full-cycle WordPress, WooCommerce, and PHP work for clients in the US, UK, Australia, and Europe. Custom plugins, custom themes, payment gateway integrations, AI and LLM integrations, and Python automation. Top Rated on Upwork.'
       },
       {
         title: 'PHP & WordPress Developer',
@@ -382,14 +381,3 @@ export const getActiveTeamMembers = () =>
 export const getTeamMembersByService = (service: ServiceCategory) =>
   teamMembers.filter((m) => m.isActive && m.primaryServices.includes(service));
 
-/**
- * Mirror of the slugify() in /projects/[slug]/+page.server.ts so service /
- * deliverable links from team pages resolve to the same filter route.
- */
-export const slugifyService = (name: string): string =>
-  name
-    .toLowerCase()
-    .replace(/&/g, '')
-    .replace(/\s+/g, '-')
-    .replace(/--+/g, '-')
-    .replace(/[^\w-]/g, '');

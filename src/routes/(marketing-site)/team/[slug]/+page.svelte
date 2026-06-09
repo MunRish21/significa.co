@@ -8,7 +8,8 @@
   import ContactCtaSection from '$components/blocks/project-blocks/contact-cta-section.svelte';
   import TeamProjectsSlider from '$components/blocks/team-projects-slider.svelte';
   import UpworkLogo from '$components/blocks/upwork-logo.svelte';
-  import { slugifyService, type TeamMember } from '$lib/data/team';
+  import { type TeamMember } from '$lib/data/team';
+  import { toSlug } from '$lib/utils/slugify';
   import {
     filterTestimonialsByMember,
     getTestimonialsByMember,
@@ -466,7 +467,7 @@
       <div class="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {#each member.primaryServices as svc}
           <a
-            href={`/projects/${slugifyService(svc)}`}
+            href={`/projects/${toSlug(svc)}`}
             class="group flex items-center justify-between rounded-lg border bg-background p-5 transition-colors hover:border-foreground/30"
           >
             <span class="text-lg font-medium">{svc}</span>
