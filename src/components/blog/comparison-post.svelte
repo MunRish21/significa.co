@@ -32,14 +32,6 @@
       .map((w) => w[0]?.toUpperCase() ?? '')
       .join('');
 
-  /**
-   * Google's public favicon service — no API key required, works for any
-   * reachable domain. Used as a fallback when a tool has no `logoUrl` of its
-   * own but does have a `websiteUrl`.
-   */
-  const faviconUrl = (websiteUrl: string, size = 128) =>
-    `https://www.google.com/s2/favicons?sz=${size}&domain_url=${encodeURIComponent(websiteUrl)}`;
-
   function onLogoError(event: Event) {
     const img = event.currentTarget as HTMLImageElement;
     img.style.display = 'none';
@@ -119,21 +111,6 @@
                       >
                         {initials(tool.name)}
                       </div>
-                    {:else if tool.websiteUrl}
-                      <img
-                        src={faviconUrl(tool.websiteUrl)}
-                        alt={`${tool.name} favicon`}
-                        width="32"
-                        height="32"
-                        loading="lazy"
-                        class="h-8 w-8 rounded border object-contain p-1"
-                        on:error={onLogoError}
-                      />
-                      <div
-                        class="hidden h-8 w-8 items-center justify-center rounded border text-xs font-semibold"
-                      >
-                        {initials(tool.name)}
-                      </div>
                     {:else}
                       <div
                         class="flex h-8 w-8 items-center justify-center rounded border text-xs font-semibold"
@@ -180,21 +157,6 @@
                   height="32"
                   loading="lazy"
                   class="h-8 w-8 rounded object-contain"
-                  on:error={onLogoError}
-                />
-                <div
-                  class="hidden h-8 w-8 items-center justify-center rounded border text-xs font-semibold"
-                >
-                  {initials(tool.name)}
-                </div>
-              {:else if tool.websiteUrl}
-                <img
-                  src={faviconUrl(tool.websiteUrl)}
-                  alt={`${tool.name} favicon`}
-                  width="32"
-                  height="32"
-                  loading="lazy"
-                  class="h-8 w-8 rounded border object-contain p-1"
                   on:error={onLogoError}
                 />
                 <div
@@ -279,21 +241,6 @@
                   height="48"
                   loading="lazy"
                   class="h-12 w-12 rounded-lg object-contain"
-                  on:error={onLogoError}
-                />
-                <div
-                  class="hidden h-12 w-12 items-center justify-center rounded-lg border text-base font-semibold"
-                >
-                  {initials(tool.name)}
-                </div>
-              {:else if tool.websiteUrl}
-                <img
-                  src={faviconUrl(tool.websiteUrl)}
-                  alt={`${tool.name} favicon`}
-                  width="48"
-                  height="48"
-                  loading="lazy"
-                  class="h-12 w-12 rounded-lg border object-contain p-2"
                   on:error={onLogoError}
                 />
                 <div
