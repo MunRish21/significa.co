@@ -158,11 +158,11 @@ const techyor: HomeContent = {
 
 const rishab: HomeContent = {
   meta: {
-    title: 'Rishab Singla — Full Stack Engineer (React, Next.js, Python) | Top Rated on Upwork',
+    title: 'Rishab Singla — Senior WordPress & PHP Developer',
     description:
-      'Independent full stack engineer with 8 years building React, Next.js, Node.js, and Python web apps and AI tools. LLM integrations, SaaS platforms, custom APIs. 100% Job Success on Upwork.',
+      'Senior WordPress and PHP developer with 8 years building custom plugins, custom themes, WooCommerce stores, and AI integrations. Custom CMS work, REST API integrations, and Python automation — end-to-end.',
     ogImage: '/api/og/team/rishab-singla',
-    ogImageAlt: 'Rishab Singla — Full Stack Engineer (React, Next.js, Python)'
+    ogImageAlt: 'Rishab Singla — Senior WordPress & PHP Developer'
   },
   hero: {
     enabled: true,
@@ -173,45 +173,37 @@ const rishab: HomeContent = {
       { text: "Don't break in prod.", secondary: true }
     ],
     subtitle:
-      "I'm Rishab. I build modern web apps and AI tools end-to-end. React, Next.js, Python, Node.js, LLM integrations. 8 years shipping. Strategy → design → code → deploy, same person the whole way."
+      "I'm Rishab. I build custom WordPress sites, plugins, and themes from the ground up. PHP, WooCommerce, custom carts, REST API integrations. 8 years shipping complex backends and e-commerce solutions. Also AI integrations and Python automation when the project calls for it."
   },
-  stats: {
-    enabled: true,
-    items: [
-      { value: '8 yrs', label: 'Building' },
-      { value: '9', label: 'Jobs shipped' },
-      { value: '353', label: 'Hours logged' },
-      { value: '100%', label: 'Job success' }
-    ]
-  },
+  stats: { enabled: false, items: [] },
   capabilities: {
     enabled: true,
     eyebrow: 'What I build.',
-    title: 'Web apps. AI tools. Backends.',
+    title: 'WordPress. E-commerce. AI.',
     items: [
       {
-        title: 'Web apps.',
+        title: 'WordPress & PHP.',
         description:
-          'React, Next.js, TypeScript. Full-stack apps from blank page to production. SaaS dashboards, marketing sites, internal tools — fast, accessible, deployable.'
+          'Custom themes from scratch, custom plugin development, custom CMS work, headless WordPress, REST API integrations, and performance work that brings slow sites back to life.'
       },
       {
-        title: 'AI tools.',
+        title: 'E-commerce.',
         description:
-          'LLM integrations, agents, automations, Chrome extensions. Prompt engineering, RAG pipelines, voice AI. Useful AI, not demo-only.'
+          'WooCommerce stores with thousands of SKUs, multi-currency carts, payment gateway integrations, custom checkout flows, inventory sync, and complex product catalogs end-to-end.'
       },
       {
-        title: 'Backend & APIs.',
+        title: 'AI & automation.',
         description:
-          'Python, Node.js, Laravel. REST and streaming APIs, payment gateways, third-party integrations. The parts nobody wants to touch — handled end-to-end.'
+          'LLM integrations, Python automations, and voice AI dashboards for production SaaS — SimpleTalk AI, ConvertBankStatement, custom GPT tooling. React and Next.js when the frontend calls for it.'
       }
     ]
   },
   about: {
     enabled: true,
     eyebrow: 'About me.',
-    title: 'Top Rated on Upwork. 100% job success.',
+    title: '8 years. WordPress, PHP & AI, end-to-end.',
     description:
-      "Eight years shipping for the web. I build modern web apps and AI tools end-to-end — React, Next.js, Python, Node.js, Laravel. LLM integrations, SaaS platforms, Chrome extensions. Long-running eCommerce experience too (Shopify, WooCommerce), so payments, integrations, and migrations aren't new territory.",
+      'Senior WordPress and PHP developer. Custom plugins, custom themes, WooCommerce stores, REST API integrations, and AI work — LLM integrations, Python automations, voice AI dashboards. Long-running e-commerce engagements where I own the whole storefront, strategy → design → code → deploy → support.',
     ctaLabel: 'View profile',
     ctaUrl: '/team/rishab-singla'
   },
@@ -220,7 +212,7 @@ const rishab: HomeContent = {
     title1: 'What I build.',
     title2: 'Solo. End-to-end.',
     description:
-      'Web apps, AI tools, integrations, backends. Strategy → design → code → ship. Same person the whole way, so nothing gets lost between handoffs and the work moves at one speed: mine.',
+      'WordPress sites, custom plugins, WooCommerce stores, AI integrations, and PHP backends. Strategy → design → code → ship. Same person the whole way, so nothing gets lost between handoffs and the work moves at one speed: mine.',
     ctaLabel: 'See case studies',
     ctaUrl: '/projects'
   },
@@ -229,12 +221,12 @@ const rishab: HomeContent = {
     eyebrow: 'Recent work.',
     title: 'Selected case studies.',
     projectSlugs: [
-      'monster-fairings',
-      'b2-hookah',
-      'karen-lazar-design',
-      'indigenous-treats',
       'simpletalk-ai',
       'convertbankstatement',
+      'monster-fairings',
+      'b2-hookah',
+      'indigenous-treats',
+      'karen-lazar-design',
       'firmable',
       'gisteo',
       'navjot-kaur-pllc',
