@@ -189,16 +189,36 @@ export const teamMembers: TeamMember[] = [
         school: 'Giani Zail Singh Campus College of Engineering & Technology',
         degree: 'Bachelor of Technology (BTech)',
         field: 'Computer Science',
-        years: '2014 – 2018'
+        years: '2013 – 2017'
+      },
+      {
+        school: 'Government Polytechnic College',
+        degree: 'Diploma',
+        field: 'Computer Science',
+        years: '2010 – 2013'
       }
     ],
     employment: [
       {
         title: 'Senior WordPress & PHP Developer',
-        company: 'Freelancer',
-        period: 'January 2017 – Present',
+        company: 'Prismatic Digital',
+        period: '2025 – Present',
         description:
-          'Custom WordPress sites, plugins, and themes. WooCommerce stores with complex carts, multi-currency, headless storefronts, and payment gateway integrations. Custom PHP backends, REST APIs, AI and LLM integrations, Python automation, Chrome extensions. Clients across the US, UK, Australia, and Europe.'
+          'Custom WordPress, WooCommerce, and PHP development for agency clients. Plugin and theme development, REST API integrations, headless WordPress builds, performance work, and AI-assisted automation.'
+      },
+      {
+        title: 'Senior Freelance Developer (Upwork)',
+        company: 'Freelancer',
+        period: '2019 – 2025',
+        description:
+          'Full-cycle WordPress, WooCommerce, and PHP work for clients in the US, UK, Australia, and Europe. Custom plugins, custom themes, payment gateway integrations, AI and LLM integrations, Chrome extensions, Python automation. Top Rated on Upwork.'
+      },
+      {
+        title: 'PHP & WordPress Developer',
+        company: 'Web Ethics Solutions',
+        period: '2017 – 2019',
+        description:
+          'PHP and WordPress development for client projects in Mohali. Custom themes, plugin work, WooCommerce stores, and CMS customization.'
       }
     ],
     links: [
