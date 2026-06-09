@@ -129,25 +129,18 @@ export const teamMembers: TeamMember[] = [
     location: 'Chandigarh, India',
     avatar: '/assets/team/rishab-singla.jpg',
     isActive: true,
-    bio: 'I build custom WordPress sites, plugins, and themes from the ground up. PHP, Laravel, WooCommerce, custom carts, REST API integrations. 8 years shipping complex backends and e-commerce solutions. Also AI integrations and Python automation when the project calls for it.',
+    bio: 'I build custom WordPress sites, plugins, and themes from the ground up. PHP, WooCommerce, custom carts, REST API integrations. 8 years shipping complex backends and e-commerce solutions. Also AI integrations and Python automation when the project calls for it.',
     longBio:
-      "8 years of custom WordPress and PHP development. Custom themes from scratch, custom plugin development, WooCommerce stores with thousands of SKUs, headless WordPress, REST API integrations, and performance work that brings slow sites back to life.\n\nE-commerce is where I solve the hardest problems — multi-currency carts, payment gateway integrations, custom checkout flows, inventory sync, migrations between platforms. Mostly WooCommerce and custom PHP stacks; some Shopify and PrestaShop work as well.\n\nOn the AI side, I've built LLM integrations, Python automations, voice AI dashboards, and Chrome extensions for production SaaS products — SimpleTalk AI, ConvertBankStatement, custom GPT tooling. I also work in React and Next.js when the frontend calls for it.\n\nTop Rated on Upwork, 100% job success. Full cycle: requirements → architecture → code → deploy → support.",
+      "8 years of custom WordPress and PHP development. Custom themes from scratch, custom plugin development, WooCommerce stores with thousands of SKUs, headless WordPress, REST API integrations, and performance work that brings slow sites back to life.\n\nE-commerce is where I solve the hardest problems — multi-currency carts, payment gateway integrations, custom checkout flows, inventory sync, and complex product catalogs. Long-running WooCommerce engagements where I own the whole storefront.\n\nOn the AI side, I've built LLM integrations, Python automations, voice AI dashboards, and Chrome extensions for production SaaS products — SimpleTalk AI, ConvertBankStatement, custom GPT tooling. React and Next.js when the frontend calls for it.\n\nTop Rated on Upwork. Full cycle: requirements → architecture → code → deploy → support.",
     yearsExperience: 8,
-    hourlyRate: '$16/hr',
-    badges: ['Top Rated on Upwork', '100% Job Success', 'ID Verified'],
-    stats: {
-      jobSuccess: '100%',
-      totalEarnings: '$7K+',
-      totalJobs: 9,
-      totalHours: 353
-    },
+    badges: ['Top Rated on Upwork', 'ID Verified'],
+    stats: {},
     skills: [
       'WordPress',
       'Custom Plugin Development',
       'WordPress Theme Development',
       'WooCommerce',
       'PHP',
-      'Laravel',
       'CodeIgniter',
       'Custom CMS Development',
       'REST API Integrations',
@@ -165,8 +158,6 @@ export const teamMembers: TeamMember[] = [
       'Next.js',
       'TypeScript',
       'Firebase',
-      'Shopify',
-      'PrestaShop',
       'Webflow',
       'Web Design',
       'UI/UX Prototyping'
@@ -178,8 +169,7 @@ export const teamMembers: TeamMember[] = [
       'AI & Machine Learning',
       'Python Backend Engineering',
       'SaaS Platforms',
-      'React & Next.js Development',
-      'Voice AI Engineering'
+      'React & Next.js Development'
     ],
     featuredProjectSlugs: [
       'simpletalk-ai',
@@ -208,7 +198,7 @@ export const teamMembers: TeamMember[] = [
         company: 'Freelancer',
         period: 'January 2017 – Present',
         description:
-          'Custom WordPress sites, plugins, and themes. WooCommerce stores with complex carts, multi-currency, headless storefronts, and payment gateway integrations. Custom PHP and Laravel backends, REST APIs, AI and LLM integrations, Python automation, Chrome extensions. Clients across the US, UK, Australia, and Europe.'
+          'Custom WordPress sites, plugins, and themes. WooCommerce stores with complex carts, multi-currency, headless storefronts, and payment gateway integrations. Custom PHP backends, REST APIs, AI and LLM integrations, Python automation, Chrome extensions. Clients across the US, UK, Australia, and Europe.'
       }
     ],
     links: [
@@ -228,13 +218,12 @@ export const teamMembers: TeamMember[] = [
       title:
         'Rishab Singla — Senior WordPress & PHP Developer | Top Rated on Upwork',
       description:
-        'Hire Rishab Singla — Top Rated senior WordPress, WooCommerce, and PHP developer with 8+ years of custom plugin development, custom themes, e-commerce, and AI integration experience. 100% Job Success on Upwork.',
+        'Hire Rishab Singla — Top Rated senior WordPress, WooCommerce, and PHP developer with 8+ years of custom plugin development, custom themes, e-commerce, and AI integration experience.',
       keywords: [
         'hire WordPress developer',
         'hire custom WordPress plugin developer',
         'hire WooCommerce developer',
         'hire PHP developer',
-        'hire Laravel developer',
         'hire custom e-commerce developer',
         'hire AI integration developer',
         'WordPress theme developer India',
