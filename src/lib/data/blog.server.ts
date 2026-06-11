@@ -54,6 +54,13 @@ function toStringArray(value: unknown): string[] {
     .filter(Boolean);
 }
 
+/** Google favicon URLs stored as logos are not shown — use initials instead. */
+function normalizeLogoUrl(url: string | null | undefined): string {
+  if (!url) return '';
+  if (/google\.com\/s2\/favicons/i.test(url)) return '';
+  return url;
+}
+
 /* ------------------------------------------------------------------ */
 /* tools join                                                          */
 /* ------------------------------------------------------------------ */
@@ -85,7 +92,7 @@ export async function fetchToolsByIds(ids: string[]): Promise<ComparisonTool[]> 
         name: row.name,
         slug: row.slug,
         bestFor: row.best_for ?? '',
-        logoUrl: row.logo_url ?? '',
+        logoUrl: normalizeLogoUrl(row.logo_url),
         previewImageUrl: row.preview_image_url ?? '',
         websiteUrl: row.website_url ?? '',
         pricing: row.pricing ?? '',
